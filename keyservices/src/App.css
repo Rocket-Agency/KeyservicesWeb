@@ -1,28 +1,3 @@
 .App {
   text-align: center;
 }
-
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
-  background: #87E990;
-  
-}
-
-.menu {
-  width: 25%;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-} 
-
-.nav-Search {
-  width: 10%;
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-} 
