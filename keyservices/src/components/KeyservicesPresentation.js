@@ -1,12 +1,12 @@
-import React from 'react';
-import './App.css';
+import React, {Component} from 'react';
 
-function KeyservicesPresentation() {
-  return (
-    <div className="App">
-        <h1>Keyservices Présentation</h1>
-    </div>
-  );
+export class KeyservicesPresentation extends Component {
+
+    render() {
+        return(
+            <div className="mt-5 d-flex justify-content-left">
+            <h3>Keyservices Présentation</h3>
+            </div>
+        )
+    }
 }
-
-export default KeyservicesPresentation;

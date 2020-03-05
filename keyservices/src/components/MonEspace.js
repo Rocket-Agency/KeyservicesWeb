@@ -1,12 +1,12 @@
-// import React from 'react';
-// import './App.css';
+import React, {Component} from 'react';
 
-// function MonEspace() {
-//   return (
-//     <div className="App">
-//         <h1>Mon Espace</h1>
-//     </div>
-//   );
-// }
+export class MonEspace extends Component {
 
-// export default MonEspace;
+    render() {
+        return(
+            <div className="mt-5 d-flex justify-content-left">
+            <h3>Mon Espace</h3>
+            </div>
+        )
+    }
+}

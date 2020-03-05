@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Nav() {
   return (
     <nav>
-        <h3 className="logo">Logo</h3>
+        <h3 className="logo"><Link tp="/">Logo</Link></h3>
 
             <ul className="menu">
                 <li>Accueil</li>
@@ -15,6 +15,7 @@ function Nav() {
             </ul>
             
             <ul className="nav-Search">
+                <Link tp="/home">Home</Link>
                 <Link to="/about">
                     <li>About</li>               
                 </Link>
