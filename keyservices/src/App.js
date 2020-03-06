@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navigation from './Layout/Navigation';
+import Footer from './components/Layout/Footer';
 import {Home} from './components/Home';
 import {Contact} from './components/Contact';
 import {KeyservicesPresentation} from './components/KeyservicesPresentation';
@@ -24,6 +25,7 @@ function App() {
         <div className="p-2 col-example text-left">Barre de recherche</div>
       </div>  
 
+      <Footer/>
 
       <Switch>
         <Route path='/' component={Home} exact />
