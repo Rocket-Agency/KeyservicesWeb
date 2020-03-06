@@ -8,3 +8,8 @@
   left: 0;
   top: 0;
 }
+
+.bottomColor {
+  background-color: #87E990;
+  height: 15px;
+}
