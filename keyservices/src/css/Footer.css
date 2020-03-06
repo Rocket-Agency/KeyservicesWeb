@@ -1,12 +1,11 @@
 footer {
     background-color: #49173B;
     height: 75px;
-    display: flex;
     align-items: center;
-    line-height: 28px;
+    text-align: center;
 }
 
-.bottomColor {
+.bottom {
     background-color: #87E990;
     height: 15px;
   }
