@@ -27,7 +27,7 @@ function App() {
         <div className="col-example text-left">Barre de recherche</div>
       </div>  
 
-      <Footer/>
+
 
       <Switch>
         <Route path='/' component={Home} exact />
@@ -37,6 +37,8 @@ function App() {
       </Switch>
 
     </div>
+
+    <Footer/>
 
     </Router>
   );
