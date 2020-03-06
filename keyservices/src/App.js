@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Navigation from './Layout/Navigation';
-// import Header from './components/Layout/Header';
+import Navigation from './components/Layout/Navigation';
+import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import {Home} from './components/Home';
 import {Contact} from './components/Contact';
@@ -14,19 +14,20 @@ import {Navbar} from 'react-bootstrap';
 function App() {
   return (
     <Router>
-    {/* <Header/> */}
+    <Header/>
+
     <div className="container-fluid">
-      <div className="topColor"></div>
-      <div className="p-2d-flex justify-center"></div>
+      <div className="p-2 d-flex justify-center"></div>
 
       <div className="d-flex justify-content-between">
         <div className="p-2 col-example text-left">
            <Navbar.Brand href="#home">KEYSERVICES LOGO</Navbar.Brand>
         </div>
-        <div className="p-2 col-example text-left"><Navigation/></div>
-        <div className="p-2 col-example text-left">Barre de recherche</div>
+        <div className="col-example text-left"><Navigation/></div>
+        <div className="col-example text-left">Barre de recherche</div>
       </div>  
 
+      <Footer/>
 
       <Switch>
         <Route path='/' component={Home} exact />
@@ -36,8 +37,7 @@ function App() {
       </Switch>
 
     </div>
-    
-      <Footer/>
+
     </Router>
   );
 }
