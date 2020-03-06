@@ -1,19 +1,20 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
-import {Navbar, Nav, NavItem, Glyphicon, Grid, Row, Col} from 'react-bootstrap';
+import {Navbar, Nav} from 'react-bootstrap';
+import '../css/Navigation.css';
 
 export class Navigation extends Component {
     render() {
         return(
 
-          <Navbar bg="transparent" expand="lg" className="justify-content-center mt-4 mb-4">
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav>
-                    <NavLink className="d-inline p-2 bg-dark text-white" to="/">Accueil</NavLink>
-                    <NavLink className="d-inline p-2 bg-dark text-white" to="/keyservicesPresentation">Keyservices</NavLink>
-                    <NavLink className="d-inline p-2 bg-dark text-white" to="/contact">Contact</NavLink>
-                    <NavLink className="d-inline p-2 bg-dark text-white" to="/monespace">Mon Espace</NavLink>
+          <Navbar collapseOnSelect expand="lg" variant="dark">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="mr-auto">
+                <NavLink className="d-inline p-2 text-dark" to="/">Accueil</NavLink>
+                <NavLink className="d-inline p-2 text-dark" to="/keyservicesPresentation">Keyservices</NavLink>
+                <NavLink className="d-inline p-2 text-dark" to="/contact">Contact</NavLink>
+                <NavLink className="d-inline p-2 text-dark" to="/monespace">Mon Espace</NavLink>
               </Nav>
             </Navbar.Collapse>
           </Navbar>

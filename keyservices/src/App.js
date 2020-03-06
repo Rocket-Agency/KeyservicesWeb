@@ -1,35 +1,39 @@
 import React from 'react';
 import './App.css';
 import Navigation from './Layout/Navigation';
-import {Accueil} from './components/Accueil';
+import {Home} from './components/Home';
 import {Contact} from './components/Contact';
 import {KeyservicesPresentation} from './components/KeyservicesPresentation';
 import {MonEspace} from './components/MonEspace';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {Navbar} from 'react-bootstrap';
 
 
 function App() {
   return (
     <Router>
-    <div className="container">
-      
-      <h3 className="m-3 d-flex justify-content-center">
-      Test
-      </h3>
-      <h5 className="m-3 d-flex justify-content-center">
-      Voici le site keyservices
-      </h5>
+    <div className="container-fluid">
+      <div className="topColor"></div>
+      <div className="p-2d-flex justify-center"></div>
 
-    <Navigation/>
+      <div className="d-flex justify-content-between">
+        <div className="p-2 col-example text-left">
+           <Navbar.Brand href="#home">KEYSERVICES LOGO</Navbar.Brand>
+        </div>
+        <div className="p-2 col-example text-left"><Navigation/></div>
+        <div className="p-2 col-example text-left">Barre de recherche</div>
+      </div>  
+
 
       <Switch>
-        <Route path='/' component={Accueil} exact />
+        <Route path='/' component={Home} exact />
         <Route path='/contact' component={Contact} />
         <Route path='/keyservicesPresentation' component={KeyservicesPresentation} />
         <Route path='/monespace' component={MonEspace} />
       </Switch>
 
     </div>
+
     </Router>
   );
 }

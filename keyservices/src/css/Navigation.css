@@ -1,0 +1,15 @@
+.navbar-dark .navbar-brand {
+    color: black;
+}
+
+.navbar-dark .navbar-brand:hover{
+    color: black;
+}
+    
+.navbar-nav {
+    text-align: center;
+}
+
+.navbar {
+    padding: 0px;
+}
