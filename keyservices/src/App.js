@@ -1,39 +1,33 @@
 import React from 'react';
 import './App.css';
+//Import component for Header
 import Navigation from './components/Layout/Navigation';
-// import Header from './components/Layout/Header';
-import ColorSeparator from './components/Layout/ColorSeparator';
+import Header from './components/Layout/Header';
+// import ColorSeparator from './components/Layout/ColorSeparator';
+
+//Import component for Footer
 import Footer from './components/Layout/Footer';
+
+//Import pages
 import {Home} from './components/Pages/Home';
 import {Contact} from './components/Pages/Contact';
 import {KeyservicesPresentation} from './components/Pages/KeyservicesPresentation';
 import {MonEspace} from './components/Pages/MonEspace';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {Navbar, Form, FormControl, Button} from 'react-bootstrap';
+import {Navbar} from 'react-bootstrap';
 
 
 
 function App() {
   return (
     <Router>
-    <ColorSeparator/>
+    <Header/>
 
     <div className="container-fluid">
-      <div className="p-2 d-flex justify-center"></div>
-
       <div className="d-flex justify-content-between">
-        <div className="p-2 col-example text-left">
-           <Navbar.Brand href="/">KEYSERVICES LOGO</Navbar.Brand>
+
+          <Navigation/>
         </div>
-        <div className="col-example text-left"><Navigation/>
-        </div>
-        <div className="col-example text-left">    
-        <Form inline>
-          <Button variant="outline-primary">Search</Button>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-        </Form>
-        </div>
-      </div>  
 
       <Switch>
         <Route path='/' component={Home} exact />

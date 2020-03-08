@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Row, Col} from 'react-bootstrap';
+import {Container, Row} from 'react-bootstrap';
 import '../../css/Footer.css';
 
 
@@ -7,21 +7,16 @@ export class Footer extends Component {
     render() {
         return(
             <Container>
-                <Row>
-                    <Col>                
-                        <div className="bottom"></div>
-                    </Col>
+                <Row>          
+                    <div className="bottom"></div>
                 </Row>
-                <Row>
-                    <Col>1 of 3</Col>
-                    <Col>                
-                    <footer className="fixed-bottom text-center">
+                <Row>             
+                    <footer className="p-4 fixed-bottom text-center">
                         <p className="text-white">
-                            &copy;{new Date().getFullYear()} City Guide App - All Rights
+                            &copy;{new Date().getFullYear()} Keyservices © - All Rights
                             Reserved
                         </p>
-                     </footer></Col>
-                    <Col>3 of 3</Col>
+                     </footer>
                 </Row>              
             </Container>
             )

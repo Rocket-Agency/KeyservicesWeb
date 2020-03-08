@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import logo from '../../Keyservices_Logo.png';
 import { NavLink } from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap';
 import '../../css/Navigation.css';
@@ -7,9 +8,12 @@ export class Navigation extends Component {
     render() {
         return(
             <Navbar collapseOnSelect expand="lg" variant="dark">
+                <a className="navbar-brand ml-5" href="#">
+                    <img src={logo} alt="logo" style={{ width: '100px' }} />
+                </a>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mr-auto">
+                    <Nav className="mr-auto d-flex justify-content-between">
                         <NavLink className="d-inline p-2 text-dark" to="/">Accueil</NavLink>
                         <NavLink className="d-inline p-2 text-dark" to="/keyservicesPresentation">Keyservices</NavLink>
                         <NavLink className="d-inline p-2 text-dark" to="/contact">Contact</NavLink>
