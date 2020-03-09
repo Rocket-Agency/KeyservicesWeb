@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-//Import component for Header
-// import Navigation from './components/Layout/Navigation';
 import Header from './components/Layout/Header';
 // import ColorSeparator from './components/Layout/ColorSeparator';
 
