@@ -6,19 +6,15 @@ import '../../css/Footer.css';
 export class Footer extends Component {
     render() {
         return(
-            <Container>
-                <Row>          
+            <footer>
                     <div className="bottom"></div>
-                </Row>
-                <Row>             
-                    <footer className="p-4 fixed-bottom text-center">
-                        <p className="text-white">
+                <div className="container-fluid">              
+                        <p className="p-3 text-white">
                             &copy;{new Date().getFullYear()} Keyservices © - All Rights
                             Reserved
-                        </p>
-                     </footer>
-                </Row>              
-            </Container>
+                        </p>       
+                </div>
+            </footer>
             )
         }
     }
