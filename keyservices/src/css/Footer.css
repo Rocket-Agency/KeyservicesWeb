@@ -3,6 +3,10 @@ footer {
     height: 75px;
     align-items: center;
     text-align: center;
+    width: 100%;
+    bottom: 0;
+    margin: 100px auto 0;
+    position: relative;
 }
 
 .bottom {
