@@ -14,7 +14,6 @@ import {Contact} from './components/Pages/Contact';
 import {KeyservicesPresentation} from './components/Pages/KeyservicesPresentation';
 import {MonEspace} from './components/Pages/MonEspace';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {Navbar} from 'react-bootstrap';
 
 
 
@@ -25,9 +24,8 @@ function App() {
 
     <div className="container-fluid">
       <div className="d-flex justify-content-between">
-
-          <Navigation/>
-        </div>
+        <Navigation/>
+      </div>
 
       <Switch>
         <Route path='/' component={Home} exact />
@@ -35,8 +33,8 @@ function App() {
         <Route path='/keyservicesPresentation' component={KeyservicesPresentation} />
         <Route path='/monespace' component={MonEspace} />
       </Switch>
-
     </div>
+    
     <Footer/>
 
     </Router>
