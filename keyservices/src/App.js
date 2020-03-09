@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Layout/Header';
-// import ColorSeparator from './components/Layout/ColorSeparator';
 
-//Import component for Footer
+//Import component for Header & Footer
+import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 
 //Import pages
@@ -27,7 +26,7 @@ function App() {
           </Switch>
         
         <Footer/>
-    </div>
+       </div>
     </Router>
   );
 }

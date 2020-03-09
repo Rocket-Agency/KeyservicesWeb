@@ -9,10 +9,10 @@ export class Footer extends Component {
     render() {
         return(
             <div className="App">
-                <footer className="footer">
+                <footer className="footer align-items-center">
                     <div className="bottom"></div>
                         <div className="container-fluid">              
-                            <p className="p-3 text-white">
+                            <p className="text-white">
                                 &copy;{new Date().getFullYear()} Keyservices © - All Rights
                                 Reserved
                             </p>       

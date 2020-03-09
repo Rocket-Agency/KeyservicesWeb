@@ -4,3 +4,34 @@
     left: 0;
     top: 0;
   }
+
+  .navbar-dark .navbar-brand {
+    color: black;
+}
+
+.navbar-dark .navbar-brand:hover{
+    color: black;
+}
+
+.navbar-dark .navbar-toggler{
+    background-color: black;
+    border-color: #000;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  image-rendering: "../img/Menu-icon.png";
+}
+    
+.navbar-nav {
+    text-align: center;
+}
+
+.navbar {
+    padding: 10px;
+}
+
+.searchIcon {
+    background-color: #49173B;
+    border-radius: 50px 0 0 50px; 
+    height: 38px;
+}
