@@ -11,9 +11,9 @@ export class Footer extends Component {
                     <div className="bottom"></div>
                 </Row>
                 <Row>             
-                    <footer className="p-4 fixed-bottom text-center">
+                    <footer className="p-4 text-center">
                         <p className="text-white">
-                            &copy;{new Date().getFullYear()} Keyservices © - All Rights
+                            &copy;{new Date().getFullYear()} Keyservices - All Rights
                             Reserved
                         </p>
                      </footer>
