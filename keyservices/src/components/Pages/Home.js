@@ -23,19 +23,31 @@ export class Home extends Component {
                             Nam id nulla ac velit tristique faucibus. Nunc ut nibh posuere, 
                             ultricies augue nec, lacinia sapien. Integer scelerisque faucibus turpis, 
                             vel ultricies arcu tempus at. </p>
-
+                        </div>
+                        <div className="row">
                         <p className="text-home text-center d-flex justify-content-center">Sed tristique tincidunt enim quis viverra. Suspendisse malesuada auctor felis, 
                             ac luctus mauris pulvinar vel. Phasellus scelerisque dapibus mauris,
-                            eget porta ligula. Vestibulum dictum ullamcorper nunc, nec vehicula tortor dictum et.</p>
+                            eget porta ligula. Vestibulum dictum ullamcorper nunc, nec vehicula tortor dictum.</p>
                         </div>
 
                         <div className="container-fluid">
                             <div className="row">
-                                <div className="col-md-6 text-center">Poster une annonce
-
+                                <div className="col-md-6 text-center mb-2 ">
+                                    <div className="card">
+                                        <img class="card-img" src='./images/PosterUneAnnonce.png' alt="Poster_une_annonce" style={{'width' : '500px', 'height' : '200px', 'margin': '0 auto'}}/>
+                                            <div class="card-img-overlay">
+                                                <button class="btn btn-md btn-success">Poster une annonce</button>
+                                            </div>
+                                    </div>
                                 </div>
-                                <div className="col-md-6 text-center">Gérer mes locations
-                                
+
+                                <div className="col-md-6 text-center mb-2">
+                                    <div className="card">
+                                        <img class="card-img" src='./images/GererMesLocations.png' alt="Gerer_Mes_Locations" style={{'width' : '500px', 'height' : '200px', 'margin': '0 auto'}}/>
+                                        <div class="card-img-overlay">
+                                            <button class="btn btn-md btn-success"> Gérer mes locations</button>
+                                        </div>
+                                   </div>
                                 </div>
                             </div>
                         </div>

@@ -9,3 +9,8 @@
     line-height: 38px;
     padding: 10px 100px;
 }
+
+.card {
+    background-color: transparent;
+    border: transparent;
+}
