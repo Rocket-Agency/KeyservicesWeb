@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
-import {Container, Row} from 'react-bootstrap';
 import '../../css/Footer.css';
+
+
+
 
 
 export class Footer extends Component {
     render() {
         return(
-            <Container>
-                <Row>          
+            <div className="App">
+                <footer className="footer align-items-center">
                     <div className="bottom"></div>
-                </Row>
-                <Row>             
-                    <footer className="p-4 fixed-bottom text-center">
-                        <p className="text-white">
-                            &copy;{new Date().getFullYear()} Keyservices © - All Rights
-                            Reserved
-                        </p>
-                     </footer>
-                </Row>              
-            </Container>
+                        <div className="container-fluid">              
+                            <p className="text-white">
+                                &copy;{new Date().getFullYear()} Keyservices © - All Rights
+                                Reserved
+                            </p>       
+                        </div>
+                </footer>
+            </div>
             )
         }
     }

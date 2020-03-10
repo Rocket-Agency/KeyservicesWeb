@@ -1,4 +1,11 @@
 .colorBackground {
+    position: relative;
     background: #FAF0E6;
     border: 2px solid #49173B;
+}
+
+.text-home {
+    font-size: 14px;
+    line-height: 38px;
+    padding: 10px 100px;
 }
