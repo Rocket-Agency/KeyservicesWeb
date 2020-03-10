@@ -34,7 +34,7 @@ export class Home extends Component {
                             <div className="row">
                                 <div className="col-md-6 text-center mb-2 ">
                                     <div className="card">
-                                        <img class="card-img" src='./images/PosterUneAnnonce.png' alt="Poster_une_annonce" style={{'width' : '500px', 'height' : '200px', 'margin': '0 auto'}}/>
+                                        <img class="card-img style-card" src='./images/PosterUneAnnonce.png' alt="Poster_une_annonce" />
                                             <div class="card-img-overlay">
                                                 <button class="btn btn-md btn-success">Poster une annonce</button>
                                             </div>
@@ -43,7 +43,7 @@ export class Home extends Component {
 
                                 <div className="col-md-6 text-center mb-2">
                                     <div className="card">
-                                        <img class="card-img" src='./images/GererMesLocations.png' alt="Gerer_Mes_Locations" style={{'width' : '500px', 'height' : '200px', 'margin': '0 auto'}}/>
+                                        <img class="card-img style-card" src='./images/GererMesLocations.png' alt="Gerer_Mes_Locations" />
                                         <div class="card-img-overlay">
                                             <button class="btn btn-md btn-success"> Gérer mes locations</button>
                                         </div>

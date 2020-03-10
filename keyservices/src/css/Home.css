@@ -14,3 +14,28 @@
     background-color: transparent;
     border: transparent;
 }
+
+.style-card {
+    width : 500px;
+    height : 200px;
+    margin : 0 auto;
+}
+
+@media (min-width: 576px) {
+    .style-card {
+        width: 500px;
+    }
+  }
+
+.btn-success {
+    margin-top: 100px;
+    background: #fff;
+    border-color: 5px solid #87E990;
+    color: #000;
+}
+
+.btn-success:hover {
+    background: #87E990;
+    color: #000000;
+
+}
