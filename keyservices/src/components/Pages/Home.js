@@ -32,7 +32,7 @@ export class Home extends Component {
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-md-6 text-center">Poster une annonce
-                                    
+
                                 </div>
                                 <div className="col-md-6 text-center">Gérer mes locations
                                 
