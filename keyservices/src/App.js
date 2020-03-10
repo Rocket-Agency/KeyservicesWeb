@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Layout/Header';
-// import ColorSeparator from './components/Layout/ColorSeparator';
 
 //Import component for Footer
 import Footer from './components/Layout/Footer';
@@ -19,20 +18,14 @@ function App() {
         <div>
         <Header/>
 
-          <div className="container-fluid">
-            <div className="d-flex justify-content-between">
-            </div>
-
           <Switch>
             <Route path='/' component={Home} exact />
             <Route path='/contact' component={Contact} />
             <Route path='/keyservicesPresentation' component={KeyservicesPresentation} />
             <Route path='/monespace' component={MonEspace} />
           </Switch>
-        </div>
-        
-        <Footer/>
-    </div>
+       </div>        
+       <Footer/>
     </Router>
   );
 }

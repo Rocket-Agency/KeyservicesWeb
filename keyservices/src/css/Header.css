@@ -4,3 +4,34 @@
     left: 0;
     top: 0;
   }
+
+.navbar-dark .navbar-brand:hover{
+  background-color: black;
+}
+    
+.navbar-nav {
+    text-align: center;
+}
+
+.navbar {
+    padding: 10px;
+}
+
+.searchIconZone {
+    background-color: #49173B;
+    border-radius: 50px 0 0 50px; 
+    height: 38px;
+}
+
+.searchFormControl {
+  width: 136px;
+  border-radius: 0 50px 50px 0;
+  height: 38px;
+  border-color: #49173B;
+}
+
+@media (min-width: 576px) {
+  .form-inline .form-control {
+      width: 136px;
+  }
+}
