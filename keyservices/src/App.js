@@ -1,5 +1,9 @@
 import React from 'react';
 import './App.css';
+<<<<<<< HEAD
+import Header from './components/Layout/Header';
+=======
+>>>>>>> Homepage
 
 //Import component for Header & Footer
 import Header from './components/Layout/Header';
@@ -24,9 +28,14 @@ function App() {
             <Route path='/keyservicesPresentation' component={KeyservicesPresentation} />
             <Route path='/monespace' component={MonEspace} />
           </Switch>
+<<<<<<< HEAD
+       </div>        
+       <Footer/>
+=======
         
         <Footer/>
        </div>
+>>>>>>> Homepage
     </Router>
   );
 }
