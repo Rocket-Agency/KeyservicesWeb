@@ -21,9 +21,9 @@
     margin : 0 auto;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
     .style-card {
-        width: 500px;
+        width: 310px;
     }
   }
 
@@ -32,10 +32,13 @@
     background: #fff;
     border-color: 5px solid #87E990;
     color: #000;
+    width: 300px;
+    height: 60px;
+    cursor: pointer;
 }
 
 .btn-success:hover {
     background: #87E990;
     color: #000000;
-
 }
+
