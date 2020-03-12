@@ -2,12 +2,13 @@
     position: relative;
     background: #FAF0E6;
     border: 2px solid #49173B;
+    padding-bottom: 20px;
 }
 
 .text-home {
     font-size: 14px;
     line-height: 38px;
-    padding: 10px 100px;
+    padding: 10px 50px;
 }
 
 .card {
@@ -30,11 +31,10 @@
 .btn-success {
     margin-top: 100px;
     background: #fff;
-    border-color: 5px solid #87E990;
+    border: 4px solid #87E990;
     color: #000;
     width: 300px;
     height: 60px;
-    cursor: pointer;
 }
 
 .btn-success:hover {

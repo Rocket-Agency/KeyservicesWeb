@@ -17,6 +17,12 @@ function App() {
     <Router>
         <div>
         <Header/>
+        
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Home</li>
+          </ol>
+        </nav>
 
           <Switch>
             <Route path='/' component={Home} exact />

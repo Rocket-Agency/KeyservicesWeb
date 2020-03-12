@@ -8,12 +8,12 @@ export class Home extends Component {
     render() {
         return(
             <div>
-                <div className="mt-5 d-flex text-center justify-content-center">
+                <div className="mt-4 d-flex text-center justify-content-center">
                     <h3>On s’occupe de tous et vous de rien</h3>
                 </div>
             
                 <div className="container-fluid">
-                    <div className="mt- mb-3 colorBackground">
+                    <div className="mt-2 mb-3 colorBackground">
                         <div className="row-fluid">
                         <p className="text-home text-center d-flex justify-content-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Proin ac augue nibh. Nam et interdum augue. Nullam ut ante elit. 
