@@ -8,6 +8,13 @@ footer {
     position: absolute;
 }
 
+@media (max-width: 576px) {
+    footer {
+        height: 200px;
+        position: relative;
+    }
+  }
+
 .bottom {
     background-color: #87E990;
     height: 15px;

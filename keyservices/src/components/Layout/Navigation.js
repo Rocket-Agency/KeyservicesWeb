@@ -7,7 +7,7 @@ import '../../css/Navigation.css';
 export class Navigation extends Component {
     render() {
         return(
-            <div>
+            <div >
             <Navbar collapseOnSelect expand="lg" variant="dark">
                 <a className="navbar-brand" href="/">
                     <img src={logo} alt="logo" style={{ width: '100px' }} />
@@ -22,6 +22,16 @@ export class Navigation extends Component {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
+
+                <Row between="xs">
+                    <Col xs={2} />               
+                        <a className="navbar-brand" href="/">
+                            <img src={logo} alt="logo" style={{ width: '100px' }} />
+                        </a>
+                    <Col xs={2} />
+                    <Col xs={2} />
+                </Row>
+
             </div>
         )
     }
