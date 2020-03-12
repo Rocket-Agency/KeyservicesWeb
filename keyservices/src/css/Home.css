@@ -37,6 +37,12 @@
     height: 60px;
 }
 
+@media (max-width: 576px) {
+    .btn-success {
+        width: 240px;
+    }
+  }
+
 .btn-success:hover {
     background: #87E990;
     color: #000000;

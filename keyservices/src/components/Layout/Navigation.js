@@ -14,7 +14,7 @@ export class Navigation extends Component {
                 </a>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mr-auto d-flex justify-content-between">
+                    <Nav className="ml-auto d-flex justify-content-between">
                         <NavLink className="d-inline p-2 text-dark" to="/">Accueil</NavLink>
                         <NavLink className="d-inline p-2 text-dark" to="/keyservicesPresentation">Keyservices</NavLink>
                         <NavLink className="d-inline p-2 text-dark" to="/contact">Contact</NavLink>
@@ -23,14 +23,6 @@ export class Navigation extends Component {
                 </Navbar.Collapse>
             </Navbar>
 
-                <Row between="xs">
-                    <Col xs={2} />               
-                        <a className="navbar-brand" href="/">
-                            <img src={logo} alt="logo" style={{ width: '100px' }} />
-                        </a>
-                    <Col xs={2} />
-                    <Col xs={2} />
-                </Row>
 
             </div>
         )
