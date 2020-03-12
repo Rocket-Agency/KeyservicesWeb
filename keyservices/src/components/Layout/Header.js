@@ -23,7 +23,7 @@ export class Header extends Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="ml-auto d-flex justify-content-between">
+                        <Nav className="ml-auto mr-auto d-flex justify-content-between">
                             <NavLink className="d-inline p-2 text-dark" to="/">Accueil</NavLink>
                             <NavLink className="d-inline p-2 text-dark" to="/keyservicesPresentation">Keyservices</NavLink>
                             <NavLink className="d-inline p-2 text-dark" to="/contact">Contact</NavLink>
