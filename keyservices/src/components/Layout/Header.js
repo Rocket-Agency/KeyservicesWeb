@@ -3,9 +3,8 @@ import '../../css/Header.css';
 import logo from '../../Keyservices_Logo.png';
 import Searchbar from './Searchbar';
 import { NavLink } from 'react-router-dom';
-import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
+import {Navbar, Nav} from 'react-bootstrap';
 
-// import { MdMoreVert } from 'react-icons/md';
 
 export class Header extends Component {
     render() {
