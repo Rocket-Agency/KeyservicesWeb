@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../../css/Header.css';
 import logo from '../../Keyservices_Logo.png';
+import Searchbar from './Searchbar';
 import { NavLink } from 'react-router-dom';
 import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
 
@@ -28,10 +29,9 @@ export class Header extends Component {
                             <NavLink className="d-inline p-2 text-dark" to="/contact">Contact</NavLink>
                             <NavLink className="d-inline p-2 text-dark" to="/monespace">Mon Espace</NavLink>
                         </Nav>
-                        <Form className="p-2 ml-auto" inline>
-                            <Button className="searchIconZone">Icon</Button>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-1 searchFormControl" />
-                        </Form>
+
+                        <Searchbar />
+                        
                     </Navbar.Collapse>
                 </Navbar>
                 
