@@ -31,6 +31,13 @@
 }
 
 //Menu responsive
-.menu-title {
+.menu-title-mobile {
     font-size: 25px;
+    display: none;
+
+    @media (max-width: 768px)  {
+            .menu-title-mobile {
+              display: block;
+            }
+          }
 }

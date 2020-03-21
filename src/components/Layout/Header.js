@@ -14,7 +14,7 @@ export class Header extends Component {
             <div>
                 <div className="top"></div>
 
-                <Navbar collapseOnSelect expand="lg" variant="light">
+                <Navbar collapseOnSelect expand="md" variant="light">
                 <a className="navbar-brand" href="/">
                     <img src={logo} alt="logo" style={{ 
                         width: '100px'
@@ -25,7 +25,7 @@ export class Header extends Component {
 
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ml-auto mr-auto d-flex justify-content-between">
-                            <h1 className="menu-title text-align-center">Menu </h1>
+                            <h1 className="menu-title-mobile text-align-center">Menu </h1>
                             <NavLink className="d-inline p-2 text-dark" to="/">Accueil</NavLink>
                             <NavLink className="d-inline p-2 text-dark" to="/keyservicesPresentation">Keyservices</NavLink>
                             <NavLink className="d-inline p-2 text-dark" to="/contact">Contact</NavLink>
