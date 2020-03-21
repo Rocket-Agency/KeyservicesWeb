@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Form, FormControl, Button} from 'react-bootstrap';
 import {GoSearch} from 'react-icons/go';
-import '../../css/Searchbar.css';
+import '../../css/Searchbar.scss';
 
 
 export class Searchbar extends Component {

@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import '../../css/Header.scss';
 import logo from '../../Keyservices_Logo.png';
 import Searchbar from './Searchbar';
+
+import '../../css/Header.scss';
+import '../../css/Searchbar.scss';
 import { NavLink } from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap';
 
@@ -23,6 +25,7 @@ export class Header extends Component {
 
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ml-auto mr-auto d-flex justify-content-between">
+                            <h1 className="menu-title text-align-center">Menu </h1>
                             <NavLink className="d-inline p-2 text-dark" to="/">Accueil</NavLink>
                             <NavLink className="d-inline p-2 text-dark" to="/keyservicesPresentation">Keyservices</NavLink>
                             <NavLink className="d-inline p-2 text-dark" to="/contact">Contact</NavLink>
