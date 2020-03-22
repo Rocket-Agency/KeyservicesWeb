@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../../css/Header.css';
+import '../../css/Header.scss';
 import logo from '../../Keyservices_Logo.png';
 import Searchbar from './Searchbar';
 import { NavLink } from 'react-router-dom';

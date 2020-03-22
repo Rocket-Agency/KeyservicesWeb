@@ -5,13 +5,11 @@ footer {
     text-align: center;
     width: 100%;
     bottom: 0;
-    position: absolute;
 }
 
 @media (max-width: 576px) {
     footer {
         height: 200px;
-        position: relative;
     }
   }
 
