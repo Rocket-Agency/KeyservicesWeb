@@ -27,8 +27,6 @@
     justify-content: center;
 
     .footer-container {
-        padding: 20px 0;
-        padding: 20px 0;
         flex: 0 1 80%;
         text-align: center;
         
@@ -54,4 +52,6 @@
 .bottom {
     background-color: #87E990;
     height: 15px;
+    bottom: 0;
+    left: 0;
   }
