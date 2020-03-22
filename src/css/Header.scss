@@ -5,30 +5,15 @@
     top: 0;
   }
 
-.navbar-dark .navbar-brand {
-    color: black;
-}
-
-.navbar-dark .navbar-brand:hover{
-    color: black;
-}
-
-.navbar-dark .navbar-toggler{
-    background-color: black;
-    border-color: #000;
-}
-
-.navbar-dark .navbar-toggler-icon {
-  image-rendering: "../img/Menu-icon.png";
+.navbar {
+    padding: 10px;
 }
     
 .navbar-nav {
     text-align: center;
 }
 
-.navbar {
-    padding: 10px;
-}
+
 
 //Menu responsive
 .menu-title-mobile {
