@@ -3,6 +3,7 @@ import './App.scss';
 
 //Import component for Header & Footer
 import Header from './components/Layout/Header';
+import Footer from './components/Layout/Footer';
 
 //Import pages
 import {Home} from './components/Pages/Home';
@@ -16,6 +17,12 @@ function App() {
     <Router>
         <div>
         <Header/>
+        
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Home</li>
+          </ol>
+        </nav>
 
           <Switch>
             <Route path='/' component={Home} exact />
@@ -24,6 +31,7 @@ function App() {
             <Route path='/monespace' component={MonEspace} />
           </Switch>
         
+        <Footer/>
        </div>
     </Router>
   );

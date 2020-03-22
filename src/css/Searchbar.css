@@ -1,0 +1,9 @@
+.searchIcon {
+    background-color: #49173B;
+    border-radius: 50px 0 0 50px; 
+    height: 38px;
+}
+
+.searchbarHeader {
+    margin-right: 65px;
+}

@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {Form, FormControl, Button} from 'react-bootstrap';
 import {GoSearch} from 'react-icons/go';
-import '../../css/Searchbar.scss';
+import '../../css/Searchbar.css';
 
 
 export class Searchbar extends Component {
     render() {
         return(
-            <Form className="p-2 searchbarHeader justify-content-center" inline>
+            <Form className="p-2 searchbarHeader" inline>
                 <Button className="searchIconZone">
                     <GoSearch/>
                 </Button>

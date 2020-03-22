@@ -5,9 +5,15 @@ footer {
     text-align: center;
     width: 100%;
     bottom: 0;
-    margin: 100px auto 0;
-    position: relative;
+    position: absolute;
 }
+
+@media (max-width: 576px) {
+    footer {
+        height: 200px;
+        position: relative;
+    }
+  }
 
 .bottom {
     background-color: #87E990;
