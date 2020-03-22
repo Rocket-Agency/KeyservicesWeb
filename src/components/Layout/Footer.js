@@ -5,7 +5,7 @@ import '../../css/Footer.scss';
 const Footer = () => {
     return (
         <div> 
-            <div className="bottom"></div>
+            {/* <div className="bottom"></div> */}
             <footer>         
                 <div className="footer-container">
                     <div className="container-fluid">              
@@ -19,6 +19,4 @@ const Footer = () => {
     )
 }
 
-    
-    
 export default Footer;
