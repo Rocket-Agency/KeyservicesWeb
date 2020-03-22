@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../../css/Home.css';
+import '../../css/Home.scss';
 
 
 
@@ -31,8 +31,13 @@ export class Home extends Component {
 
                         <div className="container-fluid">
                             <div className="row">
-                                <div className="col-md-6 text-center">Poster une annonce
-                                    
+                            <div className="col-xs-12 col-md-6 text-center mb-2 ">
+                                    <div className="card">
+                                        <img class="card-img style-card"  alt="Poster_une_annonce" />
+                                            <div class="card-img-overlay">
+                                                <button class="btn btn-md btn-success">Poster une annonce</button>
+                                            </div>
+                                    </div>
                                 </div>
                                 <div className="col-md-6 text-center">Gérer mes locations
                                 
