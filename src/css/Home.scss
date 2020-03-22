@@ -3,14 +3,26 @@
     background: #FAF0E6;
     border: 2px solid #49173B;
     padding-bottom: 20px;
-    margin: 0 60px 0 60px;
+    margin: 60px 
 }
+
+@media (max-width: 576px) {
+    .colorBackground  {
+     margin: 0px ;
+     }
+   }
 
 .text-home {
     font-size: 14px;
-    line-height: 38px;
-    padding: 10px 50px;
+    line-height: 30px;
+    padding: 10px 60px;
 }
+
+@media (max-width: 576px) {
+    .text-home {
+        padding: 10px 20px;
+     }
+   }
 
 .card {
     background-color: transparent;
@@ -23,7 +35,7 @@
     margin : 0 auto;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 991px) {
     .style-card {
         width: 310px;
     }
