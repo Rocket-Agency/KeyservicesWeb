@@ -29,13 +29,23 @@ export class Home extends Component {
                             eget porta ligula. Vestibulum dictum ullamcorper nunc, nec vehicula tortor dictum et.</p>
                         </div>
 
-                        <div className="container-fluid">
+                        <div className="container">
                             <div className="row">
-                                <div className="col-md-6 text-center">Poster une annonce
-                                <img class="card-img style-card" src='./images/GererMesLocations.png' alt="Gerer_Mes_Locations" />
+                            <div className="col-lg-6 col-md-6 text-center mb-2">
+                                    <div className="card">
+                                        <img class="card-img style-card" src='./images/GererMesLocations.png' alt="Gerer_Mes_Locations" />
+                                        <div class="card-img-overlay">
+                                            <button class="btn btn-md btn-success"> Gérer mes locations</button>
+                                        </div>
+                                   </div>
                                 </div>
-                                <div className="col-md-6 text-center">Gérer mes locations
-                                <img class="card-img style-card" src='./images/GererMesLocations.png' alt="Gerer_Mes_Locations" />
+                                <div className="col-lg-6 col-md-6 text-center mb-2">
+                                    <div className="card">
+                                        <img class="card-img style-card" src='./images/GererMesLocations.png' alt="Gerer_Mes_Locations" />
+                                        <div class="card-img-overlay">
+                                            <button class="btn btn-md btn-success"> Gérer mes locations</button>
+                                        </div>
+                                   </div>
                                 </div>
                             </div>
                         </div>
