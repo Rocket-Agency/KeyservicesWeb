@@ -3,6 +3,8 @@ import './App.scss';
 
 //Import component for Header & Footer
 import Header from './components/Layout/Header';
+import Footer from './components/Layout/Footer';
+
 
 //Import pages
 // import {Home} from './components/Pages/Home';
@@ -23,6 +25,8 @@ function App() {
             <Route path='/keyservicesPresentation' component={KeyservicesPresentation} />
             <Route path='/monespace' component={MonEspace} />
           </Switch>
+
+          <Footer/>
         
        </div>
     </Router>
