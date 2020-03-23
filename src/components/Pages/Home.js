@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../../css/Home.css';
+import '../../css/Home.scss';
 
 
 
@@ -32,10 +32,10 @@ export class Home extends Component {
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-md-6 text-center">Poster une annonce
-                                    
+                                <img class="card-img style-card" src='./images/GererMesLocations.png' alt="Gerer_Mes_Locations" />
                                 </div>
                                 <div className="col-md-6 text-center">Gérer mes locations
-                                
+                                <img class="card-img style-card" src='./images/GererMesLocations.png' alt="Gerer_Mes_Locations" />
                                 </div>
                             </div>
                         </div>
