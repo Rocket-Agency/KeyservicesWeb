@@ -14,9 +14,10 @@ export class Contact extends Component {
                 </div>
                 <Container fluid>
                     <Row>
-                        <Col md={6}>
+
+                        <Col md={5}>
                         
-                            <div className="contact-bloc" style={{'background':'#FAF0E6', 'padding': '40px 27px 41px' , 'margin-top': '30px', 'margin-left': '40px', 'margin-right': '27px'}}>
+                            <div className="contact-bloc">
                                 <div className="d-flex text-center justify-content-center">
                                     <h2>Contactez nous !</h2>
                                 </div>
@@ -73,14 +74,9 @@ export class Contact extends Component {
 
 
                         <Col md={6}>
-                        <div style={{'width':'100%','display':'inline-table', 'vertical-align' : 'middle', 'padding':'0% 5% 0% 5%', 'background':'#FAF0E6', 'margin':'2%'}}>
-                        <div className="mt-5 d-flex">
-                            <h3>Contactez nous !</h3>
-                        </div>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                        <br />
-
-                    </div>
+                            <div className="mt-5 d-flex">
+                                <h3>Contactez nous !</h3>
+                            </div>
 
                         </Col>
                     </Row>

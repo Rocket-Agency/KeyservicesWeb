@@ -1,6 +1,15 @@
 .contact-bloc {
     background-color :#FAF0E6;
     padding: 40px 27px 41px;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 27px;
+}
+
+@media (max-width: 576px) {
+    .contact-bloc {
+        margin: 0;
+    }
 }
 
 h3 {
