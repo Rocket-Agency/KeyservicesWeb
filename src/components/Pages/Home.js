@@ -9,7 +9,7 @@ export class Home extends Component {
         return(
             <div>
                 <div className="mt-5 d-flex text-center justify-content-center">
-                    <h3>On s’occupe de tous et vous de rien</h3>
+                    <h1>On s’occupe de tous et vous de rien</h1>
                 </div>
             
                 <div className="container-fluid">
