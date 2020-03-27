@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router-dom';
+
 import {Form, Col, Container, Row, Button} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 
@@ -73,22 +75,15 @@ export class Contact extends Component {
                                     </Form.Row>
 
                                     <Form.Row class="mt-3">
-                                        {/* <Col sm className="d-flex justify-content-end align-items-center">
-                                            <Button id="btn-envoyer" variant="primary" type="submit">
-                                                <IoIosArrowForward /> 
-                                            </Button>
-                                            <div clasName="envoyer">Envoyer</div>
-
-                                        </Col> */}
-
+ 
                                         <Col xs={8} sm={12} className="d-flex justify-content-end align-items-center">
                                                 <Hidden xs>
-                                                <Button className="content-bouton"> 
-                                                    <Button id="btn-envoyer"  variant="primary" type="submit">
+                                                <Button className="content-bouton" type="submit"> 
+                                                    <Button id="btn-envoyer" type="submit">
                                                         <IoIosArrowForward /> 
                                                     </Button>
-                                                    <Button clasName="btn-envoyer">Envoyer
-                                                    </Button>
+                                                    <Link clasName="envoyer btn-envoyer">Envoyer
+                                                    </Link>
                                                 </Button>
                                                 </Hidden>
                                                 <Visible xs>
@@ -96,8 +91,8 @@ export class Contact extends Component {
                                                         <FaArrowRight/><a clasName="envoyer"> Envoyer</a>
                                                     </Button>
                                                 </Visible>
-                                            </Col>         
-            
+                                            </Col>      
+                                               
                                     </Form.Row>
                                 </Form>
 
@@ -109,6 +104,13 @@ export class Contact extends Component {
                             <div className="mt-5 d-flex">
                                 <h3>Contactez nous !</h3>
                             </div>
+
+
+                            <Link to={`/ValidationContactForm`}>
+                                <span className="pull-xs-right">
+                                Test
+                                </span>
+                            </Link>
                         </Col>
                     </Row>
                 </Container>
