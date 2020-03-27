@@ -1,12 +1,21 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Form, Col, Container, Row, FormControl, FormGroup, ControlLabel, HelpBlock, Checkbox, Radio, Button, Card, ListGroup} from 'react-bootstrap';
+import { Visible, Hidden } from 'react-grid-system';
+
+//icons
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { IoIosArrowForward } from "react-icons/io";
+import { FaArrowRight } from "react-icons/fa";
+
 
 import '../../css/Contact.scss';
 
+
+
 export class Contact extends Component {
     render() {
+
         return(
             <div>
                 <div className="mt-2 d-flex text-center justify-content-center">
@@ -15,9 +24,9 @@ export class Contact extends Component {
                 <Container fluid>
                     <Row>
 
-                        <Col md={5}>
+                        <Col md={6}>
                         
-                            <div className="contact-bloc">
+                            <div className="contact-bloc" >
                                 <div className="d-flex text-center justify-content-center">
                                     <h2>Contactez nous !</h2>
                                 </div>
@@ -58,15 +67,38 @@ export class Contact extends Component {
                                     </Form.Row>
 
                                     <Form.Row>
-                                        <Form.Group as={Col}  controlId="exampleForm.ControlTextarea1">
+                                        <Form.Group as={Col}  controlId="votreMessage.ControlTextarea">
                                             <Form.Label>Votre message</Form.Label>
                                             <Form.Control as="textarea" rows="3" placeholder="Entrer votre message" />
                                         </Form.Group>
                                     </Form.Row>
 
-                                    <Button variant="primary" type="submit">
-                                        Submit
-                                    </Button>
+                                    <Form.Row class="mt-3">
+                                        {/* <Col sm className="d-flex justify-content-end align-items-center">
+                                            <Button id="btn-envoyer" variant="primary" type="submit">
+                                                <IoIosArrowForward /> 
+                                            </Button>
+                                            <div clasName="envoyer">Envoyer</div>
+
+                                        </Col> */}
+
+                                        <Col xs={8} sm={12} className="d-flex justify-content-end align-items-center">
+                                                <Hidden xs>
+                                                    <Button id="btn-envoyer"  variant="primary" type="submit">
+                                                        <IoIosArrowForward /> 
+                                                    </Button>
+                                                    <div clasName="envoyer">Envoyer</div>
+                                                </Hidden>
+                                                <Visible xs>
+                                                    <Button id="btn-envoyerMobile"  variant="primary" type="submit">
+                                                        <FaArrowRight /> 
+                                                    </Button>
+
+                                                    <div clasName="envoyer">Envoyer</div>
+                                                </Visible>
+                                            </Col>         
+            
+                                    </Form.Row>
                                 </Form>
 
                             </div>                        
