@@ -92,10 +92,9 @@ export class Contact extends Component {
                                                     </Button>
                                                 </Visible>
                                             </Col>      
-                                               
+
                                     </Form.Row>
                                 </Form>
-
                             </div>                        
                         </Col>
 
