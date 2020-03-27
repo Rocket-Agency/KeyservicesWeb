@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import {Form, Col, Container, Row, FormControl, FormGroup, ControlLabel, HelpBlock, Checkbox, Radio, Button, Card, ListGroup} from 'react-bootstrap';
+import React, {Component} from 'react'
+import {Form, Col, Container, Row, Button} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 
 //icons
@@ -84,17 +83,18 @@ export class Contact extends Component {
 
                                         <Col xs={8} sm={12} className="d-flex justify-content-end align-items-center">
                                                 <Hidden xs>
+                                                <Button className="content-bouton"> 
                                                     <Button id="btn-envoyer"  variant="primary" type="submit">
                                                         <IoIosArrowForward /> 
                                                     </Button>
-                                                    <div clasName="envoyer">Envoyer</div>
+                                                    <Button clasName="btn-envoyer">Envoyer
+                                                    </Button>
+                                                </Button>
                                                 </Hidden>
                                                 <Visible xs>
-                                                    <Button id="btn-envoyerMobile"  variant="primary" type="submit">
-                                                        <FaArrowRight /> 
+                                                    <Button id="envoyerMobile" type="submit">
+                                                        <FaArrowRight/><a clasName="envoyer"> Envoyer</a>
                                                     </Button>
-
-                                                    <div clasName="envoyer">Envoyer</div>
                                                 </Visible>
                                             </Col>         
             
@@ -109,7 +109,6 @@ export class Contact extends Component {
                             <div className="mt-5 d-flex">
                                 <h3>Contactez nous !</h3>
                             </div>
-
                         </Col>
                     </Row>
                 </Container>

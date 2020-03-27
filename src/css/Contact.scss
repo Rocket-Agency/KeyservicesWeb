@@ -28,13 +28,45 @@ h3 {
 }
 
 #btn-envoyerMobile {
-    border-radius:20px;
-    width:40px;
-    height:40px;
-    color: black;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
-    background: #87E990;
+    background-color: #87E990;
+    border-radius: 50px; 
     border-color: transparent;
+    height: 38px;
     color: black;
-    margin-right: 16px;
+}
+
+#envoyerMobile {
+    background-color: #87E990;
+    border-radius: 50px; 
+    border-color: transparent;
+    height: 38px;
+    color: black;
+}
+
+.sendIconZone {
+    background-color: #87E990;
+    border-radius: 50px; 
+    border-color: transparent;
+    height: 38px;
+    color: black;
+}
+
+.btn-primary {
+    color: #000000;
+    background-color: transparent;
+    border-color: transparent;  
+}
+
+.btn-primary:hover {
+    color: #49173B;
+    background-color: #87E990;
+    border-color: transparent;
+}
+
+.content-bouton :hover {
+    background: transparent;
+}
+
+.content-bouton:hover {
+    background: transparent;
 }
