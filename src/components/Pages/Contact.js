@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-import {Form, Col, Container, Row, Button} from 'react-bootstrap';
+import {Form, Col, Container, Row, Button, ListGroup, Card} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 
 //icons
@@ -74,7 +74,7 @@ export class Contact extends Component {
                                         </Form.Group>
                                     </Form.Row>
 
-                                    <Form.Row class="mt-3">
+                                    <Form.Row class="mt-4">
  
                                         <Col xs={8} sm={12} className="d-flex justify-content-end align-items-center">
                                                 <Hidden xs>
@@ -82,8 +82,8 @@ export class Contact extends Component {
                                                     <Button id="btn-envoyer" type="submit">
                                                         <IoIosArrowForward /> 
                                                     </Button>
-                                                    <Link clasName="envoyer btn-envoyer">Envoyer
-                                                    </Link>
+                                                    <Button id="envoyer" clasName="envoyer btn-envoyer">Envoyer
+                                                    </Button>
                                                 </Button>
                                                 </Hidden>
                                                 <Visible xs>
@@ -100,16 +100,123 @@ export class Contact extends Component {
 
 
                         <Col md={6}>
-                            <div className="mt-5 d-flex">
-                                <h3>Contactez nous !</h3>
-                            </div>
+                            <Container fluid>
+                                <Row className="contact-bloc-map d-flex justify-content-center">
+                                     <img src='./images/map.png' className="map-contact" alt="map contact"/>
+                                </Row>   
+                            </Container>                             
+
+                                    {/* <Row className="contact-bloc-informations">
+                                        <Col xs={8} sm={12} className="d-flex justify-content-center">
+                                            Icon position
+                                        </Col>
+
+                                        <Col xs={8} sm={12} className="d-flex justify-content-center">
+                                            Rocket Agency - 18 rue Léon Frot - 75011 PARIS
+                                        </Col>
+                                    </Row> */}
+
+                                    {/* <Row className="contact-bloc-informations">
+                                        <Col sm={3} className="d-flex justify-content-center">
+                                            Icon Mail
+                                        </Col>
+
+                                        <Col sm={9} className="d-flex justify-content-center">
+                                            contact@keyservices.com
+                                        </Col>
+                                    </Row>
+
+                                    <Row className="contact-bloc-informations">
+                                        <Col sm={3} className="d-flex justify-content-center">
+                                            Icon Tel
+                                        </Col>
+
+                                        <Col sm={9} className="d-flex justify-content-center">
+                                            01.21.55.16.86
+                                        </Col>
+                                    </Row> */}
+
+                                <Container>
+                                    <Row>
+                                        <Col sm={6}>
+                                        One of three columns
+                                            <Col sm={4}>
+                                            One of three columns
+                                            </Col>
+                                            <Col sm={4}>
+                                            One of three columns
+                                            </Col>
+                                        </Col>
+                                        <Col sm={6}>
+                                        One of three columns
+                                        </Col>
+
+                                    </Row>
+                                </Container>
 
 
-                            <Link to={`/ValidationContactForm`}>
-                                <span className="pull-xs-right">
-                                Test
-                                </span>
-                            </Link>
+                                {/* <Row>
+                                    <Col xs={6}>xs=6</Col>
+                                    <Col xs={6}>xs=6</Col>
+                                </Row>                                */}
+                                {/* <Row className="contact-bloc-informations d-flex justify-content-center" > */}
+                                    {/* <Col md={4} sm={12} className="d-flex justify-content-center">
+                                        Icone Position
+                                    </Col>
+                                    <Col md={8} sm={12} className="d-flex justify-content-center">
+                                        <p>
+                                            Rocket Agency - 18 rue Léon Frot - 75011 PARIS
+                                        </p>
+                                    </Col>
+                                 </Row>
+                                 <Row>
+                                    <Col md={4} className="d-flex justify-content-center">
+                                        Icone Mail
+                                    </Col>
+                                    <Col md={8} className="d-flex justify-content-center">
+                                        <p>
+                                            contact@keyservices.com
+                                        </p>
+                                    </Col>
+                                 </Row> */}
+                                        {/* <Col md={4} sm={12} className="d-flex justify-content-center">
+                                            Icone Position
+                                        </Col>
+
+                                        <Col md={8} sm={12} className="d-flex justify-content-center">
+                                            <p>
+                                                Rocket Agency - 18 rue Léon Frot - 75011 PARIS
+                                            </p>
+                                        </Col>
+
+                                        <Col md={4} className="d-flex justify-content-center">
+                                            Icone Mail
+                                        </Col>
+
+                                        <Col md={8} className="d-flex justify-content-center">
+                                            <p>
+                                                contact@keyservices.com
+                                            </p>
+                                        </Col>
+                                        <Col md={4} className="d-flex justify-content-center">Icone Mail</Col>
+                                        <Col md={8} className="d-flex justify-content-center">
+                                            <p>
+                                                01.21.55.16.86
+                                            </p>
+                                        </Col> */}
+                            
+                            
+                            {/* <div>
+                                <div>
+                                    <Card style={{ width: '18rem' }}>
+                                        <ListGroup variant="flush">
+                                        <FaMapMarkerAlt /><ListGroup.Item>Key Services<br />18 rue Léon Frot<br />75011 Paris</ListGroup.Item>
+                                            <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                                            <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                                        </ListGroup>
+                                    </Card>
+                                </div>
+                            </div> */}
                         </Col>
                     </Row>
                 </Container>
