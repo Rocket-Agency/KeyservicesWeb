@@ -25,14 +25,37 @@
 
 .contact-bloc-informations {
     background-color :#FAF0E6;
-    width: 630px;
-    height: auto;
+    margin-bottom: 10px;
+    font-size: 15px;
+    padding: 10px 20px;
+
+    .Position_icon {
+        align-items: center;
+        height: 60px;
+    }
+
+    .Position_informations {
+        align-items: center;
+        height: 60px;
+        justify-content: left;
+        
+    }
 }
 
 @media (max-width: 576px) {
     .contact-bloc-informations {
-        background-color :#FAF0E6;
-        width: 630px;
+        background-color : transparent;
+
+        .Position_icon {
+            background-color : transparent;
+            height: 100px;
+        }
+    
+        .Position_informations{
+            background-color : transparent;
+            height: 100px;
+            justify-content: center;
+        }
     }
 }
 
@@ -109,12 +132,5 @@ h3 {
     height: auto;
     width: 100%;
     margin-top: 30px;
-    margin-bottom: 50px; 
-}
-
-@media (max-width: 576px) {
-    .map-contact {
-        margin: 0 50px 20px;
-        padding: 20px;
-    }
+    margin-bottom: 26px; 
 }

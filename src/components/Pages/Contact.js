@@ -100,21 +100,41 @@ export class Contact extends Component {
 
 
                         <Col md={6}>
-                            <Container fluid>
-                                <Row className="contact-bloc-map d-flex justify-content-center">
+                                <Container md={{ span: 6, offset: 3 }} className="contact-bloc-map">
                                      <img src='./images/map.png' className="map-contact" alt="map contact"/>
-                                </Row>   
-                            </Container>                             
+                                </Container>   
+                     
+                                <Row fluid="md" >Ligne</Row>
 
-                                    {/* <Row className="contact-bloc-informations">
-                                        <Col xs={8} sm={12} className="d-flex justify-content-center">
-                                            Icon position
-                                        </Col>
-
-                                        <Col xs={8} sm={12} className="d-flex justify-content-center">
+                                <Container className="contact-bloc-informations">
+                                    <Row >
+                                        <Col xs={12} md={4} className="Position_icon d-flex justify-content-center">
+                                            <Row> Icon position</Row>
+                                         </Col>
+                                        <Col xs={12} md={8} className="Position_informations d-flex">
                                             Rocket Agency - 18 rue Léon Frot - 75011 PARIS
                                         </Col>
-                                    </Row> */}
+                                    </Row>
+
+                                    <Row>
+                                        <Col xs={12} md={4} className="Position_icon d-flex justify-content-center">
+                                            <Row>Icon Mail</Row>
+                                         </Col>
+                                        <Col xs={12} md={8} className="Position_informations d-flex">
+                                            contact@keyservices.com
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col xs={12} md={4} className="Position_icon d-flex justify-content-center">
+                                            <Row>Icon Tel</Row>
+                                         </Col>
+                                        <Col xs={12} md={8} className="Position_informations d-flex">
+                                            01.21.55.16.86
+                                        </Col>
+                                    </Row>
+                                </Container>
+
 
                                     {/* <Row className="contact-bloc-informations">
                                         <Col sm={3} className="d-flex justify-content-center">
@@ -135,24 +155,6 @@ export class Contact extends Component {
                                             01.21.55.16.86
                                         </Col>
                                     </Row> */}
-
-                                <Container>
-                                    <Row>
-                                        <Col sm={6}>
-                                        One of three columns
-                                            <Col sm={4}>
-                                            One of three columns
-                                            </Col>
-                                            <Col sm={4}>
-                                            One of three columns
-                                            </Col>
-                                        </Col>
-                                        <Col sm={6}>
-                                        One of three columns
-                                        </Col>
-
-                                    </Row>
-                                </Container>
 
 
                                 {/* <Row>
