@@ -1,0 +1,36 @@
+.Vertical-lign {
+    background: #A38068;
+    mix-blend-mode: normal;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    filter: blur(2px);
+    height: 368px;
+    width: 4px;
+    display: flex;
+
+}
+
+#Locataire {
+    
+}
+
+@media (max-width: 768px) {
+    .Vertical-lign  {
+        display: none;
+    }
+}
+
+.card {
+    .card-footer {
+        background: #FFFFFF;
+        border: 1px solid #87E990;
+        box-sizing: border-box;
+        margin-bottom: 56px;
+        text-align: center;
+    }
+
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+}
