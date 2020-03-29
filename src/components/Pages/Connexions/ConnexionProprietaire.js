@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../../../css/ConnexionProprietaire.scss';
+import '../../../css/ConnexionProprietaireLocataire.scss';
 
 import { Col, Container, Row, Card, Form, Button} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
@@ -20,7 +20,7 @@ export class ConnexionProprietaire extends Component {
                             <Row className="colorBackgroundConnexion">
                                 <Col md={6}>
                                     <div className="mt-4 mb-4 d-flex justify-content-center">
-                                        <h3>Connexion</h3>
+                                        <h3>Connexion Propriétaire</h3>
                                     </div>
 
                                     <Form>
@@ -46,21 +46,29 @@ export class ConnexionProprietaire extends Component {
                                                         <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
                                                             <Hidden xs>
                                                                 <div className="d-flex justify-content-center align-items-center">
-                                                                <Button id="btn-seConnecter" type="submit"><IoIosArrowForward /> </Button>
-                                                                <Link id="seConnecter" to="/connexionproprietaire">Se connecter</Link>
+                                                                    <Button id="btn-seConnecter" type="submit"  to="/">
+                                                                        <IoIosArrowForward /> 
+                                                                    </Button>
+
+                                                                    <Link id="seConnecter" to="/contact">
+                                                                        Se connecter
+                                                                    </Link>
                                                                 </div>
                                                             </Hidden>
                                                             <Visible xs>
                                                                 <div class="d-flex justify-content-center align-items-center">
-                                                                    <Button id="seConnecterMobile" type="submit">
-                                                                        <FaArrowRight/><a clasName="envoyer"> Se connecter</a>
+                                                                        <Button id="seConnecterMobile" to="/">
+                                                                            <FaArrowRight/>
+                                                                        <a clasName="envoyer" href="/contact"> 
+                                                                            Se connecter
+                                                                        </a>
                                                                     </Button>
                                                                 </div>
                                                             </Visible>
                                                         </Col>
 
                                                         <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
-                                                                <Link  to="/connexionproprietaire">S'inscrire</Link>                                                        
+                                                            <Link  to="/">S'inscrire</Link>                                                        
                                                         </Col>
                                                     </Row>
                                                 </Container>
@@ -69,9 +77,9 @@ export class ConnexionProprietaire extends Component {
                                     </Form>
                                 </Col>
 
+                                <div className="Vertical-lign-connexion align-item-center mt-5"></div>
 
                                 <Col md={6}>
-                                    <div className="Vertical-lign align-item-left mt-3"></div>
 
                                     <Card className="text-black cardConnexionImage">
                                         <Card.Img src='./images/connexion.png' alt="Card image" />

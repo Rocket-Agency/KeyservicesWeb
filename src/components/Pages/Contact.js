@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 import {Form, Col, Container, Row, Button} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
+import { Link } from 'react-router-dom';
 
 //icons
 import { IoIosArrowForward } from "react-icons/io";
@@ -77,16 +78,21 @@ export class Contact extends Component {
                                         <Col xs={8} sm={12} className="d-flex justify-content-end align-items-center">
                                                 <Hidden xs>
                                                 <Button className="content-bouton" type="submit"> 
-                                                    <Button id="btn-envoyer" type="submit">
-                                                        <IoIosArrowForward /> 
-                                                    </Button>
-                                                    <Button id="envoyer" clasName="envoyer btn-envoyer">Envoyer
-                                                    </Button>
+                                                <Button id="btn-seConnecter" type="submit"  to="/">
+                                                    <IoIosArrowForward /> 
+                                                </Button>
+
+                                                <Link id="seConnecter" to="/contact">
+                                                    Se connecter
+                                                </Link>
                                                 </Button>
                                                 </Hidden>
                                                 <Visible xs>
                                                     <Button id="envoyerMobile" type="submit">
-                                                        <FaArrowRight/><a clasName="envoyer"> Envoyer</a>
+                                                        <FaArrowRight/>
+                                                        <a clasName="envoyer" href="/validationContactForm"> 
+                                                            Envoyer
+                                                        </a>
                                                     </Button>
                                                 </Visible>
                                             </Col>      
@@ -96,8 +102,10 @@ export class Contact extends Component {
                             </div>                        
                         </Col>
 
+                        <div className="Vertical-lign align-item-center mt-5"></div>
+
                         <Col md={6}>
-                                <Container fluid md={{ span: 6, offset: 3 }} className="contact-bloc-map">
+                                <Container md={{ span: 6, offset: 3 }} className="contact-bloc-map">
                                      <img src='./images/map.png' className="map-contact" alt="map contact"/>
                                 </Container>   
                      
