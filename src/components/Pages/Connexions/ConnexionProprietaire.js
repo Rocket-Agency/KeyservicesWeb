@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../../../css/Connexion.scss';
+import '../../../css/ConnexionProprietaireLocataire.scss';
 
 import { Col, Container, Row, Card, Form, Button} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
@@ -46,21 +46,29 @@ export class ConnexionProprietaire extends Component {
                                                         <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
                                                             <Hidden xs>
                                                                 <div className="d-flex justify-content-center align-items-center">
-                                                                <Button id="btn-seConnecter" type="submit"><IoIosArrowForward /> </Button>
-                                                                <Link id="seConnecter" to="/connexionproprietaire">Se connecter</Link>
+                                                                    <Button id="btn-seConnecter" type="submit"  to="/">
+                                                                        <IoIosArrowForward /> 
+                                                                    </Button>
+
+                                                                    <Link id="seConnecter" to="/contact">
+                                                                        Se connecter
+                                                                    </Link>
                                                                 </div>
                                                             </Hidden>
                                                             <Visible xs>
                                                                 <div class="d-flex justify-content-center align-items-center">
-                                                                    <Button id="seConnecterMobile" type="submit">
-                                                                        <FaArrowRight/><a clasName="envoyer"> Se connecter</a>
+                                                                        <Button id="seConnecterMobile" to="/">
+                                                                            <FaArrowRight/>
+                                                                        <a clasName="envoyer" href="/contact"> 
+                                                                            Se connecter
+                                                                        </a>
                                                                     </Button>
                                                                 </div>
                                                             </Visible>
                                                         </Col>
 
                                                         <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
-                                                                <Link  to="/connexionproprietaire">S'inscrire</Link>                                                        
+                                                            <Link  to="/">S'inscrire</Link>                                                        
                                                         </Col>
                                                     </Row>
                                                 </Container>
