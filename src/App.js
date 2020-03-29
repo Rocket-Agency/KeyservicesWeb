@@ -12,7 +12,6 @@ import {KeyservicesPresentation} from './components/Pages/KeyservicesPresentatio
 import {Contact} from './components/Pages/Contact';
 import {ValidationContactForm} from './components/Pages/ValidationContactForm';
 import {MonEspace} from './components/Pages/MonEspace';
-import {Proprietaire} from './components/Pages/Proprietaire';
 import {ConnexionProprietaire} from './components/Pages/Connexions/ConnexionProprietaire';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -28,7 +27,6 @@ function App() {
             <Route path='/contact' component={Contact} />
             <Route path='/validationContactForm' component={ValidationContactForm} />
             <Route path='/monespace' component={MonEspace} />
-            <Route path='/proprietaire' component={Proprietaire} />
             <Route path='/connexionProprietaire' component={ConnexionProprietaire} />
           </Switch>
 

@@ -17,7 +17,6 @@ export class MonEspace extends Component {
 
                 <Container fluid>
                     <Row>
-
                         <Col md={1}></Col>
 
                         <Col md={5}>

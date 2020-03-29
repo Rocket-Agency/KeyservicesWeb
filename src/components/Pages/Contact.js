@@ -20,9 +20,9 @@ export class Contact extends Component {
                 <div className="mt-2 d-flex text-center justify-content-center">
                      <h1>On s’occupe de tous et vous de rien</h1>
                 </div>
+
                 <Container fluid>
                     <Row>
-
                         <Col md={6}>
                         
                             <div className="contact-bloc" >
