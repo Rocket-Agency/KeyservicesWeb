@@ -50,7 +50,7 @@ export class ConnexionLocataire extends Component {
                                                                         <IoIosArrowForward /> 
                                                                     </Button>
 
-                                                                    <Link id="seConnecter" to="/contact">
+                                                                    <Link id="seConnecter" to="/profileLocataire">
                                                                         Se connecter
                                                                     </Link>
                                                                 </div>
@@ -59,7 +59,7 @@ export class ConnexionLocataire extends Component {
                                                                 <div class="d-flex justify-content-center align-items-center">
                                                                         <Button id="seConnecterMobile" to="/">
                                                                             <FaArrowRight/>
-                                                                        <a clasName="envoyer" href="/contact"> 
+                                                                        <a clasName="envoyer" href="/profileLocataire"> 
                                                                             Se connecter
                                                                         </a>
                                                                     </Button>

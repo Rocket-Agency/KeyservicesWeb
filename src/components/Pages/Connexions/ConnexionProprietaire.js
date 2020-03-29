@@ -50,7 +50,7 @@ export class ConnexionProprietaire extends Component {
                                                                         <IoIosArrowForward /> 
                                                                     </Button>
 
-                                                                    <Link id="seConnecter" to="/contact">
+                                                                    <Link id="seConnecter" to="/profilePropriétaire">
                                                                         Se connecter
                                                                     </Link>
                                                                 </div>
@@ -59,7 +59,7 @@ export class ConnexionProprietaire extends Component {
                                                                 <div class="d-flex justify-content-center align-items-center">
                                                                         <Button id="seConnecterMobile" to="/">
                                                                             <FaArrowRight/>
-                                                                        <a clasName="envoyer" href="/contact"> 
+                                                                        <a clasName="envoyer" href="/profilePropriétaire"> 
                                                                             Se connecter
                                                                         </a>
                                                                     </Button>
