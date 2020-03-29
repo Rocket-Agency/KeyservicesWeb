@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import '../../css/MonEspace.scss';
+import { Link } from 'react-router-dom';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
 
+
 export class MonEspace extends Component {
+
 
     render() {
         return(
@@ -19,10 +22,11 @@ export class MonEspace extends Component {
 
                         <Col md={5}>
                             <div className="d-flex justify-content-center">
-                                <div className="card">
+                                <Card className="card">
                                     <img class="card-img" id="Propriétaire" src='./images/Propriétaire.png' alt="Gerer_Mes_Locations" />
-                                    <a class="card-footer" href="/">Mon espace propriétaire</a>
-                                </div>
+                                    <Link class="card-footer" to="/connexionproprietaire">Mon espace propriétaire</Link>
+
+                                </Card>
                             </div>
                         </Col>     
 
@@ -32,8 +36,7 @@ export class MonEspace extends Component {
                             <div className="d-flex justify-content-center"  id="Locataire">
                                 <div className="card">
                                     <img class="card-img" src='./images/Locataire.png' alt="Gerer_Mes_Locations" />
-                                    <a class="card-footer" href="/">Mon espace locataire</a>
-                                </div>
+                                    <Link class="card-footer" to="/">Mon espace locataire</Link>                              </div>
                             </div>
                         </Col>
 

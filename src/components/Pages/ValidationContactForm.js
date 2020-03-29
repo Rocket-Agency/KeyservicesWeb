@@ -9,7 +9,6 @@ export class ValidationContactForm extends Component {
         return(
             <div>
                 test
-
             </div>
         )
     }
