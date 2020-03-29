@@ -36,7 +36,8 @@ export class MonEspace extends Component {
                             <div className="d-flex justify-content-center"  id="Locataire">
                                 <div className="card">
                                     <img class="card-img" src='./images/Locataire.png' alt="Gerer_Mes_Locations" />
-                                    <Link class="card-footer" to="/">Mon espace locataire</Link>                              </div>
+                                    <Link class="card-footer" to="/">Mon espace locataire</Link>                              
+                                </div>
                             </div>
                         </Col>
 
