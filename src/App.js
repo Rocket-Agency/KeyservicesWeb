@@ -13,6 +13,10 @@ import {Contact} from './components/Pages/Contact';
 import {ValidationContactForm} from './components/Pages/ValidationContactForm';
 import {MonEspace} from './components/Pages/MonEspace';
 import {ConnexionProprietaire} from './components/Pages/Connexions/ConnexionProprietaire';
+import {ConnexionLocataire} from './components/Pages/Connexions/ConnexionLocataire';
+import {ProfileProprietaire} from './components/Pages/Connexions/Profiles/ProfileProprietaire';
+import {ProfileLocataire} from './components/Pages/Connexions/Profiles/ProfileLocataire';
+
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
@@ -28,6 +32,9 @@ function App() {
             <Route path='/validationContactForm' component={ValidationContactForm} />
             <Route path='/monespace' component={MonEspace} />
             <Route path='/connexionProprietaire' component={ConnexionProprietaire} />
+            <Route path='/connexionLocataire' component={ConnexionLocataire} />
+            <Route path='/profilePropriétaire' component={ProfileProprietaire} />
+            <Route path='/profileLocataire' component={ProfileLocataire} />
           </Switch>
 
           <Footer/>
