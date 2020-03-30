@@ -23,7 +23,7 @@ export class MonEspace extends Component {
                             <div className="d-flex justify-content-center">
                                 <Card className="card">
                                     <img class="card-img" id="Propriétaire" src='./images/Propriétaire.png' alt="Gerer_Mes_Locations" />
-                                    <Link class="card-footer" to="/connexionProprietaire">Mon espace propriétaire</Link>
+                                    <Link class="card-footer" to="/loginProprietaire">Mon espace propriétaire</Link>
 
                                 </Card>
                             </div>
@@ -35,7 +35,7 @@ export class MonEspace extends Component {
                             <div className="d-flex justify-content-center"  id="Locataire">
                                 <div className="card">
                                     <img class="card-img" src='./images/Locataire.png' alt="Gerer_Mes_Locations" />
-                                    <Link class="card-footer" to="/connexionLocataire">Mon espace locataire</Link>                              
+                                    <Link class="card-footer" to="/loginLocataire">Mon espace locataire</Link>                              
                                 </div>
                             </div>
                         </Col>

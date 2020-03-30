@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
 
-export class ConnexionProprietaire extends Component {
+export class LoginProprietaire extends Component {
 
     render() {
         return(
@@ -50,7 +50,7 @@ export class ConnexionProprietaire extends Component {
                                                                         <IoIosArrowForward /> 
                                                                     </Button>
 
-                                                                    <Link id="seConnecter" to="/profilePropriétaire">
+                                                                    <Link id="seConnecter" to="/profile">
                                                                         Se connecter
                                                                     </Link>
                                                                 </div>
@@ -59,7 +59,7 @@ export class ConnexionProprietaire extends Component {
                                                                 <div class="d-flex justify-content-center align-items-center">
                                                                         <Button id="seConnecterMobile" to="/">
                                                                             <FaArrowRight/>
-                                                                        <a clasName="envoyer" href="/profilePropriétaire"> 
+                                                                        <a clasName="envoyer" href="/profile"> 
                                                                             Se connecter
                                                                         </a>
                                                                     </Button>

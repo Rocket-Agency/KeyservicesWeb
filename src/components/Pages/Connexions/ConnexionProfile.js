@@ -10,26 +10,13 @@ import { Link } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
 
- class ConnexionProfil extends Component {
-
-    constructor(props) { 
-        super(props); 
-        this.state = { 
-            errors: {}, 
-            client: { 
-                userclient: '', 
-                clientname: '', 
-                clientbusinessname: '', 
-                password: '', 
-                confirmPassword: '' } 
-            };
-
-    state = {
-        name: '',
-        email    : '',
-        password : '',
-        redirection: false, 
-    }
+ class ConnexionProfile extends Component {
+  state = {
+    name: '',
+    email    : '',
+    password : '',
+    redirection: false, 
+  }
 
 
   handleChange = event => {
@@ -49,7 +36,6 @@ import { FaArrowRight } from "react-icons/fa";
       .then(res => {
         console.log(res);
         console.log(res.data);
-        // <Redirect to={'/profileLocataire'}/>;
         this.setState({ redirection: true });
       })
   }
@@ -85,8 +71,8 @@ import { FaArrowRight } from "react-icons/fa";
                                     <div className="d-flex justify-content-center align-items-center">
                                         <Button id="btn-seConnecter" type="submit" >
                                             <IoIosArrowForward /> 
+                                                <Redirect to='/profile'/>
                                         </Button>
-
                                         <Link id="seConnecter">
                                             Se connecter
                                         </Link>
@@ -97,7 +83,8 @@ import { FaArrowRight } from "react-icons/fa";
                                     <div class="d-flex justify-content-center align-items-center">
                                         <Button id="seConnecterMobile" >
                                             <FaArrowRight/>
-                                            <a clasName="envoyer" href=""> 
+                                                <Redirect to='/loginLocataire'/>
+                                            <a clasName="envoyer" href="/profile"> 
                                                 Se connecter
                                             </a>
                                         </Button>
@@ -114,4 +101,4 @@ import { FaArrowRight } from "react-icons/fa";
   }
 }
 
-export default ConnexionProfil;
+export default ConnexionProfile;

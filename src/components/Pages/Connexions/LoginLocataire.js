@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../../../css/ConnexionProprietaireLocataire.scss';
-import ConnexionProfil from './ConnexionProfil';
+import ConnexionProfile from './ConnexionProfile';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
@@ -10,7 +10,7 @@ import { Col, Container, Row, Card} from 'react-bootstrap';
 // import { IoIosArrowForward } from "react-icons/io";
 // import { FaArrowRight } from "react-icons/fa";
 
-export class ConnexionLocataire extends Component {
+export class LoginLocataire extends Component {
 
     render() {
         return(
@@ -24,7 +24,7 @@ export class ConnexionLocataire extends Component {
                                         <h3>Connexion Locataire</h3>
                                     </div>
 
-                                    <ConnexionProfil/>
+                                    <ConnexionProfile/>
 
                                 </Col>
 
