@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../../../css/ConnexionProprietaireLocataire.scss';
+import '../../../../css/ConnexionProprietaireLocataire.scss';
 
 import { Col, Container, Row, Card, Form, Button} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';

@@ -12,8 +12,8 @@ import {KeyservicesPresentation} from './components/Pages/KeyservicesPresentatio
 import {Contact} from './components/Pages/Contact';
 import {ValidationContactForm} from './components/Pages/ValidationContactForm';
 import {MonEspace} from './components/Pages/MonEspace';
-import {LoginProprietaire} from './components/Pages/Connexions/LoginProprietaire';
-import {LoginLocataire} from './components/Pages/Connexions/LoginLocataire';
+import {LoginProprietaire} from './components/Pages/Connexions/SignIn/LoginProprietaire';
+import {LoginLocataire} from './components/Pages/Connexions/SignIn/LoginLocataire';
 import {ConnexionProfile} from './components/Pages/Connexions/ConnexionProfile';
 import {Profile} from './components/Pages/Connexions/Profiles/Profile';
 import {ProfileProprietaire} from './components/Pages/Connexions/Profiles/ProfileProprietaire';

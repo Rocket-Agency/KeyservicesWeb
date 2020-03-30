@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import '../../../css/ConnexionProprietaireLocataire.scss';
-import ConnexionProfile from './ConnexionProfile';
+import '../../../../css/ConnexionProprietaireLocataire.scss';
+import ConnexionProfile from '../ConnexionProfile';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
