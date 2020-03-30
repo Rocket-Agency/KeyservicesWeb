@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../../../css/ConnexionProprietaireLocataire.scss';
+import {ConnexionProfil} from './components/Pages/Connexions/ConnexionProfil';
 
 import { Col, Container, Row, Card, Form, Button} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
@@ -23,18 +24,18 @@ export class ConnexionLocataire extends Component {
                                         <h3>Connexion Locataire</h3>
                                     </div>
 
-                                    <Form>
+                                    <Form >
                                         <Form.Row className="d-flex justify-content-center" >
                                             <Form.Group as={Col} md="8" controlId="formGridId">
                                             <Form.Label>Identifiant</Form.Label>
-                                            <Form.Control type="identifiant" placeholder="Entrer votre identifiant" />
+                                            <Form.Control type="email" placeholder="Entrer votre identifiant" />
                                             </Form.Group>
                                         </Form.Row>
 
                                         <Form.Row className="d-flex justify-content-center">
                                             <Form.Group as={Col} md="8" controlId="formGridPassword">
                                             <Form.Label>Mot de passe</Form.Label>
-                                            <Form.Control type="Password" placeholder="Entrer votre mot de passe" />
+                                            <Form.Control type="password" placeholder="Entrer votre mot de passe" />
                                             </Form.Group>
                                         </Form.Row>
 
