@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import '../../../css/ConnexionProprietaireLocataire.scss';
-import {ConnexionProfil} from './components/Pages/Connexions/ConnexionProfil';
+import ConnexionProfil from './ConnexionProfil';
 
-import { Col, Container, Row, Card, Form, Button} from 'react-bootstrap';
-import { Visible, Hidden } from 'react-grid-system';
-import { Link } from 'react-router-dom';
+import { Col, Container, Row, Card} from 'react-bootstrap';
+// import { Visible, Hidden } from 'react-grid-system';
+// import { Link } from 'react-router-dom';
 
-//icons
-import { IoIosArrowForward } from "react-icons/io";
-import { FaArrowRight } from "react-icons/fa";
+// //icons
+// import { IoIosArrowForward } from "react-icons/io";
+// import { FaArrowRight } from "react-icons/fa";
 
 export class ConnexionLocataire extends Component {
 
@@ -24,54 +24,8 @@ export class ConnexionLocataire extends Component {
                                         <h3>Connexion Locataire</h3>
                                     </div>
 
-                                    <Form >
-                                        <Form.Row className="d-flex justify-content-center" >
-                                            <Form.Group as={Col} md="8" controlId="formGridId">
-                                            <Form.Label>Identifiant</Form.Label>
-                                            <Form.Control type="email" placeholder="Entrer votre identifiant" />
-                                            </Form.Group>
-                                        </Form.Row>
+                                    <ConnexionProfil/>
 
-                                        <Form.Row className="d-flex justify-content-center">
-                                            <Form.Group as={Col} md="8" controlId="formGridPassword">
-                                            <Form.Label>Mot de passe</Form.Label>
-                                            <Form.Control type="password" placeholder="Entrer votre mot de passe" />
-                                            </Form.Group>
-                                        </Form.Row>
-
-                                        <Form.Row class="mt-4">
-                                            <Form.Group class="mt-4">
-                                                <Container>
-
-                                                    <Row>
-                                                        <Col xs={12} className="d-flex justify-content-center align-items-center">
-                                                            <Hidden xs>
-                                                                <div className="d-flex justify-content-center align-items-center">
-                                                                    <Button id="btn-seConnecter" type="submit"  to="/">
-                                                                        <IoIosArrowForward /> 
-                                                                    </Button>
-
-                                                                    <Link id="seConnecter" to="/profileLocataire">
-                                                                        Se connecter
-                                                                    </Link>
-                                                                </div>
-                                                            </Hidden>
-                                                            <Visible xs>
-                                                                <div class="d-flex justify-content-center align-items-center">
-                                                                        <Button id="seConnecterMobile" to="/">
-                                                                            <FaArrowRight/>
-                                                                        <a clasName="envoyer" href="/profileLocataire"> 
-                                                                            Se connecter
-                                                                        </a>
-                                                                    </Button>
-                                                                </div>
-                                                            </Visible>
-                                                        </Col>
-                                                    </Row>
-                                                </Container>
-                                            </Form.Group>
-                                        </Form.Row>
-                                    </Form>
                                 </Col>
 
                                 <div className="Vertical-lign-connexion align-item-center mt-5"></div>
@@ -98,3 +52,4 @@ export class ConnexionLocataire extends Component {
         )
     }
 }
+

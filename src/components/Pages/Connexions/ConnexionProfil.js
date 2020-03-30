@@ -1,43 +1,36 @@
-import React from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 
-class ConnexionProfil extends React.Component {
+import { Col, Container, Row, Form, Button} from 'react-bootstrap';
+import { Visible, Hidden } from 'react-grid-system';
+import { Redirect } from 'react-router'
+import { Link } from 'react-router-dom';
+
+//icons
+import { IoIosArrowForward } from "react-icons/io";
+import { FaArrowRight } from "react-icons/fa";
+
+ class ConnexionProfil extends Component {
+
+    constructor(props) { 
+        super(props); 
+        this.state = { 
+            errors: {}, 
+            client: { 
+                userclient: '', 
+                clientname: '', 
+                clientbusinessname: '', 
+                password: '', 
+                confirmPassword: '' } 
+            };
+
     state = {
-        users: []
+        name: '',
+        email    : '',
+        password : '',
+        redirection: false, 
     }
 
-    componentDidMount() {
-        axios.post('http://51.158.67.56:3001/api/auth/signup', {
-            email    : this.state.email,
-            password : this.state.password
-          })
-        .then(user => {
-        })
-    }
-
-    render(){
-        return(
-            <ul>
-                {this.state.users.map(user => <li key={user.user_id}>{user.user_email}</li>)}
-            </ul>
-        )
-    }
-}
-export default ConnexionProfil;
-
-
-
-
-
-import React from 'react';
-import axios from 'axios';
-
-export default class ConnexionProfil extends React.Component {
-  state = {
-    name: '',
-    email    : '',
-    password : '',
-  }
 
   handleChange = event => {
     this.setState({ email: event.target.value });
@@ -56,20 +49,17 @@ export default class ConnexionProfil extends React.Component {
       .then(res => {
         console.log(res);
         console.log(res.data);
+        // <Redirect to={'/profileLocataire'}/>;
+        this.setState({ redirection: true });
       })
   }
 
   render() {
+
+    const { redirection } = this.state;
+
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Person Name:
-            <input type="text" name="name" onChange={this.handleChange} />
-          </label>
-          <button type="submit">Add</button>
-        </form>
-
         <Form onSubmit={this.handleSubmit}>
             <Form.Row className="d-flex justify-content-center" >
                 <Form.Group as={Col} md="8" controlId="formGridId">
@@ -93,11 +83,11 @@ export default class ConnexionProfil extends React.Component {
                             <Col xs={12} className="d-flex justify-content-center align-items-center">
                                 <Hidden xs>
                                     <div className="d-flex justify-content-center align-items-center">
-                                        <Button id="btn-seConnecter" type="submit"  to="/">
+                                        <Button id="btn-seConnecter" type="submit" >
                                             <IoIosArrowForward /> 
                                         </Button>
 
-                                        <Link id="seConnecter" to="/profileLocataire">
+                                        <Link id="seConnecter">
                                             Se connecter
                                         </Link>
                                     </div>
@@ -105,9 +95,9 @@ export default class ConnexionProfil extends React.Component {
                                 
                                 <Visible xs>
                                     <div class="d-flex justify-content-center align-items-center">
-                                        <Button id="seConnecterMobile" to="/">
+                                        <Button id="seConnecterMobile" >
                                             <FaArrowRight/>
-                                            <a clasName="envoyer" href="/profileLocataire"> 
+                                            <a clasName="envoyer" href=""> 
                                                 Se connecter
                                             </a>
                                         </Button>
@@ -123,3 +113,5 @@ export default class ConnexionProfil extends React.Component {
     )
   }
 }
+
+export default ConnexionProfil;
