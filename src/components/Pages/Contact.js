@@ -77,15 +77,13 @@ export class Contact extends Component {
  
                                         <Col xs={8} sm={12} className="d-flex justify-content-end align-items-center">
                                                 <Hidden xs>
-                                                <Button className="content-bouton" type="submit"> 
                                                 <Button id="btn-seConnecter" type="submit"  to="/">
                                                     <IoIosArrowForward /> 
                                                 </Button>
 
                                                 <Link id="seConnecter" to="/contact">
-                                                    Se connecter
+                                                    Envoyer
                                                 </Link>
-                                                </Button>
                                                 </Hidden>
                                                 <Visible xs>
                                                     <Button id="envoyerMobile" type="submit">
