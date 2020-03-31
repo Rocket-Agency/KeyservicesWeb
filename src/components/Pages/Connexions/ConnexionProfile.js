@@ -12,7 +12,6 @@ import { FaArrowRight } from "react-icons/fa";
 
  class ConnexionProfile extends Component {
   state = {
-    name: '',
     email    : '',
     password : '',
     redirection: false, 
@@ -29,10 +28,10 @@ import { FaArrowRight } from "react-icons/fa";
 
     const user = {
         email    : this.state.email,
-        password : this.state.password
+        password : this.state.password,
     };
 
-    axios.post('http://51.158.67.56:3001/api/auth/signup', { user })
+    axios.post('http://51.158.67.56:3001/api/auth/signin', { user })
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -44,13 +43,17 @@ import { FaArrowRight } from "react-icons/fa";
 
     const { redirection } = this.state;
 
+    if (redirection) {
+        return <Redirect to='/profileLocataire'/>;
+    }
+
     return (
       <div>
         <Form onSubmit={this.handleSubmit}>
             <Form.Row className="d-flex justify-content-center" >
                 <Form.Group as={Col} md="8" controlId="formGridId">
-                    <Form.Label>Identifiant</Form.Label>
-                    <Form.Control type="email" placeholder="Entrer votre identifiant" />
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type="email" placeholder="Entrer votre email" />
                 </Form.Group>
             </Form.Row>
 
@@ -71,7 +74,6 @@ import { FaArrowRight } from "react-icons/fa";
                                     <div className="d-flex justify-content-center align-items-center">
                                         <Button id="btn-seConnecter" type="submit" >
                                             <IoIosArrowForward /> 
-                                                <Redirect to='/profile'/>
                                         </Button>
                                         <Link id="seConnecter">
                                             Se connecter
@@ -84,7 +86,7 @@ import { FaArrowRight } from "react-icons/fa";
                                         <Button id="seConnecterMobile" >
                                             <FaArrowRight/>
                                                 <Redirect to='/loginLocataire'/>
-                                            <a clasName="envoyer" href="/profile"> 
+                                            <a clasName="envoyer"> 
                                                 Se connecter
                                             </a>
                                         </Button>
