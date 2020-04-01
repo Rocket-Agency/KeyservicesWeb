@@ -1,3 +1,4 @@
+//Contact.js
 import React, {Component} from 'react'
 
 import {Form, Col, Container, Row, Button} from 'react-bootstrap';
@@ -73,7 +74,7 @@ export class Contact extends Component {
                                         </Form.Group>
                                     </Form.Row>
 
-                                    <Form.Row class="mt-4">
+                                    <Form.Row className="mt-4">
  
                                         <Col xs={8} sm={12} className="d-flex justify-content-end align-items-center">
                                                 <Hidden xs>

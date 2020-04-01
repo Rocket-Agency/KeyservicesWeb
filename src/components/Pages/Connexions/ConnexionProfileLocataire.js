@@ -1,51 +1,55 @@
+//ConnexionProfil en ConnexionProfilLocataire.js
 import React, {Component} from 'react';
 import axios from 'axios';
 
 import { Col, Container, Row, Form, Button} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-import { Redirect } from 'react-router'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 //icons
 import { IoIosArrowForward } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
 
- class ConnexionProfile extends Component {
-  state = {
-    email    : '',
-    password : '',
-    redirection: false, 
-  }
-
-
-  handleChange = event => {
-    this.setState({ email: event.target.value });
-    this.setState({ password: event.target.value });
-  }
-
-  handleSubmit = event => {
-    event.preventDefault();
-
-    const user = {
-        email    : this.state.email,
-        password : this.state.password,
-    };
-
-    axios.post('http://51.158.67.56:3001/api/auth/signin', { user })
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-        this.setState({ redirection: true });
-      })
-  }
+ class ConnexionProfileLocataire extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          email: "",
+          password: "djamel",
+          loginErrors: ""
+        };
+    
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+      }
+    
+      handleChange(event) {
+        this.setState({
+          [event.target.name]: event.target.value
+        });
+      }
+    
+      handleSubmit(event) {
+        const { email, password } = this.state;
+        axios.post(
+            "http://51.158.67.56:3000/api/auth/signin",{
+                user: {
+                email: email,
+                password: password
+              },
+            },
+          )
+          .then(response => {
+            console.log(response.data);
+          })
+          .catch(error => {
+            console.log("login error", error);
+          });
+        event.preventDefault();
+      }
 
   render() {
-
-    const { redirection } = this.state;
-
-    if (redirection) {
-        return <Redirect to='/profileLocataire'/>;
-    }
 
     return (
       <div>
@@ -53,19 +57,19 @@ import { FaArrowRight } from "react-icons/fa";
             <Form.Row className="d-flex justify-content-center" >
                 <Form.Group as={Col} md="8" controlId="formGridId">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Entrer votre email" />
+                    <Form.Control name="email" type="email" placeholder="Entrer votre email" value={this.state.email} onChange={this.handleChange} />
                 </Form.Group>
             </Form.Row>
 
             <Form.Row className="d-flex justify-content-center">
                 <Form.Group as={Col} md="8" controlId="formGridPassword">
                 <Form.Label>Mot de passe</Form.Label>
-                <Form.Control type="password" placeholder="Entrer votre mot de passe" />
+                <Form.Control name="password" type="password" placeholder="Entrer votre mot de passe" value={this.state.password} onChange={this.handleChange} />
                 </Form.Group>
             </Form.Row>
 
-            <Form.Row class="mt-4">
-                 <Form.Group class="mt-4">
+            <Form.Row>
+                 <Form.Group as={Col} md="12" className="mt-4">
                     <Container>
 
                         <Row>
@@ -75,9 +79,9 @@ import { FaArrowRight } from "react-icons/fa";
                                         <Button id="btn-seConnecter" type="submit" >
                                             <IoIosArrowForward /> 
                                         </Button>
-                                        <Link id="seConnecter">
+                                        <a id="seConnecter">
                                             Se connecter
-                                        </Link>
+                                        </a>
                                     </div>
                                 </Hidden>
                                 
@@ -85,7 +89,6 @@ import { FaArrowRight } from "react-icons/fa";
                                     <div class="d-flex justify-content-center align-items-center">
                                         <Button id="seConnecterMobile" >
                                             <FaArrowRight/>
-                                                <Redirect to='/loginLocataire'/>
                                             <a clasName="envoyer"> 
                                                 Se connecter
                                             </a>
@@ -103,4 +106,4 @@ import { FaArrowRight } from "react-icons/fa";
   }
 }
 
-export default ConnexionProfile;
+export default ConnexionProfileLocataire;
