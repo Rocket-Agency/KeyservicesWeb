@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../../../../css/ConnexionProprietaireLocataire.scss';
+import '../../../../css/ConnexionPages.scss';
 import ConnexionProfileLocataire from '../ConnexionProfileLocataire';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';

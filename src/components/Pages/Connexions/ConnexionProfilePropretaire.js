@@ -1,16 +1,11 @@
-//ConnexionProfil en ConnexionProfilLocataire.js
+//ConnexionProfilProprietaire.js
 import React, {Component} from 'react';
 import axios from 'axios';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-import { Link } from 'react-router-dom';
 
-//icons
-// import { IoIosArrowForward } from "react-icons/io";
-// import { FaArrowRight } from "react-icons/fa";
-
- class ConnexionProfileLocataire extends Component {
+class ConnexionProfileProprietaire extends Component {
     constructor(props) {
         super(props);
     
@@ -56,33 +51,31 @@ import { Link } from 'react-router-dom';
         <Form onSubmit={this.handleSubmit}>
             <Form.Row className="d-flex justify-content-center" >
                 <Form.Group as={Col} md="8" controlId="formGridId">
-                    <Form.Label>Identifiant</Form.Label>
-                    <Form.Control type="identifiant" placeholder="Entrer votre identifiant" />
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control name="email" type="email" placeholder="Entrer votre email" value={this.state.email} onChange={this.handleChange} />
                 </Form.Group>
             </Form.Row>
 
             <Form.Row className="d-flex justify-content-center">
                 <Form.Group as={Col} md="8" controlId="formGridPassword">
-                    <Form.Label>Mot de passe</Form.Label>
-                    <Form.Control type="Password" placeholder="Entrer votre mot de passe" />
+                <Form.Label>Mot de passe</Form.Label>
+                <Form.Control name="password" type="password" placeholder="Entrer votre mot de passe" value={this.state.password} onChange={this.handleChange} />
                 </Form.Group>
-             </Form.Row>
+            </Form.Row>
 
-            <Form.Row className="mt-4">
-                <Form.Group as={Col} md="12" className="mt-4">
+            <Form.Row>
+                 <Form.Group as={Col} md="12" className="mt-4">
                     <Container>
 
                         <Row>
-                            <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
+                            <Col xs={12} className="d-flex justify-content-center align-items-center">
                                 <Hidden xs>
                                     <div className="d-flex justify-content-center align-items-center">
-                                                                    {/* <Button id="btn-seConnecter" type="submit"  to="/">
-                                                                        <IoIosArrowForward /> 
-                                                                    </Button>
-
-                                                                    <Link id="seConnecter" to="/profile">
-                                                                        Se connecter
-                                                                    </Link> */}
+                                        {/* <Button id="btn-seConnecter" type="submit" >
+                                            <Link id="seConnecter" href="#">
+                                                Se connecter
+                                            </Link>
+                                        </Button> */}
 
                                         <div id="container">                    
                                             <button class="learn-more">
@@ -94,16 +87,14 @@ import { Link } from 'react-router-dom';
                                         </div>
                                     </div>
                                 </Hidden>
-
+                                
                                 <Visible xs>
-                                     <div class="d-flex justify-content-center align-items-center">
-                                                                        {/* <Button id="seConnecterMobile" to="/">
-                                                                            <FaArrowRight/>
-                                                                        <a clasName="envoyer" href="/profile"> 
-                                                                            Se connecter
-                                                                        </a>
-                                                                    </Button> */}
-
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        {/* <Button id="seConnecterMobile" >
+                                            <Link clasName="envoyer" href="#"> 
+                                                Se connecter
+                                            </Link>
+                                        </Button> */}
 
                                         <div id="container">                    
                                             <button class="learn-more">
@@ -116,10 +107,6 @@ import { Link } from 'react-router-dom';
                                     </div>
                                 </Visible>
                             </Col>
-
-                            <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
-                                <Link  to="/">S'inscrire</Link>                                                        
-                            </Col>
                         </Row>
                     </Container>
                 </Form.Group>
@@ -130,4 +117,4 @@ import { Link } from 'react-router-dom';
   }
 }
 
-export default ConnexionProfileLocataire;
+export default ConnexionProfileProprietaire;
