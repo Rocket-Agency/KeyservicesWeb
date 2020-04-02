@@ -1,7 +1,6 @@
 
 import React, {Component} from 'react';
-import '../../../../css/ConnexionPages.scss';
-
+import '../../../../css/ConnexionProprietaireLocataire.scss';
 import { Col, Container, Row, Card} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
@@ -25,7 +24,7 @@ export class LoginProprietaire extends Component {
                                         <h3>Connexion Propriétaire</h3>
                                     </div>
 
-                                    <ConnexionProfileProprietaire/>
+                                    <ConnexionProfile/>
                                 </Col>
 
                                 <div className="Vertical-lign-connexion align-item-center mt-5"></div>
