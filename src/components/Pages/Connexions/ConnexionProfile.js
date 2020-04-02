@@ -4,6 +4,8 @@ import axios from 'axios';
 import { Col, Container, Row, Form, Button} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 import { Redirect } from 'react-router'
+import {withRouter
+} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 //icons
@@ -17,7 +19,7 @@ import { FaArrowRight } from "react-icons/fa";
         this.state = {
           email: "",
           password: "",
-          loginErrors: ""
+          loginErrors: "",
         };
     
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,24 +34,30 @@ import { FaArrowRight } from "react-icons/fa";
     
       handleSubmit(event) {
         const { email, password } = this.state;
-        axios.post("http://localhost:3001/api/auth/signin",{
-          user: {
+        const config = {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        }
+        axios.post("http://51.158.67.56:3001/api/auth/signin",
+            {
                 email: email,
                 password: password
-              },
             },
+            config
           )
           .then(response => {
             console.log(response.data);
+            this.props.history.push('/profile');
           })
           .catch(error => {
-            console.log("login error", error);
+            console.log("login error", error.message);
           });
         event.preventDefault();
       }
 
   render() {
-
     return (
       <div>
         <Form onSubmit={this.handleSubmit}>
@@ -105,4 +113,4 @@ import { FaArrowRight } from "react-icons/fa";
   }
 }
 
-export default ConnexionProfile;
+export default withRouter(ConnexionProfile);
