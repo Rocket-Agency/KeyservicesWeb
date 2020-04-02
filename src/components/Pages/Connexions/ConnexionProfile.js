@@ -3,11 +3,12 @@ import axios from 'axios';
 
 import { Col, Container, Row, Form, Button} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-import {withRouter, Link} from 'react-router-dom';
-
+import { Redirect } from 'react-router-dom';
+import {withRouter
+} from 'react-router-dom';
 //icons
-import { IoIosArrowForward } from "react-icons/io";
-import { FaArrowRight } from "react-icons/fa";
+// import { IoIosArrowForward } from "react-icons/io";
+// import { FaArrowRight } from "react-icons/fa";
 
  class ConnexionProfile extends Component {
     constructor(props) {
@@ -72,31 +73,35 @@ import { FaArrowRight } from "react-icons/fa";
                 </Form.Group>
             </Form.Row>
 
-            <Form.Row class="mt-4">
-                 <Form.Group class="mt-4">
+            <Form.Row className="mt-4">
+                 <Form.Group as={Col} md="12" className="mt-4">
                     <Container>
 
                         <Row>
                             <Col xs={12} className="d-flex justify-content-center align-items-center">
                                 <Hidden xs>
                                     <div className="d-flex justify-content-center align-items-center">
-                                        <Button id="btn-seConnecter" type="submit" >
-                                            <IoIosArrowForward /> 
-                                        </Button>
-                                        <Link id="seConnecter">
-                                            Se connecter
-                                        </Link>
+                                        <div id="container">                    
+                                            <button className="learn-more">
+                                                <span className="circle" aria-hidden="true">
+                                                    <span className="icon arrow"></span>
+                                                </span>
+                                                <span className="button-text">Se connecter</span>
+                                            </button>
+                                         </div>
                                     </div>
                                 </Hidden>
                                 
                                 <Visible xs>
                                     <div className="d-flex justify-content-center align-items-center">
-                                        <Button id="seConnecterMobile" >
-                                            <FaArrowRight/>
-                                            <a clasName="envoyer"> 
-                                                Se connecter
-                                            </a>
-                                        </Button>
+                                        <div id="container">                    
+                                            <button className="learn-more">
+                                                <span className="circle" aria-hidden="true">
+                                                    <span className="icon arrow"></span>
+                                                </span>
+                                                <span className="button-text">Se connecter</span>
+                                            </button>
+                                         </div>
                                     </div>
                                 </Visible>
                             </Col>

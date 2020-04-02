@@ -15,6 +15,7 @@ import {ValidationContactForm} from './components/Pages/ValidationContactForm';
 import {MonEspace} from './components/Pages/MonEspace';
 import {LoginProprietaire} from './components/Pages/Connexions/Login/LoginProprietaire';
 import {LoginLocataire} from './components/Pages/Connexions/Login/LoginLocataire';
+import {ConnexionProfile} from './components/Pages/Connexions/ConnexionProfile';
 import {Profile} from './components/Pages/Connexions/Profiles/Profile';
 import {ProfileProprietaire} from './components/Pages/Connexions/Profiles/ProfileProprietaire';
 import {ProfileLocataire} from './components/Pages/Connexions/Profiles/ProfileLocataire';
