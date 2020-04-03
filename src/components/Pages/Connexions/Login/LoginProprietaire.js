@@ -4,7 +4,6 @@ import '../../../../css/ConnexionProprietaireLocataire.scss';
 import { Col, Container, Row, Card} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
-import ConnexionProfile from '../ConnexionProfile';
 import ConnexionProfileProprietaire from '../ConnexionProfilePropretaire';
 
 //icons

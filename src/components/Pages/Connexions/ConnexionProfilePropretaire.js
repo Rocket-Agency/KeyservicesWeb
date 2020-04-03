@@ -104,7 +104,7 @@ class ConnexionProfileProprietaire extends Component {
                             </Col>
 
                             <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
-                                <Link  to="/">S'inscrire</Link>                                                        
+                                <Link  to="/inscriptionProprietaire">S'inscrire</Link>                                                        
                             </Col>
                         </Row>
                     </Container>

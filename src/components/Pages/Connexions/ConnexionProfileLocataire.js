@@ -9,7 +9,7 @@ import { withRouter } from 'react-router-dom';
 // import { IoIosArrowForward } from "react-icons/io";
 // import { FaArrowRight } from "react-icons/fa";
 
- class ConnexionProfile extends Component {
+ class ConnexionProfileLocataire extends Component {
     constructor(props) {
         super(props);
     
@@ -114,4 +114,4 @@ import { withRouter } from 'react-router-dom';
   }
 }
 
-export default withRouter(ConnexionProfile);
+export default withRouter(ConnexionProfileLocataire);
