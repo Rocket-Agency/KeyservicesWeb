@@ -4,8 +4,7 @@ import axios from 'axios';
 import { Col, Container, Row, Form, Button} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 import { Redirect } from 'react-router-dom';
-import {withRouter
-} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 //icons
 // import { IoIosArrowForward } from "react-icons/io";
 // import { FaArrowRight } from "react-icons/fa";
@@ -47,7 +46,7 @@ import {withRouter
           )
           .then(response => {
             console.log(response.data);
-            this.props.history.push('/profile');
+            this.props.history.push('/indexProfil');
           })
           .catch(error => {
             console.log("login error", error.message);

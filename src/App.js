@@ -13,9 +13,11 @@ import {KeyservicesPresentation} from './components/Pages/KeyservicesPresentatio
 import {Contact} from './components/Pages/Contact';
 import {ValidationContactForm} from './components/Pages/ValidationContactForm';
 import {MonEspace} from './components/Pages/MonEspace';
+
+//Connexion pages
 import {LoginProprietaire} from './components/Pages/Connexions/Login/LoginProprietaire';
 import {LoginLocataire} from './components/Pages/Connexions/Login/LoginLocataire';
-import {ConnexionProfile} from './components/Pages/Connexions/ConnexionProfile';
+import {IndexProfil} from './components/Pages/Connexions/Profiles/IndexProfil';
 import {Profile} from './components/Pages/Connexions/Profiles/Profile';
 import {ProfileProprietaire} from './components/Pages/Connexions/Profiles/ProfileProprietaire';
 import {ProfileLocataire} from './components/Pages/Connexions/Profiles/ProfileLocataire';
@@ -36,6 +38,7 @@ function App() {
             <Route path='/monespace' component={MonEspace} />
             <Route path='/loginProprietaire' component={LoginProprietaire} />
             <Route path='/loginLocataire' component={LoginLocataire} />
+            <Route path='/indexProfil' component={IndexProfil} />
             <Route path='/profile' component={Profile} />
             <Route path='/profilePropriétaire' component={ProfileProprietaire} />
             <Route path='/profileLocataire' component={ProfileLocataire} />
