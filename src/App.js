@@ -20,8 +20,10 @@ import {LoginLocataire} from './components/Pages/Connexions/Login/LoginLocataire
 import {IndexProfil} from './components/Pages/Connexions/Profiles/IndexProfil';
 import {Profile} from './components/Pages/Connexions/Profiles/Profile';
 import {ProfileProprietaire} from './components/Pages/Connexions/Profiles/ProfileProprietaire';
-import {InscriptionProprietaire} from './components/Pages/Connexions/InscriptionProprietaire';
 import {ProfileLocataire} from './components/Pages/Connexions/Profiles/ProfileLocataire';
+
+//Page d'inscription
+import {InscriptionProprietaire} from './components/Pages/Connexions/InscriptionProprietaire';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -42,8 +44,8 @@ function App() {
             <Route path='/indexProfil' component={IndexProfil} />
             <Route path='/profile' component={Profile} />
             <Route path='/profilePropriétaire' component={ProfileProprietaire} />
-            <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
             <Route path='/profileLocataire' component={ProfileLocataire} />
+            <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
           </Switch>
 
         <Footer/>
