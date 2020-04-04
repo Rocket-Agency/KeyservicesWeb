@@ -157,8 +157,8 @@ export class InscriptionProprietaire extends Component {
                                          <Form.Label column sm={3}>Quel est le lien de votre location ?</Form.Label>                                        
 
                                         <Col md={6}>
-                                            <Form.Control as="select" value="Choose...">
-                                                <option>Choose...</option>
+                                            <Form.Control as="select" value="Choisir...">
+                                                <option>Choisir...</option>
                                                 <option>...</option>
                                             </Form.Control>
                                         </Col>
