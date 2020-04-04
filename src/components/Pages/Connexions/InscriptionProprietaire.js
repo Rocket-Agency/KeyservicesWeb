@@ -5,6 +5,8 @@ import '../../../css/InscriptionProprietaire.scss';
 import { Col, Container, Row, Form} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
+import Radio from '@material-ui/core/Radio';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 export class InscriptionProprietaire extends Component {
 
@@ -39,10 +41,10 @@ export class InscriptionProprietaire extends Component {
 
                     <Form >
 
-                        <Container fluid>
+                        <Container fluid className="pt-4 pb-4" >  
                             <h2>Information  Générales</h2>
-                            <Form.Row className="mt-4 mb-4">
-                                <Col  xs={12} md={6} className="col">
+                            <Form.Row className="mt-4">
+                                <Col  xs={12} md={4} className="col d-flex justify-content-center">
                                     {['checkbox'].map((type) => (
                                         <div key={`custom-inline-${type}`} >
                                             <Form.Check
@@ -61,6 +63,8 @@ export class InscriptionProprietaire extends Component {
                                             />
                                         </div>
                                     ))}
+
+                                    
                                 </Col>
                             </Form.Row>     
                         </Container>
@@ -105,9 +109,40 @@ export class InscriptionProprietaire extends Component {
                                     </Form.Row>     
                                 </Col>
                             </Row>
+                        </Container>
 
-                            <Row className="mb-4">
+                        <Container fluid className="pt-4 pb-4">
+                            <h2>Information sur votre adresse</h2>
+                            <Row className="mt-4 mb-4">
                                 <Col  xs={12} md={6}>
+                                    <Form.Row>
+                                        <Form.Label className="label-info-generales" column sm={4}>Votre adresse de facturation</Form.Label>
+                                        <Col>
+                                            <Form.Control type="text" placeholder="Votre adresse" />
+                                        </Col>
+                                        <Row>
+                                             <FormControlLabel value="end" control={<Radio color="primary" />} label="End" />
+                                        </Row>
+                                    </Form.Row>     
+                                </Col>
+
+                                <Col  xs={12} md={6}>
+                                    <Form.Row>
+                                        <Form.Label className="label-info-generales" column sm={4}>Code postal</Form.Label>
+                                        <Col>
+                                            <Form.Control type="text" placeholder="Entrer votre code postal" />
+                                        </Col>
+                                    </Form.Row>     
+                                </Col>
+                            </Row>
+                        </Container>
+
+
+                        <Container fluid className="pt-4 pb-4">
+
+                            <h2>Information sur votre connexion</h2>
+                            <Row className="mb-4">
+                            <Col  xs={12} md={6}>
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Adresse mail</Form.Label>
                                         <Col>
@@ -118,80 +153,53 @@ export class InscriptionProprietaire extends Component {
 
                                 <Col  xs={12} md={6}>
                                     <Form.Row>
-                                        <Form.Label className="label-info-generales" column sm={4}>Comfirmer votre Adresse mail</Form.Label>
-                                        <Col>
-                                            <Form.Control type="text" placeholder="Veuillez comfirmer votre Adresse mail" />
-                                        </Col>
-                                    </Form.Row>     
-                                </Col>
-                            </Row>
-
-                        </Container>
-
-                        <Container fluid className="mt-4 mb-4">
-
-                            <h2>Information sur votre location</h2>
-                            <Row className="mt-4 mb-4">
-                                <Col  xs={12} md={6}>
-                                    <Form.Row>
-                                        <Form.Label column sm={4}>Votre adresse de location</Form.Label>
-                                        <Col>
-                                            <Form.Control type="text" placeholder="Entrer votre adresse" />
-                                        </Col>
-                                    </Form.Row>     
-                                </Col>
-
-                                <Col  xs={12} md={6}>
-                                    <Form.Row>
-                                        <Form.Label column sm={4}>Code postal</Form.Label>
-                                        <Col>
-                                            <Form.Control type="text" placeholder="Entrer votre code postal" />
-                                        </Col>
-                                    </Form.Row>     
-                                </Col>
-                            </Row>
-
-                            <Row className="mb-4">
-                                <Col  xs={12} md={12}>
-                                    <Form.Row>
-                                         <Form.Label column sm={3}>Quel est le lien de votre location ?</Form.Label>                                        
-
-                                        <Col md={6}>
-                                            <Form.Control as="select" value="Choisir...">
-                                                <option>Choisir...</option>
-                                                <option>...</option>
-                                            </Form.Control>
-                                        </Col>
-
-                                    </Form.Row>     
-                                </Col>
-                            </Row>
-
-                        </Container>
-
-
-                        <Container fluid>
-
-                            <h2>Information sur votre connexion</h2>
-                            <Row className="mb-4">
-                                <Col  xs={12} md={6}>
-                                    <Form.Row>
-                                        <Form.Label column sm={4}>Votre mot de passe</Form.Label>
+                                        <Form.Label className="label-info-generales" column sm={4}>Votre mot de passe</Form.Label>
                                         <Col>
                                             <Form.Control type="text" placeholder="Entrer votre mot de passe" />
                                         </Col>
                                     </Form.Row>     
                                 </Col>
-
-                                <Col  xs={12} md={6}>
-                                    <Form.Row>
-                                        <Form.Label column sm={4}>Comfirmation de votre mot de passe</Form.Label>
-                                        <Col>
-                                            <Form.Control type="text" placeholder="Veuillez comfirmez votre mot de passe" />
-                                        </Col>
-                                    </Form.Row>     
-                                </Col>
                             </Row>
+
+
+                             <Container fluid className="mt-5 d-flex justify-content-left">
+                                <Col  xs={12} md={6}>
+                                    {['checkbox'].map((type) => (
+                                            <div key={`custom-inline-${type}`} >
+                                                <Form.Check
+                                                    custom
+                                                    inline
+                                                    label="J'accepte les conditions d'utilisations par Keyservices."
+                                                    type={type}
+                                                    id={`custom-inline-${type}-Mme`}
+                                                />
+                                            </div>
+                                        ))}
+                                </Col>   
+
+                                {/* <Col  xs={12} md={6}>
+
+                                    <div id="container">                    
+                                        <button className="validation-btn">
+                                            <span className="circle" aria-hidden="true">
+                                                <span className="icon arrow"></span>
+                                            </span>
+                                            <span className="button-text">Valider l'inscriotion</span>
+                                        </button>
+                                    </div>   
+                                </Col>    */}
+                             </Container>
+
+                            <Container fluid className="mt-2 d-flex justify-content-end">
+                                <div id="container">                    
+                                    <button className="validation-btn">
+                                        <span className="circle" aria-hidden="true">
+                                            <span className="icon arrow"></span>
+                                        </span>
+                                        <span className="button-text">Valider l'inscriotion</span>
+                                    </button>
+                                </div>           
+                            </Container>
 
                         </Container>
                     </Form>
