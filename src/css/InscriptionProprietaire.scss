@@ -3,3 +3,17 @@
     margin-bottom: 20px;
     text-align: center;
 }
+
+.Formulaire-incription{
+    padding: 10px 140px;
+    
+    .label-info-generales {
+        text-align: right;
+    }
+}
+
+@media (max-width: 768px) {
+    .Formulaire-incription  {
+        padding: 0;
+    }
+}

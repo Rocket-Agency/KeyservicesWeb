@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-import { Col, Container, Row, Form, Button} from 'react-bootstrap';
+import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 //icons
 // import { IoIosArrowForward } from "react-icons/io";
