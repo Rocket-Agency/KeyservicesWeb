@@ -6,6 +6,8 @@ import { Col, Container, Row, Form} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
 import Radio from '@material-ui/core/Radio';
+import Button from '@material-ui/core/Button';
+
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 export class InscriptionProprietaire extends Component {
@@ -121,7 +123,7 @@ export class InscriptionProprietaire extends Component {
                                             <Form.Control type="text" placeholder="Votre adresse" />
                                         </Col>
                                         <Row>
-                                             <FormControlLabel value="end" control={<Radio color="primary" />} label="End" />
+                                             {/* <FormControlLabel value="end" control={<Radio color="primary" />} label="End" /> */}
                                         </Row>
                                     </Form.Row>     
                                 </Col>
