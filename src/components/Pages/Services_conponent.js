@@ -52,6 +52,7 @@ export class Services_component extends Component {
                                     </Container>
                                 </Col>
                             </Row>
+
                             <Row className="blocBorderCenter">
                                 <Visible xs>
                                     <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
@@ -87,7 +88,6 @@ export class Services_component extends Component {
                                         </Container>
                                     </Container>
                                 </Col>
-
                             </Row>
                             
                             <Row className="blocBorder">
@@ -124,11 +124,8 @@ export class Services_component extends Component {
                                     </Container>
                                 </Col>
                             </Row>
-                            <Row className="blocBorderCenterRDV">
-                                {/* <Col md={6}  className="d-flex justify-content-end blocImgBorder">
-                                    <img src='./images/prise_rdv.png' width="100%" height="auto" alt="Logo keyservices "/>
-                                </Col> */}
 
+                            <Row className="blocBorderCenterRDV">
                                 <Visible xs>
                                     <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
                                         <img src='./images/prise_rdv_mobile.png' width="100%%" height="130px" alt="Logo keyservices "/>
@@ -164,6 +161,7 @@ export class Services_component extends Component {
                                     </Container>
                                 </Col>
                             </Row>
+                            
                         </Col>
                     </Container>
                 </Container>

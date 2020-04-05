@@ -106,27 +106,14 @@
 .blocServices {
     .blocBorder{
         border: none;
-
-        .blocImgBorderMobile {
-            display: flex;
-            justify-content: center;
-        }
     }
 
     .blocBorderCenter{
-        border: none;
-                
-        .blocImgBorder {
-                padding: 45px 20px;
-            }         
+        border: none;       
         }
 
     .blocBorderCenterRDV{
-        border: none;
-                    
-        .blocImgBorder {
-                padding: 45px 20px;
-            }         
+        border: none;      
         }
     }
 }
