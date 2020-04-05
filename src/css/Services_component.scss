@@ -18,8 +18,31 @@
         border-bottom-right-radius: 0;
 
         .blocImgBorder {
-            padding: 20px 0;
+            padding: 45px 0;
         }
+
+        .blocTextBorder {
+            padding: 45px 0;
+            text-align: center;
+        }
+    }
+
+        .blocBorder {
+            border: 3px solid #49173B;
+            border-right-color: rgb(73, 23, 59);
+            border-radius: 10px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right-color: transparent;
+    
+            .blocImgBorder {
+                padding: 45px 0;
+            }
+    
+            .blocTextBorder {
+                padding: 45px 0;
+                text-align: center;
+            }
     }
 
     .blocBorderCenter {
@@ -27,10 +50,33 @@
         border-top: transparent;
         border-bottom: transparent;
         border-left-color: transparent;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
 
         .blocImgBorder {
-            padding: 20px 0;
+            padding: 45px 0;
+        }
+        
+        .blocTextBorder {
+            padding: 45px 0;
+            text-align: center;
+        }
+    }
+
+    .blocBorderCenterRDV {
+        border: 3px solid #49173B;
+        border-top: transparent;
+        border-left-color: transparent;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+        .blocImgBorder {
+            padding: 45px 0;
+        }
+        
+        .blocTextBorder {
+            padding: 45px 0;
+            text-align: center;
         }
     }
 }
-
