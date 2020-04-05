@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../../css/keyservices.scss';
-import Services_component from './Services_conponent';
+import ServicesComponent from './ServicesComponent';
 
 import {Container, Tab, Row, Col, Nav, Card} from 'react-bootstrap';
 
@@ -110,7 +110,7 @@ export class KeyservicesPresentation extends Component {
                     </Tab.Container>
                 </div>
 
-                <Services_component />
+                <ServicesComponent />
             </div>
         )
     }

@@ -37,8 +37,6 @@
     
             .blocImgBorder {
                 padding: 45px 0;
-                display: flex;
-                justify-content: end;
             }
     
             .blocTextBorder {
@@ -88,19 +86,6 @@
         }
     }
 }
-
-
-.blocBorderTest {
-    border: 3px solid #49173B;
-    border-radius: 10px;
-    border-right-color: transparent;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    display: flex;
-}
-
 
 @media (max-width: 576px) {
 .blocServices {

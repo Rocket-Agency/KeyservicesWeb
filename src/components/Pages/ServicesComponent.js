@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import '../../css/Services_component.scss';
+import '../../css/ServicesComponent.scss';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 
 
-export class Services_component extends Component {
+export class ServicesComponent extends Component {
     render() {
         return(
             <div>
@@ -170,4 +170,4 @@ export class Services_component extends Component {
         }
     }
     
-export default Services_component;
+export default ServicesComponent;
