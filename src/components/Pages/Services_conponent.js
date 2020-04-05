@@ -15,25 +15,24 @@ export class Services_component extends Component {
                         Nos services proposés
                     </h2>
 
-
                     <Container className="blocServices">
                         <Col>
                             <Row className="blocBorder">
                                 <Visible xs>
-                                    <Col md={6}  className="d-flex justify-content-center blocImgBorderMobbile">
-                                        <img src='./images/remise_des_clés_mobile.jpg' width="320px%" height="130px" alt="Logo keyservices "/>
+                                    <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
+                                        <img src='./images/remise_des_clés_mobile.jpg' width="100%%" height="130px" alt="Logo keyservices "/>
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
-                                    <Col md={6}  className="d-flex justify-content-end blocImgBorder">
-                                        <img src='./images/remise_des_clef.png' width="100%" height="auto" className="imgServices" alt="Logo keyservices "/>
+                                    <Col md={6} className="d-flex justify-content-end blocImgBorder">
+                                        <img src='./images/remise_des_clés.png' width="100%" height="auto" className="imgServices" alt="Logo keyservices "/>
                                     </Col>
                                 </Hidden>
                                 
-                                <Col md={6}  className="d-flex justify-content-center blocTextBorder">
+                                <Col md={6} className="d-flex justify-content-center blocTextBorder">
                                     <Container>
-                                        <h3 className="d-flex justify-content-center">Remise des clef</h3>
+                                        <h3 className="d-flex justify-content-center">Remise des clés</h3>
                                         <p className="d-flex justify-content-center">Ea qui magna laboris labore. Sint sit commodo esse duis deserunt 
                                             in commodo aliquip ut elit ex dolor adipisicing in. 
                                             Aliquip deserunt aliqua pariatur aliquip culpa proident
@@ -55,18 +54,18 @@ export class Services_component extends Component {
                             </Row>
                             <Row className="blocBorderCenter">
                                 <Visible xs>
-                                    <Col md={6}  className="d-flex justify-content-center blocImgBorderMobbile">
-                                        <img src='./images/frigo_mobile.jpg' width="320px%" height="130px" alt="Logo keyservices "/>
+                                    <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
+                                        <img src='./images/frigo_mobile.jpg' width="100%%" height="130px" alt="Logo keyservices "/>
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
-                                    <Col md={6}  className="d-flex justify-content-end blocImgBorder">
+                                    <Col md={6} className="d-flex justify-content-end blocImgBorder">
                                         <img src='./images/remplir_son_frigo.png' width="100%" height="auto" alt="Logo keyservices "/>
                                     </Col>
                                 </Hidden>
 
-                                <Col md={6}  className="d-flex justify-content-center blocTextBorder">
+                                <Col md={6} className="d-flex justify-content-center blocTextBorder">
                                     <Container>
                                         <div>
                                         <h3 className="d-flex justify-content-center">Remplir son frigo</h3>
@@ -92,23 +91,19 @@ export class Services_component extends Component {
                             </Row>
                             
                             <Row className="blocBorder">
-                                {/* <Col md={6}  className="d-flex justify-content-left blocImgBorder">
-                                    <img src='./images/nettoyage.png'width="100%" height="auto" alt="Logo keyservices "/>
-                                </Col> */}
-
                                 <Visible xs>
-                                    <Col md={6}  className="d-flex justify-content-center blocImgBorderMobbile">
-                                        <img src='./images/nettoyage_mobile.jpg'width="100%" height="auto" alt="Logo keyservices "/>
+                                    <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
+                                        <img src='./images/nettoyage_mobile.jpg'width="100%" height="130px" alt="Logo keyservices "/>
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
-                                    <Col md={6}  className="d-flex justify-content-end blocImgBorder">
+                                    <Col md={6} className="d-flex justify-content-end blocImgBorder">
                                         <img src='./images/nettoyage.png'width="100%" height="auto" alt="Logo keyservices "/>
                                     </Col>
                                 </Hidden>
 
-                                <Col md={6}  className="d-flex justify-content-center blocTextBorder">
+                                <Col md={6} className="d-flex justify-content-center blocTextBorder">
                                     <Container>
                                         <h3 className="d-flex justify-content-center">Nettoyage</h3>
                                         <p className="d-flex justify-content-center">Ea qui magna laboris labore. Sint sit commodo esse duis deserunt 
@@ -135,14 +130,14 @@ export class Services_component extends Component {
                                 </Col> */}
 
                                 <Visible xs>
-                                    <Col md={6}  className="d-flex justify-content-center blocImgBorderMobbile">
-                                        <img src='./images/prise_rdv_mobile.png' width="320px%" height="130px" alt="Logo keyservices "/>
+                                    <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
+                                        <img src='./images/prise_rdv_mobile.png' width="100%%" height="130px" alt="Logo keyservices "/>
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
-                                    <Col md={6}  className="d-flex justify-content-end blocImgBorder">
-                                        <img src='./images/prise_rdv.png' width="100%" height="auto" alt="Logo keyservices "/>
+                                    <Col md={6} className="d-flex justify-content-end blocImgBorder">
+                                        <img src='./images/prise_rdv_mobile.png' width="100%" height="auto" alt="Logo keyservices "/>
                                     </Col>
                                 </Hidden>
 
