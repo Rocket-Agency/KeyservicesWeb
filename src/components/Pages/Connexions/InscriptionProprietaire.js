@@ -9,10 +9,6 @@ import { Col, Container, Row, Form} from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 
-import {GoSearch} from 'react-icons/go';
-
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-
 export class InscriptionProprietaire extends Component {
 
     render() {
