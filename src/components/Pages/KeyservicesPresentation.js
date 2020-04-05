@@ -3,7 +3,6 @@ import '../../css/keyservices.scss';
 import Services_component from './Services_conponent';
 
 import {Container, Tab, Row, Col, Nav, Card} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 export class KeyservicesPresentation extends Component {
 

@@ -37,6 +37,8 @@
     
             .blocImgBorder {
                 padding: 45px 0;
+                display: flex;
+                justify-content: end;
             }
     
             .blocTextBorder {
@@ -52,6 +54,9 @@
         border-left-color: transparent;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        display: flex;
 
         .blocImgBorder {
             padding: 45px 0;
@@ -69,6 +74,9 @@
         border-left-color: transparent;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        display: flex;
 
         .blocImgBorder {
             padding: 45px 0;
@@ -77,6 +85,42 @@
         .blocTextBorder {
             padding: 45px 0;
             text-align: center;
+        }
+    }
+}
+
+
+.blocBorderTest {
+    border: 3px solid #49173B;
+    border-radius: 10px;
+    border-right-color: transparent;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    display: flex;
+}
+
+
+@media (max-width: 576px) {
+.blocServices {
+    .blocBorder{
+        border: none;
+
+        .blocImgBorderMobbile {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .blocBorderCenter{
+        border: none;
+                
+        .blocImgBorder {
+                width: 100%;
+                height: 130px;
+                padding: 45px 20px;
+            }         
         }
     }
 }
