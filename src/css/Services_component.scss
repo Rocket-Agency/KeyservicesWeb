@@ -6,3 +6,31 @@
     filter: blur(4px);
     width: 380px;
 }
+
+.blocServices {
+    padding: 20px 0;
+
+    .blocBorder {
+        border: 3px solid #49173B;
+        border-radius: 10px;
+        border-right-color: transparent;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+
+        .blocImgBorder {
+            padding: 20px 0;
+        }
+    }
+
+    .blocBorderCenter {
+        border: 3px solid #49173B;
+        border-top: transparent;
+        border-bottom: transparent;
+        border-left-color: transparent;
+
+        .blocImgBorder {
+            padding: 20px 0;
+        }
+    }
+}
+

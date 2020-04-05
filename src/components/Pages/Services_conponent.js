@@ -13,31 +13,41 @@ export class Services_component extends Component {
                 </h1>
 
 
-                <Container>
-                    <Row>
-                        <Col sm={6}  className="d-flex justify-content-center">
-                            <img src='./images/remise_des_clef.png' className="imgServices" alt="Logo keyservices "/>
-                        </Col>
-                        <Col sm={6}  className="d-flex justify-content-center">
-                            Texte
-                        </Col>
-                    </Row>
-                    {/* <Row>
-                        <Col sm={6}  className="d-flex justify-content-center">
-                            Texte
-                        </Col>
-                        <Col sm={6}  className="d-flex justify-content-center">
-                            <img src='./images/remise_des_clef.png' width="500px" height="200px" alt="Logo keyservices "/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col sm={6}  className="d-flex justify-content-center">
-                            <img src='./images/remise_des_clef.png' width="500px" height="200px" alt="Logo keyservices "/>
-                        </Col>
-                        <Col sm={6}  className="d-flex justify-content-center">
-                            Texte
-                        </Col>
-                    </Row> */}
+                <Container className="blocServices">
+                    <Col>
+                        <Row className="blocBorder">
+                            <Col sm={6}  className="d-flex justify-content-left blocImgBorder">
+                                <img src='./images/remise_des_clef.png' className="imgServices" alt="Logo keyservices "/>
+                            </Col>
+                            <Col sm={6}  className="d-flex justify-content-center">
+                                Texte
+                            </Col>
+                        </Row>
+                        <Row className="blocBorderCenter">
+                            <Col sm={6}  className="d-flex justify-content-center">
+                                Texte
+                            </Col>
+                            <Col sm={6}  className="d-flex justify-content-end blocImgBorder">
+                                <img src='./images/remplir_son_frigo.png' width="500px" height="200px" alt="Logo keyservices "/>
+                            </Col>
+                        </Row>
+                        <Row className="blocBorder">
+                            <Col sm={6}  className="d-flex justify-content-left blocImgBorder">
+                                <img src='./images/nettoyage.png' width="500px" height="200px" alt="Logo keyservices "/>
+                            </Col>
+                            <Col sm={6}  className="d-flex justify-content-center">
+                                Texte
+                            </Col>
+                        </Row>
+                        <Row className="blocBorderCenter">
+                            <Col sm={6}  className="d-flex justify-content-center">
+                                Texte
+                            </Col>
+                            <Col sm={6}  className="d-flex justify-content-end blocImgBorder">
+                                <img src='./images/prise_rdv.png' width="500px" height="200px" alt="Logo keyservices "/>
+                            </Col>
+                        </Row>
+                    </Col>
                 </Container>
             </div>
             )
