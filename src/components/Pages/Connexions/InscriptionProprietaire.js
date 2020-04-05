@@ -42,7 +42,7 @@ export class InscriptionProprietaire extends Component {
 
                     <Form>
 
-                        <Container fluid className="pt-4 pb-4" >  
+                        <Container fluid className="pt-4 pb-4 blocForm" >  
                             <h2 className="title-form">Information  Générales</h2>
                             <Form.Row className="mt-4">
                                 <Col  xs={12} md={4} className="col d-flex justify-content-center pt-3 pb-3">
@@ -68,51 +68,51 @@ export class InscriptionProprietaire extends Component {
                                     
                                 </Col>
                             </Form.Row>     
+
+                            <Container fluid>
+                                <Row>
+                                    <Col  xs={12} md={6} className="pb-3">
+                                        <Form.Row>
+                                            <Form.Label className="label-info-generales" column sm={4}>Nom</Form.Label>
+                                            <Col>
+                                                <Form.Control type="text" placeholder="Entrer votre nom" />
+                                            </Col>
+                                        </Form.Row>     
+                                    </Col>
+
+                                    <Col  xs={12} md={6} className="pb-3">
+                                        <Form.Row>
+                                            <Form.Label className="label-info-generales" column sm={4}>Prénom</Form.Label>
+                                            <Col>
+                                                <Form.Control type="text" placeholder="Entrer votre nom" />
+                                            </Col>
+                                        </Form.Row>     
+                                    </Col>
+                                </Row>
+                        
+                                <Row>
+                                    <Col  xs={12} md={6} className="pb-3">
+                                        <Form.Row>
+                                            <Form.Label className="label-info-generales" column sm={4}>Numéro de téléphone</Form.Label>
+                                            <Col>
+                                                <Form.Control type="text" placeholder="Entrer votre numéro de téléphone" />
+                                            </Col>
+                                        </Form.Row>     
+                                    </Col>
+
+                                    <Col  xs={12} md={6} className="pb-3">
+                                        <Form.Row>
+                                            <Form.Label className="label-info-generales" column sm={4}>Date de naissance</Form.Label>
+                                            <Col>
+                                                <Form.Control type="date" />
+                                            </Col>
+                                        </Form.Row>     
+                                    </Col>
+                                </Row>
+                            </Container>
                         </Container>
 
-                        <Container fluid>
-                            <Row>
-                                <Col  xs={12} md={6} className="pb-3">
-                                    <Form.Row>
-                                        <Form.Label className="label-info-generales" column sm={4}>Nom</Form.Label>
-                                        <Col>
-                                            <Form.Control type="text" placeholder="Entrer votre nom" />
-                                        </Col>
-                                    </Form.Row>     
-                                </Col>
-
-                                <Col  xs={12} md={6} className="pb-3">
-                                    <Form.Row>
-                                        <Form.Label className="label-info-generales" column sm={4}>Prénom</Form.Label>
-                                        <Col>
-                                            <Form.Control type="text" placeholder="Entrer votre nom" />
-                                        </Col>
-                                    </Form.Row>     
-                                </Col>
-                            </Row>
-                    
-                            <Row>
-                                <Col  xs={12} md={6} className="pb-3">
-                                    <Form.Row>
-                                        <Form.Label className="label-info-generales" column sm={4}>Numéro de téléphone</Form.Label>
-                                        <Col>
-                                            <Form.Control type="text" placeholder="Entrer votre numéro de téléphone" />
-                                        </Col>
-                                    </Form.Row>     
-                                </Col>
-
-                                <Col  xs={12} md={6} className="pb-3">
-                                    <Form.Row>
-                                        <Form.Label className="label-info-generales" column sm={4}>Date de naissance</Form.Label>
-                                        <Col>
-                                            <Form.Control type="date" />
-                                        </Col>
-                                    </Form.Row>     
-                                </Col>
-                            </Row>
-                        </Container>
-
-                        <Container fluid className="pt-4 pb-4">
+                        <Container fluid className="pt-4 pb-4 blocForm">
                             <h2 className="title-form">Information sur votre adresse</h2>
                             <Row className="mt-4 mb-4">
                                 <Col  xs={12} md={6} className="pb-3">
@@ -151,7 +151,7 @@ export class InscriptionProprietaire extends Component {
                             </Row>
                         </Container>
 
-                        <Container fluid className="pt-4 pb-4">
+                        <Container fluid className="pt-4 pb-4 blocForm">
 
                             <h2 className="title-form">Information sur votre connexion</h2>
                             <Row>

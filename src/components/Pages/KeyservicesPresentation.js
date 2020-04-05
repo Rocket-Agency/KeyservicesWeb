@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import '../../css/keyservices.scss';
 import Services_component from './Services_conponent';
 
-import {Container, Tabs, Tab, Row, Col, Nav} from 'react-bootstrap';
+import {Container, Tab, Row, Col, Nav, Card} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export class KeyservicesPresentation extends Component {
 
@@ -29,9 +30,9 @@ export class KeyservicesPresentation extends Component {
                                 <Tab.Content className="container bloc">
 
                                     <Tab.Pane eventKey="presentation">
-                                        <Container>
+                                        <Container >
 
-                                            <Row middle="xs">
+                                            <Row className="mt-2" middle="xs">
                                                 <Col md={4} className="d-flex justify-content-center align-items-center">
                                                     <img src='./images/Keyservices_Logo_presentation.png' width="200px" height="200px" alt="Logo keyservices "/>
                                                 </Col>
@@ -54,44 +55,54 @@ export class KeyservicesPresentation extends Component {
                                     </Tab.Pane>
 
                                     <Tab.Pane eventKey="villes">
-                                        <p>Villes images + Nom de la ville</p>
 
                                         <Container>
-                                            <Row>
-                                                <div class="col-sm">
-                                                One of three columns
-                                                </div>
-                                                <div class="col-sm">
-                                                One of three columns
-                                                </div>
-                                                <div class="col-sm">
-                                                One of three columns
-                                                </div>
-                                            </Row>
-                                            <Row>
-                                                <div class="col-sm">
-                                                One of three columns
-                                                </div>
-                                                <div class="col-sm">
-                                                One of three columns
-                                                </div>
-                                                <div class="col-sm">
-                                                One of three columns
-                                                </div>
-                                            </Row>
+                                                
+                                                <h1 className="mt-2 text-center TitleBlocCity">Nos villes actuelles</h1>
 
+                                                <Row className="BlocCity">
+                                                    <div class="col-sm-4 d-flex justify-content-center CityImg">
+                                                        <Card>
+                                                            <Card.Img variant="top" src='./images/paris.png' width="300px" height="150px" alt="Logo keyservices "/>
+                                                            <Card.Link className="CityLink" href="#">Paris</Card.Link>
+                                                        </Card>
+                                                    </div>
+                                                    <div class="col-sm-4 d-flex justify-content-center CityImg">
+                                                        <Card>
+                                                            <Card.Img variant="top" src='./images/lyon.png' width="300px" height="150px" alt="Logo keyservices "/>
+                                                            <Card.Link className="CityLink" href="#">Lyon</Card.Link>
+                                                        </Card>
+                                                    </div>
+                                                    <div class="col-sm-4 d-flex justify-content-center CityImg">
+                                                        <Card>
+                                                            <Card.Img variant="top" src='./images/lourdes.png' width="300px" height="150px" alt="Logo keyservices "/>
+                                                            <Card.Link className="CityLink" href="#">Lourdes</Card.Link>
+                                                        </Card>
+                                                    </div>
+                                                </Row>
 
-                                            <Row xs="3">
-                                                <Col>Paris</Col>
-                                                <Col>Lyon</Col>
-                                                <Col>Lourdes</Col>
-                                            </Row>
+                                                <h1 className="text-center">Nos prochaines villes</h1>
 
-                                            <Row xs="3">
-                                                <Col>Toulouse</Col>
-                                                <Col>Nice</Col>
-                                                <Col>La Rochelle</Col>
-                                            </Row>
+                                                <Row className="BlocCity">
+                                                    <div class="col-sm-4 d-flex justify-content-center CityImg">
+                                                        <Card >
+                                                            <Card.Img variant="top" src='./images/toulouse.png' width="300px" height="150px" alt="Logo keyservices "/>
+                                                            <Card.Link className="CityLink" href="#">Toulouse</Card.Link>
+                                                        </Card>
+                                                    </div>
+                                                    <div class="col-sm-4 d-flex justify-content-center CityImg">
+                                                        <Card style={{ width: '18rem' }}>
+                                                            <Card.Img variant="top" src='./images/nice.png' width="300px" height="150px" alt="Logo keyservices "/>
+                                                            <Card.Link className="CityLink" href="#">Nice</Card.Link>
+                                                        </Card>
+                                                    </div>
+                                                    <div class="col-sm-4 d-flex justify-content-center CityImg">
+                                                        <Card style={{ width: '18rem' }}>
+                                                            <Card.Img variant="top" src='./images/la_rochelle.png' width="300px" height="150px" alt="Logo keyservices "/>
+                                                            <Card.Link className="CityLink" href="#">La Rochelle</Card.Link>
+                                                        </Card>
+                                                    </div>
+                                                 </Row>
 
                                         </Container>
                                     </Tab.Pane>

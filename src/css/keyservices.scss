@@ -2,6 +2,8 @@
     background: #FAF0E6;
     border: 2px solid #49173B;
     margin-bottom: 20px;
+    padding-top: 20px
+    
 }
 
 .nav-link {
@@ -13,6 +15,10 @@
 }
 
 @media (max-width: 576px) {
+    .bloc {
+        padding: 20px 0;
+    }
+
     .nav-link {
         width: 145px;
     }
@@ -76,4 +82,24 @@
     font-size: 14px;
     line-height: 30px;
     text-align: center;
+}
+
+.TitleBlocCity {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.BlocCity {
+    padding: 15px 0 20px 0;
+
+    .CityImg {
+        padding-bottom: 20px;
+
+
+        .CityLink {
+            text-align: center;
+            padding-top: 10px;
+            color: #1A73E8;
+        }
+    }
 }
