@@ -6,7 +6,7 @@
 
 .Formulaire-incription{
     padding: 10px 140px;
-    
+        
     .label-info-generales {
         text-align: right;
     }
@@ -15,6 +15,16 @@
 @media (max-width: 768px) {
     .Formulaire-incription  {
         padding: 10px;
+
+        .title-form{
+            text-align: center;
+            font-size: 25px;
+            line-height: 30px;
+        }
+
+        .label-info-generales {
+            text-align: left;
+        }
     }
 }
 
@@ -22,4 +32,20 @@
     flex-direction: column;
     margin-bottom: 20px;
     text-align: center;
+    background-color: #87E990;
+}
+
+.iconAttachFile {
+    transform:rotate(45deg);
+}
+
+.attachmenBtn {
+    .MuiButton-label{
+        background-color: #87E990;
+        text-transform: none;
+        padding: 5px 10px;
+        .MuiSvgIcon-root {
+            margin-right: 5px;
+        }
+    }
 }

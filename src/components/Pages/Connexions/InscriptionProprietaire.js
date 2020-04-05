@@ -5,8 +5,11 @@ import '../../../css/InscriptionProprietaire.scss';
 import { Col, Container, Row, Form} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
-import Radio from '@material-ui/core/Radio';
+// import Radio from '@material-ui/core/Radio';
 import Button from '@material-ui/core/Button';
+import AttachFileIcon from '@material-ui/icons/AttachFile';
+
+import {GoSearch} from 'react-icons/go';
 
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
@@ -41,12 +44,12 @@ export class InscriptionProprietaire extends Component {
 
                 <Container fluid className="Formulaire-incription">
 
-                    <Form >
+                    <Form>
 
                         <Container fluid className="pt-4 pb-4" >  
-                            <h2>Information  Générales</h2>
+                            <h2 className="title-form">Information  Générales</h2>
                             <Form.Row className="mt-4">
-                                <Col  xs={12} md={4} className="col d-flex justify-content-center">
+                                <Col  xs={12} md={4} className="col d-flex justify-content-center pt-3 pb-3">
                                     {['checkbox'].map((type) => (
                                         <div key={`custom-inline-${type}`} >
                                             <Form.Check
@@ -72,8 +75,8 @@ export class InscriptionProprietaire extends Component {
                         </Container>
 
                         <Container fluid>
-                            <Row className="mb-4">
-                                <Col  xs={12} md={6}>
+                            <Row>
+                                <Col  xs={12} md={6} className="pb-3">
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Nom</Form.Label>
                                         <Col>
@@ -82,7 +85,7 @@ export class InscriptionProprietaire extends Component {
                                     </Form.Row>     
                                 </Col>
 
-                                <Col  xs={12} md={6}>
+                                <Col  xs={12} md={6} className="pb-3">
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Prénom</Form.Label>
                                         <Col>
@@ -92,8 +95,8 @@ export class InscriptionProprietaire extends Component {
                                 </Col>
                             </Row>
                     
-                            <Row className="mb-4">
-                                <Col  xs={12} md={6}>
+                            <Row>
+                                <Col  xs={12} md={6} className="pb-3">
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Numéro de téléphone</Form.Label>
                                         <Col>
@@ -102,7 +105,7 @@ export class InscriptionProprietaire extends Component {
                                     </Form.Row>     
                                 </Col>
 
-                                <Col  xs={12} md={6}>
+                                <Col  xs={12} md={6} className="pb-3">
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Date de naissance</Form.Label>
                                         <Col>
@@ -114,9 +117,9 @@ export class InscriptionProprietaire extends Component {
                         </Container>
 
                         <Container fluid className="pt-4 pb-4">
-                            <h2>Information sur votre adresse</h2>
+                            <h2 className="title-form">Information sur votre adresse</h2>
                             <Row className="mt-4 mb-4">
-                                <Col  xs={12} md={6}>
+                                <Col  xs={12} md={6} className="pb-3">
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Votre adresse de facturation</Form.Label>
                                         <Col>
@@ -128,7 +131,7 @@ export class InscriptionProprietaire extends Component {
                                     </Form.Row>     
                                 </Col>
 
-                                <Col  xs={12} md={6}>
+                                <Col  xs={12} md={6} className="pb-3">
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Code postal</Form.Label>
                                         <Col>
@@ -136,15 +139,27 @@ export class InscriptionProprietaire extends Component {
                                         </Col>
                                     </Form.Row>     
                                 </Col>
+
+                                <Col  xs={12} md={6}>
+                                    <Form.Row>
+                                         <Form.Label column sm={12}>Veuillez fournir un justificatif de domicile</Form.Label>
+                                    </Form.Row>
+
+                                    <Form.Row>
+                                         <Button className="attachmenBtn">
+                                            <AttachFileIcon className="iconAttachFile" />  
+                                            Envoyer un justificatif
+                                        </Button>         
+                                    </Form.Row>     
+                                </Col>
                             </Row>
                         </Container>
 
-
                         <Container fluid className="pt-4 pb-4">
 
-                            <h2>Information sur votre connexion</h2>
-                            <Row className="mb-4">
-                            <Col  xs={12} md={6}>
+                            <h2 className="title-form">Information sur votre connexion</h2>
+                            <Row>
+                                <Col  xs={12} md={6} className="pb-3">
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Adresse mail</Form.Label>
                                         <Col>
@@ -153,7 +168,7 @@ export class InscriptionProprietaire extends Component {
                                     </Form.Row>     
                                 </Col>
 
-                                <Col  xs={12} md={6}>
+                                <Col  xs={12} md={6} className="pb-3">
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Votre mot de passe</Form.Label>
                                         <Col>
@@ -164,19 +179,11 @@ export class InscriptionProprietaire extends Component {
                             </Row>
 
 
-                             <Container fluid className="mt-5 d-flex justify-content-left">
-                                <Col  xs={12} md={6}>
-                                    {['checkbox'].map((type) => (
-                                            <div key={`custom-inline-${type}`} >
-                                                <Form.Check
-                                                    custom
-                                                    inline
-                                                    label="J'accepte les conditions d'utilisations par Keyservices."
-                                                    type={type}
-                                                    id={`custom-inline-${type}-Mme`}
-                                                />
-                                            </div>
-                                        ))}
+                             <Container fluid className="d-flex justify-content-left">
+                                <Col  xs={12} md={6} className="pb-3">
+                                      <Form.Group controlId="formBasicCheckbox">
+                                        <Form.Check type="checkbox" label="J'accepte les conditions d'utilisations par Keyservices." />
+                                    </Form.Group>
                                 </Col>   
 
                                 {/* <Col  xs={12} md={6}>
