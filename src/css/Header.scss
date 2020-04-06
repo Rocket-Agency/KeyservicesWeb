@@ -6,14 +6,18 @@
   }
 
 .navbar {
-    padding: 10px;
+    padding: 10px 38px 10px 60px;
+}
+
+@media (max-width: 768px)  {
+    .navbar {
+        padding: 10px;
+    }
 }
     
 .navbar-nav {
     text-align: center;
 }
-
-
 
 //Menu responsive
 .menu-title-mobile {
@@ -21,8 +25,8 @@
     display: none;
 
     @media (max-width: 768px)  {
-            .menu-title-mobile {
-              display: block;
-            }
-          }
+        .menu-title-mobile {
+            display: block;
+        }
+    }
 }

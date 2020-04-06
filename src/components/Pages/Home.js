@@ -1,5 +1,6 @@
+//Home.js
 import React, {Component} from 'react';
-import '../../css/Home.css';
+import '../../css/Home.scss';
 
 
 
@@ -9,7 +10,7 @@ export class Home extends Component {
         return(
             <div>
                 <div className="mt-5 d-flex text-center justify-content-center">
-                    <h3>On s’occupe de tous et vous de rien</h3>
+                    <h1>On s’occupe de tous et vous de rien</h1>
                 </div>
             
                 <div className="container-fluid">
@@ -29,13 +30,23 @@ export class Home extends Component {
                             eget porta ligula. Vestibulum dictum ullamcorper nunc, nec vehicula tortor dictum et.</p>
                         </div>
 
-                        <div className="container-fluid">
+                        <div className="container">
                             <div className="row">
-                                <div className="col-md-6 text-center">Poster une annonce
-                                    
+                            <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
+                                    <div className="card">
+                                        <img className="card-img style-card" src='./images/GererMesLocations.png' alt="Gerer_Mes_Locations" />
+                                        <div className="card-img-overlay">
+                                            <button className="btn btn-md btn-success"> Gérer mes locations</button>
+                                        </div>
+                                   </div>
                                 </div>
-                                <div className="col-md-6 text-center">Gérer mes locations
-                                
+                                <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
+                                    <div className="card">
+                                        <img className="card-img style-card" src='./images/PosterUneAnnonce.png' alt="Gerer_Mes_Locations" />
+                                        <div className="card-img-overlay">
+                                            <button className="btn btn-md btn-success"> Poster une annonce</button>
+                                        </div>
+                                   </div>
                                 </div>
                             </div>
                         </div>
