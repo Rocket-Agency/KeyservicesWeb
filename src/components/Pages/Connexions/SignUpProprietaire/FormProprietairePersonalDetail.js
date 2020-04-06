@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import '../../../../css/Profiles.scss';
 
-export class IndexProfil extends Component {
+export class FormProprietairePersonalDetail extends Component {
 
     render() {
         return(
@@ -15,3 +14,5 @@ export class IndexProfil extends Component {
         )
     }
 }
+
+export default FormProprietairePersonalDetail;

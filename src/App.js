@@ -23,7 +23,7 @@ import {ProfileProprietaire} from './components/Pages/Connexions/Profiles/Profil
 import {ProfileLocataire} from './components/Pages/Connexions/Profiles/ProfileLocataire';
 
 //Page d'inscription
-import {InscriptionProprietaire} from './components/Pages/Connexions/InscriptionProprietaire';
+import {InscriptionProprietaire} from './components/Pages/Connexions/SignUpProprietaire/InscriptionProprietaire';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
