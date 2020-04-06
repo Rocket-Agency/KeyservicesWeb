@@ -26,7 +26,7 @@ class ConnexionProfileProprietaire extends Component {
           [event.target.name]: event.target.value
         });
       }
-    
+
       handleSubmit(event) {
         const { email, password } = this.state;
         const config = {
@@ -60,14 +60,25 @@ class ConnexionProfileProprietaire extends Component {
             <Form.Row className="d-flex justify-content-center" >
                 <Form.Group as={Col} md="8" controlId="formGridId">
                     <Form.Label>Identifiant</Form.Label>
-                    <Form.Control name="email" type="email" placeholder="Entrer votre email" value={this.state.email} onChange={this.handleChange} />
+                    <Form.Control    
+                        name="email" 
+                        type="email" 
+                        placeholder="Entrer votre email" 
+                        value={this.state.email} onChange={this.handleChange} />
                 </Form.Group>
             </Form.Row>
 
             <Form.Row className="d-flex justify-content-center">
                 <Form.Group as={Col} md="8" controlId="formGridPassword">
                 <Form.Label>Mot de passe</Form.Label>
-                <Form.Control name="password" type="password" placeholder="Entrer votre mot de passe" value={this.state.password} onChange={this.handleChange} />
+                <Form.Control 
+                    name="password" 
+                    type="password" 
+                    placeholder="Entrer votre mot de passe" 
+                    value={this.state.password} onChange={this.handleChange} />
+                    <div style={{ fontSize: 12, color: "red"}} > 
+                        {this.state.passwordError}
+                    </div>                    
                 </Form.Group>
             </Form.Row>
 
