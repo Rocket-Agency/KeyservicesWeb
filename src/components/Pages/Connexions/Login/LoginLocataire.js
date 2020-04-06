@@ -3,12 +3,6 @@ import '../../../../css/ConnexionPages.scss';
 import ConnexionProfileLocataire from '../ConnexionProfileLocataire';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
-// import { Visible, Hidden } from 'react-grid-system';
-// import { Link } from 'react-router-dom';
-
-// //icons
-// import { IoIosArrowForward } from "react-icons/io";
-// import { FaArrowRight } from "react-icons/fa";
 
 export class LoginLocataire extends Component {
 
