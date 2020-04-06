@@ -29,20 +29,20 @@ class ConnexionProfileProprietaire extends Component {
         });
       }
     
-    validate = () => {
-        let emailError = "";
-        // let passwordError = "";
+    // validate = () => {
+    //     let emailError = "";
+    //     // let passwordError = "";
 
-        if (this.state.email.includes('@')) {
-            emailError = "Veuillez entrer un email valide";
-        }
+    //     if (this.state.email.includes('@')) {
+    //         emailError = "Veuillez entrer un email valide";
+    //     }
 
-        if (emailError) {
-            this.setState({emailError});
-            return false;
-        }
-        return true;
-    };
+    //     if (emailError) {
+    //         this.setState({emailError});
+    //         return false;
+    //     }
+    //     return true;
+    // };
 
 
       handleSubmit(event) {
@@ -68,7 +68,7 @@ class ConnexionProfileProprietaire extends Component {
             console.log("login error", error.message);
           });
         event.preventDefault();
-        const isValid = this.validate();
+        // const isValid = this.validate();
       }
 
   render() {
@@ -81,7 +81,7 @@ class ConnexionProfileProprietaire extends Component {
                     <Form.Label>Identifiant</Form.Label>
                     <Form.Control name="email" type="email" placeholder="Entrer votre email" value={this.state.email} onChange={this.handleChange} />
                 </Form.Group>
-                <div style={{ fontSize: 12, color: red}}>{this.state.emailError}</div>
+                {/* <div style={{ fontSize: 12, color: red}}>{this.state.emailError}</div> */}
             </Form.Row>
 
             <Form.Row className="d-flex justify-content-center">
@@ -89,7 +89,7 @@ class ConnexionProfileProprietaire extends Component {
                 <Form.Label>Mot de passe</Form.Label>
                 <Form.Control name="password" type="password" placeholder="Entrer votre mot de passe" value={this.state.password} onChange={this.handleChange} />
                 </Form.Group>
-                <div style={{ fontSize: 12, color: red}}>{this.state.emailError}</div>
+                {/* <div style={{ fontSize: 12, color: red}}>{this.state.emailError}</div> */}
             </Form.Row>
 
             <Form.Row className="mt-4">
