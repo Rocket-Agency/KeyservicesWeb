@@ -59,19 +59,19 @@ export class KeyservicesPresentation extends Component {
                                                 <h1 className="mt-2 text-center TitleBlocCity">Nos villes actuelles</h1>
 
                                                 <Row className="BlocCity">
-                                                    <div class="col-sm-4 d-flex justify-content-center CityImg">
+                                                    <div className="col-sm-4 d-flex justify-content-center CityImg">
                                                         <Card>
                                                             <Card.Img variant="top" src='./images/paris.png' width="300px" height="150px" alt="Logo keyservices "/>
                                                             <Card.Link className="CityLink" href="#">Paris</Card.Link>
                                                         </Card>
                                                     </div>
-                                                    <div class="col-sm-4 d-flex justify-content-center CityImg">
+                                                    <div className="col-sm-4 d-flex justify-content-center CityImg">
                                                         <Card>
                                                             <Card.Img variant="top" src='./images/lyon.png' width="300px" height="150px" alt="Logo keyservices "/>
                                                             <Card.Link className="CityLink" href="#">Lyon</Card.Link>
                                                         </Card>
                                                     </div>
-                                                    <div class="col-sm-4 d-flex justify-content-center CityImg">
+                                                    <div className="col-sm-4 d-flex justify-content-center CityImg">
                                                         <Card>
                                                             <Card.Img variant="top" src='./images/lourdes.png' width="300px" height="150px" alt="Logo keyservices "/>
                                                             <Card.Link className="CityLink" href="#">Lourdes</Card.Link>
@@ -82,19 +82,19 @@ export class KeyservicesPresentation extends Component {
                                                 <h1 className="text-center">Nos prochaines villes</h1>
 
                                                 <Row className="BlocCity">
-                                                    <div class="col-sm-4 d-flex justify-content-center CityImg">
+                                                    <div className="col-sm-4 d-flex justify-content-center CityImg">
                                                         <Card >
                                                             <Card.Img variant="top" src='./images/toulouse.png' width="300px" height="150px" alt="Logo keyservices "/>
                                                             <Card.Link className="CityLink" href="#">Toulouse</Card.Link>
                                                         </Card>
                                                     </div>
-                                                    <div class="col-sm-4 d-flex justify-content-center CityImg">
+                                                    <div className="col-sm-4 d-flex justify-content-center CityImg">
                                                         <Card style={{ width: '18rem' }}>
                                                             <Card.Img variant="top" src='./images/nice.png' width="300px" height="150px" alt="Logo keyservices "/>
                                                             <Card.Link className="CityLink" href="#">Nice</Card.Link>
                                                         </Card>
                                                     </div>
-                                                    <div class="col-sm-4 d-flex justify-content-center CityImg">
+                                                    <div className="col-sm-4 d-flex justify-content-center CityImg">
                                                         <Card style={{ width: '18rem' }}>
                                                             <Card.Img variant="top" src='./images/la_rochelle.png' width="300px" height="150px" alt="Logo keyservices "/>
                                                             <Card.Link className="CityLink" href="#">La Rochelle</Card.Link>
