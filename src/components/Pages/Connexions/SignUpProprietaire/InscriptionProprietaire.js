@@ -1,6 +1,6 @@
 //IndexProfil.js
 import React, {Component} from 'react';
-import '../../../css/InscriptionProprietaire.scss';
+import '../../../../css/InscriptionProprietaire.scss';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
@@ -84,7 +84,7 @@ export class InscriptionProprietaire extends Component {
                                         <Form.Row>
                                             <Form.Label className="label-info-generales" column sm={4}>Prénom</Form.Label>
                                             <Col>
-                                                <Form.Control type="text" placeholder="Entrer votre nom" />
+                                                <Form.Control type="text" placeholder="Entrer votre prénom" />
                                             </Col>
                                         </Form.Row>     
                                     </Col>
