@@ -75,10 +75,7 @@ class ConnexionProfileProprietaire extends Component {
                     name="password" 
                     type="password" 
                     placeholder="Entrer votre mot de passe" 
-                    value={this.state.password} onChange={this.handleChange} />
-                    <div style={{ fontSize: 12, color: "red"}} > 
-                        {this.state.passwordError}
-                    </div>                    
+                    value={this.state.password} onChange={this.handleChange} />                 
                 </Form.Group>
             </Form.Row>
 
