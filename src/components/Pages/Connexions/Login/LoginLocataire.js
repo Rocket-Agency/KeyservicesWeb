@@ -5,7 +5,6 @@ import ConnexionProfileLocataire from '../ConnexionProfileLocataire';
 import { Col, Container, Row, Card} from 'react-bootstrap';
 
 export class LoginLocataire extends Component {
-
     render() {
         return(
             <div>

@@ -14,6 +14,8 @@ class ConnexionProfileProprietaire extends Component {
         this.state = {
           email: "",
           password: "",
+          emailError:"",
+          passwordError: "",
           loginErrors: "",
         };
     
@@ -50,6 +52,7 @@ class ConnexionProfileProprietaire extends Component {
             console.log("login error", error.message);
           });
         event.preventDefault();
+        // const isValid = this.validate();
       }
 
   render() {
@@ -66,7 +69,7 @@ class ConnexionProfileProprietaire extends Component {
                         placeholder="Entrer votre email" 
                         value={this.state.email} 
                         onChange={this.handleChange} />
-                </Form.Group>
+                    </Form.Group>
             </Form.Row>
 
             <Form.Row className="d-flex justify-content-center">
