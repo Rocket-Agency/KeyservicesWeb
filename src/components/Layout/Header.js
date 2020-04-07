@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import logo from '../../Keyservices_Logo.png';
-import Searchbar from './Searchbar';
-import Langues from './Langues';
+// import Searchbar from './Searchbar';
 
 import '../../css/Header.scss';
 import '../../css/Searchbar.scss';
 import { NavLink } from 'react-router-dom';
-import {Navbar, Nav, Col, Row, Container} from 'react-bootstrap';
+import {Navbar, Nav} from 'react-bootstrap';
 import BlocLeft from './BlocLeft';
 
 
@@ -35,7 +34,7 @@ export class Header extends Component {
                         </Nav>
 
                         <div md={12} className="d-flex flex-direction-column aligns-center">
-                             <BlocLeft />
+                          <BlocLeft />
                         </div>
                     </Navbar.Collapse>
                 </Navbar>

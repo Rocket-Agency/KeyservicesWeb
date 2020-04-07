@@ -4,9 +4,7 @@ import '../../css/Searchbar.scss';
 import {Form, FormControl, Button, Col, Row} from 'react-bootstrap';
 import {GoSearch} from 'react-icons/go';
 
-
-
-export class BlocLeft extends Component {
+  export class BlocLeft extends Component {
     render() {
         return(
             <Col md={12}>
