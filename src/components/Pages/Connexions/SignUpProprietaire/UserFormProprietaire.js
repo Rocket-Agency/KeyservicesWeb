@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import UserFormProprietairePersonalDetail from './UserFormProprietairePersonalDetail'
 
 export class UserFormProprietaire extends Component {
     state = {
@@ -7,7 +8,7 @@ export class UserFormProprietaire extends Component {
         lastName : '',
         email : '',
         tel : '',
-        date_of_birth : ''
+        dateOfBirth : ''
     }
 
     // Pour aller au formulaire suivant
@@ -33,13 +34,13 @@ export class UserFormProprietaire extends Component {
 
     render() {
         const { step } = this.state;
-        const { firstName, lastName, email, tel, date_of_birth} = this.state;
-        const value = { firstName, lastName, email, tel, date_of_birth} = this.state;
+        const { firstName, lastName, email, tel, dateOfBirth } = this.state;
+        const values = { firstName, lastName, email, tel, ddateOfBirth } = this.state;
 
        switch(step) {
            case 1:
             return (
-                <UserFormProprietaire
+                <UserFormProprietairePersonalDetail
                     nextStep={this.nextStep}
                     handleChange={this.handleChange}
                     value={values}

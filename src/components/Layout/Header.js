@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import logo from '../../Keyservices_Logo.png';
 import Searchbar from './Searchbar';
+import Langues from './Langues';
 
 import '../../css/Header.scss';
 import '../../css/Searchbar.scss';
 import { NavLink } from 'react-router-dom';
-import {Navbar, Nav} from 'react-bootstrap';
+import {Navbar, Nav, Col, Row, Container} from 'react-bootstrap';
+import BlocLeft from './BlocLeft';
 
 
 export class Header extends Component {
@@ -15,11 +17,11 @@ export class Header extends Component {
                 <div className="top"></div>
 
                 <Navbar collapseOnSelect expand="md" variant="light">
-                <a className="navbar-brand" href="/">
-                    <img src={logo} alt="logo" style={{ 
-                        width: '100px'
-                    }} />
-                </a>
+                    <a className="navbar-brand" href="/">
+                        <img src={logo} alt="logo" style={{ 
+                            width: '100px'
+                        }} />
+                    </a>
                 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
@@ -32,8 +34,9 @@ export class Header extends Component {
                             <NavLink className="d-inline menustyle" to="/monespace">Mon Espace</NavLink>
                         </Nav>
 
-                        <Searchbar />
-                        
+                        <div md={12} className="d-flex flex-direction-column aligns-center">
+                             <BlocLeft />
+                        </div>
                     </Navbar.Collapse>
                 </Navbar>
                 
