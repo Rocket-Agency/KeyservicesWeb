@@ -29,22 +29,6 @@ class ConnexionProfileProprietaire extends Component {
         });
       }
     
-    // validate = () => {
-    //     let emailError = "";
-    //     // let passwordError = "";
-
-    //     if (this.state.email.includes('@')) {
-    //         emailError = "Veuillez entrer un email valide";
-    //     }
-
-    //     if (emailError) {
-    //         this.setState({emailError});
-    //         return false;
-    //     }
-    //     return true;
-    // };
-
-
       handleSubmit(event) {
         const { email, password } = this.state;
         const config = {
