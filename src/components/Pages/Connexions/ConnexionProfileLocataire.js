@@ -62,10 +62,10 @@ import { withRouter } from 'react-router-dom';
                 <Form.Group as={Col} md="8" controlId="formGridId">
                     <Form.Label>Email</Form.Label>
                     <Form.Control 
-                        name="password" 
-                        type="password" 
-                        placeholder="Entrer votre mot de passe" 
-                        value={this.state.password} 
+                        name="email" 
+                        type="email" 
+                        placeholder="Entrer votre email" 
+                        value={this.state.email} 
                         onChange={this.handleChange} />
                 </Form.Group>
             </Form.Row>
