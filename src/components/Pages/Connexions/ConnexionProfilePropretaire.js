@@ -64,7 +64,8 @@ class ConnexionProfileProprietaire extends Component {
                         name="email" 
                         type="email" 
                         placeholder="Entrer votre email" 
-                        value={this.state.email} onChange={this.handleChange} />
+                        value={this.state.email} 
+                        onChange={this.handleChange} />
                 </Form.Group>
             </Form.Row>
 
@@ -75,7 +76,8 @@ class ConnexionProfileProprietaire extends Component {
                     name="password" 
                     type="password" 
                     placeholder="Entrer votre mot de passe" 
-                    value={this.state.password} onChange={this.handleChange} />                 
+                    value={this.state.password} 
+                    onChange={this.handleChange} />                 
                 </Form.Group>
             </Form.Row>
 
