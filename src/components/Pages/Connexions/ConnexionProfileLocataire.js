@@ -5,6 +5,9 @@ import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 // import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import VerticalTabs, {Dashboard} from './components/Pages/Dashboard';
+
+import ProfileTabs from './components/Pages/Dashboard';
 //icons
 // import { IoIosArrowForward } from "react-icons/io";
 // import { FaArrowRight } from "react-icons/fa";
@@ -46,10 +49,10 @@ import { withRouter } from 'react-router-dom';
           )
           .then(response => {
             console.log(response.data);
-            this.props.history.push('/indexProfil');
+            this.props.history.push('/dashboard', {user: response.data});
           })
           .catch(error => {
-            console.log("login error", error.message);
+            console.log(error);
           });
         event.preventDefault();
       }

@@ -25,6 +25,9 @@ import {ProfileLocataire} from './components/Pages/Connexions/Profiles/ProfileLo
 //Page d'inscription
 import {InscriptionProprietaire} from './components/Pages/Connexions/SignUpProprietaire/InscriptionProprietaire';
 
+//Dashboard
+import ProfileTabs from './components/Pages/Dashboard';
+
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
@@ -46,6 +49,7 @@ function App() {
             <Route path='/profilePropriétaire' component={ProfileProprietaire} />
             <Route path='/profileLocataire' component={ProfileLocataire} />
             <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
+            <Route path='/dashboard' component={ProfileTabs} />
           </Switch>
 
         <Footer/>

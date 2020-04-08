@@ -7,6 +7,7 @@ import '../../css/Searchbar.scss';
 import { NavLink } from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap';
 import BlocLeft from './BlocLeft';
+import { browserHistory } from 'react-router';
 
 
 export class Header extends Component {

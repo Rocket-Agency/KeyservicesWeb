@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 
@@ -19,9 +18,9 @@ export class Success extends Component {
     return (
       <MuiThemeProvider > 
         <React.Fragment>
-            <AppBar title="Success" />
-            <h1>Thank You For Your Submission</h1>
-            <p>You will get an email with further instructions</p>
+            <AppBar title="Success"/>
+            <h1 className="ttitle_Form">Merci de votre inscription</h1>
+            <p className="">Vous recevrez un email de confirmation avec les instructions pour valider votre compte</p>
         </React.Fragment>
       </MuiThemeProvider>
     );
