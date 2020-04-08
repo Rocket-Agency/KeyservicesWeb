@@ -8,6 +8,9 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
+import {Form, Container, Col, Row} from 'react-bootstrap';
+import AttachFileIcon from '@material-ui/icons/AttachFile';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -25,22 +28,169 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Select campaign settings', 'Create an ad group', 'Create an ad'];
+  return ['Information générales', 'Information sur votre adresse', 'Information sur votre connexion'];
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`;
+      return  <Form>
+            <Container fluid className="pt-4 pb-4 blocForm" >  
+                <h2 className="title-form">Information  Générales</h2>
+                <Form.Row className="mt-4">
+                    <Col  xs={12} md={4} className="col d-flex justify-content-center pt-3 pb-3">
+                        {['checkbox'].map((type) => (
+                            <div key={`custom-inline-${type}`} >
+                                <Form.Check
+                                    custom
+                                    inline
+                                    label="Mme"
+                                    type={type}
+                                    id={`custom-inline-${type}-Mme`}
+                                />
+                                <Form.Check
+                                    custom
+                                    inline
+                                    label="Mr"
+                                    type={type}
+                                    id={`custom-inline-${type}-Mr`}
+                                />
+                            </div>
+                        ))}
+
+                        
+                    </Col>
+                </Form.Row>     
+
+                <Container fluid>
+                    <Row>
+                        <Col  xs={12} md={6} className="pb-3">
+                            <Form.Row>
+                                <Form.Label className="label-info-generales" column sm={4}>Nom</Form.Label>
+                                <Col>
+                                    <Form.Control type="text" placeholder="Entrer votre nom" />
+                                </Col>
+                            </Form.Row>     
+                        </Col>
+
+                        <Col  xs={12} md={6} className="pb-3">
+                            <Form.Row>
+                                <Form.Label className="label-info-generales" column sm={4}>Prénom</Form.Label>
+                                <Col>
+                                    <Form.Control type="text" placeholder="Entrer votre prénom" />
+                                </Col>
+                            </Form.Row>     
+                        </Col>
+                    </Row>
+            
+                    <Row>
+                        <Col  xs={12} md={6} className="pb-3">
+                            <Form.Row>
+                                <Form.Label className="label-info-generales" column sm={4}>Numéro de téléphone</Form.Label>
+                                <Col>
+                                    <Form.Control type="text" placeholder="Entrer votre numéro de téléphone" />
+                                </Col>
+                            </Form.Row>     
+                        </Col>
+
+                        <Col  xs={12} md={6} className="pb-3">
+                            <Form.Row>
+                                <Form.Label className="label-info-generales" column sm={4}>Date de naissance</Form.Label>
+                                <Col>
+                                    <Form.Control type="date" />
+                                </Col>
+                            </Form.Row>     
+                        </Col>
+                    </Row>
+                </Container>
+            </Container>
+            </Form>
     case 1:
-      return 'An ad group contains one or more ads which target a shared set of keywords.';
+      return  <Container fluid className="pt-4 pb-4 blocForm">
+                    <h2 className="title-form">Information sur votre adresse</h2>
+                    <Row className="mt-4 mb-4">
+                        <Col  xs={12} md={6} className="pb-3">
+                            <Form.Row>
+                                <Form.Label className="label-info-generales" column sm={4}>Votre adresse de facturation</Form.Label>
+                                <Col>
+                                    <Form.Control type="text" placeholder="Votre adresse" />
+                                </Col>
+                                <Row>
+                                    {/* <FormControlLabel value="end" control={<Radio color="primary" />} label="End" /> */}
+                                </Row>
+                            </Form.Row>     
+                        </Col>
+
+                        <Col  xs={12} md={6} className="pb-3">
+                            <Form.Row>
+                                <Form.Label className="label-info-generales" column sm={4}>Code postal</Form.Label>
+                                <Col>
+                                    <Form.Control type="text" placeholder="Entrer votre code postal" />
+                                </Col>
+                            </Form.Row>     
+                        </Col>
+
+                        <Col  xs={12} md={6}>
+                            <Form.Row>
+                                <Form.Label column sm={12}>Veuillez fournir un justificatif de domicile</Form.Label>
+                            </Form.Row>
+
+                            <Form.Row>
+                                <Button className="attachmenBtn">
+                                    <AttachFileIcon className="iconAttachFile" />  
+                                    Envoyer un justificatif
+                                </Button>         
+                            </Form.Row>     
+                        </Col>
+                    </Row>
+                </Container>
+
     case 2:
-      return `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`;
+      return  <Form> 
+                <Container fluid className="pt-4 pb-4 blocForm">
+
+                    <h2 className="title-form">Information sur votre connexion</h2>
+                    <Row>
+                        <Col  xs={12} md={6} className="pb-3">
+                            <Form.Row>
+                                <Form.Label className="label-info-generales" column sm={4}>Adresse mail</Form.Label>
+                                <Col>
+                                    <Form.Control type="text" placeholder="Entrer votre adresse mail" />
+                                </Col>
+                            </Form.Row>     
+                        </Col>
+
+                        <Col  xs={12} md={6} className="pb-3">
+                            <Form.Row>
+                                <Form.Label className="label-info-generales" column sm={4}>Votre mot de passe</Form.Label>
+                                <Col>
+                                    <Form.Control type="text" placeholder="Entrer votre mot de passe" />
+                                </Col>
+                            </Form.Row>     
+                        </Col>
+                    </Row>
+
+
+                    <Container fluid className="d-flex justify-content-left">
+                        <Col  xs={12} md={6} className="pb-3">
+                                <Form.Group controlId="formBasicCheckbox">
+                                <Form.Check type="checkbox" label="J'accepte les conditions d'utilisations par Keyservices." />
+                            </Form.Group>
+                        </Col>   
+                    </Container>
+
+                    {/* <Container fluid className="mt-2 d-flex justify-content-end">
+                        <div id="container">                    
+                            <button className="validation-btn">
+                                <span className="circle" aria-hidden="true">
+                                    <span className="icon arrow"></span>
+                                </span>
+                                <span className="button-text">Valider l'inscriotion</span>
+                            </button>
+                        </div>           
+                    </Container> */}
+                </Container>
+            </Form>
     default:
       return 'Unknown step';
   }
@@ -63,6 +213,10 @@ export default function VerticalLinearStepper() {
     setActiveStep(0);
   };
 
+  const hanfleConnexion = () => {
+      setActiveStep(0);
+  }
+
   return (
     <div className={classes.root}>
       <Stepper activeStep={activeStep} orientation="vertical">
@@ -78,7 +232,7 @@ export default function VerticalLinearStepper() {
                     onClick={handleBack}
                     className={classes.button}
                   >
-                    Back
+                    Retour
                   </Button>
                   <Button
                     variant="contained"
@@ -98,8 +252,19 @@ export default function VerticalLinearStepper() {
         <Paper square elevation={0} className={classes.resetContainer}>
           <Typography>Vous avez terminer l'inscription - vous pouvez retourner à la page d'accueil </Typography>
           <Button onClick={handleReset} className={classes.button}>
-            Reset
+            Recommancer
           </Button>
+
+          <Container fluid className="mt-2 d-flex justify-content-end">
+            <div id="container">                    
+                <button className="validation-btn">
+                    <span className="circle" aria-hidden="true">
+                        <span className="icon arrow"></span>
+                    </span>
+                    <span className="button-text">Se connecter</span>
+                    </button>
+                </div>           
+            </Container>
         </Paper>
       )}
     </div>

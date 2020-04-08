@@ -184,7 +184,7 @@ export class InscriptionProprietaire extends Component {
                                     </Form.Group>
                                 </Col>   
                              </Container>
-
+{/* 
                             <Container fluid className="mt-2 d-flex justify-content-end">
                                 <div id="container">                    
                                     <button className="validation-btn">
@@ -194,7 +194,7 @@ export class InscriptionProprietaire extends Component {
                                         <span className="button-text">Valider l'inscriotion</span>
                                     </button>
                                 </div>           
-                            </Container>
+                            </Container> */}
 
                             <FormProprietairePersonalDetail/>
 
