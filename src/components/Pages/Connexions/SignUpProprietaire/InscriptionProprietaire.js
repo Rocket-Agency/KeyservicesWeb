@@ -9,6 +9,8 @@ import { Col, Container, Row, Form} from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 
+import FormProprietairePersonalDetail from './FormProprietairePersonalDetail'
+
 export class InscriptionProprietaire extends Component {
 
     render() {
@@ -181,18 +183,6 @@ export class InscriptionProprietaire extends Component {
                                         <Form.Check type="checkbox" label="J'accepte les conditions d'utilisations par Keyservices." />
                                     </Form.Group>
                                 </Col>   
-
-                                {/* <Col  xs={12} md={6}>
-
-                                    <div id="container">                    
-                                        <button className="validation-btn">
-                                            <span className="circle" aria-hidden="true">
-                                                <span className="icon arrow"></span>
-                                            </span>
-                                            <span className="button-text">Valider l'inscriotion</span>
-                                        </button>
-                                    </div>   
-                                </Col>    */}
                              </Container>
 
                             <Container fluid className="mt-2 d-flex justify-content-end">
@@ -205,6 +195,8 @@ export class InscriptionProprietaire extends Component {
                                     </button>
                                 </div>           
                             </Container>
+
+                            <FormProprietairePersonalDetail/>
 
                         </Container>
                     </Form>
