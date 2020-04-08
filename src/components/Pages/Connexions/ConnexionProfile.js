@@ -40,7 +40,7 @@ import { FaArrowRight } from "react-icons/fa";
             'Accept': 'application/json'
           }
         }
-        axios.post("http://localhost:3000/api/auth/signin",
+        axios.post("http://localhost:3001/api/auth/signin",
             {
                 email: email,
                 password: password
