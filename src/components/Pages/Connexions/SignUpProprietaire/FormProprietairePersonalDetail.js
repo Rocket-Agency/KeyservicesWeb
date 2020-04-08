@@ -1,110 +1,31 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import '../../../../css/InscriptionProprietaire.scss';
+
+// import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import StepContent from '@material-ui/core/StepContent';
-import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import InformationGenerales from './InformationGenerales';
+
+import {Button} from 'react-bootstrap';
 
 import {Form, Container, Col, Row} from 'react-bootstrap';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-  },
-  button: {
-    marginTop: theme.spacing(1),
-    marginRight: theme.spacing(1),
-  },
-  actionsContainer: {
-    marginBottom: theme.spacing(2),
-  },
-  resetContainer: {
-    padding: theme.spacing(3),
-  },
-}));
-
 function getSteps() {
-  return ['Information générales', 'Information sur votre adresse', 'Information sur votre connexion'];
+  return ['Information générales', 'Information sur votre adresse', 'Information sur votre connexion', 'Résumer de votre inscription'];
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return  <Form>
-            <Container fluid className="pt-4 pb-4 blocForm" >  
-                <h2 className="title-form">Information  Générales</h2>
-                <Form.Row className="mt-4">
-                    <Col  xs={12} md={4} className="col d-flex justify-content-center pt-3 pb-3">
-                        {['checkbox'].map((type) => (
-                            <div key={`custom-inline-${type}`} >
-                                <Form.Check
-                                    custom
-                                    inline
-                                    label="Mme"
-                                    type={type}
-                                    id={`custom-inline-${type}-Mme`}
-                                />
-                                <Form.Check
-                                    custom
-                                    inline
-                                    label="Mr"
-                                    type={type}
-                                    id={`custom-inline-${type}-Mr`}
-                                />
-                            </div>
-                        ))}
+      return    <Form>
+                    <InformationGenerales />
+                </Form>
 
-                        
-                    </Col>
-                </Form.Row>     
-
-                <Container fluid>
-                    <Row>
-                        <Col  xs={12} md={6} className="pb-3">
-                            <Form.Row>
-                                <Form.Label className="label-info-generales" column sm={4}>Nom</Form.Label>
-                                <Col>
-                                    <Form.Control type="text" placeholder="Entrer votre nom" />
-                                </Col>
-                            </Form.Row>     
-                        </Col>
-
-                        <Col  xs={12} md={6} className="pb-3">
-                            <Form.Row>
-                                <Form.Label className="label-info-generales" column sm={4}>Prénom</Form.Label>
-                                <Col>
-                                    <Form.Control type="text" placeholder="Entrer votre prénom" />
-                                </Col>
-                            </Form.Row>     
-                        </Col>
-                    </Row>
-            
-                    <Row>
-                        <Col  xs={12} md={6} className="pb-3">
-                            <Form.Row>
-                                <Form.Label className="label-info-generales" column sm={4}>Numéro de téléphone</Form.Label>
-                                <Col>
-                                    <Form.Control type="text" placeholder="Entrer votre numéro de téléphone" />
-                                </Col>
-                            </Form.Row>     
-                        </Col>
-
-                        <Col  xs={12} md={6} className="pb-3">
-                            <Form.Row>
-                                <Form.Label className="label-info-generales" column sm={4}>Date de naissance</Form.Label>
-                                <Col>
-                                    <Form.Control type="date" />
-                                </Col>
-                            </Form.Row>     
-                        </Col>
-                    </Row>
-                </Container>
-            </Container>
-            </Form>
     case 1:
       return  <Container fluid className="pt-4 pb-4 blocForm">
                     <h2 className="title-form">Information sur votre adresse</h2>
@@ -191,13 +112,17 @@ function getStepContent(step) {
                     </Container> */}
                 </Container>
             </Form>
+
+    case 3:
+    return "Résumer de votre inscription"
+        
     default:
-      return 'Unknown step';
+      return 'Etape inconnu';
   }
 }
 
 export default function VerticalLinearStepper() {
-  const classes = useStyles();
+    
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
 
@@ -213,34 +138,28 @@ export default function VerticalLinearStepper() {
     setActiveStep(0);
   };
 
-  const hanfleConnexion = () => {
-      setActiveStep(0);
-  }
-
   return (
-    <div className={classes.root}>
+    <div>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((label, index) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
             <StepContent>
               <Typography>{getStepContent(index)}</Typography>
-              <div className={classes.actionsContainer}>
-                <div>
+              <div>
+                <div  className="blocButtonForm">
                   <Button
                     disabled={activeStep === 0}
                     onClick={handleBack}
-                    className={classes.button}
+                    className="buttonReturn"
                   >
                     Retour
                   </Button>
                   <Button
-                    variant="contained"
-                    color="primary"
                     onClick={handleNext}
-                    className={classes.button}
+                    className="buttonStep"
                   >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                    {activeStep === steps.length - 1 ? 'Finalisation' : 'Suivant'}
                   </Button>
                 </div>
               </div>
@@ -249,19 +168,19 @@ export default function VerticalLinearStepper() {
         ))}
       </Stepper>
       {activeStep === steps.length && (
-        <Paper square elevation={0} className={classes.resetContainer}>
+        <Paper square elevation={0}>
           <Typography>Vous avez terminer l'inscription - vous pouvez retourner à la page d'accueil </Typography>
-          <Button onClick={handleReset} className={classes.button}>
-            Recommancer
+          <Button onClick={handleReset} className="mt-3">
+            Recommencer
           </Button>
 
-          <Container fluid className="mt-2 d-flex justify-content-end">
-            <div id="container">                    
-                <button className="validation-btn">
-                    <span className="circle" aria-hidden="true">
-                        <span className="icon arrow"></span>
-                    </span>
-                    <span className="button-text">Se connecter</span>
+          <Container fluid className="mt-2 mb-2 d-flex justify-content-end">
+                <div id="container">                    
+                    <button className="validation-btn">
+                        <span className="circle" aria-hidden="true">
+                            <span className="icon arrow"></span>
+                        </span>
+                        <span className="button-text">Se connecter</span>
                     </button>
                 </div>           
             </Container>

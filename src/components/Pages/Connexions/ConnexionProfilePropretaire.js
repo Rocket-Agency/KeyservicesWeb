@@ -37,7 +37,7 @@ class ConnexionProfileProprietaire extends Component {
             'Accept': 'application/json'
           }
         }
-        axios.post("http://51.158.67.56:3001/api/auth/signin",
+        axios.post("http:/localhost:3000/api/auth/signin",
             {
                 email: email,
                 password: password

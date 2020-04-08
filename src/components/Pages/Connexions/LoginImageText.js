@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../../../css/LoginImageText.scss';
 
-import { Container, Col, Form, FormGroup, Label, Input, FormText, FormFeedback } from 'reactstrap';
+import { Col } from 'reactstrap';
 import { Card} from 'react-bootstrap';
 
 export class LoginImageText extends Component {

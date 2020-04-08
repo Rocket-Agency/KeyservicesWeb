@@ -2,12 +2,7 @@
 import React, {Component} from 'react';
 import '../../../../css/InscriptionProprietaire.scss';
 
-import { Col, Container, Row, Form} from 'react-bootstrap';
-// import { Visible, Hidden } from 'react-grid-system';
-// import { Link } from 'react-router-dom';
-// import Radio from '@material-ui/core/Radio';
-import Button from '@material-ui/core/Button';
-import AttachFileIcon from '@material-ui/icons/AttachFile';
+import { Col, Container, Form} from 'react-bootstrap';
 
 import FormProprietairePersonalDetail from './FormProprietairePersonalDetail'
 
@@ -43,8 +38,8 @@ export class InscriptionProprietaire extends Component {
                 <Container fluid className="Formulaire-incription">
 
                     <Form>
-
-                        <Container fluid className="pt-4 pb-4 blocForm" >  
+                        
+                        {/* <Container fluid className="pt-4 pb-4 blocForm" >  
                             <h2 className="title-form">Information  Générales</h2>
                             <Form.Row className="mt-4">
                                 <Col  xs={12} md={4} className="col d-flex justify-content-center pt-3 pb-3">
@@ -124,7 +119,7 @@ export class InscriptionProprietaire extends Component {
                                             <Form.Control type="text" placeholder="Votre adresse" />
                                         </Col>
                                         <Row>
-                                             {/* <FormControlLabel value="end" control={<Radio color="primary" />} label="End" /> */}
+                                             <FormControlLabel value="end" control={<Radio color="primary" />} label="End" /> 
                                         </Row>
                                     </Form.Row>     
                                 </Col>
@@ -183,8 +178,8 @@ export class InscriptionProprietaire extends Component {
                                         <Form.Check type="checkbox" label="J'accepte les conditions d'utilisations par Keyservices." />
                                     </Form.Group>
                                 </Col>   
-                             </Container>
-{/* 
+                             </Container> 
+
                             <Container fluid className="mt-2 d-flex justify-content-end">
                                 <div id="container">                    
                                     <button className="validation-btn">
@@ -194,11 +189,11 @@ export class InscriptionProprietaire extends Component {
                                         <span className="button-text">Valider l'inscriotion</span>
                                     </button>
                                 </div>           
-                            </Container> */}
+                            </Container> 
 
-                            <FormProprietairePersonalDetail/>
+                        </Container> */}
 
-                        </Container>
+                        <FormProprietairePersonalDetail/>
                     </Form>
                 </Container>
             </div>
