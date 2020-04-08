@@ -21,6 +21,7 @@ export class Success extends Component {
             <AppBar title="Success"/>
             <h1 className="ttitle_Form">Merci de votre inscription</h1>
             <p className="">Vous recevrez un email de confirmation avec les instructions pour valider votre compte</p>
+            <Link  to="/inscriptionProprietaire">S'inscrire</Link>    
         </React.Fragment>
       </MuiThemeProvider>
     );
