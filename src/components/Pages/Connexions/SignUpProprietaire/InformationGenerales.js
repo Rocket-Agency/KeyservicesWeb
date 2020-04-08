@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../../../../css/Profiles.scss';
 
-import { Col, Container, Row, Card, Form, Button} from 'react-bootstrap';
+import { Col, Container, Row, Form} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
 

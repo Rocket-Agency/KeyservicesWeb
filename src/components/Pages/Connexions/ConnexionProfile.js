@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import { Col, Container, Row, Form, Button} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-import { Redirect } from 'react-router'
+// import { Redirect } from 'react-router'
 import {withRouter
 } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -96,9 +96,9 @@ import { FaArrowRight } from "react-icons/fa";
                                     <div class="d-flex justify-content-center align-items-center">
                                         <Button id="seConnecterMobile" >
                                             <FaArrowRight/>
-                                            <a clasName="envoyer"> 
+                                            <Link id="seConnecter">
                                                 Se connecter
-                                            </a>
+                                            </Link>
                                         </Button>
                                     </div>
                                 </Visible>
