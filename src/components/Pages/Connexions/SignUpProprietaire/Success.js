@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import Link from '@material-ui/core/Link';
 
 export class Success extends Component {
   continue = e => {

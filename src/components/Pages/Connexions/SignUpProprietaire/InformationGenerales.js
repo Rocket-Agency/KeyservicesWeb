@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
 import '../../../../css/Profiles.scss';
-
+import Button from '@material-ui/core/Button';
 import { Col, Container, Row, Form} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
 
 export class InformationGenerales extends Component {
+
+    continue = e => {
+        e.preventDefault();
+        this.props.nextStep();
+      };
+
 
     render() {
         return(

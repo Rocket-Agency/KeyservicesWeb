@@ -5,6 +5,7 @@ import '../../../../css/InscriptionProprietaire.scss';
 import { Col, Container, Form} from 'react-bootstrap';
 
 import FormProprietairePersonalDetail from './FormProprietairePersonalDetail'
+import UserForm from './UserForm';
 
 export class InscriptionProprietaire extends Component {
 

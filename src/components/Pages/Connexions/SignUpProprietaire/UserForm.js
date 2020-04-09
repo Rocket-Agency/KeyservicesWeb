@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import FormUserDetails from './FormUserDetails';
+// import FormUserDetails from './FormUserDetails';
 import InformationGenerales from './InformationGenerales';
 import InformationAdresse from './InformationAdresse';
 import InformationConnexion from './InformationConnexion';
 
-import FormPersonalDetails from './FormPersonalDetails';
+// import FormPersonalDetails from './FormPersonalDetails';
 import Confirm from './Confirm';
 import Success from './Success';
 import ConnexionProfilePropretaire from '../ConnexionProfilePropretaire';
@@ -64,15 +64,15 @@ export class UserForm extends Component {
             values={values}
           />
         );
-      case 3:
-        return (
-          <InformationConnexion
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            values={values}
-          />
-        );
-        case 4:
+      // case 3:
+      //   return (
+      //     <InformationConnexion
+      //       nextStep={this.nextStep}
+      //       prevStep={this.prevStep}
+      //       values={values}
+      //     />
+      //   );
+        case 3:
         return (
           <Confirm
             nextStep={this.nextStep}
@@ -80,10 +80,10 @@ export class UserForm extends Component {
             values={values}
           />
         );
-      case 5:
+      case 4:
         return <Success 
       />;
-      case 6: 
+      case 5: 
         return <ConnexionProfilePropretaire />
     }
   }

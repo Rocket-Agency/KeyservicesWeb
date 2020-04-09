@@ -25,27 +25,37 @@ export class Confirm extends Component {
         <React.Fragment>
           <AppBar title="Confirm User Data" />
           <List>
+            <h2>Information générale</h2>
             <ListItem>
               <ListItemText primary="Nom" secondary={firstName} /> 
             </ListItem>
+
             <ListItem>
               <ListItemText primary="Prénom" secondary={lastName} /> 
             </ListItem>
+
             <ListItem>
               <ListItemText primary="Tel" secondary={tel} /> 
             </ListItem>
+
             <ListItem>
               <ListItemText primary="Date de naissance" secondary={dateOfBirth} /> 
             </ListItem>
+            <br/>
+            <h2>Information de votre adresse</h2>
             <ListItem>
               <ListItemText primary="Adresse de facturation" secondary={factureAdress} /> 
             </ListItem>
+
             <ListItem>
               <ListItemText primary="Code postale" secondary={postCode} /> 
             </ListItem>
+
+            <h2>Information de connexion</h2>
             <ListItem>
               <ListItemText primary="Emai" secondary={email} /> 
             </ListItem>
+
             <ListItem>
               <ListItemText primary="Mot de passe" secondary={password} /> 
             </ListItem>
