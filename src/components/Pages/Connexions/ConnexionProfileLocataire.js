@@ -116,7 +116,6 @@ import ProfileTabs from './components/Pages/Dashboard';
                                          </div>
                                     </div>
                                 </Visible>
-                                
                             </Col>
                         </Row>
                     </Container>

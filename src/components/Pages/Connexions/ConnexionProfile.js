@@ -82,24 +82,28 @@ import { FaArrowRight } from "react-icons/fa";
                         <Row>
                             <Col xs={12} className="d-flex justify-content-center align-items-center">
                                 <Hidden xs>
-                                    <div className="d-flex justify-content-center align-items-center">
-                                        <Button id="btn-seConnecter" type="submit" >
-                                            <IoIosArrowForward /> 
-                                        </Button>
-                                        <Link id="seConnecter">
-                                            Se connecter
-                                        </Link>
+                                <div className="d-flex justify-content-center align-items-center">
+                                        <div id="container">                    
+                                            <button className="learn-more">
+                                                <span className="circle" aria-hidden="true">
+                                                    <span className="icon arrow"></span>
+                                                </span>
+                                                <span className="button-text">Se connecter</span>
+                                            </button>
+                                         </div>
                                     </div>
                                 </Hidden>
                                 
                                 <Visible xs>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <Button id="seConnecterMobile" >
-                                            <FaArrowRight/>
-                                            <Link id="seConnecter">
-                                                Se connecter
-                                            </Link>
-                                        </Button>
+                                    <div className="d-flex justify-content-center align-items-center">
+                                        <div id="container">                    
+                                            <button className="learn-more">
+                                                <span className="circle" aria-hidden="true">
+                                                    <span className="icon arrow"></span>
+                                                </span>
+                                                <span className="button-text">Se connecter</span>
+                                            </button>
+                                         </div>
                                     </div>
                                 </Visible>
                             </Col>
