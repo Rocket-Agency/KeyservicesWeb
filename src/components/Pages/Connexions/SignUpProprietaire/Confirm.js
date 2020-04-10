@@ -27,11 +27,11 @@ export class Confirm extends Component {
           <List>
             <h2>Information générale</h2>
             <ListItem>
-              <ListItemText primary="Nom" secondary={firstName} /> 
+              <ListItemText primary="Nom" secondary={lastName} /> 
             </ListItem>
 
             <ListItem>
-              <ListItemText primary="Prénom" secondary={lastName} /> 
+              <ListItemText primary="Prénom" secondary={firstName} /> 
             </ListItem>
 
             <ListItem>

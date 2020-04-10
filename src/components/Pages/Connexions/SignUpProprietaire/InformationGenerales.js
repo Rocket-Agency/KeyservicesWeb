@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import '../../../../css/Profiles.scss';
-import Button from '@material-ui/core/Button';
+// import '../../../../css/Profiles.scss';
+// import Button from '@material-ui/core/Button';
 import { Col, Container, Row, Form} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
+import TextField from '@material-ui/core/TextField';
 
 export class InformationGenerales extends Component {
 
@@ -48,6 +49,12 @@ export class InformationGenerales extends Component {
                                     <Form.Label className="label-info-generales" column sm={4}>Nom</Form.Label>
                                     <Col>
                                         <Form.Control type="text" placeholder="Entrer votre nom" />
+                                         <TextField 
+                                            label="Entrez votre nom" 
+                                            variant="outlined" 
+                                            required id="standard-required"
+                                            placeholder="Entrer votre nom" 
+                                        />
                                     </Col>
                                 </Form.Row>     
                             </Col>

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import AppBar from '@material-ui/core/AppBar';
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
+
 
 export class Success extends Component {
   continue = e => {
@@ -20,9 +21,19 @@ export class Success extends Component {
       <MuiThemeProvider > 
         <React.Fragment>
             <AppBar title="Success"/>
-            <h1 className="ttitle_Form">Merci de votre inscription</h1>
-            <p className="">Vous recevrez un email de confirmation avec les instructions pour valider votre compte</p>
-            <Link  to="/inscriptionProprietaire">S'inscrire</Link>    
+              <div className="text-center">
+                  <h1>Merci de votre inscription</h1>
+                  <p>Vous recevrez un email de confirmation avec les instructions pour valider votre compte</p>
+                  <Link
+                    component="button"
+                    variant="body2"
+                    onClick={() => {
+                      console.info("I'm a button.");
+                    }}
+                     >
+                      Button Link
+                    </Link>
+              </div>
         </React.Fragment>
       </MuiThemeProvider>
     );

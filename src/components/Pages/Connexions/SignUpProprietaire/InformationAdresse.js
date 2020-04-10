@@ -47,6 +47,13 @@ export class InformationAdresse extends Component {
                                         Envoyer un justificatif
                                     </Button>         
                                 </Form.Row>     
+
+                                <br />
+                                    <Button
+                                    color="primary"
+                                    variant="contained"
+                                    onClick={this.continue}
+                                    >Continue</Button>
                             </Col>
                         </Row>
                     </Container>
