@@ -4,8 +4,7 @@ import '../../../../css/InscriptionProprietaire.scss';
 
 import { Col, Container, Form} from 'react-bootstrap';
 
-// import FormProprietairePersonalDetail from './FormProprietairePersonalDetail'
-import { UserForm } from './UserForm';
+import FormProprietairePersonalDetail from './FormProprietairePersonalDetail'
 // import UserForm from './UserForm';
 
 export class InscriptionProprietaire extends Component {
@@ -41,8 +40,8 @@ export class InscriptionProprietaire extends Component {
 
                     <Form>
 
-                            <UserForm />
-                        {/* <FormProprietairePersonalDetail/> */}
+                            {/* <UserForm /> */}
+                        <FormProprietairePersonalDetail/>
                         
                         {/* <Container fluid className="pt-4 pb-4 blocForm" >  
                             <h2 className="title-form">Information  Générales</h2>
