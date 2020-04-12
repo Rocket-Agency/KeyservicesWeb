@@ -1,14 +1,81 @@
-//IndexProfil.js
+//Inscription Propriétaire
 import React, {Component} from 'react';
+import axios from 'axios';
 import '../../../../css/InscriptionProprietaire.scss';
 
-import { Col, Container, Form} from 'react-bootstrap';
+import { Col, Row, Container, Form} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 // import FormProprietairePersonalDetail from './FormProprietairePersonalDetail'
-import { UserForm } from './UserForm';
+// import { UserForm } from './UserForm';
 // import UserForm from './UserForm';
+import AttachFileIcon from '@material-ui/icons/AttachFile';
 
 export class InscriptionProprietaire extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            email: "",
+            password: "",
+            loading: false,
+            message: ""
+        };
+    
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+      }
+
+      handleChange(event) {
+        this.setState({
+          [event.target.name]: event.target.value
+        });
+      }
+    
+      handleSubmit(event) {
+        const { email, password } = this.state;
+        console.log(email, password);
+        const config = {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        }
+
+        this.setState({
+            loading: true
+        })
+
+        const data = {
+            email : email,
+            password : password
+        }
+
+        axios.post("http://localhost:3001/api/auth/signup", data, config)
+          .then(response => {
+            console.log(response.data);
+            this.setState({
+                loading: false,
+                message: response.data
+            })
+            this.props.history.push('dashboard', {user: response.data});
+          })
+          .catch(error => {
+            console.log(error);
+            this.setState({
+                loading: false
+            })
+          });
+        event.preventDefault();
+      }
+    
+      loadingShowMsg() {
+        if (this.state.loading) {
+            return <p>Loading...</p>
+        } else {
+            return <p>{this.state.message}</p>
+        }
+      }
 
     render() {
         return(
@@ -37,15 +104,13 @@ export class InscriptionProprietaire extends Component {
                  </Container>
 
 
-                <Container fluid className="Formulaire-incription">
+                    <Container fluid className="Formulaire-incription">
 
-                    <Form>
-
-                            <UserForm />
+                        {/* <UserForm />  */}
                         {/* <FormProprietairePersonalDetail/> */}
                         
                         {/* <Container fluid className="pt-4 pb-4 blocForm" >  
-                            <h2 className="title-form">Information  Générales</h2>
+                            <h2 className="title-form">Information  Générales</h2> */}
                             <Form.Row className="mt-4">
                                 <Col  xs={12} md={4} className="col d-flex justify-content-center pt-3 pb-3">
                                     {['checkbox'].map((type) => (
@@ -69,7 +134,7 @@ export class InscriptionProprietaire extends Component {
 
                                     
                                 </Col>
-                            </Form.Row>     
+                            </Form.Row> 
 
                             <Container fluid>
                                 <Row>
@@ -124,7 +189,7 @@ export class InscriptionProprietaire extends Component {
                                             <Form.Control type="text" placeholder="Votre adresse" />
                                         </Col>
                                         <Row>
-                                             <FormControlLabel value="end" control={<Radio color="primary" />} label="End" /> 
+                                             {/* <FormControlLabel value="end" control={<Radio color="primary" />} label="End" />  */}
                                         </Row>
                                     </Form.Row>     
                                 </Col>
@@ -161,7 +226,10 @@ export class InscriptionProprietaire extends Component {
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Adresse mail</Form.Label>
                                         <Col>
-                                            <Form.Control type="text" placeholder="Entrer votre adresse mail" />
+                                            <Form.Control type="text" placeholder="Entrer votre adresse mail" 
+                                            value={this.state.email}  
+                                            onChange={this.handleChange.bind(this)}
+                                        />  
                                         </Col>
                                     </Form.Row>     
                                 </Col>
@@ -170,7 +238,9 @@ export class InscriptionProprietaire extends Component {
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Votre mot de passe</Form.Label>
                                         <Col>
-                                            <Form.Control type="text" placeholder="Entrer votre mot de passe" />
+                                            <Form.Control type="text" placeholder="Entrer votre mot de passe"  
+                                            value={this.state.password}
+                                            onChange={this.handleChange.bind(this)}/>
                                         </Col>
                                     </Form.Row>     
                                 </Col>
@@ -180,7 +250,7 @@ export class InscriptionProprietaire extends Component {
                              <Container fluid className="d-flex justify-content-left">
                                 <Col  xs={12} md={6} className="pb-3">
                                       <Form.Group controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="J'accepte les conditions d'utilisations par Keyservices." />
+                                        <Form.Check type="checkbox" label="J'accepte les conditions générales d'utilisations de Keyservices." />
                                     </Form.Group>
                                 </Col>   
                              </Container> 
@@ -196,10 +266,67 @@ export class InscriptionProprietaire extends Component {
                                 </div>           
                             </Container> 
 
-                        </Container> */}
+                                <Container fluid className="pt-4 pb-4 blocForm">
+
+                                <h2 className="title-form">Information sur votre connexion</h2>
+                                <Row>
+                                    <Col  xs={12} md={6} className="pb-3">
+
+                                        <form onSubmit={this.handleSubmit}>
+                                            Email
+                                            <input name="email" type="email" placeholder="Entrer votre email" value={this.state.email} onChange={this.handleChange.bind(this)} />
+                                            Password
+                                            <input name="password" type="password" placeholder="Entrer votre mot de passe" value={this.state.password} onChange={this.handleChange.bind(this)} />
+                                            <input type="submit" />
+                                        </form>
+                                        {this.loadingShowMsg()}
 
 
-                    </Form>
+                                        <Form.Row>
+                                            <Form.Label className="label-info-generales" column sm={4}>Adresse mail</Form.Label>
+                                            <Col>
+                                                <Form.Control type="text" placeholder="Entrer votre adresse mail" 
+                                                value={this.state.email}  
+                                                onChange={this.handleChange.bind(this)}
+                                            />  
+                                            </Col>
+                                        </Form.Row> 
+                                    </Col>
+
+                                    {/* <Col  xs={12} md={6} className="pb-3">
+                                        <Form.Row>
+                                            <Form.Label className="label-info-generales" column sm={4}>Votre mot de passe</Form.Label>
+                                            <Col>
+                                                <Form.Control type="text" placeholder="Entrer votre mot de passe"  
+                                                value={this.state.password}
+                                                onChange={this.handleChange.bind(this)}/>
+                                            </Col>
+                                        </Form.Row>     
+                                    </Col> */}
+                                </Row>
+
+
+                                {/* <Container fluid className="d-flex justify-content-left">
+                                    <Col  xs={12} md={6} className="pb-3">
+                                        <Form.Group controlId="formBasicCheckbox">
+                                            <Form.Check type="checkbox" label="J'accepte les conditions générales d'utilisations de Keyservices." />
+                                        </Form.Group>
+                                    </Col>   
+                                </Container> 
+
+                                <Container fluid className="mt-2 d-flex justify-content-end">
+                                    <div id="container">                    
+                                        <button className="validation-btn">
+                                            <span className="circle" aria-hidden="true">
+                                                <span className="icon arrow"></span>
+                                            </span>
+                                            <span className="button-text">Valider l'inscriotion</span>
+                                        </button>
+                                    </div>           
+                                </Container>  */}
+
+                        </Container>
+
                 </Container>
             </div>
         )

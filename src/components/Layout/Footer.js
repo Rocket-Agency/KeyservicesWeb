@@ -20,10 +20,10 @@ const Footer = () => {
 
                         <Col sm={4} className="d-flex justify-content-end">
                             <Col sm={6} className="d-flex justify-content-end">
-                                <img src='./images/Icône Facebook.png' alt="Langue Française" />
+                                <img src='./images/Icone_Facebook.png' alt="Langue Française" />
                             </Col>
                             <Col sm={6}className="d-flex justify-content-left">
-                                <img src='./images/Icône Instagram.png' alt="Langue Française" />
+                                <img src='./images/Icone_Instagram.png' alt="Langue Française" />
                             </Col>
                         </Col>
                     </div>
