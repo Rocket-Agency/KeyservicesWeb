@@ -25,12 +25,13 @@ export class UserForm extends Component {
     sexe:"",
     firstName: '',
     lastName: '',
-    tel: '',
+    phone: '',
     dateOfBirth: '',
     factureAdress: '',
     postCode: '',
     email: '',
     password: '',
+    error: "",
   };
 
     // Proceed to next step
@@ -57,8 +58,8 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { sexe, firstName, lastName, tel, dateOfBirth, factureAdress, postCode, email, password } = this.state;
-    const values = { sexe, firstName, lastName, tel, dateOfBirth, factureAdress, postCode, email, password };
+    const { sexe, firstName, lastName, phone, dateOfBirth, factureAdress, postCode, email, password } = this.state;
+    const values = { sexe, firstName, lastName, phone, dateOfBirth, factureAdress, postCode, email, password };
       switch (step) {
         case 1:
           return (
@@ -175,3 +176,5 @@ export class UserForm extends Component {
 //     </div>
 //   );
 // }
+
+export default UserForm;

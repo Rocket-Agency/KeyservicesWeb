@@ -4,13 +4,14 @@ import Button from '@material-ui/core/Button';
 import { Col, Container, Row, Form} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
 // // import { Link } from 'react-router-dom';
-// import FormControl from '@material-ui/core/FormControl';
-// import InputLabel from '@material-ui/core/InputLabel';
-// import OutlinedInput from '@material-ui/core/OutlinedInput';
 import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormLabel from '@material-ui/core/FormLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+// import InputAdornment from '@material-ui/core/InputAdornment';
 
 // import TextField from '@material-ui/core/TextField';
 
@@ -33,7 +34,7 @@ export class InformationGenerales extends Component {
                     <h2 className="title-form">Information  Générales</h2>
                     <Form.Row className="mt-4">
                         <Col  xs={12} md={4} className="col d-flex justify-content-center pt-3 pb-3">
-                            {['checkbox'].map((type) => (
+                            {/* {['checkbox'].map((type) => (
                                 <div key={`custom-inline-${type}`} >
                                     <Form.Check
                                         custom
@@ -50,7 +51,30 @@ export class InformationGenerales extends Component {
                                         id={`custom-inline-${type}-Mr`}
                                     />
                                 </div>
-                            ))}
+                            ))} */}
+
+                            <FormControl component="fieldset">
+                                <FormLabel  className="label-info-generales">Civilité</FormLabel>
+
+                                <RadioGroup row aria-label="position" name="position" defaultValue="top">
+                                    <FormControlLabel
+                                    value="Mme"
+                                    control={<Radio color="primary" />}
+                                    label="Mme"
+                                    labelPlacement="start"
+                                    defaultValue={values.sexe} 
+                                    onChange={handleChange('sexe')}
+                                    />
+                                    <FormControlLabel
+                                    value="Mr"
+                                    control={<Radio color="primary" />}
+                                    label="Mr"
+                                    labelPlacement="start"
+                                    defaultValue={values.sexe} 
+                                    onChange={handleChange('sexe')}
+                                    />
+                                </RadioGroup>
+                            </FormControl>
                         </Col>
                     </Form.Row>     
 
@@ -60,7 +84,7 @@ export class InformationGenerales extends Component {
                                 <Form.Row>
                                     <Form.Label className="label-info-generales" column sm={4}>Nom</Form.Label>
                                     <Col>
-                                    <TextField
+                                    {/* <TextField
                                     placeholder="Entrez votre nom" 
                                     required id="standard-required"
                                     label="Nom"
@@ -69,7 +93,7 @@ export class InformationGenerales extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     fullWidth
-                                    />   
+                                    />    */}
 
                                             {/* id="outlined-basic" 
                                             label="Entrez votre nom" 
@@ -87,8 +111,22 @@ export class InformationGenerales extends Component {
                                                 required id="standard-required"
                                                 defaultValue={values.lastName} 
                                                 onChange={handleChange('lastName')}
-                                                label="Entrez votre nom" />
+                                                label="Entrez votre nom" 
+                                                fullWidth
+                                                />
                                             </FormControl> */}
+
+                                            <Col>
+                                                <TextField
+                                                placeholder="Enrez votre nom" 
+                                                required id="standard-required"
+                                                label="Nom"
+                                                onChange={handleChange('lastName')}
+                                                defaultValue={values.lastName} 
+                                                variant="outlined"
+                                                fullWidth
+                                                />   
+                                            </Col>
                                         {/* <Form.Control 
                                             type="text" 
                                             outlined-basic
@@ -118,18 +156,17 @@ export class InformationGenerales extends Component {
                                     <Form.Label className="label-info-generales" column sm={4}>Prénom</Form.Label>
                                     <Col>
                                         <TextField
-                                        placeholder="Enter Your First Name" 
+                                        // placeholder="Entrez votre prénom" 
                                         required id="standard-required"
-                                        label="Prénom"
+                                        label="Entrez votre prénom"
                                         onChange={handleChange('firstName')}
                                         defaultValue={values.firstName}
-                                        margin="normal"
                                         variant="outlined"
                                         fullWidth
                                         />   
                                     </Col>
                                 </Form.Row>  
-                                <TextField
+                                {/* <TextField
                                     placeholder="Enter Your First Name" 
                                     required id="standard-required"
                                     label="First Name"
@@ -138,7 +175,7 @@ export class InformationGenerales extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     fullWidth
-                                    />   
+                                    />    */}
                             </Col>
                         </Row>
                 
@@ -147,10 +184,12 @@ export class InformationGenerales extends Component {
                                 <Form.Row>
                                     <Form.Label className="label-info-generales" column sm={4}>Numéro de téléphone</Form.Label>
                                     <Col>
-                                        <label for="phonenum">Phone Number (format: xxxx-xxx-xxxx):</label><br/>
-                                        <Form.Control type="text" placeholder="Entrer votre numéro de téléphone" 
-                                        onChange={handleChange('tel')} defaultValue={values.tel} 
-                                        pattern="^\d{4}-\d{3}-\d{4}$" required
+                                        <Form.Control 
+                                            type="text" 
+                                            placeholder="Entrer votre numéro de téléphone" 
+                                            onChange={handleChange('phone')} 
+                                            defaultValue={values.phone} 
+                                            pattern="^\d{4}-\d{3}-\d{4}$" required
                                         />
                                     </Col>
                                 </Form.Row>     
@@ -160,7 +199,24 @@ export class InformationGenerales extends Component {
                                 <Form.Row>
                                     <Form.Label className="label-info-generales" column sm={4}>Date de naissance</Form.Label>
                                     <Col>
-                                        <Form.Control type="date" />
+                                        {/* <Form.Control 
+                                            type="date" 
+                                            onChange={handleChange('dateOfBirth')} 
+                                            defaultValue={values.dateOfBirth} 
+                                            required
+                                        /> */}
+
+                                    <TextField
+                                        id="date"
+                                        type="date"
+                                        InputLabelProps={{
+                                        shrink: true,
+                                        }}
+                                        onChange={handleChange('dateOfBirth')} 
+                                        defaultValue={values.dateOfBirth} 
+                                        fullWidth
+                                        variant="outlined"
+                                    />
                                     </Col>
                                 </Form.Row>     
                             </Col>

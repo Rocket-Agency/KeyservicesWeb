@@ -18,7 +18,7 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { firstName, lastName, tel, dateOfBirth, factureAdress, postCode, email, password }
+      values: { sexe, firstName, lastName, tel, dateOfBirth, factureAdress, postCode, email, password }
     } = this.props;
     return (
       <MuiThemeProvider >
@@ -26,6 +26,10 @@ export class Confirm extends Component {
           <AppBar title="Confirm User Data" />
           <List>
             <h2>Information générale</h2>
+            <ListItem>
+              <ListItemText primary="Civilité" secondary={sexe} /> 
+            </ListItem>
+
             <ListItem>
               <ListItemText primary="Nom" secondary={lastName} /> 
             </ListItem>
