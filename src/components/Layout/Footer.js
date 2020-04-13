@@ -9,8 +9,8 @@ const Footer = () => {
             <footer className="footer">
             <div className="bottom"></div>
 
-                <div class="container-fluid">
-                    <div class="row d-flex align-items-center">
+                <div className="container-fluid">
+                    <div className="row d-flex align-items-center">
                         <Col sm={8} className="d-flex justify-content-end">
                             <p className="m-3 text-white">
                                 CGU - Contact - Mention légales - KeyServices | All right reserved - {new Date().getFullYear()} 

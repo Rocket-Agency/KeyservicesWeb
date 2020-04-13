@@ -16,10 +16,17 @@ export class InscriptionProprietaire extends Component {
         super(props);
     
         this.state = {
-            email: "",
-            password: "",
+            sexe:"",
+            firstName: '',
+            lastName: '',
+            tel: '',
+            dateOfBirth: '',
+            factureAdress: '',
+            zipCode: '',
+            email: '',
+            password: '',
             loading: false,
-            message: ""
+            message: "",
         };
     
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,8 +40,8 @@ export class InscriptionProprietaire extends Component {
       }
     
       handleSubmit(event) {
-        const { email, password } = this.state;
-        console.log(email, password);
+        const { sexe, firstName, lastName, tel, dateOfBirth, factureAdress, zipCode, email, password } = this.state;
+        console.log( sexe, firstName, lastName, tel, dateOfBirth, factureAdress, zipCode, email, password);
         const config = {
           headers: {
             'Content-Type': 'application/json',
@@ -47,8 +54,15 @@ export class InscriptionProprietaire extends Component {
         })
 
         const data = {
+            sexe: sexe,
+            firstName: firstName,
+            lastName: lastName,
+            tel: tel,
+            dateOfBirth: dateOfBirth,
+            factureAdress: factureAdress,
+            zipCode: zipCode,
             email : email,
-            password : password
+            password : password,
         }
 
         axios.post("http://localhost:3001/api/auth/signup", data, config)

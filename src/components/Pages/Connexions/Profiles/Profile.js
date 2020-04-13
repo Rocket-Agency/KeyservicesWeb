@@ -20,11 +20,11 @@ export class Profile extends Component {
                  </div>
 
                  <div id="container">                    
-                    <button class="learn-more">
-                        <span class="circle" aria-hidden="true">
-                            <span class="icon arrow"></span>
+                    <button className="learn-more">
+                        <span className="circle" aria-hidden="true">
+                            <span className="icon arrow"></span>
                         </span>
-                        <span class="button-text">Envoyer</span>
+                        <span className="button-text">Envoyer</span>
                     </button>
                 </div>
 

@@ -75,8 +75,8 @@ import {withRouter
                 </Form.Group>
             </Form.Row>
 
-            <Form.Row class="mt-4">
-                 <Form.Group class="mt-4">
+            <Form.Row className="mt-4">
+                 <Form.Group className="mt-4">
                     <Container>
 
                         <Row>

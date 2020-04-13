@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../../../../css/InscriptionProprietaire.scss';
 
 import AppBar from '@material-ui/core/AppBar';
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
 import { Col } from 'react-bootstrap';
