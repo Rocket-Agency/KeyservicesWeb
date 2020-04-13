@@ -129,6 +129,7 @@ export class InformationGenerales extends Component {
                                                     pattern="[A-Za-z]{3}"
                                                     fullWidth
                                                     type="text"
+                                                    size="small"
                                                 />   
                                             </Col>
                                         {/* <Form.Control 
@@ -168,6 +169,7 @@ export class InformationGenerales extends Component {
                                             defaultValue={values.firstName}
                                             variant="outlined"
                                             fullWidth
+                                            size="small"
                                             /> 
                                         </Col>  
                                     </Col>
@@ -193,13 +195,14 @@ export class InformationGenerales extends Component {
                                         <Col>
                                             <TextField
                                                 type="text" 
-                                                placeholder="Entrer votre numéro de téléphone" 
                                                 onChange={handleChange('tel')} 
                                                 defaultValue={values.tel} 
                                                 pattern="^\d{4}-\d{3}-\d{4}$" 
                                                 required id="standard-required"
                                                 variant="outlined"
                                                 fullWidth
+                                                size="small"
+                                                label="Entrez votre numéro de téléphone"
                                             />
                                         </Col>
                                     </Col>
@@ -227,6 +230,7 @@ export class InformationGenerales extends Component {
                                                 defaultValue={values.dateOfBirth} 
                                                 fullWidth
                                                 variant="outlined"
+                                                size="small"
                                             />
                                         </Col>
                                     </Col>

@@ -5,18 +5,9 @@ import { Col, Container, Row, Form} from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
-import clsx from 'clsx';
-import AttachFileIcon from '@material-ui/icons/AttachFile';
-import FormControl from '@material-ui/core/FormControl';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FilledInput from '@material-ui/core/FilledInput';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import IconButton from '@material-ui/core/IconButton';
 
-import InputLabel from '@material-ui/core/InputLabel';
+
+// import InputLabel from '@material-ui/core/InputLabel';
 import TextField from '@material-ui/core/TextField';
 
 
@@ -27,7 +18,10 @@ export class InformationConnexion extends Component {
         this.props.nextStep();
       };
 
-
+      back = e => {
+        e.preventDefault();
+        this.props.prevStep();
+      };
 
     render() {
         const { values, handleChange } = this.props;
@@ -56,7 +50,8 @@ export class InformationConnexion extends Component {
                                                         variant="outlined"
                                                         pattern="[A-Za-z]{3}"
                                                         fullWidth
-                                                        type="text"                     
+                                                        type="text" 
+                                                        size="small"                    
                                                     />   
                                                 </Col>
                                             </Col>
@@ -78,22 +73,30 @@ export class InformationConnexion extends Component {
                                                 fullWidth
                                                 type="text"                     
                                             />    */}
-                                                    <TextField
-                                                        label="Entre votre mot de passe"
-                                                        id="outlined-adornment-password"
-                                                        onChange={handleChange('password')}
-                                                        defaultValue={values.password} 
-                                                        variant="outlined"
-                                                        pattern="[A-Za-z]{3}"
-                                                        fullWidth
-                                                        type="text" 
-                                                    />
+                                                <TextField
+                                                    label="Entre votre mot de passe"
+                                                    id="outlined-adornment-password"
+                                                    onChange={handleChange('password')}
+                                                    defaultValue={values.password} 
+                                                    variant="outlined"
+                                                    pattern="[A-Za-z]{3}"
+                                                    fullWidth
+                                                    type="password" 
+                                                    size="small"
+                                                />
                                         </Col>                                        
                                     </Col>
                                 </Form.Row>     
                             </Col>
 
                             <Col  xs={12} md={6}>
+                                     <Button
+                                        color="secondary"
+                                        variant="contained"
+                                        onClick={this.back}
+                                    >Back</Button>
+
+
                                     <Button
                                     color="primary"
                                     variant="contained"

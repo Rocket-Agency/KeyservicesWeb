@@ -17,6 +17,12 @@ export class InformationAdresse extends Component {
         this.props.nextStep();
       };
 
+      back = e => {
+        e.preventDefault();
+        this.props.prevStep();
+      };
+    
+
     render() {
         const { values, handleChange } = this.props;
         return(
@@ -44,7 +50,8 @@ export class InformationAdresse extends Component {
                                                         variant="outlined"
                                                         pattern="[A-Za-z]{3}"
                                                         fullWidth
-                                                        type="text"                     
+                                                        type="text"
+                                                        size="small"                     
                                                     />   
                                                 </Col>
                                             </Col>
@@ -64,7 +71,8 @@ export class InformationAdresse extends Component {
                                                 variant="outlined"
                                                 pattern="[A-Za-z]{3}"
                                                 fullWidth
-                                                type="text"                     
+                                                type="text" 
+                                                size="small"                    
                                             />   
                                         </Col>                                        
                                     </Col>
@@ -84,6 +92,13 @@ export class InformationAdresse extends Component {
                                 </Form.Row>     
 
                                 <br />
+                                   <Button
+                                        color="secondary"
+                                        variant="contained"
+                                        onClick={this.back}
+                                    >Back</Button>
+
+
                                     <Button
                                     color="primary"
                                     variant="contained"

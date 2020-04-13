@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 import '../../../../css/InscriptionProprietaire.scss';
+
 import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
+import { Button } from 'react-bootstrap';
 
 
 export class Success extends Component {
-  continue = e => {
-    e.preventDefault();
-    // PROCESS FORM //
-    this.props.nextStep();
-  };
+    // Proceed to next step
+    nextStep = () => {
+      const { step } = this.state;
+      this.setState({
+        step: step + 1
+      });
+    };
 
   back = e => {
     e.preventDefault();
@@ -34,6 +38,13 @@ export class Success extends Component {
                      >
                       Button Link
                     </Link>
+
+                    <Button
+                      color="primary"
+                      variant="contained"
+                      onClick={this.continue}
+                      >Retourner à la page d'inscription
+                    </Button>
               </div>
         </React.Fragment>
       </MuiThemeProvider>

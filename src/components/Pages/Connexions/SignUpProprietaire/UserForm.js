@@ -105,9 +105,9 @@ export class UserForm extends Component {
             />
           );
         case 5:
-          return <Success 
-        />;
-        case 5: 
+          return <Success />;
+
+        case 6: 
           return <ConnexionProfilePropretaire />;
       }
     }

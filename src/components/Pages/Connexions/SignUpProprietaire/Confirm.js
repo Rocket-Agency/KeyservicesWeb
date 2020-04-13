@@ -8,11 +8,14 @@ import Button from '@material-ui/core/Button';
 import { Col } from 'react-bootstrap';
 
 export class Confirm extends Component {
-  continue = e => {
-    e.preventDefault();
-    // PROCESS FORM //
-    this.props.nextStep();
-  };
+
+    // Proceed to next step
+    nextStep = () => {
+      const { step } = this.state;
+      this.setState({
+        step: step + 1
+      });
+    };
 
   back = e => {
     e.preventDefault();
@@ -21,7 +24,7 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { sexe, firstName, lastName, tel, dateOfBirth, factureAdress, postCode, email, password }
+      values: { sexe, firstName, lastName, tel, dateOfBirth, factureAdress, zipCode, email, password }
     } = this.props;
     return (
       <MuiThemeProvider >
@@ -55,7 +58,7 @@ export class Confirm extends Component {
             </ListItem>
 
             <ListItem>
-              <ListItemText primary="Code postale" secondary={postCode} /> 
+              <ListItemText primary="Code postale" secondary={zipCode} /> 
             </ListItem>
 
             <h2>Information de connexion</h2>
