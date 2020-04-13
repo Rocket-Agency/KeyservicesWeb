@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import '../../../../css/Profiles.scss';
+import '../../../../css/InscriptionProprietaire.scss';
+
 import Button from '@material-ui/core/Button';
 import { Col, Container, Row, Form} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
@@ -7,16 +8,18 @@ import { Col, Container, Row, Form} from 'react-bootstrap';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import InputLabel from '@material-ui/core/InputLabel';
+// import OutlinedInput from '@material-ui/core/OutlinedInput';
+// import InputLabel from '@material-ui/core/InputLabel';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 // import InputAdornment from '@material-ui/core/InputAdornment';
 
-// import TextField from '@material-ui/core/TextField';
 
 // import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import TextField from '@material-ui/core/TextField';
+
+import 'react-phone-input-2/lib/bootstrap.css'
+
 
 export class InformationGenerales extends Component {
 
@@ -58,20 +61,20 @@ export class InformationGenerales extends Component {
 
                                 <RadioGroup row aria-label="position" name="position" defaultValue="top">
                                     <FormControlLabel
-                                    value="Mme"
-                                    control={<Radio color="primary" />}
-                                    label="Mme"
-                                    labelPlacement="start"
-                                    defaultValue={values.sexe} 
-                                    onChange={handleChange('sexe')}
+                                        value="Mme"
+                                        control={<Radio color="primary" />}
+                                        label="Mme"
+                                        labelPlacement="start"
+                                        defaultValue={values.sexe} 
+                                        onChange={handleChange('sexe')}
                                     />
                                     <FormControlLabel
-                                    value="Mr"
-                                    control={<Radio color="primary" />}
-                                    label="Mr"
-                                    labelPlacement="start"
-                                    defaultValue={values.sexe} 
-                                    onChange={handleChange('sexe')}
+                                        value="Mr"
+                                        control={<Radio color="primary" />}
+                                        label="Mr"
+                                        labelPlacement="start"
+                                        defaultValue={values.sexe} 
+                                        onChange={handleChange('sexe')}
                                     />
                                 </RadioGroup>
                             </FormControl>
@@ -118,13 +121,14 @@ export class InformationGenerales extends Component {
 
                                             <Col>
                                                 <TextField
-                                                placeholder="Enrez votre nom" 
-                                                required id="standard-required"
-                                                label="Nom"
-                                                onChange={handleChange('lastName')}
-                                                defaultValue={values.lastName} 
-                                                variant="outlined"
-                                                fullWidth
+                                                    required id="standard-required"
+                                                    label="Entre votre Nom"
+                                                    onChange={handleChange('lastName')}
+                                                    defaultValue={values.lastName} 
+                                                    variant="outlined"
+                                                    pattern="[A-Za-z]{3}"
+                                                    fullWidth
+                                                    type="text"
                                                 />   
                                             </Col>
                                         {/* <Form.Control 
@@ -155,15 +159,17 @@ export class InformationGenerales extends Component {
                                 <Form.Row>
                                     <Form.Label className="label-info-generales" column sm={4}>Prénom</Form.Label>
                                     <Col>
-                                        <TextField
-                                        // placeholder="Entrez votre prénom" 
-                                        required id="standard-required"
-                                        label="Entrez votre prénom"
-                                        onChange={handleChange('firstName')}
-                                        defaultValue={values.firstName}
-                                        variant="outlined"
-                                        fullWidth
-                                        />   
+                                        <Col>
+                                            <TextField
+                                            // placeholder="Entrez votre prénom" 
+                                            required id="standard-required"
+                                            label="Entrez votre prénom"
+                                            onChange={handleChange('firstName')}
+                                            defaultValue={values.firstName}
+                                            variant="outlined"
+                                            fullWidth
+                                            /> 
+                                        </Col>  
                                     </Col>
                                 </Form.Row>  
                                 {/* <TextField
@@ -184,13 +190,18 @@ export class InformationGenerales extends Component {
                                 <Form.Row>
                                     <Form.Label className="label-info-generales" column sm={4}>Numéro de téléphone</Form.Label>
                                     <Col>
-                                        <Form.Control 
-                                            type="text" 
-                                            placeholder="Entrer votre numéro de téléphone" 
-                                            onChange={handleChange('phone')} 
-                                            defaultValue={values.phone} 
-                                            pattern="^\d{4}-\d{3}-\d{4}$" required
-                                        />
+                                        <Col>
+                                            <TextField
+                                                type="text" 
+                                                placeholder="Entrer votre numéro de téléphone" 
+                                                onChange={handleChange('tel')} 
+                                                defaultValue={values.tel} 
+                                                pattern="^\d{4}-\d{3}-\d{4}$" 
+                                                required id="standard-required"
+                                                variant="outlined"
+                                                fullWidth
+                                            />
+                                        </Col>
                                     </Col>
                                 </Form.Row>     
                             </Col>
@@ -205,28 +216,31 @@ export class InformationGenerales extends Component {
                                             defaultValue={values.dateOfBirth} 
                                             required
                                         /> */}
-
-                                    <TextField
-                                        id="date"
-                                        type="date"
-                                        InputLabelProps={{
-                                        shrink: true,
-                                        }}
-                                        onChange={handleChange('dateOfBirth')} 
-                                        defaultValue={values.dateOfBirth} 
-                                        fullWidth
-                                        variant="outlined"
-                                    />
+                                        <Col>
+                                            <TextField
+                                                id="date"
+                                                type="date"
+                                                InputLabelProps={{
+                                                shrink: true,
+                                                }}
+                                                onChange={handleChange('dateOfBirth')} 
+                                                defaultValue={values.dateOfBirth} 
+                                                fullWidth
+                                                variant="outlined"
+                                            />
+                                        </Col>
                                     </Col>
                                 </Form.Row>     
                             </Col>
                             <br />
-                                <Button
-                                    color="primary"
-                                    variant="contained"
-                                    onClick={this.continue}
-                                    >Continue
-                                </Button>
+                        </Row>
+                        <Row>
+                            <Button
+                                color="primary"
+                                variant="contained"
+                                onClick={this.continue}
+                                >Continue
+                            </Button>
                         </Row>
                     </Container>
                 </Container>

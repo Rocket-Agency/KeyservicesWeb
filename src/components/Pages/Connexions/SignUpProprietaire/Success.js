@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../../../../css/InscriptionProprietaire.scss';
 import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
@@ -21,7 +22,7 @@ export class Success extends Component {
       <MuiThemeProvider > 
         <React.Fragment>
             <AppBar title="Success"/>
-              <div className="text-center">
+              <div className="text-center success">
                   <h1>Merci de votre inscription</h1>
                   <p>Vous recevrez un email de confirmation avec les instructions pour valider votre compte</p>
                   <Link

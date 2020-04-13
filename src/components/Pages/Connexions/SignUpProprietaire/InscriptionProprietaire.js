@@ -3,10 +3,10 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import '../../../../css/InscriptionProprietaire.scss';
 
-import { Col, Container, Form} from 'react-bootstrap';
-// import {Button} from 'react-bootstrap';
+import { Col, Container, Row, Form} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
-// import FormProprietairePersonalDetail from './FormProprietairePersonalDetail'
+import FormProprietairePersonalDetail from './FormProprietairePersonalDetail'
 // import { UserForm } from './UserForm';
 import UserForm from './UserForm';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
@@ -82,7 +82,7 @@ export class InscriptionProprietaire extends Component {
             <div>
                 <div className="mt-5 d-flex justify-content-center">
                    <h3>Inscription</h3>
-                 </div>
+                </div>
 
 
                  <Container fluid className="mt-5 d-flex justify-content-center searchCityFields">
@@ -110,8 +110,8 @@ export class InscriptionProprietaire extends Component {
                         {/* <FormProprietairePersonalDetail/> */}
                         
                         {/* <Container fluid className="pt-4 pb-4 blocForm" >  
-                            <h2 className="title-form">Information  Générales</h2> */}
-                            {/* <Form.Row className="mt-4">
+                            <h2 className="title-form">Information  Générales</h2>
+                            <Form.Row className="mt-4">
                                 <Col  xs={12} md={4} className="col d-flex justify-content-center pt-3 pb-3">
                                     {['checkbox'].map((type) => (
                                         <div key={`custom-inline-${type}`} >
@@ -134,9 +134,9 @@ export class InscriptionProprietaire extends Component {
 
                                     
                                 </Col>
-                            </Form.Row>  */}
+                            </Form.Row> 
 
-                            {/* <Container fluid>
+                                <Container fluid>
                                 <Row>
                                     <Col  xs={12} md={6} className="pb-3">
                                         <Form.Row>
@@ -321,6 +321,8 @@ export class InscriptionProprietaire extends Component {
                                         </button>
                                     </div>           
                                 </Container> 
+
+                            </Container>
 
                         </Container> */}
 

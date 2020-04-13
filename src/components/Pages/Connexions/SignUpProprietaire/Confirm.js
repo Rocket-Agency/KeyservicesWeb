@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import '../../../../css/InscriptionProprietaire.scss';
+
 import AppBar from '@material-ui/core/AppBar';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
+import { Col } from 'react-bootstrap';
 
 export class Confirm extends Component {
   continue = e => {
@@ -27,7 +30,7 @@ export class Confirm extends Component {
           <List>
             <h2>Information générale</h2>
             <ListItem>
-              <ListItemText primary="Civilité" secondary={sexe} /> 
+                <ListItemText primary="Civilité" secondary={sexe} /> 
             </ListItem>
 
             <ListItem>

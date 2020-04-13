@@ -1,15 +1,24 @@
 import React, {Component} from 'react';
-import '../../../../css/Profiles.scss';
+import '../../../../css/InscriptionProprietaire.scss';
 
-import { Col, Container, Row, Form, Button} from 'react-bootstrap';
+import { Col, Container, Row, Form} from 'react-bootstrap';
+import Button from '@material-ui/core/Button';
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 
+import TextField from '@material-ui/core/TextField';
+
 
 export class InformationAdresse extends Component {
 
+    continue = e => {
+        e.preventDefault();
+        this.props.nextStep();
+      };
+
     render() {
+        const { values, handleChange } = this.props;
         return(
             <div>
                 <Container fluid className="pt-4 pb-4 blocForm">
@@ -18,12 +27,27 @@ export class InformationAdresse extends Component {
                             <Col xs={12} md={6} className="pb-3">
                                 <Form.Row>
                                     <Form.Label className="label-info-generales" column sm={4}>Votre adresse de facturation</Form.Label>
-                                    <Col>
+                                    {/* <Col>
                                         <Form.Control type="text" placeholder="Votre adresse" />
-                                    </Col>
+                                    </Col> */}
                                     {/* <Row>
                                       <Form.Control Label value="end" control={<Radio color="primary" />} label="End" /> 
                                     </Row> */}
+
+                                            <Col>
+                                                <Col>
+                                                    <TextField
+                                                        placeholder="Entre  votre adresse de facturation" 
+                                                        required id="standard-required"
+                                                        onChange={handleChange('factureAdress')}
+                                                        defaultValue={values.factureAdress} 
+                                                        variant="outlined"
+                                                        pattern="[A-Za-z]{3}"
+                                                        fullWidth
+                                                        type="text"                     
+                                                    />   
+                                                </Col>
+                                            </Col>
                                 </Form.Row>     
                             </Col>
 
@@ -31,7 +55,18 @@ export class InformationAdresse extends Component {
                                 <Form.Row>
                                     <Form.Label className="label-info-generales" column sm={4}>Code postal</Form.Label>
                                     <Col>
-                                        <Form.Control type="text" placeholder="Entrer votre code postal" />
+                                        <Col>
+                                            <TextField
+                                                placeholder="Entre votre Code Postal" 
+                                                required id="standard-required"
+                                                onChange={handleChange('zipCode')}
+                                                defaultValue={values.factureAdress} 
+                                                variant="outlined"
+                                                pattern="[A-Za-z]{3}"
+                                                fullWidth
+                                                type="text"                     
+                                            />   
+                                        </Col>                                        
                                     </Col>
                                 </Form.Row>     
                             </Col>
