@@ -35,8 +35,8 @@ export class InformationGenerales extends Component {
             <div>
                 <Container fluid className="pt-4 pb-4 blocForm" >  
                     <h2 className="title-form">Information  Générales</h2>
-                    <Form.Row className="mt-4">
-                        <Col  xs={12} md={4} className="col d-flex justify-content-center pt-3 pb-3">
+                    <Row className="mt-4">
+                        <Col  xs={12} md={5} className="col d-flex justify-content-center pt-3 pb-3">
                             {/* {['checkbox'].map((type) => (
                                 <div key={`custom-inline-${type}`} >
                                     <Form.Check
@@ -55,9 +55,8 @@ export class InformationGenerales extends Component {
                                     />
                                 </div>
                             ))} */}
-
-                            <FormControl component="fieldset">
-                                <FormLabel  className="label-info-generales">Civilité</FormLabel>
+                            <Form.Row>
+                                <Form.Label className="d-flex align-items-center label-info-generales">Civilité</Form.Label>
 
                                 <RadioGroup row aria-label="position" name="position" defaultValue="top">
                                     <FormControlLabel
@@ -77,9 +76,9 @@ export class InformationGenerales extends Component {
                                         onChange={handleChange('sexe')}
                                     />
                                 </RadioGroup>
-                            </FormControl>
+                            </Form.Row>
                         </Col>
-                    </Form.Row>     
+                    </Row>     
 
                     <Container fluid>
                         <Row>
