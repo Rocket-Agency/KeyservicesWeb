@@ -79,12 +79,12 @@ export class InformationAdresse extends Component {
                                 </Form.Row>     
                             </Col>
 
-                            <Col  xs={12} md={6}>
+                            <Col xs={12} md={6} className="pb-3 pt-3">
                                 <Form.Row>
                                     <Form.Label column sm={12}>Veuillez fournir un justificatif de domicile</Form.Label>
                                 </Form.Row>
 
-                                <Form.Row>
+                                <Form.Row className="pb-3 pt-3">
                                     <Button className="attachmenBtn">
                                         <AttachFileIcon className="iconAttachFile" />  
                                         Envoyer un justificatif

@@ -101,11 +101,15 @@ export class UserForm extends Component {
             <Confirm
               nextStep={this.nextStep}
               prevStep={this.prevStep}
+              handleChange={this.handleChange}
               values={values}
             />
           );
         case 5:
-          return <Success />;
+          return <Success 
+                nextStep={this.nextStep}
+                values={values}
+          />;
 
         case 6: 
           return <ConnexionProfilePropretaire />;

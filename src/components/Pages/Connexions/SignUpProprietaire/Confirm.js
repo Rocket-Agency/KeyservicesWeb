@@ -8,13 +8,10 @@ import Button from '@material-ui/core/Button';
 
 export class Confirm extends Component {
 
-    // Proceed to next step
-    nextStep = () => {
-      const { step } = this.state;
-      this.setState({
-        step: step + 1
-      });
-    };
+  continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
 
   back = e => {
     e.preventDefault();
