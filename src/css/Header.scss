@@ -41,7 +41,7 @@
     color: #000000;
 }
 
-@media (max-width: 768px)  {
+@media (max-width: 767px)  {
     .navbar {
         padding: 10px;
     }
@@ -79,8 +79,14 @@
     display: none;
 }
 
-@media (max-width: 768px)  {
+@media (max-width: 767px)  {
     .menu-title-mobile {
         display: block;
+    }
+}
+
+@media (min-width: 1200px)  {
+    .menu-title-mobile {
+        display: none;
     }
 }

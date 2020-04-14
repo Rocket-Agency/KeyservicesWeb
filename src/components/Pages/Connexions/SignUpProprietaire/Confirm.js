@@ -5,7 +5,6 @@ import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
-import { Col } from 'react-bootstrap';
 
 export class Confirm extends Component {
 

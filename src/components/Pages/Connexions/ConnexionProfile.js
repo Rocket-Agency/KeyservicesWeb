@@ -75,7 +75,7 @@ import {withRouter
                 </Form.Group>
             </Form.Row>
 
-            <Form.Row className="mt-4">
+            <Form.Row className="mt-4 d-flex justify-content-center align-items-center">
                  <Form.Group className="mt-4">
                     <Container>
 

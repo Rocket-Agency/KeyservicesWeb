@@ -3,13 +3,13 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import '../../../../css/InscriptionProprietaire.scss';
 
-import { Col, Container, Row, Form} from 'react-bootstrap';
-import {Button} from 'react-bootstrap';
+import { Col, Container, Form} from 'react-bootstrap';
+// import {Button} from 'react-bootstrap';
 
-import FormProprietairePersonalDetail from './FormProprietairePersonalDetail'
+// import FormProprietairePersonalDetail from './FormProprietairePersonalDetail'
 // import { UserForm } from './UserForm';
 import UserForm from './UserForm';
-import AttachFileIcon from '@material-ui/icons/AttachFile';
+// import AttachFileIcon from '@material-ui/icons/AttachFile';
 
 export class InscriptionProprietaire extends Component {
     constructor(props) {
