@@ -102,8 +102,8 @@ export class InscriptionProprietaire extends Component {
                  <Container fluid className="mt-5 d-flex justify-content-center searchCityFields">
                     <Form.Row className="d-flex justify-content-center">
                         <Form.Group as={Col} md="2" controlId="formGridCity">
-                        <Form.Label>Votre ville</Form.Label> 
-                        <Form.Control name="ville" type="text" placeholder="Entrez votre ville"/>
+                            <Form.Label>Votre ville</Form.Label> 
+                            <Form.Control name="ville" type="text" placeholder="Entrez votre ville"/>
                         </Form.Group>
                     </Form.Row>
 

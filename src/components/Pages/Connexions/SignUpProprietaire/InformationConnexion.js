@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import '../../../../css/InscriptionProprietaire.scss';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
 
 
 // import InputLabel from '@material-ui/core/InputLabel';
@@ -27,9 +28,9 @@ export class InformationConnexion extends Component {
         const { values, handleChange } = this.props;
         return(
             <div>
-                <Container fluid className="pt-4 pb-4 blocForm">
-                    <h2 className="title-form">Information sur votre adresse</h2>
-                        <Row className="mt-4 mb-4">
+                <Container fluid className="pt-4 blocForm">
+                    <h2 className="title-form">Information sur votre connexion</h2>
+                        <Row className="mt-4">
                             <Col xs={12} md={6} className="pb-3">
                                 <Form.Row>
                                     <Form.Label className="label-info-generales" column sm={4}>Email</Form.Label>
@@ -89,8 +90,8 @@ export class InformationConnexion extends Component {
                                 </Form.Row>     
                             </Col>
 
-                            <Col  xs={12} md={6}>
-                                     <Button
+                            <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-3"> 
+                                    <Button
                                         color="secondary"
                                         variant="contained"
                                         onClick={this.back}
