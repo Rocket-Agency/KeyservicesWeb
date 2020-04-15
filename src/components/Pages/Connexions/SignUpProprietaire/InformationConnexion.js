@@ -90,7 +90,7 @@ export class InformationConnexion extends Component {
                                 </Form.Row>     
                             </Col>
 
-                            <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-3"> 
+                            <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
                                     <Button
                                         color="secondary"
                                         variant="contained"

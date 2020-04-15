@@ -3,18 +3,16 @@ import '../../../../css/InscriptionProprietaire.scss';
 
 import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
 
 export class Success extends Component {
-    // Proceed to next step
-    nextStep = () => {
-      const { step } = this.state;
-      this.setState({
-        step: step + 1
-      });
-    };
+
+  continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
 
   back = e => {
     e.preventDefault();
@@ -29,22 +27,16 @@ export class Success extends Component {
               <div className="text-center success">
                   <h1>Merci de votre inscription</h1>
                   <p>Vous recevrez un email de confirmation avec les instructions pour valider votre compte</p>
-                  <Link
-                    component="button"
-                    variant="body2"
-                    onClick={() => {
-                      console.info("I'm a button.");
-                    }}
-                     >
-                      Button Link
-                    </Link>
-
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      onClick={this.continue}
-                      >Retourner à la page d'inscription
-                    </Button>
+                     <div className="d-flex justify-content-center align-items-center">
+                      <div id="container">                    
+                        <button className="retour-login">
+                          <span className="circle" aria-hidden="true">
+                            <span className="icon arrow"></span>
+                          </span>
+                          <Link className="button-text" to="/loginProprietaire">Retourner à la page d'inscription</Link>
+                        </button>
+                    </div>
+                  </div>
               </div>
         </React.Fragment>
       </MuiThemeProvider>

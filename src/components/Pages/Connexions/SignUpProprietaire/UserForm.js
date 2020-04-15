@@ -106,13 +106,18 @@ export class UserForm extends Component {
             />
           );
         case 5:
-          return <Success 
-                nextStep={this.nextStep}
-                values={values}
-          />;
+          return (
+            <Success 
+              nextStep={this.nextStep}
+          />
+          );
 
         case 6: 
-          return <ConnexionProfilePropretaire />;
+          return (
+            <ConnexionProfilePropretaire
+              nextStep={this.nextStep}
+          />
+          );
       }
     }
 }
