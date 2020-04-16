@@ -67,6 +67,10 @@
         text-decoration: none;
         color: #e1e1e1;
     }
+
+    .menu-title-mobile {
+        display: block;
+    }
 }
     
 .navbar-nav {
@@ -79,14 +83,25 @@
     display: none;
 }
 
-@media (max-width: 767px)  {
-    .menu-title-mobile {
-        display: block;
+@media (min-width: 768px)  {
+    .navbar {
+        padding: 10px 38px 10px 60px;
     }
 }
+
+@media (max-width: 991px) {
+    .navbar {
+        padding: 15px;
+    }
+  }
 
 @media (min-width: 1200px)  {
     .menu-title-mobile {
         display: none;
     }
+
+    .navbar {
+        padding: 10px 38px 10px 60px;
+    }
 }
+
