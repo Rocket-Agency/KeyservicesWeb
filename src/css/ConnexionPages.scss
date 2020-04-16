@@ -1,0 +1,93 @@
+.colorBackgroundConnexion {
+    background: #FAF0E6;
+    padding: 40px 27px 41px;
+    margin: 30px 45px 70px 45px;
+}
+
+@media (max-width: 768px) {
+    .colorBackgroundConnexion  {
+        background: transparent;
+        border-color: transparent;
+        margin: 0;
+    }
+}
+
+.Vertical-lign-connexion {
+    position: absolute;
+    background: #A38068;
+    mix-blend-mode: normal;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    filter: blur(2px);
+    height: 368px;
+    width: 4px;
+    display: flex;
+    margin-left: 45%;
+}
+
+
+@media (max-width: 768px) {
+    .Vertical-lign-connexion  {
+        display: none;
+    }
+}
+
+.connexion-proprietaire {
+    height: auto;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 26px;
+}
+
+@media (max-width: 576px) {
+    .connexion-proprietaire {
+        display: none;
+    }
+}
+
+#btn-seConnecter {
+    border-radius:20px;
+    width:40px;
+    height:40px;
+    color: black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
+    background: #87E990;
+    border-color: transparent;
+    color: black;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+#seConnecter {
+    color: #000000;
+    text-decoration: none;
+}
+
+#seConnecterMobile {
+    background-color: #87E990;
+    border-radius: 50px; 
+    border-color: transparent;
+    height: 38px;
+    color: black;
+    width: 147px;
+}
+
+
+.cardConnexionImage {
+    margin-left: 80px;
+
+    .text-connection {
+        background: rgba(255, 255, 255, 0.5);
+        top: 100px;
+        display: flex;
+        align-content: center;
+        margin-bottom: 80px;
+        margin: 0 20px 128px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cardConnexionImage {
+        display: none;
+    }
+}
