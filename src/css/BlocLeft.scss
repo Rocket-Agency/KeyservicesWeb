@@ -50,3 +50,9 @@ width: 100%;
 .blocLeftSearchLang {
     width: 185px;
 }
+
+@media (max-width: 768px) {
+    .blocLeftSearchLang  {
+          width: 100% ;
+      }
+    }

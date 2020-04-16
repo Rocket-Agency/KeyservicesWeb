@@ -4,22 +4,8 @@
     border: 2px solid #49173B;
     padding-bottom: 20px;
     margin: 0 60px 0 60px;
+    padding: 52px;
 }
-
-@media (max-width: 576px) {
-    .colorBackground  {
-        margin: 0;
-    }
-
-    .text-home {
-        padding: 10px 20px;
-    }
-
-    // .btn-success {
-    //     margin-top: 30px;
-    //     width: 240px;
-    // }
-  }
 
 .text-home {
     font-size: 14px;
@@ -37,14 +23,6 @@
     margin : 0 auto;
 }
 
-@media (max-width: 576px) {
-    .style-card {
-        width: 100%;
-        font-size: 12px;
-        height: 50%
-    }
-}
-
 .btn-success {
     margin-top: 120px;
     background: #fff;
@@ -54,12 +32,7 @@
     height: 60px;
 }
 
-@media (max-width: 991px) {
-    .btn-success {
-        margin-top: 30px;
-        width: 240px;
-    }
-  }
+
 
 .btn-success:hover {
     background: #87E990;
@@ -85,3 +58,44 @@
 //         padding: 20px 100px;
 //     }
 // }
+
+
+// Responsives
+
+@media (max-width: 576px) {
+    .colorBackground  {
+        margin: 0;
+        padding: 0;
+    }
+
+    .text-home {
+        padding: 10px 20px;
+    }
+
+    .style-card {
+        width: 100%;
+        font-size: 12px;
+        height: 50%
+    }
+
+    // .btn-success {
+    //     margin-top: 30px;
+    //     width: 240px;
+    // }
+  }
+
+  @media (max-width: 768px) {
+    .colorBackground  {
+        margin: 0;
+        padding: 0;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .btn-success {
+        margin-top: 30px;
+        width: 220px;
+    }
+  }
+
+  
