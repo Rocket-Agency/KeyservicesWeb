@@ -26,7 +26,6 @@ button {
   &.learn-more {
     width: 12rem;
     height: auto;
-
     .circle {
       @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
       position: relative;

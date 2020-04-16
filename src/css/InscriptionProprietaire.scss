@@ -5,11 +5,28 @@
 }
 
 .Formulaire-incription{
-    padding: 10px 140px;
+    padding: 32px 140px;
 
     .blocForm {
         border: 2px solid #A38068;
         margin-bottom: 20px;
+    }
+
+    .attachmenBtn {
+        background: #87E990;
+        border: transparent;
+        color: #000000;
+    }
+    .attachmenBtn:hover {
+        background: #87E990;
+        border: transparent;
+        color: #000000;
+    }
+
+    .attachmenBtn:active {
+        background: #87E990;
+        border: transparent;
+        color: #000000;
     }
         
     .label-info-generales {
@@ -53,4 +70,63 @@
             margin-right: 5px;
         }
     }
+}
+
+//Formulaire d'inscription
+.blocButtonForm {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonReturn {
+    background: transparent;
+    border: transparent;
+    color: #000000;
+}
+
+.buttonReturn:disabled {
+    background: transparent;
+    border: transparent;
+    color: #000000;
+}
+
+.buttonReturn:disabled:hover {
+    background: transparent;
+    border: transparent;
+    color: #000000;
+}
+
+.buttonReturn:hover {
+    background: #87E990;
+    border: transparent;
+    color: #000000;
+}
+
+.buttonReturn:focus {
+    background: #87E990;
+    border: transparent;
+    color: #000000;
+}
+
+.buttonStep {
+    background: #87E990;
+    border: transparent;
+    color: #000000;
+    margin-left: 10px;
+}
+
+.buttonStep:hover {
+    background: #87E990;
+    border: transparent;
+    color: #000000;
+}
+
+
+
+.text-center {
+    text-align: center;
+  }
+
+.success {
+    margin: 58px 0;
 }

@@ -9,3 +9,13 @@ module.exports = function(app) {
     })
   );
 }; 
+
+module.exports = function(app) {
+  app.use(
+    proxy("/api/auth/signup", {
+      target: "http://51.158.67.56:3001",
+      secure: false,
+      changeOrigin: true
+    })
+  );
+}; 
