@@ -33,6 +33,7 @@ const Footer = () => {
     )
 }
 
+//Mettre google analytics dans le footer
     
     
 export default Footer;
