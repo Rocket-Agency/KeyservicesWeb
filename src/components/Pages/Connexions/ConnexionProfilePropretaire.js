@@ -14,9 +14,6 @@ class ConnexionProfileProprietaire extends Component {
         this.state = {
           email: "",
           password: "",
-          emailError:"",
-          passwordError: "",
-          loginErrors: "",
         };
     
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +25,7 @@ class ConnexionProfileProprietaire extends Component {
           [event.target.name]: event.target.value
         });
       }
-
+    
       handleSubmit(event) {
         const { email, password } = this.state;
         const config = {
@@ -45,14 +42,11 @@ class ConnexionProfileProprietaire extends Component {
             config
           )
           .then(response => {
-            console.log(response.data);
-            this.props.history.push('/indexProfil');
+            this.props.history.push('/dashboard', {user: response.data});
           })
           .catch(error => {
-            console.log("login error", error.message);
           });
         event.preventDefault();
-        // const isValid = this.validate();
       }
 
   render() {
