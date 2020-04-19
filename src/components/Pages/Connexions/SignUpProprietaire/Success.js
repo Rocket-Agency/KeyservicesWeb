@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import '../../../../css/InscriptionProprietaire.scss';
+
 import AppBar from '@material-ui/core/AppBar';
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+
 
 export class Success extends Component {
+
   continue = e => {
     e.preventDefault();
-    // PROCESS FORM //
     this.props.nextStep();
   };
 
@@ -19,8 +24,20 @@ export class Success extends Component {
       <MuiThemeProvider > 
         <React.Fragment>
             <AppBar title="Success"/>
-            <h1 className="ttitle_Form">Merci de votre inscription</h1>
-            <p className="">Vous recevrez un email de confirmation avec les instructions pour valider votre compte</p>
+              <div className="text-center success">
+                  <h1>Merci de votre inscription</h1>
+                  <p>Vous recevrez un email de confirmation avec les instructions pour valider votre compte</p>
+                     <div className="d-flex justify-content-center align-items-center">
+                      <div id="container">                    
+                        <button className="retour-login">
+                          <span className="circle" aria-hidden="true">
+                            <span className="icon arrow"></span>
+                          </span>
+                          <Link className="button-text" to="/loginProprietaire">Retourner à la page d'inscription</Link>
+                        </button>
+                    </div>
+                  </div>
+              </div>
         </React.Fragment>
       </MuiThemeProvider>
     );

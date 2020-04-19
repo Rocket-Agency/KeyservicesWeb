@@ -24,7 +24,7 @@ export class MonEspace extends Component {
                         <Col md={5}>
                             <div className="d-flex justify-content-center">
                                 <Card className="card">
-                                    <img className="card-img" id="Propriétaire" src='./images/Propriétaire.png' alt="Gerer_Mes_Locations" />
+                                    <img className="card-img" id="Propriétaire" src='./images/Proprietaire.png' alt="Gerer_Mes_Locations" />
                                     <Link className="card-footer" to="/loginProprietaire">Mon espace propriétaire</Link>
 
                                 </Card>

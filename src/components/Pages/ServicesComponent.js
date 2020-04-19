@@ -20,13 +20,13 @@ export class ServicesComponent extends Component {
                             <Row className="blocBorder">
                                 <Visible xs>
                                     <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
-                                        <img src='./images/remise_des_clés_mobile.jpg' width="100%%" height="130px" alt="Logo keyservices "/>
+                                        <img src='./images/remise_des_cles_mobile.jpg' width="100%%" height="130px" alt="Logo keyservices "/>
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
                                     <Col md={6} className="d-flex justify-content-end blocImgBorder">
-                                        <img src='./images/remise_des_clés.png' width="100%" height="auto" className="imgServices" alt="Logo keyservices "/>
+                                        <img src='./images/remise_des_cles.png' width="100%" height="auto" className="imgServices" alt="Logo keyservices "/>
                                     </Col>
                                 </Hidden>
                                 

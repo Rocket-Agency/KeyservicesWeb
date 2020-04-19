@@ -30,7 +30,7 @@ export class Home extends Component {
                             eget porta ligula. Vestibulum dictum ullamcorper nunc, nec vehicula tortor dictum et.</p>
                         </div>
 
-                        <div className="container">
+                        <div className="container-fluid">
                             <div className="row">
                             <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
                                     <div className="card">

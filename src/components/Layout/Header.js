@@ -3,11 +3,11 @@ import logo from '../../Keyservices_Logo.png';
 // import Searchbar from './Searchbar';
 
 import '../../css/Header.scss';
-import '../../css/Searchbar.scss';
+import '../../css/BlocLeft.scss';
 import { NavLink } from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap';
 import BlocLeft from './BlocLeft';
-import { browserHistory } from 'react-router';
+// import { browserHistory } from 'react-router';
 
 
 export class Header extends Component {
@@ -34,9 +34,7 @@ export class Header extends Component {
                             <NavLink className="d-inline menustyle" to="/monespace">Mon Espace</NavLink>
                         </Nav>
 
-                        <div md={12} className="d-flex flex-direction-column aligns-center">
                           <BlocLeft />
-                        </div>
                     </Navbar.Collapse>
                 </Navbar>
                 
