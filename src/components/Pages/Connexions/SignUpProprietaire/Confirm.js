@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import '../../../../css/InscriptionProprietaire.scss';
+
+import { Col } from 'react-bootstrap';
 import AppBar from '@material-ui/core/AppBar';
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
-import Button from '@material-ui/core/Button';
+import { Button } from 'reactstrap';
 
 export class Confirm extends Component {
+
   continue = e => {
     e.preventDefault();
-    // PROCESS FORM //
     this.props.nextStep();
   };
 
@@ -18,7 +21,7 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { firstName, lastName, tel, dateOfBirth, factureAdress, postCode, email, password }
+      values: { sexe, firstName, lastName, tel, dateOfBirth, factureAdress, zipCode, email, password }
     } = this.props;
     return (
       <MuiThemeProvider >
@@ -26,6 +29,10 @@ export class Confirm extends Component {
           <AppBar title="Confirm User Data" />
           <List>
             <h2>Information générale</h2>
+            <ListItem>
+                <ListItemText primary="Civilité" secondary={sexe} /> 
+            </ListItem>
+
             <ListItem>
               <ListItemText primary="Nom" secondary={lastName} /> 
             </ListItem>
@@ -48,9 +55,9 @@ export class Confirm extends Component {
             </ListItem>
 
             <ListItem>
-              <ListItemText primary="Code postale" secondary={postCode} /> 
+              <ListItemText primary="Code postale" secondary={zipCode} /> 
             </ListItem>
-
+            <br/>
             <h2>Information de connexion</h2>
             <ListItem>
               <ListItemText primary="Emai" secondary={email} /> 
@@ -62,17 +69,19 @@ export class Confirm extends Component {
           </List>
           <br />
         
-          <Button
-            color="secondary"
-            variant="contained"
-            onClick={this.back}
-          >Back</Button>
+          <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-3"> 
+            <Button
+              color="secondary"
+              variant="contained"
+              onClick={this.back}
+              >Back</Button>
 
-          <Button
-            color="primary"
-            variant="contained"
-            onClick={this.continue}
-          >Confirmer & Continuer</Button>
+            <Button
+              color="primary"
+              variant="contained"
+              onClick={this.continue}
+             > Confirmer & Valider l'inscription</Button>
+          </Col>
         </React.Fragment>
       </MuiThemeProvider>
     );

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import '../../../../css/InscriptionProprietaire.scss';
+
 // import FormUserDetails from './FormUserDetails';
 import InformationGenerales from './InformationGenerales';
-// import InformationAdresse from './InformationAdresse';
-// import InformationConnexion from './InformationConnexion';
+import InformationAdresse from './InformationAdresse';
+import InformationConnexion from './InformationConnexion';
 
 // import FormPersonalDetails from './FormPersonalDetails';
 import Confirm from './Confirm';
@@ -28,9 +30,17 @@ export class UserForm extends Component {
     tel: '',
     dateOfBirth: '',
     factureAdress: '',
-    postCode: '',
+    zipCode: '',
     email: '',
     password: '',
+    error: true,
+    firstNameError: "",
+    lastNameError: "",
+    telEroor:"",
+    factureAdressError: "",
+    postCodeError: "",
+    emailError: "",
+    passwordError: ""
   };
 
     // Proceed to next step
@@ -57,8 +67,8 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { sexe, firstName, lastName, tel, dateOfBirth, factureAdress, postCode, email, password } = this.state;
-    const values = { sexe, firstName, lastName, tel, dateOfBirth, factureAdress, postCode, email, password };
+    const { sexe, firstName, lastName, tel, dateOfBirth, factureAdress, zipCode, email, password } = this.state;
+    const values = { sexe, firstName, lastName, tel, dateOfBirth, factureAdress, zipCode, email, password };
       switch (step) {
         case 1:
           return (
@@ -68,36 +78,46 @@ export class UserForm extends Component {
               values={values}
             />
           );
-        // case 2:
-        //   return (
-        //     <InformationAdresse
-        //       nextStep={this.nextStep}
-        //       prevStep={this.prevStep}
-        //       handleChange={this.handleChange}
-        //       values={values}
-        //     />
-        //   );
-        // case 3:
-        //   return (
-        //     <InformationConnexion
-        //       nextStep={this.nextStep}
-        //       prevStep={this.prevStep}
-        //       values={values}
-        //     />
-        //   );
-          case 2:
+        case 2:
+          return (
+            <InformationAdresse
+              nextStep={this.nextStep}
+              prevStep={this.prevStep}
+              handleChange={this.handleChange}
+              values={values}
+            />
+          );
+          case 3:
+          return (
+            <InformationConnexion
+              nextStep={this.nextStep}
+              prevStep={this.prevStep}
+              handleChange={this.handleChange}
+              values={values}
+            />
+          );
+          case 4:
           return (
             <Confirm
               nextStep={this.nextStep}
               prevStep={this.prevStep}
+              handleChange={this.handleChange}
               values={values}
             />
           );
-        case 3:
-          return <Success 
-        />;
-        case 4: 
-          return <ConnexionProfilePropretaire />;
+        case 5:
+          return (
+            <Success 
+              nextStep={this.nextStep}
+          />
+          );
+
+        case 6: 
+          return (
+            <ConnexionProfilePropretaire
+              nextStep={this.nextStep}
+          />
+          );
       }
     }
 }
@@ -175,3 +195,5 @@ export class UserForm extends Component {
 //     </div>
 //   );
 // }
+
+export default UserForm;

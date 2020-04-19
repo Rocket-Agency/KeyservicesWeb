@@ -13,49 +13,49 @@ import ProfileTabs from './components/Pages/Dashboard';
 // import { FaArrowRight } from "react-icons/fa";
 
  class ConnexionProfileLocataire extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
     
-        this.state = {
-          email: "",
-          password: "",
-          loginErrors: "",
-        };
+    //     this.state = {
+    //       email: "",
+    //       password: "",
+    //       loginErrors: "",
+    //     };
     
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-      }
+    //     this.handleSubmit = this.handleSubmit.bind(this);
+    //     this.handleChange = this.handleChange.bind(this);
+    //   }
     
-      handleChange(event) {
-        this.setState({
-          [event.target.name]: event.target.value
-        });
-      }
+    //   handleChange(event) {
+    //     this.setState({
+    //       [event.target.name]: event.target.value
+    //     });
+    //   }
     
-      handleSubmit(event) {
-        const { email, password } = this.state;
-        const config = {
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          }
-        }
-        axios.post("http://localhost:3001/api/auth/signin",
-            {
-                email: email,
-                password: password
-            },
-            config
-          )
-          .then(response => {
-            console.log(response.data);
-            this.props.history.push('/dashboard', {user: response.data});
-          })
-          .catch(error => {
-            console.log(error);
-          });
-        event.preventDefault();
-      }
+    //   handleSubmit(event) {
+    //     const { email, password } = this.state;
+    //     const config = {
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //         'Accept': 'application/json'
+    //       }
+    //     }
+    //     axios.post("http://localhost:3001/api/auth/signin",
+    //         {
+    //             email: email,
+    //             password: password
+    //         },
+    //         config
+    //       )
+    //       .then(response => {
+    //         console.log(response.data);
+    //         this.props.history.push('/dashboard', {user: response.data});
+    //       })
+    //       .catch(error => {
+    //         console.log(error);
+    //       });
+    //     event.preventDefault();
+    //   }
 
   render() {
     return (

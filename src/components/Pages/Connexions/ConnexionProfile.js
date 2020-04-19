@@ -33,7 +33,6 @@ import {withRouter
     
       handleSubmit(event) {
         const { email, password } = this.state;
-        console.log(email, password);
         const config = {
           headers: {
             'Content-Type': 'application/json',
@@ -48,11 +47,9 @@ import {withRouter
             config
           )
           .then(response => {
-            console.log(response.data);
             this.props.history.push('/dashboard', {user: response.data});
           })
           .catch(error => {
-            console.log(error);
           });
         event.preventDefault();
       }
@@ -75,8 +72,8 @@ import {withRouter
                 </Form.Group>
             </Form.Row>
 
-            <Form.Row class="mt-4">
-                 <Form.Group class="mt-4">
+            <Form.Row className="mt-4 d-flex justify-content-center align-items-center">
+                 <Form.Group className="mt-4">
                     <Container>
 
                         <Row>
