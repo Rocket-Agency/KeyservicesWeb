@@ -28,7 +28,10 @@ export class Confirm extends Component {
         <React.Fragment>
           <AppBar title="Confirm User Data" />
           <List>
-            <h2>Information générale</h2>
+            <h2>Information générale</h2> 
+            <table className="table table-striped table-dark">
+                <Table onUpdateTry={this.edit} editThis={this.setIndex} employees={this.state.employees} deleteMe={this.onDelete} />
+            </table>
             <ListItem>
                 <ListItemText primary="Civilité" secondary={sexe} /> 
             </ListItem>
