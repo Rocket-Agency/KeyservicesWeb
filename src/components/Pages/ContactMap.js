@@ -10,17 +10,15 @@ import { Link } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
 
-export class Contacts extends Component {
+export class ContactMap extends Component {
     render() {
 
         return(
-            <div>
-                <div className="mt-2 d-flex text-center justify-content-center">
-                     <h1>On s’occupe de tous et vous de rien</h1>
-                </div>
-
-                
+            <div className="card contact-bloc-map">
+                <img className="card-img style-card" src='./images/map.png' className="map-contact" alt="map contact"/>
             </div>
         )
     }
 }
+
+export default ContactMap;

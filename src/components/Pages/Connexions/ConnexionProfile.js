@@ -79,7 +79,7 @@ import {withRouter
                         <Row>
                             <Col xs={12} className="d-flex justify-content-center align-items-center">
                                 <Hidden xs>
-                                <div className="d-flex justify-content-center align-items-center">
+                                    <div className="d-flex justify-content-center align-items-center">
                                         <div id="container">                    
                                             <button className="learn-more">
                                                 <span className="circle" aria-hidden="true">
