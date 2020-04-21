@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 import '../../css/Contact.scss';
 
-import {Form, Col} from 'react-bootstrap';
+import {Form, Col, Row} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 import { Link } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ export class Contact extends Component {
 
                      <div className="container-fluid">
                         <div className="row">
-                            <div className="col-lg-6 col-md-6 col-sm-12 text-left mb-2">
+                            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-left mb-2">
                                <div className="contact-bloc" >
 
                                     <div className="d-flex text-center justify-content-center">
@@ -87,12 +87,20 @@ export class Contact extends Component {
                                 </div>
                             </div>
 
-                                <div className="Vertical-lign-contact align-item-center mt-5"></div>
+                                <div className="Vertical-lign-contact align-item-center"></div>
+
+                                <Hidden xs sm md>
+                                    <div className="Vertical-lign-contact align-item-center"></div>
+                                </Hidden>
 
                                 <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
                                     <div className="card contact-bloc-map">
                                         <img className="card-img style-card" src='./images/map.png' className="map-contact" alt="map contact"/>
                                     </div>
+
+                                    <Row fluid="md" className="horizontal_lign" ></Row>
+
+                                    <ContactInfos />
                                 </div>
                             </div>
                         </div>
