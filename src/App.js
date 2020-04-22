@@ -1,5 +1,6 @@
-//App;js
+//App
 import React from 'react';
+import {Switch, Route} from 'react-router-dom';
 import './App.scss';
 
 //Import component for Header & Footer
@@ -28,34 +29,31 @@ import {InscriptionProprietaire} from './components/Pages/Connexions/SignUpPropr
 //Dashboard
 import ProfileTabs from './components/Pages/Dashboard';
 
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+//Error
+import NotFound from './components/NotFound';
 
 function App() {
   return (
-    <Router>
-        <div>
-        <Header/>
-
-          <Switch>
-            <Route path='/' component={Home} exact />
-            <Route path='/keyservicesPresentation' component={KeyservicesPresentation} />
-            <Route path='/contact' component={Contact} />
-            <Route path='/validationContactForm' component={ValidationContactForm} />
-            <Route path='/monespace' component={MonEspace} />
-            <Route path='/loginProprietaire' component={LoginProprietaire} />
-            <Route path='/loginLocataire' component={LoginLocataire} />
-            <Route path='/indexProfil' component={IndexProfil} />
-            <Route path='/profile' component={Profile} />
-            <Route path='/profilePropriétaire' component={ProfileProprietaire} />
-            <Route path='/profileLocataire' component={ProfileLocataire} />
-            <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
-            <Route path='/dashboard' component={ProfileTabs} />
-          </Switch>
-
-        <Footer/>
-        
-       </div>
-    </Router>
+      <div>
+      <Header/>
+        <Switch>
+          <Route path='/' component={Home} exact />
+          <Route path='/keyservicesPresentation' component={KeyservicesPresentation} />
+          <Route path='/contact' component={Contact} />
+          <Route path='/validationContactForm' component={ValidationContactForm} />
+          <Route path='/monespace' component={MonEspace} />
+          <Route path='/loginProprietaire' component={LoginProprietaire} />
+          <Route path='/loginLocataire' component={LoginLocataire} />
+          <Route path='/indexProfil' component={IndexProfil} />
+          <Route path='/profile' component={Profile} />
+          <Route path='/profilePropriétaire' component={ProfileProprietaire} />
+          <Route path='/profileLocataire' component={ProfileLocataire} />
+          <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
+          <Route path='/dashboard' component={ProfileTabs} />
+          <Route component={NotFound} />
+        </Switch>
+      <Footer/>
+      </div>
   );
 }
 
