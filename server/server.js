@@ -11,12 +11,13 @@ import minify from 'express-minify';
 const PORT = 3000;
 
 const app = express();
+
 app.use(compression());
 app.use(minify());
-
 app.use(express.static('./build'));
 
-app.get('/*', (req, res) => {
+
+app.use("/*", (req, res, next) => {
   const context = {};
   const app = ReactDOMServer.renderToString(
     <StaticRouter location={req.url} context={context}>
@@ -33,10 +34,6 @@ app.get('/*', (req, res) => {
 
     if (context.status === 404) {
       res.status(404);
-    }
-
-    if (context.url) {
-      return res.redirect(301, context.url);
     }
 
     return res.send(
