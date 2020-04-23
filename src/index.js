@@ -4,7 +4,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {BrowserRouter, HashRouter} from 'react-router-dom';
+import {HashRouter, BrowserRouter} from 'react-router-dom';
 
 ReactDOM.hydrate(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 

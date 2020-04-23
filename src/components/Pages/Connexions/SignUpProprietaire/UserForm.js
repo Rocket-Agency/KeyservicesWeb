@@ -57,8 +57,8 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { sexe, first_name, last_name, tel, birth, factureAdress, zipCode, email, password } = this.state;
-    const values = { sexe, first_name, last_name, tel, birth, factureAdress, zipCode, email, password };
+    const { sexe, first_name, last_name, tel, dateOfBirth, factureAdress, zipCode, email, password } = this.state;
+    const values = { sexe, first_name, last_name, tel, dateOfBirth, factureAdress, zipCode, email, password };
       switch (step) {
         case 1:
           return (

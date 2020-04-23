@@ -14,46 +14,22 @@ export class Confirm extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      email: "",
-      password: "",
-    };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  }
-
-  handleSubmit(event) {
-    const { email, password } = this.state;
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    }
-    axios.post("http://localhost:3001/api/auth/signin",
-        {
-            email: email,
-            password: password
-        },
-        config
-      )
-      .then(response => {
-        this.props.history.push('/dashboard', {user: response.data});
-      })
-      .catch(error => {
-      });
-    event.preventDefault();
   }
 
   continue = e => {
+    axios.post("http://localhost:3001/api/auth/signup",
+        {
+            first_name: this.props.values.first_name,
+            last_name: this.props.values.last_name,
+            birth: this.props.values.dateOfBirth,
+            sexe: this.props.values.sexe,
+            photo: 'test.png',
+            email: this.props.values.email,
+            password: this.props.values.password,
+            adresse: this.props.values.factureAdress + this.props.values.zipCode,
+            groups: ["proprietaire"]
+        }
+      )
     e.preventDefault();
     this.props.nextStep();
   };
@@ -65,7 +41,7 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { sexe, first_name, last_name, tel, birth, factureAdress, zipCode, email, password }
+      values: { sexe, first_name, last_name, tel, dateOfBirth, factureAdress, zipCode, email, password }
     } = this.props;
     return (
       <MuiThemeProvider >
@@ -90,7 +66,7 @@ export class Confirm extends Component {
             </ListItem>
 
             <ListItem>
-              <ListItemText primary="Date de naissance" secondary={birth} /> 
+              <ListItemText primary="Date de naissance" secondary={dateOfBirth} /> 
             </ListItem>
             <br/>
             <h2>Information de votre adresse</h2>

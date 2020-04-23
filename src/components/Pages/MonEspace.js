@@ -5,6 +5,7 @@ import '../../css/MonEspace.scss';
 import { Link } from 'react-router-dom';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
+import Img from 'react-cool-img';
 
 
 export class MonEspace extends Component {
@@ -24,7 +25,7 @@ export class MonEspace extends Component {
                         <Col md={5}>
                             <div className="d-flex justify-content-center">
                                 <Card className="card">
-                                    <img className="card-img" id="Propriétaire" src='./images/Proprietaire.png' alt="Gerer_Mes_Locations" />
+                                    <Img className="card-img" id="Propriétaire" src='./images/Proprietaire.png' alt="Gerer_Mes_Locations" />
                                     <Link className="card-footer" to="/loginProprietaire">Mon espace propriétaire</Link>
 
                                 </Card>
@@ -36,7 +37,7 @@ export class MonEspace extends Component {
                         <Col md={5}>
                             <div className="d-flex justify-content-center"  id="Locataire">
                                 <div className="card">
-                                    <img className="card-img" src='./images/Locataire.png' alt="Gerer_Mes_Locations" />
+                                    <Img className="card-img" src='./images/Locataire.png' alt="Gerer_Mes_Locations" />
                                     <Link className="card-footer" to="/loginLocataire">Mon espace locataire</Link>                              
                                 </div>
                             </div>

@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
 
+import Img from 'react-cool-img';
+
 export class Contact extends Component {
     render() {
 
@@ -101,7 +103,7 @@ export class Contact extends Component {
 
                         <Col md={6}>
                                 <Container md={{ span: 6, offset: 3 }} className="contact-bloc-map">
-                                     <img src='./images/map.png' className="map-contact" alt="map contact"/>
+                                     <Img src='./images/map.png' className="map-contact" alt="map contact"/>
                                 </Container>   
                      
                                 <Row fluid="md" className="horizontal_lign" ></Row>
@@ -110,7 +112,7 @@ export class Contact extends Component {
                                     <Row >
                                         <Col xs={12} md={4} className="Position_icon d-flex justify-content-center">
                                             <Row> 
-                                                <img src='./images/Icon_position.png' alt="adresse_keyservices"/>
+                                                <Img src='./images/Icon_position.png' alt="adresse_keyservices"/>
                                             </Row>
                                          </Col>
                                         <Col xs={12} md={8} className="Position_informations d-flex">
@@ -121,7 +123,7 @@ export class Contact extends Component {
                                     <Row>
                                         <Col xs={12} md={4} className="Position_icon d-flex justify-content-center">
                                         <Row> 
-                                            <img src='./images/Icon_email.png' alt="contact_keyservices"/>
+                                            <Img src='./images/Icon_email.png' alt="contact_keyservices"/>
                                         </Row>
                                          </Col>
                                         <Col xs={12} md={8} className="Position_informations d-flex">
@@ -132,7 +134,7 @@ export class Contact extends Component {
                                     <Row>
                                         <Col xs={12} md={4} className="Position_icon d-flex justify-content-center">
                                         <Row> 
-                                            <img src='./images/Icon_phone.png' alt="number"/>
+                                            <Img src='./images/Icon_phone.png' alt="number"/>
                                         </Row>
                                          </Col>
                                         <Col xs={12} md={8} className="Position_informations d-flex">

@@ -153,7 +153,7 @@ export class InformationGenerales extends Component {
                                                 shrink: true,
                                                 }}
                                                 onChange={handleChange('dateOfBirth')} 
-                                                defaultValue={values.birth} 
+                                                defaultValue={values.dateOfBirth} 
                                                 fullWidth
                                                 variant="outlined"
                                                 size="small"
