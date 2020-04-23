@@ -48,7 +48,7 @@ export class Confirm extends Component {
         <React.Fragment>
           <AppBar title="Confirm User Data" />
           <List>
-            <h2>Information générale</h2>
+            <h2>Information générale</h2> 
             <ListItem>
                 <ListItemText primary="Civilité" secondary={sexe} /> 
             </ListItem>

@@ -14,7 +14,7 @@ export class MonEspace extends Component {
     render() {
         return(
             <div>
-                <div className="mt-2 d-flex justify-content-center">
+                <div className="mt-5 mb-2 d-flex justify-content-center">
                 <h3>Mon Espace</h3>
                 </div>
 
@@ -41,11 +41,7 @@ export class MonEspace extends Component {
                                 </div>
                             </div>
                         </Col>
-
-                        <Col md={1}></Col>
                     </Row>
-
-
                 </Container>
             </div>
         )

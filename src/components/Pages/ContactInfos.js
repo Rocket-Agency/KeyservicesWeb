@@ -49,4 +49,4 @@ export class ContactInfos extends Component {
     }
 }
 
-export default ContactInfos; 
+export default ContactInfos;

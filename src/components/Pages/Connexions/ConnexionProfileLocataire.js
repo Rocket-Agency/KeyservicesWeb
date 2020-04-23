@@ -56,7 +56,7 @@ import { withRouter } from 'react-router-dom';
 
   render() {
     return (
-        <div className="formConnexion">
+      <div className="formConnexion">
         <Form onSubmit={this.handleSubmit}>
             <Form.Row className="d-flex justify-content-center" >
                 <Form.Group as={Col} md="8" controlId="formGridId">
