@@ -14,9 +14,6 @@ class ConnexionProfileProprietaire extends Component {
         this.state = {
           email: "",
           password: "",
-          emailError:"",
-          passwordError: "",
-          loginErrors: "",
         };
     
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +25,7 @@ class ConnexionProfileProprietaire extends Component {
           [event.target.name]: event.target.value
         });
       }
-
+    
       handleSubmit(event) {
         const { email, password } = this.state;
         const config = {
@@ -45,85 +42,86 @@ class ConnexionProfileProprietaire extends Component {
             config
           )
           .then(response => {
-            console.log(response.data);
-            this.props.history.push('/indexProfil');
+            this.props.history.push('/dashboard', {user: response.data});
           })
           .catch(error => {
-            console.log("login error", error.message);
           });
         event.preventDefault();
-        // const isValid = this.validate();
       }
 
   render() {
 
     return (
-      <div>
-        <Form onSubmit={this.handleSubmit}>
-            <Form.Row className="d-flex justify-content-center" >
-                <Form.Group as={Col} md="8" controlId="formGridId">
-                    <Form.Label>Identifiant</Form.Label>
-                    <Form.Control    
-                        name="email" 
-                        type="email" 
-                        placeholder="Entrer votre email" 
-                        value={this.state.email} 
-                        onChange={this.handleChange} />
+      <div className="formConnexion">
+
+         <div className="mt-4 mb-4 d-flex justify-content-center">
+             <h3>Connexion Propriétaire</h3>
+        </div>
+            <Form onSubmit={this.handleSubmit}>
+                <Form.Row className="d-flex justify-content-center" >
+                    <Form.Group as={Col} md="8" controlId="formGridId">
+                        <Form.Label>Identifiant</Form.Label>
+                        <Form.Control    
+                            name="email" 
+                            type="email" 
+                            placeholder="Entrer votre email" 
+                            value={this.state.email} 
+                            onChange={this.handleChange} />
+                        </Form.Group>
+                </Form.Row>
+
+                <Form.Row className="d-flex justify-content-center">
+                    <Form.Group as={Col} md="8" controlId="formGridPassword">
+                    <Form.Label>Mot de passe</Form.Label>
+                    <Form.Control 
+                        name="password" 
+                        type="password" 
+                        placeholder="Entrer votre mot de passe" 
+                        value={this.state.password} 
+                        onChange={this.handleChange} />                 
                     </Form.Group>
-            </Form.Row>
+                </Form.Row>
 
-            <Form.Row className="d-flex justify-content-center">
-                <Form.Group as={Col} md="8" controlId="formGridPassword">
-                <Form.Label>Mot de passe</Form.Label>
-                <Form.Control 
-                    name="password" 
-                    type="password" 
-                    placeholder="Entrer votre mot de passe" 
-                    value={this.state.password} 
-                    onChange={this.handleChange} />                 
-                </Form.Group>
-            </Form.Row>
+                <Form.Row className="mt-4">
+                    <Form.Group as={Col} md="12" className="mt-4">
+                        <Container>
 
-            <Form.Row className="mt-4">
-                <Form.Group as={Col} md="12" className="mt-4">
-                    <Container>
-
-                        <Row>
-                            <Col xs={12} md={6} className="d-flex justify-content-end align-items-center">
-                                <Hidden xs>
-                                    <div className="d-flex justify-content-center align-items-center">
-                                        <div id="container">                    
-                                            <button className="learn-more">
-                                                <span className="circle" aria-hidden="true">
-                                                    <span className="icon arrow"></span>
-                                                        </span>
+                            <Row>
+                                <Col xs={12} md={6} className="d-flex justify-content-end align-items-center">
+                                    <Hidden xs>
+                                        <div className="d-flex justify-content-center align-items-center">
+                                            <div id="container">                    
+                                                <button className="learn-more">
+                                                    <span className="circle" aria-hidden="true">
+                                                        <span className="icon arrow"></span>
+                                                            </span>
+                                                        <span className="button-text">Se connecter</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                    </Hidden>
+                                    <Visible xs>
+                                        <div className="d-flex justify-content-center align-items-center">
+                                            <div id="container">                    
+                                                <button className="learn-more">
+                                                    <span className="circle" aria-hidden="true">
+                                                        <span className="icon arrow"></span>
+                                                    </span>
                                                     <span className="button-text">Se connecter</span>
                                                 </button>
                                             </div>
-                                        </div>
-                                </Hidden>
-                                <Visible xs>
-                                    <div className="d-flex justify-content-center align-items-center">
-                                        <div id="container">                    
-                                            <button className="learn-more">
-                                                <span className="circle" aria-hidden="true">
-                                                    <span className="icon arrow"></span>
-                                                 </span>
-                                                <span className="button-text">Se connecter</span>
-                                            </button>
-                                        </div>
-                                   </div>
-                                </Visible>
-                            </Col>
+                                    </div>
+                                    </Visible>
+                                </Col>
 
-                            <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
-                                <Link  to="/inscriptionProprietaire">S'inscrire</Link>                                                        
-                            </Col>
-                        </Row>
-                    </Container>
-                </Form.Group>
-            </Form.Row>
-        </Form>
+                                <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
+                                    <Link  to="/inscriptionProprietaire">S'inscrire</Link>                                                        
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Form.Group>
+                </Form.Row>
+            </Form>
       </div>
     )
   }

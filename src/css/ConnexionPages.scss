@@ -1,36 +1,23 @@
-.colorBackgroundConnexion {
-    background: #FAF0E6;
-    padding: 40px 27px 41px;
-    margin: 30px 45px 70px 45px;
-}
 
-@media (max-width: 768px) {
-    .colorBackgroundConnexion  {
-        background: transparent;
-        border-color: transparent;
-        margin: 0;
-    }
-}
-
-.Vertical-lign-connexion {
-    position: absolute;
-    background: #A38068;
-    mix-blend-mode: normal;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    filter: blur(2px);
-    height: 368px;
-    width: 4px;
-    display: flex;
-    margin-left: 45%;
-}
+// .Vertical-lign-connexion {
+//     position: absolute;
+//     background: #A38068;
+//     mix-blend-mode: normal;
+//     border: 1px solid #000000;
+//     box-sizing: border-box;
+//     filter: blur(2px);
+//     height: 368px;
+//     width: 4px;
+//     display: flex;
+//     margin-left: 45%;
+// }
 
 
-@media (max-width: 768px) {
-    .Vertical-lign-connexion  {
-        display: none;
-    }
-}
+// @media (max-width: 768px) {
+//     .Vertical-lign-connexion  {
+//         display: none;
+//     }
+// }
 
 .connexion-proprietaire {
     height: auto;

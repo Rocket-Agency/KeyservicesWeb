@@ -3,6 +3,7 @@ import '../../css/keyservices.scss';
 import ServicesComponent from './ServicesComponent';
 
 import {Container, Tab, Row, Col, Nav, Card} from 'react-bootstrap';
+import Img from 'react-cool-img';
 
 export class KeyservicesPresentation extends Component {
 
@@ -32,7 +33,7 @@ export class KeyservicesPresentation extends Component {
 
                                             <Row className="mt-2" middle="xs">
                                                 <Col md={4} className="d-flex justify-content-center align-items-center">
-                                                    <img src='./images/Keyservices_Logo_presentation.png' width="200px" height="200px" alt="Logo keyservices "/>
+                                                    <Img src='./images/Keyservices_Logo_presentation.png' width="200px" height="200px" alt="Logo keyservices "/>
                                                 </Col>
                                                     
                                                 <Col md={8}>

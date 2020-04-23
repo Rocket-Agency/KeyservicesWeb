@@ -7,6 +7,7 @@ import { Visible, Hidden } from 'react-grid-system';
 
 import ReactFlagsSelect from 'react-flags-select';
 import 'react-flags-select/css/react-flags-select.css';
+import Img from 'react-cool-img';
 
   export class BlocLeft extends Component {
     render() {
@@ -14,10 +15,10 @@ import 'react-flags-select/css/react-flags-select.css';
             <div class="blocLeftSearchLang">
                 <Row className="d-flex justify-content-center">
                         {/* <Col sm={3} className="d-flex justify-content-end">
-                            <img src='./images/French-flag.png' alt="Langue Française" />
+                            <Img src='./images/French-flag.png' alt="Langue Française" />
                         </Col>
                         <Col sm={3}className="d-flex justify-content-left">
-                            <img src='./images/UK-flag.png' alt="Langue Française" />
+                            <Img src='./images/UK-flag.png' alt="Langue Française" />
                         </Col> */}
                          <Visible xs sm>
                             <Row className="d-flex justify-content-center">
@@ -35,10 +36,10 @@ import 'react-flags-select/css/react-flags-select.css';
 
                         <Hidden xs sm>
                             <Col sm={3} className="d-flex justify-content-center">
-                                <img src='./images/French-flag.png' alt="Langue Française" />
+                                <Img src='./images/French-flag.png' alt="Langue Française" />
                             </Col>
                             <Col sm={3}className="d-flex justify-content-center">
-                                <img src='./images/UK-flag.png' alt="Langue Française" />
+                                <Img src='./images/UK-flag.png' alt="Langue Française" />
                             </Col>
                         </Hidden>
                                                 
