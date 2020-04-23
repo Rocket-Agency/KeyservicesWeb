@@ -20,6 +20,7 @@ import {LoginProprietaire} from './components/Pages/Connexions/Login/LoginPropri
 import {LoginLocataire} from './components/Pages/Connexions/Login/LoginLocataire';
 import {IndexProfil} from './components/Pages/Connexions/Profiles/IndexProfil';
 import {Profile} from './components/Pages/Connexions/Profiles/Profile';
+
 import {ProfileProprietaire} from './components/Pages/Connexions/Profiles/ProfileProprietaire';
 import {ProfileLocataire} from './components/Pages/Connexions/Profiles/ProfileLocataire';
 

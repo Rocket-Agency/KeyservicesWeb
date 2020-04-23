@@ -2,13 +2,13 @@
 import React, {Component} from 'react'
 import '../../css/Contact.scss';
 
-import {Form, Col, Container, Row, Button} from 'react-bootstrap';
+import {Form, Col, Row} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 import { Link } from 'react-router-dom';
 
-//icons
+import ContactMap from './ContactMap';
 import { IoIosArrowForward } from "react-icons/io";
-import { FaArrowRight } from "react-icons/fa";
+import ContactInfos from './ContactInfos';
 
 import Img from 'react-cool-img';
 
@@ -17,13 +17,13 @@ export class Contact extends Component {
 
         return(
             <div>
-                <div className="mt-2 d-flex text-center justify-content-center">
+                <div className="mt-5 d-flex text-center justify-content-center">
                      <h1>On s’occupe de tous et vous de rien</h1>
                 </div>
 
-                <Container fluid>
-                    <Row>
-                        <Col md={6}>
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-left mb-2">
                         
                             <div className="contact-bloc" >
                                 <div className="d-flex text-center justify-content-center">
@@ -37,115 +37,80 @@ export class Contact extends Component {
 
                                 <Form>
                                     <Form.Row>
-                                        <Form.Group as={Col} md="6" controlId="formGridName">
+                                        <Form.Group as={Col} lg="6" md="12" sm="12" controlId="formGridName">
                                         <Form.Label>Nom</Form.Label>
                                         <Form.Control type="name" placeholder="Entrer votre nom" />
                                         </Form.Group>
-                                    
 
-                                        <Form.Group as={Col} md="6" controlId="formGridLastName">
+
+                                        <Form.Group as={Col} lg="6" md="12" sm="12" controlId="formGridLastName">
                                         <Form.Label>Prénom</Form.Label>
                                         <Form.Control type="lastname" placeholder="Entrer votre prénom" />
                                         </Form.Group>
                                     </Form.Row>
 
                                     <Form.Row>
-                                        <Form.Group as={Col} md="6" controlId="formGridEmail">
-                                        <Form.Label>Email</Form.Label>
-                                        <Form.Control type="email" placeholder="Entrer votre adresse email" />
-                                        </Form.Group>
-                                    
+                                        <Form.Group as={Col} lg="6" md="12" sm="12" controlId="formGridEmail">
+                                            <Form.Label>Email</Form.Label>
+                                            <Form.Control type="email" placeholder="Entrer votre adresse email" />
+                                         </Form.Group>
+
 
                                         <Form.Group as={Col} controlId="formGridState">
                                             <Form.Label>Sujet</Form.Label>
                                             <Form.Control as="select">
                                                 <option>Choisir un sujet...</option>
-                                                <option>...</option>
+                                                <option>Demande d'informationn</option>
                                             </Form.Control>
-                                        </Form.Group>
-                                    </Form.Row>
+                                            </Form.Group>
+                                        </Form.Row>
 
-                                    <Form.Row>
-                                        <Form.Group as={Col}  controlId="votreMessage.ControlTextarea">
-                                            <Form.Label>Votre message</Form.Label>
-                                            <Form.Control as="textarea" rows="3" placeholder="Entrer votre message" />
-                                        </Form.Group>
-                                    </Form.Row>
+                                        <Form.Row>
+                                            <Form.Group as={Col}  controlId="votreMessage.ControlTextarea">
+                                                <Form.Label>Votre message</Form.Label>
+                                                <Form.Control as="textarea" rows="3" placeholder="Entrer votre message" />
+                                            </Form.Group>
+                                        </Form.Row>
 
-                                    <Form.Row className="mt-4">
- 
-                                        <Col xs={8} sm={12} className="d-flex justify-content-end align-items-center">
-                                                <Hidden xs>
-                                                <Button id="btn-seConnecter" type="submit"  to="/">
-                                                    <IoIosArrowForward /> 
-                                                </Button>
+                                       <Form.Row className="mt-4">
 
-                                                <Link id="seConnecter" to="/contact">
-                                                    Envoyer
-                                                </Link>
-                                                </Hidden>
-                                                <Visible xs>
-                                                    <Button id="envoyerMobile" type="submit">
-                                                        <FaArrowRight/>
-                                                        <a clasName="envoyer" href="/validationContactForm"> 
-                                                            Envoyer
-                                                        </a>
-                                                    </Button>
-                                                </Visible>
+                                            <Col xs={8} sm={12} className="d-flex justify-content-end align-items-center">
+                                                <div id="container">                    
+                                                    <button className="learn-more">
+                                                        <span className="circle" aria-hidden="true">
+                                                            <span className="icon arrow"></span>
+                                                        </span>
+                                                       <span className="button-text">Envoyer</span>
+                                                    </button>
+                                                </div>
                                             </Col>      
 
                                     </Form.Row>
+
                                 </Form>
                             </div>                        
-                        </Col>
+                        </div> 
 
-                        <div className="Vertical-lign align-item-center mt-5"></div>
+                        <div className="Vertical-lign-contact align-item-center"></div>
 
-                        <Col md={6}>
-                                <Container md={{ span: 6, offset: 3 }} className="contact-bloc-map">
-                                     <Img src='./images/map.png' className="map-contact" alt="map contact"/>
-                                </Container>   
-                     
-                                <Row fluid="md" className="horizontal_lign" ></Row>
+                                <Hidden xs sm md>
+                                    <div className="Vertical-lign-contact align-item-center"></div>
+                                </Hidden>
 
-                                <Container className="contact-bloc-informations">
-                                    <Row >
-                                        <Col xs={12} md={4} className="Position_icon d-flex justify-content-center">
-                                            <Row> 
-                                                <Img src='./images/Icon_position.png' alt="adresse_keyservices"/>
-                                            </Row>
-                                         </Col>
-                                        <Col xs={12} md={8} className="Position_informations d-flex">
-                                            Rocket Agency - 18 rue Léon Frot - 75011 PARIS
-                                        </Col>
-                                    </Row>
+                        <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
+                            <div className="card contact-bloc-map">                  
+                                <img className="card-img style-card" src='./images/map.png' className="map-contact" alt="map contact"/> 
+                             </div>
 
-                                    <Row>
-                                        <Col xs={12} md={4} className="Position_icon d-flex justify-content-center">
-                                        <Row> 
-                                            <Img src='./images/Icon_email.png' alt="contact_keyservices"/>
-                                        </Row>
-                                         </Col>
-                                        <Col xs={12} md={8} className="Position_informations d-flex">
-                                            contact@keyservices.com
-                                        </Col>
-                                    </Row>
+                             <Row fluid="md" className="horizontal_lign" ></Row>
 
-                                    <Row>
-                                        <Col xs={12} md={4} className="Position_icon d-flex justify-content-center">
-                                        <Row> 
-                                            <Img src='./images/Icon_phone.png' alt="number"/>
-                                        </Row>
-                                         </Col>
-                                        <Col xs={12} md={8} className="Position_informations d-flex">
-                                            01.21.55.16.86
-                                        </Col>
-                                    </Row>
-                            </Container>
-                        </Col>
-                    </Row>
-                </Container>
+                                <ContactInfos />
+                        </div>
+                    </div>
+                 </div>        
             </div>
         )
     }
 }
+
+export default Contact; 

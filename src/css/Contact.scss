@@ -44,7 +44,7 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .contact-bloc-informations {
         background-color : transparent;
         border-color: transparent;
@@ -156,6 +156,26 @@ margin-right: 5px;
 
 @media (max-width: 576px) {
     .horizontal_lign {
+        display: none;
+    }
+}
+
+.Vertical-lign-contact {
+    position: absolute;
+    background: #A38068;
+    mix-blend-mode: normal;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    filter: blur(2px);
+    height: 520px;
+    width: 4px;
+    display: flex;
+    margin-left: 49%;
+}
+
+
+@media (max-width: 768px) {
+    .Vertical-lign-contact  {
         display: none;
     }
 }
