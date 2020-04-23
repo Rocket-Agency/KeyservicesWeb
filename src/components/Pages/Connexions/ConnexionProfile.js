@@ -33,7 +33,6 @@ import {withRouter
     
       handleSubmit(event) {
         const { email, password } = this.state;
-        console.log(email, password);
         const config = {
           headers: {
             'Content-Type': 'application/json',
@@ -48,11 +47,9 @@ import {withRouter
             config
           )
           .then(response => {
-            console.log(response.data);
             this.props.history.push('/dashboard', {user: response.data});
           })
           .catch(error => {
-            console.log(error);
           });
         event.preventDefault();
       }
@@ -82,7 +79,7 @@ import {withRouter
                         <Row>
                             <Col xs={12} className="d-flex justify-content-center align-items-center">
                                 <Hidden xs>
-                                <div className="d-flex justify-content-center align-items-center">
+                                    <div className="d-flex justify-content-center align-items-center">
                                         <div id="container">                    
                                             <button className="learn-more">
                                                 <span className="circle" aria-hidden="true">
