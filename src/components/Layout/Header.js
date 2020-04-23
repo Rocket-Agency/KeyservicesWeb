@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap';
 import BlocLeft from './BlocLeft';
 // import { browserHistory } from 'react-router';
+import Img from 'react-cool-img';
 
 
 export class Header extends Component {
@@ -18,7 +19,7 @@ export class Header extends Component {
 
                 <Navbar collapseOnSelect expand="md" variant="light">
                     <a className="navbar-brand" href="/">
-                        <img src={logo} alt="logo" style={{ 
+                        <Img src={logo} alt="logo" style={{ 
                             width: '100px'
                         }} />
                     </a>

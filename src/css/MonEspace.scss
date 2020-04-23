@@ -1,4 +1,4 @@
-.Vertical-lign {
+.Vertical-lign-espace {
     position: absolute;
     background: #A38068;
     mix-blend-mode: normal;
@@ -9,26 +9,50 @@
     width: 4px;
     display: flex;
     margin-left: 50%;
+    margin-top: 20px;
 }
 
 
-@media (max-width: 768px) {
-    .Vertical-lign  {
+@media (max-width: 767px) {
+    .Vertical-lign-espace  {
         display: none;
     }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .Vertical-lign-espace  {
+        position: absolute;
+        background: #A38068;
+        mix-blend-mode: normal;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        filter: blur(2px);
+        height: 335px;
+        width: 4px;
+        display: flex;
+        margin-left: 50%;
+        margin-top: 100px;
+    }
+}
+
 
 .card {
     .card-footer {
         background: #FFFFFF;
         border: 1px solid #87E990;
         box-sizing: border-box;
-        margin-bottom: 49px;
+        margin-bottom: 73px;
         text-align: center;
     }
 
     a {
         color: #000000;
         text-decoration: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-footer {
+        margin-bottom: 70px;
     }
 }
