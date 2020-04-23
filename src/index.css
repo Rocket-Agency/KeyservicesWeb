@@ -1,7 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Nunito'
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Nunito';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,4 +13,4 @@ code {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Nunito';
   font-weight: 700;
-}
+} 

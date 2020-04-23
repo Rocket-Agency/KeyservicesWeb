@@ -5,9 +5,9 @@ import '../../../../css/InscriptionProprietaire.scss';
 import { Col, Container, Row, Form } from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
 // // import { Link } from 'react-router-dom';
-import FormControl from '@material-ui/core/FormControl';
+// import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
+// import FormLabel from '@material-ui/core/FormLabel';
 // import OutlinedInput from '@material-ui/core/OutlinedInput';
 // import InputLabel from '@material-ui/core/InputLabel';
 import Radio from '@material-ui/core/Radio';
@@ -91,8 +91,8 @@ export class InformationGenerales extends Component {
                                          <TextField
                                             required id="standard-required"
                                             label="Entre votre Nom"
-                                            onChange={handleChange('lastName')}
-                                            defaultValue={values.lastName} 
+                                            onChange={handleChange('last_name')}
+                                            defaultValue={values.last_name} 
                                             variant="outlined"
                                             pattern="[A-Za-z]{3}"
                                             fullWidth
@@ -111,8 +111,8 @@ export class InformationGenerales extends Component {
                                         <TextField
                                             required id="standard-required"
                                             label="Entrez votre prénom"
-                                            onChange={handleChange('firstName')}
-                                            defaultValue={values.firstName}
+                                            onChange={handleChange('first_name')}
+                                            defaultValue={values.first_name}
                                             variant="outlined"
                                             fullWidth
                                             size="small"

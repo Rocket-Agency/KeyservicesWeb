@@ -1,4 +1,3 @@
-//Contact.js
 import React, {Component} from 'react'
 import '../../css/Contact.scss';
 

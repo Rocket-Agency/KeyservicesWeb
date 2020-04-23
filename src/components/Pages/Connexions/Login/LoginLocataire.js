@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import '../../../../css/ConnexionPages.scss';
-import ConnexionProfile from '../ConnexionProfile';
-
-// import ConnexionProfileLocataire from '../ConnexionProfileLocataire';
+import ConnexionProfileLocataire from '../ConnexionProfileLocataire';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
 
@@ -18,7 +16,7 @@ export class LoginLocataire extends Component {
                                         <h3>Connexion Locataire</h3>
                                     </div>
 
-                                    <ConnexionProfile />
+                                    <ConnexionProfileLocataire />
 
                                 </Col>
 
