@@ -18,7 +18,7 @@ export class MonEspace extends Component {
                 </div>
 
                 <Container fluid>
-                    <Row>
+                    <Row >
                         <Col md={6}>
                             <div className="d-flex justify-content-center"  id="Propriétaire">
                                 <Card className="card">
@@ -29,7 +29,7 @@ export class MonEspace extends Component {
                             </div>
                         </Col>     
 
-                        <div className="Vertical-lign-espace align-item-center"></div>
+                        <div className="Vertical-lign-espace align-item-connexion"></div>
 
                         <Col md={6}>
                             <div className="d-flex justify-content-center"  id="Locataire">
@@ -40,8 +40,6 @@ export class MonEspace extends Component {
                             </div>
                         </Col>
                     </Row>
-
-
                 </Container>
             </div>
         )

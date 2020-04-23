@@ -9,10 +9,8 @@
         margin-left: 0;
         margin-right: 0;
     }
-}
 
-@media (max-width: 576px) {
-    .contact-bloc {
+    .contact-bloc-map {
         margin-left: 0;
         margin-right: 0;
     }
@@ -23,19 +21,12 @@
     width: 100%;
 }
 
-@media (max-width: 576px) {
-    .contact-bloc-map {
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
 .contact-bloc-informations {
     background-color :#FAF0E6;
     border: 1px solid #A38068;
     font-size: 15px;
     padding: 10px 20px;
-    margin: 25px 0 10px 20px;
+    margin: 25px 0;
     max-width: 775px;
 
     .Position_icon {
@@ -200,7 +191,7 @@ margin-right: 5px;
         border: 1px solid #000000;
         box-sizing: border-box;
         filter: blur(2px);
-        height: 783px;
+        height: 770px;
         width: 4px;
         display: flex;
         margin-left: 49%;

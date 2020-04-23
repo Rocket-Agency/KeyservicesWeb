@@ -59,7 +59,7 @@ import ProfileTabs from './components/Pages/Dashboard';
 
   render() {
     return (
-      <div>
+      <div className="formConnexion">
         <Form onSubmit={this.handleSubmit}>
             <Form.Row className="d-flex justify-content-center" >
                 <Form.Group as={Col} md="8" controlId="formGridId">
