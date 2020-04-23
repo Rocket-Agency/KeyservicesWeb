@@ -14,16 +14,15 @@ export class MonEspace extends Component {
     render() {
         return(
             <div>
-                <div className="mt-5 d-flex justify-content-center">
+                <div className="mt-2 d-flex justify-content-center">
                 <h3>Mon Espace</h3>
                 </div>
 
                 <Container fluid>
                     <Row>
-                        <Col md={1}></Col>
+                        <Col md={6}>
 
-                        <Col md={5}>
-                            <div className="d-flex justify-content-center">
+                            <div className="d-flex justify-content-center"  id="Propriétaire">
                                 <Card className="card">
                                     <Img className="card-img" id="Propriétaire" src='./images/Proprietaire.png' alt="Gerer_Mes_Locations" />
                                     <Link className="card-footer" to="/loginProprietaire">Mon espace propriétaire</Link>
@@ -32,12 +31,12 @@ export class MonEspace extends Component {
                             </div>
                         </Col>     
 
-                        <div className="Vertical-lign align-item-center mt-5"></div>
+                        <div className="Vertical-lign-espace align-item-connexion"></div>
 
-                        <Col md={5}>
+                        <Col md={6}>
                             <div className="d-flex justify-content-center"  id="Locataire">
                                 <div className="card">
-                                    <Img className="card-img" src='./images/Locataire.png' alt="Gerer_Mes_Locations" />
+                                    <Img className="card-img" id="Locataire" src='./images/Locataire.png' alt="Gerer_Mes_Locations" />
                                     <Link className="card-footer" to="/loginLocataire">Mon espace locataire</Link>                              
                                 </div>
                             </div>

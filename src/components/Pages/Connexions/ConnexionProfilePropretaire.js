@@ -52,19 +52,22 @@ class ConnexionProfileProprietaire extends Component {
   render() {
 
     return (
-      <div>
-        <Form onSubmit={this.handleSubmit}>
-            <Form.Row className="d-flex justify-content-center" >
-                <Form.Group as={Col} md="8" controlId="formGridId">
-                    <Form.Label>Identifiant</Form.Label>
-                    <Form.Control    
-                        name="email" 
-                        type="email" 
-                        placeholder="Entrer votre email" 
-                        value={this.state.email} 
-                        onChange={this.handleChange} />
-                    </Form.Group>
-            </Form.Row>
+        <div className="formConnexion">
+             <div className="mt-4 mb-4 d-flex justify-content-center">
+                <h3>Connexion Propriétaire</h3>
+             </div>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Row className="d-flex justify-content-center" >
+                        <Form.Group as={Col} md="8" controlId="formGridId">
+                            <Form.Label>Identifiant</Form.Label>
+                            <Form.Control    
+                                name="email" 
+                                type="email" 
+                                placeholder="Entrer votre email" 
+                                value={this.state.email} 
+                                onChange={this.handleChange} />
+                            </Form.Group>
+                    </Form.Row>
 
             <Form.Row className="d-flex justify-content-center">
                 <Form.Group as={Col} md="8" controlId="formGridPassword">
