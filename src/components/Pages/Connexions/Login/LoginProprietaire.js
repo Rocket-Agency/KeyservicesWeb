@@ -20,9 +20,6 @@ export class LoginProprietaire extends Component {
                         <Col md={12}>
                             <Row className="colorBackgroundConnexion">
                                 <Col md={6}>
-                                    <div className="mt-4 mb-4 d-flex justify-content-center">
-                                        <h3>Connexion Propriétaire</h3>
-                                    </div>
 
                                     <ConnexionProfileProprietaire/>
                                 </Col>
