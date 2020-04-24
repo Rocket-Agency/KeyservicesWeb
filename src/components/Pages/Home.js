@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import '../../css/Home.scss';
 import Img from 'react-cool-img';
 
-import ImgDefault from '../../ImagesHome/placeholderbis.png'
+import ImgDefault from '../../ImagesHome/placeholder.png'
 
 
 
@@ -37,14 +37,10 @@ export class Home extends Component {
                             <div className="row">
                             <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
                                     <div className="card">
-                                        {/* <Img className="card-img style-card" 
-                                            placeholder={ImgDefault}
-                                            src="./Images/GererMesLocations.png"
-                                            debounce={1000} alt="Gerer_Mes_Locations" 
-                                        /> */}
                                         <Img className="card-img style-card" 
                                             placeholder={ImgDefault} 
                                             src="./Images/GererMesLocations.png"
+                                            debounce={1000}
                                             alt="Gerer mes locations" 
                                         />
                                         <div className="card-img-overlay">
@@ -57,6 +53,7 @@ export class Home extends Component {
                                         <Img className="card-img style-card" 
                                             placeholder={ImgDefault} 
                                             src="./Images/PosterUneAnnonce.png"
+                                            debounce={1000}
                                             alt="Poster unee annonce" 
                                         />
                                         <div className="card-img-overlay">
