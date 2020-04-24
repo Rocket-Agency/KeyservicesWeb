@@ -14,20 +14,10 @@ import Img from 'react-cool-img';
         return(
             <div class="blocLeftSearchLang">
                 <Row className="d-flex justify-content-center">
-                        {/* <Col sm={3} className="d-flex justify-content-end">
-                            <Img src='./images/French-flag.png' alt="Langue Française" />
-                        </Col>
-                        <Col sm={3}className="d-flex justify-content-left">
-                            <Img src='./images/UK-flag.png' alt="Langue Française" />
-                        </Col> */}
+
                          <Visible xs sm>
                             <Row className="d-flex justify-content-center">
                         
-                                {/* <select className="mt-3 selectLangues">
-                                    <option selected value="french">Français</option>
-                                    <option value="english">Anglais</option>
-                                </select>      */}
-
                                 <ReactFlagsSelect 
                                  defaultCountry="FR"
                                     countries={["GB", "FR"]} />          
@@ -39,7 +29,7 @@ import Img from 'react-cool-img';
                                 <Img src='./images/French-flag.png' alt="Langue Française" />
                             </Col>
                             <Col sm={3}className="d-flex justify-content-center">
-                                <Img src='./images/UK-flag.png' alt="Langue Française" />
+                                <Img src='./images/UK-flag.png' alt="Langue Anglais" />
                             </Col>
                         </Hidden>
                                                 
