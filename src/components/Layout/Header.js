@@ -24,7 +24,7 @@ export class Header extends Component {
                         }} /> */}
                         <Img
                             placeholder={ImgDefaultLogoKeyservices} 
-                            src='./images/Keyservices_Logo.png'
+                            src={logo}
                             width="100px"
                             debounce={1000}
                             alt="Langue Anglais"
