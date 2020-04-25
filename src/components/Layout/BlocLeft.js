@@ -13,7 +13,7 @@ import ImgDefaultLangues from '../../ImagesPlaceholder/placeholderLangues.png'
   export class BlocLeft extends Component {
     render() {
         return(
-            <div class="blocLeftSearchLang">
+            <div className="blocLeftSearchLang">
                 <Row className="d-flex justify-content-center">
 
                          <Visible xs sm>
