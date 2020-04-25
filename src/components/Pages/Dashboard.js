@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
+import '../../css/Dashboard.scss';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import MaterialTable from 'material-table';
+import { Link } from 'react-router-dom';
+import Img from 'react-cool-img';
+import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png'
+
+import MonCompte from './MonCompte';
 
 
 class ProfileTabs extends Component {
@@ -56,14 +62,56 @@ class ProfileTabs extends Component {
         </VerticalTabs>
 
         { activeIndex === 0 && <TabContainer>
-          <ul>
-            <li>{this.state.users.user_first_name}</li>
-            <li>{this.state.users.user_last_name}</li>
-          </ul>
+
+        <div>
+          <div>{this.state.users.user_first_name}</div>
+          <div>{this.state.users.user_last_name}</div>
+        </div>
+
+      <div className="Container">
+          <h1 className="text-center">Mon Espace</h1>
+
+          <h2>Edit Profile</h2>
+
+            <div className="row">
+              <div className="col-md-3">
+                  <div className="text-center">
+                    <Img
+                      placeholder={ImgDefaultAvatar} 
+                      class="avatar img-circle"
+                      alt="avatar" 
+                      />
+                      <h6>Upload a different photo...</h6>
+                      
+                      <input type="file" class="form-control"/>
+                  </div>
+              </div>
+
+              <h3>Personal info</h3>
+
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label class="col-lg-12 control-label">First name:</label>
+                    <div class="col-lg-12">
+                      <input class="form-control" type="text" value="Jane" />
+                    </div>
+                </div>
+              </form>
+
+          </div>
+      </div>
+          
         </TabContainer> }
-        { activeIndex === 1 && <TabContainer>
-          </TabContainer> }
-        { activeIndex === 2 && <TabContainer style={{ minWidth: "100%" }}>
+
+        { activeIndex === 1 &&<TabContainer>
+          Information location
+         </TabContainer> }
+
+         { activeIndex === 2 &&<TabContainer>
+         Calendrier
+         </TabContainer> }
+
+        { activeIndex === 3 && <TabContainer style={{ minWidth: "100%" }}>
             <MaterialTable
               columns={[
                 { title: "Id", field: "user_id", editable: 'never'},
@@ -182,7 +230,7 @@ const MyTab = withStyles(theme => ({
 
 function TabContainer(props) {
   return (
-    <Typography component="div" style={{ padding: 24 }}>
+    <Typography component="div" className="tabDashboard" style={{ padding: 24 }}>
       {props.children}
     </Typography>
   );
