@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import '../../css/Home.scss';
 import Img from 'react-cool-img';
 
-import ImgDefault from '../../ImagesHome/placeholder.png'
+import ImgDefault from '../../ImagesPlaceholder/placeholder.png';
 
 
 

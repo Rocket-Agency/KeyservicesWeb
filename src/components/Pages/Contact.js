@@ -4,9 +4,11 @@ import '../../css/Contact.scss';
 
 import {Form, Col, Row} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import Img from 'react-cool-img';
+import ImgDefaultMap from '../../ImagesPlaceholder/placeholderMap.png'
 
-import ContactMap from './ContactMap';
+// import ContactMap from './ContactMap';
 import ContactInfos from './ContactInfos';
 
 export class Contact extends Component {
@@ -95,7 +97,13 @@ export class Contact extends Component {
 
                                 <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
                                     <div className="card contact-bloc-map">
-                                        <img className="card-img style-card" src='./images/map.png' className="map-contact" alt="map contact"/>
+                                        {/* <img className="card-img style-card" src='./images/map.png' className="map-contact" alt="map contact"/> */}
+                                        <Img className="card-img style-card map-contact"
+                                            placeholder={ImgDefaultMap} 
+                                            src='./images/map.png'
+                                            debounce={1000}
+                                            alt="Carte position entreprise"
+                                        />       
                                     </div>
 
                                     <Row fluid="md" className="horizontal_lign" ></Row>

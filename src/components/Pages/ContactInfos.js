@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import '../../css/Contact.scss';
 
-import {Form, Col, Container, Row, Button} from 'react-bootstrap';
-import { Visible, Hidden } from 'react-grid-system';
+import {Col, Container, Row} from 'react-bootstrap';
+// import { Visible, Hidden } from 'react-grid-system';
 
 
 export class ContactInfos extends Component {

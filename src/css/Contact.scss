@@ -3,6 +3,10 @@
     padding: 40px 27px 41px;
     margin: 30px 27px 45px 40px;
 }
+.contact-bloc-map {
+    background-color : transparent;
+    width: 95%;
+}
 
 @media (max-width: 576px) {
     .contact-bloc {
@@ -16,10 +20,7 @@
     }
 }
 
-.contact-bloc-map {
-    background-color : transparent;
-    width: 100%;
-}
+
 
 .contact-bloc-informations {
     background-color :#FAF0E6;
@@ -136,8 +137,8 @@ h3 {
 
 //Map
 .map-contact {
-    height: auto;
-    width: 100%;
+    // height: auto;
+    // width: 100%;
     margin-top: 30px;
     margin-bottom: 26px; 
 }

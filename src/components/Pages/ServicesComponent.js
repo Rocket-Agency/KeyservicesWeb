@@ -4,6 +4,8 @@ import '../../css/ServicesComponent.scss';
 import { Col, Container, Row, Card} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 import Img from 'react-cool-img';
+import ImgDefaultServices from '../../ImagesPlaceholder/placeholderServices.png';
+
 
 
 export class ServicesComponent extends Component {
@@ -21,13 +23,29 @@ export class ServicesComponent extends Component {
                             <Row className="blocBorder">
                                 <Visible xs>
                                     <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
-                                        <Img src='./images/remise_des_cles_mobile.jpg' width="100%%" height="130px" alt="Logo keyservices "/>
+                                        {/* <Img src='./images/remise_des_cles_mobile.jpg' width="100%" height="130px" alt="Logo keyservices "/> */}
+                                        <Img 
+                                            placeholder={ImgDefaultServices} 
+                                            src='./images/remise_des_cles_mobile.jpg'
+                                            width="100%"
+                                            height="auto"
+                                            debounce={1000}
+                                            alt="Image remise des clés mobile"
+                                        />                                        
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
                                     <Col md={6} className="d-flex justify-content-end blocImgBorder">
-                                        <Img src='./images/remise_des_cles.png' width="100%" height="auto" className="imgServices" alt="Logo keyservices "/>
+                                        {/* <Img src='./images/remise_des_cles.png' width="100%" height="auto" className="imgServices" alt="Logo keyservices "/> */}
+                                        <Img 
+                                            placeholder={ImgDefaultServices} 
+                                            src='./images/remise_des_cles.png'
+                                            width="100%"
+                                            height="auto"
+                                            debounce={1000}
+                                            alt="Image remise des clés"
+                                        />                                    
                                     </Col>
                                 </Hidden>
                                 
@@ -57,14 +75,30 @@ export class ServicesComponent extends Component {
                             <Row className="blocBorderCenter">
                                 <Visible xs>
                                     <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
-                                        <Img src='./images/frigo_mobile.jpg' width="100%%" height="130px" alt="Logo keyservices "/>
+                                        {/* <Img src='./images/frigo_mobile.jpg' width="100%%" height="130px" alt="Logo keyservices "/> */}
+                                        <Img 
+                                            placeholder={ImgDefaultServices} 
+                                            src='./images/frigo_mobile.jpg'
+                                            width="100%"
+                                            height="auto"
+                                            debounce={1000}
+                                            alt="Service remplir son frigo mobile"
+                                        />                                       
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
                                     <Col md={6} className="d-flex justify-content-end blocImgBorder">
-                                        <Img src='./images/remplir_son_frigo.png' width="100%" height="auto" alt="Logo keyservices "/>
-                                    </Col>
+                                        {/* <Img src='./images/remplir_son_frigo.png' width="100%" height="auto" alt="Logo keyservices "/> */}
+                                        <Img 
+                                            placeholder={ImgDefaultServices} 
+                                            src='./images/remplir_son_frigo.png'
+                                            width="100%"
+                                            height="auto"
+                                            debounce={1000}
+                                            alt="Service remplir son frigo"
+                                        />   
+                                   </Col>
                                 </Hidden>
 
                                 <Col md={6} className="d-flex justify-content-center blocTextBorder">
@@ -94,13 +128,29 @@ export class ServicesComponent extends Component {
                             <Row className="blocBorder">
                                 <Visible xs>
                                     <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
-                                        <Img src='./images/nettoyage_mobile.jpg'width="100%" height="130px" alt="Logo keyservices "/>
+                                        {/* <Img src='./images/nettoyage_mobile.jpg' width="100%" height="130px" alt="Logo keyservices "/> */}
+                                        <Img 
+                                            placeholder={ImgDefaultServices} 
+                                            src='./images/nettoyage_mobile.jpg'
+                                            width="100%"
+                                            height="auto"
+                                            debounce={1000}
+                                            alt="Service nettoyage mobile"
+                                        />   
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
                                     <Col md={6} className="d-flex justify-content-end blocImgBorder">
-                                        <Img src='./images/nettoyage.png'width="100%" height="auto" alt="Logo keyservices "/>
+                                        {/* <Img src='./images/nettoyage.png' width="100%" height="auto" alt="Logo keyservices "/> */}
+                                        <Img 
+                                            placeholder={ImgDefaultServices} 
+                                            src='./images/nettoyage.png'
+                                            width="100%"
+                                            height="auto"
+                                            debounce={1000}
+                                            alt="Service nettoyage"
+                                        />   
                                     </Col>
                                 </Hidden>
 
@@ -129,13 +179,29 @@ export class ServicesComponent extends Component {
                             <Row className="blocBorderCenterRDV">
                                 <Visible xs>
                                     <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
-                                        <Img src='./images/prise_rdv_mobile.png' width="100%%" height="130px" alt="Logo keyservices "/>
+                                        {/* <Img src='./images/prise_rdv_mobile.png' width="100%%" height="130px" alt="Logo keyservices "/> */}
+                                        <Img 
+                                            placeholder={ImgDefaultServices} 
+                                            src='./images/prise_rdv_mobile.png'
+                                            width="100%"
+                                            height="auto"
+                                            debounce={1000}
+                                            alt="Service prise de rendez-vous mobile"
+                                        />   
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
                                     <Col md={6} className="d-flex justify-content-end blocImgBorder">
-                                        <Img src='./images/prise_rdv_mobile.png' width="100%" height="auto" alt="Logo keyservices "/>
+                                        {/* <Img src='./images/prise_rdv.png' width="100%" height="auto" alt="Logo keyservices "/> */}
+                                        <Img 
+                                            placeholder={ImgDefaultServices} 
+                                            src='./images/prise_rdv.png'
+                                            width="100%"
+                                            height="auto"
+                                            debounce={1000}
+                                            alt="Service prise de rendez-vous"
+                                        />   
                                     </Col>
                                 </Hidden>
 

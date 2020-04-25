@@ -4,7 +4,7 @@ import '../../../../css/InscriptionProprietaire.scss';
 import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 
 
 export class Success extends Component {
