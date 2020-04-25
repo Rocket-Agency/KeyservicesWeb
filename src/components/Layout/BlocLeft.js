@@ -8,6 +8,7 @@ import { Visible, Hidden } from 'react-grid-system';
 import ReactFlagsSelect from 'react-flags-select';
 import 'react-flags-select/css/react-flags-select.css';
 import Img from 'react-cool-img';
+import ImgDefaultLangues from '../../ImagesPlaceholder/placeholderLangues.png'
 
   export class BlocLeft extends Component {
     render() {
@@ -26,10 +27,20 @@ import Img from 'react-cool-img';
 
                         <Hidden xs sm>
                             <Col sm={3} className="d-flex justify-content-center">
-                                <Img src='./images/French-flag.png' alt="Langue Française" />
+                                <Img
+                                    placeholder={ImgDefaultLangues} 
+                                    src='./images/French-flag.png'
+                                    debounce={1000}
+                                    alt="Langue Française"
+                                /> 
                             </Col>
                             <Col sm={3}className="d-flex justify-content-center">
-                                <Img src='./images/UK-flag.png' alt="Langue Anglais" />
+                                <Img
+                                    placeholder={ImgDefaultLangues} 
+                                    src='./images/UK-flag.png'
+                                    debounce={1000}
+                                    alt="Langue Anglais"
+                                /> 
                             </Col>
                         </Hidden>
                                                 

@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import '../../css/Home.scss';
 import Img from 'react-cool-img';
 
-import ImgDefault from '../../ImagesPlaceholder/placeholder.png';
+import ImgDefaultHome from '../../ImagesPlaceholder/placeholderHome.png';
 
 
 
@@ -36,9 +36,23 @@ export class Home extends Component {
                         <div className="container-fluid">
                             <div className="row">
                             <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
+                                <div className="card">
+                                    <Img className="card-img style-card" 
+                                        placeholder={ImgDefaultHome} 
+                                        src="./Images/PosterUneAnnonce.png"
+                                        debounce={1000}
+                                        alt="Poster unee annonce" 
+                                    />
+                                    <div className="card-img-overlay">
+                                        <button className="btn btn-md btn-success"> Poster une annonce</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
                                     <div className="card">
                                         <Img className="card-img style-card" 
-                                            placeholder={ImgDefault} 
+                                            placeholder={ImgDefaultHome} 
                                             src="./Images/GererMesLocations.png"
                                             debounce={1000}
                                             alt="Gerer mes locations" 
@@ -48,19 +62,7 @@ export class Home extends Component {
                                         </div>
                                    </div>
                                 </div>
-                                <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
-                                    <div className="card">
-                                        <Img className="card-img style-card" 
-                                            placeholder={ImgDefault} 
-                                            src="./Images/PosterUneAnnonce.png"
-                                            debounce={1000}
-                                            alt="Poster unee annonce" 
-                                        />
-                                        <div className="card-img-overlay">
-                                            <button className="btn btn-md btn-success"> Poster une annonce</button>
-                                        </div>
-                                   </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>

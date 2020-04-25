@@ -9,7 +9,7 @@ import {Navbar, Nav} from 'react-bootstrap';
 import BlocLeft from './BlocLeft';
 // import { browserHistory } from 'react-router';
 import Img from 'react-cool-img';
-
+import ImgDefaultLogoKeyservices from '../../ImagesPlaceholder/placeholderLogoKeyservices.png'
 
 export class Header extends Component {
     render() {
@@ -19,9 +19,16 @@ export class Header extends Component {
 
                 <Navbar collapseOnSelect expand="md" variant="light">
                     <a className="navbar-brand" href="/">
-                        <Img src={logo} alt="logo" style={{ 
+                        {/* <Img src={logo} alt="logo" style={{ 
                             width: '100px'
-                        }} />
+                        }} /> */}
+                        <Img
+                            placeholder={ImgDefaultLogoKeyservices} 
+                            src='./images/Keyservices_Logo.png'
+                            width="100px"
+                            debounce={1000}
+                            alt="Langue Anglais"
+                                />                         
                     </a>
                 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
