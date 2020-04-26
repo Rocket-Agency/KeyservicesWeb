@@ -118,6 +118,9 @@ class ConnexionProfileProprietaire extends Component {
                                     <Link  to="/inscriptionProprietaire">S'inscrire</Link>                                                        
                                 </Col>
                             </Row>
+                            <Row className="d-flex justify-content-center align-items-center mt-3"> 
+                                 <Link  to="/inscriptionProprietaire">Mot de passe oublié</Link>    
+                            </Row>
                         </Container>
                     </Form.Group>
                 </Form.Row>

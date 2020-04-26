@@ -9,7 +9,7 @@ import MaterialTable from 'material-table';
 // import { Link } from 'react-router-dom';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
-import { Col, Row, Form, Container } from 'react-bootstrap';
+import { Col, Row, Form, Container, Button } from 'react-bootstrap';
 
 class ProfileTabs extends Component {
 state = {
@@ -86,71 +86,61 @@ state = {
               <form class="form-horizontal" role="form">
 
                    <Container fluid>
-                        <Row>
-                            <Col md={12} className="pt-3 pb-3">
-                                <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={5}>Nom :</Form.Label>
 
-                                    <Col xs={12} md={6} className="informations">
-                                      {this.state.users.user_last_name}
-                                    </Col>
-                                </Form.Row>  
+                     <Row>
+                       <Col md={6} className="pt-3 pb-3">
+                          <Form.Row>
+                            <Form.Label className="label-info-generales" column sm={6}>Nom :</Form.Label>
+                              <Col xs={12} md={6} className="informations">
+                                {this.state.users.user_last_name}
+                              </Col>
+                            </Form.Row>  
+                        </Col>
+
+                       <Col md={6} className="pt-3 pb-3">
+                          <Form.Row>
+                            <Form.Label className="label-info-generales" column sm={6}>Prénom :</Form.Label>
+                              <Col xs={12} md={6} className="informations">
+                                {this.state.users.user_first_name}
+                              </Col>
+                          </Form.Row>  
+                       </Col>
+                    </Row>
+
+                    <Row>
+                       <Col md={6} className="pt-3 pb-3">
+                          <Form.Row>
+                          <Form.Label className="label-info-generales" column sm={6}>Date de naissance :</Form.Label>
+                              <Col xs={12} md={6} className="informations">
+                                26/10/1974
+                              </Col>
+                            </Form.Row>  
+                        </Col>
+
+                       <Col md={6} className="pt-3 pb-3">
+                          <Form.Row>
+                          <Form.Label className="label-info-generales" column sm={6}>Téléphone :</Form.Label>
+                            <Col xs={12} md={6} className="informations">
+                              0000000000
                             </Col>
+                          </Form.Row>  
+                       </Col>
+                    </Row>
 
-                            <Col md={12} className="pt-3 pb-3">
-                                <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={5}>Prénom :</Form.Label>
-
-                                    <Col xs={12} md={6} className="informations">
-                                      {this.state.users.user_first_name}
-                                    </Col>
-                                </Form.Row>     
+                    <Row>
+                      <Col md={12} className="pt-3 pb-3">
+                        <Form.Row>
+                          <Form.Label className="label-info-generales" column sm={3}>Adresse :</Form.Label>
+                            <Col xs={12} md={6} className="informations">
+                              11, rue des boulettes test 75009
                             </Col>
-                        </Row>
+                        </Form.Row>  
+                      </Col>
+                    </Row>
+                    
 
-                        <Row>
-                          <Col md={12} className="pt-3 pb-3">
-                                <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={5}>Date de naissance :</Form.Label>
+                    <Button className="modifierProfil" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Modifier</Button>
 
-                                    <Col xs={12} md={6} className="informations">
-                                      26/10/1974
-                                    </Col>
-                                </Form.Row>  
-                            </Col>
-
-                          
-                            <Col md={12} className="pt-3 pb-3">
-                                <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={5}>Nuémro de Téléphone :</Form.Label>
-
-                                    <Col xs={12} md={6} className="informations">
-                                      0000000000
-                                    </Col>
-                                </Form.Row>  
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col md={12} className="pt-3 pb-3">
-                                <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={5}>Adresse :</Form.Label>
-
-                                    <Col xs={12} md={6} className="informations">
-                                      11, rue des boulettes test
-                                    </Col>
-                                </Form.Row>  
-                            </Col>
-
-                            <Col md={12} className="pt-3 pb-3">
-                                <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={5}>Code postal :</Form.Label>
-
-                                    <Col xs={12} md={6} className="informations">
-                                      75009 PARIS
-                                    </Col>
-                                </Form.Row>  
-                            </Col>
-                        </Row>
                   </Container>
               </form>
            </div>
@@ -170,6 +160,15 @@ state = {
         { activeIndex === 3 && <TabContainer style={{ minWidth: "100%" }}>
             <MaterialTable
               columns={[
+                {
+                  title: 'Avatar', field: 'avatar',
+                  render: rowData => (
+                    <img
+                      style={{ height: 36, borderRadius: '50%' }}
+                      src={rowData.avatar}
+                    />
+                  ),
+                },
                 { title: "Id", field: "user_id", editable: 'never'},
                 { title: "Prénom", field: "user_first_name" },
                 { title: "Nom", field: "user_last_name" },
