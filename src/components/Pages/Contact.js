@@ -3,10 +3,10 @@ import React, {Component} from 'react'
 import '../../css/Contact.scss';
 
 import {Form, Col, Row} from 'react-bootstrap';
-import { Visible, Hidden } from 'react-grid-system';
+import { Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
-import Img from 'react-cool-img';
-import ImgDefaultMap from '../../ImagesPlaceholder/placeholderMap.png'
+// import Img from 'react-cool-img';
+// import ImgDefaultMap from '../../ImagesPlaceholder/placeholderMap.png'
 import Iframe from 'react-iframe';
 
 // import ContactMap from './ContactMap';

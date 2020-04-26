@@ -6,11 +6,11 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import MaterialTable from 'material-table';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png'
 
-import MonCompte from './MonCompte';
+// import MonCompte from './MonCompte';
 
 
 class ProfileTabs extends Component {
