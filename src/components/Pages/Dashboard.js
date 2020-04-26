@@ -19,17 +19,6 @@ state = {
     group: this.props.location.state.user.groups,
     users: "",
     usersCollection: [],
-    form: {
-      name: "",
-      email: "",
-      mobile: "",
-      password: "",
-      confirmPassword: "",
-      gender: null,
-      language: [],
-      country: null,
-      zipCode: ""
-    }
   }
 
   componentDidMount() {
@@ -54,7 +43,6 @@ state = {
   render() {
     const { activeIndex } = this.state;
     const { group } = this.state;
-    const { form } = this.state;
     return (
       <div
         style={{
@@ -92,7 +80,7 @@ state = {
                   </div>
               </div>
 
-              <div class="col-md-9 personal-info mt-3">
+              <div class="col-md-9 personal-info">
               <h3>Information personnel</h3>
 
               <form class="form-horizontal" role="form">
@@ -101,7 +89,7 @@ state = {
                         <Row>
                             <Col md={12} className="pt-3 pb-3">
                                 <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={4}>Nom :</Form.Label>
+                                    <Form.Label className="label-info-generales" column sm={5}>Nom :</Form.Label>
 
                                     <Col xs={12} md={6} className="informations">
                                       {this.state.users.user_last_name}
@@ -111,7 +99,7 @@ state = {
 
                             <Col md={12} className="pt-3 pb-3">
                                 <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={4}>Prénom :</Form.Label>
+                                    <Form.Label className="label-info-generales" column sm={5}>Prénom :</Form.Label>
 
                                     <Col xs={12} md={6} className="informations">
                                       {this.state.users.user_first_name}
@@ -123,7 +111,7 @@ state = {
                         <Row>
                           <Col md={12} className="pt-3 pb-3">
                                 <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={4}>Date de naissance :</Form.Label>
+                                    <Form.Label className="label-info-generales" column sm={5}>Date de naissance :</Form.Label>
 
                                     <Col xs={12} md={6} className="informations">
                                       26/10/1974
@@ -134,7 +122,7 @@ state = {
                           
                             <Col md={12} className="pt-3 pb-3">
                                 <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={4}>Nuémro de Téléphone :</Form.Label>
+                                    <Form.Label className="label-info-generales" column sm={5}>Nuémro de Téléphone :</Form.Label>
 
                                     <Col xs={12} md={6} className="informations">
                                       0000000000
@@ -145,7 +133,7 @@ state = {
                         <Row>
                             <Col md={12} className="pt-3 pb-3">
                                 <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={4}>Adresse :</Form.Label>
+                                    <Form.Label className="label-info-generales" column sm={5}>Adresse :</Form.Label>
 
                                     <Col xs={12} md={6} className="informations">
                                       11, rue des boulettes test
@@ -155,7 +143,7 @@ state = {
 
                             <Col md={12} className="pt-3 pb-3">
                                 <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={4}>Code postal :</Form.Label>
+                                    <Form.Label className="label-info-generales" column sm={5}>Code postal :</Form.Label>
 
                                     <Col xs={12} md={6} className="informations">
                                       75009 PARIS

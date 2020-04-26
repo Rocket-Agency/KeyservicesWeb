@@ -27,6 +27,15 @@
     justify-content: center;
 }
 
+.personal-info {
+    border: 1px solid #49173B;
+    padding: 20px;
+
+    @media (max-width: 576px) {
+        margin-top: 30px;
+    }
+}
+
 .label-info-generales {
     text-align: right;
     font-weight: 700;
