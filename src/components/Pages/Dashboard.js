@@ -8,19 +8,33 @@ import axios from 'axios';
 import MaterialTable from 'material-table';
 // import { Link } from 'react-router-dom';
 import Img from 'react-cool-img';
-import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png'
+import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
+import { Col, Row, Form, Container } from 'react-bootstrap';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 // import MonCompte from './MonCompte';
 
 
 class ProfileTabs extends Component {
-  state = {
+state = {
     activeIndex: 0,
     userid: this.props.location.state.user.id,
     accessToken: this.props.location.state.user.accessToken,
     group: this.props.location.state.user.groups,
     users: "",
-    usersCollection: []
+    usersCollection: [],
+    form: {
+      name: "",
+      email: "",
+      mobile: "",
+      password: "",
+      confirmPassword: "",
+      gender: null,
+      language: [],
+      country: null,
+      zipCode: ""
+    }
   }
 
   componentDidMount() {
@@ -45,6 +59,7 @@ class ProfileTabs extends Component {
   render() {
     const { activeIndex } = this.state;
     const { group } = this.state;
+    const { form } = this.state;
     return (
       <div
         style={{
@@ -63,43 +78,110 @@ class ProfileTabs extends Component {
 
         { activeIndex === 0 && <TabContainer>
 
-        <div>
-          <div>{this.state.users.user_first_name}</div>
-          <div>{this.state.users.user_last_name}</div>
-        </div>
+      <Container fluid>
+          {/* <h1 className="mt-2 text-center">Bienvenue  {this.state.users.user_first_name} dans votre Espace</h1> */}
 
-      <div className="Container">
-          <h1 className="text-center">Mon Espace</h1>
-
-          <h2>Edit Profile</h2>
-
+          <h2 className="mt-2r">Mon Compte</h2>
+          <hr/>
             <div className="row">
               <div className="col-md-3">
                   <div className="text-center">
                     <Img
                       placeholder={ImgDefaultAvatar} 
-                      class="avatar img-circle"
+                      class="avatar img-circle mt-3"
                       alt="avatar" 
                       />
                       <h6>Upload a different photo...</h6>
-                      
+                     
                       <input type="file" class="form-control"/>
                   </div>
               </div>
 
-              <h3>Personal info</h3>
+              <div class="col-md-9 personal-info mt-3">
+              <h3>Information personnel</h3>
 
               <form class="form-horizontal" role="form">
-                <div class="form-group">
-                  <label class="col-lg-12 control-label">First name:</label>
-                    <div class="col-lg-12">
-                      <input class="form-control" type="text" value="Jane" />
-                    </div>
-                </div>
-              </form>
 
+                   <Container fluid>
+                        <Row>
+                            <Col  xs={12} md={6} className="pb-3">
+                                <Form.Row>
+                                    <Form.Label className="label-info-generales" column sm={4}>Nom :</Form.Label>
+
+                                    <Col xs={12} md={6} className="informations">
+                                      {this.state.users.user_last_name}
+                                    </Col>
+                                </Form.Row>  
+                            </Col>
+                            <Col  xs={12} md={6} className="pb-3">
+                                <Form.Row>
+                                    <Form.Label className="label-info-generales" column sm={4}>Prénom :</Form.Label>
+
+                                    <Col xs={12} md={6} className="informations">
+                                      {this.state.users.user_first_name}
+                                    </Col>
+                                </Form.Row>     
+                            </Col>
+                        </Row>
+                  </Container>
+
+                  {/* <div class="form-group">
+                          
+                    <div class="col-xs-6">
+                      <label for="first_name"><h4>Prénom</h4></label>
+                        <input 
+                          type="text" 
+                          class="form-control" 
+                          name="first_name" 
+                          id="first_name" 
+                          placeholder="Prénom" 
+                          title="entrer votre Prénom"
+                        />
+                      </div>
+                    </div> */}
+                  {/* <label class="col-lg-3 control-label">Prénom:</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" type="text" value="Jane"/>
+                  </div>
+                </div> */}
+                {/* <div class="form-group">
+                  <label class="col-lg-3 control-label">Last name:</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" type="text" value="Bishop"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-3 control-label">Company:</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" type="text" value=""/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-3 control-label">Email:</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" type="text" value="janesemail@gmail.com"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Password:</label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="password" value="11111122333"/>
+                  </div>
+                </div> */}
+
+                {/* <div class="form-group">
+                  <label class="col-md-3 control-label"></label>
+                  <div class="col-md-8">
+                    <input type="button" class="btn btn-primary" value="Save Changes"/>
+                    <span></span>
+                    <input type="reset" class="btn btn-default" value="Cancel"/>
+                  </div>
+                </div> */}
+
+              </form>
+           </div>
           </div>
-      </div>
+      </Container>
           
         </TabContainer> }
 

@@ -38,24 +38,6 @@ export class InformationGenerales extends Component {
                     <h2 className="title-form">Information  Générales</h2>
                     <Row className="mt-4">
                         <Col  xs={12} md={5} className="col d-flex justify-content-center pt-3 pb-3">
-                            {/* {['checkbox'].map((type) => (
-                                <div key={`custom-inline-${type}`} >
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Mme"
-                                        type={type}
-                                        id={`custom-inline-${type}-Mme`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Mr"
-                                        type={type}
-                                        id={`custom-inline-${type}-Mr`}
-                                    />
-                                </div>
-                            ))} */}
                             <Form.Row>
                                 <Form.Label className="d-flex align-items-center label-info-generales">Civilité</Form.Label>
 
