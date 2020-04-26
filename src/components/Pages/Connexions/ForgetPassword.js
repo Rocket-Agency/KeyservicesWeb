@@ -1,8 +1,10 @@
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+// import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-function MyComponent() {
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+// export function MyComponent() {
+//   const theme = useTheme();
+//   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
-  return <Dialog fullScreen={fullScreen} />
-}
+//   return <Dialog fullScreen={fullScreen} />
+// }
+
+// export default VerticalLinearStepper;

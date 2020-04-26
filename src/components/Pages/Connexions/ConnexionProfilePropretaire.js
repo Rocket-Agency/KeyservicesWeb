@@ -13,6 +13,14 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+
+// function MyComponent() {
+//   const theme = useTheme();
+//   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
+//   return <Dialog fullScreen={fullScreen} />
+// }
 
 class ConnexionProfileProprietaire extends Component {
     constructor(props) {
@@ -129,34 +137,7 @@ class ConnexionProfileProprietaire extends Component {
                             </Row>
                         </Container>
 
-                        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-                            Open form dialog
-                        </Button>
-                        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                            <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-                            <DialogContent>
-                            <DialogContentText>
-                                To subscribe to this website, please enter your email address here. We will send updates
-                                occasionally.
-                            </DialogContentText>
-                            <TextField
-                                autoFocus
-                                margin="dense"
-                                id="name"
-                                label="Email Address"
-                                type="email"
-                                fullWidth
-                            />
-                            </DialogContent>
-                            <DialogActions>
-                            <Button onClick={handleClose} color="primary">
-                                Cancel
-                            </Button>
-                            <Button onClick={handleClose} color="primary">
-                                Subscribe
-                            </Button>
-                            </DialogActions>
-                        </Dialog>
+
                     </Form.Group>
                 </Form.Row>
             </Form>
