@@ -75,7 +75,7 @@ export class Contact extends Component {
 
                                             <Col xs={8} sm={12} className="d-flex justify-content-end align-items-center">
                                                 <div id="container">                    
-                                                    <button className="learn-more">
+                                                    <button className="learn-more" aria-label="Envoyer">
                                                         <span className="circle" aria-hidden="true">
                                                             <span className="icon arrow"></span>
                                                         </span>

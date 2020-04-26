@@ -95,14 +95,16 @@ export class InformationConnexion extends Component {
                                         color="secondary"
                                         variant="contained"
                                         onClick={this.back}
-                                    >Back</Button>
+                                        aria-label="Retour"
+                                    >Retour</Button>
 
 
                                     <Button
                                     color="primary"
                                     variant="contained"
                                     onClick={this.continue}
-                                    >Continue</Button>
+                                    aria-label="Continuer"
+                                    >Continuer</Button>
                             </Col>
                         </Row>
                     </Container>

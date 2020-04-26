@@ -91,7 +91,7 @@ class ConnexionProfileProprietaire extends Component {
                                     <Hidden xs>
                                         <div className="d-flex justify-content-center align-items-center">
                                             <div id="container">                    
-                                                <button className="learn-more">
+                                                <button className="learn-more" aria-label="En savoir plus">
                                                     <span className="circle" aria-hidden="true">
                                                         <span className="icon arrow"></span>
                                                             </span>
@@ -103,7 +103,7 @@ class ConnexionProfileProprietaire extends Component {
                                     <Visible xs>
                                         <div className="d-flex justify-content-center align-items-center">
                                             <div id="container">                    
-                                                <button className="learn-more">
+                                                <button className="learn-more" aria-label="En savoir plus">
                                                     <span className="circle" aria-hidden="true">
                                                         <span className="icon arrow"></span>
                                                     </span>

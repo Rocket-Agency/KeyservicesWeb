@@ -168,7 +168,8 @@ export class InformationGenerales extends Component {
                                 color="primary"
                                 variant="contained"
                                 onClick={this.continue}
-                                >Continue
+                                aria-label="Continuer"
+                                >Continuer
                             </Button>
                         </Row>
                     </Container>

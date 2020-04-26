@@ -44,7 +44,9 @@ export class Home extends Component {
                                         alt="Poster unee annonce" 
                                     />
                                     <div className="card-img-overlay">
-                                        <button className="btn btn-md btn-success"> Poster une annonce</button>
+                                        <button className="btn btn-md btn-success" aria-label="Poster une annonce"> 
+                                            Poster une annonce
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +60,9 @@ export class Home extends Component {
                                             alt="Gerer mes locations" 
                                         />
                                         <div className="card-img-overlay">
-                                            <button className="btn btn-md btn-success"> Gérer mes locations</button>
+                                            <button className="btn btn-md btn-success" aria-label="Gérer mes locations">
+                                                Gérer mes locations
+                                            </button>
                                         </div>
                                    </div>
                                 </div>
