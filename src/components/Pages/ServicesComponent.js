@@ -14,7 +14,7 @@ export class ServicesComponent extends Component {
             <div>
 
                 <Container fluid>
-                    <h2 className="d-flex justify-content-center">
+                    <h2 className="d-flex justify-content-center text-center">
                         Nos services proposés
                     </h2>
 
