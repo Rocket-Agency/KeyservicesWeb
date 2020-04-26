@@ -36,8 +36,11 @@ import NotFound from './components/NotFound';
 
 function App() {
   return (
-      <div>
+    <div className="page-container">
+      <div className="content-wrap">
+
       <Header/>
+
         <Switch>
           <Route path='/' component={Home} exact />
           <Route path='/keyservicesPresentation' component={KeyservicesPresentation} />
@@ -54,8 +57,11 @@ function App() {
           <Route path='/dashboard' component={ProfileTabs} />
           <Route component={NotFound} />
         </Switch>
-      <Footer/>
+
       </div>
+
+      <Footer/>
+    </div>
   );
 }
 
