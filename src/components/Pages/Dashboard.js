@@ -138,6 +138,13 @@ state = {
                       </Col>
                     </Row>
                     
+                    <Button
+                      color="primary"
+                      variant="contained"
+                      onClick={this.continue}
+                      aria-label="Continuer"
+                      >Modifier
+                    </Button>
 
                     <Button className="modifierProfil" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Modifier</Button>
 

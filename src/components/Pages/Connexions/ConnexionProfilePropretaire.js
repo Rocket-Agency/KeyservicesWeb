@@ -1,11 +1,18 @@
 //ConnexionProfilProprietaire.js
-import React, {Component} from 'react';
+import React, {Component, useState } from 'react';
 import axios from 'axios';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 class ConnexionProfileProprietaire extends Component {
     constructor(props) {
@@ -50,7 +57,6 @@ class ConnexionProfileProprietaire extends Component {
       }
 
   render() {
-
     return (
       <div className="formConnexion">
 
@@ -119,9 +125,38 @@ class ConnexionProfileProprietaire extends Component {
                                 </Col>
                             </Row>
                             <Row className="d-flex justify-content-center align-items-center mt-3"> 
-                                 <Link  to="/inscriptionProprietaire">Mot de passe oublié</Link>    
+                                 <Link>Mot de passe oublié</Link>    
                             </Row>
                         </Container>
+
+                        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+                            Open form dialog
+                        </Button>
+                        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                            <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+                            <DialogContent>
+                            <DialogContentText>
+                                To subscribe to this website, please enter your email address here. We will send updates
+                                occasionally.
+                            </DialogContentText>
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="name"
+                                label="Email Address"
+                                type="email"
+                                fullWidth
+                            />
+                            </DialogContent>
+                            <DialogActions>
+                            <Button onClick={handleClose} color="primary">
+                                Cancel
+                            </Button>
+                            <Button onClick={handleClose} color="primary">
+                                Subscribe
+                            </Button>
+                            </DialogActions>
+                        </Dialog>
                     </Form.Group>
                 </Form.Row>
             </Form>
@@ -131,3 +166,5 @@ class ConnexionProfileProprietaire extends Component {
 }
 
 export default withRouter(ConnexionProfileProprietaire);
+
+
