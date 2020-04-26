@@ -10,11 +10,6 @@ import MaterialTable from 'material-table';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
 import { Col, Row, Form, Container } from 'react-bootstrap';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-
-// import MonCompte from './MonCompte';
-
 
 class ProfileTabs extends Component {
 state = {
@@ -87,9 +82,9 @@ state = {
               <div className="col-md-3">
                   <div className="text-center">
                     <Img
-                      placeholder={ImgDefaultAvatar} 
-                      class="avatar img-circle mt-3"
-                      alt="avatar" 
+                        placeholder={ImgDefaultAvatar} 
+                        class="avatar img-circle mt-3 mb-3"
+                        alt="avatar" 
                       />
                       <h6>Upload a different photo...</h6>
                      
@@ -104,7 +99,7 @@ state = {
 
                    <Container fluid>
                         <Row>
-                            <Col  xs={12} md={6} className="pb-3">
+                            <Col md={12} className="pt-3 pb-3">
                                 <Form.Row>
                                     <Form.Label className="label-info-generales" column sm={4}>Nom :</Form.Label>
 
@@ -113,7 +108,8 @@ state = {
                                     </Col>
                                 </Form.Row>  
                             </Col>
-                            <Col  xs={12} md={6} className="pb-3">
+
+                            <Col md={12} className="pt-3 pb-3">
                                 <Form.Row>
                                     <Form.Label className="label-info-generales" column sm={4}>Prénom :</Form.Label>
 
@@ -123,61 +119,51 @@ state = {
                                 </Form.Row>     
                             </Col>
                         </Row>
-                  </Container>
 
-                  {/* <div class="form-group">
+                        <Row>
+                          <Col md={12} className="pt-3 pb-3">
+                                <Form.Row>
+                                    <Form.Label className="label-info-generales" column sm={4}>Date de naissance :</Form.Label>
+
+                                    <Col xs={12} md={6} className="informations">
+                                      26/10/1974
+                                    </Col>
+                                </Form.Row>  
+                            </Col>
+
                           
-                    <div class="col-xs-6">
-                      <label for="first_name"><h4>Prénom</h4></label>
-                        <input 
-                          type="text" 
-                          class="form-control" 
-                          name="first_name" 
-                          id="first_name" 
-                          placeholder="Prénom" 
-                          title="entrer votre Prénom"
-                        />
-                      </div>
-                    </div> */}
-                  {/* <label class="col-lg-3 control-label">Prénom:</label>
-                  <div class="col-lg-8">
-                    <input class="form-control" type="text" value="Jane"/>
-                  </div>
-                </div> */}
-                {/* <div class="form-group">
-                  <label class="col-lg-3 control-label">Last name:</label>
-                  <div class="col-lg-8">
-                    <input class="form-control" type="text" value="Bishop"/>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-lg-3 control-label">Company:</label>
-                  <div class="col-lg-8">
-                    <input class="form-control" type="text" value=""/>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-lg-3 control-label">Email:</label>
-                  <div class="col-lg-8">
-                    <input class="form-control" type="text" value="janesemail@gmail.com"/>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-md-3 control-label">Password:</label>
-                  <div class="col-md-8">
-                    <input class="form-control" type="password" value="11111122333"/>
-                  </div>
-                </div> */}
+                            <Col md={12} className="pt-3 pb-3">
+                                <Form.Row>
+                                    <Form.Label className="label-info-generales" column sm={4}>Nuémro de Téléphone :</Form.Label>
 
-                {/* <div class="form-group">
-                  <label class="col-md-3 control-label"></label>
-                  <div class="col-md-8">
-                    <input type="button" class="btn btn-primary" value="Save Changes"/>
-                    <span></span>
-                    <input type="reset" class="btn btn-default" value="Cancel"/>
-                  </div>
-                </div> */}
+                                    <Col xs={12} md={6} className="informations">
+                                      0000000000
+                                    </Col>
+                                </Form.Row>  
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12} className="pt-3 pb-3">
+                                <Form.Row>
+                                    <Form.Label className="label-info-generales" column sm={4}>Adresse :</Form.Label>
 
+                                    <Col xs={12} md={6} className="informations">
+                                      11, rue des boulettes test
+                                    </Col>
+                                </Form.Row>  
+                            </Col>
+
+                            <Col md={12} className="pt-3 pb-3">
+                                <Form.Row>
+                                    <Form.Label className="label-info-generales" column sm={4}>Code postal :</Form.Label>
+
+                                    <Col xs={12} md={6} className="informations">
+                                      75009 PARIS
+                                    </Col>
+                                </Form.Row>  
+                            </Col>
+                        </Row>
+                  </Container>
               </form>
            </div>
           </div>
@@ -305,9 +291,9 @@ const VerticalTabs = withStyles(theme => ({
 
 const MyTab = withStyles(theme => ({
   selected: {
-    color: 'tomato',
-    borderBottom: '2px solid tomato'
-  }
+    color: '#49173B',
+    borderBottom: '2px solid #49173B',
+  },
 }))(Tab);
 
 function TabContainer(props) {

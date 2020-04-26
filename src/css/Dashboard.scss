@@ -26,3 +26,10 @@
     align-items: center;
     justify-content: center;
 }
+
+.label-info-generales {
+    text-align: right;
+    @media (max-width: 576px) {
+        text-align: left;
+    }
+}
