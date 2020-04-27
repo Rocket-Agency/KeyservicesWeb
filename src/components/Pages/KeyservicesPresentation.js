@@ -111,9 +111,8 @@ export class KeyservicesPresentation extends Component {
                                                     <div className="col-sm-4 d-flex justify-content-center CityImg">
                                                         <Card>
                                                             <ProgressiveImage  className="card-img style-card" 
-                                                                src='./images/paris.png'
+                                                                src='./images/lyon.png'
                                                                 placeholder={lyonTiny} 
-                                                                alt="Image paris"
                                                             >
                                                                 {src => <img src={src} width="100%" alt="Lyon" />}
                                                             </ProgressiveImage>  
@@ -171,7 +170,7 @@ export class KeyservicesPresentation extends Component {
                                                                 debounce={1000}
                                                                 alt="Image paris"
                                                             /> */}
-                                                            <Card.Link className="CityLink" href="#">Toulouse</Card.Link>
+                                                            <Card.Link className="CityNoLink" href="#">Toulouse</Card.Link>
                                                         </Card>
                                                     </div>
                                                     <div className="col-sm-4 d-flex justify-content-center CityImg">
@@ -191,7 +190,7 @@ export class KeyservicesPresentation extends Component {
                                                                 debounce={1000}
                                                                 alt="Image paris"
                                                             /> */}
-                                                            <Card.Link className="CityLink" href="#">Nice</Card.Link>
+                                                            <Card.Link className="CityNoLink" href="#">Nice</Card.Link>
                                                         </Card>
                                                     </div>
                                                     <div className="col-sm-4 d-flex justify-content-center CityImg">
@@ -211,7 +210,7 @@ export class KeyservicesPresentation extends Component {
                                                                 debounce={1000}
                                                                 alt="Image paris"
                                                             /> */}
-                                                            <Card.Link className="CityLink" href="#">La Rochelle</Card.Link>
+                                                            <Card.Link className="CityNoLink" href="#">La Rochelle</Card.Link>
                                                         </Card>
                                                     </div>
                                                  </Row>
