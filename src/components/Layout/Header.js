@@ -39,7 +39,7 @@ export class Header extends Component {
                             <NavLink className="d-inline menustyle" exact to="/">Accueil</NavLink>
                             <NavLink className="d-inline menustyle" to="/keyservicesPresentation">Keyservices</NavLink>
                             <NavLink className="d-inline menustyle" to="/contact">Contact</NavLink>
-                            <NavLink className="d-inline menustyle" to="/monespace">Mon Espace</NavLink>
+                            <NavLink className="d-inline menustyle" to="/monespace">Espace connexion</NavLink>
                         </Nav>
 
                           <BlocLeft />

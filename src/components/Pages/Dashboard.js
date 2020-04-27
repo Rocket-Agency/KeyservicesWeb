@@ -168,22 +168,21 @@ state = {
             <MaterialTable
               columns={[
                 {
-                  title: 'Avatar', field: 'avatar',
-                  render: rowData => (
-                    <img
-                      style={{ height: 36, borderRadius: '50%' }}
-                      src={rowData.avatar}
-                    />
-                  ),
+                  title: "Photo", field: "user_photo",
+                  // render: rowData => (
+                  //   <img
+                  //     style={{ height: 36, borderRadius: '50%' }}
+                  //     src={rowData.avatar}
+                  //   />
+                  // ),
                 },
                 { title: "Id", field: "user_id", editable: 'never'},
                 { title: "Prénom", field: "user_first_name" },
                 { title: "Nom", field: "user_last_name" },
                 { title: "Email", field: "user_email"},
-                { title: "Password", field: "user_password", show: false},
+                // { title: "Password", field: "user_password", show: false},
                 { title: "Birthay", field: "user_date_of_birth"},
                 { title: "Sexe", field: "user_sexe"},
-                { title: "Photo", field: "user_photo"},
                 { title: "Adresse", field: "user_adresse_txt"}
               ]}
               data={this.state.usersCollection}

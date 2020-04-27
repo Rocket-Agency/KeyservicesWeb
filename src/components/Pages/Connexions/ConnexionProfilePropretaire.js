@@ -1,26 +1,15 @@
 //ConnexionProfilProprietaire.js
 import React, {Component, useState } from 'react';
+
 import axios from 'axios';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+// import Button from '@material-ui/core/Button';
+// import TextField from '@material-ui/core/TextField';
 
-// function MyComponent() {
-//   const theme = useTheme();
-//   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
-
-//   return <Dialog fullScreen={fullScreen} />
-// }
 
 class ConnexionProfileProprietaire extends Component {
     constructor(props) {
@@ -101,7 +90,7 @@ class ConnexionProfileProprietaire extends Component {
                         <Container>
 
                             <Row>
-                                <Col xs={12} md={6} className="d-flex justify-content-end align-items-center">
+                                <Col xs={12} lg={6} className="d-flex justify-content-center align-items-center">
                                     <Hidden xs>
                                         <div className="d-flex justify-content-center align-items-center">
                                             <div id="container">                    
@@ -128,12 +117,14 @@ class ConnexionProfileProprietaire extends Component {
                                     </Visible>
                                 </Col>
 
-                                <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
+                                <Col xs={12} lg={6} className="d-flex justify-content-center align-items-center">
                                     <Link  to="/inscriptionProprietaire">S'inscrire</Link>                                                        
                                 </Col>
                             </Row>
-                            <Row className="d-flex justify-content-center align-items-center mt-3"> 
-                                 <Link>Mot de passe oublié</Link>    
+                            <Row class="mt-3"> 
+                                <Col md={12} lg={12} className="d-flex justify-content-center align-items-cente">
+                                    <Link  to="/forgetPassword">Mot de passe oublié</Link>   
+                                </Col>
                             </Row>
                         </Container>
 

@@ -24,6 +24,7 @@ import {Profile} from './components/Pages/Connexions/Profiles/Profile';
 
 import {ProfileProprietaire} from './components/Pages/Connexions/Profiles/ProfileProprietaire';
 import {ProfileLocataire} from './components/Pages/Connexions/Profiles/ProfileLocataire';
+import {ForgetPassword} from './components/Pages/Connexions/Profiles/ForgetPassword';
 
 //Page d'inscription
 import {InscriptionProprietaire} from './components/Pages/Connexions/SignUpProprietaire/InscriptionProprietaire';
@@ -54,6 +55,7 @@ function App() {
           <Route path='/profilePropriétaire' component={ProfileProprietaire} />
           <Route path='/profileLocataire' component={ProfileLocataire} />
           <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
+          <Route path='/forgetPassword' component={ForgetPassword} />
           <Route path='/dashboard' component={ProfileTabs} />
           <Route component={NotFound} />
         </Switch>
