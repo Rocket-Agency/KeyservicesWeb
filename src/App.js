@@ -1,4 +1,3 @@
-//App
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import './App.scss';
@@ -25,6 +24,7 @@ import {Profile} from './components/Pages/Connexions/Profiles/Profile';
 
 import {ProfileProprietaire} from './components/Pages/Connexions/Profiles/ProfileProprietaire';
 import {ProfileLocataire} from './components/Pages/Connexions/Profiles/ProfileLocataire';
+import {ForgetPassword} from './components/Pages/Connexions/Profiles/ForgetPassword';
 
 //Page d'inscription
 import {InscriptionProprietaire} from './components/Pages/Connexions/SignUpProprietaire/InscriptionProprietaire';
@@ -37,8 +37,11 @@ import NotFound from './components/NotFound';
 
 function App() {
   return (
-      <div>
+    <div className="page-container">
+      <div className="content-wrap">
+
       <Header/>
+
         <Switch>
           <Route path='/' component={Home} exact />
           <Route path='/keyservicesPresentation' component={KeyservicesPresentation} />
@@ -52,11 +55,15 @@ function App() {
           <Route path='/profilePropriétaire' component={ProfileProprietaire} />
           <Route path='/profileLocataire' component={ProfileLocataire} />
           <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
+          <Route path='/forgetPassword' component={ForgetPassword} />
           <Route path='/dashboard' component={ProfileTabs} />
           <Route component={NotFound} />
         </Switch>
-      <Footer/>
+
       </div>
+
+      <Footer/>
+    </div>
   );
 }
 

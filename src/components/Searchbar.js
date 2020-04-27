@@ -7,7 +7,9 @@ export class Searchbar extends Component {
     render() {
         return(
             <Form className="p-2" inline>
-                <Button className="searchIconZone" >Icon</Button>
+                <Button className="searchIconZone" aria-label="Rechercher">
+                    Icon
+                </Button>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             </Form>
             )

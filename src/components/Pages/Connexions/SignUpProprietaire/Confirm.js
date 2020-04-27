@@ -99,12 +99,14 @@ export class Confirm extends Component {
               color="secondary"
               variant="contained"
               onClick={this.back}
-              >Back</Button>
+              aria-label="Retour"
+              >Retour</Button>
 
             <Button
               color="primary"
               variant="contained"
               onClick={this.continue}
+              aria-label="Confirmer et valider l'inscription"
              > Confirmer & Valider l'inscription</Button>
           </Col>
         </React.Fragment>

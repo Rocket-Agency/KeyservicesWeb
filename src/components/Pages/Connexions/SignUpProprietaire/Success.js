@@ -4,7 +4,7 @@ import '../../../../css/InscriptionProprietaire.scss';
 import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 
 
 export class Success extends Component {
@@ -29,11 +29,13 @@ export class Success extends Component {
                   <p>Vous recevrez un email de confirmation avec les instructions pour valider votre compte</p>
                      <div className="d-flex justify-content-center align-items-center">
                       <div id="container">                    
-                        <button className="retour-login">
+                        <button className="retour-login" aria-label="Retour à la page d'inscription">
                           <span className="circle" aria-hidden="true">
                             <span className="icon arrow"></span>
                           </span>
-                          <Link className="button-text" to="/loginProprietaire">Retourner à la page d'inscription</Link>
+                          <Link className="button-text" to="/loginProprietaire" aria-label="Retour page d'inscription">
+                            Retourner à la page d'inscription
+                          </Link>
                         </button>
                     </div>
                   </div>

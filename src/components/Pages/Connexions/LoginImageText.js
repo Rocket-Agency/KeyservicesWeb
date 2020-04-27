@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../../../css/LoginImageText.scss';
+import '../../../css/ConnexionProfilProprétaire.scss';
 
 import { Col } from 'reactstrap';
 import { Card} from 'react-bootstrap';

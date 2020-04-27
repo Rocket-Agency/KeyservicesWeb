@@ -8,7 +8,7 @@
     height: 368px;
     width: 4px;
     display: flex;
-    margin-left: 50%;
+    margin-left: 49%;
     margin-top: 20px;
 }
 
@@ -30,10 +30,11 @@
         height: 335px;
         width: 4px;
         display: flex;
-        margin-left: 50%;
-        margin-top: 100px;
+        margin-left: 49%;
+        margin-top: 20px;
     }
 }
+
 
 
 .card {
@@ -55,4 +56,8 @@
     .card-footer {
         margin-bottom: 70px;
     }
+}
+
+#contentEspace {
+    margin: 10px;
 }

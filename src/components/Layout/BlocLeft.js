@@ -8,26 +8,17 @@ import { Visible, Hidden } from 'react-grid-system';
 import ReactFlagsSelect from 'react-flags-select';
 import 'react-flags-select/css/react-flags-select.css';
 import Img from 'react-cool-img';
+import ImgDefaultLangues from '../../ImagesPlaceholder/placeholderLangues.png'
 
   export class BlocLeft extends Component {
     render() {
         return(
-            <div class="blocLeftSearchLang">
+            <div className="blocLeftSearchLang">
                 <Row className="d-flex justify-content-center">
-                        {/* <Col sm={3} className="d-flex justify-content-end">
-                            <Img src='./images/French-flag.png' alt="Langue Française" />
-                        </Col>
-                        <Col sm={3}className="d-flex justify-content-left">
-                            <Img src='./images/UK-flag.png' alt="Langue Française" />
-                        </Col> */}
+
                          <Visible xs sm>
                             <Row className="d-flex justify-content-center">
                         
-                                {/* <select className="mt-3 selectLangues">
-                                    <option selected value="french">Français</option>
-                                    <option value="english">Anglais</option>
-                                </select>      */}
-
                                 <ReactFlagsSelect 
                                  defaultCountry="FR"
                                     countries={["GB", "FR"]} />          
@@ -36,15 +27,25 @@ import Img from 'react-cool-img';
 
                         <Hidden xs sm>
                             <Col sm={3} className="d-flex justify-content-center">
-                                <Img src='./images/French-flag.png' alt="Langue Française" />
+                                <Img
+                                    placeholder={ImgDefaultLangues} 
+                                    src='./images/French-flag.png'
+                                    debounce={1000}
+                                    alt="Langue Française"
+                                /> 
                             </Col>
                             <Col sm={3}className="d-flex justify-content-center">
-                                <Img src='./images/UK-flag.png' alt="Langue Française" />
+                                <Img
+                                    placeholder={ImgDefaultLangues} 
+                                    src='./images/UK-flag.png'
+                                    debounce={1000}
+                                    alt="Langue Anglais"
+                                /> 
                             </Col>
                         </Hidden>
                                                 
                     <Form className="p-2 mt-3 searchbarHeader justify-content-center" inline>
-                        <Button className="searchIconZone">
+                        <Button className="searchIconZone" aria-label="Rechercher">
                             <GoSearch/>
                         </Button>
                         <FormControl type="text" placeholder="Search" className="mr-sm-1 searchFormControl" />

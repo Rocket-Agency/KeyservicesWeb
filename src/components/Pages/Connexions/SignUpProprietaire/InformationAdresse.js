@@ -3,7 +3,9 @@ import '../../../../css/InscriptionProprietaire.scss';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
 // import Button from '@material-ui/core/Button';
-import { Button, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Input } from 'reactstrap';
+// import { Button, FormGroup, Label, Input, FormText } from 'reactstrap';
+
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
 import AttachFileIcon from '@material-ui/icons/AttachFile';

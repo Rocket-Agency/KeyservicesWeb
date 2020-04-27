@@ -120,7 +120,7 @@ export class InscriptionProprietaire extends Component {
                     </Form.Row>
 
                     <div id="container">                    
-                         <button className="learn-more">
+                         <button className="learn-more" aria-label="Valider la ville">
                             <span className="circle" aria-hidden="true">
                                 <span className="icon arrow"></span>
                             </span>

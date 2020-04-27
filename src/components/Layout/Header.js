@@ -9,7 +9,7 @@ import {Navbar, Nav} from 'react-bootstrap';
 import BlocLeft from './BlocLeft';
 // import { browserHistory } from 'react-router';
 import Img from 'react-cool-img';
-
+import ImgDefaultLogoKeyservices from '../../ImagesPlaceholder/placeholderLogoKeyservices.png'
 
 export class Header extends Component {
     render() {
@@ -19,9 +19,16 @@ export class Header extends Component {
 
                 <Navbar collapseOnSelect expand="md" variant="light">
                     <a className="navbar-brand" href="/">
-                        <Img src={logo} alt="logo" style={{ 
+                        {/* <Img src={logo} alt="logo" style={{ 
                             width: '100px'
-                        }} />
+                        }} /> */}
+                        <Img
+                            placeholder={ImgDefaultLogoKeyservices} 
+                            src={logo}
+                            width="100px"
+                            debounce={1000}
+                            alt="Langue Anglais"
+                                />                         
                     </a>
                 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -32,7 +39,7 @@ export class Header extends Component {
                             <NavLink className="d-inline menustyle" exact to="/">Accueil</NavLink>
                             <NavLink className="d-inline menustyle" to="/keyservicesPresentation">Keyservices</NavLink>
                             <NavLink className="d-inline menustyle" to="/contact">Contact</NavLink>
-                            <NavLink className="d-inline menustyle" to="/monespace">Mon Espace</NavLink>
+                            <NavLink className="d-inline menustyle" to="/monespace">Espace connexion</NavLink>
                         </Nav>
 
                           <BlocLeft />

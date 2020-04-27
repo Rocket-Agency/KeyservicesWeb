@@ -51,3 +51,13 @@ $color-primaire: #87E990;
     font-family: 'Nunito';
     font-size: 14px;
   }
+
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .content-wrap {
+    flex: 1;
+  }

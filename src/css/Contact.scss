@@ -3,6 +3,10 @@
     padding: 40px 27px 41px;
     margin: 30px 27px 45px 40px;
 }
+.contact-bloc-map {
+    background-color : transparent;
+    margin-top: 30px
+}
 
 @media (max-width: 576px) {
     .contact-bloc {
@@ -16,18 +20,21 @@
     }
 }
 
-.contact-bloc-map {
-    background-color : transparent;
-    width: 100%;
+@media (min-width: 992px) {
+    .contact-bloc-map {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
+
 .contact-bloc-informations {
-    background-color :#FAF0E6;
+    background-color: #FAF0E6;
     border: 1px solid #A38068;
     font-size: 15px;
-    padding: 10px 20px;
-    margin: 25px 0;
-    max-width: 775px;
+    padding: 20px;
+    margin-top: 25px;
+    max-width: 100%;
 
     .Position_icon {
         align-items: center;
@@ -136,8 +143,8 @@ h3 {
 
 //Map
 .map-contact {
-    height: auto;
-    width: 100%;
+    // height: auto;
+    // width: 100%;
     margin-top: 30px;
     margin-bottom: 26px; 
 }
@@ -198,15 +205,3 @@ margin-right: 5px;
         margin-top: 33px;
     }
 }
-
-// position: absolute;
-// background: #A38068;
-// mix-blend-mode: normal;
-// border: 1px solid #000000;
-// box-sizing: border-box;
-// filter: blur(2px);
-// height: 363px;
-// width: 4px;
-// display: flex;
-// margin-left: 50%;
-// margin-top: 43px;
