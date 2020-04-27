@@ -8,19 +8,17 @@ import axios from 'axios';
 import MaterialTable from 'material-table';
 // import { Link } from 'react-router-dom';
 import Img from 'react-cool-img';
-import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png'
-
-// import MonCompte from './MonCompte';
-
+import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
+import { Col, Row, Form, Container, Button } from 'react-bootstrap';
 
 class ProfileTabs extends Component {
-  state = {
+state = {
     activeIndex: 0,
     userid: this.props.location.state.user.id,
     accessToken: this.props.location.state.user.accessToken,
     group: this.props.location.state.user.groups,
     users: "",
-    usersCollection: []
+    usersCollection: [],
   }
 
   componentDidMount() {
@@ -63,43 +61,98 @@ class ProfileTabs extends Component {
 
         { activeIndex === 0 && <TabContainer>
 
-        <div>
-          <div>{this.state.users.user_first_name}</div>
-          <div>{this.state.users.user_last_name}</div>
-        </div>
+      <Container fluid>
+          {/* <h1 className="mt-2 text-center">Bienvenue  {this.state.users.user_first_name} dans votre Espace</h1> */}
 
-      <div className="Container">
-          <h1 className="text-center">Mon Espace</h1>
-
-          <h2>Edit Profile</h2>
-
+          <h2 className="mt-2r">Mon Compte</h2>
+          <hr/>
             <div className="row">
               <div className="col-md-3">
                   <div className="text-center">
                     <Img
-                      placeholder={ImgDefaultAvatar} 
-                      class="avatar img-circle"
-                      alt="avatar" 
+                        placeholder={ImgDefaultAvatar} 
+                        class="avatar img-circle mt-3 mb-3"
+                        alt="avatar" 
                       />
                       <h6>Upload a different photo...</h6>
-                      
+                     
                       <input type="file" class="form-control"/>
                   </div>
               </div>
 
-              <h3>Personal info</h3>
+              <div class="col-md-9 personal-info">
+              <h3>Information personnel</h3>
 
               <form class="form-horizontal" role="form">
-                <div class="form-group">
-                  <label class="col-lg-12 control-label">First name:</label>
-                    <div class="col-lg-12">
-                      <input class="form-control" type="text" value="Jane" />
-                    </div>
-                </div>
-              </form>
 
+                   <Container fluid>
+
+                     <Row>
+                       <Col md={6} className="pt-3 pb-3">
+                          <Form.Row>
+                            <Form.Label className="label-info-generales" column sm={6}>Nom :</Form.Label>
+                              <Col xs={12} md={6} className="informations">
+                                {this.state.users.user_last_name}
+                              </Col>
+                            </Form.Row>  
+                        </Col>
+
+                       <Col md={6} className="pt-3 pb-3">
+                          <Form.Row>
+                            <Form.Label className="label-info-generales" column sm={6}>Prénom :</Form.Label>
+                              <Col xs={12} md={6} className="informations">
+                                {this.state.users.user_first_name}
+                              </Col>
+                          </Form.Row>  
+                       </Col>
+                    </Row>
+
+                    <Row>
+                       <Col md={6} className="pt-3 pb-3">
+                          <Form.Row>
+                          <Form.Label className="label-info-generales" column sm={6}>Date de naissance :</Form.Label>
+                              <Col xs={12} md={6} className="informations">
+                                26/10/1974
+                              </Col>
+                            </Form.Row>  
+                        </Col>
+
+                       <Col md={6} className="pt-3 pb-3">
+                          <Form.Row>
+                          <Form.Label className="label-info-generales" column sm={6}>Téléphone :</Form.Label>
+                            <Col xs={12} md={6} className="informations">
+                              0000000000
+                            </Col>
+                          </Form.Row>  
+                       </Col>
+                    </Row>
+
+                    <Row>
+                      <Col md={12} className="pt-3 pb-3">
+                        <Form.Row>
+                          <Form.Label className="label-info-generales" column sm={3}>Adresse :</Form.Label>
+                            <Col xs={12} md={6} className="informations">
+                              11, rue des boulettes test 75009
+                            </Col>
+                        </Form.Row>  
+                      </Col>
+                    </Row>
+                    
+                    <Button
+                      color="primary"
+                      variant="contained"
+                      onClick={this.continue}
+                      aria-label="Continuer"
+                      >Modifier
+                    </Button>
+
+                    <Button className="modifierProfil" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Modifier</Button>
+
+                  </Container>
+              </form>
+           </div>
           </div>
-      </div>
+      </Container>
           
         </TabContainer> }
 
@@ -114,14 +167,22 @@ class ProfileTabs extends Component {
         { activeIndex === 3 && <TabContainer style={{ minWidth: "100%" }}>
             <MaterialTable
               columns={[
+                {
+                  title: "Photo", field: "user_photo",
+                  // render: rowData => (
+                  //   <img
+                  //     style={{ height: 36, borderRadius: '50%' }}
+                  //     src={rowData.avatar}
+                  //   />
+                  // ),
+                },
                 { title: "Id", field: "user_id", editable: 'never'},
                 { title: "Prénom", field: "user_first_name" },
                 { title: "Nom", field: "user_last_name" },
                 { title: "Email", field: "user_email"},
-                { title: "Password", field: "user_password", show: false},
+                // { title: "Password", field: "user_password", show: false},
                 { title: "Birthay", field: "user_date_of_birth"},
                 { title: "Sexe", field: "user_sexe"},
-                { title: "Photo", field: "user_photo"},
                 { title: "Adresse", field: "user_adresse_txt"}
               ]}
               data={this.state.usersCollection}
@@ -223,9 +284,9 @@ const VerticalTabs = withStyles(theme => ({
 
 const MyTab = withStyles(theme => ({
   selected: {
-    color: 'tomato',
-    borderBottom: '2px solid tomato'
-  }
+    color: '#49173B',
+    borderBottom: '2px solid #49173B',
+  },
 }))(Tab);
 
 function TabContainer(props) {

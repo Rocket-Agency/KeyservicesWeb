@@ -20,7 +20,7 @@ export class Profile extends Component {
                  </div>
 
                  <div id="container">                    
-                    <button className="learn-more">
+                    <button className="learn-more" aria-label="En savoir plus">
                         <span className="circle" aria-hidden="true">
                             <span className="icon arrow"></span>
                         </span>
@@ -77,7 +77,7 @@ export class Profile extends Component {
                                                         <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
                                                             <Hidden xs>
                                                                 <div className="d-flex justify-content-center align-items-center">
-                                                                    <Button id="btn-seConnecter" type="submit"  to="/">
+                                                                    <Button id="btn-seConnecter" type="submit"  to="/" aria-label="Se connecter">
                                                                         <IoIosArrowForward /> 
                                                                     </Button>
 
@@ -88,7 +88,7 @@ export class Profile extends Component {
                                                             </Hidden>
                                                             <Visible xs>
                                                                 <div class="d-flex justify-content-center align-items-center">
-                                                                        <Button id="seConnecterMobile" to="/">
+                                                                        <Button id="seConnecterMobile" to="/" aria-label="Se connecter en mobile">
                                                                             <FaArrowRight/>
                                                                         <a clasName="envoyer" href="/profile"> 
                                                                             Se connecter

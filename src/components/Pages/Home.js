@@ -1,10 +1,12 @@
 //Home.js
 import React, {Component} from 'react';
 import '../../css/Home.scss';
-import Img from 'react-cool-img';
+// import Img from 'react-cool-img';
+import ProgressiveImage from "react-progressive-graceful-image";
 
-import ImgDefaultHome from '../../ImagesPlaceholder/placeholderHome.png';
-
+// import ImgDefaultHome from '../../ImagesPlaceholder/placeholderHome.png';
+import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
+import GererMesLocationsTiny from '../../ImagesPlaceholder/GererMesLocationsTiny.png';
 
 
 export class Home extends Component {
@@ -37,28 +39,48 @@ export class Home extends Component {
                             <div className="row">
                             <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
                                 <div className="card">
-                                    <Img className="card-img style-card" 
+                                    {/* <Img className="card-img style-card" 
                                         placeholder={ImgDefaultHome} 
                                         src="./Images/PosterUneAnnonce.png"
                                         debounce={1000}
                                         alt="Poster unee annonce" 
-                                    />
+                                    /> */}
+
+                                    <ProgressiveImage  className="card-img style-card" 
+                                        src="./Images/PosterUneAnnonce.png"
+                                        placeholder={PosterUneAnnonceTiny} 
+                                        alt="Poster unee annonce" 
+                                    >
+                                    {src => <img src={src} width="100%" alt="Poster unee annonce"  />}
+                                     </ProgressiveImage>
                                     <div className="card-img-overlay">
-                                        <button className="btn btn-md btn-success"> Poster une annonce</button>
+                                        <button className="btn btn-md btn-success" aria-label="Poster une annonce"> 
+                                            Poster une annonce
+                                        </button>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
                                     <div className="card">
-                                        <Img className="card-img style-card" 
+                                        {/* <Img className="card-img style-card" 
                                             placeholder={ImgDefaultHome} 
                                             src="./Images/GererMesLocations.png"
                                             debounce={1000}
                                             alt="Gerer mes locations" 
-                                        />
+                                        /> */}
+
+                                        <ProgressiveImage  className="card-img style-card" 
+                                            src="./Images/GererMesLocations.png"
+                                            placeholder={GererMesLocationsTiny} 
+                                            alt="Poster unee annonce" 
+                                            >
+                                            {src => <img src={src} width="100%" alt="Poster unee annonce"  />}
+                                        </ProgressiveImage>
                                         <div className="card-img-overlay">
-                                            <button className="btn btn-md btn-success"> Gérer mes locations</button>
+                                            <button className="btn btn-md btn-success" aria-label="Gérer mes locations">
+                                                Gérer mes locations
+                                            </button>
                                         </div>
                                    </div>
                                 </div>

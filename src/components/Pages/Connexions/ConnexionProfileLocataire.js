@@ -4,13 +4,8 @@ import axios from 'axios';
 import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 // import { Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
-// import VerticalTabs, {Dashboard} from './components/Pages/Dashboard';
+import { withRouter, Link } from 'react-router-dom';
 
-// import ProfileTabs from './components/Pages/Dashboard';
-//icons
-// import { IoIosArrowForward } from "react-icons/io";
-// import { FaArrowRight } from "react-icons/fa";
 
  class ConnexionProfileLocataire extends Component {
     constructor(props) {
@@ -90,13 +85,18 @@ import { withRouter } from 'react-router-dom';
                             <Col xs={12} className="d-flex justify-content-center align-items-center">
                                 <Hidden xs>
                                     <div className="d-flex justify-content-center align-items-center">
-                                        <div id="container">                    
-                                            <button className="learn-more">
-                                                <span className="circle" aria-hidden="true">
-                                                    <span className="icon arrow"></span>
-                                                </span>
-                                                <span className="button-text">Se connecter</span>
-                                            </button>
+                                        <div id="container">
+                                            <Row>
+                                                <button className="learn-more" aria-label="En savoir plus">
+                                                    <span className="circle" aria-hidden="true">
+                                                        <span className="icon arrow"></span>
+                                                    </span>
+                                                    <span className="button-text">Se connecter</span>
+                                                </button>
+                                            </Row>       
+                                            <Row className="d-flex justify-content-center align-items-center mt-3">
+                                            <Link  to="/forgetPassword">Mot de passe oublié</Link>   
+                                            </Row>             
                                          </div>
                                     </div>
                                 </Hidden>
@@ -104,12 +104,17 @@ import { withRouter } from 'react-router-dom';
                                 <Visible xs>
                                     <div className="d-flex justify-content-center align-items-center">
                                         <div id="container">                    
-                                            <button className="learn-more">
-                                                <span className="circle" aria-hidden="true">
-                                                    <span className="icon arrow"></span>
-                                                </span>
-                                                <span className="button-text">Se connecter</span>
-                                            </button>
+                                            <Row>
+                                                <button className="learn-more" aria-label="En savoir plus">
+                                                    <span className="circle" aria-hidden="true">
+                                                        <span className="icon arrow"></span>
+                                                    </span>
+                                                    <span className="button-text">Se connecter</span>
+                                                </button>
+                                            </Row>       
+                                            <Row className="d-flex justify-content-center align-items-center mt-3">
+                                                <Link  to="/forgetPassword">Mot de passe oublié</Link>   
+                                            </Row>     
                                          </div>
                                     </div>
                                 </Visible>
