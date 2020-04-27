@@ -19,7 +19,8 @@ export class MonEspace extends Component {
         return(
             <div id="contentEspace">
                 <div className="mb-2 d-flex justify-content-center">
-                <h3>Mon Espace</h3>
+                {/* <h3>Mon Espace</h3> */}
+                <h3>Espace connexion</h3>
                 </div>
 
                 <Container fluid>

@@ -44,15 +44,14 @@ export class KeyservicesPresentation extends Component {
                                 <Tab.Pane eventKey="presentation">
                                     <Container >
 
-                                         <Row className="mt-2" middle="xs">
+                                         <Row  middle="xs">
                                             <Col md={4} className="d-flex justify-content-center align-items-center">
 
                                                 <ProgressiveImage  className="card-img style-card" 
                                                         src='./images/Keyservices_Logo_presentation.png'
                                                         placeholder={Keyservices_logo} 
-                                                        alt="Poster unee annonce" 
                                                     >
-                                                    {src => <img src={src} width="100%" height="auto" alt="Poster unee annonce"  />}
+                                                    {src => <img src={src}  alt="Logo Keyservices"  />}
                                                 </ProgressiveImage>      
                                                     {/* <Img src='./images/Keyservices_Logo_presentation.png' width="200px" height="200px" alt="Logo keyservices "/> */}
                                                     {/* <Img 
@@ -65,7 +64,7 @@ export class KeyservicesPresentation extends Component {
                                                     /> */}                                                 
                                                 </Col>
                                                     
-                                                <Col md={8}>
+                                                <Col md={8} className="d-flex justify-content-center align-items-center">
                                                     <p className="textpresentation">Ea qui magna laboris labore. Sint sit commodo esse duis 
                                                     deserunt in commodo aliquip ut elit ex dolor adipisicing in. 
                                                     Aliquip deserunt aliqua pariatur aliquip culpa proident occaecat 
@@ -93,7 +92,7 @@ export class KeyservicesPresentation extends Component {
                                                             <ProgressiveImage  className="card-img style-card" 
                                                                 src='./images/paris.png'
                                                                 placeholder={parisTiny} 
-                                                                alt="Poster unee annonce" 
+                                                                alt="Image paris"
                                                             >
                                                                  {src => <img src={src} width="100%" alt="Paris" />}
                                                             </ProgressiveImage>  
@@ -112,11 +111,10 @@ export class KeyservicesPresentation extends Component {
                                                     <div className="col-sm-4 d-flex justify-content-center CityImg">
                                                         <Card>
                                                             <ProgressiveImage  className="card-img style-card" 
-                                                                src='./images/paris.png'
+                                                                src='./images/lyon.png'
                                                                 placeholder={lyonTiny} 
-                                                                alt="Poster unee annonce" 
                                                             >
-                                                                {src => <img src={src} width="100%" alt="Paris" />}
+                                                                {src => <img src={src} width="100%" alt="Lyon" />}
                                                             </ProgressiveImage>  
                                                             {/* <Card.Img variant="top" src='./images/lyon.png' width="300px" height="150px" alt="Logo keyservices "/> */}
                                                             {/* <Card.Img 
@@ -135,9 +133,8 @@ export class KeyservicesPresentation extends Component {
                                                             <ProgressiveImage  className="card-img style-card" 
                                                                 src='./images/lourdes.png'
                                                                 placeholder={lourdesTiny} 
-                                                                alt="Poster unee annonce" 
                                                             >
-                                                                {src => <img src={src} width="100%" alt="Paris" />}
+                                                                {src => <img src={src} width="100%" alt="Lourdes" />}
                                                             </ProgressiveImage>  
                                                             {/* <Card.Img variant="top" src='./images/lourdes.png' width="300px" height="150px" alt="Logo keyservices "/> */}
                                                             {/* <Card.Img 
@@ -161,9 +158,8 @@ export class KeyservicesPresentation extends Component {
                                                             <ProgressiveImage  className="card-img style-card" 
                                                                 src='./images/toulouse.png'
                                                                 placeholder={toulouseTiny} 
-                                                                alt="Poster unee annonce" 
                                                             >
-                                                                {src => <img src={src} width="100%" alt="Paris" />}
+                                                                {src => <img src={src} width="100%" alt="Toulouse" />}
                                                             </ProgressiveImage>  
                                                             {/* <Card.Img variant="top" src='./images/toulouse.png' width="300px" height="150px" alt="Logo keyservices "/> */}
                                                             {/* <Card.Img 
@@ -174,7 +170,7 @@ export class KeyservicesPresentation extends Component {
                                                                 debounce={1000}
                                                                 alt="Image paris"
                                                             /> */}
-                                                            <Card.Link className="CityLink" href="#">Toulouse</Card.Link>
+                                                            <Card.Link className="CityNoLink" href="#">Toulouse</Card.Link>
                                                         </Card>
                                                     </div>
                                                     <div className="col-sm-4 d-flex justify-content-center CityImg">
@@ -182,9 +178,8 @@ export class KeyservicesPresentation extends Component {
                                                             <ProgressiveImage  className="card-img style-card" 
                                                                 src='./images/nice.png'
                                                                 placeholder={niceTiny} 
-                                                                alt="Poster unee annonce" 
                                                             >
-                                                                {src => <img src={src} width="100%" alt="Paris" />}
+                                                                {src => <img src={src} width="100%" alt="Nice" />}
                                                             </ProgressiveImage>  
                                                             {/* <Card.Img variant="top" src='./images/nice.png' width="300px" height="150px" alt="Logo keyservices "/> */}
                                                             {/* <Card.Img 
@@ -195,7 +190,7 @@ export class KeyservicesPresentation extends Component {
                                                                 debounce={1000}
                                                                 alt="Image paris"
                                                             /> */}
-                                                            <Card.Link className="CityLink" href="#">Nice</Card.Link>
+                                                            <Card.Link className="CityNoLink" href="#">Nice</Card.Link>
                                                         </Card>
                                                     </div>
                                                     <div className="col-sm-4 d-flex justify-content-center CityImg">
@@ -203,9 +198,8 @@ export class KeyservicesPresentation extends Component {
                                                             <ProgressiveImage  className="card-img style-card" 
                                                                 src='./images/la_rochelle.png'
                                                                 placeholder={laRochelleTiny} 
-                                                                alt="Poster unee annonce" 
                                                             >
-                                                            {src => <img src={src} width="100%" alt="Paris" />}
+                                                            {src => <img src={src} width="100%" alt="La_Rochelle" />}
                                                             </ProgressiveImage>  
                                                             {/* <Card.Img variant="top" src='./images/la_rochelle.png' width="300px" height="150px" alt="Logo keyservices "/> */}
                                                             {/* <Card.Img 
@@ -216,7 +210,7 @@ export class KeyservicesPresentation extends Component {
                                                                 debounce={1000}
                                                                 alt="Image paris"
                                                             /> */}
-                                                            <Card.Link className="CityLink" href="#">La Rochelle</Card.Link>
+                                                            <Card.Link className="CityNoLink" href="#">La Rochelle</Card.Link>
                                                         </Card>
                                                     </div>
                                                  </Row>

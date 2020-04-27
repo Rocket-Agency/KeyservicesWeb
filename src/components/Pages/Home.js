@@ -19,7 +19,7 @@ export class Home extends Component {
                 </div>
             
                 <div className="container-fluid">
-                    <div className="mt-2 mb-3 colorBackground">
+                    <div className="colorBackground">
                         <div className="row">
                         <p className="text-home text-center d-flex justify-content-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Proin ac augue nibh. Nam et interdum augue. Nullam ut ante elit. 
