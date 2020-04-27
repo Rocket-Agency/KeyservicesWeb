@@ -14,10 +14,10 @@ import nettoyageTiny from '../../ImagesPlaceholder/nettoyageTiny.png';
 import prisedeRDVTiny from '../../ImagesPlaceholder/prisedeRDVTiny.png';
 
 
-import remisedesclefoMobileTiny from '../../ImagesPlaceholder/remisedesclefoMobileTiny.png';
+import remisedesclefMobileTiny from '../../ImagesPlaceholder/remisedesclefMobileTiny.png';
 import frigoMobileTiny from '../../ImagesPlaceholder/frigoMobileTiny.png';
-import nettoyageoMobileTiny from '../../ImagesPlaceholder/nettoyagemobileTiny.png';
-import prisedeRDVMobileTiny from '../../ImagesPlaceholder/prisedeRDMobileTiny.png';
+import nettoyageoMobileTiny from '../../ImagesPlaceholder/nettoyageMobileTiny.png';
+import prisedeRDVMobileTiny from '../../ImagesPlaceholder/prisedeRDVMobileTiny.png';
 
 
 export class ServicesComponent extends Component {
@@ -37,7 +37,7 @@ export class ServicesComponent extends Component {
                                     <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
                                         <ProgressiveImage  className="card-img style-card" 
                                              src='./images/remise_des_cles_mobile.jpg'
-                                            placeholder={remisedesclefoMobileTiny} 
+                                            placeholder={remisedesclefMobileTiny} 
                                         >
                                             {src => <img src={src} width="100%" alt="Service remise des clés mobile" />}
                                         </ProgressiveImage>
