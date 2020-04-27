@@ -6,6 +6,18 @@ import { Visible, Hidden } from 'react-grid-system';
 import Img from 'react-cool-img';
 import ImgDefaultServices from '../../ImagesPlaceholder/placeholderServices.png';
 
+import ProgressiveImage from "react-progressive-graceful-image";
+
+import remisedesclefTiny from '../../ImagesPlaceholder/remisedesclefTiny.png';
+import frigoTiny from '../../ImagesPlaceholder/frigoTiny.png';
+import nettoyageTiny from '../../ImagesPlaceholder/nettoyageTiny.png';
+import prisedeRDVTiny from '../../ImagesPlaceholder/prisedeRDVTiny.png';
+
+
+import remisedesclefoMobileTiny from '../../ImagesPlaceholder/remisedesclefoMobileTiny.png';
+import frigoMobileTiny from '../../ImagesPlaceholder/frigoMobileTiny.png';
+import nettoyageoMobileTiny from '../../ImagesPlaceholder/nettoyagemobileTiny.png';
+import prisedeRDVMobileTiny from '../../ImagesPlaceholder/prisedeRDMobileTiny.png';
 
 
 export class ServicesComponent extends Component {
@@ -23,29 +35,41 @@ export class ServicesComponent extends Component {
                             <Row className="blocBorder">
                                 <Visible xs>
                                     <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
+                                        <ProgressiveImage  className="card-img style-card" 
+                                             src='./images/remise_des_cles_mobile.jpg'
+                                            placeholder={remisedesclefoMobileTiny} 
+                                        >
+                                            {src => <img src={src} width="100%" alt="Service remise des clés mobile" />}
+                                        </ProgressiveImage>
                                         {/* <Img src='./images/remise_des_cles_mobile.jpg' width="100%" height="130px" alt="Logo keyservices "/> */}
-                                        <Img 
+                                        {/* <Img 
                                             placeholder={ImgDefaultServices} 
                                             src='./images/remise_des_cles_mobile.jpg'
                                             width="100%"
                                             height="auto"
                                             debounce={1000}
                                             alt="Image remise des clés mobile"
-                                        />                                        
+                                        />  */}
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
                                     <Col md={6} className="d-flex justify-content-end blocImgBorder">
+                                        <ProgressiveImage  className="card-img style-card" 
+                                            src='./images/remise_des_cles.png'
+                                            placeholder={remisedesclefTiny} 
+                                        >
+                                        {src => <img src={src} width="100%" alt="Service remise des clés"  />}
+                                        </ProgressiveImage>
                                         {/* <Img src='./images/remise_des_cles.png' width="100%" height="auto" className="imgServices" alt="Logo keyservices "/> */}
-                                        <Img 
+                                        {/* <Img 
                                             placeholder={ImgDefaultServices} 
                                             src='./images/remise_des_cles.png'
                                             width="100%"
                                             height="auto"
                                             debounce={1000}
                                             alt="Image remise des clés"
-                                        />                                    
+                                        /> */}
                                     </Col>
                                 </Hidden>
                                 
@@ -75,29 +99,41 @@ export class ServicesComponent extends Component {
                             <Row className="blocBorderCenter">
                                 <Visible xs>
                                     <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
+                                        <ProgressiveImage  className="card-img style-card" 
+                                            src='./images/frigo_mobile.jpg'
+                                            placeholder={frigoMobileTiny} 
+                                        >
+                                            {src => <img src={src} width="100%" alt="Service remplir son frigo mobile" />}
+                                        </ProgressiveImage>
                                         {/* <Img src='./images/frigo_mobile.jpg' width="100%%" height="130px" alt="Logo keyservices "/> */}
-                                        <Img 
+                                        {/* <Img 
                                             placeholder={ImgDefaultServices} 
                                             src='./images/frigo_mobile.jpg'
                                             width="100%"
                                             height="auto"
                                             debounce={1000}
                                             alt="Service remplir son frigo mobile"
-                                        />                                       
+                                        />  */}
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
                                     <Col md={6} className="d-flex justify-content-end blocImgBorder">
+                                        <ProgressiveImage  className="card-img style-card" 
+                                           src='./images/remplir_son_frigo.png'
+                                            placeholder={frigoTiny} 
+                                        >
+                                        {src => <img src={src} width="100%" alt="Service remplir son frigo"  />}
+                                        </ProgressiveImage>
                                         {/* <Img src='./images/remplir_son_frigo.png' width="100%" height="auto" alt="Logo keyservices "/> */}
-                                        <Img 
+                                        {/* <Img 
                                             placeholder={ImgDefaultServices} 
                                             src='./images/remplir_son_frigo.png'
                                             width="100%"
                                             height="auto"
                                             debounce={1000}
                                             alt="Service remplir son frigo"
-                                        />   
+                                        />   */}
                                    </Col>
                                 </Hidden>
 
@@ -128,29 +164,42 @@ export class ServicesComponent extends Component {
                             <Row className="blocBorder">
                                 <Visible xs>
                                     <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
+                                        <ProgressiveImage  className="card-img style-card" 
+                                            src='./images/nettoyage_mobile.jpg'
+                                            placeholder={nettoyageoMobileTiny} 
+                                        >
+                                        {src => <img src={src} width="100%" alt="Service nettoyage mobile"  />}
+                                        </ProgressiveImage>
                                         {/* <Img src='./images/nettoyage_mobile.jpg' width="100%" height="130px" alt="Logo keyservices "/> */}
-                                        <Img 
+                                        {/* <Img 
                                             placeholder={ImgDefaultServices} 
                                             src='./images/nettoyage_mobile.jpg'
                                             width="100%"
                                             height="auto"
                                             debounce={1000}
                                             alt="Service nettoyage mobile"
-                                        />   
+                                        />    */}
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
                                     <Col md={6} className="d-flex justify-content-end blocImgBorder">
+                                         <ProgressiveImage  className="card-img style-card" 
+                                            src='./images/nettoyage.png'
+                                            placeholder={nettoyageTiny} 
+                                            alt="Poster unee annonce" 
+                                        >
+                                            {src => <img src={src} width="100%"  alt="Service nettoyage"  />}
+                                        </ProgressiveImage>
                                         {/* <Img src='./images/nettoyage.png' width="100%" height="auto" alt="Logo keyservices "/> */}
-                                        <Img 
+                                        {/* <Img 
                                             placeholder={ImgDefaultServices} 
                                             src='./images/nettoyage.png'
                                             width="100%"
                                             height="auto"
                                             debounce={1000}
                                             alt="Service nettoyage"
-                                        />   
+                                        />    */}
                                     </Col>
                                 </Hidden>
 
@@ -179,29 +228,41 @@ export class ServicesComponent extends Component {
                             <Row className="blocBorderCenterRDV">
                                 <Visible xs>
                                     <Col md={6} className="d-flex justify-content-center blocImgBorderMobile">
+                                        <ProgressiveImage  className="card-img style-card" 
+                                            src='./images/prise_rdv_mobile.png'
+                                            placeholder={prisedeRDVMobileTiny} 
+                                        >
+                                            {src => <img src={src} width="100%" alt="Service prise de rendez-vous mobile"  />}
+                                        </ProgressiveImage>
                                         {/* <Img src='./images/prise_rdv_mobile.png' width="100%%" height="130px" alt="Logo keyservices "/> */}
-                                        <Img 
+                                        {/* <Img 
                                             placeholder={ImgDefaultServices} 
                                             src='./images/prise_rdv_mobile.png'
                                             width="100%"
                                             height="auto"
                                             debounce={1000}
                                             alt="Service prise de rendez-vous mobile"
-                                        />   
+                                        />    */}
                                     </Col>
                                 </Visible>
 
                                 <Hidden xs>
                                     <Col md={6} className="d-flex justify-content-end blocImgBorder">
+                                        <ProgressiveImage  className="card-img style-card" 
+                                           src='./images/prise_rdv.png'
+                                            placeholder={prisedeRDVTiny} 
+                                        >
+                                            {src => <img src={src} width="100%" alt="Service prise de rendez-vous"  />}
+                                        </ProgressiveImage>
                                         {/* <Img src='./images/prise_rdv.png' width="100%" height="auto" alt="Logo keyservices "/> */}
-                                        <Img 
+                                        {/* <Img 
                                             placeholder={ImgDefaultServices} 
                                             src='./images/prise_rdv.png'
                                             width="100%"
                                             height="auto"
                                             debounce={1000}
                                             alt="Service prise de rendez-vous"
-                                        />   
+                                        />    */}
                                     </Col>
                                 </Hidden>
 
