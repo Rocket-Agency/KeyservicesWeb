@@ -8,8 +8,11 @@ import { NavLink } from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap';
 import BlocLeft from './BlocLeft';
 // import { browserHistory } from 'react-router';
-import Img from 'react-cool-img';
-import ImgDefaultLogoKeyservices from '../../ImagesPlaceholder/placeholderLogoKeyservices.png'
+// import Img from 'react-cool-img';
+// import ImgDefaultLogoKeyservices from '../../ImagesPlaceholder/placeholderLogoKeyservices.png';
+
+import ProgressiveImage from "react-progressive-graceful-image";
+import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
 
 export class Header extends Component {
     render() {
@@ -19,16 +22,22 @@ export class Header extends Component {
 
                 <Navbar collapseOnSelect expand="md" variant="light">
                     <a className="navbar-brand" href="/">
+                        <ProgressiveImage  className="card-img" 
+                             src='./images/Keyservices_Logo.png'
+                            placeholder={LogoTiny} 
+                        >
+                            {src => <img src={src} alt="Logo Keyservices"  />}
+                        </ProgressiveImage>
                         {/* <Img src={logo} alt="logo" style={{ 
                             width: '100px'
                         }} /> */}
-                        <Img
+                        {/* <Img
                             placeholder={ImgDefaultLogoKeyservices} 
                             src={logo}
                             width="100px"
                             debounce={1000}
                             alt="Langue Anglais"
-                                />                         
+                        />*/}
                     </a>
                 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

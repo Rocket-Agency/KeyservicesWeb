@@ -7,8 +7,12 @@ import { Visible, Hidden } from 'react-grid-system';
 
 import ReactFlagsSelect from 'react-flags-select';
 import 'react-flags-select/css/react-flags-select.css';
-import Img from 'react-cool-img';
-import ImgDefaultLangues from '../../ImagesPlaceholder/placeholderLangues.png'
+// import Img from 'react-cool-img';
+// import ImgDefaultLangues from '../../ImagesPlaceholder/placeholderLangues.png';
+
+import ProgressiveImage from "react-progressive-graceful-image";
+import FrançaisTiny from '../../ImagesPlaceholder/FrançaisTiny.png';
+import AnglaisTiny from '../../ImagesPlaceholder/AnglaisFlags.png';
 
   export class BlocLeft extends Component {
     render() {
@@ -27,20 +31,32 @@ import ImgDefaultLangues from '../../ImagesPlaceholder/placeholderLangues.png'
 
                         <Hidden xs sm>
                             <Col sm={3} className="d-flex justify-content-center">
-                                <Img
+                                <ProgressiveImage  className="card-img" 
+                                    src='./images/French-flag.png'
+                                    placeholder={FrançaisTiny} 
+                                >
+                                    {src => <img src={src} alt="Facebook icône"  />}
+                                </ProgressiveImage>
+                                {/* <Img
                                     placeholder={ImgDefaultLangues} 
                                     src='./images/French-flag.png'
                                     debounce={1000}
                                     alt="Langue Française"
-                                /> 
+                                />  */}
                             </Col>
                             <Col sm={3}className="d-flex justify-content-center">
-                                <Img
+                                <ProgressiveImage  className="card-img" 
+                                    src='./images/UK-flag.png'
+                                    placeholder={AnglaisTiny} 
+                                >
+                                    {src => <img src={src} alt="Facebook icône"  />}
+                                </ProgressiveImage>
+                                {/* <Img
                                     placeholder={ImgDefaultLangues} 
                                     src='./images/UK-flag.png'
                                     debounce={1000}
                                     alt="Langue Anglais"
-                                /> 
+                                />  */}
                             </Col>
                         </Hidden>
                                                 
