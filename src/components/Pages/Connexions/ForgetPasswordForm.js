@@ -28,25 +28,19 @@ import { ForgetPassword } from './Profiles/ForgetPassword';
       }
     
       handleSubmit(event) {
-        const { email, password } = this.state;
+        const { email } = this.state;
         const config = {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           }
         }
-        axios.post("http://localhost:3001/api/auth/signin",
+        axios.post("http://localhost:3001/api/auth/resetpassword",
             {
-                email: email,
-                password: password
+                email: email
             },
             config
           )
-          .then(response => {
-            this.props.history.push('/dashboard', {user: response.data});
-          })
-          .catch(error => {
-          });
         event.preventDefault();
       }
 
