@@ -35,7 +35,7 @@ export class Home extends Component {
                             Proin ac augue nibh. Nam et interdum augue. Nullam ut ante elit. 
                             Duis elementum tellus nisi, sed aliquet arcu pharetra ut. 
                             Vestibulum eros nibh, lobortis eget ex vitae, eleifend ultricies mi. 
-                            Praesent in elit viverra, luctus dolor sed, mattis turpis. Nam non sapien mauris. 
+                            Praesent in elit viverra, luctus dolor sed, mattis turpis. Nam non sapien mauri. 
                             Nam id nulla ac velit tristique faucibus. Nunc ut nibh posuere, 
                             ultricies augue nec, lacinia sapien. Integer scelerisque faucibus turpis, 
                             vel ultricies arcu tempus at. </p>
