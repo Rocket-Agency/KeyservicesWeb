@@ -13,16 +13,18 @@ import BlocLeft from './BlocLeft';
 
 import ProgressiveImage from "react-progressive-graceful-image";
 import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
+import Sticky from 'react-sticky-el';
 
 export class Header extends Component {
     render() {
         return(
-            <div>
+            <div style={{ zIndex: 9999, position: 'relative'}}>
                 <div className="top"></div>
-
-                <Navbar collapseOnSelect expand="md" variant="light">
+                
+                <Sticky>
+                <Navbar bg="white" collapseOnSelect expand="md" variant="light" sticky="top">
                     <a className="navbar-brand" href="/">
-                        <ProgressiveImage  className="card-img" 
+                        <ProgressiveImage  className="card-img react-log" 
                              src='./images/Keyservices_Logo.png'
                             placeholder={LogoTiny} 
                         >
@@ -54,6 +56,7 @@ export class Header extends Component {
                           <BlocLeft />
                     </Navbar.Collapse>
                 </Navbar>
+                </Sticky>
                 
             </div>
 

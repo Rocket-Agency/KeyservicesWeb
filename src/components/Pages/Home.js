@@ -7,6 +7,8 @@ import ProgressiveImage from "react-progressive-graceful-image";
 // import ImgDefaultHome from '../../ImagesPlaceholder/placeholderHome.png';
 import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 import GererMesLocationsTiny from '../../ImagesPlaceholder/GererMesLocationsTiny.png';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 
 export class Home extends Component {
@@ -14,6 +16,14 @@ export class Home extends Component {
     render() {
         return(
             <div>
+                <Carousel>
+                <div>
+                    <img src="./Images/PosterUneAnnonce.png" />
+                </div>
+                <div>
+                    <img src="./Images/GererMesLocations.png" />
+                </div>
+            </Carousel>
                 <div className="mt-5 d-flex text-center justify-content-center">
                     <h1>On s’occupe de tous et vous de rien</h1>
                 </div>
