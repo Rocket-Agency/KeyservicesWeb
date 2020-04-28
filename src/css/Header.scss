@@ -145,29 +145,21 @@
   }
 
   .btn_connexion {
-    .btn-label {
-        position: relative;
-        left: -12px;
-        display: inline-block;
-        padding: 6px 12px;
-        background: rgba(0,0,0,0.15);
-        border-radius: 3px 0 0 3px;}
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+    background: #49173B;
+    color: #ffffff;
+    border-radius: 10px;
+}
 
-        .btn-labeled {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-  }
-
-  .btn-label {
-    position: relative;
-    left: -12px;
-    display: inline-block;
-    padding: 6px 12px;
-    background: rgba(0,0,0,0.15);
-    border-radius: 3px 0 0 3px;}
-
-    .btn-labeled {
-        padding-top: 0;
-        padding-bottom: 0;
+@media (max-width: 767.98px) {
+    .btn_connexion {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        background: #49173B;
+        color: #ffffff;
+        border-radius: 0;
     }
+}

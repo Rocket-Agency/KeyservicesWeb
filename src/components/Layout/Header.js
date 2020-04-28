@@ -5,9 +5,9 @@ import logo from '../../Keyservices_Logo.png';
 import '../../css/Header.scss';
 import '../../css/BlocLeft.scss';
 import { NavLink } from 'react-router-dom';
-import {Navbar, Nav} from 'react-bootstrap';
+import {Navbar, Nav, Button} from 'react-bootstrap';
 // import BlocLeft from './BlocLeft';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import LockIcon from '@material-ui/icons/Lock';
 
 
 import ProgressiveImage from "react-progressive-graceful-image";
@@ -52,9 +52,8 @@ export class Header extends Component {
                         </Nav>
 
 
-
-                        <NavLink  className="d-flex justify-content-end btn_connexion" to="/monespace">
-                            <i class="glyphicon glyphicon-user"></i>
+                        <NavLink  className="btn_connexion" to="/monespace">
+                        <LockIcon to="/monespace"/>
                             Connexion
                         </NavLink>
                         
