@@ -6,10 +6,9 @@ import '../../css/Header.scss';
 import '../../css/BlocLeft.scss';
 import { NavLink } from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap';
-import BlocLeft from './BlocLeft';
-// import { browserHistory } from 'react-router';
-// import Img from 'react-cool-img';
-// import ImgDefaultLogoKeyservices from '../../ImagesPlaceholder/placeholderLogoKeyservices.png';
+// import BlocLeft from './BlocLeft';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
 
 import ProgressiveImage from "react-progressive-graceful-image";
 import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
@@ -45,17 +44,23 @@ export class Header extends Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="ml-auto mr-auto d-flex justify-content-between #navigation" role="navigation">
+                        <Nav className="ml-auto mr-auto d-flex justify-content-center #navigation" role="navigation">
                             <h1 className="menu-title-mobile text-align-center">Menu </h1>
                             <NavLink className="d-inline menustyle" exact to="/">Accueil</NavLink>
                             <NavLink className="d-inline menustyle" to="/keyservicesPresentation">Keyservices</NavLink>
                             <NavLink className="d-inline menustyle" to="/contact">Contact</NavLink>
-                            <NavLink className="d-inline menustyle" to="/monespace">Connexion</NavLink>
                         </Nav>
 
-                          <BlocLeft />
+
+
+                        <NavLink  className="d-flex justify-content-end btn_connexion" to="/monespace">
+                            <i class="glyphicon glyphicon-user"></i>
+                            Connexion
+                        </NavLink>
+                        
                     </Navbar.Collapse>
                 </Navbar>
+
                 </Sticky>
                 
             </div>
