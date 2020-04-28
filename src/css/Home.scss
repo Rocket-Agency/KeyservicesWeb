@@ -1,25 +1,15 @@
-.sticky {
-    position: relative;
-
-}
-p.carousel-status {
-    display: none;
-}
-ul.thumbs.animated {
-    display: none;
-}
-ul.control-dots {
-    display: none;
-}
 .colorBackground {
     position: relative;
     background: #FAF0E6;
-    border: 2px solid #49173B;
     padding-bottom: 20px;
-    margin: 0 60px 20px 60px;
     padding: 30px 52px;
 }
 
+ul.thumbs.animated {display: none;}
+
+ul.control-dots {display: none;}
+
+.carousel .carousel-status {display: none;}
 .text-home {
     font-size: 14px;
     line-height: 38px;
@@ -29,6 +19,18 @@ ul.control-dots {
 .card {
     background-color: transparent;
     border: transparent;
+    opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.card:hover .card-img-overlay {
+    display: block;
+}
+
+
+.card-img-overlay {
+    display: none;
 }
 
 .style-card {
