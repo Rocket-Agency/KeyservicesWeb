@@ -80,7 +80,7 @@ export class Home extends Component {
                                             alt="Gerer mes locations" 
                                         /> */}
 
-                                        <Link>
+                                        <Link to="/">
                                         <ProgressiveImage  className="card-img style-card" 
                                             src="./Images/GererMesLocations.png"
                                             placeholder={GererMesLocationsTiny} 

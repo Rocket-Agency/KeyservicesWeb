@@ -69,8 +69,8 @@ export class Profile extends Component {
                                             </Form.Group>
                                         </Form.Row>
 
-                                        <Form.Row class="mt-4">
-                                            <Form.Group class="mt-4">
+                                        <Form.Row className="mt-4">
+                                            <Form.Group className="mt-4">
                                                 <Container>
 
                                                     <Row>
@@ -87,7 +87,7 @@ export class Profile extends Component {
                                                                 </div>
                                                             </Hidden>
                                                             <Visible xs>
-                                                                <div class="d-flex justify-content-center align-items-center">
+                                                                <div className="d-flex justify-content-center align-items-center">
                                                                         <Button id="seConnecterMobile" to="/" aria-label="Se connecter en mobile">
                                                                             <FaArrowRight/>
                                                                         <a clasName="envoyer" href="/profile"> 

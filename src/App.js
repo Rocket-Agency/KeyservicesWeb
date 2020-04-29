@@ -34,7 +34,6 @@ import ProfileTabs from './components/Pages/Dashboard';
 
 //Error
 import NotFound from './components/NotFound';
-import Sticky from 'react-sticky-el';
 
 function App() {
   return (
@@ -71,7 +70,7 @@ function App() {
 
       </div>
 
-      <Footer/>
+       <Footer/>
     </div>
   );
 }
