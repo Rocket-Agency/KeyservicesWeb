@@ -196,42 +196,42 @@ export class Home extends Component {
                             </div>
                                                     
                             <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                                                        <div class="service-container shadow rounded p-4 text-center">
-                                                            <div class="number-icon position-relative">
-                                                                <div class="icon-2 d-inline-block border rounded-pill">  
-                                                                    <i class="pe-7s-note2 text-custom"></i>
-                                                                </div>
+                                 <div class="service-container shadow rounded p-4 text-center">
+                                    <div class="number-icon position-relative">
+                                        <div class="icon-2 d-inline-block border rounded-pill">  
+                                            <i class="pe-7s-note2 text-custom"></i>
+                                        </div>
 
-                                                                <div class="number text-center rounded-pill bg-white border">
-                                                                    <span class="font-weight-bold">03</span>
-                                                                </div>
-                                                            </div>                           
+                                        <div class="number text-center rounded-pill bg-white border">
+                                            <span class="font-weight-bold">03</span>
+                                        </div>
+                                     </div>                           
 
-                                                            <div class="content mt-3">
-                                                                <h5 class="title text-dark">Insurance</h5>
-                                                                <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                                                <a href="javascript:void(0)" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
-                                                            </div>
-                                                        </div>
+                                    <div class="content mt-3">
+                                        <h5 class="title text-dark">Insurance</h5>
+                                        <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
+                                        <a href="javascript:void(0)" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
+                                     </div>
+                                </div>
                             </div>
                                                     
                             <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                                 <div class="service-container shadow rounded p-4 text-center">
-                                                            <div class="number-icon position-relative">
-                                                                <div class="icon-2 d-inline-block border rounded-pill">  
-                                                                    <i class="pe-7s-world text-custom"></i>
-                                                                </div>
+                                    <div class="number-icon position-relative">
+                                        <div class="icon-2 d-inline-block border rounded-pill">  
+                                            <i class="pe-7s-world text-custom"></i>
+                                        </div>
 
-                                                                <div class="number text-center rounded-pill bg-white border">
-                                                                    <span class="font-weight-bold">04</span>
-                                                                </div>
-                                                            </div>                           
+                                        <div class="number text-center rounded-pill bg-white border">
+                                            <span class="font-weight-bold">04</span>
+                                        </div>
+                                    </div>                           
 
-                                                            <div class="content mt-3">
-                                                                <h5 class="title text-dark">Bank Investigate</h5>
-                                                                <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                                                <a href="javascript:void(0)" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
-                                                            </div>
+                                    <div class="content mt-3">
+                                        <h5 class="title text-dark">Bank Investigate</h5>
+                                        <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
+                                        <a href="javascript:void(0)" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
+                                    </div>
                                  </div>
                             </div>
                                                                                                        
