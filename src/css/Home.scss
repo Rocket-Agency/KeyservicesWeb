@@ -158,6 +158,9 @@ ul.control-dots {display: none;}
 .service-container {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    .number-icon .number span {
+        line-height: 30px;
+    }
 }
 
 .number.text-center.rounded-pill.bg-white.border {
@@ -172,8 +175,33 @@ ul.control-dots {display: none;}
     transition: all 0.5s ease;
 }
 
-.service-container .number-icon .number span {
-    line-height: 30px;
+
+.service-container .number-icon .icon-2, 
+.form-group .form-control:focus,
+ .form-group .form-control.active,
+  .subscribe .form-control:focus {
+    border-color: #3dd598 !important;
+}
+
+[class^="pe-7s-"], [class*=" pe-7s-"] {
+    display: inline-block;
+    font-family: 'Pe-icon-7-stroke';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.service-container .number-icon .icon-2 i {
+    font-size: 30px;
+}
+
+.pe-7s-shield::before {
+    content: "\e6c5";
 }
 
 .shadow {

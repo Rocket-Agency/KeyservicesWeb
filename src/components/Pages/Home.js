@@ -1,6 +1,7 @@
 //Home.js
 import React, {Component} from 'react';
 import '../../css/Home.scss';
+import '../../css/pe-7s-shield.css';
 // import Img from 'react-cool-img';
 import ProgressiveImage from "react-progressive-graceful-image";
 
