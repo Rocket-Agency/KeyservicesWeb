@@ -18,14 +18,14 @@ export class Home extends Component {
         return(
             <div>
                 <Carousel>
-                <div>
-                    <img src="./Images/PosterUneAnnonce.png" />
-                </div>
-                <div>
-                    <img src="./Images/GererMesLocations.png" />
-                </div>
-            </Carousel>
-            
+                    <div>
+                        <img src="./Images/PosterUneAnnonce.png" />
+                    </div>
+                    <div>
+                        <img src="./Images/GererMesLocations.png" />
+                    </div>
+                </Carousel>
+
                 <div className="container-fluid p-0 mt-4 mb-4">
                     <div className="colorBackground">
                     <div className="mt-5 d-flex text-center justify-content-center">

@@ -145,8 +145,18 @@
   }
 
   .btn_connexion {
+    color: #49173B;
+    text-decoration: none;
+    padding: 10px;
+    background: white;
+    border: 1px solid #49173B;
+    border-radius: 10px;
+}
+
+.btn_connexion:hover {
     display: flex;
     justify-content: end;
+    text-decoration: none;
     padding: 10px;
     background: #49173B;
     color: #ffffff;
