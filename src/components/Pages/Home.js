@@ -31,9 +31,9 @@ export class Home extends Component {
                     <Carousel>
                         <Carousel.Item>
                             <img
-                            className="d-block w-100"
-                            src="./Images/PosterUneAnnonce.png" />
-                            alt="Poster une annoncee"
+                                className="d-block w-100"
+                                src="./Images/PosterUneAnnonce.png" 
+                                alt="Poster une annoncee"
                             />
                             <Carousel.Caption>
                             <h3>Poster une annonce</h3>
@@ -45,17 +45,17 @@ export class Home extends Component {
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
-                            className="d-block w-100"
-                            src="./Images/GererMesLocations.png" />
-                            alt="Third slide"
+                                className="d-block w-100"
+                                src="./Images/GererMesLocations.png"
+                                alt="Gérer mes locations"
                             />
 
                             <Carousel.Caption>
                             <h3>Gérer mes locations</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
-                                    Poster une annonce
-                                </button>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
+                                        Gérer mes location
+                                    </button>
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
