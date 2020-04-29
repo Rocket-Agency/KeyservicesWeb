@@ -8,8 +8,9 @@ import ProgressiveImage from "react-progressive-graceful-image";
 import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 import GererMesLocationsTiny from '../../ImagesPlaceholder/GererMesLocationsTiny.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+// import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
+import Carousel from 'react-bootstrap/Carousel'
 
 
 export class Home extends Component {
@@ -17,14 +18,47 @@ export class Home extends Component {
     render() {
         return(
             <div>
-                <Carousel>
+                {/* <Carousel>
                     <div>
                         <img src="./Images/PosterUneAnnonce.png" />
                     </div>
                     <div>
                         <img src="./Images/GererMesLocations.png" />
                     </div>
-                </Carousel>
+                </Carousel> */}
+
+
+                    <Carousel>
+                        <Carousel.Item>
+                            <img
+                            className="d-block w-100"
+                            src="./Images/PosterUneAnnonce.png" />
+                            alt="Poster une annoncee"
+                            />
+                            <Carousel.Caption>
+                            <h3>Poster une annonce</h3>
+                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
+                                        Poster une annonce
+                                    </button>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                            className="d-block w-100"
+                            src="./Images/GererMesLocations.png" />
+                            alt="Third slide"
+                            />
+
+                            <Carousel.Caption>
+                            <h3>Gérer mes locations</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
+                                    Poster une annonce
+                                </button>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    </Carousel>
 
                 <div className="container-fluid p-0 mt-4 mb-4">
                     <div className="colorBackground">
