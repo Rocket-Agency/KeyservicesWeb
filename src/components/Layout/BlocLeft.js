@@ -20,52 +20,7 @@ import AnglaisTiny from '../../ImagesPlaceholder/AnglaisFlags.png';
             <div className="blocLeftSearchLang">
                 <Row className="d-flex justify-content-center">
 
-                         <Visible xs sm>
-                            <Row className="d-flex justify-content-center">
-                        
-                                <ReactFlagsSelect 
-                                 defaultCountry="FR"
-                                    countries={["GB", "FR"]} />          
-                             </Row>
-                         </Visible>
-
-                        <Hidden xs sm>
-                            <Col sm={3} className="d-flex justify-content-center">
-                                <ProgressiveImage  className="card-img" 
-                                    src='./images/French-flag.png'
-                                    placeholder={FrançaisTiny} 
-                                >
-                                    {src => <img src={src} alt="Facebook icône"  />}
-                                </ProgressiveImage>
-                                {/* <Img
-                                    placeholder={ImgDefaultLangues} 
-                                    src='./images/French-flag.png'
-                                    debounce={1000}
-                                    alt="Langue Française"
-                                />  */}
-                            </Col>
-                            <Col sm={3}className="d-flex justify-content-center">
-                                <ProgressiveImage  className="card-img" 
-                                    src='./images/UK-flag.png'
-                                    placeholder={AnglaisTiny} 
-                                >
-                                    {src => <img src={src} alt="Facebook icône"  />}
-                                </ProgressiveImage>
-                                {/* <Img
-                                    placeholder={ImgDefaultLangues} 
-                                    src='./images/UK-flag.png'
-                                    debounce={1000}
-                                    alt="Langue Anglais"
-                                />  */}
-                            </Col>
-                        </Hidden>
-                                                
-                    <Form className="p-2 mt-3 searchbarHeader justify-content-center" inline>
-                        <Button className="searchIconZone" aria-label="Rechercher">
-                            <GoSearch/>
-                        </Button>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-1 searchFormControl" />
-                    </Form>
+                    <button>Connexion</button>
                 </Row>
             </div>
             )

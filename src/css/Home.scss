@@ -1,12 +1,15 @@
 .colorBackground {
     position: relative;
     background: #FAF0E6;
-    border: 2px solid #49173B;
     padding-bottom: 20px;
-    margin: 0 60px 20px 60px;
     padding: 30px 52px;
 }
 
+ul.thumbs.animated {display: none;}
+
+ul.control-dots {display: none;}
+
+.carousel .carousel-status {display: none;}
 .text-home {
     font-size: 14px;
     line-height: 38px;
@@ -16,11 +19,36 @@
 .card {
     background-color: transparent;
     border: transparent;
+    opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.card:hover .card-img-overlay {
+    display: block;
+}
+
+
+.card-img-overlay {
+    display: none;
 }
 
 .style-card {
     height : 100%;
     margin : 0 auto;
+}
+
+.btn-home {
+    background: #fff;
+    border: 4px solid #87E990;
+    color: #000;
+    width: 300px;
+    height: 60px;
+}
+
+.btn-home:hover {
+    background: #87E990;
+    color: #000000;
 }
 
 .btn-success {
@@ -31,8 +59,6 @@
     width: 300px;
     height: 60px;
 }
-
-
 
 .btn-success:hover {
     background: #87E990;
@@ -113,3 +139,9 @@
 //         padding: 15px 52px;
 //     }
 // }
+
+.carousel-indicators li {
+    text-indent: -999px;
+    cursor: pointer;
+    display: none;
+}
