@@ -140,8 +140,51 @@ ul.control-dots {display: none;}
 //     }
 // }
 
+
+
 .carousel-indicators li {
     text-indent: -999px;
     cursor: pointer;
     display: none;
+}
+
+//Bloc services
+.section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.service-container {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.number.text-center.rounded-pill.bg-white.border {
+    position: absolute;
+    top: 0;
+    right: 70px;
+    left: 0;
+    height: 35px;
+    width: 35px;
+    margin: 0 auto;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.service-container .number-icon .number span {
+    line-height: 30px;
+}
+
+.shadow {
+    box-shadow: 0 0 3px rgba(47, 60, 78, 0.15) !important;
+}
+
+.icon-2.d-inline-block.border.rounded-pill {
+    height: 70px;
+    width: 70px;
+    line-height: 80px;
+    border-radius: 64% 36% 55% 45% / 76% 72% 28% 24% !important;
+    border-color: #f89d36 !important;
+    -webkit-transition: all 0.5s ease;
 }
