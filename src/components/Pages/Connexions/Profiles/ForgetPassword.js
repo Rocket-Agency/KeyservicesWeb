@@ -36,7 +36,7 @@ export class ForgetPassword extends Component {
                                         <h3>Mot de passe oublié ?</h3>
                                     </div>
                                     <div className="mt-4 mb-4 d-flex justify-content-center">
-                                        <p  class="text-mdpOublié">Pas de panique ! Remplissez cle formulaire ci-dessous et nous vous enverrons par email 
+                                        <p  className="text-mdpOublié">Pas de panique ! Remplissez cle formulaire ci-dessous et nous vous enverrons par email 
                                         les informations pour vous créer un nouveau mot de passe</p>
                                     </div>
                                    
