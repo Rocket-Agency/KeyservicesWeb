@@ -163,6 +163,16 @@ ul.control-dots {display: none;}
     }
 }
 
+.service-container:hover {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;
+    box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;
+}
+
+.service-container .number-icon .icon-2 i {
+    font-size: 30px;
+}
+
 .number.text-center.rounded-pill.bg-white.border {
     position: absolute;
     top: 0;
@@ -191,14 +201,10 @@ ul.control-dots {display: none;}
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    line-height: 1
 }
 
-.service-container .number-icon .icon-2 i {
-    font-size: 30px;
-}
+
 
 .pe-7s-shield::before {
     content: "\e6c5";
@@ -213,6 +219,27 @@ ul.control-dots {display: none;}
     width: 70px;
     line-height: 80px;
     border-radius: 64% 36% 55% 45% / 76% 72% 28% 24% !important;
-    border-color: #f89d36 !important;
+    border-color: #3dd598 !important;
     -webkit-transition: all 0.5s ease;
+}
+
+.service-container:hover .number-icon .icon-2, .service-container a:hover {
+    background-color: #3dd598;
+    border-radius: 50% !important;
+}
+
+.number-icon .icon-2 {
+    color: #3dd598 !important;
+}
+
+// .service-container:hover .number-icon .icon-2 {
+//     color: #3dd598 !important;
+// }
+
+.service-container:hover .number-icon .icon-2 i {
+    color: #ffffff !important;
+}
+
+a {
+    background-color: transparent;
 }
