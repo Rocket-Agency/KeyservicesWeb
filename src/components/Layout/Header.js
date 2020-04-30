@@ -56,6 +56,8 @@ export class Header extends Component {
                             <LockIcon to="/monespace"/>
                                 Connexion
 
+                                <br />
+                                
                                 <LockIcon to="/"/>
                                 Déonnexion
                         </NavLink>
