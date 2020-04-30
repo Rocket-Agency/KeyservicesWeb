@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 import {Navbar, Nav, Button} from 'react-bootstrap';
 // import BlocLeft from './BlocLeft';
 import LockIcon from '@material-ui/icons/Lock';
+import LockOpenIcon from '@material-ui/icons/LockOpen';
 
 
 import ProgressiveImage from "react-progressive-graceful-image";
@@ -58,8 +59,8 @@ export class Header extends Component {
                             Connexion
                         </NavLink>
 
-                        <NavLink  className="btn_connexion" to="/monespace">
-                        <LockIcon to="/monespace"/>
+                        <NavLink  className="btn_connexion" to="/">
+                        <LockOpenIcon to="/monespace"/>
                         Déconnexion
                         </NavLink>
                         
