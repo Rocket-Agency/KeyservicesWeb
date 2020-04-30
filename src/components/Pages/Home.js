@@ -32,6 +32,7 @@ export class Home extends Component {
                     </div>
                 </Carousel> */}
 
+                <div className="mt-3">
 
                     <Carousel>
                         <Carousel.Item>
@@ -76,6 +77,7 @@ export class Home extends Component {
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
+                </div>
 
                 <div className="container-fluid p-0 mt-4 mb-4">
                     <div className="colorBackground">

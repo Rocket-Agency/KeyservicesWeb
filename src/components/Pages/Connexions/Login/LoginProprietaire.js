@@ -6,16 +6,16 @@ import { Col, Container, Row, Card} from 'react-bootstrap';
 // import { Visible, Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
 import ConnexionProfileProprietaire from '../ConnexionProfilePropretaire';
-// import SideForm from './SideForm';
+import HomeIcon from '@material-ui/icons/Home';
 
 export class LoginProprietaire extends Component {
 
     render() {
         return(
             <div>
-                <BreadcrumbItem to="/" >Home</BreadcrumbItem>
+               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem to="/monEspace" >Connexion</BreadcrumbItem>
-                <BreadcrumbItem >Connexion  Propriétaire</BreadcrumbItem>
+                <BreadcrumbItem >Connexion Propriétaire</BreadcrumbItem>
 
                     <Container fluid>
                         <Row className="BlocConnexion">
