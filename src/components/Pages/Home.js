@@ -11,9 +11,11 @@ import ProgressiveImage from "react-progressive-graceful-image";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import { Carousel } from 'react-responsive-carousel';
 // import { Link } from 'react-router-dom';
-import Icon from '@mdi/react'
-import { mdiAccount } from '@mdi/js'
-import Carousel from 'react-bootstrap/Carousel'
+// import Icon from '@mdi/react'
+// import { mdiAccount } from '@mdi/js'
+import Carousel from 'react-bootstrap/Carousel';
+import { Icon, InlineIcon } from '@iconify/react';
+import chevronRight from '@iconify/icons-mdi/chevron-right';
 
 
 export class Home extends Component {
@@ -145,7 +147,7 @@ export class Home extends Component {
                         <div class="row justify-content-center">
                             <div class="col-12 text-center">
                                 <div class="section-title mb-4 pb-2">
-                                    <h4 class="title mb-4">Business Services</h4>
+                                    <h4 class="title mb-4">Nos Services</h4>
                                     <p class="text-muted mx-auto para-desc mb-0">Splash your dream color Bring your home to lively Colors. We make it a priotity to offer flexible services to accomodate your needs</p>
                                 </div>
                             </div>
@@ -165,9 +167,9 @@ export class Home extends Component {
                                     </div>                           
 
                                     <div class="content mt-3">
-                                        <h5 class="title text-dark">Finance Management</h5>
+                                        <h5 class="title text-dark">Remise des clés</h5>
                                         <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                        <a href="javascript:void(0)" class="text-dark">
+                                        <a href="" class="text-dark">
                                             Read more
                                             <i class="mdi mdi-chevron-right"></i>
                                         </a>
@@ -188,9 +190,9 @@ export class Home extends Component {
                                     </div>                           
 
                                     <div class="content mt-3">
-                                         <h5 class="title text-dark">Consulting</h5>
+                                         <h5 class="title text-dark">Remplir son frigo</h5>
                                          <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                        <a href="javascript:void(0)" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
+                                        <a href="" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
                                      </div>
                                 </div>
                             </div>
@@ -208,9 +210,9 @@ export class Home extends Component {
                                      </div>                           
 
                                     <div class="content mt-3">
-                                        <h5 class="title text-dark">Insurance</h5>
+                                        <h5 class="title text-dark">Prise de rendez-vous pour le checkout</h5>
                                         <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                        <a href="javascript:void(0)" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
+                                        <a href="" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
                                      </div>
                                 </div>
                             </div>
@@ -228,16 +230,16 @@ export class Home extends Component {
                                     </div>                           
 
                                     <div class="content mt-3">
-                                        <h5 class="title text-dark">Bank Investigate</h5>
+                                        <h5 class="title text-dark">Nettoyage</h5>
                                         <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                        <a href="javascript:void(0)" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
+                                        <a href="" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
                                     </div>
                                  </div>
                             </div>
                                                                                                        
-                            <div class="col-12 mt-4 pt-2 text-center">
+                            {/* <div class="col-12 mt-4 pt-2 text-center">
                                  <a href="javascript:void(0)" class="btn btn-pill btn-custom">See More <i class="mdi mdi-chevron-right"></i></a>
-                            </div>
+                            </div> */}
                         </div>
                      </div>
                 </section>

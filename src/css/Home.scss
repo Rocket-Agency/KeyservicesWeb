@@ -205,6 +205,10 @@ ul.control-dots {display: none;}
     content: "\e6c5";
 }
 
+.pe-7s-note2::before {
+    content: "\e69d";
+}
+
 .shadow {
     box-shadow: 0 0 3px rgba(47, 60, 78, 0.15) !important;
 }
@@ -217,7 +221,7 @@ ul.control-dots {display: none;}
     border-color: #3dd598 !important;
 }
 
-.service-container:hover .number-icon .icon-2, .service-container a:hover {
+.service-container:hover .number-icon .icon-2{
     background-color: #3dd598;
     border-radius: 50% !important;
 }
@@ -236,6 +240,12 @@ ul.control-dots {display: none;}
 
 a {
     background-color: transparent;
+    text-decoration: none !important;
+}
+
+.service-container a:hover {
+    color: #3dd598 !important;
+    border-radius: 50% !important;
 }
 
 .service-container:hover .number-icon .number {
