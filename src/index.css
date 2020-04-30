@@ -23,11 +23,13 @@ h1, h2, h3, h4, h5, h6 {
     list-style: none;
     display: flex;
     font-size: 16px;
+    padding: 10px 40px;
+    border: 1px solid black;
 }
 
 .dynamic-bread-crumb ul li span.separator{
-padding: 0 8px;
-color:#d2ceaf;
+    padding: 0 8px;
+    color:#d2ceaf;
 }
 
 .dynamic-bread-crumb ul li a:hover{ 

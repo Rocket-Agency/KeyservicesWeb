@@ -8,13 +8,7 @@ import './index.css';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 
-import FilArtiane from './components/Pages/FilAriane';
-
-// import Home from './components/Home';
-// import NavBar from './components/Navbar';
-// import Football from './components/Football';
-// import Usage from './components/Usage';
-// import Sports from './components/Sports';
+import Breadcrumb from './components/Pages/Breadcrumb';
 
 //Import pages
 import {Home} from './components/Pages/Home';
@@ -53,7 +47,7 @@ function App() {
             <div className="page-container">
               <div className="content-wrap">
             <Header/>
-            <FilArtiane />
+            <Breadcrumb />
 
                 <Switch>
                   <Route path='/' component={Home} exact />
