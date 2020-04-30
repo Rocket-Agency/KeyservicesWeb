@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../../css/keyservices.scss';
+import { BreadcrumbItem } from '../../index';
 import ServicesComponent from './ServicesComponent';
 
 import {Container, Tab, Row, Col, Nav, Card} from 'react-bootstrap';
@@ -9,22 +10,26 @@ import {Container, Tab, Row, Col, Nav, Card} from 'react-bootstrap';
 
 import ProgressiveImage from "react-progressive-graceful-image";
 import Keyservices_logo from '../../ImagesPlaceholder/Keyservices_Logo.png';
+import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
 import parisTiny from '../../ImagesPlaceholder/parisTiny.png';
 import lyonTiny from '../../ImagesPlaceholder/lyonTiny.png';
 import lourdesTiny from '../../ImagesPlaceholder/lourdesTiny.png';
 import toulouseTiny from '../../ImagesPlaceholder/toulouseTiny.png';
 import niceTiny from '../../ImagesPlaceholder/niceTiny.png';
 import laRochelleTiny from '../../ImagesPlaceholder/larochelleTiny.png';
-
+import HomeIcon from '@material-ui/icons/Home';
 
 
 export class KeyservicesPresentation extends Component {
 
     render() {
         return(
-            <div>
-                
-                <div>
+            <div >
+                <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+                <BreadcrumbItem >Keyservices</BreadcrumbItem>
+
+                <div className="mt-3">
+                    
 
                     <Tab.Container id="left-tabs-example" defaultActiveKey="presentation">
                         <Col className="container-fluid" >
@@ -48,8 +53,8 @@ export class KeyservicesPresentation extends Component {
                                             <Col md={4} className="d-flex justify-content-center align-items-center">
 
                                                 <ProgressiveImage  className="card-img style-card" 
-                                                        src='./images/Keyservices_Logo_presentation.png'
-                                                        placeholder={Keyservices_logo} 
+                                                    src='./images/Keyservices_Logo_presentation.png'
+                                                    placeholder={LogoTiny} 
                                                     >
                                                     {src => <img src={src}  alt="Logo Keyservices"  />}
                                                 </ProgressiveImage>      
@@ -227,3 +232,5 @@ export class KeyservicesPresentation extends Component {
         )
     }
 }
+
+export default KeyservicesPresentation;

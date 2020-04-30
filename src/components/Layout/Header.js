@@ -8,10 +8,10 @@ import { NavLink } from 'react-router-dom';
 import {Navbar, Nav, Button} from 'react-bootstrap';
 // import BlocLeft from './BlocLeft';
 import LockIcon from '@material-ui/icons/Lock';
-
+// import FilAriane from './FilAriane';
 
 import ProgressiveImage from "react-progressive-graceful-image";
-import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
+import Keyservices_logo from '../../ImagesPlaceholder/Keyservices_Logo.png';
 import Sticky from 'react-sticky-el';
 
 export class Header extends Component {
@@ -24,8 +24,8 @@ export class Header extends Component {
                 <Navbar bg="white" collapseOnSelect expand="md" variant="light" sticky="top">
                     <a className="navbar-brand" href="/">
                         <ProgressiveImage  className="card-img react-log" 
-                             src='./images/Keyservices_Logo.png'
-                            placeholder={LogoTiny} 
+                            src='./images/Keyservices_Logo.png'
+                            placeholder={Keyservices_logo} 
                         >
                             {src => <img src={src} alt="Logo Keyservices"  />}
                         </ProgressiveImage>
@@ -53,12 +53,17 @@ export class Header extends Component {
 
 
                         <NavLink  className="btn_connexion" to="/monespace">
-                        <LockIcon to="/monespace"/>
-                            Connexion
+                            <LockIcon to="/monespace"/>
+                                Connexion
+
+                                <LockIcon to="/"/>
+                                Déonnexion
                         </NavLink>
                         
                     </Navbar.Collapse>
                 </Navbar>
+
+                {/* <FilAriane /> */}
 
                 </Sticky>
                 

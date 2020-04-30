@@ -1,6 +1,7 @@
 //Inscription Propriétaire
 import React, {Component} from 'react';
 import axios from 'axios';
+import { BreadcrumbItem } from '../../../../index';
 import '../../../../css/InscriptionProprietaire.scss';
 
 import { Col, Container, Form} from 'react-bootstrap';
@@ -12,6 +13,7 @@ import UserForm from './UserForm';
 // import AttachFileIcon from '@material-ui/icons/AttachFile';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import HomeIcon from '@material-ui/icons/Home';
 
 export class InscriptionProprietaire extends Component {
     constructor(props) {
@@ -100,9 +102,13 @@ export class InscriptionProprietaire extends Component {
           ];
         return(
             <div>
-                <div className="mt-5 d-flex justify-content-center">
+                <div className="mt-3 d-flex justify-content-center">
                    <h3>Inscription</h3>
                 </div>
+
+                <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+                <BreadcrumbItem to="/monEspace" >Connexion</BreadcrumbItem>
+                <BreadcrumbItem >Connexion Propriétaire</BreadcrumbItem>
 
 
                  <Container fluid className="mt-5 d-flex justify-content-center searchCityFields">

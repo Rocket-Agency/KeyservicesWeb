@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import '../../css/Home.scss';
 import '../../css/pe-7s-shield.css';
+import { BreadcrumbItem } from '../../index';
 // import Img from 'react-cool-img';
 import ProgressiveImage from "react-progressive-graceful-image";
 
@@ -9,21 +10,19 @@ import ProgressiveImage from "react-progressive-graceful-image";
 // import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 // import GererMesLocationsTiny from '../../ImagesPlaceholder/GererMesLocationsTiny.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import { Carousel } from 'react-responsive-carousel';
-// import { Link } from 'react-router-dom';
-// import Icon from '@mdi/react'
-// import { mdiAccount } from '@mdi/js'
 import Carousel from 'react-bootstrap/Carousel';
-import { Icon, InlineIcon } from '@iconify/react';
-import chevronRight from '@iconify/icons-mdi/chevron-right';
 import { Container, Col, Row} from 'react-bootstrap';
-
+import HomeIcon from '@material-ui/icons/Home';
+import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
+import GererMesLocationsTiny from '../../ImagesPlaceholder/GérerMesLocationsTiny.png';
 
 export class Home extends Component {
 
     render() {
         return(
             <div>
+
+                <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
                 {/* <Carousel>
                     <div>
                         <img src="./Images/PosterUneAnnonce.png" />
@@ -33,14 +32,22 @@ export class Home extends Component {
                     </div>
                 </Carousel> */}
 
+                <div className="mt-3">
 
                     <Carousel>
                         <Carousel.Item>
-                            <img
+                            {/* <img
                                 className="d-block w-100"
-                                src="./Images/PosterUneAnnonce.png" 
+                                src="./Images/PosterUneAnnonce1.png" 
                                 alt="Poster une annoncee"
-                            />
+                            /> */}
+                            <ProgressiveImage  className="card-img style-card" 
+                                src="./Images/PosterUneAnnonce.png" 
+                                placeholder={PosterUneAnnonceTiny} 
+                            >
+                                {src => <img src={src}  alt="Poster une annoncee"  />}
+                            </ProgressiveImage>    
+                            
                             <Carousel.Caption>
                             <h3>Poster une annonce</h3>
                                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -50,12 +57,17 @@ export class Home extends Component {
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
-                            <img
+                            {/* <img
                                 className="d-block w-100"
                                 src="./Images/GererMesLocations.png"
                                 alt="Gérer mes locations"
-                            />
-
+                            /> */}
+                            <ProgressiveImage  className="card-img style-card" 
+                                src="./Images/GérerMesLocations.png"
+                                placeholder={GererMesLocationsTiny} 
+                            >
+                                {src => <img src={src}  alt="Gérer mes locations"  />}
+                            </ProgressiveImage>  
                             <Carousel.Caption>
                             <h3>Gérer mes locations</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -65,6 +77,7 @@ export class Home extends Component {
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
+                </div>
 
                 <div className="container-fluid p-0 mt-4 mb-4">
                     <div className="colorBackground">
