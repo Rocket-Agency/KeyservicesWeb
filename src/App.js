@@ -8,7 +8,7 @@ import './index.css';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 
-import Breadcrumb from './components/Pages/Breadcrumb';
+import FilAriane from './components/Layout/FilAriane';
 
 //Import pages
 import {Home} from './components/Pages/Home';
@@ -47,7 +47,7 @@ function App() {
             <div className="page-container">
               <div className="content-wrap">
             <Header/>
-            <Breadcrumb />
+            <FilAriane />
 
                 <Switch>
                   <Route path='/' component={Home} exact />

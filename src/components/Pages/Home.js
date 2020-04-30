@@ -13,6 +13,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carousel from 'react-bootstrap/Carousel';
 import { Container, Col, Row} from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
+import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny1.png';
 
 export class Home extends Component {
 
@@ -20,7 +21,7 @@ export class Home extends Component {
         return(
             <div>
 
-                <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+                <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
                 {/* <Carousel>
                     <div>
                         <img src="./Images/PosterUneAnnonce.png" />
@@ -33,11 +34,13 @@ export class Home extends Component {
 
                     <Carousel>
                         <Carousel.Item>
-                            <img
-                                className="d-block w-100"
-                                src="./Images/PosterUneAnnonce.png" 
-                                alt="Poster une annoncee"
-                            />
+                            <ProgressiveImage  className="card-img style-card" 
+                                src="./Images/PosterUneAnnonce1.png" 
+                                placeholder={PosterUneAnnonceTiny} 
+                            >
+                                {src => <img src={src}  alt="Poster une annoncee"  />}
+                            </ProgressiveImage>    
+                            
                             <Carousel.Caption>
                             <h3>Poster une annonce</h3>
                                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>

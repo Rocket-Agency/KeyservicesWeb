@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 import {Navbar, Nav, Button} from 'react-bootstrap';
 // import BlocLeft from './BlocLeft';
 import LockIcon from '@material-ui/icons/Lock';
-
+// import FilAriane from './FilAriane';
 
 import ProgressiveImage from "react-progressive-graceful-image";
 import Keyservices_logo from '../../ImagesPlaceholder/Keyservices_Logo.png';
@@ -59,6 +59,8 @@ export class Header extends Component {
                         
                     </Navbar.Collapse>
                 </Navbar>
+
+                {/* <FilAriane /> */}
 
                 </Sticky>
                 

@@ -18,7 +18,6 @@ export class Contact extends Component {
     render() {
         return(
             <div>
-                 
                 <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem >Contact</BreadcrumbItem>
 

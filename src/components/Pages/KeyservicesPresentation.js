@@ -28,7 +28,7 @@ export class KeyservicesPresentation extends Component {
             <div>
                 <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem >Keyservices</BreadcrumbItem>
-                
+
                 <div>
                     
 
@@ -54,8 +54,8 @@ export class KeyservicesPresentation extends Component {
                                             <Col md={4} className="d-flex justify-content-center align-items-center">
 
                                                 <ProgressiveImage  className="card-img style-card" 
-                                                        src='./images/Keyservices_Logo_presentation.png'
-                                                        placeholder={LogoTiny} 
+                                                    src='./images/Keyservices_Logo_presentation.png'
+                                                    placeholder={LogoTiny} 
                                                     >
                                                     {src => <img src={src}  alt="Logo Keyservices"  />}
                                                 </ProgressiveImage>      
