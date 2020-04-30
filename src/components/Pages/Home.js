@@ -195,7 +195,7 @@ export class Home extends Component {
                                 </div>
                             </div>
                                                     
-                            <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                            <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
                                  <div class="service-container shadow rounded p-4 text-center">
                                     <div class="number-icon position-relative">
                                         <div class="icon-2 d-inline-block border rounded-pill">  
@@ -215,7 +215,7 @@ export class Home extends Component {
                                 </div>
                             </div>
                                                     
-                            <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                            <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
                                 <div class="service-container shadow rounded p-4 text-center">
                                     <div class="number-icon position-relative">
                                         <div class="icon-2 d-inline-block border rounded-pill">  

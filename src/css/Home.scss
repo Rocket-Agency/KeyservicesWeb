@@ -156,7 +156,6 @@ ul.control-dots {display: none;}
 }
 
 .service-container {
-    -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
     .number-icon .number span {
         line-height: 30px;
@@ -165,7 +164,6 @@ ul.control-dots {display: none;}
 
 .service-container:hover {
     background-color: #ffffff;
-    -webkit-box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;
     box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;
 }
 
@@ -181,30 +179,23 @@ ul.control-dots {display: none;}
     height: 35px;
     width: 35px;
     margin: 0 auto;
-    -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
 
-.service-container .number-icon .icon-2, 
-.form-group .form-control:focus,
- .form-group .form-control.active,
-  .subscribe .form-control:focus {
+.service-container .number-icon .icon-2 {
     border-color: #3dd598 !important;
 }
 
 [class^="pe-7s-"], [class*=" pe-7s-"] {
     display: inline-block;
     font-family: 'Pe-icon-7-stroke';
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1
 }
-
-
 
 .pe-7s-shield::before {
     content: "\e6c5";
@@ -220,7 +211,6 @@ ul.control-dots {display: none;}
     line-height: 80px;
     border-radius: 64% 36% 55% 45% / 76% 72% 28% 24% !important;
     border-color: #3dd598 !important;
-    -webkit-transition: all 0.5s ease;
 }
 
 .service-container:hover .number-icon .icon-2, .service-container a:hover {
@@ -232,14 +222,36 @@ ul.control-dots {display: none;}
     color: #3dd598 !important;
 }
 
+.number-icon .number, .navbar-custom .login-button {
+    background-color: #ffffff !important;
+}
+
 // .service-container:hover .number-icon .icon-2 {
 //     color: #3dd598 !important;
 // }
+
+a {
+    background-color: transparent;
+}
+
+.service-container:hover .number-icon .number {
+    color: #ffffff;
+    background: #3dd598 !important;
+    border-color: #ffffff !important;
+}
 
 .service-container:hover .number-icon .icon-2 i {
     color: #ffffff !important;
 }
 
-a {
-    background-color: transparent;
+.service-container {
+        .content {
+            .title {
+        transition: all 0.5s ease;
+        } 
+    }
+}
+
+.service-container:hover, .content, .title {
+    color: #3dd598;
 }
