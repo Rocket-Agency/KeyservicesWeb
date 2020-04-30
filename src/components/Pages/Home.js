@@ -13,7 +13,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carousel from 'react-bootstrap/Carousel';
 import { Container, Col, Row} from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
-import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny1.png';
+import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
+import GererMesLocationsTiny from '../../ImagesPlaceholder/GérerMesLocationsTiny.png';
 
 export class Home extends Component {
 
@@ -34,8 +35,13 @@ export class Home extends Component {
 
                     <Carousel>
                         <Carousel.Item>
-                            <ProgressiveImage  className="card-img style-card" 
+                            {/* <img
+                                className="d-block w-100"
                                 src="./Images/PosterUneAnnonce1.png" 
+                                alt="Poster une annoncee"
+                            /> */}
+                            <ProgressiveImage  className="card-img style-card" 
+                                src="./Images/PosterUneAnnonce.png" 
                                 placeholder={PosterUneAnnonceTiny} 
                             >
                                 {src => <img src={src}  alt="Poster une annoncee"  />}
@@ -50,12 +56,17 @@ export class Home extends Component {
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
-                            <img
+                            {/* <img
                                 className="d-block w-100"
                                 src="./Images/GererMesLocations.png"
                                 alt="Gérer mes locations"
-                            />
-
+                            /> */}
+                            <ProgressiveImage  className="card-img style-card" 
+                                src="./Images/GérerMesLocations.png"
+                                placeholder={GererMesLocationsTiny} 
+                            >
+                                {src => <img src={src}  alt="Gérer mes locations"  />}
+                            </ProgressiveImage>  
                             <Carousel.Caption>
                             <h3>Gérer mes locations</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

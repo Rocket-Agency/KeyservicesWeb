@@ -24,7 +24,7 @@ export class MonEspace extends Component {
                 <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem >Connexion</BreadcrumbItem>
 
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center mt-3">
                     <h3>Connexion</h3>
                 </div>
 

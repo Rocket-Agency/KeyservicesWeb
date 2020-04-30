@@ -17,7 +17,7 @@ import ContactInfos from './ContactInfos';
 export class Contact extends Component {
     render() {
         return(
-            <div>
+            <div className="mt-3">
                 <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem >Contact</BreadcrumbItem>
 
