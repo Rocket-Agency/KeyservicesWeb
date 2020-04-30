@@ -1,15 +1,24 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import {BrowserRouter,Switch, Route} from 'react-router-dom';
+import { BreadProvider } from './index'
 import './App.scss';
+import './index.css';
 
 //Import component for Header & Footer
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 
+import FilArtiane from './components/Pages/FilAriane';
+
+// import Home from './components/Home';
+// import NavBar from './components/Navbar';
+// import Football from './components/Football';
+// import Usage from './components/Usage';
+// import Sports from './components/Sports';
 
 //Import pages
 import {Home} from './components/Pages/Home';
-import {KeyservicesPresentation} from './components/Pages/KeyservicesPresentation';
+import KeyservicesPresentation from './components/Pages/KeyservicesPresentation';
 
 import {Contact} from './components/Pages/Contact';
 
@@ -37,33 +46,41 @@ import NotFound from './components/NotFound';
 
 function App() {
   return (
-    <div className="page-container">
-      <div className="content-wrap">
+    <>
+      <BrowserRouter>
+        <BreadProvider >
+          <>    
+            <div className="page-container">
+              <div className="content-wrap">
+            <Header/>
+            <FilArtiane />
 
-      <Header/>
+                <Switch>
+                  <Route path='/' component={Home} exact />
+                  <Route path='/keyservicesPresentation' component={KeyservicesPresentation} exact/>
+                  <Route path='/contact' component={Contact} exact/>
+                  <Route path='/validationContactForm' component={ValidationContactForm} exact/>
+                  <Route path='/monespace' component={MonEspace} exact/>
+                  <Route path='/loginProprietaire' component={LoginProprietaire} exact/>
+                  <Route path='/loginLocataire' component={LoginLocataire} exact/>
+                  <Route path='/indexProfil' component={IndexProfil} />
+                  <Route path='/profile' component={Profile} />
+                  <Route path='/profilePropriétaire' component={ProfileProprietaire} />
+                  <Route path='/profileLocataire' component={ProfileLocataire} />
+                  <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
+                  <Route path='/forgetPassword' component={ForgetPassword} />
+                  <Route path='/dashboard' component={ProfileTabs} />
+                  <Route component={NotFound} />
+                </Switch>
 
-        <Switch>
-          <Route path='/' component={Home} exact />
-          <Route path='/keyservicesPresentation' component={KeyservicesPresentation} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/validationContactForm' component={ValidationContactForm} />
-          <Route path='/monespace' component={MonEspace} />
-          <Route path='/loginProprietaire' component={LoginProprietaire} />
-          <Route path='/loginLocataire' component={LoginLocataire} />
-          <Route path='/indexProfil' component={IndexProfil} />
-          <Route path='/profile' component={Profile} />
-          <Route path='/profilePropriétaire' component={ProfileProprietaire} />
-          <Route path='/profileLocataire' component={ProfileLocataire} />
-          <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
-          <Route path='/forgetPassword' component={ForgetPassword} />
-          <Route path='/dashboard' component={ProfileTabs} />
-          <Route component={NotFound} />
-        </Switch>
+              </div>
 
-      </div>
-
-       <Footer/>
-    </div>
+            <Footer/>
+          </div>
+          </>
+        </BreadProvider>
+      </BrowserRouter>
+    </>
   );
 }
 

@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import '../../css/Home.scss';
 import '../../css/pe-7s-shield.css';
+import { BreadcrumbItem } from '../../index';
 // import Img from 'react-cool-img';
 import ProgressiveImage from "react-progressive-graceful-image";
 
@@ -24,6 +25,8 @@ export class Home extends Component {
     render() {
         return(
             <div>
+
+                <BreadcrumbItem to="/" >Home</BreadcrumbItem>
                 {/* <Carousel>
                     <div>
                         <img src="./Images/PosterUneAnnonce.png" />
