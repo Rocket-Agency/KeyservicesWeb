@@ -169,7 +169,13 @@ ul.control-dots {display: none;}
     box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;
 }
 
+.para-desc {
+    max-width: 600px;
+}
 
+.text-center {
+    text-align: center !important;
+}
 
 .service-container .number-icon .icon-2 i {
     font-size: 30px;
