@@ -10,12 +10,14 @@ import {Container, Tab, Row, Col, Nav, Card} from 'react-bootstrap';
 
 import ProgressiveImage from "react-progressive-graceful-image";
 import Keyservices_logo from '../../ImagesPlaceholder/Keyservices_Logo.png';
+import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
 import parisTiny from '../../ImagesPlaceholder/parisTiny.png';
 import lyonTiny from '../../ImagesPlaceholder/lyonTiny.png';
 import lourdesTiny from '../../ImagesPlaceholder/lourdesTiny.png';
 import toulouseTiny from '../../ImagesPlaceholder/toulouseTiny.png';
 import niceTiny from '../../ImagesPlaceholder/niceTiny.png';
 import laRochelleTiny from '../../ImagesPlaceholder/larochelleTiny.png';
+import HomeIcon from '@material-ui/icons/Home';
 
 
 
@@ -24,7 +26,7 @@ export class KeyservicesPresentation extends Component {
     render() {
         return(
             <div>
-                <BreadcrumbItem to="/" >Home</BreadcrumbItem>
+                <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem >Keyservices</BreadcrumbItem>
                 
                 <div>
@@ -53,7 +55,7 @@ export class KeyservicesPresentation extends Component {
 
                                                 <ProgressiveImage  className="card-img style-card" 
                                                         src='./images/Keyservices_Logo_presentation.png'
-                                                        placeholder={Keyservices_logo} 
+                                                        placeholder={LogoTiny} 
                                                     >
                                                     {src => <img src={src}  alt="Logo Keyservices"  />}
                                                 </ProgressiveImage>      

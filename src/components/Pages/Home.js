@@ -10,15 +10,9 @@ import ProgressiveImage from "react-progressive-graceful-image";
 // import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 // import GererMesLocationsTiny from '../../ImagesPlaceholder/GererMesLocationsTiny.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import { Carousel } from 'react-responsive-carousel';
-// import { Link } from 'react-router-dom';
-// import Icon from '@mdi/react'
-// import { mdiAccount } from '@mdi/js'
 import Carousel from 'react-bootstrap/Carousel';
-import { Icon, InlineIcon } from '@iconify/react';
-import chevronRight from '@iconify/icons-mdi/chevron-right';
 import { Container, Col, Row} from 'react-bootstrap';
-
+import HomeIcon from '@material-ui/icons/Home';
 
 export class Home extends Component {
 
@@ -26,7 +20,7 @@ export class Home extends Component {
         return(
             <div>
 
-                <BreadcrumbItem to="/" >Home</BreadcrumbItem>
+                <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 {/* <Carousel>
                     <div>
                         <img src="./Images/PosterUneAnnonce.png" />

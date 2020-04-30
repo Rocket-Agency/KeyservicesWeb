@@ -12,6 +12,7 @@ import { Col, Container, Row, Card} from 'react-bootstrap';
 import ProgressiveImage from "react-progressive-graceful-image";
 import LocataireTiny from '../../ImagesPlaceholder/LocataireTiny.png';
 import ProprietaireTiny from '../../ImagesPlaceholder/PropriétaireTiny.png';
+import HomeIcon from '@material-ui/icons/Home';
 
 export class MonEspace extends Component {
 
@@ -20,7 +21,7 @@ export class MonEspace extends Component {
         return(
             <div>
 
-                <BreadcrumbItem to="/" >Home</BreadcrumbItem>
+                <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem >Connexion</BreadcrumbItem>
 
                 <div className="d-flex justify-content-center">

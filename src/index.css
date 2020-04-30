@@ -24,7 +24,9 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     font-size: 16px;
     padding: 10px 55px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    border-top: 1px solid #49173B;
+    border-bottom: 1px solid #49173B;
 }
 
 .dynamic-bread-crumb ul li span.separator{
@@ -39,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dynamic-bread-crumb ul li a{
-    color: #d2ceaf;
+    color: darkgray;
     text-decoration: none;
     transition: all 0.2s;
 }

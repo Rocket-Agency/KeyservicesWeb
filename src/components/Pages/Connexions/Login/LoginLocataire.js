@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../../../../css/ConnexionPages.scss';
-import { BreadcrumbItem } from '../../index';
+import { BreadcrumbItem } from '../../../../index';
 import ConnexionProfileLocataire from '../ConnexionProfileLocataire';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
@@ -9,7 +9,8 @@ export class LoginLocataire extends Component {
     render() {
         return(
             <div>
-                 <BreadcrumbItem to="/" >Home</BreadcrumbItem>
+                <BreadcrumbItem to="/" >Home</BreadcrumbItem>
+                <BreadcrumbItem to="/monEspace" >Connexion</BreadcrumbItem>
                 <BreadcrumbItem >Connexion  Locataire</BreadcrumbItem>
 
                 <Container fluid>

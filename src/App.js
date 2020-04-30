@@ -54,7 +54,7 @@ function App() {
                   <Route path='/keyservicesPresentation' component={KeyservicesPresentation} exact/>
                   <Route path='/contact' component={Contact} exact/>
                   <Route path='/validationContactForm' component={ValidationContactForm} exact/>
-                  <Route path='/monespace' component={MonEspace} exact/>
+                  <Route path='/monEspace' component={MonEspace} exact/>
                   <Route path='/loginProprietaire' component={LoginProprietaire} exact/>
                   <Route path='/loginLocataire' component={LoginLocataire} exact/>
                   <Route path='/indexProfil' component={IndexProfil} />

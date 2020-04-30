@@ -9,6 +9,7 @@ import { Hidden } from 'react-grid-system';
 // import Img from 'react-cool-img';
 // import ImgDefaultMap from '../../ImagesPlaceholder/placeholderMap.png'
 import Iframe from 'react-iframe';
+import HomeIcon from '@material-ui/icons/Home';
 
 // import ContactMap from './ContactMap';
 import ContactInfos from './ContactInfos';
@@ -17,7 +18,8 @@ export class Contact extends Component {
     render() {
         return(
             <div>
-                 <BreadcrumbItem to="/" >Home</BreadcrumbItem>
+                 
+                <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem >Contact</BreadcrumbItem>
 
 
