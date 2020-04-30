@@ -8,9 +8,10 @@ import { NavLink } from 'react-router-dom';
 import {Navbar, Nav, Button} from 'react-bootstrap';
 // import BlocLeft from './BlocLeft';
 import LockIcon from '@material-ui/icons/Lock';
-// import FilAriane from './FilAriane';
+
 
 import ProgressiveImage from "react-progressive-graceful-image";
+import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
 import Keyservices_logo from '../../ImagesPlaceholder/Keyservices_Logo.png';
 import Sticky from 'react-sticky-el';
 
@@ -53,19 +54,17 @@ export class Header extends Component {
 
 
                         <NavLink  className="btn_connexion" to="/monespace">
-                            <LockIcon to="/monespace"/>
-                                Connexion
+                        <LockIcon to="/monespace"/>
+                            Connexion
+                        </NavLink>
 
-                                <br />
-                                
-                                <LockIcon to="/"/>
-                                Déonnexion
+                        <NavLink  className="btn_connexion" to="/monespace">
+                        <LockIcon to="/monespace"/>
+                        Déconnexion
                         </NavLink>
                         
                     </Navbar.Collapse>
                 </Navbar>
-
-                {/* <FilAriane /> */}
 
                 </Sticky>
                 
