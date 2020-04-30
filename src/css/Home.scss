@@ -148,6 +148,8 @@ ul.control-dots {display: none;}
     display: none;
 }
 
+
+
 //Bloc services
 .section {
     padding-top: 100px;
@@ -166,6 +168,8 @@ ul.control-dots {display: none;}
     background-color: #ffffff;
     box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;
 }
+
+
 
 .service-container .number-icon .icon-2 i {
     font-size: 30px;
@@ -252,6 +256,10 @@ a {
     }
 }
 
-.service-container:hover, .content, .title {
-    color: #3dd598;
+.text-dark {
+    color: #2f3c4e !important;
+}
+
+.service-container:hover .content .title {
+    color: #3dd598 !important;
 }
