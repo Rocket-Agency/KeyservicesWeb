@@ -16,6 +16,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carousel from 'react-bootstrap/Carousel';
 import { Icon, InlineIcon } from '@iconify/react';
 import chevronRight from '@iconify/icons-mdi/chevron-right';
+import { Container, Col, Row} from 'react-bootstrap';
 
 
 export class Home extends Component {
@@ -143,18 +144,21 @@ export class Home extends Component {
                 </div>
 
                 <section class="section" id="services">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-12 text-center">
+                    <Container>
+                        <Row style={{textAlign: "center"}}>
+
+                            <Col xs={12} class="text-center">
                                 <div class="section-title mb-4 pb-2">
                                     <h4 class="title mb-4">Nos Services</h4>
                                     <p class="text-muted mx-auto para-desc mb-0">Splash your dream color Bring your home to lively Colors. We make it a priotity to offer flexible services to accomodate your needs</p>
                                 </div>
-                            </div>
-                        </div>
+                            </Col>
+                        </Row>
 
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
+                        {/* col-lg-6 col-md-6 col-12 */}
+
+                        <Row>
+                            <Col xs={12} lg={6} md={6} class="mt-4 pt-2">
                                 <div class="service-container shadow rounded p-4 text-center">
                                     <div class="number-icon position-relative">
                                         <div class="icon-2 d-inline-block border rounded-pill">  
@@ -175,9 +179,9 @@ export class Home extends Component {
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </Col>
                                                     
-                            <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
+                            <Col  xs={12} lg={6} md={6} class="mt-4 pt-2">
                                 <div class="service-container shadow rounded p-4 text-center">
                                     <div class="number-icon position-relative">
                                         <div class="icon-2 d-inline-block border rounded-pill">  
@@ -195,9 +199,9 @@ export class Home extends Component {
                                         <a href="" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
                                      </div>
                                 </div>
-                            </div>
+                            </Col>
                                                     
-                            <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
+                            <Col xs={12} lg={6} md={6} class="mt-4 pt-2">
                                  <div class="service-container shadow rounded p-4 text-center">
                                     <div class="number-icon position-relative">
                                         <div class="icon-2 d-inline-block border rounded-pill">  
@@ -215,9 +219,9 @@ export class Home extends Component {
                                         <a href="" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
                                      </div>
                                 </div>
-                            </div>
+                            </Col>
                                                     
-                            <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
+                            <Col xs={12} lg={6} md={6} class="mt-4 pt-2">
                                 <div class="service-container shadow rounded p-4 text-center">
                                     <div class="number-icon position-relative">
                                         <div class="icon-2 d-inline-block border rounded-pill">  
@@ -235,13 +239,13 @@ export class Home extends Component {
                                         <a href="" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
                                     </div>
                                  </div>
-                            </div>
+                            </Col>
                                                                                                        
                             {/* <div class="col-12 mt-4 pt-2 text-center">
                                  <a href="javascript:void(0)" class="btn btn-pill btn-custom">See More <i class="mdi mdi-chevron-right"></i></a>
                             </div> */}
-                        </div>
-                     </div>
+                        </Row>
+                     </Container>
                 </section>
             </div>
         )

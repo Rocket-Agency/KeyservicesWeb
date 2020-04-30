@@ -40,7 +40,7 @@ const Footer = () => {
                                     alt="Lien vers Facebook"
                                 />  */}
                             </Col>
-                            <Col sm={6}className="d-flex justify-content-left">
+                            <Col sm={6} className="d-flex justify-content-left">
                                 <ProgressiveImage  className="card-img" 
                                     src='./images/Icone_Instagram.png'
                                     placeholder={InstagramTiny} 
