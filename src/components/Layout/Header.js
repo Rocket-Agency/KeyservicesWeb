@@ -26,7 +26,7 @@ export class Header extends Component {
                 <Navbar bg="white" collapseOnSelect expand="md" variant="light" sticky="top">
                     <a className="navbar-brand" href="/">
                         <ProgressiveImage  className="card-img react-log" 
-                            // src='./images/Keyservices_Logo.png'
+                            src='./images/Keyservices_Logo.png'
                             placeholder={Keyservices_logo} 
                         >
                             {src => <img src={src} alt="Logo Keyservices"  />}
