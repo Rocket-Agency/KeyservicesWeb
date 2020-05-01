@@ -19,13 +19,15 @@ import toulouseTiny from '../../ImagesPlaceholder/toulouseTiny.png';
 import niceTiny from '../../ImagesPlaceholder/niceTiny.png';
 import laRochelleTiny from '../../ImagesPlaceholder/larochelleTiny.png';
 import HomeIcon from '@material-ui/icons/Home';
+import Accordion from 'react-bootstrap/Accordion';
+import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 
 
 export class KeyservicesPresentation extends Component {
 
     render() {
         return(
-            <div >
+            <>
                 <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem >Keyservices</BreadcrumbItem>
 
@@ -62,16 +64,7 @@ export class KeyservicesPresentation extends Component {
                                                     placeholder={LogoTiny} 
                                                     >
                                                     {src => <img src={src}  alt="Logo Keyservices"  />}
-                                                </ProgressiveImage>      
-                                                    {/* <Img src='./images/Keyservices_Logo_presentation.png' width="200px" height="200px" alt="Logo keyservices "/> */}
-                                                    {/* <Img 
-                                                        placeholder={ImgDefaultLogo} 
-                                                        src='./images/Keyservices_Logo_presentation.png'
-                                                        width="200px"
-                                                        height="200px"
-                                                        debounce={1000}
-                                                        alt="Logo keyservices"
-                                                    /> */}                                                 
+                                                </ProgressiveImage>                                                    
                                                 </Col>
                                                     
                                                 <Col md={8} className="d-flex justify-content-center align-items-center">
@@ -106,15 +99,6 @@ export class KeyservicesPresentation extends Component {
                                                             >
                                                                 {src => <img src={src} width="100%" alt="paris" />}
                                                             </ProgressiveImage>  
-                                                            {/* <Card.Img variant="top" src='./images/lyon.png' width="300px" height="150px" alt="Logo keyservices "/> */}
-                                                            {/* <Card.Img 
-                                                                placeholder={ImgDefaultServices} 
-                                                                src='./images/lyon.png'
-                                                                width="300px"
-                                                                height="150px"
-                                                                debounce={1000}
-                                                                alt="Image paris"
-                                                            /> */}
                                                             <Card.Link className="CityLink" href="#">Lyon</Card.Link>
                                                         </Card>
                                                     </div>
@@ -126,15 +110,6 @@ export class KeyservicesPresentation extends Component {
                                                             >
                                                                 {src => <img src={src} width="100%" alt="Lyon" />}
                                                             </ProgressiveImage>  
-                                                            {/* <Card.Img variant="top" src='./images/lyon.png' width="300px" height="150px" alt="Logo keyservices "/> */}
-                                                            {/* <Card.Img 
-                                                                placeholder={ImgDefaultServices} 
-                                                                src='./images/lyon.png'
-                                                                width="300px"
-                                                                height="150px"
-                                                                debounce={1000}
-                                                                alt="Image paris"
-                                                            /> */}
                                                             <Card.Link className="CityLink" href="#">Lyon</Card.Link>
                                                         </Card>
                                                     </div>
@@ -146,15 +121,6 @@ export class KeyservicesPresentation extends Component {
                                                             >
                                                                 {src => <img src={src} width="100%" alt="Lourdes" />}
                                                             </ProgressiveImage>  
-                                                            {/* <Card.Img variant="top" src='./images/lourdes.png' width="300px" height="150px" alt="Logo keyservices "/> */}
-                                                            {/* <Card.Img 
-                                                                placeholder={ImgDefaultServices} 
-                                                                src='./images/lourdes.png'
-                                                                width="300px"
-                                                                height="150px"
-                                                                debounce={1000}
-                                                                alt="Image paris"
-                                                            /> */}
                                                             <Card.Link className="CityLink" href="#">Lourdes</Card.Link>
                                                         </Card>
                                                     </div>
@@ -171,15 +137,6 @@ export class KeyservicesPresentation extends Component {
                                                             >
                                                                 {src => <img src={src} width="100%" alt="Toulouse" />}
                                                             </ProgressiveImage>  
-                                                            {/* <Card.Img variant="top" src='./images/toulouse.png' width="300px" height="150px" alt="Logo keyservices "/> */}
-                                                            {/* <Card.Img 
-                                                                placeholder={ImgDefaultServices} 
-                                                                src='./images/toulouse.png'
-                                                                width="300px"
-                                                                height="150px"
-                                                                debounce={1000}
-                                                                alt="Image paris"
-                                                            /> */}
                                                             <Card.Link className="CityNoLink" href="#">Toulouse</Card.Link>
                                                         </Card>
                                                     </div>
@@ -191,15 +148,6 @@ export class KeyservicesPresentation extends Component {
                                                             >
                                                                 {src => <img src={src} width="100%" alt="Nice" />}
                                                             </ProgressiveImage>  
-                                                            {/* <Card.Img variant="top" src='./images/nice.png' width="300px" height="150px" alt="Logo keyservices "/> */}
-                                                            {/* <Card.Img 
-                                                                placeholder={ImgDefaultServices} 
-                                                                src='./images/nice.png'
-                                                                width="300px"
-                                                                height="150px"
-                                                                debounce={1000}
-                                                                alt="Image paris"
-                                                            /> */}
                                                             <Card.Link className="CityNoLink" href="#">Nice</Card.Link>
                                                         </Card>
                                                     </div>
@@ -211,90 +159,159 @@ export class KeyservicesPresentation extends Component {
                                                             >
                                                             {src => <img src={src} width="100%" alt="La_Rochelle" />}
                                                             </ProgressiveImage>  
-                                                            {/* <Card.Img variant="top" src='./images/la_rochelle.png' width="300px" height="150px" alt="Logo keyservices "/> */}
-                                                            {/* <Card.Img 
-                                                                placeholder={ImgDefaultServices} 
-                                                                src='./images/la_rochelle.png'
-                                                                width="300px"
-                                                                height="150px"
-                                                                debounce={1000}
-                                                                alt="Image paris"
-                                                            /> */}
                                                             <Card.Link className="CityNoLink" href="#">La Rochelle</Card.Link>
                                                         </Card>
                                                     </div>
                                                  </Row>
                                         </Container>
                                     </Tab.Pane>
+                                    
 
                                     <Tab.Pane eventKey="NewVilles">
                 
-                <Container class="mt-5 mb-5">
+                                        <Container className="mt-5 mb-5">
+                                            <h1 className="mt-2 text-center TitleBlocCity">Nos villes actuelles</h1>
+                                                <Row className="BlocCity">
+                                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                        <div className="hovereffect">
+                                                            <ProgressiveImage  className="card-img style-card" 
+                                                                src='./images/Photo_Paris.png'
+                                                                placeholder={parisTiny} 
+                                                            >
+                                                                {src => <img src={src} width="100%" alt="Image Paris" />}
+                                                            </ProgressiveImage>                          
+                                                                        
+                                                            <div className="overlay">
+                                                                <h2 className="Ville-Title">Paris</h2>
+                                                                <p>
+                                                                    <Card>
+                                                                        <Card.Header>
+                                                                            Anim pariatur cliche reprehenderit, 
+                                                                            enim eiusmod high life accusamus terry richardson ad squid. 
+                                                                            Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+                                                                        </Card.Header>
+                                                                    </Card>
+                                                                </p>                          
+                                                            </div>
+                                                        </div>
+                                                    </div>        
+                                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                        <div className="hovereffect">
+                                                            <ProgressiveImage  className="card-img style-card" 
+                                                                src='./images/Photo_Lyon.png'
+                                                                placeholder={parisTiny} 
+                                                            >
+                                                                {src => <img src={src} width="100%" alt="Image Lyon" />}
+                                                            </ProgressiveImage>                          
+                                                                        
+                                                            <div className="overlay">
+                                                                <h2 className="Ville-Title">Lyon</h2>
+                                                                <p>
+                                                                    <Accordion >
+                                                                        <Card>
+                                                                            <Card.Header>
+                                                                                Anim pariatur cliche reprehenderit, 
+                                                                                enim eiusmod high life accusamus terry richardson ad squid. 
+                                                                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+                                                                            </Card.Header>
+                                                                        </Card>
+                                                                    </Accordion>
+                                                                </p>                          
+                                                            </div>
+                                                        </div>
+                                                    </div> 
 
-                    <h1 className="mt-2 text-center TitleBlocCity">Nos villes actuelles</h1>
-
-                        <Row className="BlocCity">
-
-                        
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                <div class="hovereffect">
-                                        <ProgressiveImage  className="card-img style-card" 
-                                            src='./images/paris.png'
-                                            placeholder={parisTiny} 
-                                            alt="Image paris"
-                                        >
-                                            {src => <img src={src} width="100%" alt="Image Paris" />}
-                                        </ProgressiveImage>                          
-                                    <div class="overlay">
-                                        <h2>Paris</h2>
-                                        <p><a href="#">En savoir plus</a></p> 
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                <div class="hovereffect">
-                                    <ProgressiveImage  className="card-img style-card" 
-                                        src='./images/lyon.png'
-                                         placeholder={lyonTiny} 
-                                    >
-                                        {src => <img src={src} width="100%" alt="Image Lyon" />}
-                                    </ProgressiveImage>                     
-                                    <div class="overlay">
-                                        <h2>Lyon</h2>
-                                        <p><a href="#">En savoir plus</a></p> 
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                <div class="hovereffect">
-                                        <ProgressiveImage  className="card-img style-card" 
-                                            src='./images/lourdes.png'
-                                            placeholder={lourdesTiny}
-                                        >
-                                            {src => <img src={src} width="100%" alt="Image lourdes" />}
-                                        </ProgressiveImage>                          
-                                    <div class="overlay">
-                                        <h2>Lourdes</h2>
-                                        <p><a href="#">En savoir plus</a></p> 
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </Row>
-                    </Container>
-                
-                </Tab.Pane>
+                                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                        <div className="hovereffect">
+                                                            <ProgressiveImage  className="card-img style-card" 
+                                                                src='./images/Photo_Lourdes.png'
+                                                                placeholder={parisTiny} 
+                                                            >
+                                                                {src => <img src={src} width="100%" alt="Image Lourdes" />}
+                                                            </ProgressiveImage>                          
+                                                                        
+                                                            <div className="overlay">
+                                                                <h2 className="Ville-Title">Lourdes</h2>
+                                                                <p>
+                                                                    <Accordion >
+                                                                        <Card>
+                                                                            <Card.Header>
+                                                                                Anim pariatur cliche reprehenderit, 
+                                                                                enim eiusmod high life accusamus terry richardson ad squid. 
+                                                                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+                                                                            </Card.Header>
+                                                                        </Card>
+                                                                    </Accordion>
+                                                                </p>                          
+                                                            </div>
+                                                        </div>
+                                                    </div>                                                
+                                                </Row>
+                                            </Container>
+                                        
+                                    </Tab.Pane>
                                 </Tab.Content>
                             </Col>
                         </Tab.Container>
                      </div>
 
                 <ServicesComponent />
+                
+                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div className="hovereffect">
+                            <ProgressiveImage  className="card-img style-card" 
+                                src='./images/paris.png'
+                                placeholder={parisTiny} 
+                            >
+                                {src => <img src={src} width="100%" alt="Image Paris" />}
+                            </ProgressiveImage>                          
+                                        
+                            <div className="overlay">
+                                <h2>Paris</h2>
+                                <p>
+                                    <Accordion >
+                                        <Card>
+                                            <Card.Header>
+                                                     Anim pariatur cliche reprehenderit, 
+                                                    enim eiusmod high life accusamus terry richardson ad squid. 
+                                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
 
-               
-            </div>
+                                                    <br/><br/>
+                                                    <Accordion.Toggle eventKey="0"
+                                                         className="btn btn-primary"
+                                                        data-toggle="collapse" 
+                                                        href="#collapseExample" 
+                                                        role="button" 
+                                                        aria-expanded="false" 
+                                                        aria-controls="collapseExample">
+                                                            En savoir plus
+                                                </Accordion.Toggle>
+                                            </Card.Header>
+                                            <Accordion.Collapse eventKey="0">
+                                                <Card.Body>
+                                                    Anim pariatur cliche reprehenderit, 
+                                                    enim eiusmod high life accusamus terry richardson ad squid. 
+                                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+                                                    cred nesciunt sapiente ea proident.
+                                                    <Accordion.Toggle eventKey="0"
+                                                         className="btn btn-primary"
+                                                        data-toggle="collapse" 
+                                                        href="#collapseExample" 
+                                                        role="button" 
+                                                        aria-expanded="false" 
+                                                        aria-controls="collapseExample">
+                                                            En savoir plus
+                                                </Accordion.Toggle>
+                                                
+                                                </Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
+                                    </Accordion>
+                                </p>                          
+                            </div>
+                        </div>
+                    </div>
+            </>
         )
     }
 }

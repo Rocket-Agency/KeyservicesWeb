@@ -163,7 +163,7 @@
     transform: translate3d(0,0,0);
   }
   
-  .hovereffect h2 {
+  .hovereffect .Ville-Title {
     text-transform: uppercase;
     color: #fff;
     text-align: center;
@@ -172,9 +172,11 @@
     overflow: hidden;
     padding: 0.5em 0;
     background-color: transparent;
+    font-size: 24px;
+    background: #49173B;
   }
   
-  .hovereffect h2:after {
+  .hovereffect .Ville-Title:after {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -188,7 +190,7 @@
     transform: translate3d(-100%,0,0);
   }
   
-  .hovereffect:hover h2:after {
+  .hovereffect:hover .Ville-Title:after {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
   }
@@ -209,3 +211,8 @@
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
   }
+
+// .Ville-Title {
+//     font-size: 24px;
+//     color: #ffffff;
+// }
