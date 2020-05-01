@@ -10,6 +10,7 @@ import {Container, Tab, Row, Col, Nav, Card} from 'react-bootstrap';
 
 import ProgressiveImage from "react-progressive-graceful-image";
 import Keyservices_logo from '../../ImagesPlaceholder/Keyservices_Logo.png';
+// import img_1 from '../../images/img_1.jpg';
 import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
 import parisTiny from '../../ImagesPlaceholder/parisTiny.png';
 import lyonTiny from '../../ImagesPlaceholder/lyonTiny.png';
@@ -41,6 +42,10 @@ export class KeyservicesPresentation extends Component {
 
                                 <Nav.Item>
                                     <Nav.Link eventKey="villes">Villes</Nav.Link>
+                                </Nav.Item>
+
+                                <Nav.Item>
+                                    <Nav.Link eventKey="NewVilles">Villes</Nav.Link>
                                 </Nav.Item>
                             </Nav>
 
@@ -92,25 +97,25 @@ export class KeyservicesPresentation extends Component {
                                              <h1 className="mt-2 text-center TitleBlocCity">Nos villes actuelles</h1>
 
                                                 <Row className="BlocCity">
+
                                                     <div className="col-sm-4 d-flex justify-content-center CityImg">
                                                         <Card>
                                                             <ProgressiveImage  className="card-img style-card" 
                                                                 src='./images/paris.png'
                                                                 placeholder={parisTiny} 
-                                                                alt="Image paris"
                                                             >
-                                                                 {src => <img src={src} width="100%" alt="Paris" />}
+                                                                {src => <img src={src} width="100%" alt="paris" />}
                                                             </ProgressiveImage>  
-                                                            <Card.Link className="CityLink" href="#">Paris</Card.Link>
-                                                            {/* <Card.Img variant="top" src='./images/paris.png' width="300px" height="150px" alt="Logo keyservices "/> */}
+                                                            {/* <Card.Img variant="top" src='./images/lyon.png' width="300px" height="150px" alt="Logo keyservices "/> */}
                                                             {/* <Card.Img 
                                                                 placeholder={ImgDefaultServices} 
-                                                                src='./images/paris.png'
+                                                                src='./images/lyon.png'
                                                                 width="300px"
                                                                 height="150px"
                                                                 debounce={1000}
                                                                 alt="Image paris"
                                                             /> */}
+                                                            <Card.Link className="CityLink" href="#">Lyon</Card.Link>
                                                         </Card>
                                                     </div>
                                                     <div className="col-sm-4 d-flex justify-content-center CityImg">
@@ -221,13 +226,74 @@ export class KeyservicesPresentation extends Component {
                                                  </Row>
                                         </Container>
                                     </Tab.Pane>
+
+                                    <Tab.Pane eventKey="NewVilles">
+                
+                <Container class="mt-5 mb-5">
+
+                    <h1 className="mt-2 text-center TitleBlocCity">Nos villes actuelles</h1>
+
+                        <Row className="BlocCity">
+
+                        
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="hovereffect">
+                                        <ProgressiveImage  className="card-img style-card" 
+                                            src='./images/paris.png'
+                                            placeholder={parisTiny} 
+                                            alt="Image paris"
+                                        >
+                                            {src => <img src={src} width="100%" alt="Image Paris" />}
+                                        </ProgressiveImage>                          
+                                    <div class="overlay">
+                                        <h2>Paris</h2>
+                                        <p><a href="#">En savoir plus</a></p> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="hovereffect">
+                                    <ProgressiveImage  className="card-img style-card" 
+                                        src='./images/lyon.png'
+                                         placeholder={lyonTiny} 
+                                    >
+                                        {src => <img src={src} width="100%" alt="Image Lyon" />}
+                                    </ProgressiveImage>                     
+                                    <div class="overlay">
+                                        <h2>Lyon</h2>
+                                        <p><a href="#">En savoir plus</a></p> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="hovereffect">
+                                        <ProgressiveImage  className="card-img style-card" 
+                                            src='./images/lourdes.png'
+                                            placeholder={lourdesTiny}
+                                        >
+                                            {src => <img src={src} width="100%" alt="Image lourdes" />}
+                                        </ProgressiveImage>                          
+                                    <div class="overlay">
+                                        <h2>Lourdes</h2>
+                                        <p><a href="#">En savoir plus</a></p> 
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </Row>
+                    </Container>
+                
+                </Tab.Pane>
                                 </Tab.Content>
                             </Col>
                         </Tab.Container>
                      </div>
 
                 <ServicesComponent />
-                
+
+               
             </div>
         )
     }
