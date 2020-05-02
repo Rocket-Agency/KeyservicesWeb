@@ -11,8 +11,8 @@ import BreadProvider from './lib/BProvider';
 
 // export default BreadCrumbLib;
 import * as serviceWorker from './serviceWorker';
-export { Breadcrumb, BreadcrumbItem, BreadProvider }
 import { CookiesProvider } from 'react-cookie';
+export { Breadcrumb, BreadcrumbItem, BreadProvider }
 
 ReactDOM.hydrate(<BrowserRouter><CookiesProvider><App /></CookiesProvider></BrowserRouter>, document.getElementById('root'));
 
