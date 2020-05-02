@@ -130,7 +130,7 @@
     position: relative;
     text-align: center;
     cursor: default;
-    background: #42b078;
+    background: black;
   }
   
   .hovereffect .overlay {
@@ -141,6 +141,16 @@
     top: 0;
     left: 0;
     padding: 50px 20px;
+  }
+
+  .hovereffect .AVenir{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    padding: 80px 20px;
   }
   
   .hovereffect img {
