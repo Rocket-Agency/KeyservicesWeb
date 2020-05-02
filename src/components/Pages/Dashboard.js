@@ -124,11 +124,12 @@ constructor(props) {
           value={activeIndex}
           onChange={this.handleChange}
         >
-          <MyTab label='Mon compte' />
+          <MyTab label='Mon compte' />          
+          <MyTab label='Créer une annonce' />
           <MyTab label='Information location' />
           <MyTab label='Calendrier' />
           {group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' />: null }
-          <MyTab label='Créer une annonce' />
+
         </VerticalTabs>
           
 
@@ -161,39 +162,43 @@ constructor(props) {
 
                 <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
                 
-                  <Grid container>
+                  <Grid container mt-3>
                     <Grid container item xs={12} spacing={3}>
-                      <Grid item xs={4}>
+                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
                         <TextField value={this.state.user_first_name} onChange={e => this.setState({user_first_name: e.target.value})} label="Prénom" />
                       </Grid>
-                      <Grid item xs={4}>
+                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
                         <TextField value={this.state.user_last_name} onChange={e => this.setState({user_last_name: e.target.value})} label="Nom" />
                       </Grid>
-                      <Grid item xs={4}>
+                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
                         <TextField value={this.state.user_date_of_birth} onChange={e => this.setState({user_date_of_birth: e.target.value})} label="Date de naissance" />
                       </Grid>
-                    </Grid>
-                    <Grid container item xs={12} spacing={3}>
-                      <Grid item xs={4}>
+                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
                         <TextField value={this.state.user_sexe} onChange={e => this.setState({user_sexe: e.target.value})} label="Sexe" />
                       </Grid>
-                      <Grid item xs={4}>
+                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
                         <TextField value={this.state.user_email} onChange={e => this.setState({user_email: e.target.value})} label="Email" />
                       </Grid>
-                      <Grid item xs={4}>
+                      <Grid item xs={12} md={6}  className="d-flex justify-content-center">
                         <TextField value={this.state.user_adresse_txt} onChange={e => this.setState({user_adresse_txt: e.target.value})} label="Adresse" />
                       </Grid>
                     </Grid>
                   </Grid>
 
-                  <Button className="modifierProfil"
-                    variant="contained"
-                    color="primary"
-                    type="submit"
-                    endIcon={<Icon>send</Icon>}
-                  >
-                  Modifier
-                </Button>
+
+                    <Row>
+                      <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
+                        <Button 
+                          variant="contained"
+                          color="primary"
+                          type="submit"
+                          endIcon={<Icon>send</Icon>}
+                        >
+                          Modifier
+                        </Button>
+                      </Col>
+                    </Row>
+
                   
                 </form>
           </div>
@@ -210,8 +215,8 @@ constructor(props) {
 
          { activeIndex === 2 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
-          <BreadcrumbItem >Information location</BreadcrumbItem>
-          Information location
+          <BreadcrumbItem >Créer une annonce</BreadcrumbItem>
+         Créer une annonce
          </TabContainer> }
 
          { activeIndex === 3 &&<TabContainer>
