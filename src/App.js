@@ -36,7 +36,7 @@ import {InscriptionProprietaire} from './components/Pages/Connexions/SignUpPropr
 import ProfileTabs from './components/Pages/Dashboard';
 
 //Error
-import NotFound from './components/NotFound';
+import NotFound from './components/Pages/NotFound';
 
 function App() {
   return (
