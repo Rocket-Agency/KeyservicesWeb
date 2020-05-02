@@ -1,11 +1,15 @@
 import React from 'react';
 import '../../css/NotFound.css';
+import { BreadcrumbItem } from '../../index';
 import error404 from '../../ImagesPlaceholder/text.png';
+import HomeIcon from '@material-ui/icons/Home';
 
 export default ({ staticContext = {} }) => {
   staticContext.status = 404;
     return(
       <>
+        <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
+        <BreadcrumbItem>Erreur 404</BreadcrumbItem>
         <div id="notfound">
           <div class="notfound">
           {/* <div class="notfound" styles={{ backgroundImage:`url(${error404})`}}> */}
@@ -14,7 +18,7 @@ export default ({ staticContext = {} }) => {
             </div>
             <h2>Oops! Cette page n'a pas pu être trouvée</h2>
             <p>Désolé mais la page que vous cherchez n'existe pas, a été supprimée. nom modifié ou est temporairement indisponible.</p>
-            <a href="#">Retour à la page d'accueil</a>
+            <Link  to="/">Retour à la page d'accueil</Link>   
           </div>
         </div>
     </>
