@@ -159,43 +159,44 @@ constructor(props) {
               <div class="col-md-9 personal-info">
               <h3>Information personnel</h3>
 
-              <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
-                <Grid container spacing={1}>
-                  <Grid container item xs={12} spacing={3}>
-                    <Grid item xs={4}>
-                      <TextField value={this.state.user_first_name} onChange={e => this.setState({user_first_name: e.target.value})} label="Prénom" />
-                    </Grid>
-                    <Grid item xs={4}>
-                      <TextField value={this.state.user_last_name} onChange={e => this.setState({user_last_name: e.target.value})} label="Nom" />
-                    </Grid>
-                    <Grid item xs={4}>
-                      <TextField value={this.state.user_date_of_birth} onChange={e => this.setState({user_date_of_birth: e.target.value})} label="Date de naissance" />
-                    </Grid>
-                  </Grid>
-                  <Grid container item xs={12} spacing={3}>
-                    <Grid item xs={4}>
-                      <TextField value={this.state.user_sexe} onChange={e => this.setState({user_sexe: e.target.value})} label="Sexe" />
-                    </Grid>
-                    <Grid item xs={4}>
-                      <TextField value={this.state.user_email} onChange={e => this.setState({user_email: e.target.value})} label="Email" />
-                    </Grid>
-                    <Grid item xs={4}>
-                      <TextField value={this.state.user_adresse_txt} onChange={e => this.setState({user_adresse_txt: e.target.value})} label="Adresse" />
-                    </Grid>
-                  </Grid>
-                </Grid>
-
-                <Button
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-                  endIcon={<Icon>send</Icon>}
-                >
-                Modifier
-              </Button>
+                <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
                 
-              </form>
-           </div>
+                  <Grid container>
+                    <Grid container item xs={12} spacing={3}>
+                      <Grid item xs={4}>
+                        <TextField value={this.state.user_first_name} onChange={e => this.setState({user_first_name: e.target.value})} label="Prénom" />
+                      </Grid>
+                      <Grid item xs={4}>
+                        <TextField value={this.state.user_last_name} onChange={e => this.setState({user_last_name: e.target.value})} label="Nom" />
+                      </Grid>
+                      <Grid item xs={4}>
+                        <TextField value={this.state.user_date_of_birth} onChange={e => this.setState({user_date_of_birth: e.target.value})} label="Date de naissance" />
+                      </Grid>
+                    </Grid>
+                    <Grid container item xs={12} spacing={3}>
+                      <Grid item xs={4}>
+                        <TextField value={this.state.user_sexe} onChange={e => this.setState({user_sexe: e.target.value})} label="Sexe" />
+                      </Grid>
+                      <Grid item xs={4}>
+                        <TextField value={this.state.user_email} onChange={e => this.setState({user_email: e.target.value})} label="Email" />
+                      </Grid>
+                      <Grid item xs={4}>
+                        <TextField value={this.state.user_adresse_txt} onChange={e => this.setState({user_adresse_txt: e.target.value})} label="Adresse" />
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+                  <Button className="modifierProfil"
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                    endIcon={<Icon>send</Icon>}
+                  >
+                  Modifier
+                </Button>
+                  
+                </form>
+          </div>
           </div>
       </Container>
           
