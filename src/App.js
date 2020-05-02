@@ -38,6 +38,9 @@ import ProfileTabs from './components/Pages/Dashboard';
 //Error
 import NotFound from './components/Pages/NotFound';
 
+//Deconnexion
+import Deconnexion from './components/Pages/Deconnexion';
+
 function App() {
   return (
     <>
@@ -64,6 +67,7 @@ function App() {
                   <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
                   <Route path='/forgetPassword' component={ForgetPassword} />
                   <Route path='/dashboard' component={ProfileTabs} />
+                  <Route path='/deconnexion' component={Deconnexion} />
                   <Route component={NotFound} />
                 </Switch>
 

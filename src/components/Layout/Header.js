@@ -52,25 +52,21 @@ export class Header extends Component {
                             <NavLink className="d-inline menustyle" exact to="/">Accueil</NavLink>
                             <NavLink className="d-inline menustyle" to="/keyservicesPresentation">Keyservices</NavLink>
                             <NavLink className="d-inline menustyle" to="/contact">Contact</NavLink>
-                            {localStorage.getItem('token') ? <NavLink className="d-inline menustyle" to="/dashboard">Dashboard</NavLink>: null }
                         </Nav>
 
 
-
-                        <NavLink  className="btn_connexion" to="/monespace">
-                        <LockIcon to="/monespace"/>
-                            Connexion
-                        </NavLink>
-
-                        <NavLink  className="btn_connexion" to="/">
+                        {localStorage.getItem('token') ? <NavLink  className="btn_connexion" to="/deconnexion">
                         <LockOpenIcon/>
                             Déconnexion
-                        </NavLink>
+                        </NavLink> :                         <NavLink  className="btn_connexion" to="/monespace">
+                        <LockIcon to="/monespace"/>
+                            Connexion
+                        </NavLink> }
 
-                        <NavLink  className="btn_connexion" to="/">
+                        {localStorage.getItem('token') ?                         <NavLink  className="btn_connexion" to="/dashboard">
                         <LockOpenIcon/>
                             Mon Espace
-                        </NavLink>
+                        </NavLink> : null }
                         
                     </Navbar.Collapse>
                 </Navbar>
