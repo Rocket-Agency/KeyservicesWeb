@@ -133,14 +133,11 @@ constructor(props) {
         { activeIndex === 0 && <TabContainer>
 
       <Container fluid>
-<<<<<<< HEAD
-=======
           {/* <h1 className="mt-2 text-center">Bienvenue  {this.state.users.user_first_name} dans votre Espace</h1> */}
 
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Mon compte</BreadcrumbItem>
 
->>>>>>> affichageBouton
           <h2 className="mt-2r">Mon Compte</h2>
           <hr/>
             <div className="row">
