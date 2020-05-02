@@ -125,8 +125,8 @@ constructor(props) {
           onChange={this.handleChange}
         >
           <MyTab label='Mon compte' />          
-          <MyTab label='Créer une annonce' />
-          <MyTab label='Information location' />
+          <MyTab label='Information location' />         
+           <MyTab label='Créer une annonce' />
           <MyTab label='Calendrier' />
           {group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' />: null }
 
@@ -216,13 +216,13 @@ constructor(props) {
          { activeIndex === 2 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Créer une annonce</BreadcrumbItem>
-         Créer une annonce
+           Créer une annonce
          </TabContainer> }
 
          { activeIndex === 3 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Calendrier</BreadcrumbItem>
-         Calendrier
+            Calendrier
          </TabContainer> }
 
         { activeIndex === 4 && <TabContainer style={{ minWidth: "100%" }}>
