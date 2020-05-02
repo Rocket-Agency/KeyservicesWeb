@@ -98,7 +98,10 @@ export class InscriptionProprietaire extends Component {
     render() {
         const ville = [
             { title: 'Paris', boolean: true },
-            { title: 'Lourdes', boolean: false}
+            { title: 'Lyon', boolean: true },
+            { title: 'Lourdes', boolean: true },
+            { title: 'Nice', boolean: false},
+            { title: 'Toulouse', boolean: false},
           ];
         return(
             <div>
