@@ -128,7 +128,9 @@ constructor(props) {
           <MyTab label='Information location' />
           <MyTab label='Calendrier' />
           {group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' />: null }
+          <MyTab label='Créer une annonce' />
         </VerticalTabs>
+          
 
         { activeIndex === 0 && <TabContainer>
 
@@ -184,13 +186,13 @@ constructor(props) {
                 </Grid>
 
                 <Button
-        variant="contained"
-        color="primary"
-        type="submit"
-        endIcon={<Icon>send</Icon>}
-        >
-        Modifier
-      </Button>
+                  variant="contained"
+                  color="primary"
+                  type="submit"
+                  endIcon={<Icon>send</Icon>}
+                >
+                Modifier
+              </Button>
                 
               </form>
            </div>
@@ -207,11 +209,17 @@ constructor(props) {
 
          { activeIndex === 2 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+          <BreadcrumbItem >Information location</BreadcrumbItem>
+          Information location
+         </TabContainer> }
+
+         { activeIndex === 3 &&<TabContainer>
+          <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Calendrier</BreadcrumbItem>
          Calendrier
          </TabContainer> }
 
-        { activeIndex === 3 && <TabContainer style={{ minWidth: "100%" }}>
+        { activeIndex === 4 && <TabContainer style={{ minWidth: "100%" }}>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Mon compte</BreadcrumbItem>
             <MaterialTable

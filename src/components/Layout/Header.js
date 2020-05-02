@@ -56,6 +56,7 @@ export class Header extends Component {
                         </Nav>
 
 
+
                         <NavLink  className="btn_connexion" to="/monespace">
                         <LockIcon to="/monespace"/>
                             Connexion
@@ -63,7 +64,12 @@ export class Header extends Component {
 
                         <NavLink  className="btn_connexion" to="/">
                         <LockOpenIcon/>
-                        Mon Espace
+                            Déconnexion
+                        </NavLink>
+
+                        <NavLink  className="btn_connexion" to="/">
+                        <LockOpenIcon/>
+                            Mon Espace
                         </NavLink>
                         
                     </Navbar.Collapse>
