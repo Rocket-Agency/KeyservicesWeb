@@ -13,6 +13,7 @@ import LockIcon from '@material-ui/icons/Lock';
 import ProgressiveImage from "react-progressive-graceful-image";
 import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
 import Sticky from 'react-sticky-el';
+import {withRouter} from 'react-router-dom';
 
 export class Header extends Component {
     render() {
@@ -49,6 +50,7 @@ export class Header extends Component {
                             <NavLink className="d-inline menustyle" exact to="/">Accueil</NavLink>
                             <NavLink className="d-inline menustyle" to="/keyservicesPresentation">Keyservices</NavLink>
                             <NavLink className="d-inline menustyle" to="/contact">Contact</NavLink>
+                            {localStorage.getItem('token') ? <NavLink className="d-inline menustyle" to="/dashboard">Dashboard</NavLink>: null }
                         </Nav>
 
 
@@ -68,4 +70,4 @@ export class Header extends Component {
         }
     }
     
-export default Header;
+export default withRouter(Header);

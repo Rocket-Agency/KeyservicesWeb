@@ -11,6 +11,7 @@ import Iframe from 'react-iframe';
 
 // import ContactMap from './ContactMap';
 import ContactInfos from './ContactInfos';
+import {withRouter} from 'react-router-dom';
 
 export class Contact extends Component {
     render() {
@@ -115,4 +116,4 @@ export class Contact extends Component {
 
 }
 
-export default Contact;
+export default withRouter(Contact);
