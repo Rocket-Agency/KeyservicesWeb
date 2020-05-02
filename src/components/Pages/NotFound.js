@@ -1,7 +1,8 @@
 import React from 'react';
 import '../../css/NotFound.css';
 import { BreadcrumbItem } from '../../index';
-import error404 from '../../ImagesPlaceholder/text.png';
+import { Link } from 'react-router-dom';
+// import error404 from '../../ImagesPlaceholder/text.png';
 import HomeIcon from '@material-ui/icons/Home';
 
 export default ({ staticContext = {} }) => {
@@ -18,7 +19,7 @@ export default ({ staticContext = {} }) => {
             </div>
             <h2>Oops! Cette page n'a pas pu être trouvée</h2>
             <p>Désolé mais la page que vous cherchez n'existe pas, a été supprimée. nom modifié ou est temporairement indisponible.</p>
-            <Link  to="/">Retour à la page d'accueil</Link>   
+            <Link to="/">Retour à la page d'accueil</Link>   
           </div>
         </div>
     </>
