@@ -14,7 +14,7 @@ import MaterialTable from 'material-table';
 // import { Link } from 'react-router-dom';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
-import { Col, Row, Form, Container, Button } from 'react-bootstrap';
+import { Col, Row, Form, Container } from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
 
 class ProfileTabs extends Component {
