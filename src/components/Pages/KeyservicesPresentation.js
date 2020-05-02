@@ -49,9 +49,9 @@ export class KeyservicesPresentation extends Component {
                                     <Nav.Link eventKey="presentation">Présentation</Nav.Link>
                                 </Nav.Item>
 
-                                <Nav.Item>
+                                {/* <Nav.Item>
                                     <Nav.Link eventKey="villes">Villes</Nav.Link>
-                                </Nav.Item>
+                                </Nav.Item> */}
 
                                 <Nav.Item>
                                     <Nav.Link eventKey="NewVilles">Villes</Nav.Link>
@@ -90,7 +90,7 @@ export class KeyservicesPresentation extends Component {
                                             </Row>                                        
                                         </Container>
                                     </Tab.Pane>
-
+{/* 
                                     <Tab.Pane eventKey="villes">
 
                                         <Container>
@@ -171,7 +171,7 @@ export class KeyservicesPresentation extends Component {
                                                     </div>
                                                  </Row>
                                         </Container>
-                                    </Tab.Pane>
+                                    </Tab.Pane> */}
                                     
 
                                     <Tab.Pane eventKey="NewVilles">
