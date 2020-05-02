@@ -1,6 +1,7 @@
 //Contact.js
 import React, {Component} from 'react'
 import '../../css/Contact.scss';
+import { BreadcrumbItem } from '../../index';
 
 import {Form, Col, Row} from 'react-bootstrap';
 import { Hidden } from 'react-grid-system';
@@ -8,6 +9,7 @@ import { Hidden } from 'react-grid-system';
 // import Img from 'react-cool-img';
 // import ImgDefaultMap from '../../ImagesPlaceholder/placeholderMap.png'
 import Iframe from 'react-iframe';
+import HomeIcon from '@material-ui/icons/Home';
 
 // import ContactMap from './ContactMap';
 import ContactInfos from './ContactInfos';
@@ -16,8 +18,12 @@ import {withRouter} from 'react-router-dom';
 export class Contact extends Component {
     render() {
         return(
-            <div>
-                <div className="mt-5 d-flex text-center justify-content-center">
+            <div className="mt-3">
+                <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+                <BreadcrumbItem >Contact</BreadcrumbItem>
+
+
+                <div className="d-flex text-center justify-content-center">
                     <h1>On s’occupe de tous et vous de rien</h1>
                 </div>
 
