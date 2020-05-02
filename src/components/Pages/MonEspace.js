@@ -17,14 +17,14 @@ export class MonEspace extends Component {
 
     render() {
         return(
-            <div id="contentEspace">
-                <div className="mb-2 d-flex justify-content-center">
+            <div>
+                <div className="d-flex justify-content-center">
                 {/* <h3>Mon Espace</h3> */}
-                <h3>Espace connexion</h3>
+                <h3>Connexion</h3>
                 </div>
 
                 <Container fluid>
-                    <Row>
+                    <Row id="contentEspace">
                         <Col md={6}>
 
                             <div className="d-flex justify-content-center">

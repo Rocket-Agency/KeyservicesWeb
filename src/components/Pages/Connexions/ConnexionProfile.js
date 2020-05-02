@@ -1,16 +1,8 @@
 import React, {Component} from 'react';
-import axios from 'axios';
-
 import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-// import { Redirect } from 'react-router'
-import {withRouter
-} from 'react-router-dom';
-// import { Link } from 'react-router-dom';
-
-// //icons
-// import { IoIosArrowForward } from "react-icons/io";
-// import { FaArrowRight } from "react-icons/fa";
+import {withRouter} from 'react-router-dom';
+import axios from 'axios';
 
  class ConnexionProfile extends Component {
     constructor(props) {
@@ -47,7 +39,7 @@ import {withRouter
             config
           )
           .then(response => {
-            this.props.history.push('/dashboard', {user: response.data});
+            this.props.history.push('/dashboard', {users: response.data});
           })
           .catch(error => {
           });
