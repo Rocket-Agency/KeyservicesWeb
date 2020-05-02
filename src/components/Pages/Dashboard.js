@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../../css/Dashboard.scss';
+import { BreadcrumbItem } from '../../index';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
@@ -13,7 +14,8 @@ import MaterialTable from 'material-table';
 // import { Link } from 'react-router-dom';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
-import { Col, Row, Form, Container} from 'react-bootstrap';
+import { Col, Row, Form, Container, Button } from 'react-bootstrap';
+import HomeIcon from '@material-ui/icons/Home';
 
 class ProfileTabs extends Component {
 constructor(props) {
@@ -131,6 +133,14 @@ constructor(props) {
         { activeIndex === 0 && <TabContainer>
 
       <Container fluid>
+<<<<<<< HEAD
+=======
+          {/* <h1 className="mt-2 text-center">Bienvenue  {this.state.users.user_first_name} dans votre Espace</h1> */}
+
+          <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+          <BreadcrumbItem >Mon compte</BreadcrumbItem>
+
+>>>>>>> affichageBouton
           <h2 className="mt-2r">Mon Compte</h2>
           <hr/>
             <div className="row">
@@ -201,6 +211,8 @@ constructor(props) {
          </TabContainer> }
 
         { activeIndex === 3 && <TabContainer style={{ minWidth: "100%" }}>
+        <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+          <BreadcrumbItem >Mon compte</BreadcrumbItem>
             <MaterialTable
               columns={[
                 {
