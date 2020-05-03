@@ -8,14 +8,11 @@ import Breadcrumb from './lib/BreadCrumb';
 import BreadcrumbItem from './lib/BreadCrumbItem';
 import BreadProvider from './lib/BProvider';
 
-
-// export default BreadCrumbLib;
 import * as serviceWorker from './serviceWorker';
-import { CookiesProvider } from 'react-cookie';
 export { Breadcrumb, BreadcrumbItem, BreadProvider }
 
-if (typeof window !== 'undefined') {
-ReactDOM.hydrate(<BrowserRouter><CookiesProvider><App /></CookiesProvider></BrowserRouter>, document.getElementById('root'));
+if (typeof document !== 'undefined') {
+ReactDOM.hydrate(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 }
 
 // If you want your app to work offline and load faster, you can change

@@ -10,9 +10,9 @@
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://bit.ly/CRA-PWA
 
-const isLocalhost = '';
+let isLocalhost = false;
 if (typeof window !== 'undefined') {
-  isLocalhost = Boolean (
+  isLocalhost = (
     window.location.hostname === 'localhost' ||
       // [::1] is the IPv6 localhost address.
       window.location.hostname === '[::1]' ||
@@ -132,13 +132,15 @@ function checkValidServiceWorker(swUrl, config) {
 }
 
 export function unregister() {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready
-      .then(registration => {
-        registration.unregister();
-      })
-      .catch(error => {
-        console.error(error.message);
-      });
+  if (typeof window !== 'undefined'){
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready
+        .then(registration => {
+          registration.unregister();
+        })
+        .catch(error => {
+          console.error(error.message);
+        });
+    }
   }
 }

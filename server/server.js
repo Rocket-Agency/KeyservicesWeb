@@ -47,6 +47,9 @@ app.use("/*", (req, res, next) => {
     if (context.status === 404) {
       res.status(404);
     }
+    if (context.url) {
+      return res.redirect(301, context.url);
+    }
 
     return res.send(
       data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
@@ -56,7 +59,6 @@ app.use("/*", (req, res, next) => {
 
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
-
 
 httpServer.listen(PORT, () => {
 	console.log(`HTTP Server running on port ${PORT}`);
