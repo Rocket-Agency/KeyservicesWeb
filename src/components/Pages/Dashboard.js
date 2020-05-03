@@ -16,6 +16,7 @@ import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
 import { Col, Row, Form, Container } from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
+import Announce from './Connexions/AnnounceDeposit/Announce';
 
 class ProfileTabs extends Component {
 constructor(props) {
@@ -198,8 +199,6 @@ constructor(props) {
                         </Button>
                       </Col>
                     </Row>
-
-                  
                 </form>
           </div>
           </div>
@@ -217,6 +216,7 @@ constructor(props) {
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Créer une annonce</BreadcrumbItem>
            Créer une annonce
+            <Announce/>
          </TabContainer> }
 
          { activeIndex === 3 &&<TabContainer>
