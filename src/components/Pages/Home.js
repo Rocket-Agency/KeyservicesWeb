@@ -15,12 +15,16 @@ import { Container, Col, Row} from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
 import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 import GererMesLocationsTiny from '../../ImagesPlaceholder/GérerMesLocationsTiny.png';
+import {Helmet} from "react-helmet";
 
 export class Home extends Component {
 
     render() {
         return(
             <div>
+                <Helmet>
+                    <title>Keyservices - Accueil</title>
+                </Helmet>
 
                 <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
                 {/* <Carousel>

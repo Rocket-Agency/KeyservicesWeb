@@ -27,14 +27,17 @@ import Photo_Nice_Tiny from '../../ImagesPlaceholder/Photo_Nice_Tiny.png';
 import Photo_LaRochelle_Tiny from '../../ImagesPlaceholder/Photo_LaRochelle_Tiny.png';
 import HomeIcon from '@material-ui/icons/Home';
 import Accordion from 'react-bootstrap/Accordion';
-
-
+import {Helmet} from "react-helmet";
 
 export class KeyservicesPresentation extends Component {
 
     render() {
         return(
             <>
+                <Helmet>
+                    <title>Keyservices - Présentation</title>
+                </Helmet>
+
                 <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem >Keyservices</BreadcrumbItem>
 
