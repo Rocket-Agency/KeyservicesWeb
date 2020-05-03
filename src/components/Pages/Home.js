@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import '../../css/Home.scss';
 import '../../css/pe-7s-shield.css';
+import { BreadcrumbItem } from '../../index';
 // import Img from 'react-cool-img';
 import ProgressiveImage from "react-progressive-graceful-image";
 
@@ -9,18 +10,23 @@ import ProgressiveImage from "react-progressive-graceful-image";
 // import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 // import GererMesLocationsTiny from '../../ImagesPlaceholder/GererMesLocationsTiny.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import { Carousel } from 'react-responsive-carousel';
-// import { Link } from 'react-router-dom';
-import Icon from '@mdi/react'
-import { mdiAccount } from '@mdi/js'
-import Carousel from 'react-bootstrap/Carousel'
-
+import Carousel from 'react-bootstrap/Carousel';
+import { Container, Col, Row} from 'react-bootstrap';
+import HomeIcon from '@material-ui/icons/Home';
+import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
+import GererMesLocationsTiny from '../../ImagesPlaceholder/GérerMesLocationsTiny.png';
+import {Helmet} from "react-helmet";
 
 export class Home extends Component {
 
     render() {
         return(
             <div>
+                <Helmet>
+                    <title>Keyservices - Accueil</title>
+                </Helmet>
+
+                <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
                 {/* <Carousel>
                     <div>
                         <img src="./Images/PosterUneAnnonce.png" />
@@ -30,14 +36,22 @@ export class Home extends Component {
                     </div>
                 </Carousel> */}
 
+                <div className="mt-3">
 
                     <Carousel>
                         <Carousel.Item>
-                            <img
+                            {/* <img
                                 className="d-block w-100"
-                                src="./Images/PosterUneAnnonce.png" 
+                                src="./Images/PosterUneAnnonce1.png" 
                                 alt="Poster une annoncee"
-                            />
+                            /> */}
+                            <ProgressiveImage  className="card-img style-card" 
+                                src="./Images/PosterUneAnnonce.png" 
+                                placeholder={PosterUneAnnonceTiny} 
+                            >
+                                {src => <img src={src}  alt="Poster une annoncee"  />}
+                            </ProgressiveImage>    
+                            
                             <Carousel.Caption>
                             <h3>Poster une annonce</h3>
                                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -47,12 +61,17 @@ export class Home extends Component {
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
-                            <img
+                            {/* <img
                                 className="d-block w-100"
                                 src="./Images/GererMesLocations.png"
                                 alt="Gérer mes locations"
-                            />
-
+                            /> */}
+                            <ProgressiveImage  className="card-img style-card" 
+                                src="./Images/GérerMesLocations.png"
+                                placeholder={GererMesLocationsTiny} 
+                            >
+                                {src => <img src={src}  alt="Gérer mes locations"  />}
+                            </ProgressiveImage>  
                             <Carousel.Caption>
                             <h3>Gérer mes locations</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -62,6 +81,7 @@ export class Home extends Component {
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
+                </div>
 
                 <div className="container-fluid p-0 mt-4 mb-4">
                     <div className="colorBackground">
@@ -141,18 +161,21 @@ export class Home extends Component {
                 </div>
 
                 <section class="section" id="services">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-12 text-center">
+                    <Container>
+                        <Row style={{textAlign: "center"}}>
+
+                            <Col xs={12} class="text-center">
                                 <div class="section-title mb-4 pb-2">
-                                    <h4 class="title mb-4">Business Services</h4>
+                                    <h4 class="title mb-4">Nos Services</h4>
                                     <p class="text-muted mx-auto para-desc mb-0">Splash your dream color Bring your home to lively Colors. We make it a priotity to offer flexible services to accomodate your needs</p>
                                 </div>
-                            </div>
-                        </div>
+                            </Col>
+                        </Row>
 
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
+                        {/* col-lg-6 col-md-6 col-12 */}
+
+                        <Row>
+                            <Col xs={12} lg={6} md={6} class="mt-4 pt-2">
                                 <div class="service-container shadow rounded p-4 text-center">
                                     <div class="number-icon position-relative">
                                         <div class="icon-2 d-inline-block border rounded-pill">  
@@ -165,17 +188,17 @@ export class Home extends Component {
                                     </div>                           
 
                                     <div class="content mt-3">
-                                        <h5 class="title text-dark">Finance Management</h5>
+                                        <h5 class="title text-dark">Remise des clés</h5>
                                         <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                        <a href="javascript:void(0)" class="text-dark">
+                                        <a href="" class="text-dark">
                                             Read more
                                             <i class="mdi mdi-chevron-right"></i>
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </Col>
                                                     
-                            <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
+                            <Col  xs={12} lg={6} md={6} class="mt-4 pt-2">
                                 <div class="service-container shadow rounded p-4 text-center">
                                     <div class="number-icon position-relative">
                                         <div class="icon-2 d-inline-block border rounded-pill">  
@@ -188,14 +211,14 @@ export class Home extends Component {
                                     </div>                           
 
                                     <div class="content mt-3">
-                                         <h5 class="title text-dark">Consulting</h5>
+                                         <h5 class="title text-dark">Remplir son frigo</h5>
                                          <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                        <a href="javascript:void(0)" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
+                                        <a href="" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
                                      </div>
                                 </div>
-                            </div>
+                            </Col>
                                                     
-                            <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                            <Col xs={12} lg={6} md={6} class="mt-4 pt-2">
                                  <div class="service-container shadow rounded p-4 text-center">
                                     <div class="number-icon position-relative">
                                         <div class="icon-2 d-inline-block border rounded-pill">  
@@ -208,14 +231,14 @@ export class Home extends Component {
                                      </div>                           
 
                                     <div class="content mt-3">
-                                        <h5 class="title text-dark">Insurance</h5>
+                                        <h5 class="title text-dark">Prise de rendez-vous pour le checkout</h5>
                                         <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                        <a href="javascript:void(0)" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
+                                        <a href="" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
                                      </div>
                                 </div>
-                            </div>
+                            </Col>
                                                     
-                            <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                            <Col xs={12} lg={6} md={6} class="mt-4 pt-2">
                                 <div class="service-container shadow rounded p-4 text-center">
                                     <div class="number-icon position-relative">
                                         <div class="icon-2 d-inline-block border rounded-pill">  
@@ -228,18 +251,18 @@ export class Home extends Component {
                                     </div>                           
 
                                     <div class="content mt-3">
-                                        <h5 class="title text-dark">Bank Investigate</h5>
+                                        <h5 class="title text-dark">Nettoyage</h5>
                                         <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                        <a href="javascript:void(0)" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
+                                        <a href="" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
                                     </div>
                                  </div>
-                            </div>
+                            </Col>
                                                                                                        
-                            <div class="col-12 mt-4 pt-2 text-center">
+                            {/* <div class="col-12 mt-4 pt-2 text-center">
                                  <a href="javascript:void(0)" class="btn btn-pill btn-custom">See More <i class="mdi mdi-chevron-right"></i></a>
-                            </div>
-                        </div>
-                     </div>
+                            </div> */}
+                        </Row>
+                     </Container>
                 </section>
             </div>
         )

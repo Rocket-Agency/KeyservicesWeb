@@ -1,36 +1,87 @@
 import React, {Component} from 'react';
 import '../../css/Dashboard.scss';
+import { BreadcrumbItem } from '../../index';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import Icon from '@material-ui/core/Icon';
 import axios from 'axios';
 import MaterialTable from 'material-table';
 // import { Link } from 'react-router-dom';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
-import { Col, Row, Form, Container, Button } from 'react-bootstrap';
+import { Col, Row, Form, Container } from 'react-bootstrap';
+import HomeIcon from '@material-ui/icons/Home';
 
 class ProfileTabs extends Component {
-state = {
+constructor(props) {
+  super(props);
+  this.state = {
     activeIndex: 0,
-    userid: this.props.location.state.user.id,
-    accessToken: this.props.location.state.user.accessToken,
-    group: this.props.location.state.user.groups,
+    userid: '',
+    accessToken: '',
+    group: '',
     users: "",
     usersCollection: [],
+    user_first_name: "",
+    user_last_name: "",
+    user_date_of_birth: "",
+    user_sexe: "",
+    user_photo: "",
+    user_email: "",
+    user_password: "",
+    user_adresse_txt: ""
   }
 
+  this.userid = '';
+  this.token = '';
+  this.group = '';
+
+}
+
   componentDidMount() {
+    if(localStorage.getItem('token') && localStorage.getItem('id') && localStorage.getItem('group')){
+      this.userid = localStorage.getItem('id');
+      this.token = localStorage.getItem('token');
+      this.group = localStorage.getItem('group');
+    }
+    else{
+      localStorage.setItem('token', this.props.location.state.user.accessToken)
+      localStorage.setItem('id', this.props.location.state.user.id)
+      localStorage.setItem('group', this.props.location.state.user.groups)
+      this.userid = this.props.location.state.user.id;
+      this.token = this.props.location.state.user.accessToken;
+      this.group = this.props.location.state.user.groups;
+    }
     const config = {
       headers: {
-        'x-access-token': this.state.accessToken
+        'x-access-token': this.token
       }
     }
-    axios.get(`http://localhost:3001/api/user/`+ this.state.userid, config)
+    axios.get(`http://localhost:3001/api/user/`+ this.userid, config)
       .then(res => {
         const users = res.data;
-        this.setState( { users } );
+        const user_first_name = res.data.user_first_name;
+        const user_last_name = res.data.user_last_name;
+        const user_date_of_birth = res.data.user_date_of_birth;
+        const user_sexe = res.data.user_sexe;
+        const user_photo = res.data.user_photo;
+        const user_email = res.data.user_email;
+        const user_password = res.data.user_password;
+        const user_adresse_txt = res.data.user_adresse_txt;
+        this.setState( { user_first_name});
+        this.setState( { user_last_name });
+        this.setState( { user_date_of_birth});
+        this.setState( { user_sexe});
+        this.setState( { user_photo});
+        this.setState( { user_email});
+        this.setState( { user_password});
+        this.setState( { user_adresse_txt});
+        this.setState( { users });
       })
     axios.get(`http://localhost:3001/api/users/`, config)
       .then(res => {
@@ -40,6 +91,26 @@ state = {
   }
 
   handleChange = (_, activeIndex) => this.setState({ activeIndex })
+
+  handleSubmit(e) {
+    const config = {
+      headers: {
+        'x-access-token': this.state.accessToken
+      }
+    }
+    axios.put("http://localhost:3001/api/user/update/" + this.state.users.user_id ,
+    {
+      /*user_first_name: user_first_name,
+      user_last_name: user_last_name,
+      user_date_of_birth: user_date_of_birth,
+      user_sexe: user_sexe,
+      user_email: user_email,
+      user_adresse_txt: user_adresse_txt*/
+    }, config)
+
+    e.preventDefault();
+  }
+  
   render() {
     const { activeIndex } = this.state;
     const { group } = this.state;
@@ -57,12 +128,17 @@ state = {
           <MyTab label='Information location' />
           <MyTab label='Calendrier' />
           {group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' />: null }
+          <MyTab label='Créer une annonce' />
         </VerticalTabs>
+          
 
         { activeIndex === 0 && <TabContainer>
 
       <Container fluid>
           {/* <h1 className="mt-2 text-center">Bienvenue  {this.state.users.user_first_name} dans votre Espace</h1> */}
+
+          <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+          <BreadcrumbItem >Mon compte</BreadcrumbItem>
 
           <h2 className="mt-2r">Mon Compte</h2>
           <hr/>
@@ -83,72 +159,41 @@ state = {
               <div class="col-md-9 personal-info">
               <h3>Information personnel</h3>
 
-              <form class="form-horizontal" role="form">
+              <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
+                <Grid container spacing={1}>
+                  <Grid container item xs={12} spacing={3}>
+                    <Grid item xs={4}>
+                      <TextField value={this.state.user_first_name} onChange={e => this.setState({user_first_name: e.target.value})} label="Prénom" />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <TextField value={this.state.user_last_name} onChange={e => this.setState({user_last_name: e.target.value})} label="Nom" />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <TextField value={this.state.user_date_of_birth} onChange={e => this.setState({user_date_of_birth: e.target.value})} label="Date de naissance" />
+                    </Grid>
+                  </Grid>
+                  <Grid container item xs={12} spacing={3}>
+                    <Grid item xs={4}>
+                      <TextField value={this.state.user_sexe} onChange={e => this.setState({user_sexe: e.target.value})} label="Sexe" />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <TextField value={this.state.user_email} onChange={e => this.setState({user_email: e.target.value})} label="Email" />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <TextField value={this.state.user_adresse_txt} onChange={e => this.setState({user_adresse_txt: e.target.value})} label="Adresse" />
+                    </Grid>
+                  </Grid>
+                </Grid>
 
-                   <Container fluid>
-
-                     <Row>
-                       <Col md={6} className="pt-3 pb-3">
-                          <Form.Row>
-                            <Form.Label className="label-info-generales" column sm={6}>Nom :</Form.Label>
-                              <Col xs={12} md={6} className="informations">
-                                {this.state.users.user_last_name}
-                              </Col>
-                            </Form.Row>  
-                        </Col>
-
-                       <Col md={6} className="pt-3 pb-3">
-                          <Form.Row>
-                            <Form.Label className="label-info-generales" column sm={6}>Prénom :</Form.Label>
-                              <Col xs={12} md={6} className="informations">
-                                {this.state.users.user_first_name}
-                              </Col>
-                          </Form.Row>  
-                       </Col>
-                    </Row>
-
-                    <Row>
-                       <Col md={6} className="pt-3 pb-3">
-                          <Form.Row>
-                          <Form.Label className="label-info-generales" column sm={6}>Date de naissance :</Form.Label>
-                              <Col xs={12} md={6} className="informations">
-                                26/10/1974
-                              </Col>
-                            </Form.Row>  
-                        </Col>
-
-                       <Col md={6} className="pt-3 pb-3">
-                          <Form.Row>
-                          <Form.Label className="label-info-generales" column sm={6}>Téléphone :</Form.Label>
-                            <Col xs={12} md={6} className="informations">
-                              0000000000
-                            </Col>
-                          </Form.Row>  
-                       </Col>
-                    </Row>
-
-                    <Row>
-                      <Col md={12} className="pt-3 pb-3">
-                        <Form.Row>
-                          <Form.Label className="label-info-generales" column sm={3}>Adresse :</Form.Label>
-                            <Col xs={12} md={6} className="informations">
-                              11, rue des boulettes test 75009
-                            </Col>
-                        </Form.Row>  
-                      </Col>
-                    </Row>
-                    
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      onClick={this.continue}
-                      aria-label="Continuer"
-                      >Modifier
-                    </Button>
-
-                    <Button className="modifierProfil" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Modifier</Button>
-
-                  </Container>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  type="submit"
+                  endIcon={<Icon>send</Icon>}
+                >
+                Modifier
+              </Button>
+                
               </form>
            </div>
           </div>
@@ -157,14 +202,26 @@ state = {
         </TabContainer> }
 
         { activeIndex === 1 &&<TabContainer>
+          <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+          <BreadcrumbItem >Information location</BreadcrumbItem>
           Information location
          </TabContainer> }
 
          { activeIndex === 2 &&<TabContainer>
+          <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+          <BreadcrumbItem >Information location</BreadcrumbItem>
+          Information location
+         </TabContainer> }
+
+         { activeIndex === 3 &&<TabContainer>
+          <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+          <BreadcrumbItem >Calendrier</BreadcrumbItem>
          Calendrier
          </TabContainer> }
 
-        { activeIndex === 3 && <TabContainer style={{ minWidth: "100%" }}>
+        { activeIndex === 4 && <TabContainer style={{ minWidth: "100%" }}>
+          <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+          <BreadcrumbItem >Mon compte</BreadcrumbItem>
             <MaterialTable
               columns={[
                 {

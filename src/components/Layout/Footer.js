@@ -20,7 +20,7 @@ const Footer = () => {
                     <div className="row d-flex align-items-center">
                         <Col sm={8} className="d-flex justify-content-end">
                             <p className="m-3 text-white">
-                                CGU - Contact - Mention légales - KeyServices | All right reserved - {new Date().getFullYear()} 
+                                CGU - Contact - Mention légales - KeyServices | Tout droit réservés - {new Date().getFullYear()} 
                             </p>       
                         </Col>
 
@@ -40,7 +40,7 @@ const Footer = () => {
                                     alt="Lien vers Facebook"
                                 />  */}
                             </Col>
-                            <Col sm={6}className="d-flex justify-content-left">
+                            <Col sm={6} className="d-flex justify-content-left">
                                 <ProgressiveImage  className="card-img" 
                                     src='./images/Icone_Instagram.png'
                                     placeholder={InstagramTiny} 

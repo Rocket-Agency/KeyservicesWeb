@@ -2,6 +2,7 @@
 
 import React, {Component} from 'react';
 import '../../css/MonEspace.scss';
+import { BreadcrumbItem } from '../../index';
 import { Link } from 'react-router-dom';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
@@ -11,6 +12,7 @@ import { Col, Container, Row, Card} from 'react-bootstrap';
 import ProgressiveImage from "react-progressive-graceful-image";
 import LocataireTiny from '../../ImagesPlaceholder/LocataireTiny.png';
 import ProprietaireTiny from '../../ImagesPlaceholder/PropriétaireTiny.png';
+import HomeIcon from '@material-ui/icons/Home';
 
 export class MonEspace extends Component {
 
@@ -18,9 +20,12 @@ export class MonEspace extends Component {
     render() {
         return(
             <div>
-                <div className="d-flex justify-content-center">
-                {/* <h3>Mon Espace</h3> */}
-                <h3>Connexion</h3>
+
+                <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+                <BreadcrumbItem >Connexion</BreadcrumbItem>
+
+                <div className="d-flex justify-content-center mt-3">
+                    <h3>Connexion</h3>
                 </div>
 
                 <Container fluid>

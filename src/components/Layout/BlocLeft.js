@@ -7,12 +7,7 @@ import { Visible, Hidden } from 'react-grid-system';
 
 import ReactFlagsSelect from 'react-flags-select';
 import 'react-flags-select/css/react-flags-select.css';
-// import Img from 'react-cool-img';
-// import ImgDefaultLangues from '../../ImagesPlaceholder/placeholderLangues.png';
 
-import ProgressiveImage from "react-progressive-graceful-image";
-import FrançaisTiny from '../../ImagesPlaceholder/FrançaisTiny.png';
-import AnglaisTiny from '../../ImagesPlaceholder/AnglaisFlags.png';
 
   export class BlocLeft extends Component {
     render() {
