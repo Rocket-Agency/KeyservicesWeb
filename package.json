@@ -77,7 +77,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "ssr": "nodemon server/index.js"
+    "ssr": "node server/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"

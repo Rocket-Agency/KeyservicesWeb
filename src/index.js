@@ -12,7 +12,7 @@ import * as serviceWorker from './serviceWorker';
 export { Breadcrumb, BreadcrumbItem, BreadProvider }
 
 if (typeof document !== 'undefined') {
-ReactDOM.hydrate(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
+    ReactDOM.hydrate(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 }
 
 // If you want your app to work offline and load faster, you can change
