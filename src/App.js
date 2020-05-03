@@ -40,6 +40,8 @@ import NotFound from './components/Pages/NotFound';
 
 //Deconnexion
 import Deconnexion from './components/Pages/Deconnexion';
+import { createMemoryHistory } from 'history';
+const history = createMemoryHistory();
 
 function App() {
   return (
