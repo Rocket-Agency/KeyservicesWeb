@@ -9,15 +9,15 @@ import {Container, Tab, Row, Col, Nav, Card} from 'react-bootstrap';
 // import ImgDefaultServices from '../../ImagesPlaceholder/placeholderServices.png';
 
 import ProgressiveImage from "react-progressive-graceful-image";
-import Keyservices_logo from '../../ImagesPlaceholder/Keyservices_Logo.png';
+// import Keyservices_logo from '../../ImagesPlaceholder/Keyservices_Logo.png';
 // import img_1 from '../../images/img_1.jpg';
 import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
-import parisTiny from '../../ImagesPlaceholder/parisTiny.png';
-import lyonTiny from '../../ImagesPlaceholder/lyonTiny.png';
-import lourdesTiny from '../../ImagesPlaceholder/lourdesTiny.png';
-import toulouseTiny from '../../ImagesPlaceholder/toulouseTiny.png';
-import niceTiny from '../../ImagesPlaceholder/niceTiny.png';
-import laRochelleTiny from '../../ImagesPlaceholder/larochelleTiny.png';
+// import parisTiny from '../../ImagesPlaceholder/parisTiny.png';
+// import lyonTiny from '../../ImagesPlaceholder/lyonTiny.png';
+// import lourdesTiny from '../../ImagesPlaceholder/lourdesTiny.png';
+// import toulouseTiny from '../../ImagesPlaceholder/toulouseTiny.png';
+// import niceTiny from '../../ImagesPlaceholder/niceTiny.png';
+// import laRochelleTiny from '../../ImagesPlaceholder/larochelleTiny.png';
 
 import Photo_Paris_Tiny from '../../ImagesPlaceholder/Photo_Paris_Tiny.png';
 import Photo_Lyon_Tiny from '../../ImagesPlaceholder/Photo_Lyon_Tiny.png';
@@ -185,7 +185,7 @@ export class KeyservicesPresentation extends Component {
                                                                 src='./images/Photo_Paris.png'
                                                                 placeholder={Photo_Paris_Tiny} 
                                                             >
-                                                                {src => <img src={src} width="100%" alt="Image Paris" />}
+                                                                {src => <img src={src} width="100%" alt="Paris" />}
                                                             </ProgressiveImage>                          
                                                                         
                                                             <div className="overlay">
@@ -208,7 +208,7 @@ export class KeyservicesPresentation extends Component {
                                                                 src='./images/Photo_Lyon.png'
                                                                 placeholder={Photo_Lyon_Tiny} 
                                                             >
-                                                                {src => <img src={src} width="100%" alt="Image Lyon" />}
+                                                                {src => <img src={src} width="100%" alt="Lyon" />}
                                                             </ProgressiveImage>                          
                                                                         
                                                             <div className="overlay">
@@ -234,7 +234,7 @@ export class KeyservicesPresentation extends Component {
                                                                 src='./images/Photo_Lourdes.png'
                                                                 placeholder={Photo_Lourdes_Tiny.png} 
                                                             >
-                                                                {src => <img src={src} width="100%" alt="Image Lourdes" />}
+                                                                {src => <img src={src} width="100%" alt="Lourdes" />}
                                                             </ProgressiveImage>                          
                                                                         
                                                             <div className="overlay">
@@ -264,7 +264,7 @@ export class KeyservicesPresentation extends Component {
                                                                 src='./images/Photo_Toulouse.png'
                                                                 placeholder={Photo_Toulouse_Tiny} 
                                                             >
-                                                                {src => <img src={src} width="100%" alt="Image Paris" />}
+                                                                {src => <img src={src} width="100%" alt="Paris" />}
                                                             </ProgressiveImage>                          
                                                                         
                                                             <div className="overlay AVenir">
@@ -285,7 +285,7 @@ export class KeyservicesPresentation extends Component {
                                                                 src='./images/Photo_Nice.png'
                                                                 placeholder={Photo_Nice_Tiny} 
                                                             >
-                                                                {src => <img src={src} width="100%" alt="Image Lyon" />}
+                                                                {src => <img src={src} width="100%" alt="Lyon" />}
                                                             </ProgressiveImage>                          
                                                                         
                                                             <div className="overlay AVenir">
@@ -309,7 +309,7 @@ export class KeyservicesPresentation extends Component {
                                                                 src='./images/Photo_LaRochelle.png'
                                                                 placeholder={Photo_LaRochelle_Tiny} 
                                                             >
-                                                                {src => <img src={src} width="100%" alt="Image Lourdes" />}
+                                                                {src => <img src={src} width="100%" alt="La Rochelle" />}
                                                             </ProgressiveImage>                          
                                                                         
                                                             <div className="overlay AVenir">

@@ -3,8 +3,8 @@ import '../../css/ServicesComponent.scss';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-import Img from 'react-cool-img';
-import ImgDefaultServices from '../../ImagesPlaceholder/placeholderServices.png';
+// import Img from 'react-cool-img';
+// import ImgDefaultServices from '../../ImagesPlaceholder/placeholderServices.png';
 
 import ProgressiveImage from "react-progressive-graceful-image";
 

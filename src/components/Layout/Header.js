@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
-import logo from '../../Keyservices_Logo.png';
+// import logo from '../../Keyservices_Logo.png';
 // import Searchbar from './Searchbar';
 
 import '../../css/Header.scss';
 import '../../css/BlocLeft.scss';
 import { NavLink } from 'react-router-dom';
-import {Navbar, Nav, Button} from 'react-bootstrap';
+import {Navbar, Nav,} from 'react-bootstrap';
 // import BlocLeft from './BlocLeft';
 import LockIcon from '@material-ui/icons/Lock';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 
 
 import ProgressiveImage from "react-progressive-graceful-image";
-import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
+// import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
 import Keyservices_logo from '../../ImagesPlaceholder/Keyservices_Logo.png';
 import Sticky from 'react-sticky-el';
 import {withRouter} from 'react-router-dom';

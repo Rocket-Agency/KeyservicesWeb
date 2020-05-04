@@ -1,5 +1,5 @@
 //ConnexionProfilProprietaire.js
-import React, {Component, useState } from 'react';
+import React, {Component } from 'react';
 
 import axios from 'axios';
 
@@ -121,7 +121,7 @@ class ConnexionProfileProprietaire extends Component {
                                     <Link  to="/inscriptionProprietaire">S'inscrire</Link>                                                        
                                 </Col>
                             </Row>
-                            <Row class="mt-3"> 
+                            <Row className="mt-3"> 
                                 <Col md={12} lg={12} className="d-flex justify-content-center align-items-cente">
                                     <Link  to="/forgetPassword">Mot de passe oublié</Link>   
                                 </Col>

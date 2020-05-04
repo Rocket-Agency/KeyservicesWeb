@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import '../../css/Contact.scss';
 import { BreadcrumbItem } from '../../index';
 
-import {Form, Col, Row} from 'react-bootstrap';
+import {Form, Col} from 'react-bootstrap';
 import { Hidden } from 'react-grid-system';
 // import { Link } from 'react-router-dom';
 // import Img from 'react-cool-img';
