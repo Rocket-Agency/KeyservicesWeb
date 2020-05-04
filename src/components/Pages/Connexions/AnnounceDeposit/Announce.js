@@ -7,7 +7,7 @@ import AnnounceAdress from './AnnounceAdresse';
 import AdresseEquipement from './AnnounceEquipement';
 import AnnounceHousing from './AnnounceHousing';
 import AnnounceSucces from './AnnounceSucces';
-import Checkout from './Paiement/Checkout';
+import Checkout from './Payment/Checkout';
 
 export class Announce extends Component {
   state = {
