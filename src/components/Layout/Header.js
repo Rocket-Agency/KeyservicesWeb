@@ -56,12 +56,12 @@ export class Header extends Component {
                         {typeof(localStorage) !== "undefined" && localStorage.getItem('token') ? <NavLink  className="btn_connexion" to="/deconnexion">
                         <LockOpenIcon/>
                             Déconnexion
-                        </NavLink> :                         <NavLink  className="btn_connexion" to="/monespace">
+                        </NavLink> : <NavLink className="btn_connexion" to="/monespace">
                         <LockIcon to="/monespace"/>
                             Connexion
                         </NavLink> }
 
-                        {typeof(localStorage) !== "undefined" && localStorage.getItem('token') ?                         <NavLink  className="btn_connexion" to="/dashboard">
+                        {localStorage.getItem('token') ? <NavLink className="btn_connexion" to="/dashboard">
                         <LockOpenIcon/>
                             Mon Espace
                         </NavLink> : null }
