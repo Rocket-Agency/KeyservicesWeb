@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter,Switch, Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import { BreadProvider } from './index'
 import './App.scss';
 import './index.css';
@@ -40,13 +40,10 @@ import NotFound from './components/Pages/NotFound';
 
 //Deconnexion
 import Deconnexion from './components/Pages/Deconnexion';
-import { createMemoryHistory } from 'history';
-const history = createMemoryHistory();
 
 function App() {
   return (
     <>
-      <BrowserRouter>
         <BreadProvider >
           <>    
             <div className="page-container">
@@ -79,7 +76,6 @@ function App() {
           </div>
           </>
         </BreadProvider>
-      </BrowserRouter>
     </>
   );
 }

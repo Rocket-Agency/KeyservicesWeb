@@ -19,6 +19,7 @@ app.use(compression());
 app.use(minify());
 app.use(express.static('./build'));
 
+/*
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/f2i-cw22-sc-ns-od-db.fr/privkey.pem', 'utf8');
 const certificate = fs.readFileSync('/etc/letsencrypt/live/f2i-cw22-sc-ns-od-db.fr/cert.pem', 'utf8');
 const ca = fs.readFileSync('/etc/letsencrypt/live/f2i-cw22-sc-ns-od-db.fr/chain.pem', 'utf8');
@@ -28,6 +29,7 @@ const credentials = {
 	cert: certificate,
 	ca: ca
 };
+*/
 
 app.use("/*", (req, res, next) => {
   const context = {};
@@ -58,12 +60,14 @@ app.use("/*", (req, res, next) => {
 });
 
 const httpServer = http.createServer(app);
-const httpsServer = https.createServer(credentials, app);
+//const httpsServer = https.createServer(credentials, app);
 
 httpServer.listen(PORT, () => {
 	console.log(`HTTP Server running on port ${PORT}`);
 });
 
+/*
 httpsServer.listen(PORTS, () => {
 	console.log(`HTTPS Server running on port ${PORTS}`);
 });
+*/
