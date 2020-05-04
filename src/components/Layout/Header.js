@@ -53,7 +53,7 @@ export class Header extends Component {
                             <NavLink className="d-inline menustyle" to="/keyservicesPresentation">Keyservices</NavLink>
                             <NavLink className="d-inline menustyle" to="/contact">Contact</NavLink>
                         </Nav>
-                        {localStorage.getItem('token') ? <NavLink  className="btn_connexion" to="/deconnexion">
+                        {typeof(localStorage) !== "undefined" && localStorage.getItem('token') ? <NavLink  className="btn_connexion" to="/deconnexion">
                         <LockOpenIcon/>
                             Déconnexion
                         </NavLink> :                         <NavLink  className="btn_connexion" to="/monespace">
@@ -61,7 +61,7 @@ export class Header extends Component {
                             Connexion
                         </NavLink> }
 
-                        {localStorage.getItem('token') ?                         <NavLink  className="btn_connexion" to="/dashboard">
+                        {typeof(localStorage) !== "undefined" && localStorage.getItem('token') ?                         <NavLink  className="btn_connexion" to="/dashboard">
                         <LockOpenIcon/>
                             Mon Espace
                         </NavLink> : null }
