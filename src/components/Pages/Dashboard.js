@@ -17,6 +17,7 @@ import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
 import { Col, Row, Form, Container } from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
 import Announce from './Connexions/AnnounceDeposit/Announce';
+import AnnounceaLinearStepper from './Connexions/AnnounceDeposit/AnnounceaLinearStepper';
 
 class ProfileTabs extends Component {
 constructor(props) {
@@ -35,7 +36,7 @@ constructor(props) {
     user_photo: "",
     user_email: "",
     user_password: "",
-    user_adresse_txt: ""
+    user_adresse_txt: "",
   }
 
   this.userid = '';
@@ -124,19 +125,20 @@ constructor(props) {
         <VerticalTabs
           value={activeIndex}
           onChange={this.handleChange}
-        >
-          <MyTab label='Mon compte' />          
-          <MyTab label='Information location' />         
-           <MyTab label='Créer une annonce' />
-          <MyTab label='Calendrier' />
-          {group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' />: null }
+        >    
+          <MyTab label='Mon compte' />           
+          <MyTab label='Information location' />      
+           <MyTab label='Créer une annonce ' />
+           <MyTab label='Prise de rendez-vous' /> 
+          {group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
+          {/* <MyTab label='Liste des annonces' />  */}
 
         </VerticalTabs>
           
 
         { activeIndex === 0 && <TabContainer>
 
-      <Container fluid>
+        <Container fluid>
           {/* <h1 className="mt-2 text-center">Bienvenue  {this.state.users.user_first_name} dans votre Espace</h1> */}
 
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
@@ -166,10 +168,10 @@ constructor(props) {
                   <Grid container mt-3>
                     <Grid container item xs={12} spacing={3}>
                       <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField value={this.state.user_first_name} onChange={e => this.setState({user_first_name: e.target.value})} label="Prénom" />
+                        <TextField value={this.state.user_last_name} onChange={e => this.setState({user_last_name: e.target.value})} label="Nom" />
                       </Grid>
                       <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField value={this.state.user_last_name} onChange={e => this.setState({user_last_name: e.target.value})} label="Nom" />
+                        <TextField value={this.state.user_first_name} onChange={e => this.setState({user_first_name: e.target.value})} label="Prénom" />
                       </Grid>
                       <Grid item xs={12} md={6} className="d-flex justify-content-center">
                         <TextField value={this.state.user_date_of_birth} onChange={e => this.setState({user_date_of_birth: e.target.value})} label="Date de naissance" />
@@ -186,7 +188,6 @@ constructor(props) {
                     </Grid>
                   </Grid>
 
-
                     <Row>
                       <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
                         <Button 
@@ -200,7 +201,7 @@ constructor(props) {
                       </Col>
                     </Row>
                 </form>
-          </div>
+            </div>
           </div>
       </Container>
           
@@ -214,9 +215,9 @@ constructor(props) {
 
          { activeIndex === 2 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
-          <BreadcrumbItem >Créer une annonce</BreadcrumbItem>
-           Créer une annonce
-            <Announce/>
+          <BreadcrumbItem >Création d'une annonce</BreadcrumbItem>
+          <h1>Création d'une annonce</h1>
+          <AnnounceaLinearStepper/>
          </TabContainer> }
 
          { activeIndex === 3 &&<TabContainer>
@@ -227,7 +228,7 @@ constructor(props) {
 
         { activeIndex === 4 && <TabContainer style={{ minWidth: "100%" }}>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
-          <BreadcrumbItem >Mon compte</BreadcrumbItem>
+          <BreadcrumbItem >Liste d'utilisateurs</BreadcrumbItem>
             <MaterialTable
               columns={[
                 {

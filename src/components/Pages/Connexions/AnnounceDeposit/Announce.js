@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import '../../../../css/Announce.scss';
 
 // import FormUserDetails from './FormUserDetails';
+import AnnouncePresentation from './AnnouncePresentation';
 import AnnounceAdress from './AnnounceAdresse';
 import AdresseEquipement from './AnnounceEquipement';
 import AnnounceHousing from './AnnounceHousing';
 import AnnounceSucces from './AnnounceSucces';
+import Checkout from './Paiement/Checkout';
 
 export class Announce extends Component {
   state = {
@@ -58,7 +60,15 @@ export class Announce extends Component {
       switch (step) {
         case 1:
         return (
-          <AnnounceAdress
+          <Checkout
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+        case 1:
+        return (
+          <AnnouncePresentation
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
@@ -68,6 +78,7 @@ export class Announce extends Component {
           return (
             <AnnounceAdress
               nextStep={this.nextStep}
+              prevStep={this.prevStep}
               handleChange={this.handleChange}
               values={values}
             />

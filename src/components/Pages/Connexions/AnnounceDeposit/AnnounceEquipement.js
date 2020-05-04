@@ -10,6 +10,11 @@ import 'react-phone-input-2/lib/bootstrap.css'
 
 export class AnnounceEquipement extends Component {
 
+    back = e => {
+        e.preventDefault();
+        this.props.prevStep();
+      };
+
     continue = e => {
         e.preventDefault();
         this.props.nextStep();

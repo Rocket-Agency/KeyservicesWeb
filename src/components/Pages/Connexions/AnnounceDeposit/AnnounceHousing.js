@@ -9,6 +9,11 @@ import 'react-phone-input-2/lib/bootstrap.css'
 
 
 export class AnnounceHousing extends Component {
+    
+    back = e => {
+        e.preventDefault();
+        this.props.prevStep();
+      };
 
     continue = e => {
         e.preventDefault();
