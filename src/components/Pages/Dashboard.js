@@ -13,9 +13,10 @@ import axios from 'axios';
 import MaterialTable from 'material-table';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
-import { Col, Row, Form, Container } from 'react-bootstrap';
+import { Col, Row, Container } from 'react-bootstrap';
+import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
-import Announce from './Connexions/AnnounceDeposit/Announce';
+// import Announce from './Connexions/AnnounceDeposit/Announce';
 import AnnounceaLinearStepper from './Connexions/AnnounceDeposit/AnnounceaLinearStepper';
 
 class ProfileTabs extends Component {
@@ -121,6 +122,9 @@ constructor(props) {
           display: 'flex',
         }}
       >
+      <Container fluid>
+        <Row>
+          <Col xs={12} md={2} >
         <VerticalTabs
           value={activeIndex}
           onChange={this.handleChange}
@@ -133,8 +137,9 @@ constructor(props) {
           {/* <MyTab label='Liste des annonces' />  */}
 
         </VerticalTabs>
-          
+          </Col>
 
+          <Col xs={12} md={10} >
         { activeIndex === 0 && <TabContainer>
 
         <Container fluid>
@@ -148,16 +153,16 @@ constructor(props) {
                   <div className="text-center">
                     <Img
                         placeholder={ImgDefaultAvatar} 
-                        class="avatar img-circle mt-3 mb-3"
+                        className="avatar img-circle mt-3 mb-3"
                         alt="avatar" 
                       />
                       <h6>Upload a different photo...</h6>
                      
-                      <input type="file" class="form-control"/>
+                      <input type="file" className="form-control"/>
                   </div>
               </div>
 
-              <div class="col-md-9 personal-info">
+              <div className="col-md-9 personal-info">
               <h3>Information personnel</h3>
 
                 <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
@@ -191,7 +196,7 @@ constructor(props) {
                           variant="contained"
                           color="primary"
                           type="submit"
-                          endIcon={<Icon>send</Icon>}
+                          endIcon={<EditIcon>send</EditIcon>}
                         >
                           Modifier
                         </Button>
@@ -326,9 +331,12 @@ constructor(props) {
                             resolve();
                         }, 1000);
                     })
-            }}
-            />
-        </TabContainer> }
+                 }}
+              />
+            </TabContainer> }
+          </Col>
+        </Row>
+      </Container> 
     </div>
     )
   }

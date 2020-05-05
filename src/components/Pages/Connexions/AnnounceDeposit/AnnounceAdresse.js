@@ -1,42 +1,52 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
 
 export default function AddressForm() {
+
   return (
     <React.Fragment>
+
       <Typography variant="h6" gutterBottom>
         Shipping address
       </Typography>
+
+
       <Grid container spacing={3}>
+
         <Grid item xs={12} sm={2}>
           <TextField
-            required
-            id="outlined-number"
+            id="standard-number"
             label="Numéro de rue"
             type="number"
             InputLabelProps={{
-                shrink: true,
+              shrink: true,
             }}
-            variant="outlined"
-            fullWidth
-            autoComplete="fname"
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+
+
+        <Grid item xs={6} sm={5}>
           <TextField
             required
-            id="lastName"
-            name="lastName"
-            label="Last name"
+            id="Nom_de_rue"
+            name="Nom_de_rueom"
+            label="Nom de rue"
             fullWidth
-            autoComplete="lname"
+            autoComplete="street name"
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sm={12}>
           <TextField
             required
             id="address1"
@@ -46,7 +56,7 @@ export default function AddressForm() {
             autoComplete="billing address-line1"
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={4}>
           <TextField
             required
             id="city"
@@ -56,10 +66,10 @@ export default function AddressForm() {
             autoComplete="billing address-level2"
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={4}>
           <TextField id="state" name="state" label="State/Province/Region" fullWidth />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={4}>
           <TextField
             required
             id="zip"
@@ -67,22 +77,6 @@ export default function AddressForm() {
             label="Zip / Postal code"
             fullWidth
             autoComplete="billing postal-code"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="country"
-            name="country"
-            label="Country"
-            fullWidth
-            autoComplete="billing country"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={<Checkbox color="secondary" name="saveAddress" value="yes" />}
-            label="Use this address for payment details"
           />
         </Grid>
       </Grid>
