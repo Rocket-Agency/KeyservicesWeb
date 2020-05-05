@@ -12,57 +12,72 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
+const FieldsName = [
+  {
+    value: 'rue',
+    label: 'Street',
   },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
+  {
+    value: 'EUR',
+    label: '€',
   },
-}));
+  {
+    value: 'BTC',
+    label: '฿',
+  },
+  {
+    value: 'JPY',
+    label: '¥',
+  },
+];
+
 
 
 export default function AddressForm() {
-
-  const classes = useStyles();
-  const [age, setAge] = React.useState('');
+  const [typeFieldsName, setStreetName] = React.useState('Rue');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setStreetName(event.target.value);
   };
 
   return (
     <React.Fragment>
+
       <Typography variant="h6" gutterBottom>
         Shipping address
       </Typography>
+
+
       <Grid container spacing={3}>
+
         <Grid item xs={12} sm={2}>
-        <TextField
-          id="standard-number"
-          label="Numéro de rue"
-          type="number"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
+          <TextField
+            id="standard-number"
+            label="Numéro de rue"
+            type="number"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
         </Grid>
+
         <Grid item xs={12} sm={2}>
-        <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">Type de rue</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={age}
-          onChange={handleChange}
-        >
-          <MenuItem value={10}>Rue</MenuItem>
-          <MenuItem value={20}>Cité</MenuItem>
-          <MenuItem value={30}>Allée</MenuItem>
-        </Select>
-      </FormControl>
-      </Grid>
+          <TextField
+            id="standard-select-currency"
+            select
+            label="Select"
+            value={setStreetName}
+            onChange={handleChange}
+            helperText="Please select your currency"
+          >
+            {typeFieldsName.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+
         <Grid item xs={6} sm={5}>
           <TextField
             required
@@ -73,7 +88,7 @@ export default function AddressForm() {
             autoComplete="street name"
           />
         </Grid>
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12} sm={12}>
           <TextField
             required
             id="address1"
@@ -83,7 +98,7 @@ export default function AddressForm() {
             autoComplete="billing address-line1"
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={4}>
           <TextField
             required
             id="city"
@@ -93,10 +108,10 @@ export default function AddressForm() {
             autoComplete="billing address-level2"
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={4}>
           <TextField id="state" name="state" label="State/Province/Region" fullWidth />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={4}>
           <TextField
             required
             id="zip"
@@ -104,22 +119,6 @@ export default function AddressForm() {
             label="Zip / Postal code"
             fullWidth
             autoComplete="billing postal-code"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="country"
-            name="country"
-            label="Country"
-            fullWidth
-            autoComplete="billing country"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={<Checkbox color="secondary" name="saveAddress" value="yes" />}
-            label="Use this address for payment details"
           />
         </Grid>
       </Grid>
