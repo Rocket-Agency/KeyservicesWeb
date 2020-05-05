@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Helmet} from "react-helmet";
+
+import {Form, Col} from 'react-bootstrap';
 import { Hidden } from 'react-grid-system';
 import Iframe from 'react-iframe';
 import HomeIcon from '@material-ui/icons/Home';

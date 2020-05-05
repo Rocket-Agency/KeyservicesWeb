@@ -1,12 +1,12 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {Component, useState} from 'react';
 import '../../../css/ForgetPassword.scss';
 import axios from 'axios';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
 // import { Redirect } from 'react-router-dom';
-import { withRouter, Link } from 'react-router-dom';
-import { ForgetPassword } from './Profiles/ForgetPassword';
+import { withRouter } from 'react-router-dom';
+// import { ForgetPassword } from './Profiles/ForgetPassword';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
