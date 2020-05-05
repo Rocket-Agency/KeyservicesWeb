@@ -1,18 +1,13 @@
-//Mon Espace.js
-
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
+import HomeIcon from '@material-ui/icons/Home';
+import { Col, Container, Row, Card} from 'react-bootstrap';
 import '../../css/MonEspace.scss';
 import { BreadcrumbItem } from '../../index';
-import { Link } from 'react-router-dom';
-
-import { Col, Container, Row, Card} from 'react-bootstrap';
-// import Img from 'react-cool-img';
-// import ImgDefaultMonEspace from '../../ImagesPlaceholder/placeholderMonEspace.png'
 
 import ProgressiveImage from "react-progressive-graceful-image";
 import LocataireTiny from '../../ImagesPlaceholder/LocataireTiny.png';
 import ProprietaireTiny from '../../ImagesPlaceholder/PropriétaireTiny.png';
-import HomeIcon from '@material-ui/icons/Home';
 
 export class MonEspace extends Component {
 
@@ -42,13 +37,6 @@ export class MonEspace extends Component {
                                         >
                                             {src => <img src={src} width="100%" alt="Espace propriétaire"  />}
                                         </ProgressiveImage>
-                                        {/* <Img className="card-img" src='./images/Proprietaire.png' alt="Gerer_Mes_Locations" /> */}
-                                        {/* <Img className="card-img"
-                                            placeholder={ImgDefaultMonEspace} 
-                                            src='./images/Proprietaire.png' 
-                                            debounce={1000}
-                                            alt="Espace propriétaire"
-                                        />   */}
                                     </Link>   
                                     <Link className="card-footer" to="/loginProprietaire">Mon espace propriétaire</Link>
                                 </Card>
@@ -68,13 +56,6 @@ export class MonEspace extends Component {
                                         >
                                             {src => <img src={src} width="100%" alt="Espace Locataire"  />}
                                         </ProgressiveImage>
-                                        {/* <Img className="card-img" src='./images/Locataire.png' alt="Gerer_Mes_Locations" /> */}
-                                        {/* <Img className="card-img"
-                                            placeholder={ImgDefaultMonEspace} 
-                                            src='./images/Locataire.png'
-                                            debounce={1000}
-                                            alt="Espace Locataire"
-                                        />   */}
                                     </Link>   
                                     <Link className="card-footer" to="/loginLocataire">Mon espace locataire</Link>                              
                                 </Card>

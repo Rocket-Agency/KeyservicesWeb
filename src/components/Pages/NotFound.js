@@ -2,7 +2,6 @@ import React from 'react';
 import '../../css/NotFound.css';
 import { BreadcrumbItem } from '../../index';
 import { Link } from 'react-router-dom';
-// import error404 from '../../ImagesPlaceholder/text.png';
 import HomeIcon from '@material-ui/icons/Home';
 
 export default ({ staticContext = {} }) => {
@@ -13,7 +12,6 @@ export default ({ staticContext = {} }) => {
         <BreadcrumbItem>Erreur 404</BreadcrumbItem>
         <div id="notfound">
           <div class="notfound">
-          {/* <div class="notfound" styles={{ backgroundImage:`url(${error404})`}}> */}
             <div class="notfound-404">
               <h1>404</h1>
             </div>

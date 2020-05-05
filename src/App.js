@@ -16,7 +16,7 @@ import KeyservicesPresentation from './components/Pages/KeyservicesPresentation'
 
 import {Contact} from './components/Pages/Contact';
 
-import {ValidationContactForm} from './components/Pages/ValidationContactForm';
+import {ValidationContactForm} from './components/Pages/Molecule/ValidationContactForm';
 import {MonEspace} from './components/Pages/MonEspace';
 
 //Connexion pages
@@ -39,7 +39,7 @@ import ProfileTabs from './components/Pages/Dashboard';
 import NotFound from './components/Pages/NotFound';
 
 //Deconnexion
-import Deconnexion from './components/Pages/Deconnexion';
+import Deconnexion from './components/Pages/Molecule/Deconnexion';
 
 function App() {
   return (

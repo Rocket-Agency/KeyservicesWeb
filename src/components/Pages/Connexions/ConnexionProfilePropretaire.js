@@ -1,15 +1,9 @@
-//ConnexionProfilProprietaire.js
-import React, {Component, useState } from 'react';
-
+import React, {Component} from 'react';
 import axios from 'axios';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
-// import Button from '@material-ui/core/Button';
-// import TextField from '@material-ui/core/TextField';
-
+import { Link, withRouter } from 'react-router-dom';
 
 class ConnexionProfileProprietaire extends Component {
     constructor(props) {
