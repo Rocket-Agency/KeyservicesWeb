@@ -41,13 +41,8 @@ export class Home extends Component {
 
                     <Carousel>
                         <Carousel.Item>
-                            {/* <img
-                                className="d-block w-100"
-                                src="./Images/PosterUneAnnonce1.png" 
-                                alt="Poster une annoncee"
-                            /> */}
                             <ProgressiveImage  className="card-img style-card" 
-                                src="./Images/PosterUneAnnonce.png" 
+                                src="./images/PosterUneAnnonce.png" 
                                 placeholder={PosterUneAnnonceTiny} 
                             >
                                 {src => <img src={src}  alt="Poster une annoncee"  />}
@@ -62,13 +57,8 @@ export class Home extends Component {
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
-                            {/* <img
-                                className="d-block w-100"
-                                src="./Images/GererMesLocations.png"
-                                alt="Gérer mes locations"
-                            /> */}
                             <ProgressiveImage  className="card-img style-card" 
-                                src="./Images/GérerMesLocations.png"
+                                src="./images/GererMesLocations.png"
                                 placeholder={GererMesLocationsTiny} 
                             >
                                 {src => <img src={src}  alt="Gérer mes locations"  />}
