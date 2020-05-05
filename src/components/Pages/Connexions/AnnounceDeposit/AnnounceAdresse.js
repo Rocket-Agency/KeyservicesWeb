@@ -1,11 +1,37 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
+
 
 export default function AddressForm() {
+
+  const classes = useStyles();
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -13,30 +39,41 @@ export default function AddressForm() {
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={2}>
+        <TextField
+          id="standard-number"
+          label="Numéro de rue"
+          type="number"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+        </Grid>
+        <Grid item xs={12} sm={2}>
+        <FormControl className={classes.formControl}>
+        <InputLabel id="demo-simple-select-label">Type de rue</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          onChange={handleChange}
+        >
+          <MenuItem value={10}>Rue</MenuItem>
+          <MenuItem value={20}>Cité</MenuItem>
+          <MenuItem value={30}>Allée</MenuItem>
+        </Select>
+      </FormControl>
+      </Grid>
+        <Grid item xs={6} sm={5}>
           <TextField
             required
-            id="outlined-number"
-            label="Numéro de rue"
-            type="number"
-            InputLabelProps={{
-                shrink: true,
-            }}
-            variant="outlined"
+            id="Nom_de_rue"
+            name="Nom_de_rueom"
+            label="Nom de rue"
             fullWidth
-            autoComplete="fname"
+            autoComplete="street name"
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="lastName"
-            name="lastName"
-            label="Last name"
-            fullWidth
-            autoComplete="lname"
-          />
-        </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sm={8}>
           <TextField
             required
             id="address1"

@@ -123,6 +123,9 @@ constructor(props) {
           display: 'flex',
         }}
       >
+      <Container fluid>
+        <Row>
+          <Col xs={12} md={2} >
         <VerticalTabs
           value={activeIndex}
           onChange={this.handleChange}
@@ -135,8 +138,9 @@ constructor(props) {
           {/* <MyTab label='Liste des annonces' />  */}
 
         </VerticalTabs>
-          
+          </Col>
 
+          <Col xs={12} md={10} >
         { activeIndex === 0 && <TabContainer>
 
         <Container fluid>
@@ -330,9 +334,12 @@ constructor(props) {
                             resolve();
                         }, 1000);
                     })
-            }}
-            />
-        </TabContainer> }
+                 }}
+              />
+            </TabContainer> }
+          </Col>
+        </Row>
+      </Container> 
     </div>
     )
   }
