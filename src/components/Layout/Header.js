@@ -50,7 +50,7 @@ export class Header extends Component {
                         <Nav className="ml-auto mr-auto d-flex justify-content-center #navigation" role="navigation">
                             <h1 className="menu-title-mobile text-align-center">Menu </h1>
                             <NavLink className="d-inline menustyle" exact to="/">Accueil</NavLink>
-                            <NavLink className="d-inline menustyle" to="/keyservicesPresentation">Keyservices</NavLink>
+                            <NavLink className="d-inline menustyle" to="/presentation">Keyservices</NavLink>
                             <NavLink className="d-inline menustyle" to="/contact">Contact</NavLink>
                         </Nav>
                         {typeof(localStorage) !== "undefined" && localStorage.getItem('token') ? <NavLink  className="btn_connexion" to="/deconnexion">
@@ -61,7 +61,7 @@ export class Header extends Component {
                             Connexion
                         </NavLink> }
 
-                        {localStorage.getItem('token') ? <NavLink className="btn_connexion" to="/dashboard">
+                        {typeof(localStorage) !== "undefined" && localStorage.getItem('token') ? <NavLink className="btn_connexion" to="/dashboard">
                         <LockOpenIcon/>
                             Mon Espace
                         </NavLink> : null }

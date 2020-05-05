@@ -14,10 +14,15 @@ import HomeIcon from '@material-ui/icons/Home';
 // import ContactMap from './ContactMap';
 import ContactInfos from './ContactInfos';
 import {withRouter} from 'react-router-dom';
+import {Helmet} from "react-helmet";
 
 export class Contact extends Component {
     render() {
         return(
+            <div>
+            <Helmet>
+                <title>Keyservices - Contact</title>
+            </Helmet>
             <div className="mt-3">
                 <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem >Contact</BreadcrumbItem>
@@ -117,6 +122,7 @@ export class Contact extends Component {
                         </div>
             
             </div>
+        </div>
         )
     }
 

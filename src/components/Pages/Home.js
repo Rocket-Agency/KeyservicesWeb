@@ -24,6 +24,7 @@ export class Home extends Component {
             <div>
                 <Helmet>
                     <title>Keyservices - Accueil</title>
+                    <meta name="description" content="Vous cherchez une information sur l'entreprise Keyservices !"/>
                 </Helmet>
 
                 <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>

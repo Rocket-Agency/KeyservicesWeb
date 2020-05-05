@@ -36,6 +36,7 @@ export class KeyservicesPresentation extends Component {
             <>
                 <Helmet>
                     <title>Keyservices - Présentation</title>
+                    <meta name="description" content="Site de location de logement saisonnier de courte durée"/>
                 </Helmet>
 
                 <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
