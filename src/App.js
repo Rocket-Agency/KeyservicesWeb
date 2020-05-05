@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter,Switch, Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import { BreadProvider } from './index'
 import './App.scss';
 import './index.css';
@@ -16,7 +16,7 @@ import KeyservicesPresentation from './components/Pages/KeyservicesPresentation'
 
 import {Contact} from './components/Pages/Contact';
 
-import {ValidationContactForm} from './components/Pages/ValidationContactForm';
+import {ValidationContactForm} from './components/Pages/Molecule/ValidationContactForm';
 import {MonEspace} from './components/Pages/MonEspace';
 
 //Connexion pages
@@ -39,12 +39,11 @@ import ProfileTabs from './components/Pages/Dashboard';
 import NotFound from './components/Pages/NotFound';
 
 //Deconnexion
-import Deconnexion from './components/Pages/Deconnexion';
+import Deconnexion from './components/Pages/Molecule/Deconnexion';
 
 function App() {
   return (
     <>
-      <BrowserRouter>
         <BreadProvider >
           <>    
             <div className="page-container">
@@ -54,7 +53,7 @@ function App() {
 
                 <Switch>
                   <Route path='/' component={Home} exact />
-                  <Route path='/keyservicesPresentation' component={KeyservicesPresentation} exact/>
+                  <Route path='/presentation' component={KeyservicesPresentation} exact/>
                   <Route path='/contact' component={Contact} exact/>
                   <Route path='/validationContactForm' component={ValidationContactForm} exact/>
                   <Route path='/monEspace' component={MonEspace} exact/>
@@ -77,7 +76,6 @@ function App() {
           </div>
           </>
         </BreadProvider>
-      </BrowserRouter>
     </>
   );
 }

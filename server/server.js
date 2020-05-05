@@ -7,8 +7,11 @@ import { StaticRouter } from 'react-router-dom';
 import App from "../src/App";
 import compression from 'compression';
 import minify from 'express-minify';
+import http from 'http';
+import https from 'https';
 
 const PORT = 3000;
+const PORTS = 3003;
 
 const app = express();
 
@@ -16,6 +19,15 @@ app.use(compression());
 app.use(minify());
 app.use(express.static('./build'));
 
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/f2i-cw22-sc-ns-od-db.fr/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/f2i-cw22-sc-ns-od-db.fr/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/f2i-cw22-sc-ns-od-db.fr/chain.pem', 'utf8');
+
+const credentials = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+};
 
 app.use("/*", (req, res, next) => {
   const context = {};
@@ -35,6 +47,9 @@ app.use("/*", (req, res, next) => {
     if (context.status === 404) {
       res.status(404);
     }
+    if (context.url) {
+      return res.redirect(301, context.url);
+    }
 
     return res.send(
       data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
@@ -42,6 +57,13 @@ app.use("/*", (req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`App launched on ${PORT}`);
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(PORT, () => {
+	console.log(`HTTP Server running on port ${PORT}`);
+});
+
+httpsServer.listen(PORTS, () => {
+	console.log(`HTTPS Server running on port ${PORTS}`);
 });

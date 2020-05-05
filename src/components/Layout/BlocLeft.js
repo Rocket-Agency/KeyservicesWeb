@@ -1,11 +1,6 @@
 import React, {Component} from 'react';
 import '../../css/BlocLeft.scss';
-
-import {Form, FormControl, Button, Col, Row} from 'react-bootstrap';
-import {GoSearch} from 'react-icons/go';
-import { Visible, Hidden } from 'react-grid-system';
-
-import ReactFlagsSelect from 'react-flags-select';
+import {Row} from 'react-bootstrap';
 import 'react-flags-select/css/react-flags-select.css';
 
 

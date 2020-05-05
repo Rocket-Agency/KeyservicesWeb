@@ -12,33 +12,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 
-const FieldsName = [
-  {
-    value: 'rue',
-    label: 'Street',
-  },
-  {
-    value: 'EUR',
-    label: '€',
-  },
-  {
-    value: 'BTC',
-    label: '฿',
-  },
-  {
-    value: 'JPY',
-    label: '¥',
-  },
-];
-
-
-
 export default function AddressForm() {
-  const [typeFieldsName, setStreetName] = React.useState('Rue');
-
-  const handleChange = (event) => {
-    setStreetName(event.target.value);
-  };
 
   return (
     <React.Fragment>
@@ -61,22 +35,6 @@ export default function AddressForm() {
           />
         </Grid>
 
-        <Grid item xs={12} sm={2}>
-          <TextField
-            id="standard-select-currency"
-            select
-            label="Select"
-            value={setStreetName}
-            onChange={handleChange}
-            helperText="Please select your currency"
-          >
-            {typeFieldsName.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-        </Grid>
 
         <Grid item xs={6} sm={5}>
           <TextField

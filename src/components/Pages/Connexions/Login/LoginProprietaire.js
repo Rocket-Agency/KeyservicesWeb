@@ -1,10 +1,7 @@
-
 import React, {Component} from 'react';
 import '../../../../css/ConnexionProprietaireLocataire.scss';
 import { BreadcrumbItem } from '../../../../index';
 import { Col, Container, Row, Card} from 'react-bootstrap';
-// import { Visible, Hidden } from 'react-grid-system';
-// import { Link } from 'react-router-dom';
 import ConnexionProfileProprietaire from '../ConnexionProfilePropretaire';
 import HomeIcon from '@material-ui/icons/Home';
 

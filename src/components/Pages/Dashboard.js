@@ -11,7 +11,6 @@ import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
 import axios from 'axios';
 import MaterialTable from 'material-table';
-// import { Link } from 'react-router-dom';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
 import { Col, Row, Container } from 'react-bootstrap';
@@ -144,8 +143,6 @@ constructor(props) {
         { activeIndex === 0 && <TabContainer>
 
         <Container fluid>
-          {/* <h1 className="mt-2 text-center">Bienvenue  {this.state.users.user_first_name} dans votre Espace</h1> */}
-
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Mon compte</BreadcrumbItem>
 
