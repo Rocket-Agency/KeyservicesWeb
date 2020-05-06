@@ -33,7 +33,7 @@ const options = {
   }
 };
 
-app.use("/*", (req, res, next) => {
+app.get("/*", (req, res, next) => {
   const context = {};
   const app = ReactDOMServer.renderToString(
     <StaticRouter location={req.url} context={context}>
