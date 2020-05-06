@@ -22,11 +22,7 @@ import {MonEspace} from './components/Pages/MonEspace';
 //Connexion pages
 import {LoginProprietaire} from './components/Pages/Connexions/Login/LoginProprietaire';
 import {LoginLocataire} from './components/Pages/Connexions/Login/LoginLocataire';
-import {IndexProfil} from './components/Pages/Connexions/Profiles/IndexProfil';
-import {Profile} from './components/Pages/Connexions/Profiles/Profile';
 
-import {ProfileProprietaire} from './components/Pages/Connexions/Profiles/ProfileProprietaire';
-import {ProfileLocataire} from './components/Pages/Connexions/Profiles/ProfileLocataire';
 import {ForgetPassword} from './components/Pages/Connexions/Profiles/ForgetPassword';
 
 //Page d'inscription
@@ -59,10 +55,6 @@ function App() {
                   <Route path='/monEspace' component={MonEspace} exact/>
                   <Route path='/loginProprietaire' component={LoginProprietaire} exact/>
                   <Route path='/loginLocataire' component={LoginLocataire} exact/>
-                  <Route path='/indexProfil' component={IndexProfil} />
-                  <Route path='/profile' component={Profile} />
-                  <Route path='/profilePropriétaire' component={ProfileProprietaire} />
-                  <Route path='/profileLocataire' component={ProfileLocataire} />
                   <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
                   <Route path='/forgetPassword' component={ForgetPassword} />
                   <Route path='/dashboard' component={ProfileTabs} />

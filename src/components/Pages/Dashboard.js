@@ -133,8 +133,8 @@ constructor(props) {
           <MyTab label='Information location' />      
            <MyTab label='Créer une annonce ' />
            <MyTab label='Prise de rendez-vous' /> 
-          {group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
-          {/* <MyTab label='Liste des annonces' />  */}
+          {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
+          {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste de contacts' /> : null }
 
         </VerticalTabs>
           </Col>
@@ -246,7 +246,6 @@ constructor(props) {
                 { title: "Prénom", field: "user_first_name" },
                 { title: "Nom", field: "user_last_name" },
                 { title: "Email", field: "user_email"},
-                // { title: "Password", field: "user_password", show: false},
                 { title: "Birthay", field: "user_date_of_birth"},
                 { title: "Sexe", field: "user_sexe"},
                 { title: "Adresse", field: "user_adresse_txt"}
