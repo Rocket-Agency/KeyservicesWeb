@@ -1,0 +1,14 @@
+.blocForm {
+    padding: 0 50px;
+}
+
+@media (max-width: 576px) {
+    .blocForm {
+        padding: 0;
+    }
+}
+
+.title-form{
+    font-size: 25px;
+    line-height: 30px;
+}

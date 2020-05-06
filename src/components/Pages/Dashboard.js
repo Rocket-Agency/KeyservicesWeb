@@ -8,7 +8,6 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import Icon from '@material-ui/core/Icon';
 import axios from 'axios';
 import MaterialTable from 'material-table';
 import Img from 'react-cool-img';
@@ -219,7 +218,7 @@ constructor(props) {
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Création d'une annonce</BreadcrumbItem>
           <h1>Création d'une annonce</h1>
-          <AnnounceaLinearStepper/>
+            <AnnounceaLinearStepper/>
          </TabContainer> }
 
          { activeIndex === 3 &&<TabContainer>
@@ -360,7 +359,7 @@ const MyTab = withStyles(theme => ({
 
 function TabContainer(props) {
   return (
-    <Typography component="div" className="tabDashboard" style={{ padding: 24 }}>
+    <Typography component="div" className="tabDashboard" style={{ paddingTop: 24, paddingRight: 0 }}>
       {props.children}
     </Typography>
   );

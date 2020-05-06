@@ -1,22 +1,11 @@
 import React, {Component} from 'react';
 import '../../../../css/InscriptionProprietaire.scss';
 
-// import Button from '@material-ui/core/Button';
 import { Col, Container, Row, Form } from 'react-bootstrap';
-// import { Visible, Hidden } from 'react-grid-system';
-// // import { Link } from 'react-router-dom';
-// import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import FormLabel from '@material-ui/core/FormLabel';
-// import OutlinedInput from '@material-ui/core/OutlinedInput';
-// import InputLabel from '@material-ui/core/InputLabel';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import { Button } from 'reactstrap';
-// import InputAdornment from '@material-ui/core/InputAdornment';
-
-
-// import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import TextField from '@material-ui/core/TextField';
 
 import 'react-phone-input-2/lib/bootstrap.css'
