@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../../../../css/InscriptionProprietaire.scss';
 
-import { Container, Row } from 'react-bootstrap';
+import { Row, Col, Container, Form } from 'react-bootstrap';
 
 import 'react-phone-input-2/lib/bootstrap.css'
 
@@ -28,13 +28,76 @@ export class AnnounceEquipement extends Component {
   
                     <Container fluid>
                 
-                        <Row xs={12} md={12} className="d-flex justify-content-between pt-3 pb-3">
-                            Vos équipements
-                        </Row>
+                        <fieldset>
+                            <Form.Group as={Row}>
+                                <Form.Label column sm={2} className="label-info-generales">
+                                    Équipements :
+                                </Form.Label>
+                                <Col sm={3}>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Cuisine" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Chauffage" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Wifi" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Iton" />
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={3}>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Espace de travail" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Douche privée" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Shampoing" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Air conditionner" />
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={3}>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Cintres" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Sèche cheveux" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Télévision" />
+                                    </Form.Group>
+                                </Col>
+                            </Form.Group>
+                        </fieldset>
 
-                        <Row xs={12} md={12} className="d-flex justify-content-between pt-3 pb-3">
-                            Votre installations
-                        </Row>
+                        <fieldset>
+                            <Form.Group as={Row}>
+                                <Form.Label column sm={2} className="label-info-generales">
+                                    Vos installations :
+                                </Form.Label>
+                                <Col sm={3}>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Espace de travail" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Douche privée" />
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={3}>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Shampoing" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Air conditionner" />
+                                    </Form.Group>
+                                </Col>
+                            </Form.Group>
+                        </fieldset>
                     </Container>
                 </Container>
             </div>

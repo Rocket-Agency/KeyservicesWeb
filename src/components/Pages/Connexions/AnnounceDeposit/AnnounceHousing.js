@@ -88,12 +88,12 @@ export class AnnounceHousing extends Component {
                         <Form.Row>
                             <Form.Group as={Col} sm={12} md={12} lg={4} controlId="formGridName">
                                 <Form.Label column lg={6} className="d-flex align-items-center label-info-generales"> Nombre de chambre :</Form.Label>
-                                <Form.Control name="fhousing_nb_room" type="number" placeholder="Nombre de chambre" />
+                                <Form.Control name="fhousing_nb_room" type="number"  />
                             </Form.Group>
 
                             <Form.Group as={Col} sm={12} md={12} lg={5} controlId="formGridName">
                                 <Form.Label column lg={6} className="d-flex align-items-center label-info-generales"> Nombre de salle de bain :</Form.Label>
-                                <Form.Control name="housing_nb_bathroom" type="number" placeholder="Nombre de chambre" />
+                                <Form.Control name="housing_nb_bathroom" type="number" />
                             </Form.Group>
 
                         </Form.Row>
