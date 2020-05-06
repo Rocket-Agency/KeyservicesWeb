@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 import AnnounceAdress from './AnnounceAdresse';
 import AnnounceHousing from './AnnounceHousing';
-import AnnounceEquipement from './AnnounceEquipement';
+import AnnounceEquipement from './AnnounceEquipment';
 import AnnounceConfirm from './AnnounceConfirm';
 import AnnounceSuccess from './AnnounceSuccess';
 
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-  const steps = ['Adresse de votre logement', 'Équipement et installation', 'Informations et Règles'];
+  const steps = ['Adresse de votre logement', "Votre logement", 'Équipement et installation', 'Informations et Règles'];
   
 //   function getSteps() {
 //     return ['Adresse de votre logement', 'Équipement et installation', 'Informations et Règles', 'Tarif', 'Votre annonce'];
