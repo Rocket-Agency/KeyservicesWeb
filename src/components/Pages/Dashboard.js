@@ -29,6 +29,7 @@ constructor(props) {
     group: '',
     users: "",
     usersCollection: [],
+    contactsCollection: [],
     user_first_name: "",
     user_last_name: "",
     user_date_of_birth: "",
@@ -37,6 +38,7 @@ constructor(props) {
     user_email: "",
     user_password: "",
     user_adresse_txt: "",
+    
   }
 
   this.userid = '';
@@ -89,6 +91,11 @@ constructor(props) {
       .then(res => {
         const usersCollection = res.data;
         this.setState( { usersCollection } );
+      })
+    axios.get('http://localhost:3001/api/contacts')
+      .then (res => {
+        const contactsCollection = res.data;
+        this.setState( {contactsCollection});
       })
   }
 
@@ -332,6 +339,19 @@ constructor(props) {
                     })
                  }}
               />
+            </TabContainer> }
+            {activeIndex === 5 && <TabContainer>
+                <MaterialTable
+                  columns={[
+                    { title: 'Nom', field: 'contact_first_name' },
+                    { title: 'Prénom', field: 'contact_last_name' },
+                    { title: 'Email', field: 'contact_email' },
+                    { title: 'Objet', field: 'contact_object'},
+                    { title: 'Message', field: 'contact_message'}
+                  ]}
+                  data={this.state.contactsCollection}
+                  title="Liste des messages"
+                />
             </TabContainer> }
           </Col>
         </Row>
