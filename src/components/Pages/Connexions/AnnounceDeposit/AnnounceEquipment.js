@@ -44,7 +44,7 @@ export class AnnounceEquipement extends Component {
                                         <Form.Check type="checkbox" label="Wifi" />
                                     </Form.Group>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Iton" />
+                                        <Form.Check type="checkbox" label="Fer à repasser" />
                                     </Form.Group>
                                 </Col>
                                 <Col sm={3}>
