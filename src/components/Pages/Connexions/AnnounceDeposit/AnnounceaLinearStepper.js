@@ -19,6 +19,7 @@ import AnnounceRulesInformations from './AnnouceRulesInformations';
 const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
+      display: 'block',
     },
     button: {
       marginRight: theme.spacing(1),
@@ -27,14 +28,12 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(1),
       marginBottom: theme.spacing(1),
     },
+
   }));
 
-  const steps = ['Adresse de votre logement', "Votre logement", 'Équipement et installation', 'Informations et Règles', 'Récapitulatif'];
-  
-//   function getSteps() {
-//     return ['Adresse de votre logement', 'Équipement et installation', 'Informations et Règles', 'Tarif', 'Votre annonce'];
-//   }
-  
+  // const steps = ['Adresse de votre logement', "Votre logement", 'Équipement et installation', 'Informations et Règles', 'Récapitulatif', "Tarif", "Annonce à poster", "Paiement", "Validation de l'annonce"];
+  const steps = ['Adresse de votre logement', "Votre logement", 'Équipement et installation', 'Informations et Règles', 'Récapitulatif', "Tarif", "Annonce à poster", "Paiement", "Validation de l'annonce"];
+   
   function getStepContent(step) {
     switch (step) {
       case 0:
@@ -47,8 +46,8 @@ const useStyles = makeStyles((theme) => ({
         return <AnnounceRulesInformations />;
       case 4:
         return <AnnounceConfirm/>;
-      case 5:
-        return <AnnounceSuccess/>;
+      // case 5:
+      //   return <AnnounceSuccess/>;
       default:
         return 'Étape inconnu';
     }
@@ -81,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     return (
         <div className={classes.root}>
           <Stepper activeStep={activeStep}>
-            {steps.map((label, index) => {
+            {steps.map((label) => {
               const stepProps = {};
               const labelProps = {};
               return (

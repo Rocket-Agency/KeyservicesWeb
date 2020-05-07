@@ -17,6 +17,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
 // import Announce from './Connexions/AnnounceDeposit/Announce';
 import AnnounceaLinearStepper from './Connexions/AnnounceDeposit/AnnounceaLinearStepper';
+import AnnounceVerticalStepper from './Connexions/AnnounceDeposit/AnnounceVerticalStepper';
 
 class ProfileTabs extends Component {
 constructor(props) {
@@ -225,6 +226,7 @@ constructor(props) {
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Calendrier</BreadcrumbItem>
             Calendrier
+            <AnnounceVerticalStepper />
          </TabContainer> }
 
         { activeIndex === 4 && <TabContainer style={{ minWidth: "100%" }}>
