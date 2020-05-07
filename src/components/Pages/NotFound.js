@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css/NotFound.css';
+import '../../css/NotFound.scss';
 import { BreadcrumbItem } from '../../index';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
