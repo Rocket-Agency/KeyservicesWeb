@@ -14,6 +14,7 @@ import AnnounceHousing from './AnnounceHousing';
 import AnnounceEquipement from './AnnounceEquipment';
 import AnnounceConfirm from './AnnounceConfirm';
 import AnnounceSuccess from './AnnounceSuccess';
+import AnnounceRulesInformations from './AnnouceRulesInformations';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-  const steps = ['Adresse de votre logement', "Votre logement", 'Équipement et installation', 'Informations et Règles'];
+  const steps = ['Adresse de votre logement', "Votre logement", 'Équipement et installation', 'Informations et Règles', 'Récapitulatif'];
   
 //   function getSteps() {
 //     return ['Adresse de votre logement', 'Équipement et installation', 'Informations et Règles', 'Tarif', 'Votre annonce'];
@@ -43,8 +44,10 @@ const useStyles = makeStyles((theme) => ({
       case 2:
         return <AnnounceEquipement />;
       case 3:
-        return <AnnounceConfirm/>;
+        return <AnnounceRulesInformations />;
       case 4:
+        return <AnnounceConfirm/>;
+      case 5:
         return <AnnounceSuccess/>;
       default:
         return 'Étape inconnu';
@@ -124,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                    {activeStep === steps.length - 1 ? 'Terminer' : 'Suivant'}
                   </Button>
                 </div>
               </div>

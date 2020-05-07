@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import '../../../../css/InscriptionProprietaire.scss';
+import '../../../../css/Announce.scss';
 
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import { Row, Col, Container, Form } from 'react-bootstrap';
 
 export class AnnounceConfirm extends Component {
 
@@ -15,15 +14,16 @@ export class AnnounceConfirm extends Component {
     render() {
         // const { values, handleChange } = this.props;
         return(
-            <MuiThemeProvider > 
-                <React.Fragment>
-                    <AppBar title="Confirm"/>
-                    <div className="text-center confirm">
-                        <h1>Récapitulatif de l'annonce</h1>
-
-                    </div>
-                </React.Fragment>
-          </MuiThemeProvider>
+            <div>
+                <Container fluid className="pt-4 blocForm" >  
+                    <h2>Récapitulatif  de l'annonce</h2>
+  
+                    <Container fluid>
+                
+                        Récapitulatif
+                    </Container>
+                </Container>
+            </div>
         )
     }
 }

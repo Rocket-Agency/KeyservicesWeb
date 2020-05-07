@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../../../../css/InscriptionProprietaire.scss';
+import '../../../../css/Announce.scss';
 
 import { Row, Col, Container, Form } from 'react-bootstrap';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -86,21 +86,32 @@ export class AnnounceHousing extends Component {
                         </Form.Row>
 
                         <Form.Row>
-                            <Form.Group as={Col} sm={12} md={12} lg={4} controlId="formGridName">
-                                <Form.Label column lg={6} className="d-flex align-items-center label-info-generales"> Nombre de chambre :</Form.Label>
-                                <Form.Control name="fhousing_nb_room" type="number"  />
-                            </Form.Group>
-
-                            <Form.Group as={Col} sm={12} md={12} lg={5} controlId="formGridName">
-                                <Form.Label column lg={6} className="d-flex align-items-center label-info-generales"> Nombre de salle de bain :</Form.Label>
-                                <Form.Control name="housing_nb_bathroom" type="number" />
-                            </Form.Group>
+                            <Form.Group as={Row} controlId="formHorizontalEmail">
+                                <Form.Label column sm={6} className="d-flex align-items-center label-info-generales"> 
+                                    Nombre de chambre :
+                                </Form.Label>
+                                <Col sm={6}>
+                                    <Form.Control name="fhousing_nb_room" type="number"  />
+                                </Col>
+                           </Form.Group>
 
                         </Form.Row>
 
                         <Form.Row>
+                            <Form.Group as={Row} controlId="formHorizontalEmail">
+                                <Form.Label column sm={7} className="d-flex align-items-center label-info-generales"> 
+                                    Nombre de salle de bain :
+                                </Form.Label>
+                                <Col sm={5}>
+                                    <Form.Control name="housing_nb_bathroom" type="number"  />
+                                </Col>
+                           </Form.Group>
+                        </Form.Row>
+                        
+
+                        <Form.Row>
                             <Form.Group as={Col} controlId="TextareaObservation">
-                                <Form.Label>Observation</Form.Label>
+                                <Form.Label className="label-info-generales">Observation</Form.Label>
                                 <Form.Control name="observation" as="textarea" rows="3"/>
                             </Form.Group>
                         </Form.Row>

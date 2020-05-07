@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../../../../css/InscriptionProprietaire.scss';
+import '../../../../css/Announce.scss';
 
 import { Row, Col, Container, Form } from 'react-bootstrap';
 
@@ -52,10 +52,10 @@ export class AnnounceEquipement extends Component {
                                         <Form.Check type="checkbox" label="Espace de travail" />
                                     </Form.Group>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Douche privée" />
+                                        <Form.Check type="checkbox" label="Salle de bain privée" />
                                     </Form.Group>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Shampoing" />
+                                        <Form.Check type="checkbox" label="Produits d'entretiens" />
                                     </Form.Group>
                                     <Form.Group id="formGridCheckbox">
                                         <Form.Check type="checkbox" label="Air conditionner" />
@@ -82,18 +82,18 @@ export class AnnounceEquipement extends Component {
                                 </Form.Label>
                                 <Col sm={3}>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Espace de travail" />
+                                        <Form.Check type="checkbox" label="Parking" />
                                     </Form.Group>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Douche privée" />
+                                        <Form.Check type="checkbox" label="Salle de sport/ Équipement musculaire" />
                                     </Form.Group>
                                 </Col>
                                 <Col sm={3}>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Shampoing" />
+                                        <Form.Check type="checkbox" label="¨Piscine" />
                                     </Form.Group>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Air conditionner" />
+                                        <Form.Check type="checkbox" label="Jaccusi" />
                                     </Form.Group>
                                 </Col>
                             </Form.Group>
