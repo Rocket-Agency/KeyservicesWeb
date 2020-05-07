@@ -58,7 +58,7 @@ export class AnnounceEquipement extends Component {
                                         <Form.Check type="checkbox" label="Produits d'entretiens" />
                                     </Form.Group>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Air conditionner" />
+                                        <Form.Check type="checkbox" label="Climatiseur" />
                                     </Form.Group>
                                 </Col>
                                 <Col sm={3}>
@@ -90,10 +90,10 @@ export class AnnounceEquipement extends Component {
                                 </Col>
                                 <Col sm={3}>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="¨Piscine" />
+                                        <Form.Check type="checkbox" label="Piscine" />
                                     </Form.Group>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Jaccusi" />
+                                        <Form.Check type="checkbox" label="Jaccuzi" />
                                     </Form.Group>
                                 </Col>
                             </Form.Group>
