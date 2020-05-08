@@ -9,13 +9,13 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 
-import AnnounceAdressBis from './AnnounceAdresseBis';
-import AnnounceHousingBis from './AnnounceHousingBis';
-import AnnounceRulesInformationsBis from './AnnounceRulesInformationsBis';
+import AnnounceAdress from './AnnounceAdresse';
+import AnnounceHousing from './AnnounceHousing';
+import AnnounceRulesInformations from './AnnounceRulesInformations';
 import AnnounceTarif from './AnnounceTarif';
 import Announce from './Announce';
 import AnnouncePayment from './AnnouncePayment';
-import AnnounceConfirmBis from './AnnounceConfirmBis';
+import AnnounceConfirm from './AnnounceConfirm';
 
 
 
@@ -40,17 +40,17 @@ const useStyles = makeStyles((theme) => ({
   function getStepContent(step) {
     switch (step) {
       case 0:
-        return <AnnounceAdressBis />;
+        return <AnnounceAdress />;
       case 1:
-        return <AnnounceHousingBis />;
+        return <AnnounceHousing />;
       case 2:
-        return <AnnounceRulesInformationsBis />;
+        return <AnnounceRulesInformations />;
       case 3:
         return <AnnounceTarif />;
       case 4:
         return <Announce/>;
       case 5:
-        return <AnnounceConfirmBis/>;
+        return <AnnounceConfirm/>;
       case 6:
         return <AnnouncePayment/>;
       default:

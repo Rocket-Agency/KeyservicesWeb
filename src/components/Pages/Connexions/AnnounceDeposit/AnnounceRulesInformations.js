@@ -3,7 +3,7 @@ import '../../../../css/Announce.scss';
 
 import { Row, Col, Container, Form } from 'react-bootstrap';
 
-export class AnnounceRulesInformationsBis extends Component {
+export class AnnounceRulesInformations extends Component {
 
     continue = e => {
         e.preventDefault();
@@ -154,4 +154,4 @@ export class AnnounceRulesInformationsBis extends Component {
     }
 }
 
-export default AnnounceRulesInformationsBis;
+export default AnnounceRulesInformations;
