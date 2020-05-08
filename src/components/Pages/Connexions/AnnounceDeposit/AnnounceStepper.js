@@ -12,6 +12,9 @@ import { Link } from 'react-router-dom';
 import AnnounceAdressBis from './AnnounceAdresseBis';
 import AnnounceHousingBis from './AnnounceHousingBis';
 import AnnounceRulesInformationsBis from './AnnounceRulesInformationsBis';
+import AnnounceTarif from './AnnounceTarif';
+import Announce from './Announce';
+import AnnouncePayment from './AnnouncePayment';
 import AnnounceConfirmBis from './AnnounceConfirmBis';
 
 
@@ -32,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 
   // const steps = ['Adresse de votre logement', "Votre logement", 'Équipement et installation', 'Informations et Règles', 'Récapitulatif', "Tarif", "Annonce à poster", "Paiement", "Validation de l'annonce"];
-  const steps = ['Adresse de votre logement', "Votre logement", "Information et règles", "Tarif", 'Récapitulatif', "Votre annonce", "Paiement", "Validation de l'annonce"];
+  const steps = ['Adresse de votre logement', "Votre logement", "Information et règles", "Tarif", "Votre annonce", "Récapitulatif de votre annonce" ,"Paiement" ];
    
   function getStepContent(step) {
     switch (step) {
@@ -42,12 +45,14 @@ const useStyles = makeStyles((theme) => ({
         return <AnnounceHousingBis />;
       case 2:
         return <AnnounceRulesInformationsBis />;
-      // case 3:
-      //   return <AnnounceRulesInformations />;
       case 3:
+        return <AnnounceTarif />;
+      case 4:
+        return <Announce/>;
+      case 5:
         return <AnnounceConfirmBis/>;
-      // case 5:
-      //   return <AnnounceSuccess/>;
+      case 6:
+        return <AnnouncePayment/>;
       default:
         return 'Étape inconnu';
     }

@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import '../../../../css/Announce.scss';
 
-import { Row, Col, Container, Form } from 'react-bootstrap';
 import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
-import { Button } from 'reactstrap';
 
 export class AnnounceConfirm extends Component {
 

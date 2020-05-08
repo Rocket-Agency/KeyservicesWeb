@@ -13,11 +13,11 @@ export default function AddressForm() {
 
       <Container fluid>
         <Row>
-          <Col xs={12} md={6} className="mt-3">
+          <Col xs={12} md={12} className="mt-3">
             <Form.Row>
-              <Form.Label className="label-info-annonce" column sm={4}>Numéro de rue</Form.Label>
+              <Form.Label className="label-info-annonce" column sm={2}>Numéro de rue</Form.Label>
 
-                <Col sm={6}>
+                <Col sm={1}>
                   <TextField
                     required id="standard-required"
                     name="address_road_number"
@@ -51,9 +51,9 @@ export default function AddressForm() {
 
 
         <Row>
-          <Col xs={12} md={6} className="mt-3">
+          <Col xs={12} md={12}>
             <Form.Row>
-              <Form.Label className="label-info-annonce" column sm={4}>Nom de rue</Form.Label>
+              <Form.Label className="label-info-annonce" column sm={12}>Nom de rue</Form.Label>
               <Col sm={12}>
                 <TextField
                   type="text" 
@@ -68,7 +68,7 @@ export default function AddressForm() {
             </Form.Row>     
           </Col>
 
-          <Col xs={12} md={6} className="mt-3">
+          <Col xs={12} md={12} className="mt-3">
             <Form.Row>
               <Form.Label className="label-info-annonce" column sm={12}>Information complémentaire (Bâtiment, escalier, interphone etc...)</Form.Label>
               <Col sm={12}>
@@ -85,10 +85,10 @@ export default function AddressForm() {
           </Col>
         </Row>
 
-        <Row className="pt-4 pb-4">
-          <Col xs={12} md={4} className="mt-2">
+        <Row className="pt-3 pb-4">
+          <Col xs={12} md={4}>
             <Form.Row>
-              <Form.Label className="label-info-annonce" column sm={4}>Région</Form.Label>
+              <Form.Label className="label-info-annonce" column sm={12}>Région</Form.Label>
               <Col sm={8}>
                 <TextField
                   type="text" 
@@ -103,9 +103,9 @@ export default function AddressForm() {
             </Form.Row>     
           </Col>
 
-          <Col xs={12} md={4} className="mt-2">
+          <Col xs={12} md={4}>
             <Form.Row>
-              <Form.Label className="label-info-annonce" column sm={4}>Ville</Form.Label>
+              <Form.Label className="label-info-annonce" column sm={12}>Ville</Form.Label>
               <Col sm={8}>
                 <TextField
                   type="text" 
@@ -120,9 +120,9 @@ export default function AddressForm() {
             </Form.Row>     
           </Col>
 
-          <Col xs={12} md={4} className="mt-2">
+          <Col xs={12} md={4}>
             <Form.Row>
-              <Form.Label className="label-info-annonce" column sm={4}>Code postal</Form.Label>
+              <Form.Label className="label-info-annonce" column sm={12}>Code postal</Form.Label>
                 <Col sm={8}>
                   <TextField
                     required id="standard-required"
