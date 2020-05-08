@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../../../../css/Announce.scss';
 
-import { Row, Col, Container, Form } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 export class AnnouncePayment extends Component {
 

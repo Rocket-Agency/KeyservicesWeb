@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import '../../../../css/Announce.scss';
 
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { Row, Col, Container, Form } from 'react-bootstrap';
 
 export class AnnounceRulesInformationsBis extends Component {

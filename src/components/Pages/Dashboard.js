@@ -15,8 +15,7 @@ import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
 import { Col, Row, Container } from 'react-bootstrap';
 import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
-// import Announce from './Connexions/AnnounceDeposit/Announce';
-import AnnounceaLinearStepper from './Connexions/AnnounceDeposit/AnnounceaLinearStepper';
+// import AnnounceaLinearStepper from './Connexions/AnnounceDeposit/AnnounceaLinearStepper';
 import AnnounceStepper from './Connexions/AnnounceDeposit/AnnounceStepper';
 
 
@@ -228,14 +227,14 @@ constructor(props) {
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Création d'une annonce</BreadcrumbItem>
           <h1>Création d'une annonce</h1>
-            <AnnounceaLinearStepper/>
+            <AnnounceStepper/>
          </TabContainer> }
 
          { activeIndex === 3 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Calendrier</BreadcrumbItem>
             Calendrier
-            <AnnounceStepper/>
+            
          </TabContainer> }
 
         { activeIndex === 4 && <TabContainer style={{ minWidth: "100%" }}>
