@@ -226,7 +226,6 @@ constructor(props) {
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Calendrier</BreadcrumbItem>
             Calendrier
-            <AnnounceVerticalStepper />
          </TabContainer> }
 
         { activeIndex === 4 && <TabContainer style={{ minWidth: "100%" }}>

@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
   // const steps = ['Adresse de votre logement', "Votre logement", 'Équipement et installation', 'Informations et Règles', 'Récapitulatif', "Tarif", "Annonce à poster", "Paiement", "Validation de l'annonce"];
-  const steps = ['Adresse de votre logement', "Votre logement", 'Équipement et installation', 'Informations et Règles', 'Récapitulatif', "Tarif", "Annonce à poster", "Paiement", "Validation de l'annonce"];
+  const steps = ['Adresse de votre logement', "Votre logement", "Tarif", 'Récapitulatif', "Annonce à poster", "Paiement", "Validation de l'annonce"];
    
   function getStepContent(step) {
     switch (step) {

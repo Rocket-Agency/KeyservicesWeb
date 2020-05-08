@@ -6,6 +6,16 @@
     .blocForm {
         padding: 0;
     }
+    .MuiPaper-root.MuiStepper-root.MuiStepper-horizontal.MuiPaper-elevation0 {
+        flex-direction: column;
+        display: block;
+    }
+    .MuiTypography-root.MuiStepLabel-label.MuiStepLabel-active.MuiTypography-body2.MuiTypography-displayBlock {
+        padding: 20px;
+    }
+    .MuiStep-root.MuiStep-horizontal {
+        padding: 20px;
+    }
 }
 
 .title-form{
@@ -13,24 +23,3 @@
     line-height: 30px;
 }
 
-.MuiStepper-horizontal {
-    align-items: left;
-    flex-direction: column;
-    margin: 20px 10px;
-}
-
-
-.MuiStep-horizontal {
-    padding-left: 8px;
-    padding-right: 8px;
-    margin: 10px 0;
-}
-
-.MuiStepper-root {
-    display: block;
-    padding: 24px;
-}
-
-.stepper {
-    flex-direction: column;
-}
