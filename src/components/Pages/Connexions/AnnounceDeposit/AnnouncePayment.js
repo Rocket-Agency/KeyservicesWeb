@@ -3,7 +3,7 @@ import '../../../../css/Announce.scss';
 
 import { Container } from 'react-bootstrap';
 
-export class AnnounceTarif extends Component {
+export class AnnouncePayment extends Component {
 
     continue = e => {
         e.preventDefault();
@@ -16,11 +16,11 @@ export class AnnounceTarif extends Component {
         return(
             <div>
                 <Container fluid className="pt-4 blocForm" >  
-                    <h2>Votre annonce</h2>
+                    <h2>Paiement</h2>
   
                     <Container fluid>
                 
-                        Annonce
+                        Paiement
                     </Container>
                 </Container>
             </div>
@@ -28,4 +28,4 @@ export class AnnounceTarif extends Component {
     }
 }
 
-export default AnnounceTarif;
+export default AnnouncePayment;

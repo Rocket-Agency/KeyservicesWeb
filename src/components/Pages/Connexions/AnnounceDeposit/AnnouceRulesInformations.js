@@ -33,8 +33,6 @@ export class AnnounceRulesInformations extends Component {
                                     <Form.Group id="formGridCheckbox">
                                         <Form.Check type="checkbox" label="Ne convient pas à un enfant entre 2 et 12ans" />
                                     </Form.Group>
-                                </Col>
-                                <Col sm={4}>
                                     <Form.Group id="formGridCheckbox">
                                         <Form.Check type="checkbox" label="Animaux autorisé" />
                                     </Form.Group>

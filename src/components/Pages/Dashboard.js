@@ -15,9 +15,9 @@ import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
 import { Col, Row, Container } from 'react-bootstrap';
 import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
-// import Announce from './Connexions/AnnounceDeposit/Announce';
-import AnnounceaLinearStepper from './Connexions/AnnounceDeposit/AnnounceaLinearStepper';
-import AnnounceVerticalStepper from './Connexions/AnnounceDeposit/AnnounceVerticalStepper';
+// import AnnounceaLinearStepper from './Connexions/AnnounceDeposit/AnnounceaLinearStepper';
+import AnnounceStepper from './Connexions/AnnounceDeposit/AnnounceStepper';
+
 
 class ProfileTabs extends Component {
 constructor(props) {
@@ -39,6 +39,7 @@ constructor(props) {
     user_password: "",
     user_adresse_txt: "",
     
+    addressCollection: [],
   }
 
   this.userid = '';
@@ -226,14 +227,14 @@ constructor(props) {
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Création d'une annonce</BreadcrumbItem>
           <h1>Création d'une annonce</h1>
-            <AnnounceaLinearStepper/>
+            <AnnounceStepper/>
          </TabContainer> }
 
          { activeIndex === 3 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Calendrier</BreadcrumbItem>
-          <h1>Calendrier</h1>
-            <AnnounceaLinearStepper/>
+            Calendrier
+            
          </TabContainer> }
 
         { activeIndex === 4 && <TabContainer style={{ minWidth: "100%" }}>

@@ -16,11 +16,11 @@ export class AnnounceTarif extends Component {
         return(
             <div>
                 <Container fluid className="pt-4 blocForm" >  
-                    <h2>Votre annonce</h2>
+                    <h2>Tarif</h2>
   
                     <Container fluid>
                 
-                        Annonce
+                        Tarif
                     </Container>
                 </Container>
             </div>
