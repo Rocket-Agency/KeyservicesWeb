@@ -54,14 +54,14 @@ export class FormContact extends Component {
             <Form onSubmit={this.handleSubmit}>
             <Form.Row>
                 <Form.Group as={Col} lg="6" md="12" sm="12" controlId="formGridName">
-                <Form.Label>Nom</Form.Label>
-                <Form.Control name="first_name" type="name" placeholder="Entrer votre nom" value={this.state.first_name} onChange={this.handleChange} />
+                    <Form.Label>Nom</Form.Label>
+                    <Form.Control name="first_name" type="name" placeholder="Entrer votre nom" value={this.state.first_name} onChange={this.handleChange} />
                 </Form.Group>
                 
 
                 <Form.Group as={Col} lg="6" md="12" sm="12" controlId="formGridLastName">
-                <Form.Label>Prénom</Form.Label>
-                <Form.Control name="last_name" type="lastname" placeholder="Entrer votre prénom" value={this.state.last_name} onChange={this.handleChange} />
+                    <Form.Label>Prénom</Form.Label>
+                    <Form.Control name="last_name" type="lastname" placeholder="Entrer votre prénom" value={this.state.last_name} onChange={this.handleChange} />
                 </Form.Group>
             </Form.Row>
 
@@ -74,10 +74,10 @@ export class FormContact extends Component {
 
                 <Form.Group as={Col} controlId="formGridState">
                     <Form.Label>Sujet</Form.Label>
-                    <Form.Control name="object" as="select" value={this.state.object} onChange={this.handleChange}>
-                        <option>Choisir un sujet...</option>
-                        <option>Demande d'information</option>
-                    </Form.Control>
+                        <Form.Control name="object" as="select" value={this.state.object} onChange={this.handleChange}>
+                            <option>Choisir un sujet...</option>
+                            <option>Demande d'information</option>
+                        </Form.Control>
                     </Form.Group>
             </Form.Row>
 
@@ -100,9 +100,7 @@ export class FormContact extends Component {
                         </button>
                     </div>
                 </Col>      
-
            </Form.Row>
-
         </Form>
           )
     }

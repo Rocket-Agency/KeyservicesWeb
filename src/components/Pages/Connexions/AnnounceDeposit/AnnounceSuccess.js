@@ -7,12 +7,6 @@ import { Link } from 'react-router-dom';
 
 export class AnnounceSucces extends Component {
 
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
-      };
-
-
     render() {
         // const { values, handleChange } = this.props;
         return(
