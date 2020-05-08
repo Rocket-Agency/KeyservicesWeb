@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../../../css/FormContact.scss'
 import {Form, Col} from 'react-bootstrap';
 import axios from 'axios';
 
