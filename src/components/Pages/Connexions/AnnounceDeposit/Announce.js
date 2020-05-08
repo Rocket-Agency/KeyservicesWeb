@@ -4,9 +4,9 @@ import '../../../../css/Announce.scss';
 // import FormUserDetails from './FormUserDetails';
 import AnnouncePresentation from './AnnouncePresentation';
 import AnnounceAdress from './AnnounceAdresse';
-import AdresseEquipement from './AnnounceEquipement';
+import AdresseEquipement from './AnnounceEquipment';
 import AnnounceHousing from './AnnounceHousing';
-import AnnounceSucces from './AnnounceSucces';
+import AnnounceSucces from './AnnounceSuccess';
 import Checkout from './Payment/Checkout';
 
 export class Announce extends Component {

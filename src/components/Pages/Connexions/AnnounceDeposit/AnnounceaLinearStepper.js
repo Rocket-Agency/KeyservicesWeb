@@ -2,25 +2,24 @@ import React from 'react';
 import '../../../../css/Announce.scss';
 
 import { makeStyles } from '@material-ui/core/styles';
-// import CssBaseline from '@material-ui/core/CssBaseline';
-// import AppBar from '@material-ui/core/AppBar';
-// import Toolbar from '@material-ui/core/Toolbar';
-// import Paper from '@material-ui/core/Paper';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
-// import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-// import { Col, Container, Row, Form } from 'react-bootstrap';
-// import TextField from '@material-ui/core/TextField';
-// import AddressForm from './Payment/AddressForm';
-import AnnounceAdress from './AnnounceAdresse';
+import { Link } from 'react-router-dom';
 
+import AnnounceAdress from './AnnounceAdresse';
+import AnnounceHousing from './AnnounceHousing';
+import AnnounceEquipement from './AnnounceEquipment';
+import AnnounceConfirm from './AnnounceConfirm';
+import AnnounceSuccess from './AnnounceSuccess';
+import AnnounceRulesInformations from './AnnouceRulesInformations';
 
 const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
+      display: 'block',
     },
     button: {
       marginRight: theme.spacing(1),
@@ -29,24 +28,28 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(1),
       marginBottom: theme.spacing(1),
     },
+
   }));
 
-  const steps = ['Adresse de votre logement', 'Équipement et installation', 'Informations et Règles', 'Tarif', 'Votre annonce'];
-  
-//   function getSteps() {
-//     return ['Adresse de votre logement', 'Équipement et installation', 'Informations et Règles', 'Tarif', 'Votre annonce'];
-//   }
-  
+  // const steps = ['Adresse de votre logement', "Votre logement", 'Équipement et installation', 'Informations et Règles', 'Récapitulatif', "Tarif", "Annonce à poster", "Paiement", "Validation de l'annonce"];
+  const steps = ['Adresse de votre logement', "Votre logement", "Tarif", 'Récapitulatif', "Annonce à poster", "Paiement", "Validation de l'annonce"];
+   
   function getStepContent(step) {
     switch (step) {
       case 0:
         return <AnnounceAdress />;
       case 1:
-        return 'Votre Logement';
+        return <AnnounceHousing />;
       case 2:
-        return 'Équipement de votre logement!';
+        return <AnnounceEquipement />;
+      case 3:
+        return <AnnounceRulesInformations />;
+      case 4:
+        return <AnnounceConfirm/>;
+      // case 5:
+      //   return <AnnounceSuccess/>;
       default:
-        return 'Unknown step';
+        return 'Étape inconnu';
     }
   }
 
@@ -74,14 +77,10 @@ const useStyles = makeStyles((theme) => ({
       setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
     
-    const handleReset = () => {
-      setActiveStep(0);
-    };
-
     return (
         <div className={classes.root}>
           <Stepper activeStep={activeStep}>
-            {steps.map((label, index) => {
+            {steps.map((label) => {
               const stepProps = {};
               const labelProps = {};
               return (
@@ -95,27 +94,39 @@ const useStyles = makeStyles((theme) => ({
             {activeStep === steps.length ? (
               <div>
                 <Typography className={classes.instructions}>
-                  All steps completed - you&apos;re finished
+                  <div className="text-center success">
+                    <h1>Votre annonce a bien été enregistrer</h1>
+                    <p>Vous recevrez un email de confirmation pour la validation de votre annonce</p>
+                      <div className="d-flex justify-content-around align-items-center">
+                        <div id="container">                    
+                          <button className="retour-login" aria-label="Retour à la page d'inscription">
+                            <span className="circle" aria-hidden="true">
+                              <span className="icon arrow"></span>
+                            </span>
+                            <Link className="button-text" to="/" aria-label="Retour dashboard">
+                              Retourner à votre espace
+                            </Link>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                 </Typography>
-                <Button onClick={handleReset} className={classes.button}>
-                  Reset
-                </Button>
               </div>
             ) : (
               <div>
                 <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-                <div>
+                <div className="d-flex justify-content-around pb-3 col-md-12">
                   <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
                     Retour
                   </Button>
    
-                  <Button
+                  <Button 
                     variant="contained"
                     color="primary"
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                    {activeStep === steps.length - 1 ? 'Terminer' : 'Suivant'}
                   </Button>
                 </div>
               </div>
