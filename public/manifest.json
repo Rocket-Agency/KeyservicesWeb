@@ -18,8 +18,10 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "##FAF0E6",
-  "background_color": "#ffffff"
+  "theme_color": "#FAF0E6",
+  "background_color": "#ffffff",
+  "description": "Cette application vous permettera de faciliter vos échanges avec nos clients",
+  "lang": "fr"
 }

@@ -1,7 +1,7 @@
 //Home.js
 import React, {Component} from 'react';
 import '../../css/Home.scss';
-import '../../css/pe-7s-shield.css';
+import '../../css/pe-7s-shield.scss';
 import { BreadcrumbItem } from '../../index';
 // import Img from 'react-cool-img';
 import ProgressiveImage from "react-progressive-graceful-image";
@@ -24,6 +24,7 @@ export class Home extends Component {
             <div>
                 <Helmet>
                     <title>Keyservices - Accueil</title>
+                    <meta name="description" content="Vous cherchez une information sur l'entreprise Keyservices !"/>
                 </Helmet>
 
                 <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
@@ -40,13 +41,8 @@ export class Home extends Component {
 
                     <Carousel>
                         <Carousel.Item>
-                            {/* <img
-                                className="d-block w-100"
-                                src="./Images/PosterUneAnnonce1.png" 
-                                alt="Poster une annoncee"
-                            /> */}
                             <ProgressiveImage  className="card-img style-card" 
-                                src="./Images/PosterUneAnnonce.png" 
+                                src="./images/PosterUneAnnonce.png" 
                                 placeholder={PosterUneAnnonceTiny} 
                             >
                                 {src => <img src={src}  alt="Poster une annoncee"  />}
@@ -61,13 +57,8 @@ export class Home extends Component {
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
-                            {/* <img
-                                className="d-block w-100"
-                                src="./Images/GererMesLocations.png"
-                                alt="Gérer mes locations"
-                            /> */}
                             <ProgressiveImage  className="card-img style-card" 
-                                src="./Images/GérerMesLocations.png"
+                                src="./images/GererMesLocations.png"
                                 placeholder={GererMesLocationsTiny} 
                             >
                                 {src => <img src={src}  alt="Gérer mes locations"  />}
@@ -164,10 +155,10 @@ export class Home extends Component {
                     <Container>
                         <Row style={{textAlign: "center"}}>
 
-                            <Col xs={12} class="text-center">
-                                <div class="section-title mb-4 pb-2">
-                                    <h4 class="title mb-4">Nos Services</h4>
-                                    <p class="text-muted mx-auto para-desc mb-0">Splash your dream color Bring your home to lively Colors. We make it a priotity to offer flexible services to accomodate your needs</p>
+                            <Col xs={12} className="text-center">
+                                <div className="section-title mb-4 pb-2">
+                                    <h4 className="title mb-4">Nos Services</h4>
+                                    <p className="text-muted mx-auto para-desc mb-0">Splash your dream color Bring your home to lively Colors. We make it a priotity to offer flexible services to accomodate your needs</p>
                                 </div>
                             </Col>
                         </Row>
@@ -175,91 +166,91 @@ export class Home extends Component {
                         {/* col-lg-6 col-md-6 col-12 */}
 
                         <Row>
-                            <Col xs={12} lg={6} md={6} class="mt-4 pt-2">
-                                <div class="service-container shadow rounded p-4 text-center">
-                                    <div class="number-icon position-relative">
-                                        <div class="icon-2 d-inline-block border rounded-pill">  
-                                            <i class="pe-7s-shield text-custom"></i>
+                            <Col xs={12} lg={6} md={6} className="mt-4 pt-2">
+                                <div className="service-container shadow rounded p-4 text-center">
+                                    <div className="number-icon position-relative">
+                                        <div className="icon-2 d-inline-block border rounded-pill">  
+                                            <i className="pe-7s-shield text-custom"></i>
                                         </div>
 
-                                        <div class="number text-center rounded-pill bg-white border">
-                                            <span class="font-weight-bold">01</span>
+                                        <div className="number text-center rounded-pill bg-white border">
+                                            <span className="font-weight-bold">01</span>
                                         </div>
                                     </div>                           
 
-                                    <div class="content mt-3">
-                                        <h5 class="title text-dark">Remise des clés</h5>
-                                        <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                        <a href="" class="text-dark">
+                                    <div className="content mt-3">
+                                        <h5 className="title text-dark">Remise des clés</h5>
+                                        <p className="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
+                                        <a href="/" className="text-dark">
                                             Read more
-                                            <i class="mdi mdi-chevron-right"></i>
+                                            <i className="mdi mdi-chevron-right"></i>
                                         </a>
                                     </div>
                                 </div>
                             </Col>
                                                     
-                            <Col  xs={12} lg={6} md={6} class="mt-4 pt-2">
-                                <div class="service-container shadow rounded p-4 text-center">
-                                    <div class="number-icon position-relative">
-                                        <div class="icon-2 d-inline-block border rounded-pill">  
-                                            <i class="pe-7s-way text-custom"></i>
+                            <Col  xs={12} lg={6} md={6} className="mt-4 pt-2">
+                                <div className="service-container shadow rounded p-4 text-center">
+                                    <div className="number-icon position-relative">
+                                        <div className="icon-2 d-inline-block border rounded-pill">  
+                                            <i className="pe-7s-way text-custom"></i>
                                         </div>
 
-                                        <div class="number text-center rounded-pill bg-white border">
-                                            <span class="font-weight-bold">02</span>
+                                        <div className="number text-center rounded-pill bg-white border">
+                                            <span className="font-weight-bold">02</span>
                                         </div>
                                     </div>                           
 
-                                    <div class="content mt-3">
-                                         <h5 class="title text-dark">Remplir son frigo</h5>
-                                         <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                        <a href="" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
+                                    <div className="content mt-3">
+                                         <h5 className="title text-dark">Remplir son frigo</h5>
+                                         <p className="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
+                                        <a href="/" className="text-dark">Read more <i className="mdi mdi-chevron-right"></i></a>
                                      </div>
                                 </div>
                             </Col>
                                                     
-                            <Col xs={12} lg={6} md={6} class="mt-4 pt-2">
-                                 <div class="service-container shadow rounded p-4 text-center">
-                                    <div class="number-icon position-relative">
-                                        <div class="icon-2 d-inline-block border rounded-pill">  
-                                            <i class="pe-7s-note2 text-custom"></i>
+                            <Col xs={12} lg={6} md={6} className="mt-4 pt-2">
+                                 <div className="service-container shadow rounded p-4 text-center">
+                                    <div className="number-icon position-relative">
+                                        <div className="icon-2 d-inline-block border rounded-pill">  
+                                            <i className="pe-7s-note2 text-custom"></i>
                                         </div>
 
-                                        <div class="number text-center rounded-pill bg-white border">
-                                            <span class="font-weight-bold">03</span>
+                                        <div className="number text-center rounded-pill bg-white border">
+                                            <span className="font-weight-bold">03</span>
                                         </div>
                                      </div>                           
 
-                                    <div class="content mt-3">
-                                        <h5 class="title text-dark">Prise de rendez-vous pour le checkout</h5>
-                                        <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                        <a href="" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
+                                    <div className="content mt-3">
+                                        <h5 className="title text-dark">Prise de rendez-vous pour le checkout</h5>
+                                        <p className="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
+                                        <a href="/" className="text-dark">Read more <i className="mdi mdi-chevron-right"></i></a>
                                      </div>
                                 </div>
                             </Col>
                                                     
-                            <Col xs={12} lg={6} md={6} class="mt-4 pt-2">
-                                <div class="service-container shadow rounded p-4 text-center">
-                                    <div class="number-icon position-relative">
-                                        <div class="icon-2 d-inline-block border rounded-pill">  
-                                            <i class="pe-7s-world text-custom"></i>
+                            <Col xs={12} lg={6} md={6} className="mt-4 pt-2">
+                                <div className="service-container shadow rounded p-4 text-center">
+                                    <div className="number-icon position-relative">
+                                        <div className="icon-2 d-inline-block border rounded-pill">  
+                                            <i className="pe-7s-world text-custom"></i>
                                         </div>
 
-                                        <div class="number text-center rounded-pill bg-white border">
-                                            <span class="font-weight-bold">04</span>
+                                        <div className="number text-center rounded-pill bg-white border">
+                                            <span className="font-weight-bold">04</span>
                                         </div>
                                     </div>                           
 
-                                    <div class="content mt-3">
-                                        <h5 class="title text-dark">Nettoyage</h5>
-                                        <p class="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
-                                        <a href="" class="text-dark">Read more <i class="mdi mdi-chevron-right"></i></a>
+                                    <div className="content mt-3">
+                                        <h5 className="title text-dark">Nettoyage</h5>
+                                        <p className="text-muted">We make it a priotity to offer flexible services to your to lively Colors needs home to lively Colors</p>
+                                        <a href="/" className="text-dark">Read more <i className="mdi mdi-chevron-right"></i></a>
                                     </div>
                                  </div>
                             </Col>
                                                                                                        
-                            {/* <div class="col-12 mt-4 pt-2 text-center">
-                                 <a href="javascript:void(0)" class="btn btn-pill btn-custom">See More <i class="mdi mdi-chevron-right"></i></a>
+                            {/* <div className="col-12 mt-4 pt-2 text-center">
+                                 <a href="javascript:void(0)" className="btn btn-pill btn-custom">See More <i class="mdi mdi-chevron-right"></i></a>
                             </div> */}
                         </Row>
                      </Container>

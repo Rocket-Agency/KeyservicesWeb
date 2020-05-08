@@ -8,14 +8,16 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import Icon from '@material-ui/core/Icon';
 import axios from 'axios';
 import MaterialTable from 'material-table';
-// import { Link } from 'react-router-dom';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
-import { Col, Row, Form, Container } from 'react-bootstrap';
+import { Col, Row, Container } from 'react-bootstrap';
+import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
+// import AnnounceaLinearStepper from './Connexions/AnnounceDeposit/AnnounceaLinearStepper';
+import AnnounceStepper from './Connexions/AnnounceDeposit/AnnounceStepper';
+
 
 class ProfileTabs extends Component {
 constructor(props) {
@@ -27,6 +29,7 @@ constructor(props) {
     group: '',
     users: "",
     usersCollection: [],
+    contactsCollection: [],
     user_first_name: "",
     user_last_name: "",
     user_date_of_birth: "",
@@ -34,7 +37,9 @@ constructor(props) {
     user_photo: "",
     user_email: "",
     user_password: "",
-    user_adresse_txt: ""
+    user_adresse_txt: "",
+    
+    addressCollection: [],
   }
 
   this.userid = '';
@@ -88,6 +93,11 @@ constructor(props) {
         const usersCollection = res.data;
         this.setState( { usersCollection } );
       })
+    axios.get('http://localhost:3001/api/contacts')
+      .then (res => {
+        const contactsCollection = res.data;
+        this.setState( {contactsCollection});
+      })
   }
 
   handleChange = (_, activeIndex) => this.setState({ activeIndex })
@@ -120,23 +130,27 @@ constructor(props) {
           display: 'flex',
         }}
       >
+      <Container fluid>
+        <Row>
+          <Col xs={12} md={2} >
         <VerticalTabs
           value={activeIndex}
           onChange={this.handleChange}
-        >
-          <MyTab label='Mon compte' />
-          <MyTab label='Information location' />
-          <MyTab label='Calendrier' />
-          {group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' />: null }
-          <MyTab label='Créer une annonce' />
-        </VerticalTabs>
-          
+        >    
+          <MyTab label='Mon compte' />           
+          <MyTab label='Information location' />      
+           <MyTab label='Créer une annonce ' />
+           <MyTab label='Prise de rendez-vous' /> 
+          {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
+          {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste de contacts' /> : null }
 
+        </VerticalTabs>
+          </Col>
+
+          <Col xs={12} md={10} >
         { activeIndex === 0 && <TabContainer>
 
-      <Container fluid>
-          {/* <h1 className="mt-2 text-center">Bienvenue  {this.state.users.user_first_name} dans votre Espace</h1> */}
-
+        <Container fluid>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Mon compte</BreadcrumbItem>
 
@@ -147,55 +161,57 @@ constructor(props) {
                   <div className="text-center">
                     <Img
                         placeholder={ImgDefaultAvatar} 
-                        class="avatar img-circle mt-3 mb-3"
+                        className="avatar img-circle mt-3 mb-3"
                         alt="avatar" 
                       />
                       <h6>Upload a different photo...</h6>
                      
-                      <input type="file" class="form-control"/>
+                      <input type="file" className="form-control"/>
                   </div>
               </div>
 
-              <div class="col-md-9 personal-info">
+              <div className="col-md-9 personal-info">
               <h3>Information personnel</h3>
 
-              <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
-                <Grid container spacing={1}>
-                  <Grid container item xs={12} spacing={3}>
-                    <Grid item xs={4}>
-                      <TextField value={this.state.user_first_name} onChange={e => this.setState({user_first_name: e.target.value})} label="Prénom" />
-                    </Grid>
-                    <Grid item xs={4}>
-                      <TextField value={this.state.user_last_name} onChange={e => this.setState({user_last_name: e.target.value})} label="Nom" />
-                    </Grid>
-                    <Grid item xs={4}>
-                      <TextField value={this.state.user_date_of_birth} onChange={e => this.setState({user_date_of_birth: e.target.value})} label="Date de naissance" />
-                    </Grid>
-                  </Grid>
-                  <Grid container item xs={12} spacing={3}>
-                    <Grid item xs={4}>
-                      <TextField value={this.state.user_sexe} onChange={e => this.setState({user_sexe: e.target.value})} label="Sexe" />
-                    </Grid>
-                    <Grid item xs={4}>
-                      <TextField value={this.state.user_email} onChange={e => this.setState({user_email: e.target.value})} label="Email" />
-                    </Grid>
-                    <Grid item xs={4}>
-                      <TextField value={this.state.user_adresse_txt} onChange={e => this.setState({user_adresse_txt: e.target.value})} label="Adresse" />
-                    </Grid>
-                  </Grid>
-                </Grid>
-
-                <Button
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-                  endIcon={<Icon>send</Icon>}
-                >
-                Modifier
-              </Button>
+                <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
                 
-              </form>
-           </div>
+                  <Grid container mt-3>
+                    <Grid container item xs={12} spacing={3}>
+                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
+                        <TextField value={this.state.user_last_name} onChange={e => this.setState({user_last_name: e.target.value})} label="Nom" />
+                      </Grid>
+                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
+                        <TextField value={this.state.user_first_name} onChange={e => this.setState({user_first_name: e.target.value})} label="Prénom" />
+                      </Grid>
+                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
+                        <TextField value={this.state.user_date_of_birth} onChange={e => this.setState({user_date_of_birth: e.target.value})} label="Date de naissance" />
+                      </Grid>
+                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
+                        <TextField value={this.state.user_sexe} onChange={e => this.setState({user_sexe: e.target.value})} label="Sexe" />
+                      </Grid>
+                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
+                        <TextField value={this.state.user_email} onChange={e => this.setState({user_email: e.target.value})} label="Email" />
+                      </Grid>
+                      <Grid item xs={12} md={6}  className="d-flex justify-content-center">
+                        <TextField value={this.state.user_adresse_txt} onChange={e => this.setState({user_adresse_txt: e.target.value})} label="Adresse" />
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+                    <Row>
+                      <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
+                        <Button 
+                          variant="contained"
+                          color="primary"
+                          type="submit"
+                          endIcon={<EditIcon>send</EditIcon>}
+                        >
+                          Modifier
+                        </Button>
+                      </Col>
+                    </Row>
+                </form>
+            </div>
           </div>
       </Container>
           
@@ -209,19 +225,21 @@ constructor(props) {
 
          { activeIndex === 2 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
-          <BreadcrumbItem >Information location</BreadcrumbItem>
-          Information location
+          <BreadcrumbItem >Création d'une annonce</BreadcrumbItem>
+          <h1>Création d'une annonce</h1>
+            <AnnounceStepper/>
          </TabContainer> }
 
          { activeIndex === 3 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Calendrier</BreadcrumbItem>
-         Calendrier
+            Calendrier
+            
          </TabContainer> }
 
         { activeIndex === 4 && <TabContainer style={{ minWidth: "100%" }}>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
-          <BreadcrumbItem >Mon compte</BreadcrumbItem>
+          <BreadcrumbItem >Liste d'utilisateurs</BreadcrumbItem>
             <MaterialTable
               columns={[
                 {
@@ -237,7 +255,6 @@ constructor(props) {
                 { title: "Prénom", field: "user_first_name" },
                 { title: "Nom", field: "user_last_name" },
                 { title: "Email", field: "user_email"},
-                // { title: "Password", field: "user_password", show: false},
                 { title: "Birthay", field: "user_date_of_birth"},
                 { title: "Sexe", field: "user_sexe"},
                 { title: "Adresse", field: "user_adresse_txt"}
@@ -322,9 +339,25 @@ constructor(props) {
                             resolve();
                         }, 1000);
                     })
-            }}
-            />
-        </TabContainer> }
+                 }}
+              />
+            </TabContainer> }
+            {activeIndex === 5 && <TabContainer>
+                <MaterialTable
+                  columns={[
+                    { title: 'Nom', field: 'contact_first_name' },
+                    { title: 'Prénom', field: 'contact_last_name' },
+                    { title: 'Email', field: 'contact_email' },
+                    { title: 'Objet', field: 'contact_object'},
+                    { title: 'Message', field: 'contact_message'}
+                  ]}
+                  data={this.state.contactsCollection}
+                  title="Liste des messages"
+                />
+            </TabContainer> }
+          </Col>
+        </Row>
+      </Container> 
     </div>
     )
   }
@@ -348,7 +381,7 @@ const MyTab = withStyles(theme => ({
 
 function TabContainer(props) {
   return (
-    <Typography component="div" className="tabDashboard" style={{ padding: 24 }}>
+    <Typography component="div" className="tabDashboard" style={{ paddingTop: 24, paddingRight: 0 }}>
       {props.children}
     </Typography>
   );

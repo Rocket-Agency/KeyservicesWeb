@@ -132,7 +132,7 @@ function checkValidServiceWorker(swUrl, config) {
 }
 
 export function unregister() {
-  if (typeof window !== 'undefined'){
+  if (typeof navigator !== 'undefined'){
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.ready
         .then(registration => {

@@ -12,10 +12,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 export class Confirm extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   continue = e => {
     axios.post("http://localhost:3001/api/auth/signup",
         {

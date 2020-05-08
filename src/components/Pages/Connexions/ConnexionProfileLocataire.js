@@ -3,9 +3,7 @@ import axios from 'axios';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-// import { Redirect } from 'react-router-dom';
 import { withRouter, Link } from 'react-router-dom';
-
 
  class ConnexionProfileLocataire extends Component {
     constructor(props) {

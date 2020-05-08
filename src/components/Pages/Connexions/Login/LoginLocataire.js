@@ -3,6 +3,8 @@ import '../../../../css/ConnexionPages.scss';
 import { BreadcrumbItem } from '../../../../index';
 import ConnexionProfileLocataire from '../ConnexionProfileLocataire';
 import HomeIcon from '@material-ui/icons/Home';
+import ProgressiveImage from "react-progressive-graceful-image";
+import ContactTiny from '../../../../ImagesPlaceholder/ConnexionTiny.png';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
 
@@ -31,7 +33,16 @@ export class LoginLocataire extends Component {
                             <Col md={6}>
                                 <div className="d-flex justify-content-center"  id="BlocExplication">
                                     <div className="card">
-                                        <Card.Img  id="Propriétaire" width="auto%"  height="400px" src='./images/connexion.png' alt="Card image" />
+                                        {/* <Card.Img  id="Propriétaire" width="auto"  height="400px" src='./images/connexion.png' alt="Card image" /> */}
+                                        <ProgressiveImage  className="card-img style-card" 
+                                            src='./images/connexion.png'
+                                            placeholder={ContactTiny} 
+                                            width="auto"
+                                            height="400px"
+                                        >
+                                            {src => <img src={src}  alt="Connexion Location"  />}
+                                        </ProgressiveImage>    
+
                                         <Card.ImgOverlay className="text-connection">
                                             <Card.Text>
                                                 Ea qui magna laboris labore. Sint sit commodo esse duis deserunt in commodo aliquip ut 

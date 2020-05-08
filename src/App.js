@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter,Switch, Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import { BreadProvider } from './index'
 import './App.scss';
 import './index.css';
@@ -16,17 +16,13 @@ import KeyservicesPresentation from './components/Pages/KeyservicesPresentation'
 
 import {Contact} from './components/Pages/Contact';
 
-import {ValidationContactForm} from './components/Pages/ValidationContactForm';
+import {ValidationContactForm} from './components/Pages/Molecule/ValidationContactForm';
 import {MonEspace} from './components/Pages/MonEspace';
 
 //Connexion pages
 import {LoginProprietaire} from './components/Pages/Connexions/Login/LoginProprietaire';
 import {LoginLocataire} from './components/Pages/Connexions/Login/LoginLocataire';
-import {IndexProfil} from './components/Pages/Connexions/Profiles/IndexProfil';
-import {Profile} from './components/Pages/Connexions/Profiles/Profile';
 
-import {ProfileProprietaire} from './components/Pages/Connexions/Profiles/ProfileProprietaire';
-import {ProfileLocataire} from './components/Pages/Connexions/Profiles/ProfileLocataire';
 import {ForgetPassword} from './components/Pages/Connexions/Profiles/ForgetPassword';
 
 //Page d'inscription
@@ -39,14 +35,11 @@ import ProfileTabs from './components/Pages/Dashboard';
 import NotFound from './components/Pages/NotFound';
 
 //Deconnexion
-import Deconnexion from './components/Pages/Deconnexion';
-import { createMemoryHistory } from 'history';
-const history = createMemoryHistory();
+import Deconnexion from './components/Pages/Molecule/Deconnexion';
 
 function App() {
   return (
     <>
-      <BrowserRouter>
         <BreadProvider >
           <>    
             <div className="page-container">
@@ -56,16 +49,12 @@ function App() {
 
                 <Switch>
                   <Route path='/' component={Home} exact />
-                  <Route path='/keyservicesPresentation' component={KeyservicesPresentation} exact/>
+                  <Route path='/presentation' component={KeyservicesPresentation} exact/>
                   <Route path='/contact' component={Contact} exact/>
                   <Route path='/validationContactForm' component={ValidationContactForm} exact/>
                   <Route path='/monEspace' component={MonEspace} exact/>
                   <Route path='/loginProprietaire' component={LoginProprietaire} exact/>
                   <Route path='/loginLocataire' component={LoginLocataire} exact/>
-                  <Route path='/indexProfil' component={IndexProfil} />
-                  <Route path='/profile' component={Profile} />
-                  <Route path='/profilePropriétaire' component={ProfileProprietaire} />
-                  <Route path='/profileLocataire' component={ProfileLocataire} />
                   <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
                   <Route path='/forgetPassword' component={ForgetPassword} />
                   <Route path='/dashboard' component={ProfileTabs} />
@@ -79,7 +68,6 @@ function App() {
           </div>
           </>
         </BreadProvider>
-      </BrowserRouter>
     </>
   );
 }
