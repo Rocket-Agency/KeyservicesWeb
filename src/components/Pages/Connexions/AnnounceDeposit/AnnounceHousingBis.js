@@ -130,10 +130,10 @@ export class AnnounceHousingBis extends Component {
                     </Container>
                     </fieldset>
 
-                    <fieldset>                            
+                       
                     <Container fluid>
                         <h2 className="mt-4 mb-4">Vos Équipements et installations</h2>
-
+                        <fieldset>     
                             <Form.Group as={Row}>
                                 <Form.Label column sm={2} className="label-info-annonce">
                                    Équipements :
