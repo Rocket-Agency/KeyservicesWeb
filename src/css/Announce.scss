@@ -28,6 +28,18 @@
     }
 }
 
+.label-info-annonce-prix {
+    font-size: 18px;
+    font-weight: 700;
+    @media (max-width: 576px) {
+        text-align: left;
+    }
+}
+
 #TextareaObservation {
     height: 50px;
+}
+
+.price-texte {
+    padding: 20px;
 }

@@ -90,7 +90,7 @@ export class AnnounceRulesInformationsBis extends Component {
 
                         <fieldset>
                             <Form.Group as={Row}>
-                                <Form.Label column sm={2} className="label-info-annonce">
+                                <Form.Label column sm={2}>
                                    Transport à proximité :
                                 </Form.Label>
                                 <Col sm={12}>
@@ -105,7 +105,7 @@ export class AnnounceRulesInformationsBis extends Component {
 
                         <fieldset>
                             <Form.Group as={Row} >
-                                <Form.Label column sm={2} className="label-info-annonce">
+                                <Form.Label column sm={2}>
                                     Magasins à proximité :
                                 </Form.Label>
                                 <Col sm={12}>
