@@ -16,8 +16,8 @@ export default ({ staticContext = {} }) => {
               <h1>404</h1>
             </div>
             <h2>Oops! Cette page n'a pas pu être trouvée</h2>
-            <p>Désolé mais la page que vous cherchez n'existe pas, a été supprimée. nom modifié ou est temporairement indisponible.</p>
-            <Link to="/">Retour à la page d'accueil</Link>   
+              <p>Désolé mais la page que vous cherchez n'existe pas, a été supprimée. nom modifié ou est temporairement indisponible.</p>
+              <Link to="/">Retour à la page d'accueil</Link>   
           </div>
         </div>
     </>
