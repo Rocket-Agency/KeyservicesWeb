@@ -89,65 +89,31 @@ export class AnnounceRulesInformationsBis extends Component {
                         </fieldset>
 
                         <fieldset>
-                            <Form.Group as={Row} className="mt-4">
+                            <Form.Group as={Row}>
                                 <Form.Label column sm={2} className="label-info-annonce">
-                                    Transport à proximité :
+                                   Transport à proximité :
                                 </Form.Label>
-                                <Col sm={3}>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Bus" name="info_area" />
-                                    </Form.Group>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Train" name="info_area"/>
-                                    </Form.Group>
-                                </Col>
-                                <Col sm={3}>
-                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Rer" name="info_area"/>
-                                    </Form.Group>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Tram" name="info_area"/>
-                                    </Form.Group>
-                                </Col>
-                                <Col sm={3}>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Gare" name="info_area" />
-                                    </Form.Group>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Métro" name="info_area"/>
-                                    </Form.Group>
+                                <Col sm={12}>
+                                    <Form.Row>
+                                        <Form.Group as={Col} controlId="TextareaObservation">
+                                        <Form.Control type="text" name="info_area"/>
+                                        </Form.Group>
+                                    </Form.Row>
                                 </Col>
                             </Form.Group>
                         </fieldset>
 
                         <fieldset>
-                            <Form.Group as={Row} className="mt-4">
+                            <Form.Group as={Row} >
                                 <Form.Label column sm={2} className="label-info-annonce">
                                     Magasins à proximité :
                                 </Form.Label>
-                                <Col sm={3}>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Épicerie" name="info_around" />
-                                    </Form.Group>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Boulangerie" name="info_around"/>
-                                    </Form.Group>
-                                </Col>
-                                <Col sm={3}>
-                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Magasin" name="info_around"/>
-                                    </Form.Group>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="" name="info_around"/>
-                                    </Form.Group>
-                                </Col>
-                                <Col sm={3}>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="" name="info_around" />
-                                    </Form.Group>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="" name="info_around"/>
-                                    </Form.Group>
+                                <Col sm={12}>
+                                    <Form.Row>
+                                        <Form.Group as={Col} controlId="TextareaObservation">
+                                            <Form.Control type="text" name="info_around" />
+                                        </Form.Group>
+                                    </Form.Row>
                                 </Col>
                             </Form.Group>
                         </fieldset>
