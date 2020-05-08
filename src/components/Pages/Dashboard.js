@@ -29,6 +29,7 @@ constructor(props) {
     group: '',
     users: "",
     usersCollection: [],
+    contactsCollection: [],
     user_first_name: "",
     user_last_name: "",
     user_date_of_birth: "",
@@ -37,6 +38,7 @@ constructor(props) {
     user_email: "",
     user_password: "",
     user_adresse_txt: "",
+    
   }
 
   this.userid = '';
@@ -90,6 +92,11 @@ constructor(props) {
         const usersCollection = res.data;
         this.setState( { usersCollection } );
       })
+    axios.get('http://localhost:3001/api/contacts')
+      .then (res => {
+        const contactsCollection = res.data;
+        this.setState( {contactsCollection});
+      })
   }
 
   handleChange = (_, activeIndex) => this.setState({ activeIndex })
@@ -133,8 +140,8 @@ constructor(props) {
           <MyTab label='Information location' />      
            <MyTab label='Créer une annonce ' />
            <MyTab label='Prise de rendez-vous' /> 
-          {group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
-          {/* <MyTab label='Liste des annonces' />  */}
+          {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
+          {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste de contacts' /> : null }
 
         </VerticalTabs>
           </Col>
@@ -246,7 +253,6 @@ constructor(props) {
                 { title: "Prénom", field: "user_first_name" },
                 { title: "Nom", field: "user_last_name" },
                 { title: "Email", field: "user_email"},
-                // { title: "Password", field: "user_password", show: false},
                 { title: "Birthay", field: "user_date_of_birth"},
                 { title: "Sexe", field: "user_sexe"},
                 { title: "Adresse", field: "user_adresse_txt"}
@@ -333,6 +339,19 @@ constructor(props) {
                     })
                  }}
               />
+            </TabContainer> }
+            {activeIndex === 5 && <TabContainer>
+                <MaterialTable
+                  columns={[
+                    { title: 'Nom', field: 'contact_first_name' },
+                    { title: 'Prénom', field: 'contact_last_name' },
+                    { title: 'Email', field: 'contact_email' },
+                    { title: 'Objet', field: 'contact_object'},
+                    { title: 'Message', field: 'contact_message'}
+                  ]}
+                  data={this.state.contactsCollection}
+                  title="Liste des messages"
+                />
             </TabContainer> }
           </Col>
         </Row>
