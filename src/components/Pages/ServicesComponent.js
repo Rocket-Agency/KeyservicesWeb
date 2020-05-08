@@ -48,15 +48,6 @@ export class ServicesComponent extends Component {
                                         >
                                         {src => <img src={src} width="100%" alt="Service remise des clés"  />}
                                         </ProgressiveImage>
-                                        {/* <Img src='./images/remise_des_cles.png' width="100%" height="auto" className="imgServices" alt="Logo keyservices "/> */}
-                                        {/* <Img 
-                                            placeholder={ImgDefaultServices} 
-                                            src='./images/remise_des_cles.png'
-                                            width="100%"
-                                            height="auto"
-                                            debounce={1000}
-                                            alt="Image remise des clés"
-                                        /> */}
                                     </Col>
                                 </Hidden>
                                 
@@ -92,15 +83,6 @@ export class ServicesComponent extends Component {
                                         >
                                             {src => <img src={src} width="100%" alt="Service remplir son frigo mobile" />}
                                         </ProgressiveImage>
-                                        {/* <Img src='./images/frigo_mobile.jpg' width="100%%" height="130px" alt="Logo keyservices "/> */}
-                                        {/* <Img 
-                                            placeholder={ImgDefaultServices} 
-                                            src='./images/frigo_mobile.jpg'
-                                            width="100%"
-                                            height="auto"
-                                            debounce={1000}
-                                            alt="Service remplir son frigo mobile"
-                                        />  */}
                                     </Col>
                                 </Visible>
 
@@ -112,15 +94,6 @@ export class ServicesComponent extends Component {
                                         >
                                         {src => <img src={src} width="100%" alt="Service remplir son frigo"  />}
                                         </ProgressiveImage>
-                                        {/* <Img src='./images/remplir_son_frigo.png' width="100%" height="auto" alt="Logo keyservices "/> */}
-                                        {/* <Img 
-                                            placeholder={ImgDefaultServices} 
-                                            src='./images/remplir_son_frigo.png'
-                                            width="100%"
-                                            height="auto"
-                                            debounce={1000}
-                                            alt="Service remplir son frigo"
-                                        />   */}
                                    </Col>
                                 </Hidden>
 
@@ -157,15 +130,6 @@ export class ServicesComponent extends Component {
                                         >
                                         {src => <img src={src} width="100%" alt="Service nettoyage mobile"  />}
                                         </ProgressiveImage>
-                                        {/* <Img src='./images/nettoyage_mobile.jpg' width="100%" height="130px" alt="Logo keyservices "/> */}
-                                        {/* <Img 
-                                            placeholder={ImgDefaultServices} 
-                                            src='./images/nettoyage_mobile.jpg'
-                                            width="100%"
-                                            height="auto"
-                                            debounce={1000}
-                                            alt="Service nettoyage mobile"
-                                        />    */}
                                     </Col>
                                 </Visible>
 
@@ -178,15 +142,6 @@ export class ServicesComponent extends Component {
                                         >
                                             {src => <img src={src} width="100%"  alt="Service nettoyage"  />}
                                         </ProgressiveImage>
-                                        {/* <Img src='./images/nettoyage.png' width="100%" height="auto" alt="Logo keyservices "/> */}
-                                        {/* <Img 
-                                            placeholder={ImgDefaultServices} 
-                                            src='./images/nettoyage.png'
-                                            width="100%"
-                                            height="auto"
-                                            debounce={1000}
-                                            alt="Service nettoyage"
-                                        />    */}
                                     </Col>
                                 </Hidden>
 
@@ -221,15 +176,6 @@ export class ServicesComponent extends Component {
                                         >
                                             {src => <img src={src} width="100%" alt="Service prise de rendez-vous mobile"  />}
                                         </ProgressiveImage>
-                                        {/* <Img src='./images/prise_rdv_mobile.png' width="100%%" height="130px" alt="Logo keyservices "/> */}
-                                        {/* <Img 
-                                            placeholder={ImgDefaultServices} 
-                                            src='./images/prise_rdv_mobile.png'
-                                            width="100%"
-                                            height="auto"
-                                            debounce={1000}
-                                            alt="Service prise de rendez-vous mobile"
-                                        />    */}
                                     </Col>
                                 </Visible>
 
@@ -241,15 +187,6 @@ export class ServicesComponent extends Component {
                                         >
                                             {src => <img src={src} width="100%" alt="Service prise de rendez-vous"  />}
                                         </ProgressiveImage>
-                                        {/* <Img src='./images/prise_rdv.png' width="100%" height="auto" alt="Logo keyservices "/> */}
-                                        {/* <Img 
-                                            placeholder={ImgDefaultServices} 
-                                            src='./images/prise_rdv.png'
-                                            width="100%"
-                                            height="auto"
-                                            debounce={1000}
-                                            alt="Service prise de rendez-vous"
-                                        />    */}
                                     </Col>
                                 </Hidden>
 
@@ -276,7 +213,6 @@ export class ServicesComponent extends Component {
                                     </Container>
                                 </Col>
                             </Row>
-                            
                         </Col>
                     </Container>
                 </Container>

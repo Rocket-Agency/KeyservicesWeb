@@ -11,7 +11,6 @@ import ProprietaireTiny from '../../ImagesPlaceholder/PropriétaireTiny.png';
 
 export class MonEspace extends Component {
 
-
     render() {
         return(
             <div>

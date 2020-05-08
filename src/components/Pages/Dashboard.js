@@ -219,7 +219,7 @@ constructor(props) {
         { activeIndex === 1 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Information location</BreadcrumbItem>
-          Information location
+          <h1>Information location</h1>
          </TabContainer> }
 
          { activeIndex === 2 &&<TabContainer>
@@ -232,12 +232,14 @@ constructor(props) {
          { activeIndex === 3 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Calendrier</BreadcrumbItem>
-            Calendrier
+          <h1>Calendrier</h1>
+            <AnnounceaLinearStepper/>
          </TabContainer> }
 
         { activeIndex === 4 && <TabContainer style={{ minWidth: "100%" }}>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Liste d'utilisateurs</BreadcrumbItem>
+          <h1>Liste d'utilisateurs</h1>
             <MaterialTable
               columns={[
                 {
