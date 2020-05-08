@@ -10,9 +10,7 @@
         flex-direction: column;
         display: block;
     }
-    .MuiTypography-root.MuiStepLabel-label.MuiStepLabel-active.MuiTypography-body2.MuiTypography-displayBlock {
-        padding: 20px;
-    }
+
     .MuiStep-root.MuiStep-horizontal {
         padding: 20px;
     }
@@ -28,4 +26,8 @@
     @media (max-width: 576px) {
         text-align: left;
     }
+}
+
+#TextareaObservation {
+    height: 50px;
 }

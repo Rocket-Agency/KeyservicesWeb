@@ -10,6 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 
 import AnnounceAdressBis from './AnnounceAdresseBis';
+import AnnounceHousingBis from './AnnounceHousingBis';
+import AnnounceRulesInformationsBis from './AnnounceRulesInformationsBis';
 import AnnounceConfirmBis from './AnnounceConfirmBis';
 
 
@@ -30,19 +32,19 @@ const useStyles = makeStyles((theme) => ({
 
 
   // const steps = ['Adresse de votre logement', "Votre logement", 'Équipement et installation', 'Informations et Règles', 'Récapitulatif', "Tarif", "Annonce à poster", "Paiement", "Validation de l'annonce"];
-  const steps = ['Adresse de votre logement', "Votre logement", "Tarif", 'Récapitulatif', "Votre annonce", "Paiement", "Validation de l'annonce"];
+  const steps = ['Adresse de votre logement', "Votre logement", "Information et règles", "Tarif", 'Récapitulatif', "Votre annonce", "Paiement", "Validation de l'annonce"];
    
   function getStepContent(step) {
     switch (step) {
       case 0:
         return <AnnounceAdressBis />;
-      // case 1:
-      //   return <AnnounceHousing />;
-      // case 2:
-      //   return <AnnounceEquipement />;
+      case 1:
+        return <AnnounceHousingBis />;
+      case 2:
+        return <AnnounceRulesInformationsBis />;
       // case 3:
       //   return <AnnounceRulesInformations />;
-      case 1:
+      case 3:
         return <AnnounceConfirmBis/>;
       // case 5:
       //   return <AnnounceSuccess/>;

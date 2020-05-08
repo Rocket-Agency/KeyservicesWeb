@@ -2,10 +2,6 @@ import React from 'react';
 import '../../../../css/Announce.scss';
 
 import { Col, Container, Row, Form } from 'react-bootstrap';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import { Button } from 'reactstrap';
 import TextField from '@material-ui/core/TextField';
 
 
@@ -126,7 +122,7 @@ export default function AddressForm() {
 
           <Col xs={12} md={4} className="mt-2">
             <Form.Row>
-              <Form.Label className="label-info-generales" column sm={4}>Code postal</Form.Label>
+              <Form.Label className="label-info-annonce" column sm={4}>Code postal</Form.Label>
                 <Col sm={8}>
                   <TextField
                     required id="standard-required"

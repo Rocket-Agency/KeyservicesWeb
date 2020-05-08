@@ -22,7 +22,7 @@ export class AnnounceConfirm extends Component {
                 <React.Fragment>
                     <AppBar title="Confirm User Data" />
                     <List>
-                        <h2>Votre addresse</h2> 
+                        <h2>Adresse de votre logement</h2> 
                         <ListItem>
                             <ListItemText primary="N° de rue" /> 
                         </ListItem>
@@ -30,20 +30,72 @@ export class AnnounceConfirm extends Component {
                         <ListItem>
                             <ListItemText primary="Type de rue :" /> 
                         </ListItem>
-            
-                        {/* <ListItem>
-                        <ListItemText primary="Prénom" secondary={first_name} /> 
+
+                        <ListItem>
+                            <ListItemText primary="Nom de rue :" /> 
                         </ListItem>
             
                         <ListItem>
-                        <ListItemText primary="Tel" secondary={tel} /> 
+                            <ListItemText primary="Information complémentaire :" /> 
                         </ListItem>
-            
+
                         <ListItem>
-                        <ListItemText primary="Date de naissance" secondary={dateOfBirth} /> 
-                        </ListItem> */}
+                            <ListItemText primary="Région :" /> 
+                        </ListItem>
+
+                        <ListItem>
+                            <ListItemText primary="Ville :" /> 
+                        </ListItem>
+
+                        <ListItem>
+                            <ListItemText primary="Code postal :" /> 
+                        </ListItem>
+ 
                         <br/>
-                        <h2>Information de votre adresse</h2>
+
+                        <h2>Information de votre logement</h2>
+                        <ListItem>
+                            <ListItemText primary="Type de propriété" /> 
+                        </ListItem>
+            
+                        <ListItem>
+                            <ListItemText primary="Type de logement :" /> 
+                        </ListItem>
+
+                        <ListItem>
+                            <ListItemText primary="Nombre de chambre :" /> 
+                        </ListItem>
+            
+                        <ListItem>
+                            <ListItemText primary="Nombre de salle de bain :" /> 
+                        </ListItem>
+
+                        <ListItem>
+                            <ListItemText primary="Observertion :" /> 
+                        </ListItem>
+
+                        <br/>
+
+                        <h2>Information de vos équipements et installation</h2>
+                        <ListItem>
+                            <ListItemText primary="Vos équipement :" /> 
+                        </ListItem>
+            
+                        <ListItem>
+                            <ListItemText primary="Vos installations :" /> 
+                        </ListItem>
+
+                        <br/>
+
+                        <h2>Vos information et règles</h2>
+                        <ListItem>
+                            <ListItemText primary="Vos information complémentaire :" /> 
+                        </ListItem>
+            
+                        <ListItem>
+                            <ListItemText primary="Vos règles :" /> 
+                        </ListItem>
+
                         {/* <ListItem>
                         <ListItemText primary="Adresse de facturation" secondary={factureAdress} /> 
                         </ListItem>

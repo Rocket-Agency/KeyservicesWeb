@@ -5,7 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { Row, Col, Container, Form } from 'react-bootstrap';
 
-export class AnnounceRulesInformations extends Component {
+export class AnnounceRulesInformationsBis extends Component {
 
     continue = e => {
         e.preventDefault();
@@ -18,66 +18,13 @@ export class AnnounceRulesInformations extends Component {
         return(
             <div>
             <Container fluid className="pt-4 blocForm" >  
-                <h2>Imformations et Régles</h2>
+                <h2 className="mb-4">Imformations et Régles</h2>
 
-                <Container fluid>
+                    <Container fluid>
                         <fieldset>
-                            <Form.Group as={Row}>
-                                <Form.Label column sm={2} className="label-info-generales">
-                                    Règles :
-                                </Form.Label>
-                                <Col sm={4}>
-                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Ne convient pas aux enfants de moins de 2ans" />
-                                    </Form.Group>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Ne convient pas à un enfant entre 2 et 12ans" />
-                                    </Form.Group>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Animaux autorisé" />
-                                    </Form.Group>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Fumeurs autorisé" />
-                                    </Form.Group>
-                                    <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Évènement autorisé" />
-                                    </Form.Group>
-                                </Col>
-                            </Form.Group>
-                        </fieldset>
-                        <fieldset>
-                            <Form.Row>
-                                <Form.Group as={Col} controlId="TextareaObservation">
-                                    <Form.Label className="label-info-generales">Ajouter une règle</Form.Label>
-                                    <Form.Control name="observation" as="textarea" rows="3"/>
-                                </Form.Group>
-                            </Form.Row>
-                        </fieldset>
-                        <fieldset>
-                            <Form.Row>
-                                <Form.Group as={Col} controlId="TextareaObservation">
-                                    <Form.Label className="label-info-generales">Informations utiles</Form.Label>
-                                    <Form.Control type="text" />
-                                </Form.Group>
-                            </Form.Row>
-                            <Form.Row>
-                                <Form.Group as={Col} controlId="TextareaObservation">
-                                    <Form.Label className="label-info-generales">Disponibilité</Form.Label>
-                                    <Form.Control type="text" label="checkbox jour de la semaine" />
-                                </Form.Group>
-                            </Form.Row>
-                            <Form.Row>
-                                <Form.Group as={Col} controlId="TextareaObservation">
-                                    <Form.Label className="label-info-generales">Au alentour</Form.Label>
-                                    <Form.Control type="text"  />
-                                </Form.Group>
-                            </Form.Row>
-                        </fieldset>
-
-                        <fieldset>
-                            <Form.Group as={Row}>
-                                <Form.Label column sm={2} className="label-info-generales">
-                                    Équipements :
+                            <Form.Group as={Row} className="mt-4">
+                                <Form.Label column sm={2} className="label-info-annonce">
+                                    Informations :
                                 </Form.Label>
                                 <Col sm={3}>
                                     <Form.Group id="formGridCheckbox">
@@ -114,6 +61,60 @@ export class AnnounceRulesInformations extends Component {
                                 </Col>
                             </Form.Group>
                         </fieldset>
+                        <fieldset>
+                            <Form.Group as={Row} className="mt-4">
+                                <Form.Label column sm={2} className="label-info-annonce">
+                                    Règles :
+                                </Form.Label>
+                                <Col sm={4}>
+                                     <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Ne convient pas aux enfants de moins de 2ans" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Ne convient pas à un enfant entre 2 et 12ans" />
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={4}>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Animaux autorisé" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Fumeurs autorisé" />
+                                    </Form.Group>
+                                    <Form.Group id="formGridCheckbox">
+                                        <Form.Check type="checkbox" label="Évènement autorisé" />
+                                    </Form.Group>
+                                </Col>
+                            </Form.Group>
+                        </fieldset>
+                        <fieldset>
+                            <Form.Row>
+                                <Form.Group as={Col} controlId="TextareaObservation">
+                                    <Form.Label>Ajouter une règle</Form.Label>
+                                    <Form.Control name="observation" as="textarea" rows="3"/>
+                                </Form.Group>
+                            </Form.Row>
+                        </fieldset>
+                        <fieldset>
+                            <Form.Row>
+                                <Form.Group as={Col} controlId="TextareaObservation">
+                                    <Form.Label>Informations utiles</Form.Label>
+                                    <Form.Control type="text" />
+                                </Form.Group>
+                            </Form.Row>
+                            <Form.Row>
+                                <Form.Group as={Col} controlId="TextareaObservation">
+                                    <Form.Label>Disponibilité</Form.Label>
+                                    <Form.Control type="text" label="checkbox jour de la semaine" />
+                                </Form.Group>
+                            </Form.Row>
+                            <Form.Row>
+                                <Form.Group as={Col} controlId="TextareaObservation">
+                                    <Form.Label>Au alentour</Form.Label>
+                                    <Form.Control type="text"  />
+                                </Form.Group>
+                            </Form.Row>
+                        </fieldset>
                     </Container>
                 </Container>
             </div>
@@ -122,4 +123,4 @@ export class AnnounceRulesInformations extends Component {
     }
 }
 
-export default AnnounceRulesInformations;
+export default AnnounceRulesInformationsBis;
