@@ -23,3 +23,9 @@
     line-height: 30px;
 }
 
+.label-info-annonce {
+    font-weight: 700;
+    @media (max-width: 576px) {
+        text-align: left;
+    }
+}

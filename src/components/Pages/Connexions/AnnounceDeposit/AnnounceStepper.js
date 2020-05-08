@@ -9,8 +9,10 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 
-import AnnounceAdress from './AnnounceAdresse';
-import AnnounceConfirm from './AnnounceConfirm';
+import AnnounceAdressBis from './AnnounceAdresseBis';
+import AnnounceConfirmBis from './AnnounceConfirmBis';
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,21 +28,22 @@ const useStyles = makeStyles((theme) => ({
 
   }));
 
+
   // const steps = ['Adresse de votre logement', "Votre logement", 'Équipement et installation', 'Informations et Règles', 'Récapitulatif', "Tarif", "Annonce à poster", "Paiement", "Validation de l'annonce"];
   const steps = ['Adresse de votre logement', "Votre logement", "Tarif", 'Récapitulatif', "Votre annonce", "Paiement", "Validation de l'annonce"];
    
   function getStepContent(step) {
     switch (step) {
       case 0:
-        return <AnnounceAdress />;
+        return <AnnounceAdressBis />;
       // case 1:
       //   return <AnnounceHousing />;
       // case 2:
       //   return <AnnounceEquipement />;
       // case 3:
       //   return <AnnounceRulesInformations />;
-      case 4:
-        return <AnnounceConfirm/>;
+      case 1:
+        return <AnnounceConfirmBis/>;
       // case 5:
       //   return <AnnounceSuccess/>;
       default:

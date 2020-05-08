@@ -40,6 +40,7 @@ constructor(props) {
     user_password: "",
     user_adresse_txt: "",
     
+    addressCollection: [],
   }
 
   this.userid = '';
