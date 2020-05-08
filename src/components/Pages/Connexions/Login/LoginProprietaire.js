@@ -4,6 +4,8 @@ import { BreadcrumbItem } from '../../../../index';
 import { Col, Container, Row, Card} from 'react-bootstrap';
 import ConnexionProfileProprietaire from '../ConnexionProfilePropretaire';
 import HomeIcon from '@material-ui/icons/Home';
+import ProgressiveImage from "react-progressive-graceful-image";
+import ContactTiny from '../../../../ImagesPlaceholder/ConnexionTiny.png';
 
 export class LoginProprietaire extends Component {
 
@@ -25,8 +27,15 @@ export class LoginProprietaire extends Component {
                             <Col md={6}>
                                 <div className="d-flex justify-content-center"  id="BlocExplication">
                                     <div className="card">
-                                        <Card.Img  id="Propriétaire" width="auto%"  height="400px" src='./images/connexion.png' alt="Card image" />
-                                        <Card.ImgOverlay className="text-connection">
+                                        <ProgressiveImage  className="card-img style-card" 
+                                            src='./images/connexion.png'
+                                            placeholder={ContactTiny} 
+                                            width="auto"
+                                            height="400px"
+                                        >
+                                            {src => <img src={src}  alt="Connexion Propriétaire" />}
+                                        </ProgressiveImage>                                          
+                                         <Card.ImgOverlay className="text-connection">
                                             <Card.Text>
                                             Ea qui magna laboris labore. Sint sit commodo esse duis deserunt in commodo aliquip ut 
                                             elit ex dolor adipisicing in.
