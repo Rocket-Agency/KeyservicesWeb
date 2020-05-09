@@ -92,6 +92,46 @@ export class Announce extends Component {
                     </Container>
 
                     <Container fluid className="pt-3 pb-3"> 
+                        <Row className="pt-2 pb-2">
+                            <Col xs={6} md={3} className="d-flex justify-content-center info-annonce-night">
+                                <Form.Group controlId="Announce_ad_description">
+                                    <Form.Label>Nuit minimum</Form.Label>
+                                    <Form.Control as="select" name="ad_capacity">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    </Form.Control>
+                                </Form.Group>
+                            </Col>
+                            <Col xs={6} md={3} className="d-flex justify-content-center info-annonce-night">
+                                <Form.Group controlId="Announce_ad_description">
+                                    <Form.Label>Nuit maximum (*)</Form.Label>
+                                    <Form.Control as="select" name="ad_capacity">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    </Form.Control>
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                        <Row>* Nous contacter pour plus de nuité</Row>
+                    </Container>
+
+                    <Container fluid className="pt-3 pb-3"> 
                         <Row className="pt-3 pb-3">
                             <Col xs={6} md={6} className="d-flex justify-content-center info-annonce-date">
                                 Arrivée
