@@ -21,6 +21,18 @@
     line-height: 30px;
 }
 
+.MuiSvgIcon-root.MuiStepIcon-root.MuiStepIcon-completed {
+    color: #49173B;
+}
+
+.MuiSvgIcon-root.MuiStepIcon-root.MuiStepIcon-active {
+    color: #49173B;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary {
+    background-color: #49173B;
+}
+
 .label-info-annonce {
     font-weight: 700;
     @media (max-width: 576px) {
@@ -49,5 +61,13 @@
     color: #ffffff;
     font-weight: 700;
     padding: 20px 0;
+    border: 1px solid #ffffff;
+}
+
+.info-annonce-night {
+    background-color: #49173B;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 10px 0;
     border: 1px solid #ffffff;
 }

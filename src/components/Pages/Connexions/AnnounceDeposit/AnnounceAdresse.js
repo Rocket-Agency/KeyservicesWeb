@@ -33,7 +33,7 @@ export default function AddressForm() {
 
           <Col xs={12} md={6} className="mt-3">
             <Form.Row>
-              <Col>
+              <Form.Label className="label-info-annonce" column sm={4}>Type de rue</Form.Label>
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Control as="select" name="address_road_type" >
                     <option>Choisir un type de rue</option>
@@ -42,7 +42,6 @@ export default function AddressForm() {
                     <option>Boulevard</option>
                   </Form.Control>
                 </Form.Group>
-              </Col>
             </Form.Row>  
           </Col>
         </Row>

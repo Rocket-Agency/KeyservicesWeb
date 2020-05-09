@@ -31,8 +31,7 @@ export class MonEspace extends Component {
                                     <Link to="/loginProprietaire">
                                         <ProgressiveImage  className="card-img" 
                                             src='./images/Proprietaire.png' 
-                                            placeholder={ProprietaireTiny} 
-                                            alt="Espace propriétaire"
+                                            placeholder={ProprietaireTiny}
                                         >
                                             {src => <img src={src} width="100%" alt="Espace propriétaire"  />}
                                         </ProgressiveImage>
@@ -51,7 +50,6 @@ export class MonEspace extends Component {
                                         <ProgressiveImage  className="card-img style-card" 
                                             src='./images/Locataire.png'
                                             placeholder={LocataireTiny} 
-                                            alt="Espace Locataire"
                                         >
                                             {src => <img src={src} width="100%" alt="Espace Locataire"  />}
                                         </ProgressiveImage>

@@ -43,9 +43,9 @@ export class Home extends Component {
                         <Carousel.Item>
                             <ProgressiveImage  className="card-img style-card" 
                                 src="./images/PosterUneAnnonce.png" 
-                                placeholder={PosterUneAnnonceTiny} 
+                                // placeholder={PosterUneAnnonceTiny} 
                             >
-                                {src => <img src={src}  alt="Poster une annoncee"  />}
+                                {src => <img src={src} width="100%" alt="Poster une annoncee"  />}
                             </ProgressiveImage>    
                             
                             <Carousel.Caption>
