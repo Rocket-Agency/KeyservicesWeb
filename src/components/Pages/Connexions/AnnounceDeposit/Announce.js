@@ -3,19 +3,29 @@ import '../../../../css/Announce.scss';
 
 import { Col, Container, Row, Form } from 'react-bootstrap';
 import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
 
+import "react-datepicker/dist/react-datepicker.css";
+import DatePickerChoice from './DateChoice/DatePickerChoice';
 
-export class AnnounceTarif extends Component {
+export class Announce extends Component {
     
-
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
       };
 
+      state = {
+        startDate: new Date()
+      };
+     
+      handleChange = date => {
+        this.setState({
+          startDate: date
+        });
+      };
+
     render() {
-        // const { values, handleChange } = this.props;
+        // // const { values, handleChange } = this.props;`
         return(
             <div>
                 <Container fluid className="pt-4 blocForm" >  
@@ -92,20 +102,8 @@ export class AnnounceTarif extends Component {
                             </Col>
                         </Row>
 
-                        <Grid container spacing={3}>
-                            <Grid item xs={3}>
-                                Date de d'arrivée
-                            </Grid>
-                            <Grid item xs={3}>
-                                Heure d'arrivée
-                            </Grid>
-                            <Grid item xs={3}>
-                                Date de départ
-                            </Grid>
-                            <Grid item xs={3}>
-                                Heure de départ
-                            </Grid>
-                        </Grid>
+                        <DatePickerChoice />
+
                     </Container>
 
 
@@ -115,4 +113,4 @@ export class AnnounceTarif extends Component {
     }
 }
 
-export default AnnounceTarif;
+export default Announce;
