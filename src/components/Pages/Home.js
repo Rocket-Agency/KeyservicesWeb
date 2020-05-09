@@ -10,7 +10,8 @@ import GererMesLocationsTiny from '../../ImagesPlaceholder/GererMesLocationsTiny
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
-import Carousel from 'react-bootstrap/Carousel'
+import Carousel from 'react-bootstrap/Carousel';
+import CookieConsent from "react-cookie-consent";
 
 
 export class Home extends Component {
@@ -26,7 +27,19 @@ export class Home extends Component {
                         <img src="./Images/GererMesLocations.png" />
                     </div>
                 </Carousel> */}
-
+                <CookieConsent
+                    location="bottom"
+                    declineButtonText="Je refuse"
+                    buttonText="J'accepte"
+                    cookieName="myAwesomeCookieName2"
+                    expires={150}
+                    enableDeclineButton
+                    onDecline={() => {window.location.replace("http://www.google.com");}}
+                    flipButtons
+                    >
+                        
+                    Nous utilisons des cookies pour nous permettre de mieux comprendre comment le site est utilisé. En continuant à utiliser ce site, vous acceptez cette politique.
+                </CookieConsent>
 
                     <Carousel>
                         <Carousel.Item>
