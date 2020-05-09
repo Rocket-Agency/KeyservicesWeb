@@ -5,8 +5,9 @@ import Grid from '@material-ui/core/Grid';
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function DatePickerDeparture() {
-    const [startDate, setStartDate] = useState(new Date("2014/02/08"));
-    const [endDate, setEndDate] = useState(new Date("2014/02/10"));
+    const [startDate, setStartDate] = useState(new Date("2020/05/28"));
+    const [endDate, setEndDate] = useState(new Date("2020/05/28")
+    );
     return (
         <>
         <Grid container spacing={3}>
@@ -18,6 +19,7 @@ export default function DatePickerDeparture() {
               selectsStart
               startDate={startDate}
               endDate={endDate}
+              name="ad_starting_date"
             />              
           </Grid>
             
@@ -29,8 +31,9 @@ export default function DatePickerDeparture() {
                 showTimeSelect
                 showTimeSelectOnly
                 timeIntervals={15}
-                timeCaption="Time"
-                dateFormat="h:mm aa"
+                timeCaption="Heure"
+                dateFormat="h:mm"
+                name="ad_arrival_time"
               />
           </Grid>
                             
@@ -43,11 +46,22 @@ export default function DatePickerDeparture() {
               startDate={startDate}
               endDate={endDate}
               minDate={startDate}
+              name="ad_ending_date"
             />
           </Grid>
                             
           <Grid item xs={3}>
             <div className="label-info-annonce" >Heure de départ </div>  
+            <DatePicker
+                selected={startDate}
+                onChange={date => setStartDate(date)}
+                showTimeSelect
+                showTimeSelectOnly
+                timeIntervals={15}
+                timeCaption="Heure"
+                dateFormat="h:mm"
+                name="ad_departure_time"
+              />
           </Grid>
         </Grid>
         
