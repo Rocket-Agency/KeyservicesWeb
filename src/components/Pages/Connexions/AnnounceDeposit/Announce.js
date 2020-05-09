@@ -65,7 +65,7 @@ export class Announce extends Component {
 
                     <Container fluid>
                         <Row className="pt-3 pb-3">
-                            <Col xs={12} md={12} className="label-info-annonce">
+                            <Col xs={12} md={6} className="label-info-annonce">
                                 <Form.Group controlId="Announce_ad_description">
                                     <Form.Label>Capacité d'accueil</Form.Label>
                                     <Form.Control as="select" name="ad_capacity">
@@ -74,6 +74,44 @@ export class Announce extends Component {
                                     <option>3</option>
                                     <option>4</option>
                                     <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                    <option>21</option>
+                                    <option>22</option>
+                                    <option>23</option>
+                                    <option>24</option>
+                                    <option>25</option>
+                                    <option>26</option>
+                                    <option>27</option>
+                                    <option>28</option>
+                                    <option>29</option>
+                                    <option>30</option>
+                                    </Form.Control>
+                                </Form.Group>
+                            </Col>
+                            <Col xs={12} md={6} className="label-info-annonce">
+                                <Form.Group controlId="Announce_ad_notice">
+                                <Form.Label>Préavis (A combien de jour souhaitez-vous être prévenu d'une arrivée ?)</Form.Label>
+                                    <Form.Control as="select" name="ad_capacity">
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
                                     </Form.Control>
                                 </Form.Group>
                             </Col>
@@ -85,7 +123,15 @@ export class Announce extends Component {
                             <Col xs={12} md={12} className="label-info-annonce">
                                 <Form.Group controlId="Announce_ad_notice">
                                     <Form.Label>Préavis (A combien de jour souhaitez-vous être prévenu d'une arrivée ? 2 jours minimum)</Form.Label>
-                                    <Form.Control as="textarea" rows="2" name="ad_notice" />
+                                        <TextField
+                                            type="text" 
+                                            name="ad_notice"
+                                            pattern="[A-Za-z]{3}"
+                                            required id="standard-required"
+                                            variant="outlined"
+                                            fullWidth
+                                            size="small"
+                                        />
                                 </Form.Group> 
                             </Col>
                         </Row>
