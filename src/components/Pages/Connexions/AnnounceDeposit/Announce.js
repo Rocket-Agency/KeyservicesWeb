@@ -84,15 +84,15 @@ export class Announce extends Component {
                         <Row className="pt-3 pb-3">
                             <Col xs={12} md={12} className="label-info-annonce">
                                 <Form.Group controlId="Announce_ad_notice">
-                                    <Form.Label>Note importante (A combien de jour souhaitez-vous être prévenu d'une arrivée ?)</Form.Label>
+                                    <Form.Label>Préavis (A combien de jour souhaitez-vous être prévenu d'une arrivée ? 2 jours minimum)</Form.Label>
                                     <Form.Control as="textarea" rows="2" name="ad_notice" />
                                 </Form.Group> 
                             </Col>
                         </Row>
                     </Container>
 
-                    <Container fluid className="pt-3 pb-3"> 
-                        <Row className="pt-2 pb-2">
+                    <Container fluid> 
+                        <Row className="pt-2 pb-2 d-flex justify-content-center">
                             <Col xs={6} md={3} className="d-flex justify-content-center info-annonce-night">
                                 <Form.Group controlId="Announce_ad_description">
                                     <Form.Label>Nuit minimum</Form.Label>
@@ -128,7 +128,7 @@ export class Announce extends Component {
                                 </Form.Group>
                             </Col>
                         </Row>
-                        <Row>* Nous contacter pour plus de nuité</Row>
+                        <Row className="d-flex justify-content-center">* Nous contacter pour plus de nuité</Row>
                     </Container>
 
                     <Container fluid className="pt-3 pb-3"> 
