@@ -3,10 +3,7 @@ import '../../../../css/Announce.scss';
 
 import { Col, Container, Row, Form } from 'react-bootstrap';
 import TextField from '@material-ui/core/TextField';
-import DateChoiceArrival from './DateTimeFunction';
-import TimeChoice from './DateTimeFunction';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 
 
 export class AnnounceTarif extends Component {
@@ -95,7 +92,6 @@ export class AnnounceTarif extends Component {
                             </Col>
                         </Row>
 
-                    
                         <Grid container spacing={3}>
                             <Grid item xs={3}>
                                 Date de d'arrivée
