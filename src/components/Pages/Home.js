@@ -5,7 +5,6 @@ import '../../css/pe-7s-shield.scss';
 import { BreadcrumbItem } from '../../index';
 // import Img from 'react-cool-img';
 import ProgressiveImage from "react-progressive-graceful-image";
-
 // import ImgDefaultHome from '../../ImagesPlaceholder/placeholderHome.png';
 // import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 // import GererMesLocationsTiny from '../../ImagesPlaceholder/GererMesLocationsTiny.png';
@@ -13,6 +12,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carousel from 'react-bootstrap/Carousel';
 import { Container, Col, Row} from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
+import EventAvailableIcon from '@material-ui/icons/EventAvailable';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import LocalLaundryServiceIcon from '@material-ui/icons/LocalLaundryService';
 import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 import GererMesLocationsTiny from '../../ImagesPlaceholder/GérerMesLocationsTiny.png';
 import {Helmet} from "react-helmet";
@@ -43,7 +46,7 @@ export class Home extends Component {
                         <Carousel.Item>
                             <ProgressiveImage  className="card-img style-card" 
                                 src="./images/PosterUneAnnonce.png" 
-                                // placeholder={PosterUneAnnonceTiny} 
+                                placeholder={PosterUneAnnonceTiny} 
                             >
                                 {src => <img src={src} width="100%" alt="Poster une annoncee"  />}
                             </ProgressiveImage>    
@@ -170,7 +173,8 @@ export class Home extends Component {
                                 <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <i className="pe-7s-shield text-custom"></i>
+                                            {/* <i className="pe-7s-shield text-custom"></i> */}
+                                            <VpnKeyIcon style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">
@@ -193,7 +197,7 @@ export class Home extends Component {
                                 <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <i className="pe-7s-way text-custom"></i>
+                                            <AddShoppingCartIcon style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">
@@ -213,7 +217,7 @@ export class Home extends Component {
                                  <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <i className="pe-7s-note2 text-custom"></i>
+                                            <EventAvailableIcon style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">
@@ -233,7 +237,7 @@ export class Home extends Component {
                                 <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <i className="pe-7s-world text-custom"></i>
+                                            <LocalLaundryServiceIcon style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">
