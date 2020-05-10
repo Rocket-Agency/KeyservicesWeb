@@ -197,7 +197,7 @@ export class Home extends Component {
                                 <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <AddShoppingCartIcon style={{ fontSize: 40 }} />
+                                            <AddShoppingCartIcon className="iconeServices" style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">
