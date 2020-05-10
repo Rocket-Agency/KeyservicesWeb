@@ -5,7 +5,6 @@ import '../../css/pe-7s-shield.scss';
 import { BreadcrumbItem } from '../../index';
 // import Img from 'react-cool-img';
 import ProgressiveImage from "react-progressive-graceful-image";
-
 // import ImgDefaultHome from '../../ImagesPlaceholder/placeholderHome.png';
 // import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 // import GererMesLocationsTiny from '../../ImagesPlaceholder/GererMesLocationsTiny.png';
@@ -13,6 +12,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carousel from 'react-bootstrap/Carousel';
 import { Container, Col, Row} from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
+import EventAvailableIcon from '@material-ui/icons/EventAvailable';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import LocalLaundryServiceIcon from '@material-ui/icons/LocalLaundryService';
 import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 import GererMesLocationsTiny from '../../ImagesPlaceholder/GérerMesLocationsTiny.png';
 import {Helmet} from "react-helmet";
@@ -28,22 +31,14 @@ export class Home extends Component {
                 </Helmet>
 
                 <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
-                {/* <Carousel>
-                    <div>
-                        <img src="./Images/PosterUneAnnonce.png" />
-                    </div>
-                    <div>
-                        <img src="./Images/GererMesLocations.png" />
-                    </div>
-                </Carousel> */}
 
-                <div className="mt-3">
-
+                {/* <div className="mt-3"> */}
+                <div>
                     <Carousel>
                         <Carousel.Item>
                             <ProgressiveImage  className="card-img style-card" 
                                 src="./images/PosterUneAnnonce.png" 
-                                // placeholder={PosterUneAnnonceTiny} 
+                                placeholder={PosterUneAnnonceTiny} 
                             >
                                 {src => <img src={src} width="100%" alt="Poster une annoncee"  />}
                             </ProgressiveImage>    
@@ -93,61 +88,6 @@ export class Home extends Component {
                             ac luctus mauris pulvinar vel. Phasellus scelerisque dapibus mauris,
                             eget porta ligula. Vestibulum dictum ullamcorper nunc, nec vehicula tortor dictum et.</p>
                         </div>
-
-                        <div className="container-fluid">
-                            <div className="row">
-                                {/* <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
-                                    <div className="card">
-                                        <Img className="card-img style-card" 
-                                            placeholder={ImgDefaultHome} 
-                                            src="./Images/PosterUneAnnonce.png"
-                                            debounce={1000}
-                                            alt="Poster unee annonce" 
-                                        /> 
-
-                                        <ProgressiveImage  className="card-img style-card" 
-                                            src="./Images/PosterUneAnnonce.png"
-                                            placeholder={PosterUneAnnonceTiny} 
-                                            alt="Poster unee annonce" 
-                                        >
-                                        {src => <img src={src} width="100%" alt="Poster unee annonce"  />}
-                                        </ProgressiveImage>
-                                        <div className="card-img-overlay">
-                                            <button className="btn btn-md btn-success" aria-label="Poster une annonce"> 
-                                                Poster une annonce
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div> */}
-
-                                {/* <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
-                                    <div className="card">
-                                        <Img className="card-img style-card" 
-                                            placeholder={ImgDefaultHome} 
-                                            src="./Images/GererMesLocations.png"
-                                            debounce={1000}
-                                            alt="Gerer mes locations" 
-                                        /> 
-
-                                         <Link to="/">
-                                            <ProgressiveImage  className="card-img style-card" 
-                                                src="./Images/GererMesLocations.png"
-                                                placeholder={GererMesLocationsTiny} 
-                                                alt="Poster unee annonce" 
-                                                >
-                                                {src => <img src={src} width="100%" alt="Poster unee annonce"  />}
-                                            </ProgressiveImage>
-                                        </Link>
-                                        <div className="card-img-overlay">
-                                            <button className="btn btn-md btn-success" aria-label="Gérer mes locations">
-                                                Gérer mes locations
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div> */}
-
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -170,7 +110,8 @@ export class Home extends Component {
                                 <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <i className="pe-7s-shield text-custom"></i>
+                                            {/* <i className="pe-7s-shield text-custom"></i> */}
+                                            <VpnKeyIcon style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">
@@ -193,7 +134,7 @@ export class Home extends Component {
                                 <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <i className="pe-7s-way text-custom"></i>
+                                            <AddShoppingCartIcon className="iconeServices" style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">
@@ -213,7 +154,7 @@ export class Home extends Component {
                                  <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <i className="pe-7s-note2 text-custom"></i>
+                                            <EventAvailableIcon style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">
@@ -233,7 +174,7 @@ export class Home extends Component {
                                 <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <i className="pe-7s-world text-custom"></i>
+                                            <LocalLaundryServiceIcon style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">

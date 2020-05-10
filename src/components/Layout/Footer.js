@@ -17,7 +17,7 @@ const Footer = () => {
                     <div className="row d-flex align-items-center">
                         <Col sm={8} className="d-flex justify-content-end">
                             <p className="m-3 text-white">
-                                CGU - Contact - Mention légales - KeyServices | Tout droit réservés - {new Date().getFullYear()} 
+                                CGU - Contact - Mention légales - KeyServices | Tous droits réservés (c) - {new Date().getFullYear()} 
                             </p>       
                         </Col>
 

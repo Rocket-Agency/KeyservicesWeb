@@ -106,14 +106,14 @@ export class InformationAdresse extends Component {
                                         color="secondary"
                                         variant="contained"
                                         onClick={this.back}
-                                    >Back</Button>
+                                    >Retour</Button>
 
 
                                     <Button
                                     color="primary"
                                     variant="contained"
                                     onClick={this.continue}
-                                    >Continue</Button>
+                                    >Continuer</Button>
                             </Col>
                         </Row>
                     </Container>

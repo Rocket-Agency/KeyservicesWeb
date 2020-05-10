@@ -278,4 +278,15 @@ a {
 
 .service-container:hover .content .title {
     color: #3dd598 !important;
+    .MuiSvgIcon-root {
+        color: white;
+    }
+}
+
+// .MuiSvgIcon-root:hover {
+//     color: white;
+// }
+
+.service-container:hover .number-icon .MuiSvgIcon-root {
+    color: white;
 }

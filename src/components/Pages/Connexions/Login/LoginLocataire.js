@@ -4,7 +4,7 @@ import { BreadcrumbItem } from '../../../../index';
 import ConnexionProfileLocataire from '../ConnexionProfileLocataire';
 import HomeIcon from '@material-ui/icons/Home';
 import ProgressiveImage from "react-progressive-graceful-image";
-import ContactTiny from '../../../../ImagesPlaceholder/ConnexionTiny.png';
+import ConnexionTiny from '../../../../ImagesPlaceholder/ConnexionTiny.png';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
 
@@ -36,7 +36,7 @@ export class LoginLocataire extends Component {
                                         {/* <Card.Img  id="Propriétaire" width="auto"  height="400px" src='./images/connexion.png' alt="Card image" /> */}
                                         <ProgressiveImage  className="card-img style-card" 
                                             src='./images/connexion.png'
-                                            placeholder={ContactTiny} 
+                                            placeholder={ConnexionTiny} 
                                             width="auto"
                                             height="400px"
                                         >
