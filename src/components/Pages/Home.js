@@ -31,17 +31,9 @@ export class Home extends Component {
                 </Helmet>
 
                 <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
-                {/* <Carousel>
-                    <div>
-                        <img src="./Images/PosterUneAnnonce.png" />
-                    </div>
-                    <div>
-                        <img src="./Images/GererMesLocations.png" />
-                    </div>
-                </Carousel> */}
 
-                <div className="mt-3">
-
+                {/* <div className="mt-3"> */}
+                <div>
                     <Carousel>
                         <Carousel.Item>
                             <ProgressiveImage  className="card-img style-card" 
@@ -95,61 +87,6 @@ export class Home extends Component {
                         <p className="text-home text-center d-flex justify-content-center">Sed tristique tincidunt enim quis viverra. Suspendisse malesuada auctor felis, 
                             ac luctus mauris pulvinar vel. Phasellus scelerisque dapibus mauris,
                             eget porta ligula. Vestibulum dictum ullamcorper nunc, nec vehicula tortor dictum et.</p>
-                        </div>
-
-                        <div className="container-fluid">
-                            <div className="row">
-                                {/* <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
-                                    <div className="card">
-                                        <Img className="card-img style-card" 
-                                            placeholder={ImgDefaultHome} 
-                                            src="./Images/PosterUneAnnonce.png"
-                                            debounce={1000}
-                                            alt="Poster unee annonce" 
-                                        /> 
-
-                                        <ProgressiveImage  className="card-img style-card" 
-                                            src="./Images/PosterUneAnnonce.png"
-                                            placeholder={PosterUneAnnonceTiny} 
-                                            alt="Poster unee annonce" 
-                                        >
-                                        {src => <img src={src} width="100%" alt="Poster unee annonce"  />}
-                                        </ProgressiveImage>
-                                        <div className="card-img-overlay">
-                                            <button className="btn btn-md btn-success" aria-label="Poster une annonce"> 
-                                                Poster une annonce
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div> */}
-
-                                {/* <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
-                                    <div className="card">
-                                        <Img className="card-img style-card" 
-                                            placeholder={ImgDefaultHome} 
-                                            src="./Images/GererMesLocations.png"
-                                            debounce={1000}
-                                            alt="Gerer mes locations" 
-                                        /> 
-
-                                         <Link to="/">
-                                            <ProgressiveImage  className="card-img style-card" 
-                                                src="./Images/GererMesLocations.png"
-                                                placeholder={GererMesLocationsTiny} 
-                                                alt="Poster unee annonce" 
-                                                >
-                                                {src => <img src={src} width="100%" alt="Poster unee annonce"  />}
-                                            </ProgressiveImage>
-                                        </Link>
-                                        <div className="card-img-overlay">
-                                            <button className="btn btn-md btn-success" aria-label="Gérer mes locations">
-                                                Gérer mes locations
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div> */}
-
-                            </div>
                         </div>
                     </div>
                 </div>
