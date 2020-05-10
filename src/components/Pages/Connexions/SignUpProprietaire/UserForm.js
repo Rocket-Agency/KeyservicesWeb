@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import '../../../../css/InscriptionProprietaire.scss';
 
-// import FormUserDetails from './FormUserDetails';
 import InformationGenerales from './InformationGenerales';
 import InformationAdresse from './InformationAdresse';
 import InformationConnexion from './InformationConnexion';
-
-// import FormPersonalDetails from './FormPersonalDetails';
 import Confirm from './Confirm';
 import Success from './Success';
 import ConnexionProfilePropretaire from '../ConnexionProfilePropretaire';

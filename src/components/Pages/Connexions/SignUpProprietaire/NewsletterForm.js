@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import '../../../../css/Newsletter.scss';
-import { BreadcrumbItem } from '../../index';
+import { BreadcrumbItem } from '../../../../index';
 import HomeIcon from '@material-ui/icons/Home';
-
 
 export class NewsletterForm extends Component {
 
@@ -15,8 +14,10 @@ export class NewsletterForm extends Component {
 
                <div className="d-flex text-center justify-content-center">
                     <h1>Newsletter</h1>
+
                 </div>
             </div>
         )
     }
 }
+export default NewsletterForm;

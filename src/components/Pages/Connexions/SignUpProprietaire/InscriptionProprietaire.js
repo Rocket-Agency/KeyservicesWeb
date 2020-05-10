@@ -14,6 +14,8 @@ import UserForm from './UserForm';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import HomeIcon from '@material-ui/icons/Home';
+import NewsletterForm  from './NewsletterForm';
+import Test from './Test';
 
 export class InscriptionProprietaire extends Component {
     constructor(props) {
@@ -55,6 +57,7 @@ export class InscriptionProprietaire extends Component {
 
         this.setState({
             loading: true
+
         })
 
         const data = {
@@ -95,13 +98,15 @@ export class InscriptionProprietaire extends Component {
         }
       }
 
+      
+
     render() {
         const ville = [
             { title: 'Paris', boolean: true },
-            { title: 'Lyon', boolean: true },
-            { title: 'Lourdes', boolean: true },
-            { title: 'Nice', boolean: false},
-            { title: 'Toulouse', boolean: false},
+            { title: 'Lyon', boolean: true},
+            { title: 'Lourdes', boolean: true},
+            { title: 'Nice', boolean: true},
+            { title: 'Toulouse', boolean: true},
           ];
         return(
             <div>
@@ -142,6 +147,9 @@ export class InscriptionProprietaire extends Component {
                     <Container fluid className="Formulaire-incription">
 
                     <UserForm /> 
+                    <NewsletterForm />
+
+                    <Test />
 
                 </Container>
             </div>
