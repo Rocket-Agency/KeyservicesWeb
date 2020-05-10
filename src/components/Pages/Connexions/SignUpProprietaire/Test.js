@@ -1,18 +1,33 @@
 import React from 'react';
 import '../../../../css/Newsletter.scss';
-import { BreadcrumbItem } from '../../../../index';
-import HomeIcon from '@material-ui/icons/Home';
 
-class Test extends React.Component {
+import Select from 'react-select';
 
 
-    render() {
-        return ( 
-            <div>
-                Test
-            </div>
+const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+];
        
-        )
+class Test extends React.Component {
+    state = {
+        selectedOption: null,
+    };
+    handleChange = selectedOption => {
+    this.setState({ selectedOption });
+    console.log(`Option selected:`, selectedOption);
+    };
+render() {
+    const { selectedOption } = this.state;
+       
+        return (
+            <Select
+              value={selectedOption}
+              onChange={this.handleChange}
+              options={options}
+            />
+        );
     }
 }
 

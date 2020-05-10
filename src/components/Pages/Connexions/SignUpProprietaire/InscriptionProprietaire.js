@@ -15,7 +15,6 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import HomeIcon from '@material-ui/icons/Home';
 import NewsletterForm  from './NewsletterForm';
-import Test from './Test';
 
 export class InscriptionProprietaire extends Component {
     constructor(props) {
@@ -148,8 +147,6 @@ export class InscriptionProprietaire extends Component {
 
                     <UserForm /> 
                     <NewsletterForm />
-
-                    <Test />
 
                 </Container>
             </div>
