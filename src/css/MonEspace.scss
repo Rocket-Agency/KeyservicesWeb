@@ -12,6 +12,10 @@
     margin-top: 20px;
 }
 
+#contentEspace {
+    margin: 10px;
+}
+
 
 @media (max-width: 767px) {
     .Vertical-lign-espace  {
@@ -19,21 +23,31 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 991px) {
     .Vertical-lign-espace  {
-        position: absolute;
-        background: #A38068;
-        mix-blend-mode: normal;
-        border: 1px solid #000000;
-        box-sizing: border-box;
-        filter: blur(2px);
-        height: 335px;
-        width: 4px;
-        display: flex;
-        margin-left: 49%;
-        margin-top: 20px;
+        display: none;
+    }
+
+    #contentEspace {
+        margin-top: 60px;
     }
 }
+
+// @media (min-width: 768px) and (max-width: 991px) {
+//     .Vertical-lign-espace  {
+//         position: absolute;
+//         background: #A38068;
+//         mix-blend-mode: normal;
+//         border: 1px solid #000000;
+//         box-sizing: border-box;
+//         filter: blur(2px);
+//         height: 335px;
+//         width: 4px;
+//         display: flex;
+//         margin-left: 49%;
+//         margin-top: 20px;
+//     }
+// }
 
 
 
@@ -42,7 +56,7 @@
         background: #FFFFFF;
         border: 1px solid #87E990;
         box-sizing: border-box;
-        margin-bottom: 73px;
+        // margin-bottom: 73px;
         text-align: center;
     }
 
@@ -54,10 +68,12 @@
 
 @media (min-width: 992px) {
     .card-footer {
-        margin-bottom: 70px;
+        margin-bottom: 0;
     }
 }
 
-#contentEspace {
-    margin: 10px;
+@media (min-width: 1200px) {
+    .card-footer {
+        margin-bottom: 0;
+    }
 }

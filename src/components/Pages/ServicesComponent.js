@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
-import '../../css/ServicesComponent.scss';
-
 import { Col, Container, Row, Card} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-import Img from 'react-cool-img';
-import ImgDefaultServices from '../../ImagesPlaceholder/placeholderServices.png';
-
 import ProgressiveImage from "react-progressive-graceful-image";
+import '../../css/ServicesComponent.scss';
 
 import remisedesclefTiny from '../../ImagesPlaceholder/remisedesclefTiny.png';
 import frigoTiny from '../../ImagesPlaceholder/frigoTiny.png';
@@ -41,15 +37,6 @@ export class ServicesComponent extends Component {
                                         >
                                             {src => <img src={src} width="100%" alt="Service remise des clés mobile" />}
                                         </ProgressiveImage>
-                                        {/* <Img src='./images/remise_des_cles_mobile.jpg' width="100%" height="130px" alt="Logo keyservices "/> */}
-                                        {/* <Img 
-                                            placeholder={ImgDefaultServices} 
-                                            src='./images/remise_des_cles_mobile.jpg'
-                                            width="100%"
-                                            height="auto"
-                                            debounce={1000}
-                                            alt="Image remise des clés mobile"
-                                        />  */}
                                     </Col>
                                 </Visible>
 

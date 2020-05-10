@@ -1,15 +1,9 @@
-//ConnexionProfilProprietaire.js
-import React, {Component, useState } from 'react';
-
+import React, {Component} from 'react';
 import axios from 'axios';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
-// import Button from '@material-ui/core/Button';
-// import TextField from '@material-ui/core/TextField';
-
+import { Link, withRouter } from 'react-router-dom';
 
 class ConnexionProfileProprietaire extends Component {
     constructor(props) {
@@ -121,7 +115,7 @@ class ConnexionProfileProprietaire extends Component {
                                     <Link  to="/inscriptionProprietaire">S'inscrire</Link>                                                        
                                 </Col>
                             </Row>
-                            <Row class="mt-3"> 
+                            <Row className="mt-3"> 
                                 <Col md={12} lg={12} className="d-flex justify-content-center align-items-cente">
                                     <Link  to="/forgetPassword">Mot de passe oublié</Link>   
                                 </Col>

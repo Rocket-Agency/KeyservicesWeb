@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
-import logo from '../../Keyservices_Logo.png';
-// import Searchbar from './Searchbar';
-
+import { NavLink, withRouter } from 'react-router-dom';
+import {Navbar, Nav} from 'react-bootstrap';
+import LockIcon from '@material-ui/icons/Lock';
+import LockOpenIcon from '@material-ui/icons/LockOpen';
+import ProgressiveImage from "react-progressive-graceful-image";
+import Sticky from 'react-sticky-el';
 import '../../css/Header.scss';
 import '../../css/BlocLeft.scss';
-import { NavLink } from 'react-router-dom';
-import {Navbar, Nav, Button} from 'react-bootstrap';
-// import BlocLeft from './BlocLeft';
-import LockIcon from '@material-ui/icons/Lock';
-
-
-import ProgressiveImage from "react-progressive-graceful-image";
-import LogoTiny from '../../ImagesPlaceholder/LogoTiny.png';
-import Sticky from 'react-sticky-el';
+import Keyservices_logo from '../../ImagesPlaceholder/Keyservices_Logo.png';
 
 export class Header extends Component {
     render() {
@@ -24,21 +19,11 @@ export class Header extends Component {
                 <Navbar bg="white" collapseOnSelect expand="md" variant="light" sticky="top">
                     <a className="navbar-brand" href="/">
                         <ProgressiveImage  className="card-img react-log" 
-                             src='./images/Keyservices_Logo.png'
-                            placeholder={LogoTiny} 
+                            src='./images/Keyservices_Logo.png'
+                            placeholder={Keyservices_logo} 
                         >
                             {src => <img src={src} alt="Logo Keyservices"  />}
                         </ProgressiveImage>
-                        {/* <Img src={logo} alt="logo" style={{ 
-                            width: '100px'
-                        }} /> */}
-                        {/* <Img
-                            placeholder={ImgDefaultLogoKeyservices} 
-                            src={logo}
-                            width="100px"
-                            debounce={1000}
-                            alt="Langue Anglais"
-                        />*/}
                     </a>
                 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -47,16 +32,21 @@ export class Header extends Component {
                         <Nav className="ml-auto mr-auto d-flex justify-content-center #navigation" role="navigation">
                             <h1 className="menu-title-mobile text-align-center">Menu </h1>
                             <NavLink className="d-inline menustyle" exact to="/">Accueil</NavLink>
-                            <NavLink className="d-inline menustyle" to="/keyservicesPresentation">Keyservices</NavLink>
+                            <NavLink className="d-inline menustyle" to="/presentation">Keyservices</NavLink>
                             <NavLink className="d-inline menustyle" to="/contact">Contact</NavLink>
                         </Nav>
-
-
-                        <NavLink  className="btn_connexion" to="/monespace">
+                        {typeof(localStorage) !== "undefined" && localStorage.getItem('token') ? <NavLink  className="btn_connexion" to="/deconnexion">
+                        <LockOpenIcon/>
+                            Déconnexion
+                        </NavLink> : <NavLink className="btn_connexion" to="/monespace">
                         <LockIcon to="/monespace"/>
                             Connexion
-                        </NavLink>
-                        
+                        </NavLink> }
+
+                        {typeof(localStorage) !== "undefined" && localStorage.getItem('token') ? <NavLink className="btn_connexion" to="/dashboard">
+                        <LockOpenIcon/>
+                            Mon Espace
+                        </NavLink> : null }
                     </Navbar.Collapse>
                 </Navbar>
 
@@ -68,4 +58,4 @@ export class Header extends Component {
         }
     }
     
-export default Header;
+export default withRouter(Header);

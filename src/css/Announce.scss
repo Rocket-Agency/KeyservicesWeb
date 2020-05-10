@@ -1,0 +1,33 @@
+.blocForm {
+    padding: 0 50px;
+}
+
+@media (max-width: 576px) {
+    .blocForm {
+        padding: 0;
+    }
+    .MuiPaper-root.MuiStepper-root.MuiStepper-horizontal.MuiPaper-elevation0 {
+        flex-direction: column;
+        display: block;
+    }
+
+    .MuiStep-root.MuiStep-horizontal {
+        padding: 20px;
+    }
+}
+
+.title-form{
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.label-info-annonce {
+    font-weight: 700;
+    @media (max-width: 576px) {
+        text-align: left;
+    }
+}
+
+#TextareaObservation {
+    height: 50px;
+}
