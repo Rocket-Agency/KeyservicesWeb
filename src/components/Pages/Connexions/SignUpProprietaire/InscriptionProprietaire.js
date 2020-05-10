@@ -104,8 +104,8 @@ export class InscriptionProprietaire extends Component {
             { title: 'Paris', boolean: true },
             { title: 'Lyon', boolean: true},
             { title: 'Lourdes', boolean: true},
-            { title: 'Nice', boolean: true},
-            { title: 'Toulouse', boolean: true},
+            { title: 'Nice', boolean: false},
+            { title: 'Toulouse', boolean: false},
           ];
         return(
             <div>
@@ -124,7 +124,7 @@ export class InscriptionProprietaire extends Component {
                             <Autocomplete
                                 id="combo-box-demo"
                                 options={ville}
-                                getOptionDisabled={(option) => option.title == 'Lourdes'}
+                                // getOptionDisabled={(option) => option.title == 'Lourdes'}
                                 getOptionLabel={(option) => option.title}
                                 style={{ width: 300 }}
                                 renderInput={(params) => <TextField {...params} label="Ville" variant="outlined" />}
