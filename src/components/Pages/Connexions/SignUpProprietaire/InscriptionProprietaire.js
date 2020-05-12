@@ -5,12 +5,9 @@ import { BreadcrumbItem } from '../../../../index';
 import '../../../../css/InscriptionProprietaire.scss';
 
 import { Col, Container, Form} from 'react-bootstrap';
-// import {Button} from 'react-bootstrap';
 
-// import FormProprietairePersonalDetail from './FormProprietairePersonalDetail'
-// import { UserForm } from './UserForm';
+
 import UserForm from './UserForm';
-// import AttachFileIcon from '@material-ui/icons/AttachFile';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import HomeIcon from '@material-ui/icons/Home';
@@ -49,7 +46,7 @@ export class InscriptionProprietaire extends Component {
             })
         }  else {
             this.setState({
-                cityChoice : "",
+                cityChoice : value.title,
             })
         }
     }
@@ -71,37 +68,6 @@ export class InscriptionProprietaire extends Component {
         })
         event.preventDefault();
     }
-
-        // const data = {
-        //     sexe: sexe,
-        //     firstName: firstName,
-        //     lastName: lastName,
-        //     tel: tel,
-        //     dateOfBirth: dateOfBirth,
-        //     factureAdress: factureAdress,
-        //     zipCode: zipCode,
-        //     email : email,
-        //     password : password,
-        // }
-
-    //     axios.post("http://localhost:3001/api/auth/signup", data, config)
-    //       .then(response => {
-    //         console.log(response.data);
-    //         this.setState({
-    //             loading: false,
-    //             message: response.data
-    //         })
-    //         this.props.history.push('dashboard', {user: response.data});
-    //       })
-    //       .catch(error => {
-    //         console.log(error);
-    //         this.setState({
-    //             loading: false
-    //         })
-    //       });
-    //     event.preventDefault();
-
-    
 
 
     render() {
@@ -149,9 +115,9 @@ export class InscriptionProprietaire extends Component {
 
                     <Container fluid className="Formulaire-incription">
 
-                        {this.state.userForm == true ? (
+                        {this.state.userForm === true ? (
                         <UserForm/>
-                    ) : this.state.newsletterForm == true ? (
+                    ) : this.state.newsletterForm === true ? (
                         <NewsletterForm/>
                     ) : (
                         null
