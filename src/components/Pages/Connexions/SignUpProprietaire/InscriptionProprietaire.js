@@ -43,29 +43,30 @@ export class InscriptionProprietaire extends Component {
 
 
     handleChange(event, value) {    
-        this.setState({
-            cityChoice : value.title
-        });  
-        console.log(value)
+        if (value == null) {
+            this.setState({
+                cityChoice : "",
+            })
+        }  else {
+            this.setState({
+                cityChoice : value.title,
+            })
+        }
     }
     
       handleSubmit(event)  {
-        alert('Votre parfum favori est : ' + this.state.cityChoice);
-
         this.state.ville.map((villesData) => {
             console.log(this.state.cityChoice)
-            // alert('Votre parfum favori est : ' + villesData.title);
             if( this.state.cityChoice === villesData.title && villesData.boolean === true) {
                  this.setState ({
                     userForm: true 
                 })
-                // if (ville === )
-                return <Redirect to='/inscriptionProprietaire'/>;
+                // return <Redirect to='/inscriptionProprietaire'/>;
             } else {
                 this.setState ({
                     newsletterForm : true  
                 })
-                return <Redirect to='/inscriptionProprietaire'/>;
+                // return <Redirect to='/inscriptionProprietaire'/>;
             }  
         })
         event.preventDefault();
@@ -147,10 +148,10 @@ export class InscriptionProprietaire extends Component {
 
 
                     <Container fluid className="Formulaire-incription">
-                    
-                        {this.state.userForm == true ? (
+
+                        {this.state.userForm === true ? (
                         <UserForm/>
-                    ) : this.state.newsletterForm == true ? (
+                    ) : this.state.newsletterForm === true ? (
                         <NewsletterForm/>
                     ) : (
                         null
