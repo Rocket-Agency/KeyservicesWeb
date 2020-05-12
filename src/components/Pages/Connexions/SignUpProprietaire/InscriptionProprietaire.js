@@ -147,9 +147,9 @@ export class InscriptionProprietaire extends Component {
                  </Container>
 
 
-                    <Container fluid className="Formulaire-incription">
+                <Container fluid className="Formulaire-incription">
 
-                        {this.state.userForm === true ? (
+                    {this.state.userForm === true ? (
                         <UserForm/>
                     ) : this.state.newsletterForm === true ? (
                         <NewsletterForm/>
