@@ -49,7 +49,7 @@ export class InscriptionProprietaire extends Component {
             })
         }  else {
             this.setState({
-                cityChoice : value.title,
+                cityChoice : "",
             })
         }
     }
@@ -61,12 +61,12 @@ export class InscriptionProprietaire extends Component {
                  this.setState ({
                     userForm: true 
                 })
-                // return <Redirect to='/inscriptionProprietaire'/>;
+                return <Redirect to='/inscriptionProprietaire'/>;
             } else {
                 this.setState ({
                     newsletterForm : true  
                 })
-                // return <Redirect to='/inscriptionProprietaire'/>;
+                return <Redirect to='/inscriptionProprietaire'/>;
             }  
         })
         event.preventDefault();
@@ -147,11 +147,11 @@ export class InscriptionProprietaire extends Component {
                  </Container>
 
 
-                <Container fluid className="Formulaire-incription">
+                    <Container fluid className="Formulaire-incription">
 
-                    {this.state.userForm === true ? (
+                        {this.state.userForm == true ? (
                         <UserForm/>
-                    ) : this.state.newsletterForm === true ? (
+                    ) : this.state.newsletterForm == true ? (
                         <NewsletterForm/>
                     ) : (
                         null
