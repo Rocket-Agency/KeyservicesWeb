@@ -30,9 +30,11 @@
     "compression": "^1.7.4",
     "css-loader": "^3.5.2",
     "date-fns": "^2.13.0",
+    "email-validator": "^2.0.4",
     "express": "^4.17.1",
     "express-minify": "^1.0.0",
     "express-static-gzip": "^2.0.6",
+    "formik": "^2.1.4",
     "http-proxy-middleware": "^1.0.3",
     "http2": "^3.3.7",
     "ignore-loader": "^0.1.2",
@@ -78,7 +80,8 @@
     "serialize-javascript": "^3.0.0",
     "spdy": "^4.0.2",
     "style-loader": "^1.1.4",
-    "uncss": "^0.17.3"
+    "uncss": "^0.17.3",
+    "yup": "^0.28.5"
   },
   "scripts": {
     "start": "react-scripts start",
