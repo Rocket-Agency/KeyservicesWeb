@@ -10,7 +10,7 @@ import { withRouter } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-function Example() {
+function Password() {
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
@@ -97,7 +97,7 @@ function Example() {
                     <Container>
 
                         <Row>
-                            <Col xs={12} className="d-flex justify-content-center align-items-center">
+                            <Col xs={12} className=" align-items-center">
                                 <Hidden xs>
                                     <div className="d-flex justify-content-center align-items-center">
                                         <div id="container">
@@ -106,7 +106,7 @@ function Example() {
                                                     <span className="circle" aria-hidden="true">
                                                         <span className="icon arrow"></span>
                                                     </span>
-                                                    <span className="button-text">Redefinir mon mot de passe</span>
+                                                    <span className="button-text">Redéfinir mon mot de passe</span>
                                                 </button>
                                             </Row>                
                                          </div>
@@ -117,7 +117,7 @@ function Example() {
                                     <div className="d-flex justify-content-center align-items-center">
                                         <div id="container">                    
                                             <Row>
-                                                <button className="forgetPassword" aria-label="Mot de passe oublié" onClick={Example}>
+                                                <button className="forgetPassword" aria-label="Mot de passe oublié" onClick={Password}>
                                                     <span className="circle" aria-hidden="true">
                                                         <span className="icon arrow"></span>
                                                     </span>

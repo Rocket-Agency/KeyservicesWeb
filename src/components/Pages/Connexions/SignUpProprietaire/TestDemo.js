@@ -27,9 +27,6 @@ class TestDemo extends Component {
         break;
       case "showHideDemo3":
         this.setState({ showHideDemo3: !this.state.showHideDemo3 });
-        break;
-      default:
-        null;
     }
   }
 

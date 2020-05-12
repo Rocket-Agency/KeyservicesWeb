@@ -15,6 +15,50 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import HomeIcon from '@material-ui/icons/Home';
 import NewsletterForm  from './NewsletterForm';
+import Select from 'react-select';
+
+
+// const ville = [
+//     { title: 'Paris', boolean: true, value :"Paris" },
+//     { title: 'Lyon', boolean: true, value: "Lyon"},
+//     { title: 'Lourdes', boolean: true, value: "Lourdes"},
+//     { title: 'Nice', boolean: false, value: "Nice"},
+//     { title: 'Toulouse', boolean: false, value: "Toulouse"},
+//     { title: 'La Rochelle', boolean: false, value: "La_Rochelle"},
+//   ];
+
+
+//   function choiceCity(ville) {
+//     switch (ville) {
+//       case 0: 'Paris'
+//         return <UserForm />
+//       case 1:
+//         return "Toulouse"
+//       case 2:
+//         return <NewsletterForm />
+//       default:
+//     }
+//   }
+  
+const Selects = [
+    {
+      name: 'firstSelect',
+      options: [
+        {value: 'one', label: '1'},
+        {value: 'two', label: '2'},
+      ],
+    },
+    {
+      name: 'ville',
+      options: [
+        {value: 'Paris', label: 'Paris'},
+        {value: 'Lyon', label: 'Lyon'},
+        {value: 'Lourdes', label: 'Lourdes'},
+      ],
+    },
+  ];
+
+
 
 export class InscriptionProprietaire extends Component {
     constructor(props) {
@@ -32,10 +76,14 @@ export class InscriptionProprietaire extends Component {
             password: '',
             loading: false,
             message: "",
+            noneComponent: false,
+            newsletterForm: false,
+            userForm: false,
         };
     
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this._onButtonClick = this._onButtonClick.bind(this);
       }
 
       handleChange(event) {
@@ -97,10 +145,43 @@ export class InscriptionProprietaire extends Component {
         }
       }
 
+      _onButtonClick() {
+        this.setState({
+            noneComponent: false,
+            newsletterForm: true,
+            userForm: true,
+        });
+      }
+
+    //   showComponentForm() {
+    //       if (this.state.hideNewsletterForm || this.state.hideUserForm) {
+    //         if(ville === true) {
+    //             return <UserForm/>
+    //         } else {
+    //             return <NewsletterForm/>
+    //         }
+    //       } else {
+    //           return null
+    //       }
+    //   }
+
+    //   choiceCity() {
+    //       if ("La_Rochelle" === false) {
+    //           return <UserForm />
+    //       } else {
+    //           return <NewsletterForm/>
+    //       }
+    //   }
+
+    onSelectChange(name, value) {
+        let obj = {};
+        obj[name] = value;
+        this.setState(obj);
+      }
       
 
     render() {
-        const ville = [
+        const villes = [
             { title: 'Paris', boolean: true },
             { title: 'Lyon', boolean: true},
             { title: 'Lourdes', boolean: true},
@@ -123,7 +204,7 @@ export class InscriptionProprietaire extends Component {
                         <Form.Group as={Col} md="2" controlId="formGridCity">
                             <Autocomplete
                                 id="combo-box-demo"
-                                options={ville}
+                                options={villes}
                                 // getOptionDisabled={(option) => option.title == 'Lourdes'}
                                 getOptionLabel={(option) => option.title}
                                 style={{ width: 300 }}
@@ -133,21 +214,37 @@ export class InscriptionProprietaire extends Component {
                     </Form.Row>
 
                     <div id="container">                    
-                         <button className="learn-more" aria-label="Valider la ville">
+                         <button onClick={this._onButtonClick} className="learn-more" aria-label="Valider la ville">
                             <span className="circle" aria-hidden="true">
                                 <span className="icon arrow"></span>
                             </span>
                              <span className="button-text">Valider la ville</span>
                         </button>
-                     </div>                        
+                     </div>        
+                                     
                  </Container>
 
 
                     <Container fluid className="Formulaire-incription">
 
-                    <UserForm /> 
-                    <NewsletterForm />
+                        { this.state.choiceCity ? <UserForm/> : <NewsletterForm/> }
+                    {/* {/* <UserForm />  */}
+                    {/* <NewsletterForm />  */}
 
+                    {/* <button onClick={this._onButtonClick}>Button</button>
+                    {this.state.noneComponent ? <NewsletterForm /> : null} */}
+
+
+                {Selects.map((select, i)=>{
+                        return (
+                            <Select
+                            key={i}
+                            name={select.name}
+                            options={select.options}
+                            onChange={this.onSelectChange.bind(this, select.name)}
+                            />
+                        );
+                        })}
                 </Container>
             </div>
         )

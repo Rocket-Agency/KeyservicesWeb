@@ -31,7 +31,7 @@ export class LoginLocataire extends Component {
 
 
                             <Col md={6}>
-                                <div className="d-flex justify-content-center"  id="BlocExplication">
+                                <div  id="BlocExplication">
                                     <div className="card">
                                         {/* <Card.Img  id="Propriétaire" width="auto"  height="400px" src='./images/connexion.png' alt="Card image" /> */}
                                         <ProgressiveImage  className="card-img style-card" 

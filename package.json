@@ -70,6 +70,7 @@
     "react-slideshow-image": "^1.4.2",
     "react-sticky": "^6.0.3",
     "react-sticky-el": "^2.0.5",
+    "react-switch-case": "^1.5.0",
     "react-through": "^1.1.4",
     "reactstrap": "^8.4.1",
     "sass": "^1.26.3",

@@ -60,4 +60,3 @@ class Test extends Component {
 }
 
 export default Demo1;
-render(<Test />, document.getElementById("root"));
