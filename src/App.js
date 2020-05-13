@@ -7,6 +7,7 @@ import './index.css';
 //Import component for Header & Footer
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
+import CGU from './components/Pages/CGU';
 
 import FilAriane from './components/Layout/FilAriane';
 
@@ -59,6 +60,7 @@ function App() {
                   <Route path='/forgetPassword' component={ForgetPassword} />
                   <Route path='/dashboard' component={ProfileTabs} />
                   <Route path='/deconnexion' component={Deconnexion} />
+                  <Route path='/cgu' component={CGU} />
                   <Route component={NotFound} />
                 </Switch>
 

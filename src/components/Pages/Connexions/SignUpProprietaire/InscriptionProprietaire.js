@@ -121,7 +121,7 @@ export class InscriptionProprietaire extends Component {
                             <NewsletterForm/>
                         ) : (
                              null
-                    )}
+                        )}
                     {/* {/* <UserForm />  */}
                     {/* <NewsletterForm />  */}
 
