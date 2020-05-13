@@ -4,7 +4,7 @@ import '../../css/Footer.scss';
 
 import ProgressiveImage from "react-progressive-graceful-image";
 import FacebookTiny from '../../ImagesPlaceholder/LocataireTiny.png';
-import InstagramTiny from '../../ImagesPlaceholder/PropriétaireTiny.png';
+import InstagramTiny from '../../ImagesPlaceholder/ProprietaireTiny.png';
 
 
 const Footer = () => {

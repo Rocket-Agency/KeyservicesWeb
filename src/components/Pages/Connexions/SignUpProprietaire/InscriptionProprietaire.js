@@ -20,6 +20,7 @@ export class InscriptionProprietaire extends Component {
         super(props);
     
         this.state = {
+            noneComponent: true,
             newsletterForm: false,
             userForm: false,
             ville : [
@@ -53,7 +54,7 @@ export class InscriptionProprietaire extends Component {
     
       handleSubmit(event)  {
         this.state.ville.map((villesData) => {
-            console.log(this.state.cityChoice)
+            
             if( this.state.cityChoice === villesData.title && villesData.boolean === true) {
                  this.setState ({
                     userForm: true 
@@ -68,7 +69,6 @@ export class InscriptionProprietaire extends Component {
         })
         event.preventDefault();
     }
-
 
     render() {
         const ville = this.state.ville
@@ -116,11 +116,11 @@ export class InscriptionProprietaire extends Component {
                     <Container fluid className="Formulaire-incription">
 
                         {this.state.userForm === true ? (
-                        <UserForm/>
-                    ) : this.state.newsletterForm === true ? (
-                        <NewsletterForm/>
-                    ) : (
-                        null
+                            <UserForm/>
+                        ) : this.state.newsletterForm === true ? (
+                            <NewsletterForm/>
+                        ) : (
+                             null
                     )}
                     {/* {/* <UserForm />  */}
                     {/* <NewsletterForm />  */}
