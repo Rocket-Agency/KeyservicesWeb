@@ -1,10 +1,9 @@
 .Main-Title, .Secondary-Title, .Third-Title {
-    margin: 25px 0;
     font-weight: 800;
 }
 
-.Secondary-Title {
-    margin-bottom: 30px;
+.Main-Title, .Secondary-Title {
+    margin: 15px;
 }
 
 .Third-Title {
@@ -24,7 +23,7 @@
     font-size: 18px;
 }
 
-.para-bold {
+.title-bold {
     font-weight: 800;
     margin: 20px 0;
 }
@@ -32,4 +31,8 @@
 .text {
     font-size: 18px;
     padding: 10px 0;
+}
+
+.bloc-CGU {
+    padding: 20px 0;
 }
