@@ -21,6 +21,8 @@ import DateFnsUtils from '@date-io/date-fns'; // choose your lib
 import {
   DatePicker,
   TimePicker,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
   DateTimePicker,
   MuiPickersUtilsProvider,
 } from '@material-ui/pickers';
@@ -197,7 +199,19 @@ constructor(props) {
                         <TextField value={this.state.user_first_name} onChange={e => this.setState({user_first_name: e.target.value})} label="Prénom" />
                       </Grid>
                       <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField value={this.state.user_date_of_birth} onChange={e => this.setState({user_date_of_birth: e.target.value})} label="Date de naissance" />
+                      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                        <KeyboardDatePicker
+                            margin="normal"
+                            id="date-picker-dialog"
+                            label="Date de naissance"
+                            format="MM/dd/yyyy"
+                            value={this.state.user_date_of_birth}
+                            onChange={e => this.setState({user_date_of_birth: e.target.value})}
+                            KeyboardButtonProps={{
+                              'aria-label': 'change date',
+                            }}
+                          />
+                      </MuiPickersUtilsProvider>
                       </Grid>
                       <Grid item xs={12} md={6} className="d-flex justify-content-center">
                         <TextField value={this.state.user_sexe} onChange={e => this.setState({user_sexe: e.target.value})} label="Sexe" />
