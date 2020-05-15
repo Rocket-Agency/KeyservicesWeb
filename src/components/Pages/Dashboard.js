@@ -184,18 +184,29 @@ constructor(props) {
               </div>
 
               <div className="col-md-9 personal-info">
-              <h3>Information personnel</h3>
 
-                <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
+                {/* <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
                 
                   <Grid container mt-3>
                     <Grid container item xs={12} spacing={3}>
-                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField value={this.state.user_last_name} onChange={e => this.setState({user_last_name: e.target.value})} label="Nom" />
+                      <Grid item xs={12} md={6}  className="d-flex justify-content-center">
+                        <TextField 
+                          value={this.state.user_last_name} 
+                          onChange={e => this.setState({user_last_name: e.target.value})} 
+                          label="Nom" 
+                          fullWidth
+                        />
                       </Grid>
+
                       <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField value={this.state.user_first_name} onChange={e => this.setState({user_first_name: e.target.value})} label="Prénom" />
+                        <TextField 
+                          value={this.state.user_first_name} 
+                          onChange={e => this.setState({user_first_name: e.target.value})} 
+                          label="Prénom" 
+                          fullWidth
+                          />
                       </Grid>
+
                       <Grid item xs={12} md={6} className="d-flex justify-content-center">
                         <MuiPickersUtilsProvider utils={DateFnsUtils}>
                         <KeyboardDatePicker
@@ -209,16 +220,30 @@ constructor(props) {
                               }}
                             />
                         </MuiPickersUtilsProvider>
+                      </Grid>
 
-                      </Grid>
                       <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField value={this.state.user_sexe} onChange={e => this.setState({user_sexe: e.target.value})} label="Sexe" />
+                        <TextField 
+                          value={this.state.user_sexe} 
+                          onChange={e => this.setState({user_sexe: e.target.value})} 
+                          label="Sexe" 
+                        />
                       </Grid>
+
                       <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField value={this.state.user_email} onChange={e => this.setState({user_email: e.target.value})} label="Email" />
+                        <TextField 
+                          value={this.state.user_email} 
+                          onChange={e => this.setState({user_email: e.target.value})} 
+                          label="Email" 
+                        />
                       </Grid>
-                      <Grid item xs={12} md={6}  className="d-flex justify-content-center">
-                        <TextField value={this.state.user_adresse_txt} onChange={e => this.setState({user_adresse_txt: e.target.value})} label="Adresse" />
+
+                      <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
+                        <TextField 
+                          value={this.state.user_adresse_txt} 
+                          onChange={e => this.setState({user_adresse_txt: e.target.value})} 
+                          label="Adresse" 
+                        />
                       </Grid>
                     </Grid>
                   </Grid>
@@ -235,38 +260,134 @@ constructor(props) {
                         </Button>
                       </Col>
                     </Row>
-                </form>
+                </form> */}
 
+              <Row className="d-flex justify-content-center">
+                <div className="mt-5 col-md-9">
+                  <h3 className="mb-4">Information personnel</h3>
+                  <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
+                  <Grid container mt-3>
+                    <Grid container item xs={12} md={12} spacing={3}>
+                        <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
+                          <TextField 
+                          value={this.state.user_last_name} 
+                          onChange={e => this.setState({user_last_name: e.target.value})} 
+                          label="Nom" 
+                          fullWidth
+                          />
+                        </Grid>
+                        <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
+                          <TextField 
+                            value={this.state.user_first_name} 
+                            onChange={e => this.setState({user_first_name: e.target.value})} 
+                            label="Prénom" 
+                            fullWidth
+                          />
+                        </Grid>
+                        <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
+                          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                            <KeyboardDatePicker
+                              margin="normal"
+                              id="date-picker-dialog"
+                              format="MM/dd/yyyy"
+                              value={this.state.user_date_of_birth}
+                              onChange={e => this.setState({user_date_of_birth: e.target.value})}
+                              KeyboardButtonProps={{
+                              'aria-label': 'change date',
+                              }}
+                              fullWidth
+                            />
+                          </MuiPickersUtilsProvider>
+                        </Grid>
+                        <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
+                          <TextField 
+                            value={this.state.user_sexe} 
+                            onChange={e => this.setState({user_sexe: e.target.value})} 
+                            label="Sexe" 
+                            fullWidth
+                          />
+                        </Grid>
+                        <Grid item xs={12} md={6} className="d-flex justify-content-center">
+                            <TextField 
+                              value={this.state.user_email} 
+                              onChange={e => this.setState({user_email: e.target.value})} 
+                              label="Email"
+                              fullWidth 
+                            />
+                        </Grid>
+                        <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
+                          <TextField 
+                            value={this.state.user_adresse_txt} 
+                            onChange={e => this.setState({user_adresse_txt: e.target.value})} 
+                            label="Adresse" 
+                            fullWidth 
+                          />
+                        </Grid>
 
-                <h3>Modifier mot de passe</h3>
-                <form onSubmit={this.handleSubmitPassword} noValidate autoComplete="off">
-                <Grid container mt-3>
-                  <Grid container item xs={12} spacing={3}>
-                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField value={this.state.passwordcurrent} onChange={e => this.setState({passwordcurrent: e.target.value})} label="Ancien mot de passe" />
-                      </Grid>
-                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField value={this.state.passwordnew} onChange={e => this.setState({passwordnew: e.target.value})} label="Nouveau mot de passe" />
-                      </Grid>
+                    </Grid>
                   </Grid>
-                </Grid>
 
-                <Row>
-                 <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
-                    <Button 
-                      variant="contained"
-                      color="primary"
-                      type="submit"
-                      endIcon={<EditIcon>send</EditIcon>}
-                    >
-                      Modifier mot de passe
-                    </Button>
-                  </Col>
-                </Row>
-              </form>
+                  <Row>
+                  <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
+                      <Button 
+                        variant="contained"
+                        color="primary"
+                        type="submit"
+                        endIcon={<EditIcon>send</EditIcon>}
+                      >
+                        Modifier mot de passe
+                      </Button>
+                    </Col>
+                  </Row>
+                </form>
+              </div>
+              </Row>
+
+              <Row className="d-flex justify-content-center">
+                <div className="mt-5 col-md-9">
+                  <h3 className="mb-0">Modifier mot de passe</h3>
+                  <form onSubmit={this.handleSubmitPassword} noValidate autoComplete="off">
+                    <Grid container mt-3>
+                      <Grid container item xs={12} spacing={3}>
+                          <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
+                            <TextField 
+                              value={this.state.passwordcurrent} 
+                              onChange={e => this.setState({passwordcurrent: e.target.value})} 
+                              label="Ancien mot de passe" 
+                              fullWidth
+                            />
+                          </Grid>
+                          <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
+                            <TextField 
+                              value={this.state.passwordnew} 
+                              onChange={e => this.setState({passwordnew: e.target.value})} 
+                              label="Nouveau mot de passe" 
+                              fullWidth
+                            />
+                          </Grid>
+                      </Grid>
+                    </Grid>
+
+                    <Row>
+                    <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
+                        <Button 
+                          variant="contained"
+                          color="primary"
+                          type="submit"
+                          endIcon={<EditIcon>send</EditIcon>}
+                        >
+                          Modifier mot de passe
+                        </Button>
+                      </Col>
+                    </Row>
+                  </form>
+                </div>
+              </Row>
+
             </div>
           </div>
       </Container>
+
           
         </TabContainer> }
 

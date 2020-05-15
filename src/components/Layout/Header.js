@@ -8,7 +8,7 @@ import Sticky from 'react-sticky-el';
 import '../../css/Header.scss';
 import '../../css/BlocLeft.scss';
 import Keyservices_logo from '../../ImagesPlaceholder/Keyservices_Logo.png';
-import DashboardIcon from '@material-ui/icons/Dashboard';
+import PersonIcon from '@material-ui/icons/Person';
 
 export class Header extends Component {
     render() {
@@ -45,7 +45,7 @@ export class Header extends Component {
                         </NavLink> }
 
                         {typeof(localStorage) !== "undefined" && localStorage.getItem('token') ? <NavLink className="btn_connexion" to="/dashboard">
-                        <DashboardIcon/>
+                        <PersonIcon/>
                             Mon Espace
                         </NavLink> : null }
                     </Navbar.Collapse>
