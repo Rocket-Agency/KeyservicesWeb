@@ -5,7 +5,7 @@ import '../../css/CGU.scss';
 
 import { BreadcrumbItem } from '../../index';
 import HomeIcon from '@material-ui/icons/Home';
-import ConfirmMassageChangePassword from './Connexions/Profiles/ConfirmMessageChangePassword';
+// import ConfirmMassageChangePassword from './Connexions/Profiles/ConfirmMessageChangePassword';
 
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
