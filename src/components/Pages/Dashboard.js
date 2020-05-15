@@ -17,6 +17,13 @@ import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
 // import AnnounceaLinearStepper from './Connexions/AnnounceDeposit/AnnounceaLinearStepper';
 import AnnounceStepper from './Connexions/AnnounceDeposit/AnnounceStepper';
+import DateFnsUtils from '@date-io/date-fns'; // choose your lib
+import {
+  DatePicker,
+  TimePicker,
+  DateTimePicker,
+  MuiPickersUtilsProvider,
+} from '@material-ui/pickers';
 
 
 class ProfileTabs extends Component {
@@ -38,7 +45,8 @@ constructor(props) {
     user_email: "",
     user_password: "",
     user_adresse_txt: "",
-    
+    selectedDate:  new Date(),
+    handleDateChange: new Date(),
     addressCollection: [],
   }
   this.handleSubmit = this.handleSubmit.bind(this);
@@ -228,7 +236,9 @@ constructor(props) {
          { activeIndex === 3 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Calendrier</BreadcrumbItem>
-            Calendrier
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                  <DateTimePicker value={this.state.selectedDate} onChange={this.state.handleDateChange} />
+            </MuiPickersUtilsProvider>
             
          </TabContainer> }
 
