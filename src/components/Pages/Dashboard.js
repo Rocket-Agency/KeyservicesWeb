@@ -41,6 +41,7 @@ constructor(props) {
     
     addressCollection: [],
   }
+  this.handleSubmit = this.handleSubmit.bind(this);
 
   this.userid = '';
   this.token = '';
@@ -69,24 +70,16 @@ constructor(props) {
     }
     axios.get(`http://localhost:3001/api/user/`+ this.userid, config)
       .then(res => {
-        const users = res.data;
-        const user_first_name = res.data.user_first_name;
-        const user_last_name = res.data.user_last_name;
-        const user_date_of_birth = res.data.user_date_of_birth;
-        const user_sexe = res.data.user_sexe;
-        const user_photo = res.data.user_photo;
-        const user_email = res.data.user_email;
-        const user_password = res.data.user_password;
-        const user_adresse_txt = res.data.user_adresse_txt;
-        this.setState( { user_first_name});
-        this.setState( { user_last_name });
-        this.setState( { user_date_of_birth});
-        this.setState( { user_sexe});
-        this.setState( { user_photo});
-        this.setState( { user_email});
-        this.setState( { user_password});
-        this.setState( { user_adresse_txt});
-        this.setState( { users });
+
+        this.setState( { user_first_name : res.data.user_first_name});
+        this.setState( { user_last_name: res.data.user_last_name });
+        this.setState( { user_date_of_birth: res.data.user_date_of_birth});
+        this.setState( { user_sexe : res.data.user_sexe});
+        this.setState( { user_photo: res.data.user_photo});
+        this.setState( { user_email : res.data.user_email});
+        this.setState( { user_password : res.data.user_password});
+        this.setState( { user_adresse_txt : res.data.user_adresse_txt});
+        this.setState( { users : res.data });
       })
     axios.get(`http://localhost:3001/api/users/`, config)
       .then(res => {
@@ -105,19 +98,21 @@ constructor(props) {
   handleSubmit(e) {
     const config = {
       headers: {
-        'x-access-token': this.state.accessToken
+        'x-access-token': this.token
       }
     }
-    axios.put("http://localhost:3001/api/user/update/" + this.state.users.user_id ,
+    console.log(this.state);
+    axios.put("http://localhost:3001/api/user/update/" + this.userid ,
     {
-      /*user_first_name: user_first_name,
-      user_last_name: user_last_name,
-      user_date_of_birth: user_date_of_birth,
-      user_sexe: user_sexe,
-      user_email: user_email,
-      user_adresse_txt: user_adresse_txt*/
+      user_first_name: this.state.user_first_name,
+      user_last_name: this.state.user_last_name,
+      user_date_of_birth: this.state.user_date_of_birth,
+      user_sexe: this.state.user_sexe,
+      user_email: this.state.user_email,
+      user_adresse_txt: this.state.user_adresse_txt
     }, config)
 
+    console.log(this.state.user_last_name);
     e.preventDefault();
   }
   
