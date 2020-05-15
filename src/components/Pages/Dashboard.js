@@ -21,9 +21,12 @@ import DateFnsUtils from '@date-io/date-fns'; // choose your lib
 import {
   DatePicker,
   TimePicker,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
   DateTimePicker,
   MuiPickersUtilsProvider,
 } from '@material-ui/pickers';
+import PersonIcon from '@material-ui/icons/Person';
 
 class ProfileTabs extends Component {
 constructor(props) {
@@ -44,11 +47,14 @@ constructor(props) {
     user_email: "",
     user_password: "",
     user_adresse_txt: "",
+    passwordcurrent: "",
+    passwordnew: "",
     selectedDate:  new Date(),
     handleDateChange: new Date(),
     addressCollection: [],
   }
   this.handleSubmit = this.handleSubmit.bind(this);
+  this.handleSubmitPassword = this.handleSubmitPassword.bind(this);
 
   this.userid = '';
   this.token = '';
@@ -107,7 +113,6 @@ constructor(props) {
         'x-access-token': this.token
       }
     }
-    console.log(this.state);
     axios.put("http://localhost:3001/api/user/update/" + this.userid ,
     {
       user_first_name: this.state.user_first_name,
@@ -117,7 +122,15 @@ constructor(props) {
       user_email: this.state.user_email,
       user_adresse_txt: this.state.user_adresse_txt
     }, config)
+    e.preventDefault();
+  }
 
+  handleSubmitPassword(e){
+    axios.put("http://localhost:3001/api/user/update/password/" + this.userid ,
+    {
+      passwordcurrent: this.state.passwordcurrent,
+      passwordnew: this.state.passwordnew,
+    })
     e.preventDefault();
   }
   
@@ -184,7 +197,19 @@ constructor(props) {
                         <TextField value={this.state.user_first_name} onChange={e => this.setState({user_first_name: e.target.value})} label="Prénom" />
                       </Grid>
                       <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField value={this.state.user_date_of_birth} onChange={e => this.setState({user_date_of_birth: e.target.value})} label="Date de naissance" />
+                        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                        <KeyboardDatePicker
+                              margin="normal"
+                              id="date-picker-dialog"
+                              format="MM/dd/yyyy"
+                              value={this.state.user_date_of_birth}
+                              onChange={e => this.setState({user_date_of_birth: e.target.value})}
+                              KeyboardButtonProps={{
+                                'aria-label': 'change date',
+                              }}
+                            />
+                        </MuiPickersUtilsProvider>
+
                       </Grid>
                       <Grid item xs={12} md={6} className="d-flex justify-content-center">
                         <TextField value={this.state.user_sexe} onChange={e => this.setState({user_sexe: e.target.value})} label="Sexe" />
@@ -211,6 +236,34 @@ constructor(props) {
                       </Col>
                     </Row>
                 </form>
+
+
+                <h3>Modifier mot de passe</h3>
+                <form onSubmit={this.handleSubmitPassword} noValidate autoComplete="off">
+                <Grid container mt-3>
+                  <Grid container item xs={12} spacing={3}>
+                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
+                        <TextField value={this.state.passwordcurrent} onChange={e => this.setState({passwordcurrent: e.target.value})} label="Ancien mot de passe" />
+                      </Grid>
+                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
+                        <TextField value={this.state.passwordnew} onChange={e => this.setState({passwordnew: e.target.value})} label="Nouveau mot de passe" />
+                      </Grid>
+                  </Grid>
+                </Grid>
+
+                <Row>
+                 <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
+                    <Button 
+                      variant="contained"
+                      color="primary"
+                      type="submit"
+                      endIcon={<EditIcon>send</EditIcon>}
+                    >
+                      Modifier mot de passe
+                    </Button>
+                  </Col>
+                </Row>
+              </form>
             </div>
           </div>
       </Container>
