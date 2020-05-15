@@ -41,21 +41,21 @@ export class InformationConnexion extends Component {
                                       <Form.Control Label value="end" control={<Radio color="primary" />} label="End" /> 
                                     </Row> */}
 
+                                        <Col>
                                             <Col>
-                                                <Col>
-                                                    <TextField
-                                                        label="Entre votre adresse email"
-                                                        required id="standard-required"
-                                                        onChange={handleChange('email')}
-                                                        defaultValue={values.email} 
-                                                        variant="outlined"
-                                                        pattern="[A-Za-z]{3}"
-                                                        fullWidth
-                                                        type="text" 
-                                                        size="small"                    
-                                                    />   
-                                                </Col>
+                                                <TextField
+                                                    label="Entre votre adresse email"
+                                                    required id="standard-required"
+                                                    onChange={handleChange('email')}
+                                                    defaultValue={values.email} 
+                                                    variant="outlined"
+                                                    pattern="[A-Za-z]{3}"
+                                                    fullWidth
+                                                    type="text" 
+                                                    size="small"                    
+                                                />   
                                             </Col>
+                                        </Col>
                                 </Form.Row>     
                             </Col>
 

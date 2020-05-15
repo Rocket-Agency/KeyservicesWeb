@@ -7,7 +7,7 @@ import { BreadcrumbItem } from '../../index';
 
 import ProgressiveImage from "react-progressive-graceful-image";
 import LocataireTiny from '../../ImagesPlaceholder/LocataireTiny.png';
-import ProprietaireTiny from '../../ImagesPlaceholder/PropriétaireTiny.png';
+import ProprietaireTiny from '../../ImagesPlaceholder/ProprietaireTiny.png';
 
 export class MonEspace extends Component {
 

@@ -23,6 +23,9 @@ export class InformationGenerales extends Component {
         const { values, handleChange } = this.props;
         return(
             <div>
+                <div className="d-flex text-center justify-content-center">
+                    <p className="InformationFormValid">Keyservices est disponible dans votre ville vous pouvez désormais vous inscrire pour ensuite pouvoir déposer votre annonce dans votre espace</p>
+                </div>
                 <Container fluid className="pt-4 blocForm" >  
                     <h2 className="title-form">Information  Générales</h2>
                     <Row className="mt-4">

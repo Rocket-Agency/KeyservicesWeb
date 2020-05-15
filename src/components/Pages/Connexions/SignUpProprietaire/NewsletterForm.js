@@ -9,8 +9,8 @@ export class NewsletterForm extends Component {
         return(
             <div>
 
-               <div className="d-flex text-center justify-content-center">
-                    <p>Inscrivez votre adresse mail et on recontactera dès qu’on sera dans votre zone</p>
+                <div className="d-flex text-center justify-content-center">
+                    <p className="InformationForm">Inscrivez votre adresse mail et on vous recontactera dès qu’on sera dans votre zone</p>
                 </div>
                 <Container fluid className="mt-2 d-flex justify-content-center searchCityFields">
                     <Form.Row className="d-flex justify-content-center">

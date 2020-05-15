@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import '../../../../css/ConnexionPages.scss';
+import { BreadcrumbItem } from '../../../../index';
+import HomeIcon from '@material-ui/icons/Home';
 import ForgetPasswordForm from '../ForgetPasswordForm';
+import ProgressiveImage from "react-progressive-graceful-image";
+import ConnexionTiny from '../../../../ImagesPlaceholder/ConnexionTiny.png';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
 
@@ -9,13 +13,23 @@ export class ForgetPassword extends Component {
         return(
             <div>
 
+                <BreadcrumbItem to="/" ><HomeIcon/>Accueil</BreadcrumbItem>
+                <BreadcrumbItem to="/monEspace" >Connexion</BreadcrumbItem>
+                <BreadcrumbItem >Mot de passe oublié</BreadcrumbItem>
                 <Container fluid>
                             <Row className="BlocConnexion">
 
                               <Col md={6}>
-                                    <div className="d-flex justify-content-center"  id="BlocExplication">
+                                    <div id="BlocExplication">
                                         <div className="card">
-                                            <Card.Img  id="Propriétaire" width="auto%"  height="400px" src='./images/connexion.png' alt="Card image" />
+                                        <ProgressiveImage  className="card-img style-card" 
+                                            src='./images/connexion.png'
+                                            placeholder={ConnexionTiny} 
+                                            width="auto"
+                                            height="400px"
+                                        >
+                                            {src => <img src={src}  alt="Connexion Location"  />}
+                                        </ProgressiveImage>    
                                             <Card.ImgOverlay className="text-connection">
                                                 <Card.Text>
                                                 Ea qui magna laboris labore. Sint sit commodo esse duis deserunt in commodo aliquip ut 
