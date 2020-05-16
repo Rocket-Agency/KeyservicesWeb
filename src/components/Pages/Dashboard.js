@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../../css/Dashboard.scss';
+
 import { BreadcrumbItem } from '../../index';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -12,9 +13,10 @@ import axios from 'axios';
 import MaterialTable from 'material-table';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
-import { Col, Row, Container } from 'react-bootstrap';
+import { Col, Row, Container, FormControl } from 'react-bootstrap';
 import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
+import { InputLabel } from '@material-ui/core';
 // import AnnounceaLinearStepper from './Connexions/AnnounceDeposit/AnnounceaLinearStepper';
 import AnnounceStepper from './Connexions/AnnounceDeposit/AnnounceStepper';
 import DateFnsUtils from '@date-io/date-fns'; // choose your lib
@@ -26,7 +28,8 @@ import {
   DateTimePicker,
   MuiPickersUtilsProvider,
 } from '@material-ui/pickers';
-import PersonIcon from '@material-ui/icons/Person';
+import PropTypes from 'prop-types';
+import BasicDateTimePicker from './Schedule';
 
 class ProfileTabs extends Component {
 constructor(props) {
@@ -134,6 +137,12 @@ constructor(props) {
     e.preventDefault();
   }
   
+  handleEndDate = moment => {
+    this.setState({
+        workingEnd: moment
+    });
+  };
+
   render() {
     const { activeIndex } = this.state;
     const { group } = this.state;
@@ -184,83 +193,6 @@ constructor(props) {
               </div>
 
               <div className="col-md-9 personal-info">
-
-                {/* <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
-                
-                  <Grid container mt-3>
-                    <Grid container item xs={12} spacing={3}>
-                      <Grid item xs={12} md={6}  className="d-flex justify-content-center">
-                        <TextField 
-                          value={this.state.user_last_name} 
-                          onChange={e => this.setState({user_last_name: e.target.value})} 
-                          label="Nom" 
-                          fullWidth
-                        />
-                      </Grid>
-
-                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField 
-                          value={this.state.user_first_name} 
-                          onChange={e => this.setState({user_first_name: e.target.value})} 
-                          label="Prénom" 
-                          fullWidth
-                          />
-                      </Grid>
-
-                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                        <KeyboardDatePicker
-                              margin="normal"
-                              id="date-picker-dialog"
-                              format="MM/dd/yyyy"
-                              value={this.state.user_date_of_birth}
-                              onChange={e => this.setState({user_date_of_birth: e.target.value})}
-                              KeyboardButtonProps={{
-                                'aria-label': 'change date',
-                              }}
-                            />
-                        </MuiPickersUtilsProvider>
-                      </Grid>
-
-                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField 
-                          value={this.state.user_sexe} 
-                          onChange={e => this.setState({user_sexe: e.target.value})} 
-                          label="Sexe" 
-                        />
-                      </Grid>
-
-                      <Grid item xs={12} md={6} className="d-flex justify-content-center">
-                        <TextField 
-                          value={this.state.user_email} 
-                          onChange={e => this.setState({user_email: e.target.value})} 
-                          label="Email" 
-                        />
-                      </Grid>
-
-                      <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
-                        <TextField 
-                          value={this.state.user_adresse_txt} 
-                          onChange={e => this.setState({user_adresse_txt: e.target.value})} 
-                          label="Adresse" 
-                        />
-                      </Grid>
-                    </Grid>
-                  </Grid>
-
-                    <Row>
-                      <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
-                        <Button 
-                          variant="contained"
-                          color="primary"
-                          type="submit"
-                          endIcon={<EditIcon>send</EditIcon>}
-                        >
-                          Modifier
-                        </Button>
-                      </Col>
-                    </Row>
-                </form> */}
 
               <Row className="d-flex justify-content-center">
                 <div className="mt-5 col-md-9">
@@ -335,7 +267,7 @@ constructor(props) {
                         type="submit"
                         endIcon={<EditIcon>send</EditIcon>}
                       >
-                        Modifier mot de passe
+                        Modifier mon profil
                       </Button>
                     </Col>
                   </Row>
@@ -407,10 +339,11 @@ constructor(props) {
          { activeIndex === 3 &&<TabContainer>
           <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
           <BreadcrumbItem >Calendrier</BreadcrumbItem>
-          <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                  <DateTimePicker value={this.state.selectedDate} onChange={this.state.handleDateChange} />
-            </MuiPickersUtilsProvider>
-            
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                    {/* <DateTimePicker value={this.state.selectedDate} onChange={this.state.handleDateChange} /> */}
+                           <BasicDateTimePicker />
+             </MuiPickersUtilsProvider>
+
          </TabContainer> }
 
         { activeIndex === 4 && <TabContainer style={{ minWidth: "100%" }}>
