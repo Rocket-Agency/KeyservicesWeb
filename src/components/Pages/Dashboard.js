@@ -486,8 +486,8 @@ const VerticalTabs = withStyles(theme => ({
 
 const MyTab = withStyles(theme => ({
   selected: {
-    color: '#87E990',
-    borderBottom: '2px solid #87E990',
+    color: '#49173B',
+    borderBottom: '2px solid #49173B',
   },
 }))(Tab);
 
