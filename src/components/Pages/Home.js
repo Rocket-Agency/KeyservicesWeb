@@ -9,7 +9,10 @@ import ProgressiveImage from "react-progressive-graceful-image";
 // import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 // import GererMesLocationsTiny from '../../ImagesPlaceholder/GererMesLocationsTiny.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import { Carousel } from 'react-responsive-carousel';
+import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
+import CookieConsent from "react-cookie-consent";
 import { Container, Col, Row} from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
@@ -31,6 +34,29 @@ export class Home extends Component {
                 </Helmet>
 
                 <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
+                {/* <Carousel>
+                    <div>
+                        <img src="./Images/PosterUneAnnonce.png" />
+                    </div>
+                    <div>
+                        <img src="./Images/GererMesLocations.png" />
+                    </div>
+                </Carousel> */}
+                <CookieConsent
+                    location="bottom"
+                    declineButtonText="Je refuse"
+                    buttonText="J'accepte"
+                    cookieName="myAwesomeCookieName2"
+                    expires={150}
+                    enableDeclineButton
+                    onDecline={() => {window.location.replace("http://www.google.com");}}
+                    flipButtons
+                    >
+                        
+                    Nous utilisons des cookies pour nous permettre de mieux comprendre comment le site est utilisé. En continuant à utiliser ce site, vous acceptez cette politique.
+                </CookieConsent>
+
+               
 
                 {/* <div className="mt-3"> */}
                 <div>

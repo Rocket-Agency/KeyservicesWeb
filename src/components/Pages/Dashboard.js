@@ -30,6 +30,8 @@ import {
 } from '@material-ui/pickers';
 import PropTypes from 'prop-types';
 import BasicDateTimePicker from './Schedule';
+import PersonIcon from '@material-ui/icons/Person';
+
 
 class ProfileTabs extends Component {
 constructor(props) {
@@ -160,9 +162,9 @@ constructor(props) {
           onChange={this.handleChange}
         >    
           <MyTab label='Mon compte' />           
-          <MyTab label='Information location' />      
-           <MyTab label='Créer une annonce ' />
-           <MyTab label='Prise de rendez-vous' /> 
+          {this.group == 'GROUP_LOCATAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Information location' />   : null}      
+          {this.group == 'GROUP_PROPRIETAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Créer une annonce ' /> : null}
+          {this.group == 'GROUP_LOCATAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Prise de rendez-vous' /> : null} 
           {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
           {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste de contacts' /> : null }
 
@@ -453,6 +455,8 @@ constructor(props) {
               />
             </TabContainer> }
             {activeIndex === 5 && <TabContainer>
+              <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+              <BreadcrumbItem >Liste d'utilisateurs</BreadcrumbItem>
                 <MaterialTable
                   columns={[
                     { title: 'Nom', field: 'contact_first_name' },
