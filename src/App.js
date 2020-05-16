@@ -57,7 +57,7 @@ function App() {
                   <Route path='/monEspace' component={MonEspace} exact/>
                   <Route path='/loginProprietaire' component={LoginProprietaire} exact/>
                   <Route path='/loginLocataire' component={LoginLocataire} exact/>
-                  <Route path='/AdminKeyservices2020Projet' component={LoginAdmin} exact/>
+                  <Route path='/adminKeyservices2020Projet' component={LoginAdmin} exact/>
                   <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
                   <Route path='/forgetPassword' component={ForgetPassword} />
                   <Route path='/dashboard' component={ProfileTabs} />
