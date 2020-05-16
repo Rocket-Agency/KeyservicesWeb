@@ -1,29 +1,29 @@
 import React, {Component} from 'react';
 import '../../../../css/ConnexionPages.scss';
 import { BreadcrumbItem } from '../../../../index';
-import ConnexionProfileLocataire from '../ConnexionProfileLocataire';
+import ConnexionAdmin from '../ConnexionAdmin';
 import HomeIcon from '@material-ui/icons/Home';
 import ProgressiveImage from "react-progressive-graceful-image";
 import ConnexionTiny from '../../../../ImagesPlaceholder/ConnexionTiny.png';
 
 import { Col, Container, Row, Card} from 'react-bootstrap';
 
-export class LoginLocataire extends Component {
+export class LoginAdmin extends Component {
     render() {
         return(
             <div>
                <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem to="/monEspace" >Connexion</BreadcrumbItem>
-                <BreadcrumbItem >Connexion Locataire</BreadcrumbItem>
+                <BreadcrumbItem >Connexion Admin</BreadcrumbItem>
 
                     <Container fluid>
                         <Row className="BlocConnexion">
                             <Col md={6}>
                                 <div className="mt-4 mb-4 d-flex justify-content-center">
-                                    <h3>Connexion Locataire</h3>
+                                    <h3>Connexion Admin</h3>
                                 </div>
 
-                                <ConnexionProfileLocataire />
+                                <ConnexionAdmin />
 
                             </Col>
 

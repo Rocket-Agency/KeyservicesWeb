@@ -1,53 +1,17 @@
-import React, {Component, useState} from 'react';
-import '../../../css/ForgetPassword.scss';
+import React, {Component} from 'react';
 import axios from 'axios';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Visible, Hidden } from 'react-grid-system';
-// import { Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
-// import { ForgetPassword } from './Profiles/ForgetPassword';
-// import Modal from 'react-bootstrap/Modal';
-// import Button from 'react-bootstrap/Button';
+import { withRouter, Link } from 'react-router-dom';
 
-// import ConfirmMassageChangePassword from './Profiles/ConfirmMessageChangePassword';
-
-// function Password() {
-//     const [show, setShow] = useState(false);
-  
-//     const handleClose = () => setShow(false);
-//     const handleShow = () => setShow(true);
-  
-//     return (
-//       <>
-//         <Button variant="primary" onClick={handleShow}>
-//           Launch demo modal
-//         </Button>
-  
-//         <Modal show={show} onHide={handleClose} animation={false}>
-//           <Modal.Header closeButton>
-//             <Modal.Title>Modal heading</Modal.Title>
-//           </Modal.Header>
-//           <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-//           <Modal.Footer>
-//             <Button variant="secondary" onClick={handleClose}>
-//               Close
-//             </Button>
-//             <Button variant="primary" onClick={handleClose}>
-//               Save Changes
-//             </Button>
-//           </Modal.Footer>
-//         </Modal>
-//       </>
-//     );
-//   }
-
- class ForgetPasswordForm extends Component {
+ class ConnexionAdmin extends Component {
     constructor(props) {
         super(props);
     
         this.state = {
           email: "",
+          password: "",
         };
     
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -61,19 +25,25 @@ import { withRouter } from 'react-router-dom';
       }
     
       handleSubmit(event) {
-        const { email } = this.state;
+        const { email, password } = this.state;
         const config = {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           }
         }
-        axios.post("http://localhost:3001/api/auth/resetpassword",
+        axios.post("http://localhost:3001/api/auth/signin",
             {
-                email: email
+                email: email,
+                password: password
             },
             config
           )
+          .then(response => {
+            this.props.history.push('/dashboard', {user: response.data});
+          })
+          .catch(error => {
+          });
         event.preventDefault();
       }
 
@@ -93,24 +63,38 @@ import { withRouter } from 'react-router-dom';
                 </Form.Group>
             </Form.Row>
 
+            <Form.Row className="d-flex justify-content-center">
+                <Form.Group as={Col} md="8" controlId="formGridPassword">
+                <Form.Label>Mot de passe</Form.Label>
+                <Form.Control 
+                    name="password" 
+                    type="password" 
+                    placeholder="Entrer votre mot de passe" 
+                    value={this.state.password} 
+                    onChange={this.handleChange} />
+                </Form.Group>
+            </Form.Row>
 
             <Form.Row className="mt-4">
                  <Form.Group as={Col} md="12" className="mt-4">
                     <Container>
 
                         <Row>
-                            <Col xs={12} className=" align-items-center">
+                            <Col xs={12} className="d-flex justify-content-center align-items-center">
                                 <Hidden xs>
                                     <div className="d-flex justify-content-center align-items-center">
                                         <div id="container">
                                             <Row>
-                                                <button className="forgetPassword" aria-label="Mot de passe oublié">
+                                                <button className="learn-more" aria-label="En savoir plus">
                                                     <span className="circle" aria-hidden="true">
                                                         <span className="icon arrow"></span>
                                                     </span>
-                                                    <span className="button-text">Redéfinir mon mot de passe</span>
+                                                    <span className="button-text">Se connecter</span>
                                                 </button>
-                                            </Row>                
+                                            </Row>       
+                                            <Row className="d-flex justify-content-center align-items-center mt-3">
+                                            <Link  to="/forgetPassword">Mot de passe oublié</Link>   
+                                            </Row>             
                                          </div>
                                     </div>
                                 </Hidden>
@@ -119,13 +103,16 @@ import { withRouter } from 'react-router-dom';
                                     <div className="d-flex justify-content-center align-items-center">
                                         <div id="container">                    
                                             <Row>
-                                                <button className="forgetPassword" aria-label="Mot de passe oublié">
+                                                <button className="learn-more" aria-label="En savoir plus">
                                                     <span className="circle" aria-hidden="true">
                                                         <span className="icon arrow"></span>
                                                     </span>
-                                                    <span className="button-text">Redefinir mon mot de passe</span>
+                                                    <span className="button-text">Se connecter</span>
                                                 </button>
-                                            </Row>         
+                                            </Row>       
+                                            <Row className="d-flex justify-content-center align-items-center mt-3">
+                                                <Link  to="/forgetPassword">Mot de passe oublié</Link>   
+                                            </Row>     
                                          </div>
                                     </div>
                                 </Visible>
@@ -140,4 +127,4 @@ import { withRouter } from 'react-router-dom';
   }
 }
 
-export default withRouter(ForgetPasswordForm);
+export default withRouter(ConnexionAdmin);

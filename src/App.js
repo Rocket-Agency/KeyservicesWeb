@@ -7,6 +7,7 @@ import './index.css';
 //Import component for Header & Footer
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
+import CGU from './components/Pages/CGU';
 
 import FilAriane from './components/Layout/FilAriane';
 
@@ -20,6 +21,7 @@ import {ValidationContactForm} from './components/Pages/Molecule/ValidationConta
 import {MonEspace} from './components/Pages/MonEspace';
 
 //Connexion pages
+import {LoginAdmin} from './components/Pages/Connexions/Login/LoginAdmin';
 import {LoginProprietaire} from './components/Pages/Connexions/Login/LoginProprietaire';
 import {LoginLocataire} from './components/Pages/Connexions/Login/LoginLocataire';
 
@@ -55,10 +57,12 @@ function App() {
                   <Route path='/monEspace' component={MonEspace} exact/>
                   <Route path='/loginProprietaire' component={LoginProprietaire} exact/>
                   <Route path='/loginLocataire' component={LoginLocataire} exact/>
+                  <Route path='/adminKeyservices2020Projet' component={LoginAdmin} exact/>
                   <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
                   <Route path='/forgetPassword' component={ForgetPassword} />
                   <Route path='/dashboard' component={ProfileTabs} />
                   <Route path='/deconnexion' component={Deconnexion} />
+                  <Route path='/cgu' component={CGU} />
                   <Route component={NotFound} />
                 </Switch>
 

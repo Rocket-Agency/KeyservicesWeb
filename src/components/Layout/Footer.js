@@ -4,7 +4,9 @@ import '../../css/Footer.scss';
 
 import ProgressiveImage from "react-progressive-graceful-image";
 import FacebookTiny from '../../ImagesPlaceholder/LocataireTiny.png';
-import InstagramTiny from '../../ImagesPlaceholder/PropriétaireTiny.png';
+import InstagramTiny from '../../ImagesPlaceholder/ProprietaireTiny.png';
+import { Link } from 'react-router-dom';
+
 
 
 const Footer = () => {
@@ -17,7 +19,10 @@ const Footer = () => {
                     <div className="row d-flex align-items-center">
                         <Col sm={8} className="d-flex justify-content-end">
                             <p className="m-3 text-white">
-                                CGU - Contact - Mention légales - KeyServices | Tout droit réservés - {new Date().getFullYear()} 
+                                <Link className="cgu" to="/cgu" aria-label="CGU">
+                                    CGU 
+                                </Link>
+                                 - Mention légales - KeyServices | Tous droits réservés © - {new Date().getFullYear()} 
                             </p>       
                         </Col>
 

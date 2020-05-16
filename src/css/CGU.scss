@@ -1,0 +1,38 @@
+.Main-Title, .Secondary-Title, .Third-Title {
+    font-weight: 800;
+}
+
+.Main-Title, .Secondary-Title {
+    margin: 15px 0;
+}
+
+.Third-Title {
+    text-align: left;
+}
+
+.Third-Title-underline {
+    text-align: left;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+.title {
+    display: inline-block;
+    margin: 5px 0;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.title-bold {
+    font-weight: 800;
+    margin: 20px 0;
+}
+
+.text {
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.bloc-CGU {
+    padding: 20px 0;
+}

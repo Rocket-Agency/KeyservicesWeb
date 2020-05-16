@@ -5,7 +5,6 @@ import '../../css/pe-7s-shield.scss';
 import { BreadcrumbItem } from '../../index';
 // import Img from 'react-cool-img';
 import ProgressiveImage from "react-progressive-graceful-image";
-
 // import ImgDefaultHome from '../../ImagesPlaceholder/placeholderHome.png';
 // import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 // import GererMesLocationsTiny from '../../ImagesPlaceholder/GererMesLocationsTiny.png';
@@ -16,6 +15,10 @@ import Carousel from 'react-bootstrap/Carousel';
 import CookieConsent from "react-cookie-consent";
 import { Container, Col, Row} from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
+import EventAvailableIcon from '@material-ui/icons/EventAvailable';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import LocalLaundryServiceIcon from '@material-ui/icons/LocalLaundryService';
 import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
 import GererMesLocationsTiny from '../../ImagesPlaceholder/GérerMesLocationsTiny.png';
 import {Helmet} from "react-helmet";
@@ -53,15 +56,16 @@ export class Home extends Component {
                     Nous utilisons des cookies pour nous permettre de mieux comprendre comment le site est utilisé. En continuant à utiliser ce site, vous acceptez cette politique.
                 </CookieConsent>
 
-                <div className="mt-3">
 
+                {/* <div className="mt-3"> */}
+                <div>
                     <Carousel>
                         <Carousel.Item>
                             <ProgressiveImage  className="card-img style-card" 
                                 src="./images/PosterUneAnnonce.png" 
                                 placeholder={PosterUneAnnonceTiny} 
                             >
-                                {src => <img src={src}  alt="Poster une annoncee"  />}
+                                {src => <img src={src} width="100%" alt="Poster une annoncee"  />}
                             </ProgressiveImage>    
                             
                             <Carousel.Caption>
@@ -90,7 +94,7 @@ export class Home extends Component {
                     </Carousel>
                 </div>
 
-                <div className="container-fluid p-0 mt-4 mb-4">
+                <div className="container-fluid p-0  mb-4">
                     <div className="colorBackground">
                         <div className="mt-5 d-flex text-center justify-content-center">
                             <h1>On s’occupe de tous et vous de rien</h1>
@@ -108,61 +112,6 @@ export class Home extends Component {
                         <p className="text-home text-center d-flex justify-content-center">Sed tristique tincidunt enim quis viverra. Suspendisse malesuada auctor felis, 
                             ac luctus mauris pulvinar vel. Phasellus scelerisque dapibus mauris,
                             eget porta ligula. Vestibulum dictum ullamcorper nunc, nec vehicula tortor dictum et.</p>
-                        </div>
-
-                        <div className="container-fluid">
-                            <div className="row">
-                                {/* <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
-                                    <div className="card">
-                                        <Img className="card-img style-card" 
-                                            placeholder={ImgDefaultHome} 
-                                            src="./Images/PosterUneAnnonce.png"
-                                            debounce={1000}
-                                            alt="Poster unee annonce" 
-                                        /> 
-
-                                        <ProgressiveImage  className="card-img style-card" 
-                                            src="./Images/PosterUneAnnonce.png"
-                                            placeholder={PosterUneAnnonceTiny} 
-                                            alt="Poster unee annonce" 
-                                        >
-                                        {src => <img src={src} width="100%" alt="Poster unee annonce"  />}
-                                        </ProgressiveImage>
-                                        <div className="card-img-overlay">
-                                            <button className="btn btn-md btn-success" aria-label="Poster une annonce"> 
-                                                Poster une annonce
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div> */}
-
-                                {/* <div className="col-lg-6 col-md-6 col-sm-12 text-center mb-2">
-                                    <div className="card">
-                                        <Img className="card-img style-card" 
-                                            placeholder={ImgDefaultHome} 
-                                            src="./Images/GererMesLocations.png"
-                                            debounce={1000}
-                                            alt="Gerer mes locations" 
-                                        /> 
-
-                                         <Link to="/">
-                                            <ProgressiveImage  className="card-img style-card" 
-                                                src="./Images/GererMesLocations.png"
-                                                placeholder={GererMesLocationsTiny} 
-                                                alt="Poster unee annonce" 
-                                                >
-                                                {src => <img src={src} width="100%" alt="Poster unee annonce"  />}
-                                            </ProgressiveImage>
-                                        </Link>
-                                        <div className="card-img-overlay">
-                                            <button className="btn btn-md btn-success" aria-label="Gérer mes locations">
-                                                Gérer mes locations
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div> */}
-
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -186,7 +135,8 @@ export class Home extends Component {
                                 <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <i className="pe-7s-shield text-custom"></i>
+                                            {/* <i className="pe-7s-shield text-custom"></i> */}
+                                            <VpnKeyIcon style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">
@@ -209,7 +159,7 @@ export class Home extends Component {
                                 <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <i className="pe-7s-way text-custom"></i>
+                                            <AddShoppingCartIcon className="iconeServices" style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">
@@ -229,7 +179,7 @@ export class Home extends Component {
                                  <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <i className="pe-7s-note2 text-custom"></i>
+                                            <EventAvailableIcon style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">
@@ -249,7 +199,7 @@ export class Home extends Component {
                                 <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            <i className="pe-7s-world text-custom"></i>
+                                            <LocalLaundryServiceIcon style={{ fontSize: 40 }} />
                                         </div>
 
                                         <div className="number text-center rounded-pill bg-white border">

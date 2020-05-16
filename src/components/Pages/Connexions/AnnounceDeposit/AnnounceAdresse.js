@@ -2,6 +2,7 @@ import React from 'react';
 import '../../../../css/Announce.scss';
 
 import { Col, Container, Row, Form } from 'react-bootstrap';
+import TextField from '@material-ui/core/TextField';
 
 
 export default function AddressForm() {
@@ -10,54 +11,132 @@ export default function AddressForm() {
       <Container fluid className="pt-4 blocForm" >  
       <h2> Adresse de votre logement</h2>
 
-        <Container fluid className="contentForm">
-          <Row>
-            <Col xs={12} md={12} lg={12} className="pb-3">
-
-             <Form.Row className="mt-4">
-              <Form.Group className="form-group" as={Col} sm="12" md="12" lg="2" controlId="formGridAddressRoadNumber">
-                <Form.Control name="address_road_number" type="number" placeholder="N° de rue" />
-              </Form.Group>
-                    
-
-              <Form.Group as={Col} sm="12" md="12" lg="3" controlId="formGridAddressRoadType">
-                <Form.Control name="address_road_type" as="select" >
-                  <option>Choisir un type de rue</option>
-                  <option>Rue</option>
-                  <option>Allée</option>
-                  <option>Boulevard</option>
-                </Form.Control>
-              </Form.Group>
-
-              <Form.Group as={Col} sm="12" md="12" lg="7" controlId="formGridAddressRoadName">
-                  <Form.Control name="address_road_name" type="text" placeholder="Nom de rue" />
-              </Form.Group>
-            </Form.Row>
-
+      <Container fluid>
+        <Row>
+          <Col xs={12} md={12} className="mt-3">
             <Form.Row>
-              <Form.Group className="form-group"  as={Col} sm="12" md="12" lg="12" controlId="formGridAdressAddInfo">
-                <Form.Label>Information complémentaire</Form.Label>
-                <Form.Control name="address_additional_info" type="text" placeholder="Bêtiment, Escalier etc..." />
-              </Form.Group>
-            </Form.Row>
+              <Form.Label className="label-info-annonce" column sm={2}>Numéro de rue</Form.Label>
 
+                <Col sm={1}>
+                  <TextField
+                    required id="standard-required"
+                    name="address_road_number"
+                    variant="outlined"
+                    pattern="[A-Za-z]{3}"
+                    fullWidth
+                    type="number"
+                    size="small"
+                  />   
+                </Col>
+            </Form.Row>     
+          </Col>
+
+          <Col xs={12} md={6} className="mt-3">
             <Form.Row>
-              <Form.Group as={Col} sm="12" md="12" lg="4" controlId="formGridAddressState">
-                <Form.Control name="address_state" type="name" placeholder="Région" />
-              </Form.Group>
+              <Form.Label className="label-info-annonce" column sm={4}>Type de rue</Form.Label>
+                <Form.Group controlId="exampleForm.ControlSelect1">
+                  <Form.Control as="select" name="address_road_type" >
+                    <option>Choisir un type de rue</option>
+                    <option>Rue</option>
+                    <option>Allée</option>
+                    <option>Boulevard</option>
+                  </Form.Control>
+                </Form.Group>
+            </Form.Row>  
+          </Col>
+        </Row>
+        
+        <Row>
+          <Col xs={12} md={12}>
+            <Form.Row>
+              <Form.Label className="label-info-annonce" column sm={12}>Nom de rue</Form.Label>
+              <Col sm={12}>
+                <TextField
+                  type="text" 
+                  name="address_road_name"
+                  pattern="[A-Za-z]{3}"
+                  required id="standard-required"
+                  variant="outlined"
+                  fullWidth
+                  size="small"
+                />
+              </Col>
+            </Form.Row>     
+          </Col>
 
-              <Form.Group as={Col} sm="12" md="12" lg="4" controlId="formGridAddressCity">
-                <Form.Control name="address_city" type="name" placeholder="Ville" />
-              </Form.Group>
+          <Col xs={12} md={12} className="mt-3">
+            <Form.Row>
+              <Form.Label className="label-info-annonce" column sm={12}>Information complémentaire (Bâtiment, escalier, interphone etc...)</Form.Label>
+              <Col sm={12}>
+                <TextField
+                  type="text" 
+                  name="address_additional_info"
+                  pattern="[A-Za-z]{3}"
+                  variant="outlined"
+                  fullWidth
+                  size="small"
+                />
+              </Col>
+            </Form.Row>     
+          </Col>
+        </Row>
 
-              <Form.Group as={Col} sm="12" md="12" lg="4" controlId="formGridAdressZipCode">
-                <Form.Control name="address_zip_code" type="text"  placeholder="Code  Postal" />
-              </Form.Group>
-            </Form.Row>
+        <Row className="pt-3 pb-4">
+          <Col xs={12} md={4}>
+            <Form.Row>
+              <Form.Label className="label-info-annonce" column sm={12}>Région</Form.Label>
+              <Col sm={8}>
+                <TextField
+                  type="text" 
+                  name="address_state"
+                  pattern="[A-Za-z]{3}"
+                  required id="standard-required"
+                  variant="outlined"
+                  fullWidth
+                  size="small"
+                />
+              </Col>
+            </Form.Row>     
+          </Col>
 
-            </Col>
-          </Row>
-        </Container>
+          <Col xs={12} md={4}>
+            <Form.Row>
+              <Form.Label className="label-info-annonce" column sm={12}>Ville</Form.Label>
+              <Col sm={8}>
+                <TextField
+                  type="text" 
+                  name="address_city"
+                  pattern="[A-Za-z]{3}"
+                  required id="standard-required"
+                  variant="outlined"
+                  fullWidth
+                  size="small"
+                />
+              </Col>
+            </Form.Row>     
+          </Col>
+
+          <Col xs={12} md={4}>
+            <Form.Row>
+              <Form.Label className="label-info-annonce" column sm={12}>Code postal</Form.Label>
+                <Col sm={8}>
+                  <TextField
+                    required id="standard-required"
+                    name="address_zip_code"
+                      // onChange={handleChange('zipCode')}
+                      // defaultValue={values.factureAdress} 
+                    variant="outlined"
+                    pattern="[A-Za-z]{3}"
+                    fullWidth
+                    type="text" 
+                    size="small"                    
+                    />   
+                </Col>   
+            </Form.Row>     
+          </Col>
+        </Row>
+
+      </Container>
       </Container>
 
     </React.Fragment>

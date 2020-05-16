@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../../../css/ConnexionProfilPropriétaire.scss';
 import axios from 'axios';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
@@ -98,7 +99,7 @@ class ConnexionProfileProprietaire extends Component {
                                             </div>
                                     </Hidden>
                                     <Visible xs>
-                                        <div className="d-flex justify-content-center align-items-center">
+                                        <div className="mt-2 d-flex justify-content-center align-items-center">
                                             <div id="container">                    
                                                 <button className="learn-more" aria-label="En savoir plus">
                                                     <span className="circle" aria-hidden="true">
@@ -111,8 +112,15 @@ class ConnexionProfileProprietaire extends Component {
                                     </Visible>
                                 </Col>
 
-                                <Col xs={12} lg={6} className="d-flex justify-content-center align-items-center">
-                                    <Link  to="/inscriptionProprietaire">S'inscrire</Link>                                                        
+                                <Col xs={12} lg={6} className="mt-2 d-flex justify-content-center align-items-center">
+                                    <Link to="/inscriptionProprietaire">
+                                        <button className="signin" aria-label="S'inscrire">
+                                             <span className="circle-signin" aria-hidden="true">
+                                                <span className="icon arrow"></span>
+                                            </span>
+                                            <span className="button-text-signin"> S'inscrire</span>
+                                        </button>
+                                    </Link>                                                        
                                 </Col>
                             </Row>
                             <Row className="mt-3"> 

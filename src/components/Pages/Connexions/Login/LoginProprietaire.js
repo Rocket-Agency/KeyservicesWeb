@@ -25,7 +25,7 @@ export class LoginProprietaire extends Component {
                             <div className="Vertical-lign-connexion align-item-center"></div>
 
                             <Col md={6}>
-                                <div className="d-flex justify-content-center"  id="BlocExplication">
+                                <div  id="BlocExplication">
                                     <div className="card">
                                         <ProgressiveImage  className="card-img style-card" 
                                             src='./images/connexion.png'
