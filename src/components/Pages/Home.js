@@ -95,7 +95,7 @@ export class Home extends Component {
                     </Carousel>
                 </div>
 
-                <div className="container-fluid p-0 mb-4">
+                <div className="container-fluid p-0  mb-4">
                     <div className="colorBackground">
                         <div className="mt-5 d-flex text-center justify-content-center">
                             <h1>On s’occupe de tous et vous de rien</h1>
