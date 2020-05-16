@@ -21,6 +21,7 @@ import {ValidationContactForm} from './components/Pages/Molecule/ValidationConta
 import {MonEspace} from './components/Pages/MonEspace';
 
 //Connexion pages
+import {LoginAdmin} from './components/Pages/Connexions/Login/LoginAdmin';
 import {LoginProprietaire} from './components/Pages/Connexions/Login/LoginProprietaire';
 import {LoginLocataire} from './components/Pages/Connexions/Login/LoginLocataire';
 
@@ -56,6 +57,7 @@ function App() {
                   <Route path='/monEspace' component={MonEspace} exact/>
                   <Route path='/loginProprietaire' component={LoginProprietaire} exact/>
                   <Route path='/loginLocataire' component={LoginLocataire} exact/>
+                  <Route path='/adminKeyservices2020Projet' component={LoginAdmin} exact/>
                   <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
                   <Route path='/forgetPassword' component={ForgetPassword} />
                   <Route path='/dashboard' component={ProfileTabs} />
