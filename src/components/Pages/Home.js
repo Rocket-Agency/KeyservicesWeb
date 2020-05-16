@@ -34,6 +34,29 @@ export class Home extends Component {
                 </Helmet>
 
                 <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
+                {/* <Carousel>
+                    <div>
+                        <img src="./Images/PosterUneAnnonce.png" />
+                    </div>
+                    <div>
+                        <img src="./Images/GererMesLocations.png" />
+                    </div>
+                </Carousel> */}
+                <CookieConsent
+                    location="bottom"
+                    declineButtonText="Je refuse"
+                    buttonText="J'accepte"
+                    cookieName="myAwesomeCookieName2"
+                    expires={150}
+                    enableDeclineButton
+                    onDecline={() => {window.location.replace("http://www.google.com");}}
+                    flipButtons
+                    >
+                        
+                    Nous utilisons des cookies pour nous permettre de mieux comprendre comment le site est utilisé. En continuant à utiliser ce site, vous acceptez cette politique.
+                </CookieConsent>
+
+               
 
                 {/* <div className="mt-3"> */}
                 <div>
