@@ -30,6 +30,8 @@ import {
 } from '@material-ui/pickers';
 import PropTypes from 'prop-types';
 import BasicDateTimePicker from './Schedule';
+import PersonIcon from '@material-ui/icons/Person';
+
 
 class ProfileTabs extends Component {
 constructor(props) {
@@ -484,8 +486,8 @@ const VerticalTabs = withStyles(theme => ({
 
 const MyTab = withStyles(theme => ({
   selected: {
-    color: '#49173B',
-    borderBottom: '2px solid #49173B',
+    color: '#87E990',
+    borderBottom: '2px solid #87E990',
   },
 }))(Tab);
 
