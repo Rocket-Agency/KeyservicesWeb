@@ -98,7 +98,6 @@ export class UserForm extends Component {
               nextStep={this.nextStep}
           />
           );
-
         case 6: 
           return (
             <ConnexionProfilePropretaire
