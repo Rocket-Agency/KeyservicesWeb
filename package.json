@@ -44,11 +44,8 @@
     "isomorphic-fetch": "^2.2.1",
     "material-design-icons": "^3.0.1",
     "material-table": "^1.57.2",
-<<<<<<< HEAD
     "material-ui-pickers": "^2.2.4",
     "moment": "^2.25.3",
-=======
->>>>>>> keyservices
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.3",
     "purify-css": "^1.2.5",
