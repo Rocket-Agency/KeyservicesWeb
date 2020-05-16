@@ -27,7 +27,17 @@ export class InformationGenerales extends Component {
                     <p className="InformationFormValid">Keyservices est disponible dans votre ville vous pouvez désormais vous inscrire pour ensuite pouvoir déposer votre annonce dans votre espace</p>
                 </div>
                 <Container fluid className="pt-4 blocForm" >  
-                    <h2 className="title-form">Information  Générales</h2>
+                    <Row>
+                        <Col sm>
+                            <h2 className="title-form">Information Générales</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form">Information sur votre Adresse</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form">Information sur votre Connexion</h2>
+                        </Col>
+                    </Row>
                     <Row className="mt-4">
                         <Col  xs={12} md={5} className="col d-flex justify-content-center pt-3 pb-3">
                             <Form.Row>

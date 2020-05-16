@@ -13,7 +13,7 @@ import AnnounceAdress from './AnnounceAdresse';
 import AnnounceHousing from './AnnounceHousing';
 import AnnounceRulesInformations from './AnnounceRulesInformations';
 import AnnounceTarif from './AnnounceTarif';
-import Announce from './Announce';
+import AnnounceResume from './AnnounceResume';
 import AnnouncePayment from './AnnouncePayment';
 import AnnounceConfirm from './AnnounceConfirm';
 
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
       case 3:
         return <AnnounceTarif />;
       case 4:
-        return <Announce/>;
+        return <AnnounceResume/>;
       case 5:
         return <AnnounceConfirm/>;
       case 6:
