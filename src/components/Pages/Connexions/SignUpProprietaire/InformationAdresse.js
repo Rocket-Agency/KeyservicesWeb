@@ -37,33 +37,33 @@ export class InformationAdresse extends Component {
                             <h2 className="title-form">3 - Information sur votre Connexion</h2>
                         </Col>
                     </Row>
-                        <Row className="mt-4">
-                            <Col xs={12} md={6} className="pb-3">
-                                <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={4}>Votre adresse de facturation</Form.Label>
-                                         <Col>
-                                             <Col>
-                                                    <TextField
-                                                        placeholder="Entre  votre adresse de facturation" 
-                                                        required id="standard-required"
-                                                        onChange={handleChange('factureAdress')}
-                                                        defaultValue={values.factureAdress} 
-                                                        variant="outlined"
-                                                        pattern="[A-Za-z]{3}"
-                                                        fullWidth
-                                                        type="text"
-                                                        size="small"                     
-                                                    />   
-                                                </Col>
-                                            </Col>
-                                </Form.Row>     
-                            </Col>
 
-                            <Col xs={12} md={6} className="pb-3">
-                                <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={4}>Code postal</Form.Label>
-                                    <Col>
+                         <Container fluid>
+                            <Row className="mt-4">
+                                <Col xs={12} md={6} className="pb-3">
+                                    <Form.Row>
+                                        <Form.Label className="label-info-generales" column sm={4}>Votre adresse de facturation</Form.Label>
+                                        
                                         <Col>
+                                            <TextField
+                                                placeholder="Entre  votre adresse de facturation" 
+                                                required id="standard-required"
+                                                onChange={handleChange('factureAdress')}
+                                                defaultValue={values.factureAdress} 
+                                                variant="outlined"
+                                                pattern="[A-Za-z]{3}"
+                                                fullWidth
+                                                type="text"
+                                                size="small"                     
+                                            />   
+                                        </Col>
+                                    </Form.Row>     
+                                </Col>
+
+                                <Col xs={12} md={6} className="pb-3">
+                                    <Form.Row>
+                                        <Form.Label className="label-info-generales" column sm={4}>Code postal</Form.Label>
+                                         <Col>
                                             <TextField
                                                 placeholder="Entre votre Code Postal" 
                                                 required id="standard-required"
@@ -76,44 +76,38 @@ export class InformationAdresse extends Component {
                                                 size="small"                    
                                             />   
                                         </Col>                                        
-                                    </Col>
-                                </Form.Row>     
-                            </Col>
+                                    </Form.Row>     
+                                </Col>
 
-                            <Col xs={12} md={6} className="pb-2 pt-3">
-                                <Form.Row>
-                                    <Form.Label column sm={12}>Veuillez fournir un justificatif de domicile</Form.Label>
-                                </Form.Row>
+                                <Col xs={12} md={6} className="pb-2 pt-3">
+                                    <Form.Row>
+                                        <Form.Label column sm={12}>Veuillez fournir un justificatif de domicile</Form.Label>
+                                    </Form.Row>
 
-                                <Form.Row className="pb-3">
-                                <diiv className="attachmenBtn m-2"> 
-                                    <AttachFileIcon className="iconAttachFile"/>  
-                                            Envoyer un justificatif   
-                                </diiv>
-                                    <Input type="file" name="file" id="exampleFile" />
-                                </Form.Row>     
- 
-                                {/* <Button className="attachmenBtn">
-                                        <AttachFileIcon className="iconAttachFile" type="file"/>  
-                                        Envoyer un justificatif
-                                    </Button>      */}
+                                    <Form.Row className="pb-3">
+                                    <diiv className="attachmenBtn m-2"> 
+                                        <AttachFileIcon className="iconAttachFile"/>  
+                                                Envoyer un justificatif   
+                                    </diiv>
+                                        <Input type="file" name="file" id="exampleFile" />
+                                    </Form.Row>     
+                                </Col>
 
-                            </Col>
-                            <Col xs={12} md={12} className="d-flex justify-content-around pb-3"> 
+                                <Col xs={12} md={12} className="d-flex justify-content-around pb-3"> 
                                     <Button
                                         color="secondary"
                                         variant="contained"
                                         onClick={this.back}
                                     >Retour</Button>
 
-
                                     <Button
                                     color="primary"
                                     variant="contained"
                                     onClick={this.continue}
                                     >Continuer</Button>
-                            </Col>
-                        </Row>
+                                </Col>
+                             </Row>
+                        </Container>
                     </Container>
                 </div>
             )

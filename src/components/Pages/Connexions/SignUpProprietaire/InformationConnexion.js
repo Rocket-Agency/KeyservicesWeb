@@ -34,67 +34,48 @@ export class InformationConnexion extends Component {
                             <h2 className="title-form title-form-active">3 - Information sur votre Connexion</h2>
                         </Col>
                     </Row>
-                        <Row className="mt-4">
-                            <Col xs={12} md={6} className="pb-3">
-                                <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={4}>Email</Form.Label>
-                                    {/* <Col>
-                                        <Form.Control type="text" placeholder="Votre adresse" />
-                                    </Col> */}
-                                    {/* <Row>
-                                      <Form.Control Label value="end" control={<Radio color="primary" />} label="End" /> 
-                                    </Row> */}
 
+                         <Container fluid>
+                            <Row className="mt-4">
+                                <Col xs={12} md={6} className="pb-3">
+                                    <Form.Row>
+                                        <Form.Label className="label-info-generales" column sm={4}>Email</Form.Label>
                                         <Col>
-                                            <Col>
-                                                <TextField
-                                                    label="Entre votre adresse email"
-                                                    required id="standard-required"
-                                                    onChange={handleChange('email')}
-                                                    defaultValue={values.email} 
-                                                    variant="outlined"
-                                                    pattern="[A-Za-z]{3}"
-                                                    fullWidth
-                                                    type="text" 
-                                                    size="small"                    
-                                                />   
-                                            </Col>
-                                        </Col>
-                                </Form.Row>     
-                            </Col>
-
-                            <Col xs={12} md={6} className="pb-3">
-                                <Form.Row>
-                                    <Form.Label className="label-info-generales" column sm={4}>Mot de passe</Form.Label>
-                                    <Col>
-                                        <Col>
-                                            {/* <TextField
-                                                placeholder="Entre votre mot de passe" 
+                                            <TextField
+                                                label="Entre votre adresse email"
                                                 required id="standard-required"
+                                                onChange={handleChange('email')}
+                                                defaultValue={values.email} 
+                                                variant="outlined"
+                                                pattern="[A-Za-z]{3}"
+                                                fullWidth
+                                                type="text" 
+                                                size="small"                    
+                                            />   
+                                        </Col>
+                                    </Form.Row>     
+                                </Col>
+
+                                <Col xs={12} md={6} className="pb-3">
+                                    <Form.Row>
+                                        <Form.Label className="label-info-generales" column sm={4}>Mot de passe</Form.Label>
+                                        <Col>
+                                            <TextField
+                                                label="Entre votre mot de passe"
+                                                id="outlined-adornment-password"
                                                 onChange={handleChange('password')}
                                                 defaultValue={values.password} 
                                                 variant="outlined"
                                                 pattern="[A-Za-z]{3}"
                                                 fullWidth
-                                                type="text"                     
-                                            />    */}
-                                                <TextField
-                                                    label="Entre votre mot de passe"
-                                                    id="outlined-adornment-password"
-                                                    onChange={handleChange('password')}
-                                                    defaultValue={values.password} 
-                                                    variant="outlined"
-                                                    pattern="[A-Za-z]{3}"
-                                                    fullWidth
-                                                    type="password" 
-                                                    size="small"
-                                                />
-                                        </Col>                                        
-                                    </Col>
-                                </Form.Row>     
-                            </Col>
+                                                type="password" 
+                                                size="small"
+                                            />
+                                        </Col>
+                                    </Form.Row>     
+                                </Col>
 
-                            <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
+                                <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
                                     <Button
                                         color="secondary"
                                         variant="contained"
@@ -102,15 +83,15 @@ export class InformationConnexion extends Component {
                                         aria-label="Retour"
                                     >Retour</Button>
 
-
                                     <Button
                                     color="primary"
                                     variant="contained"
                                     onClick={this.continue}
                                     aria-label="Continuer"
                                     >Continuer</Button>
-                            </Col>
-                        </Row>
+                                </Col>
+                            </Row>
+                        </Container>
                     </Container>
                 </div>
             )
