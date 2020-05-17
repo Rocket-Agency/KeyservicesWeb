@@ -83,9 +83,9 @@ export class InscriptionProprietaire extends Component {
                 <BreadcrumbItem >Connexion Propriétaire</BreadcrumbItem>
 
 
-                 <Container fluid className="mt-5 d-flex justify-content-center searchCityFields">
+                 <Container fluid className="mt-5 searchCityFields">
                     <Form onSubmit={this.handleSubmit}>
-                        <Form.Row className="d-flex justify-content-center">
+                        <Form.Row>
                             <Form.Group as={Col} md="2" controlId="formGridCity">
                                 <Autocomplete
                                     id="combo-box-demo"
@@ -101,14 +101,14 @@ export class InscriptionProprietaire extends Component {
                         </Form.Row>
                     
 
-                        <div id="container">                    
+                        <Container fluid className="searchCityFields">               
                             <button type="submit" className="learn-more" aria-label="Valider la ville">
                                 <span className="circle" aria-hidden="true">
                                     <span className="icon arrow"></span>
                                 </span>
                                 <span className="button-text">Valider la ville</span>
                             </button>
-                        </div>         
+                        </Container>         
                      </Form>               
                  </Container>
 

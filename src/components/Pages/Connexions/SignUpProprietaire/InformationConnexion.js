@@ -2,13 +2,7 @@ import React, {Component} from 'react';
 import '../../../../css/InscriptionProprietaire.scss';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
-// import Button from '@material-ui/core/Button';
-// import { Visible, Hidden } from 'react-grid-system';
-// import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-
-
-// import InputLabel from '@material-ui/core/InputLabel';
 import TextField from '@material-ui/core/TextField';
 
 
@@ -29,7 +23,17 @@ export class InformationConnexion extends Component {
         return(
             <div>
                 <Container fluid className="pt-4 blocForm">
-                    <h2 className="title-form">Information sur votre connexion</h2>
+                    <Row>
+                        <Col sm>
+                            <h2 className="title-form">1 - Information Générales</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form">2 - Information sur votre Adresse</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form title-form-active">3 - Information sur votre Connexion</h2>
+                        </Col>
+                    </Row>
                         <Row className="mt-4">
                             <Col xs={12} md={6} className="pb-3">
                                 <Form.Row>

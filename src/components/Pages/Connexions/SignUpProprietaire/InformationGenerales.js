@@ -29,15 +29,16 @@ export class InformationGenerales extends Component {
                 <Container fluid className="pt-4 blocForm" >  
                     <Row>
                         <Col sm>
-                            <h2 className="title-form">Information Générales</h2>
+                            <h2 className="title-form title-form-active">1 - Information Générales</h2>
                         </Col>
                         <Col sm>
-                            <h2 className="title-form">Information sur votre Adresse</h2>
+                            <h2 className="title-form">2 - Information sur votre Adresse</h2>
                         </Col>
                         <Col sm>
-                            <h2 className="title-form">Information sur votre Connexion</h2>
+                            <h2 className="title-form">3 - Information sur votre Connexion</h2>
                         </Col>
                     </Row>
+
                     <Row className="mt-4">
                         <Col  xs={12} md={5} className="col d-flex justify-content-center pt-3 pb-3">
                             <Form.Row>
