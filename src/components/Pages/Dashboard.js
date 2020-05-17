@@ -18,7 +18,8 @@ import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
 import { InputLabel } from '@material-ui/core';
 // import AnnounceaLinearStepper from './Connexions/AnnounceDeposit/AnnounceaLinearStepper';
-import AnnounceStepper from './Connexions/AnnounceDeposit/AnnounceStepper';
+// import AnnounceStepper from './Connexions/AnnounceDeposit/AnnounceStepper';
+import AnnounceStepperForm from './Connexions/DepositAnnounce/AnnounceStepperForm';
 import DateFnsUtils from '@date-io/date-fns'; // choose your lib
 import {
   DatePicker,
@@ -333,7 +334,8 @@ constructor(props) {
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Création d'une annonce</BreadcrumbItem>
                 <h1>Création d'une annonce</h1>
-                  <AnnounceStepper/>
+                  {/* <AnnounceStepper/> */}
+                  <AnnounceStepperForm />
             </TabContainer> }
 
             { activeIndex === 3 && this.group === 'GROUP_ADMIN' &&<TabContainer>
@@ -472,7 +474,8 @@ constructor(props) {
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Création d'une annonce</BreadcrumbItem>
                 <h1>Création d'une annonce</h1>
-                  <AnnounceStepper/>
+                  {/* <AnnounceStepper/> */}
+                  <AnnounceStepperForm />
             </TabContainer> }
 
             { activeIndex === 1 && this.group === 'GROUP_LOCATAIRE'  && <TabContainer>
