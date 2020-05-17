@@ -6,8 +6,12 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import { Button } from 'reactstrap';
+import Checkbox from '@material-ui/core/Checkbox';
 
 import 'react-phone-input-2/lib/bootstrap.css'
+
+
+
 
 
 export class AnnounceHousing extends Component {
@@ -21,7 +25,6 @@ export class AnnounceHousing extends Component {
         e.preventDefault();
         this.props.prevStep();
       };
-    
     render() {
         const { values, handleChange } = this.props;
         return(
@@ -196,7 +199,7 @@ export class AnnounceHousing extends Component {
                                             label="Cuisine" 
                                             defaultValue={values.equipment_kitchen} 
                                             onChange={handleChange('equipment_kitchen')}
-                                            />
+                                        />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
