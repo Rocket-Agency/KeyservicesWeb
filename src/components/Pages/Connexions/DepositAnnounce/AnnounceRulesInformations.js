@@ -37,13 +37,16 @@ export class AnnounceRulesInformations extends Component {
                             <h2 className="title-form-Announce">4 - Tarif</h2>
                         </Col>
                         <Col sm>
-                            <h2 className="title-form-Announce">5 - Votre annonce</h2>
+                            <h2 className="title-form-Announce">5 - Nos services</h2>
                         </Col>
                         <Col sm>
-                            <h2 className="title-form-Announce">6 - Validation</h2>
+                            <h2 className="title-form-Announce">6 - Votre annonce</h2>
                         </Col>
                         <Col sm>
-                            <h2 className="title-form-Announce">7 - Paiement</h2>
+                            <h2 className="title-form-Announce">7 - Validation</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce ">8 - Paiement</h2>
                         </Col>
                     </Row>
                 <h2 className="mb-4">Informations et Règles</h2>

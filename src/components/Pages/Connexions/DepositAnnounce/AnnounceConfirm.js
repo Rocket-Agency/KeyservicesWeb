@@ -211,6 +211,18 @@ export class AnnounceConfirm extends Component {
 
                         <br/>
 
+                        <h2>Services sélectionner</h2>           
+
+                            <ListItem>
+                                <ListItemText primary="Prix de base :" secondary={price_starting}/> 
+
+                                <ListItemText primary="Prix minimum :" secondary={price_min}/> 
+
+                                <ListItemText primary="Prix maximum :" secondary={price_max}/> 
+                            </ListItem>
+
+                            <br/>
+
                         <h2>Votre annonce</h2>    
                         <ListItem>
                             <ListItemText primary="Titre de l'annonce :" secondary={ad_title}/> 

@@ -4,7 +4,7 @@ import '../../../../css/Announce.scss';
 import { Row, Col, Container, Form } from 'react-bootstrap';
 import { Button } from 'reactstrap';
 
-export class AnnouncePayment extends Component {
+export class AnnounceServices extends Component {
 
     continue = e => {
         e.preventDefault();
@@ -17,7 +17,7 @@ export class AnnouncePayment extends Component {
     };
 
     render() {
-        // const { values, handleChange } = this.props;
+        const { values, handleChange } = this.props;
         return(
             <div>
                 <Container fluid className="pt-4 blocForm" >  
@@ -35,7 +35,7 @@ export class AnnouncePayment extends Component {
                             <h2 className="title-form-Announce">4 - Tarif</h2>
                         </Col>
                         <Col sm>
-                            <h2 className="title-form-Announce">5 - Nos services</h2>
+                            <h2 className="title-form-Announce title-form-Announce-active">5 - Nos services</h2>
                         </Col>
                         <Col sm>
                             <h2 className="title-form-Announce">6 - Votre annonce</h2>
@@ -44,35 +44,35 @@ export class AnnouncePayment extends Component {
                             <h2 className="title-form-Announce">7 - Validation</h2>
                         </Col>
                         <Col sm>
-                            <h2 className="title-form-Announce title-form-Announce-active">8 - Paiement</h2>
+                            <h2 className="title-form-Announce ">8 - Paiement</h2>
                         </Col>
                     </Row>
-                    <h2>Paiement</h2>
+                    <h2>Nos Services</h2>
   
                     <Container fluid>
                 
-                        Paiement
+                       Produit à la carte
                     </Container>
 
                     <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
-                                    <Button
-                                        color="secondary"
-                                        variant="contained"
-                                        onClick={this.back}
-                                        aria-label="Retour"
-                                    >Retour</Button>
+                        <Button
+                            color="secondary"
+                            variant="contained"
+                            onClick={this.back}
+                            aria-label="Retour"
+                        >Retour</Button>
 
-                                    <Button
-                                    color="primary"
-                                    variant="contained"
-                                    onClick={this.continue}
-                                    aria-label="Continuer"
-                                    >Continuer</Button>
-                                </Col>
+                        <Button
+                            color="primary"
+                            variant="contained"
+                            onClick={this.continue}
+                            aria-label="Continuer"
+                        >Continuer</Button>
+                    </Col>
                 </Container>
             </div>
         )
     }
 }
 
-export default AnnouncePayment;
+export default AnnounceServices;
