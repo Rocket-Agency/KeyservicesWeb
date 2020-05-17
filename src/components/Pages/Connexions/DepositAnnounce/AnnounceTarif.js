@@ -18,7 +18,7 @@ export class AnnounceTarif extends Component {
     };
 
     render() {
-        // const { values, handleChange } = this.props;
+        const { values, handleChange } = this.props;
         return(
             <div>
                 <Container fluid className="pt-4 blocForm" >  
@@ -55,13 +55,14 @@ export class AnnounceTarif extends Component {
                                     <Col sm={12}>
                                         <TextField
                                             type="text" 
-                                            name="price_starting"
                                             pattern="[A-Za-z]{3}"
                                             required id="standard-required"
                                             variant="outlined"
                                             fullWidth
                                             size="small"
                                             label="€"
+                                            defaultValue={values.price_starting} 
+                                            onChange={handleChange('price_starting')}
                                         />
                                     </Col>
                                 </Form.Row>     
@@ -81,13 +82,14 @@ export class AnnounceTarif extends Component {
                                     <Col sm={12}>
                                         <TextField
                                         type="text" 
-                                        name="price_min"
                                         pattern="[A-Za-z]{3}"
                                         required id="standard-required"
                                         variant="outlined"
                                         fullWidth
                                         size="small"
                                         label="€"
+                                        defaultValue={values.price_min} 
+                                        onChange={handleChange('price_min')}
                                         />
                                     </Col>
                                 </Form.Row>     
@@ -107,15 +109,14 @@ export class AnnounceTarif extends Component {
                                     <Col sm={12}>
                                     <TextField
                                         required id="standard-required"
-                                        name="price_max"
-                                        // onChange={handleChange('zipCode')}
-                                        // defaultValue={values.factureAdress} 
                                         variant="outlined"
                                         pattern="[A-Za-z]{3}"
                                         fullWidth
                                         type="text" 
                                         size="small"  
-                                        label="€"                  
+                                        label="€"   
+                                        defaultValue={values.price_max} 
+                                        onChange={handleChange('price_max')}               
                                         />   
                                     </Col>   
                                 </Form.Row>     
