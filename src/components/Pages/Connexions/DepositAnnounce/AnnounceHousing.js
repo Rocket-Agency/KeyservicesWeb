@@ -194,97 +194,128 @@ export class AnnounceHousing extends Component {
                                 </Form.Label>
                                 <Col sm={3}>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Cuisine" 
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Cuisine"  
                                             defaultValue={values.equipment_kitchen} 
-                                            onChange={handleChange('equipment_kitchen')}
+                                            onChange={handleChange('equipment_kitchen')} 
+                                            color="primary" />}
+                                            label="Cuisine"
                                         />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Chauffage" 
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Chauffage"  
+                                            color="primary" />}
                                             defaultValue={values.equipment_heater} 
                                             onChange={handleChange('equipment_heater')}
-                                            />
+                                            label="Chauffage" 
+                                        />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Wifi" 
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Wifi"  
+                                            color="primary" />}
                                             defaultValue={values.equipment_wifi} 
-                                            onChange={handleChange('equipment_wifi')}/>
+                                            onChange={handleChange('equipment_wifi')}
+                                            label="Wifi" 
+                                        />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Fer à repasser"
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Fer à repasser"  
+                                            color="primary" />}
                                             defaultValue={values.equipment_iron} 
-                                            onChange={handleChange('equipment_iron')}/>
+                                            onChange={handleChange('equipment_iron')}
+                                            label="Fer à repasser"
+                                        />
                                     </Form.Group>
                                 </Col>
 
                                 <Col sm={3}>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Espace de travail" 
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Espace de travail"  
+                                            color="primary" />}
                                             defaultValue={values.equipment_working_space} 
-                                            onChange={handleChange('equipment_working_space')}/>
+                                            onChange={handleChange('equipment_working_space')}
+                                            label="Espace de travail" 
+                                        />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Salle de bain privée"   
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Salle de bain privée"  
+                                            color="primary" />}
                                             defaultValue={values.equipment_private_bathroom} 
-                                            onChange={handleChange('equipment_private_bathroom')}/>
+                                            onChange={handleChange('equipment_private_bathroom')}
+                                            label="Salle de bain privée" 
+                                        />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Produits d'entretiens" 
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Produits d'entretiens"  
+                                            color="primary" />}
                                             defaultValue={values.equipment_shampoo} 
-                                            onChange={handleChange('equipment_shampoo')}/>
+                                            onChange={handleChange('equipment_shampoo')}
+                                            label="Produits d'entretiens" 
+                                        />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Climatiseur" 
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Climatiseur"  
+                                            color="primary" />}
                                             defaultValue={values.equipment_air_conditioner} 
-                                            onChange={handleChange('equipment_air_conditioner')}/>
+                                            onChange={handleChange('equipment_air_conditioner')}
+                                            label="Climatiseur" 
+                                        />
                                     </Form.Group>
                                 </Col>
 
                                 <Col sm={3}>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Cintres" 
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Cintres"  
+                                            color="primary" />}
                                             defaultValue={values.equipment_hangers} 
-                                            onChange={handleChange('equipment_hangers')}/>
+                                            onChange={handleChange('equipment_hangers')}
+                                            label="Cintres" 
+                                        />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Sèche cheveux" 
+                                         <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Sèche cheveux"  
+                                            color="primary" />}
                                             defaultValue={values.equipment_hair_dryer} 
-                                            onChange={handleChange('equipment_hair_dryer')}/>
+                                            onChange={handleChange('equipment_hair_dryer')}
+                                            label="Sèche cheveux" 
+                                        />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Télévision" 
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Télévision"  
+                                            color="primary" />}
                                             defaultValue={values.equipment_television} 
-                                            onChange={handleChange('equipment_television')}/>
+                                            onChange={handleChange('equipment_television')}
+                                            label="Télévision" 
+                                        />
                                     </Form.Group>
                                 </Col>
                             </Form.Group>
@@ -297,37 +328,49 @@ export class AnnounceHousing extends Component {
                                 </Form.Label>
                                 <Col sm={3}>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Parking" 
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Parking"  
+                                            color="primary" />}
                                             defaultValue={values.installation_parking} 
-                                            onChange={handleChange('installation_parking')} />
+                                            onChange={handleChange('installation_parking')}
+                                            label="Parking" 
+                                        />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Salle de sport/ Équipement musculaire" 
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Salle de sport/ Équipement musculaire"  
+                                            color="primary" />}
                                             defaultValue={values.installation_gym} 
-                                            onChange={handleChange('installation_gym')} />
+                                            onChange={handleChange('installation_gym')}
+                                            label="Salle de sport/ Équipement musculaire" 
+                                        />
                                     </Form.Group>
                                 </Col>
 
                                 <Col sm={3}>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Piscine" 
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Piscine"  
+                                            color="primary" />}
                                             defaultValue={values.installation_pool} 
-                                            onChange={handleChange('installation_pool')}/>
+                                            onChange={handleChange('installation_pool')}
+                                            label="Piscine" 
+                                        />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check 
-                                            type="checkbox" 
-                                            label="Jaccuzi" 
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                            value="Jaccuzi"  
+                                            color="primary" />}
                                             defaultValue={values.installation_jaccuzi} 
-                                            onChange={handleChange('installation_jaccuzi')} />
+                                            onChange={handleChange('installation_jaccuzi')}
+                                            label="Jaccuzi" 
+                                        />
                                     </Form.Group>
                                 </Col>
                             </Form.Group>
