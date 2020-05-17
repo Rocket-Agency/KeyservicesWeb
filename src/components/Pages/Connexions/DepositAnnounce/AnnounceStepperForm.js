@@ -109,13 +109,24 @@ export class AnnounceStepperForm extends Component {
     const { step } = this.state;
     const { address_road_number, address_road_type, address_road_name, address_additional_info, address_state, address_city, address_zip_code,
             housing_type_property, housing_type, housing_nb_room, housing_nb_bathroom, housing_observation,
-    
-    
-    
-    } = this.state;
+            equipment_kitchen, equipment_heater, equipment_wifi, equipment_iron, equipment_working_space, equipment_private_bathroom, equipment_shampoo, equipment_air_conditioner, equipment_hangers, equipment_hair_dryer, equipment_television,
+            installation_parking, installation_gym, installation_pool, installation_jaccuzi,
+            info_stairs, info_pets, info_no_parking, info_shared_space, info_equipment_restriction, info_monitoring_device, info_weapons, info_dangerous_animals, info_noise,
+            rule_age_2, rule_age_2_12, rule_pets, rule_smoking, rule_event, rule_add,
+            info_area, info_around, info_infos, info_availability, observation,
+            price_starting, price_min, price_max,
+            ad_title, ad_description, ad_capacity, ad_notice, ad_arrival_time, ad_departure_time, ad_min_night, ad_max_night, ad_starting_date, ad_ending_date
+          } = this.state;
     const values = { address_road_number, address_road_type, address_road_name, address_additional_info, address_state, address_city, address_zip_code,
-                    housing_type_property, housing_type, housing_nb_room, housing_nb_bathroom, housing_observation
-    };
+                    housing_type_property, housing_type, housing_nb_room, housing_nb_bathroom, housing_observation,
+                    equipment_kitchen, equipment_heater, equipment_wifi, equipment_iron, equipment_working_space, equipment_private_bathroom, equipment_shampoo, equipment_air_conditioner, equipment_hangers, equipment_hair_dryer, equipment_television,
+                    installation_parking, installation_gym, installation_pool, installation_jaccuzi,
+                    info_stairs, info_pets, info_no_parking, info_shared_space, info_equipment_restriction, info_monitoring_device, info_weapons, info_dangerous_animals, info_noise,
+                    rule_age_2, rule_age_2_12, rule_pets, rule_smoking, rule_event, rule_add,
+                    info_area, info_around, info_infos, info_availability, observation,
+                    price_starting, price_min, price_max,
+                    ad_title, ad_description, ad_capacity, ad_notice, ad_arrival_time, ad_departure_time, ad_min_night, ad_max_night, ad_starting_date, ad_ending_date
+                  };
       switch (step) {
         case 1:
           return (

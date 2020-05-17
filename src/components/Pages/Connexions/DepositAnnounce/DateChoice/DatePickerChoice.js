@@ -6,8 +6,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function DatePickerDeparture() {
     const [startDate, setStartDate] = useState(new Date("2020/05/28"));
-    const [endDate, setEndDate] = useState(new Date("2020/05/28")
-    );
+    const [endDate, setEndDate] = useState(new Date("2020/05/28"));
+    const { values, handleChange } = this.props;
     return (
         <>
         <Grid container spacing={3}>
@@ -20,6 +20,9 @@ export default function DatePickerDeparture() {
               startDate={startDate}
               endDate={endDate}
               name="ad_starting_date"
+              defaultValue={values.ad_starting_date} 
+              onChange={handleChange('ad_starting_date')}
+              
             />              
           </Grid>
             
@@ -34,6 +37,8 @@ export default function DatePickerDeparture() {
                 timeCaption="Heure"
                 dateFormat="h:mm"
                 name="ad_arrival_time"
+                defaultValue={values.ad_arrival_time} 
+                onChange={handleChange('ad_arrival_time')}
               />
           </Grid>
                             
@@ -47,6 +52,8 @@ export default function DatePickerDeparture() {
               endDate={endDate}
               minDate={startDate}
               name="ad_ending_date"
+              defaultValue={values.ad_ending_date} 
+              onChange={handleChange('ad_ending_date')}
             />
           </Grid>
                             
@@ -61,6 +68,8 @@ export default function DatePickerDeparture() {
                 timeCaption="Heure"
                 dateFormat="h:mm"
                 name="ad_departure_time"
+                defaultValue={values.ad_departure_time} 
+                onChange={handleChange('ad_departure_time')}
               />
           </Grid>
         </Grid>

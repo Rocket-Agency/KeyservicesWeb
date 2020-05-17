@@ -85,7 +85,6 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Check 
                                             type="checkbox" 
                                             label="Espace partagé" 
-                                            name="info_shared_space"
                                             defaultValue={values.info_shared_space} 
                                             onChange={handleChange('info_shared_space')}
                                         />
@@ -95,7 +94,6 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Check 
                                             type="checkbox" 
                                             label="Restriction équipements" 
-                                            name="info_equipment_restriction"
                                             defaultValue={values.info_equipment_restriction} 
                                             onChange={handleChange('info_equipment_restriction')}
                                         />
@@ -105,7 +103,6 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Check 
                                             type="checkbox" 
                                             label="Vidéo surveillance" 
-                                            name="info_monitoring_device" 
                                             defaultValue={values.info_monitoring_device} 
                                             onChange={handleChange('info_monitoring_device')}
                                         />
@@ -117,7 +114,6 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Check 
                                             type="checkbox" 
                                             label="Armes" 
-                                            name="info_weapons"
                                             defaultValue={values.info_weapons} 
                                             onChange={handleChange('info_weapons')}
                                         />
@@ -127,7 +123,6 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Check 
                                             type="checkbox" 
                                             label="Animaux dangereux" 
-                                            name="info_dangerous_animals"
                                             defaultValue={values.info_dangerous_animals} 
                                             onChange={handleChange('info_dangerous_animals')}
                                         />
@@ -137,7 +132,6 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Check 
                                             type="checkbox" 
                                             label="Nuissance sonore" 
-                                            name="info_noise"
                                             defaultValue={values.info_noise} 
                                             onChange={handleChange('info_noise')}
                                         />
@@ -155,8 +149,7 @@ export class AnnounceRulesInformations extends Component {
                                      <Form.Group id="formGridCheckbox">
                                         <Form.Check 
                                             type="checkbox" 
-                                            label="Ne convient pas aux enfants de moins de 2ans" 
-                                            name="rule_age_2"
+                                            label="Ne convient pas aux enfants de moins de 2ans"
                                             defaultValue={values.rule_age_2} 
                                             onChange={handleChange('rule_age_2')}
                                         />
@@ -166,7 +159,6 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Check 
                                             type="checkbox" 
                                             label="Ne convient pas à un enfant entre 2 et 12ans" 
-                                            name="rule_age_2_12" 
                                             defaultValue={values.rule_age_2_12} 
                                             onChange={handleChange('rule_age_2_12')}
                                         />
@@ -178,7 +170,6 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Check 
                                             type="checkbox" 
                                             label="Animaux autorisé" 
-                                            name="rule_pets" 
                                             defaultValue={values.rule_pets} 
                                             onChange={handleChange('rule_pets')}
                                         />
@@ -188,7 +179,6 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Check 
                                         type="checkbox" 
                                         label="Fumeurs autorisé" 
-                                        name="rule_smoking"
                                         defaultValue={values.rule_smoking} 
                                         onChange={handleChange('rule_smoking')}
                                     />
@@ -198,7 +188,6 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Check 
                                         type="checkbox" 
                                         label="Évènement autorisé" 
-                                        name="rule_event" 
                                         defaultValue={values.rule_event} 
                                         onChange={handleChange('rule_event')}
                                     />
@@ -217,7 +206,6 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Group as={Col} controlId="TextareaObservation">
                                         <Form.Control 
                                             type="text" 
-                                            name="info_area"
                                             defaultValue={values.info_area} 
                                             onChange={handleChange('info_area')}
                                         />
@@ -237,7 +225,6 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Group as={Col} controlId="TextareaObservation">
                                             <Form.Control 
                                                 type="text" 
-                                                name="info_around"
                                                 defaultValue={values.info_around} 
                                                 onChange={handleChange('info_around')} 
                                             />
@@ -252,7 +239,6 @@ export class AnnounceRulesInformations extends Component {
                                 <Form.Group as={Col} controlId="TextareaObservation">
                                     <Form.Label>Ajouter une règle</Form.Label>
                                     <Form.Control 
-                                        name="rule_add" 
                                         as="textarea" 
                                         rows="2"
                                         defaultValue={values.rule_add} 
@@ -267,7 +253,6 @@ export class AnnounceRulesInformations extends Component {
                                     <Form.Label>Informations utiles</Form.Label>
                                     <Form.Control 
                                         type="text" 
-                                        name="info_infos" 
                                         defaultValue={values.info_infos} 
                                         onChange={handleChange('info_infos')}
                                     />
@@ -278,8 +263,7 @@ export class AnnounceRulesInformations extends Component {
                                     <Form.Label>Disponibilité</Form.Label>
                                     <Form.Control 
                                         type="text" 
-                                        label="checkbox jour de la semaine" 
-                                        name="info_availability"
+                                        label="checkbox jour de la semaine"
                                         defaultValue={values.info_availability} 
                                         onChange={handleChange('info_availability')}
                                     />
@@ -290,7 +274,6 @@ export class AnnounceRulesInformations extends Component {
                                     <Form.Label>Au alentour</Form.Label>
                                     <Form.Control 
                                         type="text" 
-                                        name="observation" 
                                         defaultValue={values.observation} 
                                         onChange={handleChange('observation')}
                                     />

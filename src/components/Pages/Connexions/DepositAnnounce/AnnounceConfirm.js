@@ -95,68 +95,46 @@ export class AnnounceConfirm extends Component {
 
                         <h2>Information de votre logement</h2>
                         <ListItem>
-                            <ListItemText primary="Type de propriété" /> 
+                            <ListItemText primary="Type de propriété" secondary={address_zip_code} /> 
                         </ListItem>
             
                         <ListItem>
-                            <ListItemText primary="Type de logement :" /> 
+                            <ListItemText primary="Type de logement :" secondary={address_zip_code}/> 
                         </ListItem>
 
                         <ListItem>
-                            <ListItemText primary="Nombre de chambre :" /> 
+                            <ListItemText primary="Nombre de chambre :" secondary={address_zip_code}/> 
                         </ListItem>
             
                         <ListItem>
-                            <ListItemText primary="Nombre de salle de bain :" /> 
+                            <ListItemText primary="Nombre de salle de bain :" secondary={address_zip_code}/> 
                         </ListItem>
 
                         <ListItem>
-                            <ListItemText primary="Observertion :" /> 
+                            <ListItemText primary="Observertion :" secondary={address_zip_code}/> 
                         </ListItem>
 
                         <br/>
 
                         <h2>Information de vos équipements et installation</h2>
                         <ListItem>
-                            <ListItemText primary="Vos équipement :" /> 
+                            <ListItemText primary="Vos équipement :" secondary={address_zip_code}/> 
                         </ListItem>
             
                         <ListItem>
-                            <ListItemText primary="Vos installations :" /> 
+                            <ListItemText primary="Vos installations :" secondary={address_zip_code}/> 
                         </ListItem>
 
                         <br/>
 
                         <h2>Vos information et règles</h2>
                         <ListItem>
-                            <ListItemText primary="Vos information complémentaire :" /> 
+                            <ListItemText primary="Vos information complémentaire :" secondary={address_zip_code}/> 
                         </ListItem>
             
                         <ListItem>
-                            <ListItemText primary="Vos règles :" /> 
+                            <ListItemText primary="Vos règles :" secondary={address_zip_code}/> 
                         </ListItem>
-
-                        {/* <ListItem>
-                        <ListItemText primary="Adresse de facturation" secondary={factureAdress} /> 
-                        </ListItem>
-            
-                        <ListItem>
-                        <ListItemText primary="Code postale" secondary={zipCode} /> 
-                        </ListItem>
-                        <br/>
-                        <h2>Information de connexion</h2>
-                        <ListItem>
-                        <ListItemText primary="Emai" secondary={email} /> 
-                        </ListItem>
-            
-                        <ListItem>
-                        <ListItemText primary="Mot de passe" secondary={password} /> 
-                        </ListItem>
-            
-                        <FormControlLabel
-                            control={<Checkbox value="allowExtraEmails" color="primary" />}
-                            label="I want to receive inspiration, marketing promotions and updates via email."
-                        /> */}
                     </List>
                 
                 </React.Fragment>

@@ -31,7 +31,7 @@ export class AnnounceResume extends Component {
       };
 
     render() {
-        // // const { values, handleChange } = this.props;`
+        const { values, handleChange } = this.props;
         return(
             <div>
                 <Container fluid className="pt-4 blocForm" > 
@@ -74,6 +74,8 @@ export class AnnounceResume extends Component {
                                             variant="outlined"
                                             fullWidth
                                             size="small"
+                                            defaultValue={values.ad_title} 
+                                            onChange={handleChange('ad_title')}
                                         />
                                     </Col>
                                 </Form.Row>     
@@ -86,7 +88,13 @@ export class AnnounceResume extends Component {
                             <Col xs={12} md={12} className="label-info-annonce">
                                 <Form.Group controlId="Announce_ad_description">
                                     <Form.Label>Description</Form.Label>
-                                    <Form.Control as="textarea" rows="2" name="ad_description" />
+                                    <Form.Control 
+                                        as="textarea" 
+                                        rows="2" 
+                                        name="ad_description" 
+                                        defaultValue={values.ad_description} 
+                                        onChange={handleChange('ad_description')}
+                                    />
                                 </Form.Group> 
                             </Col>
                         </Row>
@@ -97,7 +105,12 @@ export class AnnounceResume extends Component {
                             <Col xs={12} md={6} className="label-info-annonce">
                                 <Form.Group controlId="Announce_ad_description">
                                     <Form.Label>Capacité d'accueil</Form.Label>
-                                    <Form.Control as="select" name="ad_capacity">
+                                    <Form.Control 
+                                        as="select" 
+                                        name="ad_capacity"
+                                        defaultValue={values.ad_capacity} 
+                                        onChange={handleChange('ad_capacity')}
+                                    >
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -135,7 +148,12 @@ export class AnnounceResume extends Component {
                             <Col xs={12} md={6} className="label-info-annonce">
                                 <Form.Group controlId="Announce_ad_notice">
                                 <Form.Label>Préavis (A combien de jour souhaitez-vous être prévenu d'une arrivée ?)</Form.Label>
-                                    <Form.Control as="select" name="ad_notice">
+                                    <Form.Control 
+                                        as="select" 
+                                        name="ad_notice"
+                                        defaultValue={values.ad_notice} 
+                                        onChange={handleChange('ad_notice')}
+                                    >
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
@@ -153,7 +171,12 @@ export class AnnounceResume extends Component {
                             <Col xs={6} md={3} className="d-flex justify-content-center info-annonce-night">
                                 <Form.Group controlId="Announce_ad_description">
                                     <Form.Label>Nuit minimum</Form.Label>
-                                    <Form.Control as="select" name="ad_min_night">
+                                    <Form.Control 
+                                        as="select" 
+                                        name="ad_min_night"
+                                        defaultValue={values.ad_min_night} 
+                                        onChange={handleChange('ad_min_night')}
+                                    >
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -171,7 +194,12 @@ export class AnnounceResume extends Component {
                             <Col xs={6} md={3} className="d-flex justify-content-center info-annonce-night">
                                 <Form.Group controlId="Announce_ad_description">
                                     <Form.Label>Nuit maximum (*)</Form.Label>
-                                    <Form.Control as="select" name="ad_max_night">
+                                    <Form.Control 
+                                        as="select" 
+                                        name="ad_max_night"
+                                        defaultValue={values.ad_max_night} 
+                                        onChange={handleChange('ad_max_night')}
+                                    >
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
