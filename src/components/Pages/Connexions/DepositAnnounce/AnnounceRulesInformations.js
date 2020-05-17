@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import '../../../../css/Announce.scss';
 
 import { Row, Col, Container, Form } from 'react-bootstrap';
+import { Button } from 'reactstrap';
 
 export class AnnounceRulesInformations extends Component {
 
@@ -10,12 +11,39 @@ export class AnnounceRulesInformations extends Component {
         this.props.nextStep();
       };
 
+    back = e => {
+        e.preventDefault();
+        this.props.prevStep();
+    };
 
     render() {
         // const { values, handleChange } = this.props;
         return(
             <div>
-            <Container fluid className="pt-4 blocForm" >  
+                <Container fluid className="pt-4 blocForm" >  
+                    <Row>
+                        <Col sm>
+                            <h2 className="title-form-Announce">1 - Votre addresse</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce">2 - Votre logement </h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce title-form-Announce-active ">3 - Règles et informations</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce">4 - Tarif</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce">5 - Votre annonce</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce">6 - Validation</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce">7 - Paiement</h2>
+                        </Col>
+                    </Row>
                 <h2 className="mb-4">Imformations et Régles</h2>
 
                     <Container fluid>
@@ -35,7 +63,7 @@ export class AnnounceRulesInformations extends Component {
                                         <Form.Check type="checkbox" label="Pas da parking" name="info_no_parking"/>
                                     </Form.Group>
                                 </Col>
-                                
+
                                 <Col sm={3}>
                                     <Form.Group id="formGridCheckbox">
                                         <Form.Check type="checkbox" label="Espace partagé" name="info_shared_space"/>
@@ -49,7 +77,7 @@ export class AnnounceRulesInformations extends Component {
                                 </Col>
                                 <Col sm={3}>
                                     <Form.Group id="formGridCheckbox">
-                                        <Form.Check type="checkbox" label="Armes" name="info_weaponsr"/>
+                                        <Form.Check type="checkbox" label="Armes" name="info_weapons"/>
                                     </Form.Group>
                                     <Form.Group id="formGridCheckbox">
                                         <Form.Check type="checkbox" label="Animaux dangereux" name="info_dangerous_animals"/>
@@ -146,6 +174,21 @@ export class AnnounceRulesInformations extends Component {
                                 </Form.Group>
                             </Form.Row>
                         </fieldset>
+                             <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
+                                    <Button
+                                        color="secondary"
+                                        variant="contained"
+                                        onClick={this.back}
+                                        aria-label="Retour"
+                                    >Retour</Button>
+
+                                    <Button
+                                    color="primary"
+                                    variant="contained"
+                                    onClick={this.continue}
+                                    aria-label="Continuer"
+                                    >Continuer</Button>
+                            </Col>
                     </Container>
                 </Container>
             </div>

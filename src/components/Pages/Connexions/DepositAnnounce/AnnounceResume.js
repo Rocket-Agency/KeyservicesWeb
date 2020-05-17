@@ -6,12 +6,18 @@ import TextField from '@material-ui/core/TextField';
 
 import "react-datepicker/dist/react-datepicker.css";
 import DatePickerChoice from './DateChoice/DatePickerChoice';
+import { Button } from 'reactstrap';
 
 export class AnnounceResume extends Component {
     
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
+      };
+
+      back = e => {
+        e.preventDefault();
+        this.props.prevStep();
       };
 
       state = {
@@ -28,7 +34,30 @@ export class AnnounceResume extends Component {
         // // const { values, handleChange } = this.props;`
         return(
             <div>
-                <Container fluid className="pt-4 blocForm" >  
+                <Container fluid className="pt-4 blocForm" > 
+                    <Row>
+                        <Col sm>
+                            <h2 className="title-form-Announce">1 - Votre addresse</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce">2 - Votre logement </h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce">3 - Règles et informations</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce">4 - Tarif</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce title-form-Announce-active">5 - Votre annonce</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce">6 - Validation</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce">7 - Paiement</h2>
+                        </Col>
+                    </Row> 
                     <h2>Votre annonce</h2>
   
                     <Container fluid>
@@ -102,10 +131,11 @@ export class AnnounceResume extends Component {
                                     </Form.Control>
                                 </Form.Group>
                             </Col>
+
                             <Col xs={12} md={6} className="label-info-annonce">
                                 <Form.Group controlId="Announce_ad_notice">
                                 <Form.Label>Préavis (A combien de jour souhaitez-vous être prévenu d'une arrivée ?)</Form.Label>
-                                    <Form.Control as="select" name="ad_capacity">
+                                    <Form.Control as="select" name="ad_notice">
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
@@ -114,25 +144,6 @@ export class AnnounceResume extends Component {
                                     <option>7</option>
                                     </Form.Control>
                                 </Form.Group>
-                            </Col>
-                        </Row>
-                    </Container>
-
-                    <Container fluid>
-                        <Row className="pt-3 pb-3">
-                            <Col xs={12} md={12} className="label-info-annonce">
-                                <Form.Group controlId="Announce_ad_notice">
-                                    <Form.Label>Préavis (A combien de jour souhaitez-vous être prévenu d'une arrivée ? 2 jours minimum)</Form.Label>
-                                        <TextField
-                                            type="text" 
-                                            name="ad_notice"
-                                            pattern="[A-Za-z]{3}"
-                                            required id="standard-required"
-                                            variant="outlined"
-                                            fullWidth
-                                            size="small"
-                                        />
-                                </Form.Group> 
                             </Col>
                         </Row>
                     </Container>
@@ -142,7 +153,7 @@ export class AnnounceResume extends Component {
                             <Col xs={6} md={3} className="d-flex justify-content-center info-annonce-night">
                                 <Form.Group controlId="Announce_ad_description">
                                     <Form.Label>Nuit minimum</Form.Label>
-                                    <Form.Control as="select" name="ad_capacity">
+                                    <Form.Control as="select" name="ad_min_night">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -156,10 +167,11 @@ export class AnnounceResume extends Component {
                                     </Form.Control>
                                 </Form.Group>
                             </Col>
+                            
                             <Col xs={6} md={3} className="d-flex justify-content-center info-annonce-night">
                                 <Form.Group controlId="Announce_ad_description">
                                     <Form.Label>Nuit maximum (*)</Form.Label>
-                                    <Form.Control as="select" name="ad_capacity">
+                                    <Form.Control as="select" name="ad_max_night">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -174,6 +186,7 @@ export class AnnounceResume extends Component {
                                 </Form.Group>
                             </Col>
                         </Row>
+
                         <Row className="d-flex justify-content-center">* Nous contacter pour plus de nuité</Row>
                     </Container>
 
@@ -192,6 +205,21 @@ export class AnnounceResume extends Component {
 
                     </Container>
 
+                    <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
+                                    <Button
+                                        color="secondary"
+                                        variant="contained"
+                                        onClick={this.back}
+                                        aria-label="Retour"
+                                    >Retour</Button>
+
+                                    <Button
+                                    color="primary"
+                                    variant="contained"
+                                    onClick={this.continue}
+                                    aria-label="Continuer"
+                                    >Continuer</Button>
+                    </Col>
 
                 </Container>
             </div>

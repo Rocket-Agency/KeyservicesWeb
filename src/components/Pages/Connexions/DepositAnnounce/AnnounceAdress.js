@@ -3,9 +3,6 @@ import '../../../../css/Announce.scss';
 
 import { Col, Container, Row, Form } from 'react-bootstrap';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
 import { Button } from 'reactstrap';
 
 export class AnnounceAddresss extends Component {
@@ -13,7 +10,6 @@ export class AnnounceAddresss extends Component {
     e.preventDefault();
     this.props.nextStep();
   };
-
 
 render() {
     const { values, handleChange } = this.props;
@@ -37,7 +33,7 @@ render() {
                         <h2 className="title-form-Announce ">5 - Votre annonce</h2>
                     </Col>
                     <Col sm>
-                        <h2 className="title-form-Announce ">6 - Confirmation</h2>
+                        <h2 className="title-form-Announce ">6 - Validation</h2>
                     </Col>
                     <Col sm>
                         <h2 className="title-form-Announce ">7 - Paiement</h2>
@@ -52,17 +48,18 @@ render() {
                             <Col xs={12} md={12} className="mt-3">
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={2}>Numéro de rue</Form.Label>
-
                                     <Col sm={1}>
-                                    <TextField
-                                        required id="standard-required"
-                                        name="address_road_number"
-                                        variant="outlined"
-                                        pattern="[A-Za-z]{3}"
-                                        fullWidth
-                                        type="number"
-                                        size="small"
-                                    />   
+                                        <TextField
+                                            required id="standard-required"
+                                            name="address_road_number"
+                                            variant="outlined"
+                                            pattern="[A-Za-z]{3}"
+                                            fullWidth
+                                            type="number"
+                                            size="small"
+                                            defaultValue={values.address_road_number} 
+                                            onChange={handleChange('address_road_number')}
+                                        />   
                                     </Col>
                                 </Form.Row>     
                             </Col>
@@ -71,7 +68,7 @@ render() {
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={4}>Type de rue</Form.Label>
                                     <Form.Group controlId="exampleForm.ControlSelect1">
-                                    <Form.Control as="select" name="address_road_type" >
+                                    <Form.Control as="select"  onChange={handleChange('address_road_type')}defaultValue={values.address_road_type}  >
                                         <option>Choisir un type de rue</option>
                                         <option>Rue</option>
                                         <option>Allée</option>
@@ -86,33 +83,36 @@ render() {
                             <Col xs={12} md={12}>
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Nom de rue</Form.Label>
-                                <Col sm={12}>
-                                    <TextField
-                                    type="text" 
-                                    name="address_road_name"
-                                    pattern="[A-Za-z]{3}"
-                                    required id="standard-required"
-                                    variant="outlined"
-                                    fullWidth
-                                    size="small"
-                                    />
-                                </Col>
+                                    <Col sm={12}>
+                                        <TextField
+                                            type="text" 
+                                            pattern="[A-Za-z]{3}"
+                                            required id="standard-required"
+                                            variant="outlined"
+                                            fullWidth
+                                            size="small"
+                                            onChange={handleChange('address_road_name')}
+                                            defaultValue={values.address_road_name} 
+                                        />
+                                    </Col>
                                 </Form.Row>     
                             </Col>
 
                             <Col xs={12} md={12} className="mt-3">
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Information complémentaire (Bâtiment, escalier, interphone etc...)</Form.Label>
-                                <Col sm={12}>
-                                    <TextField
-                                    type="text" 
-                                    name="address_additional_info"
-                                    pattern="[A-Za-z]{3}"
-                                    variant="outlined"
-                                    fullWidth
-                                    size="small"
-                                    />
-                                </Col>
+                                    <Col sm={12}>
+                                        <TextField
+                                            type="text" 
+                                            name="address_additional_info"
+                                            pattern="[A-Za-z]{3}"
+                                            variant="outlined"
+                                            fullWidth
+                                            size="small"
+                                            onChange={handleChange('address_additional_info')}
+                                            defaultValue={values.address_additional_info} 
+                                        />
+                                    </Col>
                                 </Form.Row>     
                             </Col>
                             </Row>
@@ -121,34 +121,38 @@ render() {
                             <Col xs={12} md={4}>
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Région</Form.Label>
-                                <Col sm={8}>
-                                    <TextField
-                                    type="text" 
-                                    name="address_state"
-                                    pattern="[A-Za-z]{3}"
-                                    required id="standard-required"
-                                    variant="outlined"
-                                    fullWidth
-                                    size="small"
-                                    />
-                                </Col>
+                                    <Col sm={8}>
+                                        <TextField
+                                            type="text" 
+                                            name="address_state"
+                                            pattern="[A-Za-z]{3}"
+                                            required id="standard-required"
+                                            variant="outlined"
+                                            fullWidth
+                                            size="small"
+                                            onChange={handleChange('address_state')}
+                                            defaultValue={values.address_state} 
+                                        />
+                                    </Col>
                                 </Form.Row>     
                             </Col>
 
                             <Col xs={12} md={4}>
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Ville</Form.Label>
-                                <Col sm={8}>
-                                    <TextField
-                                    type="text" 
-                                    name="address_city"
-                                    pattern="[A-Za-z]{3}"
-                                    required id="standard-required"
-                                    variant="outlined"
-                                    fullWidth
-                                    size="small"
-                                    />
-                                </Col>
+                                    <Col sm={8}>
+                                        <TextField
+                                            type="text" 
+                                            name="address_city"
+                                            pattern="[A-Za-z]{3}"
+                                            required id="standard-required"
+                                            variant="outlined"
+                                            fullWidth
+                                            size="small"
+                                            onChange={handleChange('address_city')}
+                                            defaultValue={values.address_city} 
+                                        />
+                                    </Col>
                                 </Form.Row>     
                             </Col>
 
@@ -158,14 +162,13 @@ render() {
                                     <Col sm={8}>
                                     <TextField
                                         required id="standard-required"
-                                        name="address_zip_code"
-                                        // onChange={handleChange('zipCode')}
-                                        // defaultValue={values.factureAdress} 
+                                        onChange={handleChange('address_zip_code')}
+                                        defaultValue={values.address_zip_code} 
                                         variant="outlined"
                                         pattern="[A-Za-z]{3}"
                                         fullWidth
                                         type="text" 
-                                        size="small"                    
+                                        size="small"              
                                         />   
                                     </Col>   
                                 </Form.Row>     

@@ -103,7 +103,7 @@ export class UserForm extends Component {
             <ConnexionProfilePropretaire
               nextStep={this.nextStep}
           />
-          );
+        );
       }
     }
 }

@@ -9,13 +9,13 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 
-import AnnounceAdress from './AnnounceAdresse';
-import AnnounceHousing from './AnnounceHousing';
-import AnnounceRulesInformations from './AnnounceRulesInformations';
-import AnnounceTarif from './AnnounceTarif';
-import AnnounceResume from './AnnounceResume';
-import AnnouncePayment from './AnnouncePayment';
-import AnnounceConfirm from './AnnounceConfirm';
+// import AnnounceAdress from './AnnounceAdresse';
+// import AnnounceHousing from './AnnounceHousing';
+// import AnnounceRulesInformations from './AnnounceRulesInformations';
+// import AnnounceTarif from './AnnounceTarif';
+// import AnnounceResume from './AnnounceResume';
+// import AnnouncePayment from './AnnouncePayment';
+// import AnnounceConfirm from './AnnounceConfirm';
 
 
 
