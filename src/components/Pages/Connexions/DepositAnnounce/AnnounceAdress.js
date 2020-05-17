@@ -104,7 +104,6 @@ render() {
                                     <Col sm={12}>
                                         <TextField
                                             type="text" 
-                                            name="address_additional_info"
                                             pattern="[A-Za-z]{3}"
                                             variant="outlined"
                                             fullWidth
@@ -124,7 +123,6 @@ render() {
                                     <Col sm={8}>
                                         <TextField
                                             type="text" 
-                                            name="address_state"
                                             pattern="[A-Za-z]{3}"
                                             required id="standard-required"
                                             variant="outlined"
@@ -143,7 +141,6 @@ render() {
                                     <Col sm={8}>
                                         <TextField
                                             type="text" 
-                                            name="address_city"
                                             pattern="[A-Za-z]{3}"
                                             required id="standard-required"
                                             variant="outlined"

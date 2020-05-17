@@ -12,7 +12,7 @@ export default function DatePickerDeparture() {
         <Grid container spacing={3}>
           <Grid item xs={3}>
             <div className="label-info-annonce" >Date d'arrivée </div>      
-            <DatePicker
+            {/* <DatePicker
               selected={startDate}
               onChange={date => setStartDate(date)}
               selectsStart
@@ -20,7 +20,16 @@ export default function DatePickerDeparture() {
               endDate={endDate}
               name="ad_starting_date"
               // defaultValue={values.ad_starting_date} 
-            />              
+            />  */}
+            <DatePicker
+              selected={startDate}
+              onChange={date => setStartDate(date)}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={15}
+              timeCaption="time"
+              dateFormat="d MMMM, yyyy h:mm aa"
+            />
           </Grid>
             
           <Grid item xs={3}>
@@ -55,7 +64,7 @@ export default function DatePickerDeparture() {
           <Grid item xs={3}>
             <div className="label-info-annonce" >Heure de départ </div>  
             <DatePicker
-                selected={startDate}
+                selected={endDate}
                 onChange={date => setStartDate(date)}
                 showTimeSelect
                 showTimeSelectOnly

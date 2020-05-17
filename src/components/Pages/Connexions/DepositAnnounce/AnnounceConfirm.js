@@ -129,7 +129,8 @@ export class AnnounceConfirm extends Component {
                         <h2>Vos équipements et installation</h2>
 
                         <ListItem>
-                            <ListItemText primary="Vos équipement :" secondary={equipment_kitchen}/> 
+                            Vos équipements : 
+                            <ListItemText secondary={equipment_kitchen} /> 
                             <ListItemText secondary={equipment_heater}/> 
                             <ListItemText secondary={equipment_wifi}/> 
                             <ListItemText secondary={equipment_iron}/> 
