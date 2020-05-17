@@ -10,10 +10,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 import 'react-phone-input-2/lib/bootstrap.css'
 
-
-
-
-
 export class AnnounceHousing extends Component {
 
     continue = e => {

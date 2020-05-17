@@ -7,9 +7,29 @@ import TextField from '@material-ui/core/TextField';
 import "react-datepicker/dist/react-datepicker.css";
 import DatePickerChoice from './DateChoice/DatePickerChoice';
 import { Button } from 'reactstrap';
+import DatePicker from 'react-datepicker';
 
 export class AnnounceResume extends Component {
+    constructor (props) {
+        super(props)
+        this.state = {
+          startDate: new Date()
+        };
+        this.handleDateChange = this.handleDateChange.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
+      }
     
+      handleDateChange(date) {
+        this.setState({
+          startDate: date
+        })
+      }
+    
+      onFormSubmit(e) {
+        e.preventDefault();
+        console.log(this.state.startDate)
+      }
+
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
@@ -230,23 +250,37 @@ export class AnnounceResume extends Component {
                         </Row>
 
                         <DatePickerChoice />
+                        {/* <BasicDateTimePicker /> */}
+
+                        {/* <form onSubmit={ this.onFormSubmit }>
+                            <div className="form-group">
+                            <DatePicker
+                                selected={ this.state.startDate }
+                                onChange={handleChange('ad_starting_date')}
+                                name="startDate"
+                                dateFormat="MM/dd/yyyy"
+                                defaultValue={values.ad_starting_date} 
+                                value="Date de début de publication"  
+                            />
+                            </div>
+                        </form> */}
 
                     </Container>
 
                     <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
-                                    <Button
-                                        color="secondary"
-                                        variant="contained"
-                                        onClick={this.back}
-                                        aria-label="Retour"
-                                    >Retour</Button>
+                        <Button
+                            color="secondary"
+                            variant="contained"
+                            onClick={this.back}
+                            aria-label="Retour"
+                        >Retour</Button>
 
-                                    <Button
-                                    color="primary"
-                                    variant="contained"
-                                    onClick={this.continue}
-                                    aria-label="Continuer"
-                                    >Continuer</Button>
+                        <Button
+                            color="primary"
+                            variant="contained"
+                            onClick={this.continue}
+                            aria-label="Continuer"                                
+                        >Continuer</Button>
                     </Col>
 
                 </Container>
