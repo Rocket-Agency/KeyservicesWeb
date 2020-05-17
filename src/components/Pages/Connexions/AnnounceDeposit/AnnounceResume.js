@@ -7,7 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import "react-datepicker/dist/react-datepicker.css";
 import DatePickerChoice from './DateChoice/DatePickerChoice';
 
-export class Announce extends Component {
+export class AnnounceResume extends Component {
     
     continue = e => {
         e.preventDefault();
@@ -199,4 +199,4 @@ export class Announce extends Component {
     }
 }
 
-export default Announce;
+export default AnnounceResume;
