@@ -81,9 +81,9 @@ export class AnnounceHousing extends Component {
                                 />
 
                                 <FormControlLabel
-                                    value="Chambre"
+                                    value="Chambre(s)"
                                     control={<Radio color="primary" />}
-                                    label="Chambre"
+                                    label="Chambre(s)"
                                     labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
                                     onChange={handleChange('housing_type_property')}
