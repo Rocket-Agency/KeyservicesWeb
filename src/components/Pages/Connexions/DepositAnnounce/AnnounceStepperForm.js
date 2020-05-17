@@ -107,8 +107,15 @@ export class AnnounceStepperForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { address_road_number, address_road_type, address_road_name, address_additional_info, address_state, address_city, address_zip_code } = this.state;
-    const values = { address_road_number, address_road_type, address_road_name, address_additional_info, address_state, address_city, address_zip_code };
+    const { address_road_number, address_road_type, address_road_name, address_additional_info, address_state, address_city, address_zip_code,
+            housing_type_property, housing_type, housing_nb_room, housing_nb_bathroom, housing_observation,
+    
+    
+    
+    } = this.state;
+    const values = { address_road_number, address_road_type, address_road_name, address_additional_info, address_state, address_city, address_zip_code,
+                    housing_type_property, housing_type, housing_nb_room, housing_nb_bathroom, housing_observation
+    };
       switch (step) {
         case 1:
           return (
