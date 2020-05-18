@@ -100,9 +100,9 @@ export class AnnounceHousing extends Component {
                         </Form.Row>
 
                         <Form.Row>
-                        <Form.Label className="d-flex align-items-center label-info-annonce">
-                            Type de logement :
-                        </Form.Label>
+                            <Form.Label className="d-flex align-items-center label-info-annonce">
+                                Type de logement :
+                            </Form.Label>
                             <RadioGroup row aria-label="position" name="position" defaultValue="top">
                                 <FormControlLabel
                                     value="Logement entier"
@@ -375,20 +375,20 @@ export class AnnounceHousing extends Component {
                             </Form.Group>
                             
                             <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
-                                    <Button
-                                        color="secondary"
-                                        variant="contained"
-                                        onClick={this.back}
-                                        aria-label="Retour"
-                                    >Retour</Button>
+                                <Button
+                                    color="secondary"
+                                    variant="contained"
+                                    onClick={this.back}
+                                    aria-label="Retour"
+                                >Retour</Button>
 
-                                    <Button
+                                <Button
                                     color="primary"
                                     variant="contained"
                                     onClick={this.continue}
                                     aria-label="Continuer"
-                                    >Continuer</Button>
-                                </Col>
+                                >Continuer</Button>
+                            </Col>
                         </fieldset>
                     </Container>
                 </Container>

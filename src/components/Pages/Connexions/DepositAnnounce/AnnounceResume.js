@@ -253,20 +253,6 @@ export class AnnounceResume extends Component {
                         </Row>
 
                         <DatePickerChoice />
-                        {/* <BasicDateTimePicker /> */}
-
-                        {/* <form onSubmit={ this.onFormSubmit }>
-                            <div className="form-group">
-                            <DatePicker
-                                selected={ this.state.startDate }
-                                onChange={handleChange('ad_starting_date')}
-                                name="startDate"
-                                dateFormat="MM/dd/yyyy"
-                                defaultValue={values.ad_starting_date} 
-                                value="Date de début de publication"  
-                            />
-                            </div>
-                        </form> */}
 
                     </Container>
 
