@@ -68,7 +68,7 @@ export class AnnounceServices extends Component {
                                             value="Cuisine"  
                                             // defaultValue={values.equipment_kitchen} 
                                             // onChange={handleChange('equipment_kitchen')} 
-                                            color="secondary" />}
+                                            color="primary" />}
                                             label="1- Mise en ligne de l'annonce (Services obligatoire et doit être payé à la fin de la commande)"
                                         />
                                     </Col>
@@ -88,7 +88,7 @@ export class AnnounceServices extends Component {
                                             value="Cuisine"  
                                             // defaultValue={values.equipment_kitchen} 
                                             // onChange={handleChange('equipment_kitchen')} 
-                                            color="secondary" />}
+                                            color="primary" />}
                                             label="2- Remise des clés (Services optionnelle)"
                                         />
                                     </Col>
@@ -108,7 +108,7 @@ export class AnnounceServices extends Component {
                                             value="Cuisine"  
                                             // defaultValue={values.equipment_kitchen} 
                                             // onChange={handleChange('equipment_kitchen')} 
-                                            color="secondary" />}
+                                            color="primary" />}
                                             label="3- Check-in/ Check-out (Services optionnelle, service 'Remise des clés' compris)"
                                         />
                                     </Col>
@@ -128,7 +128,7 @@ export class AnnounceServices extends Component {
                                             value="Cuisine"  
                                             // defaultValue={values.equipment_kitchen} 
                                             // onChange={handleChange('equipment_kitchen')} 
-                                            color="secondary" />}
+                                            color="primary" />}
                                             label="4- Remplissage du frigo (Services optionnelle)"
                                         />
                                     </Col>
@@ -180,24 +180,33 @@ export class AnnounceServices extends Component {
                                                 // defaultValue={values.sexe} 
                                                 // onChange={handleChange('sexe')}
                                             /> 
+                                            <FormControlLabel
+                                                value="75m2 et +"
+                                                control={<Radio color="primary" />}
+                                                label="Maison"
+                                                labelPlacement="end"
+                                                label="75m2 et +"
+                                                // defaultValue={values.sexe} 
+                                                // onChange={handleChange('sexe')}
+                                            /> 
                                         </RadioGroup>
                                     </Col>
 
                                     <Col md={4} className="d-flex justify-content-center align-items-center">
                                     <ListGroup>
-                                        <ListGroup.Item>
+                                        <ListGroup.Item className='priceStyle'>
                                             24,90€
                                         </ListGroup.Item>
 
-                                        <ListGroup.Item>
+                                        <ListGroup.Item className='priceStyle'>
                                             35,90€
                                         </ListGroup.Item>
 
-                                        <ListGroup.Item>
+                                        <ListGroup.Item className='priceStyle'>
                                             54,90€
                                         </ListGroup.Item>
 
-                                        <ListGroup.Item>
+                                        <ListGroup.Item className='priceStyle'>
                                             54,90€ + 6,90
                                         </ListGroup.Item>
                                     </ListGroup>
@@ -216,71 +225,6 @@ export class AnnounceServices extends Component {
                                         <Form.Row> 
                                             <div>54,90€ + 6,90/ 15m2</div>
                                         </Form.Row> */}
-                                    </Col>
-                                </Row>
-                            </Container>
-
-
-                            {/* <Container>
-                                <Row className="d-flex justify-content-center">
-                                    <Col md={4} className="d-flex justify-content-center align-items-center">
-                                        <Form.Group controlId="Announce_ad_description">
-                                            <Form.Row> 
-                                                <div>35,90€</div>
-                                            </Form.Row>
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                            </Container> */}
-
-                            <Container>
-                                <Row className="d-flex justify-content-center">
-                                    {/* <Col md={8}>
-                                        <RadioGroup row aria-label="position" name="position" defaultValue="top">
-                                             <FormControlLabel
-                                                value="50m2 à 75m2"
-                                                control={<Radio color="primary" />}
-                                                label="Maison"
-                                                labelPlacement="end"
-                                                label="50m2 à 75m2"
-                                                // defaultValue={values.sexe} 
-                                                // onChange={handleChange('sexe')}
-                                            />   
-                                        </RadioGroup>
-                                    </Col> */}
-
-                                    <Col md={4} className="d-flex justify-content-center align-items-center">
-                                        <Form.Group controlId="Announce_ad_description">
-                                            <Form.Row> 
-                                                <div>54,90€</div>
-                                            </Form.Row>
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                            </Container>
-
-                            <Container>
-                                <Row className="d-flex justify-content-center">
-                                    <Col md={8}>
-                                        <RadioGroup row aria-label="position" name="position" defaultValue="top">
-                                             <FormControlLabel
-                                                value="- 25m2"
-                                                control={<Radio color="primary" />}
-                                                label="Maison"
-                                                labelPlacement="end"
-                                                label="75m2 et +"
-                                                // defaultValue={values.sexe} 
-                                                // onChange={handleChange('sexe')}
-                                            />   
-                                        </RadioGroup>
-                                    </Col>
-
-                                    <Col md={4} className="d-flex justify-content-center align-items-center">
-                                        <Form.Group controlId="Announce_ad_description">
-                                            <Form.Row> 
-                                                <div>54,90€ + 6,90/ 15m2</div>
-                                            </Form.Row>
-                                        </Form.Group>
                                     </Col>
                                 </Row>
                             </Container>
