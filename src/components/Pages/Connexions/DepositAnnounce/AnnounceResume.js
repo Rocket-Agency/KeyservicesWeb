@@ -8,6 +8,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePickerChoice from './DateChoice/DatePickerChoice';
 import { Button } from 'reactstrap';
 import DatePicker from 'react-datepicker';
+import Img from 'react-cool-img';
+import ImgDefaultAvatar from '../../../../ImagesPlaceholder/100.png';
 
 export class AnnounceResume extends Component {
     constructor (props) {
@@ -75,7 +77,10 @@ export class AnnounceResume extends Component {
                             <h2 className="title-form-Announce">6 - Validation</h2>
                         </Col>
                         <Col sm>
-                            <h2 className="title-form-Announce">7 - Paiement</h2>
+                            <h2 className="title-form-Announce">7 - Nos services</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce ">8 - Paiement</h2>
                         </Col>
                     </Row> 
                     <h2>Votre annonce</h2>
@@ -117,6 +122,23 @@ export class AnnounceResume extends Component {
                                     />
                                 </Form.Group> 
                             </Col>
+                        </Row>
+                    </Container>
+
+                    <Container>
+                        <Row>
+                        <Col md={12}>
+                            <div className="text-center">
+                            <Img
+                                placeholder={ImgDefaultAvatar} 
+                                className="location img-circle mt-3 mb-3"
+                                alt="photo de la location" 
+                                />
+                                <h6>Mettre une photo de votre logement...</h6>
+                            
+                                <input type="file" className="form-control"/>
+                            </div>
+                        </Col>
                         </Row>
                     </Container>
 
@@ -250,20 +272,6 @@ export class AnnounceResume extends Component {
                         </Row>
 
                         <DatePickerChoice />
-                        {/* <BasicDateTimePicker /> */}
-
-                        {/* <form onSubmit={ this.onFormSubmit }>
-                            <div className="form-group">
-                            <DatePicker
-                                selected={ this.state.startDate }
-                                onChange={handleChange('ad_starting_date')}
-                                name="startDate"
-                                dateFormat="MM/dd/yyyy"
-                                defaultValue={values.ad_starting_date} 
-                                value="Date de début de publication"  
-                            />
-                            </div>
-                        </form> */}
 
                     </Container>
 

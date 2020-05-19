@@ -65,10 +65,16 @@ export class AnnounceConfirm extends Component {
                                 <h2 className="title-form-Announce">5 - Votre annonce</h2>
                             </Col>
                             <Col sm>
-                                <h2 className="title-form-Announce title-form-Announce-active ">6 - Validation</h2>
+                                <h2 className="title-form-Announce title-form-Announce-active">6 - Validation</h2>
                             </Col>
                             <Col sm>
-                                <h2 className="title-form-Announce">7 - Paiement</h2>
+                                <h2 className="title-form-Announce">7 - Nos services</h2>
+                            </Col>
+                            <Col sm>
+                                <h2 className="title-form-Announce ">8 - Paiement</h2>
+                            </Col>
+                            <Col sm>
+                                <h2 className="title-form-Announce">9 - Paiement</h2>
                             </Col>
                         </Row>
 
@@ -211,6 +217,18 @@ export class AnnounceConfirm extends Component {
 
                         <br/>
 
+                        <h2>Services sélectionner</h2>           
+
+                            <ListItem>
+                                <ListItemText primary="Prix de base :" secondary={price_starting}/> 
+
+                                <ListItemText primary="Prix minimum :" secondary={price_min}/> 
+
+                                <ListItemText primary="Prix maximum :" secondary={price_max}/> 
+                            </ListItem>
+
+                            <br/>
+
                         <h2>Votre annonce</h2>    
                         <ListItem>
                             <ListItemText primary="Titre de l'annonce :" secondary={ad_title}/> 
@@ -244,13 +262,8 @@ export class AnnounceConfirm extends Component {
                     </List>
                 
                 </React.Fragment>
-                <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-3"> 
-                    <Button
-                    color="secondary"
-                    variant="contained"
-                    onClick={this.back}
-                    aria-label="Retour"
-                    >Retour</Button>
+                <Row xs={12} md={12} className="d-flex justify-content-center pt-3 pb-3">
+
 
                     <Button
                     color="primary"
@@ -258,7 +271,7 @@ export class AnnounceConfirm extends Component {
                     onClick={this.continue}
                     aria-label="Confirmer et valider l'inscription"
                     > Confirmer & Valider l'inscription</Button>
-                </Col>
+                </Row>
             </MuiThemeProvider>
         )
     }

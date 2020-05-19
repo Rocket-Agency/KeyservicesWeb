@@ -41,7 +41,10 @@ export class AnnouncePayment extends Component {
                             <h2 className="title-form-Announce">6 - Validation</h2>
                         </Col>
                         <Col sm>
-                            <h2 className="title-form-Announce title-form-Announce-active">7 - Paiement</h2>
+                            <h2 className="title-form-Announce">7 - Nos services</h2>
+                        </Col>
+                        <Col sm>
+                            <h2 className="title-form-Announce title-form-Announce-active">8 - Paiement</h2>
                         </Col>
                     </Row>
                     <h2>Paiement</h2>

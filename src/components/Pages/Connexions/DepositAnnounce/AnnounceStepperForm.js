@@ -6,6 +6,7 @@ import AnnounceHousing from './AnnounceHousing';
 import AnnounceRulesInformations from './AnnounceRulesInformations';
 import AnnounceTarif from './AnnounceTarif';
 import AnnounceResume from './AnnounceResume';
+import AnnounceServices from './AnnounceServices';
 import AnnouncePayment from './AnnouncePayment';
 import AnnounceConfirm from './AnnounceConfirm';
 import AnnounceSuccess from './AnnounceSuccess';
@@ -170,33 +171,41 @@ export class AnnounceStepperForm extends Component {
                 prevStep={this.prevStep}
                 handleChange={this.handleChange}
                 values={values}
-            />
-            );
-            case 6: 
-              return (
-                <AnnounceConfirm
-                  nextStep={this.nextStep}
-                  prevStep={this.prevStep}
-                  handleChange={this.handleChange}
-                  values={values}
               />
             );
-          case 7: 
+          case 6: 
+            return (
+              <AnnounceConfirm
+                nextStep={this.nextStep}
+                handleChange={this.handleChange}
+                values={values}
+              />
+            );
+            case 7:
+            return (
+              <AnnounceServices
+              nextStep={this.nextStep}
+              prevStep={this.prevStep}
+              handleChange={this.handleChange}
+              values={values}
+            />
+            );
+          case 8: 
             return (
               <AnnouncePayment
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange={this.handleChange}
                 values={values}
-            />
+              />
             );
-          case 8:
+          case 9:
             return (
               <AnnounceSuccess 
                 nextStep={this.nextStep}
-            />
-          );
-      }
+              />
+            );
+        }
     }
 }
 
