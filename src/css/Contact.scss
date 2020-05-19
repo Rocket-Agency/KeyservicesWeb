@@ -2,6 +2,10 @@
     background-color :#FAF0E6;
     padding: 40px 27px 41px;
     margin: 30px 27px 45px 40px;
+    .validZone {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 .contact-bloc-map {
     background-color : transparent;
@@ -12,6 +16,10 @@
     .contact-bloc {
         margin-left: 0;
         margin-right: 0;
+        .validZone {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     .contact-bloc-map {
