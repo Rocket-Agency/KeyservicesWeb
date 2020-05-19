@@ -8,6 +8,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePickerChoice from './DateChoice/DatePickerChoice';
 import { Button } from 'reactstrap';
 import DatePicker from 'react-datepicker';
+import Img from 'react-cool-img';
+import ImgDefaultAvatar from '../../../../ImagesPlaceholder/100.png';
 
 export class AnnounceResume extends Component {
     constructor (props) {
@@ -120,6 +122,23 @@ export class AnnounceResume extends Component {
                                     />
                                 </Form.Group> 
                             </Col>
+                        </Row>
+                    </Container>
+
+                    <Container>
+                        <Row>
+                        <Col md={12}>
+                            <div className="text-center">
+                            <Img
+                                placeholder={ImgDefaultAvatar} 
+                                className="location img-circle mt-3 mb-3"
+                                alt="photo de la location" 
+                                />
+                                <h6>Mettre une photo de votre logement...</h6>
+                            
+                                <input type="file" className="form-control"/>
+                            </div>
+                        </Col>
                         </Row>
                     </Container>
 
