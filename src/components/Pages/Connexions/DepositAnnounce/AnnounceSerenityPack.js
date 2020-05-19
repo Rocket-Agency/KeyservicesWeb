@@ -9,7 +9,7 @@ import { Button } from 'reactstrap';
 import Checkbox from '@material-ui/core/Checkbox';
 import ListGroup from 'react-bootstrap/ListGroup'
 
-export class AnnounceServices extends Component {
+export class AnnounceSerinityPack extends Component {
 
     continue = e => {
         e.preventDefault();
@@ -286,4 +286,4 @@ export class AnnounceServices extends Component {
     }
 }
 
-export default AnnounceServices;
+export default AnnounceSerinityPack;
