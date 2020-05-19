@@ -177,7 +177,6 @@ export class AnnounceStepperForm extends Component {
             return (
               <AnnounceConfirm
                 nextStep={this.nextStep}
-                prevStep={this.prevStep}
                 handleChange={this.handleChange}
                 values={values}
               />
