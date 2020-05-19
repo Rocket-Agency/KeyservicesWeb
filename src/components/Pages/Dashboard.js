@@ -16,22 +16,10 @@ import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
 import { Col, Row, Container, FormControl } from 'react-bootstrap';
 import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
-import { InputLabel } from '@material-ui/core';
-// import AnnounceaLinearStepper from './Connexions/AnnounceDeposit/AnnounceaLinearStepper';
-// import AnnounceStepper from './Connexions/AnnounceDeposit/AnnounceStepper';
 import AnnounceStepperForm from './Connexions/DepositAnnounce/AnnounceStepperForm';
 import DateFnsUtils from '@date-io/date-fns'; // choose your lib
-import {
-  DatePicker,
-  TimePicker,
-  KeyboardTimePicker,
-  KeyboardDatePicker,
-  DateTimePicker,
-  MuiPickersUtilsProvider,
-} from '@material-ui/pickers';
-import PropTypes from 'prop-types';
+import { KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
 import BasicDateTimePicker from './Schedule';
-import PersonIcon from '@material-ui/icons/Person';
 
 
 class ProfileTabs extends Component {
@@ -334,7 +322,6 @@ constructor(props) {
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Création d'une annonce</BreadcrumbItem>
                 <h1>Création d'une annonce</h1>
-                  {/* <AnnounceStepper/> */}
                   <AnnounceStepperForm />
             </TabContainer> }
 

@@ -40,13 +40,13 @@ export class AnnounceServices extends Component {
                             <h2 className="title-form-Announce">4 - Tarif</h2>
                         </Col>
                         <Col sm>
-                            <h2 className="title-form-Announce title-form-Announce-active">5 - Nos services</h2>
+                            <h2 className="title-form-Announce">5 - Votre annonce</h2>
                         </Col>
                         <Col sm>
-                            <h2 className="title-form-Announce">6 - Votre annonce</h2>
+                            <h2 className="title-form-Announce">6 - Validation</h2>
                         </Col>
                         <Col sm>
-                            <h2 className="title-form-Announce">7 - Validation</h2>
+                            <h2 className="title-form-Announce title-form-Announce-active">7 - Nos services</h2>
                         </Col>
                         <Col sm>
                             <h2 className="title-form-Announce ">8 - Paiement</h2>

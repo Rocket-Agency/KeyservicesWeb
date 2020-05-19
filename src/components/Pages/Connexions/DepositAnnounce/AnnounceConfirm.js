@@ -65,10 +65,16 @@ export class AnnounceConfirm extends Component {
                                 <h2 className="title-form-Announce">5 - Votre annonce</h2>
                             </Col>
                             <Col sm>
-                                <h2 className="title-form-Announce title-form-Announce-active ">6 - Validation</h2>
+                                <h2 className="title-form-Announce title-form-Announce-active">6 - Validation</h2>
                             </Col>
                             <Col sm>
-                                <h2 className="title-form-Announce">7 - Paiement</h2>
+                                <h2 className="title-form-Announce">7 - Nos services</h2>
+                            </Col>
+                            <Col sm>
+                                <h2 className="title-form-Announce ">8 - Paiement</h2>
+                            </Col>
+                            <Col sm>
+                                <h2 className="title-form-Announce">9 - Paiement</h2>
                             </Col>
                         </Row>
 

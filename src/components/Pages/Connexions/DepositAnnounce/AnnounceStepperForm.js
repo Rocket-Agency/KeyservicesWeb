@@ -166,15 +166,6 @@ export class AnnounceStepperForm extends Component {
           );
           case 5:
             return (
-              <AnnounceServices
-              nextStep={this.nextStep}
-              prevStep={this.prevStep}
-              handleChange={this.handleChange}
-              values={values}
-            />
-            );
-          case 6:
-            return (
               <AnnounceResume 
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
@@ -182,7 +173,7 @@ export class AnnounceStepperForm extends Component {
                 values={values}
               />
             );
-          case 7: 
+          case 6: 
             return (
               <AnnounceConfirm
                 nextStep={this.nextStep}
@@ -190,6 +181,15 @@ export class AnnounceStepperForm extends Component {
                 handleChange={this.handleChange}
                 values={values}
               />
+            );
+            case 7:
+            return (
+              <AnnounceServices
+              nextStep={this.nextStep}
+              prevStep={this.prevStep}
+              handleChange={this.handleChange}
+              values={values}
+            />
             );
           case 8: 
             return (
