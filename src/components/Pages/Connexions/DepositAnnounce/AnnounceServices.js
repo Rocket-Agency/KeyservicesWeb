@@ -53,7 +53,7 @@ export class AnnounceServices extends Component {
                             <h2 className="title-form-Announce ">8 - Paiement</h2>
                         </Col>
                     </Row>
-                    <h2>Nos Services</h2>
+                    <h2 className="pt-4 pb-4">Nos Services</h2>
 
                     <AnnounceCardService />
   

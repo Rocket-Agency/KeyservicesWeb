@@ -12,11 +12,11 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 
 export default function AnnounceCardServices() {
     return (
-        <Accordion>
+        <Accordion style={{borderTop : 'transparent'}}>
             <RadioGroup col aria-label="position" name="position" defaultValue="top">
-            <AccordionItem>
+            <AccordionItem >
                 <AccordionItemHeading>
-                    <AccordionItemButton className="d-flex justify-content-center">
+                    <AccordionItemButton className="d-flex justify-content-center" style={{border : '2px solid #49173B'}}>
                         <Container className="moveBloc">
                             <FormControlLabel
                                 value="Services à la carte"
@@ -31,7 +31,7 @@ export default function AnnounceCardServices() {
 
                     </AccordionItemButton>
                 </AccordionItemHeading>
-                <AccordionItemPanel>
+                <AccordionItemPanel style={{border : '1px solid #49173B'}}>
                     <Container className="pt-2 pb-2">
                         <Row className="d-flex justify-content-center">
                             <Col md={8}>
@@ -185,12 +185,11 @@ export default function AnnounceCardServices() {
             </AccordionItem>
             <AccordionItem>
                 <AccordionItemHeading>
-                    <AccordionItemButton className="d-flex justify-content-center">
+                    <AccordionItemButton className="d-flex justify-content-center" style={{border : '2px solid #49173B'}}>
                         <Container className="moveBloc">
                             <FormControlLabel
                                 value=" Pack sérinité"
                                 control={<Radio color="primary" />}
-                                label="Maison"
                                 labelPlacement="end"
                                 label="Pack sérinité"
                                 // defaultValue={values.sexe} 
@@ -199,24 +198,23 @@ export default function AnnounceCardServices() {
                         </Container>
                     </AccordionItemButton>
                 </AccordionItemHeading>
-                <AccordionItemPanel>
-                <Container>
-                                <Row className="pt-2 pb-2 d-flex justify-content-center">
-                                    <Col md={8}>
-                                        <RadioGroup row aria-label="position" name="position" defaultValue="top">
-                                             <FormControlLabel
-                                                value="- 25m2"
-                                                control={<Radio color="primary" />}
-                                                label="Maison"
-                                                labelPlacement="end"
-                                                label="Mise en ligne de l'annonce"
-                                                // defaultValue={values.sexe} 
-                                                // onChange={handleChange('sexe')}
-                                            />   
-                                        </RadioGroup>
-                                            <p className="serviceTitleSerinity">+ Check-in/ Check-out</p>
-                                            <p className="serviceTitleSerinity">+ Ménage</p>
-                                    </Col>
+                <AccordionItemPanel style={{border : '1px solid #49173B'}}>
+                    <Container>
+                        <Row className="pt-2 pb-2 d-flex justify-content-center">
+                            <Col md={8}>
+                                <RadioGroup row aria-label="position" name="position" defaultValue="top">
+                                    <FormControlLabel
+                                        value="- 25m2"
+                                        control={<Radio color="primary" />}
+                                        labelPlacement="end"
+                                        label="Mise en ligne de l'annonce"
+                                        // defaultValue={values.sexe} 
+                                        // onChange={handleChange('sexe')}
+                                    />   
+                                </RadioGroup>
+                                        <p className="serviceTitleSerinity">+ Check-in/ Check-out</p>
+                                        <p className="serviceTitleSerinity">+ Ménage</p>
+                             </Col>
                                     <Col md={4} className="d-flex justify-content-center align-items-center">
                                         <Form.Group controlId="Announce_ad_description">
                                             <Form.Row> 
