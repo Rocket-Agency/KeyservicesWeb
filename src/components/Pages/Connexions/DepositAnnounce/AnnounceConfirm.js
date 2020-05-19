@@ -262,13 +262,8 @@ export class AnnounceConfirm extends Component {
                     </List>
                 
                 </React.Fragment>
-                <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-3"> 
-                    <Button
-                    color="secondary"
-                    variant="contained"
-                    onClick={this.back}
-                    aria-label="Retour"
-                    >Retour</Button>
+                <Row xs={12} md={12} className="d-flex justify-content-center pt-3 pb-3">
+
 
                     <Button
                     color="primary"
@@ -276,7 +271,7 @@ export class AnnounceConfirm extends Component {
                     onClick={this.continue}
                     aria-label="Confirmer et valider l'inscription"
                     > Confirmer & Valider l'inscription</Button>
-                </Col>
+                </Row>
             </MuiThemeProvider>
         )
     }
