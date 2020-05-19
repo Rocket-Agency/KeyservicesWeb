@@ -1,111 +1,83 @@
-import React, {Component} from 'react';
-import '../../../../css/Announce.scss';
-
+import React from 'react';
 import { Row, Col, Container, Form } from 'react-bootstrap';
+import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
-import { Button } from 'reactstrap';
 import Checkbox from '@material-ui/core/Checkbox';
-import ListGroup from 'react-bootstrap/ListGroup'
+import ListGroup from 'react-bootstrap/ListGroup';
 
-export class AnnounceSerinityPack extends Component {
+// Demo styles, see 'Styles' section below for some notes on use.
+import 'react-accessible-accordion/dist/fancy-example.css';
 
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
-      };
+export default function AnnounceCardServices() {
+    return (
+        <Accordion>
+            <RadioGroup col aria-label="position" name="position" defaultValue="top">
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton className="d-flex justify-content-center">
+                        <Container className="moveBloc">
+                            <FormControlLabel
+                                value="Services à la carte"
+                                control={<Radio color="primary" />}
+                                label="Maison"
+                                labelPlacement="end"
+                                label="Services à la carte"
+                                // defaultValue={values.sexe} 
+                                // onChange={handleChange('sexe')}
+                            />  
+                        </Container>
 
-    back = e => {
-        e.preventDefault();
-        this.props.prevStep();
-    };
-
-    render() {
-        const { values, handleChange } = this.props;
-        return(
-            <div>
-                <Container fluid className="pt-4 blocForm" >  
-                    <Row>
-                        <Col sm>
-                            <h2 className="title-form-Announce">1 - Votre addresse</h2>
-                        </Col>
-                        <Col sm>
-                            <h2 className="title-form-Announce">2 - Votre logement </h2>
-                        </Col>
-                        <Col sm>
-                            <h2 className="title-form-Announce">3 - Règles et informations</h2>
-                        </Col>
-                        <Col sm>
-                            <h2 className="title-form-Announce">4 - Tarif</h2>
-                        </Col>
-                        <Col sm>
-                            <h2 className="title-form-Announce">5 - Votre annonce</h2>
-                        </Col>
-                        <Col sm>
-                            <h2 className="title-form-Announce">6 - Validation</h2>
-                        </Col>
-                        <Col sm>
-                            <h2 className="title-form-Announce title-form-Announce-active">7 - Nos services</h2>
-                        </Col>
-                        <Col sm>
-                            <h2 className="title-form-Announce ">8 - Paiement</h2>
-                        </Col>
-                    </Row>
-                    <h2>Nos Services</h2>
-  
-                    <Container fluid className="ServicesOptions">
-                        <Row className="pt-2 pb-4 d-flex justify-content-center">
-                            <h3>Services à la carte</h3>
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                    <Container className="pt-2 pb-2">
+                        <Row className="d-flex justify-content-center">
+                            <Col md={8}>
+                                <FormControlLabel
+                                    control={<Checkbox
+                                    value="1- Mise en ligne de l'annonce "  
+                                    // defaultValue={values.equipment_kitchen} 
+                                    // onChange={handleChange('equipment_kitchen')} 
+                                    color="primary" />}
+                                    label="1- Mise en ligne de l'annonce (Services obligatoire et doit être payé à la fin de la commande)"
+                                />
+                            </Col>
+                             <Col md={4} className="d-flex justify-content-center align-items-center">
+                                <Form.Row> 
+                                    <div>9,90€</div>
+                                </Form.Row>
+                            </Col>
                         </Row>
+                    </Container>
 
-
-                            <Container className="pt-2 pb-2">
-                                <Row className="d-flex justify-content-center">
-                                    <Col md={8}>
-                                        <FormControlLabel
-                                            control={<Checkbox
-                                            value="Cuisine"  
-                                            // defaultValue={values.equipment_kitchen} 
-                                            // onChange={handleChange('equipment_kitchen')} 
-                                            color="primary" />}
-                                            label="1- Mise en ligne de l'annonce (Services obligatoire et doit être payé à la fin de la commande)"
-                                        />
-                                    </Col>
-                                    <Col md={4} className="d-flex justify-content-center align-items-center">
-                                        <Form.Row> 
-                                            <div>9,90€</div>
-                                        </Form.Row>
-                                    </Col>
-                                </Row>
-                            </Container>
-
-                            <Container className="pt-2 pb-2">
-                                <Row className="d-flex justify-content-center">
-                                    <Col md={8}>
-                                        <FormControlLabel
-                                            control={<Checkbox
-                                            value="Cuisine"  
-                                            // defaultValue={values.equipment_kitchen} 
-                                            // onChange={handleChange('equipment_kitchen')} 
-                                            color="primary" />}
-                                            label="2- Remise des clés (Services optionnelle)"
-                                        />
-                                    </Col>
-                                    <Col md={4} className="d-flex justify-content-center align-items-center">
-                                        <Form.Row> 
-                                            <div>15,90€</div>
-                                        </Form.Row>
-                                    </Col>
-                                </Row>
-                            </Container>
+                    <Container className="pt-2 pb-2">
+                        <Row className="d-flex justify-content-center">
+                            <Col md={8}>
+                                <FormControlLabel
+                                    control={<Checkbox
+                                    value="2- Remise des clés"  
+                                    // defaultValue={values.equipment_kitchen} 
+                                    // onChange={handleChange('equipment_kitchen')} 
+                                    color="primary" />}
+                                    label="2- Remise des clés (Services optionnelle)"
+                                />
+                            </Col>
+                            <Col md={4} className="d-flex justify-content-center align-items-center">
+                                <Form.Row> 
+                                    <div>15,90€</div>
+                                </Form.Row>
+                            </Col>
+                        </Row>
+                    </Container>
 
                             <Container className="pt-2 pb-2">
                                 <Row className="d-flex justify-content-center">
                                     <Col md={8}>
                                         <FormControlLabel
                                             control={<Checkbox
-                                            value="Cuisine"  
+                                            value="3- Check-in/ Check-out"  
                                             // defaultValue={values.equipment_kitchen} 
                                             // onChange={handleChange('equipment_kitchen')} 
                                             color="primary" />}
@@ -125,7 +97,7 @@ export class AnnounceSerinityPack extends Component {
                                     <Col md={8}>
                                         <FormControlLabel
                                             control={<Checkbox
-                                            value="Cuisine"  
+                                            value="4- Remplissage du frigo"  
                                             // defaultValue={values.equipment_kitchen} 
                                             // onChange={handleChange('equipment_kitchen')} 
                                             color="primary" />}
@@ -156,7 +128,6 @@ export class AnnounceSerinityPack extends Component {
                                              <FormControlLabel
                                                 value="- 25m2"
                                                 control={<Radio color="primary" />}
-                                                label="Maison"
                                                 labelPlacement="end"
                                                 label="- 25m2"
                                                 // defaultValue={values.sexe} 
@@ -165,7 +136,6 @@ export class AnnounceSerinityPack extends Component {
                                             <FormControlLabel
                                                 value="26m2 à 49m2"
                                                 control={<Radio color="primary" />}
-                                                label="Maison"
                                                 labelPlacement="end"
                                                 label="26m2 à 49m2"
                                                 // defaultValue={values.sexe} 
@@ -174,7 +144,6 @@ export class AnnounceSerinityPack extends Component {
                                             <FormControlLabel
                                                 value="50m2 à 75m2"
                                                 control={<Radio color="primary" />}
-                                                label="Maison"
                                                 labelPlacement="end"
                                                 label="50m2 à 75m2"
                                                 // defaultValue={values.sexe} 
@@ -183,7 +152,6 @@ export class AnnounceSerinityPack extends Component {
                                             <FormControlLabel
                                                 value="75m2 et +"
                                                 control={<Radio color="primary" />}
-                                                label="Maison"
                                                 labelPlacement="end"
                                                 label="75m2 et +"
                                                 // defaultValue={values.sexe} 
@@ -210,33 +178,29 @@ export class AnnounceSerinityPack extends Component {
                                             54,90€ + 6,90
                                         </ListGroup.Item>
                                     </ListGroup>
-                                        {/* <Form.Row> 
-                                            <div></div>
-                                        </Form.Row>
-
-                                        <Form.Row> 
-                                            <div>35,90€</div>
-                                        </Form.Row>
-
-                                        <Form.Row> 
-                                            <div>54,90€</div>
-                                        </Form.Row>
-
-                                        <Form.Row> 
-                                            <div>54,90€ + 6,90/ 15m2</div>
-                                        </Form.Row> */}
                                     </Col>
                                 </Row>
                             </Container>
-
-                    </Container>
-
-                    <Container fluid className="ServicesOptions">
-                        <Row className="pt-2 pb-4 d-flex justify-content-center">
-                            <h3>Pack sérinité</h3>
-                        </Row>
-
-                            <Container>
+                </AccordionItemPanel>
+            </AccordionItem>
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton className="d-flex justify-content-center">
+                        <Container className="moveBloc">
+                            <FormControlLabel
+                                value=" Pack sérinité"
+                                control={<Radio color="primary" />}
+                                label="Maison"
+                                labelPlacement="end"
+                                label="Pack sérinité"
+                                // defaultValue={values.sexe} 
+                                // onChange={handleChange('sexe')}
+                            />  
+                        </Container>
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                <Container>
                                 <Row className="pt-2 pb-2 d-flex justify-content-center">
                                     <Col md={8}>
                                         <RadioGroup row aria-label="position" name="position" defaultValue="top">
@@ -262,28 +226,9 @@ export class AnnounceSerinityPack extends Component {
                                     </Col>
                                 </Row>
                             </Container>
-                    </Container>
-
-
-                    <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
-                        <Button
-                            color="secondary"
-                            variant="contained"
-                            onClick={this.back}
-                            aria-label="Retour"
-                        >Retour</Button>
-
-                        <Button
-                            color="primary"
-                            variant="contained"
-                            onClick={this.continue}
-                            aria-label="Continuer"
-                        >Continuer</Button>
-                    </Col>
-                </Container>
-            </div>
-        )
-    }
+                </AccordionItemPanel>
+            </AccordionItem>
+            </RadioGroup>
+        </Accordion>
+    );
 }
-
-export default AnnounceSerinityPack;

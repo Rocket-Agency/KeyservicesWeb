@@ -7,9 +7,9 @@ import TextField from '@material-ui/core/TextField';
 import "react-datepicker/dist/react-datepicker.css";
 import DatePickerChoice from './DateChoice/DatePickerChoice';
 import { Button } from 'reactstrap';
-import DatePicker from 'react-datepicker';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../../../ImagesPlaceholder/100.png';
+
 
 export class AnnounceResume extends Component {
     constructor (props) {

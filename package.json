@@ -51,6 +51,7 @@
     "purify-css": "^1.2.5",
     "query-string": "^6.12.1",
     "react": "^16.13.1",
+    "react-accessible-accordion": "^3.0.1",
     "react-bootstrap": "^1.0.1",
     "react-bootstrap-date-picker": "^5.1.0",
     "react-bootstrap-dialog": "^0.13.0",
