@@ -21,23 +21,6 @@ function AlertNewsletterInfo() {
     return <div className="style{{display : none}}"></div>;
   }
 
-
-function AlertNewsletterInfo() {
-    const [show, setShow] = useState(true);
-  
-    if (show) {
-      return (
-        <Alert variant="primary" onClose={() => setShow(false)} dismissible>
-          <Alert.Heading>La ville n'est pas encore disponible</Alert.Heading>
-          <div>
-            Inscrivez votre adresse mail et on vous recontactera dès qu’on sera dans votre zone
-          </div>
-        </Alert>
-      );
-    }
-    return <Button onClick={() => setShow(true)}>Show Alert</Button>;
-  }
-
 export class NewsletterForm extends Component {
     constructor (props){
         super(props);
@@ -65,10 +48,6 @@ export class NewsletterForm extends Component {
     render() {
         return(
             <div>
-<<<<<<< HEAD
-=======
-
->>>>>>> v1.4-Keyservices
                 <div className="d-flex text-center justify-content-center pb-3">
                     <AlertNewsletterInfo/>
                 </div>

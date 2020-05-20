@@ -24,15 +24,9 @@ function AlertCityValid() {
         </Alert>
       );
     }
-<<<<<<< HEAD
-    return <Button onClick={() => setShow(true)}>Show Alert</Button>;
-  }
-  
-=======
     return <div className="style{{display : none}}"></div>;
   }
 
->>>>>>> v1.4-Keyservices
 
 export class InformationGenerales extends Component {
 
@@ -46,11 +40,7 @@ export class InformationGenerales extends Component {
         return(
             <div>
                 <div className="d-flex text-center justify-content-center pb-3">
-<<<<<<< HEAD
-                    <AlertCityValid />
-=======
                     <AlertCityValid/>
->>>>>>> v1.4-Keyservices
                 </div>
                 <Container fluid className="pt-4 blocForm" >  
                     <Row>
