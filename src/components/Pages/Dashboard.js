@@ -13,7 +13,7 @@ import axios from 'axios';
 import MaterialTable from 'material-table';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
-import { Col, Row, Container, FormControl } from 'react-bootstrap';
+import { Col, Row, Container } from 'react-bootstrap';
 import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
 import AnnounceStepperForm from './Connexions/DepositAnnounce/AnnounceStepperForm';
