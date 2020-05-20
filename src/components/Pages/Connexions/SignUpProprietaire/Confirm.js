@@ -85,7 +85,7 @@ export class Confirm extends Component {
 
             <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+                label="Je confirme mes informations."
               />
           </List>
           <br />

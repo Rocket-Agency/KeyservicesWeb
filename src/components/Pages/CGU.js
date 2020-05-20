@@ -7,27 +7,27 @@ import { BreadcrumbItem } from '../../index';
 import HomeIcon from '@material-ui/icons/Home';
 // import ConfirmMassageChangePassword from './Connexions/Profiles/ConfirmMessageChangePassword';
 
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+// import { confirmAlert } from 'react-confirm-alert'; // Import
+// import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 
 export class CGU extends Component {
-    submit = () => {
-        confirmAlert({
-          title: 'Confirm to submit',
-          message: 'Are you sure to do this.',
-          buttons: [
-            {
-              label: 'Yes',
-              onClick: () => alert('Click Yes')
-            },
-            {
-              label: 'No',
-              onClick: () => alert('Click No')
-            }
-          ]
-        });
-      };
+    // submit = () => {
+    //     confirmAlert({
+    //       title: 'Confirm to submit',
+    //       message: 'Are you sure to do this.',
+    //       buttons: [
+    //         {
+    //           label: 'Yes',
+    //           onClick: () => alert('Click Yes')
+    //         },
+    //         {
+    //           label: 'No',
+    //           onClick: () => alert('Click No')
+    //         }
+    //       ]
+    //     });
+    //   };
     
     render() {
         return (
