@@ -41,8 +41,6 @@ export class InformationGenerales extends Component {
         return(
             <div>
                 <div className="d-flex text-center justify-content-center pb-3">
-                    {/* <p className="InformationFormValid">Keyservices est disponible dans votre ville vous pouvez désormais vous inscrire pour ensuite pouvoir déposer votre annonce dans votre espace</p> */}
-                    {/* <Alert severity="success"></Alert> */}
                     <AlertCityValid />
                 </div>
                 <Container fluid className="pt-4 blocForm" >  
