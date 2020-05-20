@@ -18,7 +18,7 @@ function AlertNewsletterInfo() {
         </Alert>
       );
     }
-    return <Button onClick={() => setShow(true)}>Show Alert</Button>;
+    return <div className="style{{display : none}}"></div>;
   }
 
 

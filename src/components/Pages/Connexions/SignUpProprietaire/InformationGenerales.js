@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import '../../../../css/InscriptionProprietaire.scss';
 
 import { Col, Container, Row, Form } from 'react-bootstrap';
@@ -7,8 +7,25 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import { Button } from 'reactstrap';
 import TextField from '@material-ui/core/TextField';
+import Alert from 'react-bootstrap/Alert';
 
 import 'react-phone-input-2/lib/bootstrap.css'
+
+function AlertCityValid() {
+    const [show, setShow] = useState(true);
+  
+    if (show) {
+      return (
+        <Alert variant="success" onClose={() => setShow(false)} dismissible>
+          <Alert.Heading>La ville est disponible</Alert.Heading>
+          <p>
+          Keyservices est disponible dans votre ville vous pouvez désormais vous inscrire pour ensuite pouvoir déposer votre annonce dans votre espace
+          </p>
+        </Alert>
+      );
+    }
+    return <div className="style{{display : none}}"></div>;
+  }
 
 
 export class InformationGenerales extends Component {
@@ -18,13 +35,12 @@ export class InformationGenerales extends Component {
         this.props.nextStep();
       };
 
-
     render() {
         const { values, handleChange } = this.props;
         return(
             <div>
-                <div className="d-flex text-center justify-content-center">
-                    <p className="InformationFormValid">Keyservices est disponible dans votre ville vous pouvez désormais vous inscrire pour ensuite pouvoir déposer votre annonce dans votre espace</p>
+                <div className="d-flex text-center justify-content-center pb-3">
+                    <AlertCityValid/>
                 </div>
                 <Container fluid className="pt-4 blocForm" >  
                     <h2 className="title-form">Information  Générales</h2>
