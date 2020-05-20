@@ -7,12 +7,11 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import { Button } from 'reactstrap';
 import TextField from '@material-ui/core/TextField';
-// import Alert from '@material-ui/lab/Alert';
-import Alert from 'react-bootstrap/Alert'
+import Alert from 'react-bootstrap/Alert';
 
 import 'react-phone-input-2/lib/bootstrap.css'
 
-  function AlertCityValid() {
+function AlertCityValid() {
     const [show, setShow] = useState(true);
   
     if (show) {
@@ -25,9 +24,15 @@ import 'react-phone-input-2/lib/bootstrap.css'
         </Alert>
       );
     }
+<<<<<<< HEAD
     return <Button onClick={() => setShow(true)}>Show Alert</Button>;
   }
   
+=======
+    return <div className="style{{display : none}}"></div>;
+  }
+
+>>>>>>> v1.4-Keyservices
 
 export class InformationGenerales extends Component {
 
@@ -41,7 +46,11 @@ export class InformationGenerales extends Component {
         return(
             <div>
                 <div className="d-flex text-center justify-content-center pb-3">
+<<<<<<< HEAD
                     <AlertCityValid />
+=======
+                    <AlertCityValid/>
+>>>>>>> v1.4-Keyservices
                 </div>
                 <Container fluid className="pt-4 blocForm" >  
                     <Row>
