@@ -39,6 +39,9 @@ import NotFound from './components/Pages/NotFound';
 //Deconnexion
 import Deconnexion from './components/Pages/Molecule/Deconnexion';
 
+import HomepageApp from './components/PagesApp/HomepageApp';
+
+
 function App() {
   return (
     <>
@@ -64,6 +67,7 @@ function App() {
                   <Route path='/deconnexion' component={Deconnexion} />
                   <Route path='/cgu' component={CGU} />
                   <Route component={NotFound} />
+                  <Route path='/homepageApp' component={HomepageApp} exact />
                 </Switch>
 
               </div>

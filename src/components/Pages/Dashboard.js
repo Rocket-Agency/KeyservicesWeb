@@ -156,6 +156,7 @@ constructor(props) {
               {this.group == 'GROUP_LOCATAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Prise de rendez-vous' /> : null} 
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste de contacts' /> : null }
+              {this.group == 'GROUP_PROPRIETAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Mes annonces' /> : null}
             </VerticalTabs>
           </Col>
 
@@ -389,56 +390,56 @@ constructor(props) {
                                 resolve();
                             }, 1000);
                         }),
-                    onRowUpdate: (newData, oldData) =>
-                        new Promise((resolve, reject) => {
-                            setTimeout(() => {
-                                {
-                                    const data = this.state.usersCollection;
-                                    const index = data.indexOf(oldData);
-                                    data[index] = newData;
-                                    console.log(newData);
-                                    const config = {
-                                      headers: {
-                                        'x-access-token': this.state.accessToken
-                                      }
-                                    }
-                                    axios.put("http://localhost:3001/api/user/update/" + newData.user_id ,
-                                    {
-                                      user_first_name: newData.user_first_name,
-                                      user_last_name: newData.user_last_name,
-                                      user_date_of_birth: newData.user_date_of_birth,
-                                      user_sexe: newData.user_sexe,
-                                      user_photo: newData.user_photo,
-                                      user_email: newData.user_email,
-                                      user_password: newData.user_password,
-                                      user_adresse_txt: newData.user_adresse_txt
-                                    }, config)                
-                                    this.setState({ data }, () => resolve());
-                                }
-                                resolve();
-                            }, 1000);
+                  onRowUpdate: (newData, oldData) =>
+                    new Promise((resolve, reject) => {
+                      setTimeout(() => {
+                        {
+                          const data = this.state.usersCollection;
+                          const index = data.indexOf(oldData);
+                          data[index] = newData;
+                          console.log(newData);
+                          const config = {
+                            headers: {
+                              'x-access-token': this.state.accessToken
+                            }
+                          }
+                          axios.put("http://localhost:3001/api/user/update/" + newData.user_id ,
+                            {
+                              user_first_name: newData.user_first_name,
+                              user_last_name: newData.user_last_name,
+                              user_date_of_birth: newData.user_date_of_birth,
+                              user_sexe: newData.user_sexe,
+                              user_photo: newData.user_photo,
+                              user_email: newData.user_email,
+                              user_password: newData.user_password,
+                              user_adresse_txt: newData.user_adresse_txt
+                              }, config)                
+                            this.setState({ data }, () => resolve());
+                            }
+                            resolve();
+                          }, 1000);
                         }),
-                    onRowDelete: oldData =>
-                        new Promise((resolve, reject) => {
-                            setTimeout(() => {
-                                {
-                                    let data = this.state.usersCollection;
-                                    const index = data.indexOf(oldData);
-                                    data.splice(index, 1);
-                                    const config = {
-                                      headers: {
-                                        'x-access-token': this.state.accessToken
-                                      }
-                                    }
-                                    axios.delete("http://localhost:3001/api/user/delete/" + oldData.user_id , config) 
-                                    this.setState({ data }, () => resolve());
-                                }
-                                resolve();
-                            }, 1000);
-                        })
-                    }}
-                  />
-                </TabContainer> }
+                  onRowDelete: oldData =>
+                    new Promise((resolve, reject) => {
+                      setTimeout(() => {
+                        {
+                          let data = this.state.usersCollection;
+                          const index = data.indexOf(oldData);
+                          data.splice(index, 1);
+                          const config = {
+                            headers: {
+                            'x-access-token': this.state.accessToken
+                            }
+                          }
+                          axios.delete("http://localhost:3001/api/user/delete/" + oldData.user_id , config) 
+                          this.setState({ data }, () => resolve());
+                        }
+                      resolve();
+                    }, 1000);
+                  })
+                }}
+              />
+            </TabContainer> }
             
             {activeIndex === 5 && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
@@ -456,28 +457,50 @@ constructor(props) {
                   title="Liste des messages"
                 />
             </TabContainer> }
-          
+
+            { activeIndex === 6 && this.group == 'GROUP_ADMIN' && <TabContainer>
+              <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+              <BreadcrumbItem >Mes annonces</BreadcrumbItem>
+                <h1>Mes annonces</h1>
+            </TabContainer> }
+
             { activeIndex === 1 && this.group == 'GROUP_PROPRIETAIRE' && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Création d'une annonce</BreadcrumbItem>
                 <h1>Création d'une annonce</h1>
-                  {/* <AnnounceStepper/> */}
                   <AnnounceStepperForm />
             </TabContainer> }
+          
+            { activeIndex === 2 && this.group == 'GROUP_PROPRIETAIRE' && <TabContainer>
+              <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+              <BreadcrumbItem >Mes annonces</BreadcrumbItem>
+                <h1>Mes annonces</h1>
+                <MaterialTable
+                  columns={[
+                    { title: 'Nom', field: 'contact_first_name' },
+                    { title: 'Prénom', field: 'contact_last_name' },
+                    { title: 'Email', field: 'contact_email' },
+                    { title: 'Objet', field: 'contact_object'},
+                    { title: 'Message', field: 'contact_message'}
+                  ]}
+                  data={this.state.contactsCollection}
+                  title="Liste des messages"
+                />
+            </TabContainer> }
 
-            { activeIndex === 1 && this.group === 'GROUP_LOCATAIRE'  && <TabContainer>
+            { activeIndex === 1 && this.group === 'GROUP_LOCATAIRE' && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Information location</BreadcrumbItem>
                 <h1>Information location</h1>
             </TabContainer> }
 
-                { activeIndex === 2 && this.group === 'GROUP_LOCATAIRE' &&<TabContainer>
-                  <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
-                  <BreadcrumbItem >Prise de rendez-vous</BreadcrumbItem>
-                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                      <BasicDateTimePicker />
-                    </MuiPickersUtilsProvider>
-                </TabContainer> }
+            { activeIndex === 2 && this.group === 'GROUP_LOCATAIRE' &&<TabContainer>
+              <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+              <BreadcrumbItem >Prise de rendez-vous</BreadcrumbItem>
+                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                  <BasicDateTimePicker />
+                </MuiPickersUtilsProvider>
+              </TabContainer> }
           
           </Col>
         </Row>
