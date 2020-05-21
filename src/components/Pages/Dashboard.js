@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,  useState} from 'react';
 import '../../css/Dashboard.scss';
 
 import { BreadcrumbItem } from '../../index';
@@ -12,7 +12,6 @@ import Grid from '@material-ui/core/Grid';
 import axios from 'axios';
 import MaterialTable from 'material-table';
 import Img from 'react-cool-img';
-import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
 import { Col, Row, Container } from 'react-bootstrap';
 import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
@@ -20,6 +19,21 @@ import AnnounceStepperForm from './Connexions/DepositAnnounce/AnnounceStepperFor
 import DateFnsUtils from '@date-io/date-fns'; // choose your lib
 import { KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
 import BasicDateTimePicker from './Schedule';
+import Alert from 'react-bootstrap/Alert';
+
+
+function MessageValidateUpdate() {
+  const [show, setShow] = useState(true);
+
+  if (show) {
+    return (
+      <Alert variant="primary" onClose={() => setShow(true)} dismissible>
+        <Alert.Heading>Votre profil a été mise à jour</Alert.Heading>
+      </Alert>
+    );
+  }
+  return <div className="style{{display : none}}"></div>;
+}
 
 
 class ProfileTabs extends Component {
@@ -47,6 +61,8 @@ constructor(props) {
     handleDateChange: new Date(),
     addressCollection: [],
     selectedFile:[],
+    showingAlertProfil: false,
+    showingAlertPassword: false
   }
   this.handleSubmit = this.handleSubmit.bind(this);
   this.handleSubmitPassword = this.handleSubmitPassword.bind(this);
@@ -82,8 +98,6 @@ constructor(props) {
     .then(res => {
       this.setState( { photo_url : res.data.photo_url} );
     })
-
-    
 
     axios.get(`http://localhost:3001/api/user/`+ this.userid, config)
       .then(res => {
@@ -155,13 +169,45 @@ constructor(props) {
     e.preventDefault();
   }
 
-  handleEndDate = moment => {
-    this.setState({
-        workingEnd: moment
-    });
-  };
+  handleClickShowAlertProfil(onChange, showingAlertProfil) {
+    if (onChange) {
+      this.setState({
+        showingAlertProfil: true
+      });
+      setTimeout(() => {
+        this.setState({
+          showingAlertProfil: false
+        });
+      }, 3000);
+    }
+  }
+
+  handleClickShowAlertTest(){
+    const [show, setShow] = useState(true);
+  
+    if (show) {
+      return (
+        <Alert variant="success" onClose={() => setShow(false)} dismissible>
+            <strong>Succès!</strong> Les modifications de votre profil ont bien été enregistrer
+        </Alert>
+      );
+    }
+    return <div className="style{{display : none}}"></div>;
+  }
 
 
+  handleClickShowAlertPassword(onChange, showingAlertPassword) {
+    if (onChange){
+      this.setState({
+        showingAlertPassword: true,
+      });
+      setTimeout(() => {
+        this.setState({
+          showingAlertPassword: false,
+        });
+      }, 3000);
+    }
+  }
 
   render() {
     const { activeIndex } = this.state;
@@ -218,7 +264,6 @@ constructor(props) {
                               type="submit"
                               endIcon={<EditIcon>send</EditIcon>}
                               onClick={this.handleSubmitPhoto}
-
                             >
                               Modifier ma photo
                             </Button>
@@ -230,7 +275,8 @@ constructor(props) {
                     <Row className="d-flex justify-content-center">
                       <div className="mt-5 col-md-9">
                         <h3 className="mb-4">Information personnel</h3>
-                        <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
+
+                        <form onSubmit={this.handleSubmit} noValidate autoComplete="off" >
                         <Grid container mt-3>
                           <Grid container item xs={12} md={12} spacing={3}>
                               <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
@@ -294,6 +340,7 @@ constructor(props) {
                         <Row>
                         <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
                             <Button 
+                              onClick={this.handleClickShowAlertProfil.bind(this)}
                               variant="contained"
                               color="primary"
                               type="submit"
@@ -301,14 +348,19 @@ constructor(props) {
                             >
                               Modifier mon profil
                             </Button>
-                          </Col>
+                        </Col>
+                        </Row>
+                        <Row>
+                            <Col className={`alert alert-success ${this.state.showingAlertProfil ? 'alert-shown' : 'alert-hidden'}`} >
+                              <strong>Succès!</strong> Les modifications de votre profil ont bien été enregistrer
+                            </Col>
                         </Row>
                       </form>
                     </div>
                     </Row>
 
                     <Row className="d-flex justify-content-center">
-                      <div className="mt-5 col-md-9">
+                      <div className="mt-3 col-md-9">
                         <h3 className="mb-0">Modifier mot de passe</h3>
                         <form onSubmit={this.handleSubmitPassword} noValidate autoComplete="off">
                           <Grid container mt-3>
@@ -335,6 +387,7 @@ constructor(props) {
                           <Row>
                           <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
                               <Button 
+                                onClick={this.handleClickShowAlertPassword.bind(this)}
                                 variant="contained"
                                 color="primary"
                                 type="submit"
@@ -342,6 +395,11 @@ constructor(props) {
                               >
                                 Modifier mot de passe
                               </Button>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className={`alert alert-success ${this.state.showingAlertPassword ? 'alert-shown' : 'alert-hidden'}`}>
+                            <strong>Succès!</strong> Votre mot de passe a bien été modifié, veuillez vérifier votre email !
                             </Col>
                           </Row>
                         </form>
