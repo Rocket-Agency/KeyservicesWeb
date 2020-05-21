@@ -7,9 +7,9 @@ import TextField from '@material-ui/core/TextField';
 import "react-datepicker/dist/react-datepicker.css";
 import DatePickerChoice from './DateChoice/DatePickerChoice';
 import { Button } from 'reactstrap';
-import DatePicker from 'react-datepicker';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../../../ImagesPlaceholder/100.png';
+
 
 export class AnnounceResume extends Component {
     constructor (props) {
@@ -22,21 +22,13 @@ export class AnnounceResume extends Component {
         this.onFormSubmit = this.onFormSubmit.bind(this);
       }
     
-      handleDateChange(date) {
+    handleDateChange(date) {
         this.setState({
           startDate: date
         })
       }
-
-      onChangeHandler=event=>{
-        this.setState({
-            files: event.target.files, //declareer chaque ellemeeent .size . name ...
-                loaded: 0,
-          })
-        // console.log(event.target.files[0].size)
-    }
-
-      onFormSubmit(e) {
+    
+    onFormSubmit(e) {
         e.preventDefault();
         console.log(this.state.startDate)
       }
@@ -162,36 +154,36 @@ export class AnnounceResume extends Component {
                                         defaultValue={values.ad_capacity} 
                                         onChange={handleChange('ad_capacity')}
                                     >
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
-                                    <option>13</option>
-                                    <option>14</option>
-                                    <option>15</option>
-                                    <option>16</option>
-                                    <option>17</option>
-                                    <option>18</option>
-                                    <option>19</option>
-                                    <option>20</option>
-                                    <option>21</option>
-                                    <option>22</option>
-                                    <option>23</option>
-                                    <option>24</option>
-                                    <option>25</option>
-                                    <option>26</option>
-                                    <option>27</option>
-                                    <option>28</option>
-                                    <option>29</option>
-                                    <option>30</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                        <option>13</option>
+                                        <option>14</option>
+                                        <option>15</option>
+                                        <option>16</option>
+                                        <option>17</option>
+                                        <option>18</option>
+                                        <option>19</option>
+                                        <option>20</option>
+                                        <option>21</option>
+                                        <option>22</option>
+                                        <option>23</option>
+                                        <option>24</option>
+                                        <option>25</option>
+                                        <option>26</option>
+                                        <option>27</option>
+                                        <option>28</option>
+                                        <option>29</option>
+                                        <option>30</option>
                                     </Form.Control>
                                 </Form.Group>
                             </Col>
@@ -205,12 +197,12 @@ export class AnnounceResume extends Component {
                                         defaultValue={values.ad_notice} 
                                         onChange={handleChange('ad_notice')}
                                     >
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
                                     </Form.Control>
                                 </Form.Group>
                             </Col>
@@ -228,16 +220,16 @@ export class AnnounceResume extends Component {
                                         defaultValue={values.ad_min_night} 
                                         onChange={handleChange('ad_min_night')}
                                     >
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
                                     </Form.Control>
                                 </Form.Group>
                             </Col>
@@ -251,16 +243,16 @@ export class AnnounceResume extends Component {
                                         defaultValue={values.ad_max_night} 
                                         onChange={handleChange('ad_max_night')}
                                     >
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
                                     </Form.Control>
                                 </Form.Group>
                             </Col>

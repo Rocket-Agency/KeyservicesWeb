@@ -109,7 +109,7 @@ export class Contact extends Component {
                                                     <ErrorMessage name="message" component="div" className="invalid-feedback" />
                                                 </div>
 
-                                            <Form.Row className="mt-4">
+                                            <Form.Row className="mt-4 validZone">
                                                 <div className="form-group">
                                                     <Recaptcha
                                                         sitekey="6Lfx9O8UAAAAAPe1JLS49cFlkjs9Zgrp6-db8fHp"

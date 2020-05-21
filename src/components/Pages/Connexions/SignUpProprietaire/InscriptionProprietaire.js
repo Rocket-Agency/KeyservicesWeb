@@ -118,7 +118,7 @@ export class InscriptionProprietaire extends Component {
                         {this.state.userForm === true ? (
                             <UserForm/>
                         ) : this.state.newsletterForm === true ? (
-                            <NewsletterForm/>
+                            <NewsletterForm value={this.state.cityChoice}/>
                         ) : (
                              null
                         )}
