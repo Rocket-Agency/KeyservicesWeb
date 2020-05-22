@@ -1,6 +1,9 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import { BreadProvider } from './index'
+import { BreadProvider } from './index';
+import { BreadcrumbItem } from './index';
+import { Link } from 'react-router-dom';
+import HomeIcon from '@material-ui/icons/Home';
 import './App.scss';
 import './index.css';
 
@@ -41,6 +44,25 @@ import Deconnexion from './components/Pages/Molecule/Deconnexion';
 //Connexion
 import Connexion from './components/Mobile/Connexion'
 
+const NoMatchPage = () => {  
+  return (    
+    <div>
+       <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
+        <BreadcrumbItem>Erreur 404</BreadcrumbItem>
+        <div id="notfound">
+          <div class="notfound">
+            <div class="notfound-404">
+              <h1>404</h1>
+            </div>
+            <h2>Oops! Cette page n'a pas pu être trouvée</h2>
+              <p>Désolé mais la page que vous cherchez n'existe pas, a été supprimée. nom modifié ou est temporairement indisponible.</p>
+              <Link to="/">Retour à la page d'accueil</Link>   
+          </div>
+        </div>
+    </div>
+    );
+  };
+
 function App() {
   return (
     <>
@@ -50,7 +72,7 @@ function App() {
               <div className="content-wrap">
               <Header />
               <FilAriane />
-
+              
                 <Switch>
                   <Route path='/' component={Home} exact />
                   <Route path='/presentation' component={KeyservicesPresentation} exact/>
@@ -64,7 +86,9 @@ function App() {
                   <Route path='/dashboard' component={ProfileTabs} />
                   <Route path='/deconnexion' component={Deconnexion} />
                   <Route path='/cgu' component={CGU} />
+                  {/* <Route component={NotFound} /> */}
                   <Route path='/loginConcierge' component={Connexion} />
+                  <Route component={NoMatchPage} />
                 </Switch>
 
               </div>
