@@ -38,6 +38,9 @@ import NotFound from './components/Pages/NotFound';
 //Deconnexion
 import Deconnexion from './components/Pages/Molecule/Deconnexion';
 
+//Connexion
+import Connexion from './components/Mobile/Connexion'
+
 function App() {
   return (
     <>
@@ -45,8 +48,8 @@ function App() {
           <>    
             <div className="page-container">
               <div className="content-wrap">
-            <Header/>
-            <FilAriane />
+              <Header />
+              <FilAriane />
 
                 <Switch>
                   <Route path='/' component={Home} exact />
@@ -61,12 +64,12 @@ function App() {
                   <Route path='/dashboard' component={ProfileTabs} />
                   <Route path='/deconnexion' component={Deconnexion} />
                   <Route path='/cgu' component={CGU} />
-                  <Route component={NotFound} />
+                  <Route path='/loginConcierge' component={Connexion} />
                 </Switch>
 
               </div>
 
-            <Footer/>
+              <Footer/>
           </div>
           </>
         </BreadProvider>
