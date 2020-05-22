@@ -21,7 +21,6 @@ function AlertNewsletterInfo() {
     return <div className="style{{display : none}}"></div>;
   }
 
-
 export class NewsletterForm extends Component {
     constructor (props){
         super(props);
@@ -49,14 +48,14 @@ export class NewsletterForm extends Component {
     render() {
         return(
             <div>
-
                 <div className="d-flex text-center justify-content-center pb-3">
                     <AlertNewsletterInfo/>
                 </div>
+                
                 <Container fluid className="mt-2 d-flex justify-content-center searchCityFields">
                     <form onSubmit={this.handleSubmit}>
                     <Form.Row className="d-flex justify-content-center">
-                        <Form.Group as={Col} md="4" controlId="formGridId">
+                        <Form.Group as={Col} md="46" controlId="formGridId">
                             <Form.Label>Entrer votre adresse mail</Form.Label>
                             <Form.Control 
                             name="email" 

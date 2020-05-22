@@ -24,6 +24,7 @@ import {ValidationContactForm} from './components/Pages/Molecule/ValidationConta
 import {MonEspace} from './components/Pages/MonEspace';
 
 //Connexion pages
+import {LoginAdmin} from './components/Pages/Connexions/Login/LoginAdmin';
 import {LoginProprietaire} from './components/Pages/Connexions/Login/LoginProprietaire';
 import {LoginLocataire} from './components/Pages/Connexions/Login/LoginLocataire';
 
@@ -41,27 +42,8 @@ import NotFound from './components/Pages/NotFound';
 //Deconnexion
 import Deconnexion from './components/Pages/Molecule/Deconnexion';
 
-//Connexion
-import Connexion from './components/Mobile/Connexion'
+import HomepageApp from './components/PagesApp/HomepageApp';
 
-const NoMatchPage = () => {  
-  return (    
-    <div>
-       <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
-        <BreadcrumbItem>Erreur 404</BreadcrumbItem>
-        <div id="notfound">
-          <div class="notfound">
-            <div class="notfound-404">
-              <h1>404</h1>
-            </div>
-            <h2>Oops! Cette page n'a pas pu être trouvée</h2>
-              <p>Désolé mais la page que vous cherchez n'existe pas, a été supprimée. nom modifié ou est temporairement indisponible.</p>
-              <Link to="/">Retour à la page d'accueil</Link>   
-          </div>
-        </div>
-    </div>
-    );
-  };
 
 function App() {
   return (
@@ -81,14 +63,14 @@ function App() {
                   <Route path='/monEspace' component={MonEspace} exact/>
                   <Route path='/loginProprietaire' component={LoginProprietaire} exact/>
                   <Route path='/loginLocataire' component={LoginLocataire} exact/>
+                  <Route path='/adminKeyservices2020Projet' component={LoginAdmin} exact/>
                   <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
                   <Route path='/forgetPassword' component={ForgetPassword} />
                   <Route path='/dashboard' component={ProfileTabs} />
                   <Route path='/deconnexion' component={Deconnexion} />
                   <Route path='/cgu' component={CGU} />
-                  {/* <Route component={NotFound} /> */}
-                  <Route path='/loginConcierge' component={Connexion} />
-                  <Route component={NoMatchPage} />
+                  <Route component={NotFound} />
+                  <Route path='/homepageApp' component={HomepageApp} exact />
                 </Switch>
 
               </div>

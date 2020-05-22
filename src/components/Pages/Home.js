@@ -1,15 +1,11 @@
-//Home.js
 import React, {Component} from 'react';
 import '../../css/Home.scss';
 import '../../css/pe-7s-shield.scss';
 import { BreadcrumbItem } from '../../index';
-// import Img from 'react-cool-img';
 import ProgressiveImage from "react-progressive-graceful-image";
-// import ImgDefaultHome from '../../ImagesPlaceholder/placeholderHome.png';
-// import PosterUneAnnonceTiny from '../../ImagesPlaceholder/PosterUneAnnonceTiny.png';
-// import GererMesLocationsTiny from '../../ImagesPlaceholder/GererMesLocationsTiny.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carousel from 'react-bootstrap/Carousel';
+import CookieConsent from "react-cookie-consent";
 import { Container, Col, Row} from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
@@ -32,7 +28,20 @@ export class Home extends Component {
 
                 <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
 
-                {/* <div className="mt-3"> */}
+                <CookieConsent
+                    location="bottom"
+                    declineButtonText="Je refuse"
+                    buttonText="J'accepte"
+                    cookieName="myAwesomeCookieName2"
+                    expires={150}
+                    enableDeclineButton
+                    onDecline={() => {window.location.replace("http://www.google.com");}}
+                    flipButtons
+                    >
+                        
+                    Nous utilisons des cookies pour nous permettre de mieux comprendre comment le site est utilisé. En continuant à utiliser ce site, vous acceptez cette politique.
+                </CookieConsent>
+
                 <div>
                     <Carousel>
                         <Carousel.Item>
@@ -69,7 +78,7 @@ export class Home extends Component {
                     </Carousel>
                 </div>
 
-                <div className="container-fluid p-0 mt-4 mb-4">
+                <div className="container-fluid p-0  mb-4">
                     <div className="colorBackground">
                         <div className="mt-5 d-flex text-center justify-content-center">
                             <h1>On s’occupe de tous et vous de rien</h1>
@@ -103,14 +112,11 @@ export class Home extends Component {
                             </Col>
                         </Row>
 
-                        {/* col-lg-6 col-md-6 col-12 */}
-
                         <Row>
                             <Col xs={12} lg={6} md={6} className="mt-4 pt-2">
                                 <div className="service-container shadow rounded p-4 text-center">
                                     <div className="number-icon position-relative">
                                         <div className="icon-2 d-inline-block border rounded-pill">  
-                                            {/* <i className="pe-7s-shield text-custom"></i> */}
                                             <VpnKeyIcon style={{ fontSize: 40 }} />
                                         </div>
 
@@ -188,11 +194,7 @@ export class Home extends Component {
                                         <a href="/" className="text-dark">Read more <i className="mdi mdi-chevron-right"></i></a>
                                     </div>
                                  </div>
-                            </Col>
-                                                                                                       
-                            {/* <div className="col-12 mt-4 pt-2 text-center">
-                                 <a href="javascript:void(0)" className="btn btn-pill btn-custom">See More <i class="mdi mdi-chevron-right"></i></a>
-                            </div> */}
+                            </Col>                                                                        
                         </Row>
                      </Container>
                 </section>
