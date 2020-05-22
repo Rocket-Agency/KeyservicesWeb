@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import '../../../../css/Announce.scss';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -9,18 +10,94 @@ import { Col, Container, Row, Form } from 'react-bootstrap';
 
 export class AnnounceConfirm extends Component {
 
-    // state = {
-    //     address_road_number: this.props.values.address_road_number,
-    //     address_road_type: this.props.values.address_road_type,
-    //     address_road_name: this.props.values.address_road_name,
-    //     address_additional_info: this.props.values.address_additional_info,
-    //     address_state: this.props.values.address_state,
-    //     address_city: this.props.values.address_city,
-    //     address_zip_code: this.props.values.address_zip_code,
-    //   };
-
+    
 
     continue = e => {
+        var aValue = localStorage.getItem('id');
+
+        const body = new FormData();
+        // console.log(this.props.values.files.length);
+        for(var x = 0; x<this.props.values.files.length; x++){
+            console.log(this.props.values.files[x]);
+            body.append('file', this.props.values.files[x])
+        }
+        //ajout de photo utilise le append pour faire le format formDATA
+        // file.append('ad_Id', 1);
+        // for (var value of file.values()) {
+        //     console.log(value); 
+        // }
+        // axios.post("http://localhost:3001/photo/savePhotos/",file);
+
+        body.append('userId',aValue);
+
+        body.append('address_road_number',this.props.address_road_number);
+        body.append('address_road_type',this.props.address_road_type);
+        body.append('address_road_name',this.props.address_road_name);
+        body.append('address_additional_info',this.props.address_additional_info);
+        body.append('address_state',this.props.address_state);
+        body.append('address_city',this.props.address_city);
+        body.append('address_zip_code',this.props.address_zip_code);
+
+        body.append('equipment_kitchen',!!(this.props.values.equipment_kitchen)?1:0);
+        body.append('equipment_heater',!!(this.props.values.equipment_heater)?1:0);
+        body.append('equipment_wifi',!!(this.props.values.equipment_wifi)?1:0);
+        body.append('equipment_iron', !!(this.props.values.equipment_iron)?1:0);
+        body.append('equipment_working_space', !!(this.props.values.equipment_working_space)?1:0);
+        body.append('equipment_private_bathroom',!!(this.props.values.equipment_private_bathroom)?1:0);
+        body.append('equipment_shampoo',!!(this.props.values.equipment_shampoo)?1:0);
+        body.append('equipment_air_conditioner', !!(this.props.values.equipment_air_conditioner)?1:0);
+        body.append('equipment_hangers',!!(this.props.values.equipment_hangers)?1:0);
+        body.append('equipment_hair_dryer',!!(this.props.values.equipment_hair_dryer)?1:0);
+        body.append('equipment_television',!!(this.props.values.equipment_television)?1:0);
+
+        body.append('installation_parking', !!(this.props.values.installation_parking)?1:0);
+        body.append('installation_gym', !!(this.props.values.installation_gym)?1:0);
+        body.append('installation_pool', !!(this.props.values.installation_pool)?1:0);
+        body.append('installation_jaccuzi', !!(this.props.values.installation_jaccuzi)?1:0);
+
+        body.append('info_infos', !!(this.props.values.info_infos)?1:0);
+        body.append('info_availability', !!(this.props.values.info_availability)?1:0);
+        body.append('info_area', !!(this.props.values.info_area)?1:0);
+        body.append('info_around', !!(this.props.values.info_around)?1:0);
+        body.append('info_stairs', !!(this.props.values.info_stairs)?1:0);
+        body.append('info_noise', !!(this.props.values.info_noise)?1:0);
+        body.append('info_pets', !!(this.props.values.info_pets)?1:0);
+        body.append('info_no_parking', !!(this.props.values.info_no_parking)?1:0);
+        body.append('info_shared_space', !!(this.props.values.info_shared_space)?1:0);
+        body.append('info_equipment_restriction', !!(this.props.values.info_equipment_restriction)?1:0);
+        body.append('info_monitoring_device', !!(this.props.values.info_monitoring_device)?1:0);
+        body.append('info_weapons', !!(this.props.values.info_weapons)?1:0);
+        body.append('info_dangerous_animals', !!(this.props.values.info_dangerous_animals)?1:0);
+
+        body.append('age2', !!(this.props.values.rule_age_2)?1:0);
+        body.append('age_2', !!(this.props.values.rule_age_2)?1:0);
+        body.append('pets', !!(this.props.values.rule_age_2)?1:0);
+        body.append('smoking', !!(this.props.values.rule_age_2)?1:0);
+        body.append('event', !!(this.props.values.rule_age_2)?1:0);
+        body.append('addrule', !!(this.props.values.rule_add)?this.props.values.rule_add:0);
+
+        body.append('housing_type_property', this.props.values.housing_type_property);
+        body.append('housing_type', this.props.values.housing_type);
+        body.append('housing_nb_room', this.props.values.housing_nb_room);
+        body.append('housing_nb_bathroom', this.props.values.housing_nb_bathroom);
+        body.append('housing_observation', this.props.values.housing_observation);
+
+        body.append('price_starting', this.props.values.price_starting);
+        body.append('price_min', this.props.values.price_min);
+        body.append('price_max', this.props.values.price_max);
+
+        body.append('ad_title', this.props.values.ad_title);
+        body.append('ad_description', this.props.values.ad_description);
+        body.append('ad_capacity', this.props.values.ad_capacity);
+        body.append('ad_notice', this.props.values.ad_notice);
+        body.append('ad_arrival_time', this.props.values.ad_arrival_time);
+        body.append('ad_departure_time', this.props.values.ad_departure_time);
+        body.append('ad_min_night', this.props.values.ad_min_night);
+        body.append('ad_max_night', this.props.values.ad_max_night);
+        body.append('ad_starting_date', this.props.values.ad_starting_date);
+        body.append('ad_ending_date', this.props.values.ad_ending_date);
+        
+        axios.post("http://localhost:3001/api/adcreate/",body);
         e.preventDefault();
         this.props.nextStep();
       };
@@ -29,7 +106,6 @@ export class AnnounceConfirm extends Component {
         e.preventDefault();
         this.props.prevStep();
       };
-
     render() {
         const {
             values: { address_road_number, address_road_type, address_road_name, address_additional_info, address_state, address_city, address_zip_code, 
@@ -39,7 +115,7 @@ export class AnnounceConfirm extends Component {
                     info_stairs, info_pets, info_no_parking, info_shared_space, info_equipment_restriction, info_monitoring_device, info_weapons, info_dangerous_animals, info_noise,
                     rule_age_2, rule_age_2_12, rule_pets, rule_smoking, rule_event, rule_add,
                     info_area, info_around, info_infos, info_availability, observation,
-                    price_starting, price_min, price_max,
+                    price_starting, price_min, price_max,files,
                     ad_title, ad_description, ad_capacity, ad_notice, ad_arrival_time, ad_departure_time, ad_min_night, ad_max_night, ad_starting_date, ad_ending_date
             }
           } = this.props;

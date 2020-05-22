@@ -46,9 +46,11 @@ constructor(props) {
     selectedDate:  new Date(),
     handleDateChange: new Date(),
     addressCollection: [],
+    selectedFile:[],
   }
   this.handleSubmit = this.handleSubmit.bind(this);
   this.handleSubmitPassword = this.handleSubmitPassword.bind(this);
+  this.handleSubmitPhoto = this.handleSubmitPhoto.bind(this);
 
   this.userid = '';
   this.token = '';
@@ -75,6 +77,14 @@ constructor(props) {
         'x-access-token': this.token
       }
     }
+    
+    axios.get(`http://localhost:3001/photo/getPhotoByUserId/`+ this.userid)
+    .then(res => {
+      this.setState( { photo_url : res.data.photo_url} );
+    })
+
+    
+
     axios.get(`http://localhost:3001/api/user/`+ this.userid, config)
       .then(res => {
         this.setState( { user_first_name : res.data.user_first_name});
@@ -87,11 +97,13 @@ constructor(props) {
         this.setState( { user_adresse_txt : res.data.user_adresse_txt});
         this.setState( { users : res.data });
       })
+
     axios.get(`http://localhost:3001/api/users/`, config)
       .then(res => {
         const usersCollection = res.data;
         this.setState( { usersCollection } );
       })
+
     axios.get('http://localhost:3001/api/contacts')
       .then (res => {
         const contactsCollection = res.data;
@@ -127,16 +139,34 @@ constructor(props) {
     })
     e.preventDefault();
   }
-  
+
+  onChangePhotoHandler=event=>{
+    this.setState({
+      selectedFile: event.target.files[0]
+    })
+  }
+
+  handleSubmitPhoto(e){
+    const body = new FormData() 
+    body.append('file', this.state.selectedFile)
+
+    axios.put("http://localhost:3001/photo/updateUserPhoto/"+ this.userid,body);
+    window.location.reload();
+    e.preventDefault();
+  }
+
   handleEndDate = moment => {
     this.setState({
         workingEnd: moment
     });
   };
 
+
+
   render() {
     const { activeIndex } = this.state;
     const { group } = this.state;
+    const { saveImages } = this.state; 
     return (
       <div
         style={{
@@ -173,16 +203,28 @@ constructor(props) {
                     <div className="col-md-3">
                         <div className="text-center">
                           <Img
-                              placeholder={ImgDefaultAvatar} 
+                              src={this.state.photo_url}
                               className="avatar img-circle mt-3 mb-3"
                               alt="avatar" 
                             />
-                            <h6>Upload a different photo...</h6>
+                            <h6></h6>
                           
-                            <input type="file" className="form-control"/>
+                            <input type="file" className="form-control" onChange={this.onChangePhotoHandler}/>
                         </div>
-                    </div>
+                        <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
+                            <Button 
+                              variant="contained"
+                              color="primary"
+                              type="submit"
+                              endIcon={<EditIcon>send</EditIcon>}
+                              onClick={this.handleSubmitPhoto}
 
+                            >
+                              Modifier ma photo
+                            </Button>
+                          </Col>    
+                    </div>
+                    
                     <div className="col-md-9 personal-info">
 
                     <Row className="d-flex justify-content-center">

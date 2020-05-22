@@ -15,7 +15,8 @@ export class AnnounceResume extends Component {
     constructor (props) {
         super(props)
         this.state = {
-          startDate: new Date()
+          startDate: new Date(),
+          files: null
         };
         this.handleDateChange = this.handleDateChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -53,7 +54,7 @@ export class AnnounceResume extends Component {
       };
 
     render() {
-        const { values, handleChange } = this.props;
+        const { values, handleChange ,saveImages } = this.props;
         return(
             <div>
                 <Container fluid className="pt-4 blocForm" > 
@@ -136,7 +137,7 @@ export class AnnounceResume extends Component {
                                 />
                                 <h6>Mettre une photo de votre logement...</h6>
                             
-                                <input type="file" className="form-control"/>
+                                <input type="file" class="form-control" multiple onChange={saveImages}/>
                             </div>
                         </Col>
                         </Row>
