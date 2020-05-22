@@ -1,33 +1,12 @@
 import React, {Component} from 'react';
 import {Helmet} from "react-helmet";
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container } from 'react-bootstrap';
 import '../../css/CGU.scss';
 
 import { BreadcrumbItem } from '../../index';
 import HomeIcon from '@material-ui/icons/Home';
-// import ConfirmMassageChangePassword from './Connexions/Profiles/ConfirmMessageChangePassword';
-
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-
 
 export class CGU extends Component {
-    submit = () => {
-        confirmAlert({
-          title: 'Confirm to submit',
-          message: 'Are you sure to do this.',
-          buttons: [
-            {
-              label: 'Yes',
-              onClick: () => alert('Click Yes')
-            },
-            {
-              label: 'No',
-              onClick: () => alert('Click No')
-            }
-          ]
-        });
-      };
     
     render() {
         return (
@@ -40,11 +19,6 @@ export class CGU extends Component {
                     <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                     <BreadcrumbItem >Conditions Générales d'Utilisation</BreadcrumbItem>
 
-                    {/* <Container> */}
-                        {/* <ConfirmMassageChangePassword /> */}
-
-                        {/* <ConfirmTest />  */}
-                    {/* </Container> */}
 
                     <Container >
                         <div className="d-flex justify-content-center">
@@ -418,33 +392,3 @@ export class CGU extends Component {
 }
     
 export default CGU;
-
-
-
- 
-// class ConfirmTest extends React.Component {
-//   submit = () => {
-//     confirmAlert({
-//       title: 'Confirm to submit',
-//       message: 'Are you sure to do this.',
-//       buttons: [
-//         {
-//           label: 'Yes',
-//           onClick: () => alert('Click Yes')
-//         },
-//         {
-//           label: 'No',
-//           onClick: () => alert('Click No')
-//         }
-//       ]
-//     });
-//   };
- 
-//   render() {
-//     return (
-//       <div className='container'>
-//         <button onClick={this.submit}>Confirm dialog</button>
-//       </div>
-//     );
-//   }
-// }

@@ -14,9 +14,10 @@ export class Header extends Component {
     render() {
         return(
             <div style={{ zIndex: 9999, position: 'relative'}}>
-                <div className="top"></div>
+                
                 {this.props.location.pathname != '/loginConcierge' ?
                 <Sticky>
+                <div className="top"></div>
                 <Navbar bg="white" collapseOnSelect expand="md" variant="light" sticky="top">
                     <a className="navbar-brand" href="/">
                         <ProgressiveImage  className="card-img react-log" 
@@ -50,12 +51,9 @@ export class Header extends Component {
                         </NavLink> : null }
                     </Navbar.Collapse>
                 </Navbar>
-
                 </Sticky>
                 :null}
-                
             </div>
-
             )
         }
     }

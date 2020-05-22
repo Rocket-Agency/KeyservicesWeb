@@ -65,12 +65,12 @@ class LoginValidation extends Component {
                                 } }
                     />
                     <FormFeedback valid>
-                        That's a tasty looking email you've got there.
+                        Email valide
                     </FormFeedback>
                     <FormFeedback>
-                        Uh oh! Looks like there is an issue with your email. Please input a correct email.
+                       Veuillez entrer un email valide
                     </FormFeedback>
-                    <FormText>Your username is most likely your email.</FormText>
+                    <FormText>Votre identifiant est votre email</FormText>
                     </FormGroup>
                 </Col>
                 <Col>
