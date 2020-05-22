@@ -6,7 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import { Button } from 'reactstrap';
-import { Col, Container, Row, Form } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 export class AnnounceConfirm extends Component {
 

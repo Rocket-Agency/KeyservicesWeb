@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
+import HomepageApp from '../LayoutApp/MenuBottomApp';
+import '../../css/LoginApp.scss';
+import { Col, Row, Container } from 'react-bootstrap';
 
 export class Connexion extends Component {
     render(){
         return(
-            <div>
-                <h1>Connexion concierge</h1>
-            </div>
+            <React.Fragment>
+                <Container>
+                    <div>test</div>
+                </Container>
+            </React.Fragment>
         )
     }
 }
