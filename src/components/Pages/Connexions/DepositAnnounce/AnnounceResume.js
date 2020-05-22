@@ -27,8 +27,16 @@ export class AnnounceResume extends Component {
           startDate: date
         })
       }
-    
-    onFormSubmit(e) {
+
+      onChangeHandler=event=>{
+        this.setState({
+            files: event.target.files, //declareer chaque ellemeeent .size . name ...
+                loaded: 0,
+          })
+        // console.log(event.target.files[0].size)
+    }
+
+      onFormSubmit(e) {
         e.preventDefault();
         console.log(this.state.startDate)
       }

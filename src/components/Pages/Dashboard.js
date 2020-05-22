@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,  useState} from 'react';
 import '../../css/Dashboard.scss';
 
 import { BreadcrumbItem } from '../../index';
@@ -12,7 +12,6 @@ import Grid from '@material-ui/core/Grid';
 import axios from 'axios';
 import MaterialTable from 'material-table';
 import Img from 'react-cool-img';
-import ImgDefaultAvatar from '../../ImagesPlaceholder/100.png';
 import { Col, Row, Container } from 'react-bootstrap';
 import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
@@ -20,6 +19,21 @@ import AnnounceStepperForm from './Connexions/DepositAnnounce/AnnounceStepperFor
 import DateFnsUtils from '@date-io/date-fns'; // choose your lib
 import { KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
 import BasicDateTimePicker from './Schedule';
+import Alert from 'react-bootstrap/Alert';
+
+
+function MessageValidateUpdate() {
+  const [show, setShow] = useState(true);
+
+  if (show) {
+    return (
+      <Alert variant="primary" onClose={() => setShow(true)} dismissible>
+        <Alert.Heading>Votre profil a été mise à jour</Alert.Heading>
+      </Alert>
+    );
+  }
+  return <div className="style{{display : none}}"></div>;
+}
 
 
 class ProfileTabs extends Component {
@@ -47,6 +61,8 @@ constructor(props) {
     handleDateChange: new Date(),
     addressCollection: [],
     selectedFile:[],
+    showingAlertProfil: false,
+    showingAlertPassword: false
   }
   this.handleSubmit = this.handleSubmit.bind(this);
   this.handleSubmitPassword = this.handleSubmitPassword.bind(this);
@@ -82,8 +98,6 @@ constructor(props) {
     .then(res => {
       this.setState( { photo_url : res.data.photo_url} );
     })
-
-    
 
     axios.get(`http://localhost:3001/api/user/`+ this.userid, config)
       .then(res => {
@@ -155,13 +169,45 @@ constructor(props) {
     e.preventDefault();
   }
 
-  handleEndDate = moment => {
-    this.setState({
-        workingEnd: moment
-    });
-  };
+  handleClickShowAlertProfil(onChange, showingAlertProfil) {
+    if (onChange) {
+      this.setState({
+        showingAlertProfil: true
+      });
+      setTimeout(() => {
+        this.setState({
+          showingAlertProfil: false
+        });
+      }, 3000);
+    }
+  }
+
+  handleClickShowAlertTest(){
+    const [show, setShow] = useState(true);
+  
+    if (show) {
+      return (
+        <Alert variant="success" onClose={() => setShow(false)} dismissible>
+            <strong>Succès!</strong> Les modifications de votre profil ont bien été enregistrer
+        </Alert>
+      );
+    }
+    return <div className="style{{display : none}}"></div>;
+  }
 
 
+  handleClickShowAlertPassword(onChange, showingAlertPassword) {
+    if (onChange){
+      this.setState({
+        showingAlertPassword: true,
+      });
+      setTimeout(() => {
+        this.setState({
+          showingAlertPassword: false,
+        });
+      }, 3000);
+    }
+  }
 
   render() {
     const { activeIndex } = this.state;
@@ -184,8 +230,10 @@ constructor(props) {
               {this.group == 'GROUP_LOCATAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Information location' />   : null}      
               {this.group == 'GROUP_PROPRIETAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Créer une annonce ' /> : null}
               {this.group == 'GROUP_LOCATAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Prise de rendez-vous' /> : null} 
+              {this.group == 'GROUP_LOCATAIRE' ? <MyTab label='Paiement des courses' /> : null} 
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste de contacts' /> : null }
+              {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste des annonces' /> : null }
               {this.group == 'GROUP_PROPRIETAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Mes annonces' /> : null}
             </VerticalTabs>
           </Col>
@@ -218,7 +266,6 @@ constructor(props) {
                               type="submit"
                               endIcon={<EditIcon>send</EditIcon>}
                               onClick={this.handleSubmitPhoto}
-
                             >
                               Modifier ma photo
                             </Button>
@@ -230,7 +277,8 @@ constructor(props) {
                     <Row className="d-flex justify-content-center">
                       <div className="mt-5 col-md-9">
                         <h3 className="mb-4">Information personnel</h3>
-                        <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
+
+                        <form onSubmit={this.handleSubmit} noValidate autoComplete="off" >
                         <Grid container mt-3>
                           <Grid container item xs={12} md={12} spacing={3}>
                               <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
@@ -294,6 +342,7 @@ constructor(props) {
                         <Row>
                         <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
                             <Button 
+                              onClick={this.handleClickShowAlertProfil.bind(this)}
                               variant="contained"
                               color="primary"
                               type="submit"
@@ -301,14 +350,19 @@ constructor(props) {
                             >
                               Modifier mon profil
                             </Button>
-                          </Col>
+                        </Col>
+                        </Row>
+                        <Row>
+                            <Col className={`alert alert-success ${this.state.showingAlertProfil ? 'alert-shown' : 'alert-hidden'}`} >
+                              <strong>Succès!</strong> Les modifications de votre profil ont bien été enregistré
+                            </Col>
                         </Row>
                       </form>
                     </div>
                     </Row>
 
                     <Row className="d-flex justify-content-center">
-                      <div className="mt-5 col-md-9">
+                      <div className="mt-3 col-md-9">
                         <h3 className="mb-0">Modifier mot de passe</h3>
                         <form onSubmit={this.handleSubmitPassword} noValidate autoComplete="off">
                           <Grid container mt-3>
@@ -335,6 +389,7 @@ constructor(props) {
                           <Row>
                           <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
                               <Button 
+                                onClick={this.handleClickShowAlertPassword.bind(this)}
                                 variant="contained"
                                 color="primary"
                                 type="submit"
@@ -342,6 +397,11 @@ constructor(props) {
                               >
                                 Modifier mot de passe
                               </Button>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className={`alert alert-success ${this.state.showingAlertPassword ? 'alert-shown' : 'alert-hidden'}`}>
+                            <strong>Succès!</strong> Votre mot de passe a bien été modifié, veuillez vérifier votre email !
                             </Col>
                           </Row>
                         </form>
@@ -354,7 +414,6 @@ constructor(props) {
 
             
           </TabContainer> }
-
             { activeIndex === 1 && this.group === 'GROUP_ADMIN' && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Information location</BreadcrumbItem>
@@ -502,8 +561,30 @@ constructor(props) {
 
             { activeIndex === 6 && this.group == 'GROUP_ADMIN' && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
-              <BreadcrumbItem >Mes annonces</BreadcrumbItem>
-                <h1>Mes annonces</h1>
+              <BreadcrumbItem >Liste des annonces</BreadcrumbItem>
+                <h1>Liste des annonces</h1>
+                <MaterialTable
+                  columns={[
+                    { title: 'Update' },
+                    { title: 'Id de l\'annonce' },
+                    { title: 'Nom', field: 'contact_first_name' },
+                    { title: 'Prénom', field: 'contact_last_name' },
+                    { title: 'Titre de l\'annonce', field: 'contact_email' },
+                    { title: 'Addresse de l\'annonce', field: 'contact_email' },
+                    { title: 'Date de début publication', field: 'contact_object'},
+                    { title: 'Fin de publication', field: 'contact_message'}
+                  ]}
+                  data={this.state.contactsCollection}
+                  title="Liste des annonces"
+                />
+            </TabContainer> }
+
+            { activeIndex === 7 && this.group == 'GROUP_ADMIN' && <TabContainer>
+              <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+              <BreadcrumbItem ></BreadcrumbItem>
+                <h1>Gestion comptabilité</h1>
+
+                />
             </TabContainer> }
 
             { activeIndex === 1 && this.group == 'GROUP_PROPRIETAIRE' && <TabContainer>
@@ -519,11 +600,12 @@ constructor(props) {
                 <h1>Mes annonces</h1>
                 <MaterialTable
                   columns={[
-                    { title: 'Nom', field: 'contact_first_name' },
-                    { title: 'Prénom', field: 'contact_last_name' },
-                    { title: 'Email', field: 'contact_email' },
-                    { title: 'Objet', field: 'contact_object'},
-                    { title: 'Message', field: 'contact_message'}
+                    { title: 'Update' },
+                    { title: 'Titre de l\'annonce', field: 'contact_email' },
+                    { title: 'Addresse de l\'annonce', field: 'contact_email' },
+                    { title: 'Date de début publication', field: 'contact_object'},
+                    { title: 'Fin de publication', field: 'contact_message'},
+                    { title: 'Supprimer', field: 'contact_email' },
                   ]}
                   data={this.state.contactsCollection}
                   title="Liste des messages"
@@ -540,7 +622,16 @@ constructor(props) {
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Prise de rendez-vous</BreadcrumbItem>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                  <h1>Prise de rendez-vous</h1>
                   <BasicDateTimePicker />
+                </MuiPickersUtilsProvider>
+              </TabContainer> }
+
+              { activeIndex === 3 && this.group === 'GROUP_LOCATAIRE' &&<TabContainer>
+              <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+              <BreadcrumbItem >Paiement des courses</BreadcrumbItem>
+                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <h1>Paiement de vos courses</h1>
                 </MuiPickersUtilsProvider>
               </TabContainer> }
           
