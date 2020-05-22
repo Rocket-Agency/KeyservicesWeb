@@ -230,8 +230,10 @@ constructor(props) {
               {this.group == 'GROUP_LOCATAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Information location' />   : null}      
               {this.group == 'GROUP_PROPRIETAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Créer une annonce ' /> : null}
               {this.group == 'GROUP_LOCATAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Prise de rendez-vous' /> : null} 
+              {this.group == 'GROUP_LOCATAIRE' ? <MyTab label='Paiement des courses' /> : null} 
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste de contacts' /> : null }
+              {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste des annonces' /> : null }
               {this.group == 'GROUP_PROPRIETAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Mes annonces' /> : null}
             </VerticalTabs>
           </Col>
@@ -352,7 +354,7 @@ constructor(props) {
                         </Row>
                         <Row>
                             <Col className={`alert alert-success ${this.state.showingAlertProfil ? 'alert-shown' : 'alert-hidden'}`} >
-                              <strong>Succès!</strong> Les modifications de votre profil ont bien été enregistrer
+                              <strong>Succès!</strong> Les modifications de votre profil ont bien été enregistré
                             </Col>
                         </Row>
                       </form>
@@ -412,7 +414,6 @@ constructor(props) {
 
             
           </TabContainer> }
-
             { activeIndex === 1 && this.group === 'GROUP_ADMIN' && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Information location</BreadcrumbItem>
@@ -560,8 +561,30 @@ constructor(props) {
 
             { activeIndex === 6 && this.group == 'GROUP_ADMIN' && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
-              <BreadcrumbItem >Mes annonces</BreadcrumbItem>
-                <h1>Mes annonces</h1>
+              <BreadcrumbItem >Liste des annonces</BreadcrumbItem>
+                <h1>Liste des annonces</h1>
+                <MaterialTable
+                  columns={[
+                    { title: 'Update' },
+                    { title: 'Id de l\'annonce' },
+                    { title: 'Nom', field: 'contact_first_name' },
+                    { title: 'Prénom', field: 'contact_last_name' },
+                    { title: 'Titre de l\'annonce', field: 'contact_email' },
+                    { title: 'Addresse de l\'annonce', field: 'contact_email' },
+                    { title: 'Date de début publication', field: 'contact_object'},
+                    { title: 'Fin de publication', field: 'contact_message'}
+                  ]}
+                  data={this.state.contactsCollection}
+                  title="Liste des annonces"
+                />
+            </TabContainer> }
+
+            { activeIndex === 7 && this.group == 'GROUP_ADMIN' && <TabContainer>
+              <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+              <BreadcrumbItem ></BreadcrumbItem>
+                <h1>Gestion comptabilité</h1>
+
+                />
             </TabContainer> }
 
             { activeIndex === 1 && this.group == 'GROUP_PROPRIETAIRE' && <TabContainer>
@@ -577,11 +600,12 @@ constructor(props) {
                 <h1>Mes annonces</h1>
                 <MaterialTable
                   columns={[
-                    { title: 'Nom', field: 'contact_first_name' },
-                    { title: 'Prénom', field: 'contact_last_name' },
-                    { title: 'Email', field: 'contact_email' },
-                    { title: 'Objet', field: 'contact_object'},
-                    { title: 'Message', field: 'contact_message'}
+                    { title: 'Update' },
+                    { title: 'Titre de l\'annonce', field: 'contact_email' },
+                    { title: 'Addresse de l\'annonce', field: 'contact_email' },
+                    { title: 'Date de début publication', field: 'contact_object'},
+                    { title: 'Fin de publication', field: 'contact_message'},
+                    { title: 'Supprimer', field: 'contact_email' },
                   ]}
                   data={this.state.contactsCollection}
                   title="Liste des messages"
@@ -598,7 +622,16 @@ constructor(props) {
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Prise de rendez-vous</BreadcrumbItem>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                  <h1>Prise de rendez-vous</h1>
                   <BasicDateTimePicker />
+                </MuiPickersUtilsProvider>
+              </TabContainer> }
+
+              { activeIndex === 3 && this.group === 'GROUP_LOCATAIRE' &&<TabContainer>
+              <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+              <BreadcrumbItem >Paiement des courses</BreadcrumbItem>
+                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <h1>Paiement de vos courses</h1>
                 </MuiPickersUtilsProvider>
               </TabContainer> }
           
