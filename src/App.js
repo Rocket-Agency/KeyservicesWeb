@@ -35,16 +35,14 @@ import {InscriptionProprietaire} from './components/Pages/Connexions/SignUpPropr
 //Dashboard
 import ProfileTabs from './components/Pages/Dashboard';
 
-//Error
-import NotFound from './components/Pages/NotFound';
-
 //Deconnexion
 import Deconnexion from './components/Pages/Molecule/Deconnexion';
 
 //Connexion
-import Connexion from './components/Mobile/Connexion'
+import Connexion from './components/Mobile/ConnexionConcierge'
 
-const NoMatchPage = () => {  
+//Error
+const NotFound = () => {  
   return (    
     <div>
        <BreadcrumbItem to="/"><HomeIcon/>Home</BreadcrumbItem>
@@ -86,9 +84,8 @@ function App() {
                   <Route path='/dashboard' component={ProfileTabs} />
                   <Route path='/deconnexion' component={Deconnexion} />
                   <Route path='/cgu' component={CGU} />
-                  {/* <Route component={NotFound} /> */}
                   <Route path='/loginConcierge' component={Connexion} />
-                  <Route component={NoMatchPage} />
+                  <Route component={NotFound} />
                 </Switch>
 
               </div>
