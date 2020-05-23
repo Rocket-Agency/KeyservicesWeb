@@ -102,12 +102,12 @@ class ConnexionConcierge extends Component {
                 </Form.Group>
             </Form.Row>
 
-            <Form.Row className="mt-4">
-                 <Form.Group as={Col} md="12">
+            <Form.Row>
+                 <Form.Group as={Col} md="12" className="mt-3">
                     <Container>
                         <Row>
                             <Col xs={12} className="d-flex justify-content-center align-items-center">                                
-                                <div id="container">                    
+                                <div id="container">               
                                     <Row>
                                         <button className="applicationConnexionButton" aria-label="Se connecter">
                                             <span className="circle" aria-hidden="true">
