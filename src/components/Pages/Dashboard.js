@@ -16,7 +16,7 @@ import { Col, Row, Container } from 'react-bootstrap';
 import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
 import AnnounceStepperForm from './Connexions/DepositAnnounce/AnnounceStepperForm';
-import DateFnsUtils from '@date-io/date-fns'; // choose your lib
+import DateFnsUtils from '@date-io/date-fns'; 
 import { KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
 import BasicDateTimePicker from './Schedule';
 import Alert from 'react-bootstrap/Alert';
@@ -25,20 +25,6 @@ import Alert from 'react-bootstrap/Alert';
 import ListUsers from './Molecule/ListUsers';
 import ListContacts from './Molecule/ListContacts';
 import MyProfil from './Molecule/MyProfil';
-
-
-// function MessageValidateUpdate() {
-//   const [show, setShow] = useState(true);
-
-//   if (show) {
-//     return (
-//       <Alert variant="primary" onClose={() => setShow(true)} dismissible>
-//         <Alert.Heading>Votre profil a été mise à jour</Alert.Heading>
-//       </Alert>
-//     );
-//   }
-//   return <div className="style{{display : none}}"></div>;
-// }
 
 
 class ProfileTabs extends Component {
@@ -94,7 +80,7 @@ constructor(props) {
               value={activeIndex}
               onChange={this.handleChange}
             >    
-              <MyTab label='Mon compte' />           
+              <MyTab label='Mon compte' />      
               {this.group == 'GROUP_LOCATAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Information location' />   : null}      
               {this.group == 'GROUP_PROPRIETAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Créer une annonce ' /> : null}
               {this.group == 'GROUP_LOCATAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Prise de rendez-vous' /> : null} 
@@ -108,16 +94,14 @@ constructor(props) {
 
           <Col xs={12} md={10} >
             { activeIndex === 0 && <TabContainer>
-
               <Container fluid>
                 <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                 <BreadcrumbItem >Mon compte</BreadcrumbItem>
-
                 <h2 className="mt-2r">Mon Compte</h2>
-                <hr/>
                 <MyProfil token={this.token} userid={this.userid}/>
             </Container>
           </TabContainer> }
+
             { activeIndex === 1 && this.group === 'GROUP_ADMIN' && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Information location</BreadcrumbItem>
@@ -177,8 +161,6 @@ constructor(props) {
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem ></BreadcrumbItem>
                 <h1>Gestion comptabilité</h1>
-
-                />
             </TabContainer> }
 
             { activeIndex === 1 && this.group == 'GROUP_PROPRIETAIRE' && <TabContainer>
