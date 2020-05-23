@@ -37,9 +37,10 @@ import ProfileTabs from './components/Pages/Dashboard';
 
 //Deconnexion
 import Deconnexion from './components/Pages/Molecule/Deconnexion';
+import ConnexionConcierge from './components/AppKeyservicesGestion/ConnexionConcierge';
 
 //Connexion
-import Connexion from './components/Mobile/ConnexionConcierge'
+// import ConnexionC from './components/Mobile/ConnexionConcierge'
 
 //Error
 const NotFound = () => {  
@@ -84,7 +85,7 @@ function App() {
                   <Route path='/dashboard' component={ProfileTabs} />
                   <Route path='/deconnexion' component={Deconnexion} />
                   <Route path='/cgu' component={CGU} />
-                  <Route path='/loginConcierge' component={Connexion} />
+                  <Route path='/loginConcierge' component={ConnexionConcierge} />
                   <Route component={NotFound} />
                 </Switch>
 

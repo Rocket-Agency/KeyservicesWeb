@@ -115,7 +115,7 @@ export class AnnounceConfirm extends Component {
                     info_stairs, info_pets, info_no_parking, info_shared_space, info_equipment_restriction, info_monitoring_device, info_weapons, info_dangerous_animals, info_noise,
                     rule_age_2, rule_age_2_12, rule_pets, rule_smoking, rule_event, rule_add,
                     info_area, info_around, info_infos, info_availability, observation,
-                    price_starting, price_min, price_max,files,
+                    price_starting, price_min, price_max, files,
                     ad_title, ad_description, ad_capacity, ad_notice, ad_arrival_time, ad_departure_time, ad_min_night, ad_max_night, ad_starting_date, ad_ending_date
             }
           } = this.props;

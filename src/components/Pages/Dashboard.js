@@ -22,18 +22,18 @@ import BasicDateTimePicker from './Schedule';
 import Alert from 'react-bootstrap/Alert';
 
 
-function MessageValidateUpdate() {
-  const [show, setShow] = useState(true);
+// function MessageValidateUpdate() {
+//   const [show, setShow] = useState(true);
 
-  if (show) {
-    return (
-      <Alert variant="primary" onClose={() => setShow(true)} dismissible>
-        <Alert.Heading>Votre profil a été mise à jour</Alert.Heading>
-      </Alert>
-    );
-  }
-  return <div className="style{{display : none}}"></div>;
-}
+//   if (show) {
+//     return (
+//       <Alert variant="primary" onClose={() => setShow(true)} dismissible>
+//         <Alert.Heading>Votre profil a été mise à jour</Alert.Heading>
+//       </Alert>
+//     );
+//   }
+//   return <div className="style{{display : none}}"></div>;
+// }
 
 
 class ProfileTabs extends Component {

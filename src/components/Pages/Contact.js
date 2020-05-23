@@ -5,11 +5,10 @@ import '../../css/Contact.scss';
 import { Hidden } from 'react-grid-system';
 import Iframe from 'react-iframe';
 import { Formik, Field, ErrorMessage } from 'formik';
-import { Form, Row } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import * as Yup from 'yup';
 import ContactInfos from './ContactInfos';
 import Recaptcha from "react-recaptcha";
-import { render } from 'react-dom';
 
 export class Contact extends Component {
     componentDidMount() {

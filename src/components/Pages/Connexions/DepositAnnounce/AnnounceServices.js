@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
 import '../../../../css/Announce.scss';
 
-import { Row, Col, Container, Form } from 'react-bootstrap';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
+import { Row, Col, Container } from 'react-bootstrap';
 import { Button } from 'reactstrap';
-import Checkbox from '@material-ui/core/Checkbox';
-import ListGroup from 'react-bootstrap/ListGroup';
 import AnnounceCardService from './AnnounceCardServices';
 
 export class AnnounceServices extends Component {
@@ -23,7 +18,7 @@ export class AnnounceServices extends Component {
     };
 
     render() {
-        const { values, handleChange } = this.props;
+        // const { values, handleChange } = this.props;
         return(
             <div>
                 <Container fluid className="pt-4 blocForm" >  

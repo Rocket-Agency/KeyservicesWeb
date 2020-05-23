@@ -7,7 +7,7 @@ export class HomepageApp extends Component {
     render(){
         return (
             <div>Menu test
-                <MenuBottomApp/>
+                <MenuBottomApp/>         
             </div>
 
         )
