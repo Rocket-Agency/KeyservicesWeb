@@ -39,6 +39,8 @@ import ProfileTabs from './components/Pages/Dashboard';
 import Deconnexion from './components/Pages/Molecule/Deconnexion';
 import ConnexionConcierge from './components/AppKeyservicesGestion/ConnexionConcierge';
 import HomepageApp from './components/LayoutApp/HomepageApp';
+import MapApp from './components/LayoutApp/MapApp';
+import SettingsApp from './components/LayoutApp/SettingsApp';
 // import NotFound from './components/Pages/NotFound';
 
 //Connexion
@@ -69,6 +71,9 @@ function App() {
                   <Route path='/cgu' component={CGU} />
                   <Route path='/loginConcierge' component={ConnexionConcierge} />
                   <Route path='/homepageApp' component={HomepageApp} />
+                  <Route path='/mapApp' component={MapApp} />
+                  <Route path='/settingsApp' component={SettingsApp} />
+                  
                   {/* <Route component={NotFound} /> */}
                 </Switch>
 

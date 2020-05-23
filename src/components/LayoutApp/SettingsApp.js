@@ -2,21 +2,20 @@ import React, {Component} from 'react';
 import MenuBottomApp from './MenuBottomApp';
 import { Col, Container, Row, Form} from 'react-bootstrap';
 
-export class HomepageApp extends Component {
+export class SettingApp extends Component {
 
 
     render(){
         return (
             <div>
                 <Container>
-                    Accueil
+                    Settings
                      <MenuBottomApp/>     
                 </Container>
-                   
             </div>
 
         )
     }
 }
 
-export default HomepageApp;
+export default SettingApp;
