@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
@@ -6,7 +7,6 @@ import MapIcon from '@material-ui/icons/Map';
 import HomeIcon from '@material-ui/icons/Home';
 import SettingsIcon from '@material-ui/icons/Settings';
 import { Container } from 'react-bootstrap';
-import MapApp from './MapApp';
 
 const useStyles = makeStyles({
   root: {
@@ -32,9 +32,9 @@ export default function MenuBottomApp() {
           showLabels
           className={classes.root}
         >
-          <BottomNavigationAction label="Carte" selected icon={<MapIcon /> } />
-          <BottomNavigationAction label="Accueil" selected icon={<HomeIcon />} exact to="/homepageApp" />
-          <BottomNavigationAction label="Paramètres" selected icon={<SettingsIcon />} to="/settingsApp" />
+          <BottomNavigationAction label="Carte"  icon={<MapIcon />} component={Link} to="/mapApp"  />
+          <BottomNavigationAction label="Accueil"  icon={<HomeIcon />} component={Link} to="/homepageApp" />
+          <BottomNavigationAction label="Paramètres"  icon={<SettingsIcon />} component={Link} to="/settingsApp" />
         </BottomNavigation>
       </Container>
     </>

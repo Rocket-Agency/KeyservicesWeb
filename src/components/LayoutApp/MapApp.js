@@ -9,9 +9,8 @@ export class MapApp extends Component {
             <div>
                 <Container>
                     <Row className="d-flex justify-content-center">
-                        Map
+                        Carte
                     </Row>
-                    <MenuBottomApp/> 
                 </Container>
                    
             </div>

@@ -11,8 +11,7 @@ export class HomepageApp extends Component {
                 <Container>
                     <Row className="d-flex justify-content-center">
                         Accueil
-                    </Row>
-                     <MenuBottomApp/>   
+                    </Row> 
                 </Container>
                    
             </div>

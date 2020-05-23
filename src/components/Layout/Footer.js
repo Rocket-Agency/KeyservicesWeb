@@ -6,6 +6,7 @@ import ProgressiveImage from "react-progressive-graceful-image";
 import FacebookTiny from '../../ImagesPlaceholder/LocataireTiny.png';
 import InstagramTiny from '../../ImagesPlaceholder/ProprietaireTiny.png';
 import { Link, withRouter } from 'react-router-dom';
+import MenuBottomApp from '../LayoutApp/MenuBottomApp';
 
 
 export class Footer extends Component {
@@ -53,7 +54,7 @@ export class Footer extends Component {
                         </div>
                     </div>
                 </footer>
-                :null}
+                :<MenuBottomApp />}
             </div>
         )
     }

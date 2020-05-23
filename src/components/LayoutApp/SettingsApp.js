@@ -12,7 +12,6 @@ export class SettingApp extends Component {
                     <Row className="d-flex justify-content-center">
                         Settings   
                     </Row>
-                    <MenuBottomApp/>    
                 </Container>
             </div>
 
