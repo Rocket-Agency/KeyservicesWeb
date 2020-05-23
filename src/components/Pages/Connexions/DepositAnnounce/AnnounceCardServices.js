@@ -181,7 +181,7 @@ export default function AnnounceCardServices() {
                             </Col>
                             <Col md={4}>
                                 <Row className="d-flex justify-content-center align-items-center"> 
-                                    <div>54,90€ + 6,90 par m2</div>
+                                    <div>54,90€ + 6,90 tout les 15m2</div>
                                 </Row>
                             </Col>
                         </Row>
