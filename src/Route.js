@@ -30,26 +30,25 @@ import Deconnexion from './components/Pages/Molecule/Deconnexion';
 import ConnexionConcierge from './components/AppKeyservicesGestion/ConnexionConcierge';
 import NotFound from './components/Pages/NotFound';
 
-export default class Routing extends Component {
-
-    render(){
-        return(
-          <Switch>
-              <Route path='/' component={Home} exact />
-              <Route path='/presentation' component={KeyservicesPresentation} exact/>
-              <Route path='/contact' component={Contact} exact/>
-              <Route path='/validationContactForm' component={ValidationContactForm} exact/>
-              <Route path='/monEspace' component={MonEspace} exact/>
-              <Route path='/loginProprietaire' component={LoginProprietaire} exact/>
-              <Route path='/loginLocataire' component={LoginLocataire} exact/>
-              <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
-              <Route path='/forgetPassword' component={ForgetPassword} />
-              <Route path='/dashboard' component={ProfileTabs} />
-              <Route path='/deconnexion' component={Deconnexion} />
-              <Route path='/cgu' component={CGU} />
-              <Route path='/loginConcierge' component={ConnexionConcierge} />
-              <Route component={NotFound} />
-            </Switch>
-        )
-    }
+function Routing (){
+    return(
+        <Switch>
+            <Route path='/' component={Home} exact />
+            <Route path='/presentation' component={KeyservicesPresentation} exact/>
+            <Route path='/contact' component={Contact} exact/>
+            <Route path='/validationContactForm' component={ValidationContactForm} exact/>
+            <Route path='/monEspace' component={MonEspace} exact/>
+            <Route path='/loginProprietaire' component={LoginProprietaire} exact/>
+            <Route path='/loginLocataire' component={LoginLocataire} exact/>
+            <Route path='/inscriptionProprietaire' component={InscriptionProprietaire} />
+            <Route path='/forgetPassword' component={ForgetPassword} />
+            <Route path='/dashboard' component={ProfileTabs} />
+            <Route path='/deconnexion' component={Deconnexion} />
+            <Route path='/cgu' component={CGU} />
+            <Route path='/loginConcierge' component={ConnexionConcierge} />
+            <Route component={NotFound} />
+          </Switch>
+      )
 }
+
+export default Routing

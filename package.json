@@ -101,8 +101,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "ssr": "node server/index.js",
-    "sitemap" : "node src/sitemap-generator.js",
-    "launch" : "npm run sitemap && npm run build && npm run ssr"
+    "sitemap": "node src/sitemap-generator.js",
+    "launch": "npm run sitemap && npm run build && npm run ssr"
   },
   "eslintConfig": {
     "extends": "react-app"
