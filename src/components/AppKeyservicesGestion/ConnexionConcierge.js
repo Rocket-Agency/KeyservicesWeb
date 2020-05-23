@@ -110,7 +110,9 @@ class ConnexionConcierge extends Component {
                                 <div id="container">                    
                                     <Row>
                                         <button className="applicationConnexionButton" aria-label="Se connecter">
-                                            <span className="circle" aria-hidden="true"></span>
+                                            <span className="circle" aria-hidden="true">
+                                                <span className="icon arrow"></span>
+                                            </span>
                                             <span className="button-text">Se connecter</span>
                                         </button>
                                     </Row>       
