@@ -169,6 +169,25 @@ export class AnnounceHousing extends Component {
                             </Col>  
                         </Row> 
 
+                        <Row>
+                            <Col xs={12} md={6}>
+                                <Form.Row>
+                                    <Form.Group as={Row} controlId="formHorizontalEmail">
+                                        <Form.Label column sm={7} className="d-flex align-items-center label-info-annonce"> 
+                                            Superficie en m2 :
+                                        </Form.Label>
+                                        <Col sm={4}>
+                                            <Form.Control 
+                                                type="number" 
+                                                defaultValue={values.housing_nb_bathroom} 
+                                                onChange={handleChange('housing_nb_bathroom')}
+                                            />
+                                        </Col>
+                                </Form.Group>
+                                </Form.Row>
+                            </Col>  
+                        </Row> 
+
                         <Form.Row>
                             <Form.Group as={Col} controlId="TextareaObservation">
                                 <Form.Label className="label-info-annonce">Observation</Form.Label>

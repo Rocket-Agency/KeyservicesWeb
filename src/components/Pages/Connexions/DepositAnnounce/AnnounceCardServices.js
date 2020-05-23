@@ -7,7 +7,6 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Checkbox from '@material-ui/core/Checkbox';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-// Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
 
 export default function AnnounceCardServices() {
@@ -72,115 +71,138 @@ export default function AnnounceCardServices() {
                         </Row>
                     </Container>
 
-                            <Container className="pt-2 pb-2">
-                                <Row className="d-flex justify-content-center">
-                                    <Col md={8}>
-                                        <FormControlLabel
-                                            control={<Checkbox
-                                            value="3- Check-in/ Check-out"  
-                                            // defaultValue={values.equipment_kitchen} 
-                                            // onChange={handleChange('equipment_kitchen')} 
-                                            color="primary" />}
-                                            label="3- Check-in/ Check-out (Services optionnelle, service 'Remise des clés' compris)"
-                                        />
-                                    </Col>
-                                    <Col md={4} className="d-flex justify-content-center align-items-center">
-                                        <Form.Row> 
-                                            <div>29,90€</div>
-                                        </Form.Row>
-                                    </Col>
+                    <Container className="pt-2 pb-2">
+                        <Row className="d-flex justify-content-center">
+                            <Col md={8}>
+                                <FormControlLabel
+                                    control={<Checkbox
+                                    value="3- Check-in/ Check-out"  
+                                    // defaultValue={values.equipment_kitchen} 
+                                    // onChange={handleChange('equipment_kitchen')} 
+                                    color="primary" />}
+                                    label="3- Check-in/ Check-out (Services optionnelle, service 'Remise des clés' compris)"
+                                />
+                            </Col>
+                            <Col md={4} className="d-flex justify-content-center align-items-center">
+                                <Form.Row> 
+                                    <div>29,90€</div>
+                                </Form.Row>
+                            </Col>
+                        </Row>
+                    </Container>
+
+                    <Container className="pt-2 pb-2">
+                        <Row className="d-flex justify-content-center">
+                            <Col md={8}>
+                                <FormControlLabel
+                                    control={<Checkbox
+                                    value="4- Remplissage du frigo"  
+                                    // defaultValue={values.equipment_kitchen} 
+                                    // onChange={handleChange('equipment_kitchen')} 
+                                    color="primary" />}
+                                    label="4- Remplissage du frigo (Services optionnelle)"
+                                />
+                            </Col>
+
+                            <Col md={4} className="d-flex justify-content-center align-items-center">
+                                <Form.Row> 
+                                    <div>24,90€</div>
+                                </Form.Row>
+                            </Col>
+                        </Row>
+                    </Container>
+
+                    <Container>
+                        <Row className="pt-2 d-flex justify-content-center">
+                            <Col md={12}>
+                                <FormControlLabel
+                                    control={<Checkbox
+                                    value="4- Remplissage du frigo"  
+                                    // defaultValue={values.equipment_kitchen} 
+                                    // onChange={handleChange('equipment_kitchen')} 
+                                    color="primary" />}
+                                    label="5- Ménage (Services optionnelle)"
+                                />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={4} className="d-flex justify-content-center align-items-center">
+                                <Row> 
+                                    <div>Superficie de -25m2 = 24,90€</div>
                                 </Row>
-                            </Container>
-
-                            <Container className="pt-2 pb-2">
-                                <Row className="d-flex justify-content-center">
-                                    <Col md={8}>
-                                        <FormControlLabel
-                                            control={<Checkbox
-                                            value="4- Remplissage du frigo"  
-                                            // defaultValue={values.equipment_kitchen} 
-                                            // onChange={handleChange('equipment_kitchen')} 
-                                            color="primary" />}
-                                            label="4- Remplissage du frigo (Services optionnelle)"
-                                        />
-                                    </Col>
-
-                                    <Col md={4} className="d-flex justify-content-center align-items-center">
-                                        <Form.Row> 
-                                            <div>24,90€</div>
-                                        </Form.Row>
-                                    </Col>
+                                <Row> 
+                                    <div>Superficie de 26m2 à 49m2 = 24,90€</div>
                                 </Row>
-                            </Container>
-
-                            <Container>
-                                <Row className="pt-2 d-flex justify-content-center">
-                                    <Col md={12}>
-                                        <p className="serviceTitle">5- Ménage (Services optionnelle)</p>
-                                    </Col>
+                                <Row> 
+                                    <div>Superficie de 50m2 à 75m2</div>
                                 </Row>
-                            </Container>
-
-                            <Container>
-                                <Row className="d-flex justify-content-center">
-                                    <Col md={8} >
-                                        <RadioGroup col aria-label="position" name="position" defaultValue="top">
-                                             <FormControlLabel
-                                                value="- 25m2"
-                                                control={<Radio color="primary" />}
-                                                labelPlacement="end"
-                                                label="- 25m2"
-                                                // defaultValue={values.sexe} 
-                                                // onChange={handleChange('sexe')}
-                                            />  
-                                            <FormControlLabel
-                                                value="26m2 à 49m2"
-                                                control={<Radio color="primary" />}
-                                                labelPlacement="end"
-                                                label="26m2 à 49m2"
-                                                // defaultValue={values.sexe} 
-                                                // onChange={handleChange('sexe')}
-                                            />  
-                                            <FormControlLabel
-                                                value="50m2 à 75m2"
-                                                control={<Radio color="primary" />}
-                                                labelPlacement="end"
-                                                label="50m2 à 75m2"
-                                                // defaultValue={values.sexe} 
-                                                // onChange={handleChange('sexe')}
-                                            /> 
-                                            <FormControlLabel
-                                                value="75m2 et +"
-                                                control={<Radio color="primary" />}
-                                                labelPlacement="end"
-                                                label="75m2 et +"
-                                                // defaultValue={values.sexe} 
-                                                // onChange={handleChange('sexe')}
-                                            /> 
-                                        </RadioGroup>
-                                    </Col>
-
-                                    <Col md={4} className="d-flex justify-content-center align-items-center">
-                                    <ListGroup>
-                                        <ListGroup.Item className='priceStyle'>
-                                            24,90€
-                                        </ListGroup.Item>
-
-                                        <ListGroup.Item className='priceStyle'>
-                                            35,90€
-                                        </ListGroup.Item>
-
-                                        <ListGroup.Item className='priceStyle'>
-                                            54,90€
-                                        </ListGroup.Item>
-
-                                        <ListGroup.Item className='priceStyle'>
-                                            54,90€ + 6,90
-                                        </ListGroup.Item>
-                                    </ListGroup>
-                                    </Col>
+                                <Row> 
+                                    <div>Superficie de 75m2 et + </div>
                                 </Row>
-                            </Container>
+                            </Col>
+                        </Row>
+                    </Container>
+
+                    <Container>
+                         <Row className="d-flex justify-content-center">
+                            <Col md={8} >
+                                <RadioGroup col aria-label="position" name="position" defaultValue="top">
+                                    <FormControlLabel
+                                        value="- 25m2"
+                                        control={<Radio color="primary" />}
+                                        labelPlacement="end"
+                                        label="- 25m2"
+                                        // defaultValue={values.sexe} 
+                                        // onChange={handleChange('sexe')}
+                                    />  
+                                    <FormControlLabel
+                                        value="26m2 à 49m2"
+                                        control={<Radio color="primary" />}
+                                        labelPlacement="end"
+                                        label="26m2 à 49m2"
+                                        // defaultValue={values.sexe} 
+                                        // onChange={handleChange('sexe')}
+                                    />  
+                                    <FormControlLabel
+                                        value="50m2 à 75m2"
+                                        control={<Radio color="primary" />}
+                                        labelPlacement="end"
+                                        label="50m2 à 75m2"
+                                        // defaultValue={values.sexe} 
+                                        // onChange={handleChange('sexe')}
+                                    /> 
+                                    <FormControlLabel
+                                        value="75m2 et +"
+                                        control={<Radio color="primary" />}
+                                        labelPlacement="end"
+                                        label="75m2 et +"
+                                        // defaultValue={values.sexe} 
+                                        // onChange={handleChange('sexe')}
+                                    /> 
+                                </RadioGroup>
+                            </Col>
+
+                            <Col md={4} className="d-flex justify-content-center align-items-center">
+                                <ListGroup>
+                                    <ListGroup.Item className='priceStyle'>
+                                        24,90€
+                                    </ListGroup.Item>
+
+                                    <ListGroup.Item className='priceStyle'>
+                                        35,90€
+                                    </ListGroup.Item>
+
+                                    <ListGroup.Item className='priceStyle'>
+                                        54,90€
+                                    </ListGroup.Item>
+
+                                    <ListGroup.Item className='priceStyle'>
+                                        54,90€ + 6,90
+                                    </ListGroup.Item>
+                                </ListGroup>
+                            </Col>
+                        </Row>
+                    </Container>
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>
@@ -212,20 +234,20 @@ export default function AnnounceCardServices() {
                                         // onChange={handleChange('sexe')}
                                     />   
                                 </RadioGroup>
-                                        <p className="serviceTitleSerinity">+ Check-in/ Check-out</p>
-                                        <p className="serviceTitleSerinity">+ Ménage</p>
+                                     <p className="serviceTitleSerinity">+ Check-in/ Check-out</p>
+                                    <p className="serviceTitleSerinity">+ Ménage</p>
                              </Col>
-                                    <Col md={4} className="d-flex justify-content-center align-items-center">
-                                        <Form.Group controlId="Announce_ad_description">
-                                            <Form.Row> 
-                                                <div>25% à 35%/ séjours (en fonction du m2</div>
-                                            </Form.Row>
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                            </Container>
-                </AccordionItemPanel>
-            </AccordionItem>
+                            <Col md={4} className="d-flex justify-content-center align-items-center">
+                                <Form.Group controlId="Announce_ad_description">
+                                    <Form.Row> 
+                                        <div>25% à 35%/ séjours (en fonction du m2</div>
+                                    </Form.Row>
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                     </Container>
+                 </AccordionItemPanel>
+                </AccordionItem>
             </RadioGroup>
         </Accordion>
     );
