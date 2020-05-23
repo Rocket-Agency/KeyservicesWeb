@@ -18,11 +18,6 @@
     }
 }
 
-
-//Profile Propriétaire
-
-//Profile Locataire
-
 $bg: #f3f8fa;
 $color-text-btn:#000000;
 $colo-primaire: #49173B;
@@ -185,4 +180,12 @@ button {
     align-self: center;
     justify-self: center;
   }
+}
+
+
+.MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-adornedStart {
+    background: #ffffff;
+    padding: 5px;
+    width: 100%;
+    border-radius: 5%
 }

@@ -5,6 +5,12 @@ import { Col, Container, Row, Form} from 'react-bootstrap';
 import { withRouter, Link } from 'react-router-dom';
 import ProgressiveImage from "react-progressive-graceful-image";
 import LogoKeyservicesGestionTiny from '../../ImagesPlaceholder/LogoKeyservicesGestion.png';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Input from '@material-ui/core/Input';
+import PersonIcon from '@material-ui/icons/Person';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import LockIcon from '@material-ui/icons/Lock';
 
 class ConnexionConcierge extends Component {
     constructor(props) {
@@ -62,23 +68,37 @@ class ConnexionConcierge extends Component {
             </Col>      
             <Form.Row className="d-flex justify-content-center" >
                 <Form.Group as={Col} md="12" controlId="formGridId">
-                    <Form.Control 
-                    name="email" 
-                    type="email" 
-                    placeholder="Entrer votre email" 
-                    value={this.state.email} 
-                    onChange={this.handleChange} />
+                    <Input
+                        name="email" 
+                        type="email" 
+                        id="input-with-icon-adornment"
+                        placeholder="Entrer votre email" 
+                        startAdornment={
+                        <InputAdornment position="start">
+                            <PersonIcon />                           
+                         </InputAdornment>
+                        }
+                        value={this.state.email} 
+                        onChange={this.handleChange}
+                    />
                 </Form.Group>
             </Form.Row>
 
             <Form.Row className="d-flex justify-content-center">
                 <Form.Group as={Col} md="12" controlId="formGridPassword">
-                <Form.Control 
-                    name="password" 
-                    type="password" 
-                    placeholder="Entrer votre mot de passe" 
-                    value={this.state.password} 
-                    onChange={this.handleChange} />
+                    <Input
+                        name="password" 
+                        type="password" 
+                        id="input-with-icon-adornment"
+                        placeholder="Entrer votre mot de passe" 
+                        startAdornment={
+                        <InputAdornment position="start">
+                            <LockIcon />                           
+                        </InputAdornment>
+                        }
+                        value={this.state.password} 
+                        onChange={this.handleChange} 
+                    />
                 </Form.Group>
             </Form.Row>
 
