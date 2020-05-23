@@ -4,13 +4,14 @@ import { Col, Container, Row, Form} from 'react-bootstrap';
 
 export class MapApp extends Component {
 
-
     render(){
         return (
             <div>
                 <Container>
-                    Map
-                     <MenuBottomApp/>     
+                    <Row className="d-flex justify-content-center">
+                        Map
+                    </Row>
+                    <MenuBottomApp/> 
                 </Container>
                    
             </div>

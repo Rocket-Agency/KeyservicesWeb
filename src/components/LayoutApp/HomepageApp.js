@@ -9,8 +9,10 @@ export class HomepageApp extends Component {
         return (
             <div>
                 <Container>
-                    Accueil
-                     <MenuBottomApp/>     
+                    <Row className="d-flex justify-content-center">
+                        Accueil
+                    </Row>
+                     <MenuBottomApp/>   
                 </Container>
                    
             </div>

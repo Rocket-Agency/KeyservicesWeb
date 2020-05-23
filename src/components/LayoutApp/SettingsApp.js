@@ -8,9 +8,11 @@ export class SettingApp extends Component {
     render(){
         return (
             <div>
-                <Container>
-                    Settings
-                     <MenuBottomApp/>     
+                <Container fluid>
+                    <Row className="d-flex justify-content-center">
+                        Settings   
+                    </Row>
+                    <MenuBottomApp/>    
                 </Container>
             </div>
 
