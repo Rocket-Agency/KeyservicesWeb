@@ -6,10 +6,22 @@ class ListUsers extends Component {
     constructor(props){
         super(props);
 
+        this.state = {
+          usersCollection: [],
+        }
     }
     
     componentDidMount(){
-        
+      const config = {
+        headers: {
+          'x-access-token': this.props.token
+        }
+      }
+      axios.get(`http://localhost:3001/api/users/`, config)
+      .then(res => {
+        const usersCollection = res.data;
+        this.setState( { usersCollection } );
+      })
     }
 
     render(){
@@ -70,7 +82,7 @@ class ListUsers extends Component {
                               console.log(newData);
                               const config = {
                                 headers: {
-                                  'x-access-token': this.state.accessToken
+                                  'x-access-token': this.props.token
                                 }
                               }
                               axios.put("http://localhost:3001/api/user/update/" + newData.user_id ,
@@ -98,7 +110,7 @@ class ListUsers extends Component {
                               data.splice(index, 1);
                               const config = {
                                 headers: {
-                                  'x-access-token': this.state.accessToken
+                                  'x-access-token': this.props.token
                                 }
                               }
                               axios.delete("http://localhost:3001/api/user/delete/" + oldData.user_id , config) 
