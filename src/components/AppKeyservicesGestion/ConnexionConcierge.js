@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import '../../css/LoginApp.scss';
+import '../../css/ConnexionConcierge.scss';
 import axios from 'axios';
 import { Col, Container, Row, Form} from 'react-bootstrap';
-import { Visible, Hidden } from 'react-grid-system';
 import { withRouter, Link } from 'react-router-dom';
-import HomepageApp from '../LayoutApp/MenuBottomApp';
+import ProgressiveImage from "react-progressive-graceful-image";
+import LogoKeyservicesGestionTiny from '../../ImagesPlaceholder/LogoKeyservicesGestion.png';
 
 class ConnexionConcierge extends Component {
     constructor(props) {
@@ -52,9 +52,16 @@ class ConnexionConcierge extends Component {
     return (
       <div className="formConnexionApplication">
         <Form onSubmit={this.handleSubmit}>
+            <Col sm={12} className="d-flex justify-content-left mb-5">
+                 <ProgressiveImage  className="card-img-logo style-card" 
+                    src='./images/LogoKeyservicesGestion.png'
+                    placeholder={LogoKeyservicesGestionTiny} 
+                >
+                {src => <img src={src}  alt="Logo Keyservices"  />}
+                </ProgressiveImage>     
+            </Col>      
             <Form.Row className="d-flex justify-content-center" >
                 <Form.Group as={Col} md="12" controlId="formGridId">
-                    <Form.Label>Email</Form.Label>
                     <Form.Control 
                     name="email" 
                     type="email" 
@@ -66,7 +73,6 @@ class ConnexionConcierge extends Component {
 
             <Form.Row className="d-flex justify-content-center">
                 <Form.Group as={Col} md="12" controlId="formGridPassword">
-                <Form.Label>Mot de passe</Form.Label>
                 <Form.Control 
                     name="password" 
                     type="password" 
@@ -77,19 +83,19 @@ class ConnexionConcierge extends Component {
             </Form.Row>
 
             <Form.Row className="mt-4">
-                 <Form.Group as={Col} md="12" className="mt-4">
+                 <Form.Group as={Col} md="12">
                     <Container>
                         <Row>
                             <Col xs={12} className="d-flex justify-content-center align-items-center">                                
                                 <div id="container">                    
                                     <Row>
-                                        <button className="learn-more" aria-label="En savoir plus">
+                                        <button className="applicationConnexionButton" aria-label="Se connecter">
                                             <span className="circle" aria-hidden="true"></span>
                                             <span className="button-text">Se connecter</span>
                                         </button>
                                     </Row>       
                                     <Row className="d-flex justify-content-center align-items-center mt-3">
-                                        <Link  to="/forgetPassword">Mot de passe oublié</Link>   
+                                        <Link className="appForgetPassword" to="/forgetPassword">Mot de passe oublié</Link>   
                                     </Row>     
                                 </div>
                             </Col>
