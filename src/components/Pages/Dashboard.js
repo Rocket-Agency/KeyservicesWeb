@@ -1,4 +1,4 @@
-import React, {Component,  useState} from 'react';
+import React, {Component} from 'react';
 import '../../css/Dashboard.scss';
 
 import { BreadcrumbItem } from '../../index';
@@ -6,22 +6,13 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import axios from 'axios';
 import MaterialTable from 'material-table';
-import Img from 'react-cool-img';
 import { Col, Row, Container } from 'react-bootstrap';
-import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
 import AnnounceStepperForm from './Connexions/DepositAnnounce/AnnounceStepperForm';
 import DateFnsUtils from '@date-io/date-fns'; 
 import { KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
 import BasicDateTimePicker from './Schedule';
-import Alert from 'react-bootstrap/Alert';
-
-
 import ListUsers from './Molecule/ListUsers';
 import ListContacts from './Molecule/ListContacts';
 import MyProfil from './Molecule/MyProfil';
