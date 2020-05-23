@@ -30,9 +30,9 @@ import Deconnexion from './components/Pages/Molecule/Deconnexion';
 
 //Application
 import ConnexionConcierge from './components/AppKeyservicesGestion/ConnexionConcierge';
-import HomepageApp from './components/LayoutApp/HomepageApp';
-import MapApp from './components/LayoutApp/MapApp';
-import SettingsApp from './components/LayoutApp/SettingsApp';
+import HomepageApp from './components/AppKeyservicesGestion/LayoutApp/HomepageApp';
+import MapApp from './components/AppKeyservicesGestion/LayoutApp/MapApp';
+import SettingsApp from './components/AppKeyservicesGestion/LayoutApp/SettingsApp';
 
 import NotFound from './components/Pages/NotFound';
 
