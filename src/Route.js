@@ -27,7 +27,13 @@ import ProfileTabs from './components/Pages/Dashboard';
 
 //Deconnexion
 import Deconnexion from './components/Pages/Molecule/Deconnexion';
+
+//Application
 import ConnexionConcierge from './components/AppKeyservicesGestion/ConnexionConcierge';
+import HomepageApp from './components/LayoutApp/HomepageApp';
+import MapApp from './components/LayoutApp/MapApp';
+import SettingsApp from './components/LayoutApp/SettingsApp';
+
 import NotFound from './components/Pages/NotFound';
 
 function Routing (){
@@ -46,6 +52,10 @@ function Routing (){
             <Route path='/deconnexion' component={Deconnexion} />
             <Route path='/cgu' component={CGU} />
             <Route path='/loginConcierge' component={ConnexionConcierge} />
+            <Route path='/homepageApp' component={HomepageApp} />
+            <Route path='/mapApp' component={MapApp} />
+            <Route path='/settingsApp' component={SettingsApp} />
+
             <Route component={NotFound} />
           </Switch>
       )

@@ -2,22 +2,21 @@ import React, {Component} from 'react';
 import MenuBottomApp from './MenuBottomApp';
 import { Col, Container, Row, Form} from 'react-bootstrap';
 
-export class HomepageApp extends Component {
+export class SettingApp extends Component {
 
 
     render(){
         return (
             <div>
-                <Container>
+                <Container fluid>
                     <Row className="d-flex justify-content-center">
-                        Accueil
-                    </Row> 
+                        Settings   
+                    </Row>
                 </Container>
-                   
             </div>
 
         )
     }
 }
 
-export default HomepageApp;
+export default SettingApp;

@@ -8,8 +8,6 @@ import LogoKeyservicesGestionTiny from '../../ImagesPlaceholder/LogoKeyservicesG
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Input from '@material-ui/core/Input';
 import PersonIcon from '@material-ui/icons/Person';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import LockIcon from '@material-ui/icons/Lock';
 
 class ConnexionConcierge extends Component {
@@ -47,7 +45,7 @@ class ConnexionConcierge extends Component {
             config
           )
           .then(response => {
-            this.props.history.push('/dashboard', {user: response.data});
+            this.props.history.push('/homepageApp', {user: response.data});
           })
           .catch(error => {
           });
