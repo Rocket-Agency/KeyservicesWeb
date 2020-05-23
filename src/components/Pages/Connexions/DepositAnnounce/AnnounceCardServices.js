@@ -112,7 +112,7 @@ export default function AnnounceCardServices() {
                         </Row>
                     </Container>
 
-                    <Container>
+                    <Container className="pt-2 pb-2">
                         <Row className="pt-2 d-flex justify-content-center">
                             <Col md={12}>
                                 <FormControlLabel
@@ -125,81 +125,64 @@ export default function AnnounceCardServices() {
                                 />
                             </Col>
                         </Row>
-                        <Row>
-                            <Col md={4} className="d-flex justify-content-center align-items-center">
+                    </Container>
+
+                    <Container className="pt-2 pb-2">
+                        <Row >
+                            <Col md={8}>
                                 <Row> 
-                                    <div>Superficie de -25m2 = 24,90€</div>
+                                    <div>Superficie de -25m2 </div>
                                 </Row>
-                                <Row> 
-                                    <div>Superficie de 26m2 à 49m2 = 24,90€</div>
-                                </Row>
-                                <Row> 
-                                    <div>Superficie de 50m2 à 75m2</div>
-                                </Row>
-                                <Row> 
-                                    <div>Superficie de 75m2 et + </div>
+                            </Col>
+                            <Col md={4}>
+                                <Row className="d-flex justify-content-center align-items-center"> 
+                                    <div> = 24,90€</div>
                                 </Row>
                             </Col>
                         </Row>
                     </Container>
 
-                    <Container>
-                         <Row className="d-flex justify-content-center">
-                            <Col md={8} >
-                                <RadioGroup col aria-label="position" name="position" defaultValue="top">
-                                    <FormControlLabel
-                                        value="- 25m2"
-                                        control={<Radio color="primary" />}
-                                        labelPlacement="end"
-                                        label="- 25m2"
-                                        // defaultValue={values.sexe} 
-                                        // onChange={handleChange('sexe')}
-                                    />  
-                                    <FormControlLabel
-                                        value="26m2 à 49m2"
-                                        control={<Radio color="primary" />}
-                                        labelPlacement="end"
-                                        label="26m2 à 49m2"
-                                        // defaultValue={values.sexe} 
-                                        // onChange={handleChange('sexe')}
-                                    />  
-                                    <FormControlLabel
-                                        value="50m2 à 75m2"
-                                        control={<Radio color="primary" />}
-                                        labelPlacement="end"
-                                        label="50m2 à 75m2"
-                                        // defaultValue={values.sexe} 
-                                        // onChange={handleChange('sexe')}
-                                    /> 
-                                    <FormControlLabel
-                                        value="75m2 et +"
-                                        control={<Radio color="primary" />}
-                                        labelPlacement="end"
-                                        label="75m2 et +"
-                                        // defaultValue={values.sexe} 
-                                        // onChange={handleChange('sexe')}
-                                    /> 
-                                </RadioGroup>
+                    <Container className="pt-2 pb-2">
+                        <Row >
+                            <Col md={8}>
+                                <Row> 
+                                    <div>Superficie de 26m2 à 49m2</div>
+                                </Row>
                             </Col>
+                            <Col md={4}>
+                                <Row className="d-flex justify-content-center align-items-center"> 
+                                    <div>35,90€</div>
+                                </Row>
+                            </Col>
+                        </Row>
+                    </Container>
 
-                            <Col md={4} className="d-flex justify-content-center align-items-center">
-                                <ListGroup>
-                                    <ListGroup.Item className='priceStyle'>
-                                        24,90€
-                                    </ListGroup.Item>
+                    <Container className="pt-2 pb-2">
+                        <Row >
+                            <Col md={8}>
+                                <Row> 
+                                    <div>Superficie de 50m2 à 75m2</div>
+                                </Row>
+                            </Col>
+                            <Col md={4}>
+                                <Row className="d-flex justify-content-center align-items-center"> 
+                                    <div>54,90€</div>
+                                </Row>
+                            </Col>
+                        </Row>
+                    </Container>
 
-                                    <ListGroup.Item className='priceStyle'>
-                                        35,90€
-                                    </ListGroup.Item>
-
-                                    <ListGroup.Item className='priceStyle'>
-                                        54,90€
-                                    </ListGroup.Item>
-
-                                    <ListGroup.Item className='priceStyle'>
-                                        54,90€ + 6,90
-                                    </ListGroup.Item>
-                                </ListGroup>
+                    <Container className="pt-2 pb-2">
+                        <Row >
+                            <Col md={8}>
+                                <Row> 
+                                    <div>Superficie de 50m2 à 75m2</div>
+                                </Row>
+                            </Col>
+                            <Col md={4}>
+                                <Row className="d-flex justify-content-center align-items-center"> 
+                                    <div>54,90€ + 6,90 par m2</div>
+                                </Row>
                             </Col>
                         </Row>
                     </Container>
@@ -224,18 +207,21 @@ export default function AnnounceCardServices() {
                     <Container>
                         <Row className="pt-2 pb-2 d-flex justify-content-center">
                             <Col md={8}>
-                                <RadioGroup row aria-label="position" name="position" defaultValue="top">
-                                    <FormControlLabel
-                                        value="- 25m2"
-                                        control={<Radio color="primary" />}
-                                        labelPlacement="end"
-                                        label="Mise en ligne de l'annonce"
-                                        // defaultValue={values.sexe} 
-                                        // onChange={handleChange('sexe')}
-                                    />   
-                                </RadioGroup>
-                                     <p className="serviceTitleSerinity">+ Check-in/ Check-out</p>
-                                    <p className="serviceTitleSerinity">+ Ménage</p>
+                                <Container className="pt-2 pb-2">
+                                    <Row >
+                                        <Col md={12}>
+                                            <Row> 
+                                                <div>Mise en ligne de l'annonce</div>
+                                            </Row>
+                                            <Row> 
+                                                <div>+ Check-in/ Check-out</div>
+                                            </Row>
+                                            <Row> 
+                                                <div>+ Ménage</div>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </Container>
                              </Col>
                             <Col md={4} className="d-flex justify-content-center align-items-center">
                                 <Form.Group controlId="Announce_ad_description">
