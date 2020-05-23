@@ -13,7 +13,7 @@ export class Footer extends Component {
         return (
         
             <div>
-                {this.props.location.pathname !== '/loginConcierge' ?
+                {this.props.location.pathname !== '/loginConcierge' && this.props.location.pathname !== '/homepageApp'?
                 <footer className="footer">
                 <div className="bottom"></div>
                     <div className="container-fluid">

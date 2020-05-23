@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MenuBottomApp from './LayoutApp/MenuBottomApp';
+import MenuBottomApp from './MenuBottomApp';
 
 export class HomepageApp extends Component {
 

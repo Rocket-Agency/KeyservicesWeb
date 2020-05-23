@@ -15,7 +15,7 @@ export class Header extends Component {
         return(
             <div style={{ zIndex: 9999, position: 'relative'}}>
                 
-                {this.props.location.pathname !== '/loginConcierge' ?
+                {this.props.location.pathname !== '/loginConcierge' && this.props.location.pathname !== '/homepageApp' ?
                 <Sticky>
                 <div className="top"></div>
                 <Navbar bg="white" collapseOnSelect expand="md" variant="light" sticky="top">
@@ -52,7 +52,7 @@ export class Header extends Component {
                     </Navbar.Collapse>
                 </Navbar>
                 </Sticky>
-                :null}
+               :null}
             </div>
             )
         }

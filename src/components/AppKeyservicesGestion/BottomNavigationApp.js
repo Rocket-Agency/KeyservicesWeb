@@ -12,7 +12,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SimpleBottomNavigation() {
+export default function BottomNavigationApp() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 

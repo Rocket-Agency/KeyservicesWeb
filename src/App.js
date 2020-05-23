@@ -38,6 +38,7 @@ import ProfileTabs from './components/Pages/Dashboard';
 //Deconnexion
 import Deconnexion from './components/Pages/Molecule/Deconnexion';
 import ConnexionConcierge from './components/AppKeyservicesGestion/ConnexionConcierge';
+import HomepageApp from './components/LayoutApp/HomepageApp';
 
 //Connexion
 // import ConnexionC from './components/Mobile/ConnexionConcierge'
@@ -86,6 +87,7 @@ function App() {
                   <Route path='/deconnexion' component={Deconnexion} />
                   <Route path='/cgu' component={CGU} />
                   <Route path='/loginConcierge' component={ConnexionConcierge} />
+                  <Route path='/homepageApp' component={HomepageApp} />
                   <Route component={NotFound} />
                 </Switch>
 
