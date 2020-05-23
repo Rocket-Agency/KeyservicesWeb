@@ -50,6 +50,7 @@ constructor(props) {
       this.token = this.props.location.state.user.accessToken;
       this.group = this.props.location.state.user.groups;
     }
+    this.forceUpdate();
   }
 
   handleChange = (_, activeIndex) => this.setState({ activeIndex })
