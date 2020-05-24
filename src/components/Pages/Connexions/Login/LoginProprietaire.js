@@ -64,7 +64,7 @@ export class LoginProprietaire extends Component {
                     </Row>
                 </Container>
 
-                <Visible xs>
+                <Visible xs sm>
                     <Container fluid>
                         <Col md={6}>
                             <Row className="mt-2 mb-3 BlocExplicationPropriétaireMobile d-flex justify-content-center align-items-center">
