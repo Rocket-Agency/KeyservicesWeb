@@ -77,32 +77,22 @@ export class Home extends Component {
                             >
                                 {src => <img src={src}  alt="Gérer mes locations"  />}
                             </ProgressiveImage>  
+                            
                             <Carousel.Caption>
-                            <h3 className="title-carousel">Gérer mes locations</h3>
-                                <p className="para-carousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
-                                        Gérer mes location
-                                    </button>
-                            </Carousel.Caption>
-                        </Carousel.Item>
+                            <Container>
+                                <Row className="d-flex text-center justify-content-center align-items-center">
+                                    <Col lg={6} md={8} sm={12} className="mt-4" >
+                                    <div className="bloc-carousel">
+                                        <h3 className="title-carousel">Gérer mes locations</h3>
+                                            <p className="para-carousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
+                                                    Gérer mes location
+                                                </button>
+                                    </div>
 
-                        <Carousel.Item>
-                            <ProgressiveImage  className="card-img style-card" 
-                                src="./images/GererMesLocations.png"
-                                placeholder={GererMesLocationsTiny} 
-                            >
-                                {src => <img src={src}  alt="Gérer mes locations"  />}
-                            </ProgressiveImage>  
-                            <Carousel.Caption>
-                            <Row className="d-flex text-center justify-content-center">
-                                <Col md={6} className="blocCarousel col-lg-6 col-md-6 col-12">
-                                <h3 className="title-carousel-test">Gérer mes locations</h3>
-                                    <p className="para-carousel-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
-                                            Gérer mes location
-                                        </button>
-                                </Col>
-                            </Row>
+                                    </Col>
+                                </Row>
+                            </Container>
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
