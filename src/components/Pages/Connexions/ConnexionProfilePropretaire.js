@@ -81,57 +81,30 @@ class ConnexionProfileProprietaire extends Component {
                     </Form.Group>
                 </Form.Row>
 
-                <Form.Row className="mt-4">
+                <Form.Row>
                     <Form.Group as={Col} md="12" className="mt-4">
                         <Container>
-
-                            <Row>
-                                <Col xs={12} lg={6} className="d-flex justify-content-center align-items-center">
-                                    <Hidden xs>
-                                        <div className="d-flex justify-content-center align-items-center">
-                                            <div id="container">                    
-                                                <button className="learn-more" aria-label="En savoir plus">
-                                                    <span className="circle" aria-hidden="true">
-                                                        <span className="icon arrow"></span>
-                                                            </span>
-                                                        <span className="button-text">Se connecter</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                    </Hidden>
-                                    <Visible xs>
-                                        <div className="mt-2 d-flex justify-content-center align-items-center">
-                                            <div id="container">                    
-                                                <button className="learn-more" aria-label="En savoir plus">
-                                                    <span className="circle" aria-hidden="true">
-                                                        <span className="icon arrow"></span>
-                                                    </span>
-                                                    <span className="button-text">Se connecter</span>
-                                                </button>
-                                            </div>
+                            <Row className="d-flex justify-content-center align-items-center">
+                                <Col xs={12} lg={6}>
+                                    <div className="d-flex justify-content-center align-items-center">
+                                        <div id="container">                    
+                                            <button className="learn-more" aria-label="En savoir plus">
+                                                <span className="circle" aria-hidden="true">
+                                                    <span className="icon arrow"></span>
+                                                 </span>
+                                                <span className="button-text">Se connecter</span>
+                                            </button>
+                                        </div>
                                     </div>
-                                    </Visible>
-                                </Col>
-
-                                <Col xs={12} lg={6} className="mt-2 d-flex justify-content-center align-items-center">
-                                    <Link to="/inscriptionProprietaire">
-                                        <button className="signin" aria-label="S'inscrire">
-                                             <span className="circle-signin" aria-hidden="true">
-                                                <span className="icon arrow"></span>
-                                            </span>
-                                            <span className="button-text-signin"> S'inscrire</span>
-                                        </button>
-                                    </Link>                                                        
                                 </Col>
                             </Row>
+
                             <Row className="mt-3"> 
                                 <Col md={12} lg={12} className="d-flex justify-content-center align-items-cente">
-                                    <Link  to="/forgetPassword">Mot de passe oublié</Link>   
+                                    <Link to="/forgetPassword">Mot de passe oublié</Link>   
                                 </Col>
                             </Row>
                         </Container>
-
-
                     </Form.Group>
                 </Form.Row>
             </Form>

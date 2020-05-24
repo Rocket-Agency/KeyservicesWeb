@@ -2,8 +2,18 @@
     font-size: 40px;
 }
 
+.MuiSvgIcon-root.Map_App:active {
+    background: #49173B;
+    color: #fff;
+}
+
 .MuiSvgIcon-root.Homepage_App {
     font-size: 40px;
+}
+
+.Homepage_App:focus {
+    background: #49173B;
+    color: #fff;
 }
 
 .MuiSvgIcon-root.Settings_App {
@@ -11,7 +21,7 @@
 }
 
 
-.MuiButtonBase-root.MuiBottomNavigationAction-root.makeStyles-bottomNavigationAction-14.Mui-selected {
-    color: white;
-    background: #49173B,
-}
+// .MuiButtonBase-root.MuiBottomNavigationAction-root.makeStyles-bottomNavigationAction-14.Mui-selected {
+//     color: white;
+//     background: #49173B,
+// }

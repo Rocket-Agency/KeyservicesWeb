@@ -18,6 +18,12 @@
     padding: 11px;
 }
 
+#BlocExplicationPropriétaire {
+    background: #FAF0E6;
+    margin: 40px 0;
+    padding: 11px;
+}
+
 .text-connection {
     display: block;
     padding: 25px;
@@ -30,8 +36,9 @@
     #Locataire {
         display: none;
     }
-    #Propriétaire, .text-connection {
-        display: none;
+
+    #BlocExplicationPropriétaire {
+        display: block;
     }
  }
 
@@ -39,9 +46,11 @@
     #Locataire {
         display: none;
     }
-    #Propriétaire, .text-connection {
-        display: none;
+    
+    #BlocExplicationPropriétaire {
+        display: block
     }
+
     .BlocConnexion {
         background: #FAF0E6;
         margin: 95px 0;

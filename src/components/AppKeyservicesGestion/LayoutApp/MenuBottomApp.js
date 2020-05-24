@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     border: '1px solid black',
     color: '#49173B',
     "&:hover": {
-      background: 'transparent',
+      background: '#49173B',
       color: '#fff',
     },
     "&:active": {
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     "&:focus": {
       background: '#49173B',
       color: '#fff',
-    }
+    },
   },
 });
 
@@ -52,7 +52,7 @@ export default function MenuBottomApp() {
             className={classes.root}
           >
             <BottomNavigationAction className={classes.bottomNavigationAction} fontSize="large" label="Carte"  value="/mapApp"  icon={<MapIcon className="Map_App" />} component={Link} to="/mapApp"  />
-            <BottomNavigationAction active className={classes.bottomNavigationAction} fontSize="large" label="Accueil"  value="/homepageApp" icon={<HomeIcon className="Homepage_App"/>} component={Link} to="/homepageApp" />
+            <BottomNavigationAction className={classes.bottomNavigationAction} fontSize="large" label="Accueil"  value="/homepageApp" icon={<HomeIcon className="Homepage_App"/>} component={Link} to="/homepageApp" />
             <BottomNavigationAction className={classes.bottomNavigationAction} fontSize="large" label="Paramètres" valut="/settingApp"  icon={<SettingsIcon className="Settings_App"/>} component={Link} to="/settingsApp" />
           </BottomNavigation>
         </Row>
