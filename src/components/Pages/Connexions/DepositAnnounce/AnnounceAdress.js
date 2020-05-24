@@ -4,6 +4,8 @@ import '../../../../css/Announce.scss';
 import { Col, Container, Row, Form } from 'react-bootstrap';
 import TextField from '@material-ui/core/TextField';
 import { Button } from 'reactstrap';
+import { Formik, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
 export class AnnounceAddresss extends Component {
   continue = e => {
@@ -15,7 +17,8 @@ render() {
     const { values, handleChange } = this.props;
     return(
         <div>
-            <Container fluid className="pt-4 blocForm" >  
+            <Container fluid className="pt-4 blocForm" >
+            
                 <Row>
                     <Col sm>
                         <h2 className="title-form-Announce title-form-Announce-active">1 - Votre addresse</h2>
@@ -42,27 +45,55 @@ render() {
                         <h2 className="title-form-Announce ">8 - Paiement</h2>
                     </Col>
                 </Row>
+                <Formik
+                    initialValues={{
+                        address_road_number: '',
+                        address_road_type: '',
+                        address_road_name: '',
+                        address_state: '',
+                        address_city: '',
+                        address_zip_code: ''
+                    }}
+                        
+                    validationSchema={Yup.object().shape({
+                        address_road_number: Yup.number()
+                            .required('Veuillez indiquer votre numéro de rue')
+                            .moreThan(0, 'Numéro de rue invalide')
+                            .typeError('Vous devez renseigner un numéro de rue'),
+                        address_road_type: Yup.string()
+                            .notOneOf(['Rue', null], 'ntm')
+                            .required('Veuillez indiquer votre type de rue'),
+                        address_road_name: Yup.string()
+                            .required('Veuillez indiquer votre adresse'),
+                        address_state: Yup.string()
+                            .required('Veuillez indiquer votre région'),
+                        address_zip_code: Yup.number()
+                            .required('Veuillez entrer votre code postal')
+                            .integer('Code postal invalide')
+                            .moreThan(9999)
+                            .lessThan(100000),
+                         address_city: Yup.string()
+                            .required('Veuillez entrer votre ville')
+                    })}
 
+                    onSubmit={fields => {
+                        alert('SUCCES!! :-)\n\n' + JSON.stringify(fields, null, 4))
+                    }}
+            
+                    render={({ errors, status, touched, setFieldValue }) => (
+                        <Form>
                 <Container fluid className="pt-4 blocForm" >  
                     <h2> Adresse de votre logement</h2>
 
                     <Container fluid>
                         <Row>
                             <Col xs={12} md={12} className="mt-3">
+                                
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={2}>Numéro de rue</Form.Label>
                                     <Col sm={1}>
-                                        <TextField
-                                            required id="standard-required"
-                                            name="address_road_number"
-                                            variant="outlined"
-                                            pattern="[A-Za-z]{3}"
-                                            fullWidth
-                                            type="number"
-                                            size="small"
-                                            defaultValue={values.address_road_number} 
-                                            onChange={handleChange('address_road_number')}
-                                        />   
+                                        <Field name="address_road_number" type="text" className={'form-control' + (errors.address_road_number && touched.address_road_number ? ' is-invalid' : '')} />
+                                        <ErrorMessage name="address_road_number" component="div" className="invalid-feedback" />
                                     </Col>
                                 </Form.Row>     
                             </Col>
@@ -71,12 +102,12 @@ render() {
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={4}>Type de rue</Form.Label>
                                     <Form.Group controlId="exampleForm.ControlSelect1">
-                                    <Form.Control as="select"  onChange={handleChange('address_road_type')}defaultValue={values.address_road_type}  >
-                                        <option>Choisir un type de rue</option>
+                                    <Form.Control as="select" name="address_road_type" className={'form-control' + (errors.address_road_type && touched.address_road_type ? ' is-invalid' : '')} onChange={handleChange('address_road_type')}defaultValue={values.address_road_type}  >
                                         <option>Rue</option>
                                         <option>Allée</option>
                                         <option>Boulevard</option>
                                     </Form.Control>
+                                    <ErrorMessage name="address_road_type" component="div" className="invalid-feedback" />
                                     </Form.Group>
                                 </Form.Row>  
                             </Col>
@@ -88,15 +119,19 @@ render() {
                                 <Form.Label className="label-info-annonce" column sm={12}>Nom de rue</Form.Label>
                                     <Col sm={12}>
                                         <TextField
-                                            type="text" 
+                                            name="address_road_name"
+                                            className={'form-control'}
+                                            type="text"
                                             pattern="[A-Za-z]{3}"
                                             required id="standard-required"
                                             variant="outlined"
                                             fullWidth
                                             size="small"
                                             onChange={handleChange('address_road_name')}
-                                            defaultValue={values.address_road_name} 
+                                            defaultValue={values.address_road_name}
+                                            helperText={(errors.address_road_name && touched.address_road_name) && errors.address_road_name}
                                         />
+                                        <ErrorMessage name="address_road_name" component="div" className="invalid-feedback" />
                                     </Col>
                                 </Form.Row>     
                             </Col>
@@ -185,6 +220,9 @@ render() {
                         </Row>
                     </Container>
                 </Container>
+                                            </Form>
+                                        )}
+                                    />
             </Container>
         </div>
     )
