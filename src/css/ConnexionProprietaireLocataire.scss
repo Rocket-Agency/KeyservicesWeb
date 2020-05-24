@@ -47,10 +47,6 @@
         display: none;
     }
     
-    #BlocExplicationPropriétaire {
-        display: block
-    }
-
     .BlocConnexion {
         background: #FAF0E6;
         margin: 95px 0;
@@ -62,6 +58,7 @@
         margin: 43px 0;
         padding: 50px 0;
     }
+    
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {  
@@ -102,7 +99,7 @@
 }
 
 @media (max-width: 768px) {
-    .Vertical-lign-connexion,  .text-connection   {
+    .Vertical-lign-connexion   {
         display: none;
     }
 }
@@ -146,3 +143,16 @@
     color: black;
     width: 147px;
 }
+
+
+#BlocExplicationPropriétaire {
+    margin: 40px 0;
+    padding: 11px;
+  }
+
+  @media (max-width:766px){
+    #BlocExplicationPropriétaire {
+        display: b;
+    }
+  }
+
