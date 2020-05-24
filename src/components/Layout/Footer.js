@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Col } from 'react-bootstrap';
 import '../../css/Footer.scss';
-
 import ProgressiveImage from "react-progressive-graceful-image";
 import FacebookTiny from '../../ImagesPlaceholder/FacebookTiny.png';
 import InstagramTiny from '../../ImagesPlaceholder/InstagramTiny.png';
