@@ -3,8 +3,8 @@ import { Col } from 'react-bootstrap';
 import '../../css/Footer.scss';
 
 import ProgressiveImage from "react-progressive-graceful-image";
-import FacebookTiny from '../../ImagesPlaceholder/LocataireTiny.png';
-import InstagramTiny from '../../ImagesPlaceholder/ProprietaireTiny.png';
+import FacebookTiny from '../../ImagesPlaceholder/FacebookTiny.png';
+import InstagramTiny from '../../ImagesPlaceholder/InstagramTiny.png';
 import { Link, withRouter } from 'react-router-dom';
 import MenuBottomApp from '../LayoutApp/MenuBottomApp';
 
