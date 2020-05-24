@@ -5,8 +5,108 @@
     padding: 30px 52px;
 }
 
-.carousel-caption {
-    margin-bottom: 20px;
+// .carousel-caption {
+//     margin-bottom: 120px;
+//     background: #fff;
+//     opacity: 0.9;
+// }
+
+// @media (max-width: 576px) {
+//     .carousel-caption {
+//         top: -33%;
+//     }
+// }
+
+.bloc-carousel {
+    background: #fff;
+    opacity: 0.9;
+    padding: 20px;
+    margin-bottom: 200px;
+    border: 2px solid #49173B;
+}
+
+@media (min-width: 1024px) {
+    .bloc-carousel {
+        background: #fff;
+        opacity: 0.9;
+        padding: 20px;
+        margin-bottom: 200px;
+        border: 2px solid #49173B;
+  }
+}
+
+@media (max-width: 991px) {
+    .bloc-carousel {
+        background: #fff;
+        opacity: 0.9;
+        padding: 20px;
+        margin-bottom: 0;
+        border: 2px solid #49173B;
+  }
+}
+
+@media (max-width: 576px) {
+    .bloc-carousel {
+        background: transparent;
+        opacity: 0.9;
+        padding: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 375px) {
+    .colorBackground {
+        padding: 20px;
+    }
+
+    .btn-home {
+        width: 250px;
+    }
+
+    .carousel {
+        display: none;
+    }
+
+    .bloc-carousel {
+        display: none;
+    }
+}
+
+.title-carousel, .para-carousel {
+    color: #000000;
+}
+
+.title-carousel-test, .para-carousel-test {
+    color: #000000;
+    background: white;
+    opacity: 0.9;
+}
+
+.blocCarousel {
+    border: 2px solid #49173B;
+    margin-bottom: 230px;
+    padding: 30px;
+    opacity: 0.9;
+    background: #ffffff;
+}
+
+@media (max-width: 576px) {
+    .blocCarousel {
+        border: 2px solid #49173B;
+        margin-bottom: 0;
+        padding: 30px;
+        opacity: 0.9;
+        background: #ffffff;
+    }
+
+    .title-carousel {
+        background: white;
+        opacity: 0.9;
+    }
+
+    .para-carousel, .para-carousel-test {
+        display: none;
+    }
 }
 
 ul.thumbs.animated {display: none;}
@@ -46,13 +146,19 @@ ul.control-dots {display: none;}
     background: #fff;
     border: 4px solid #87E990;
     color: #000;
-    width: 300px;
+    width: 250px;
     height: 60px;
 }
 
 .btn-home:hover {
     background: #87E990;
     color: #000000;
+}
+
+@media (max-width: 375px) {
+.btn-home {
+        width: 250px;
+    }
 }
 
 .btn-success {
@@ -98,6 +204,8 @@ ul.control-dots {display: none;}
         padding: 0;
     }
 
+
+    
     .text-home {
         padding: 10px 20px;
     }
@@ -115,9 +223,9 @@ ul.control-dots {display: none;}
   }
 
   @media (max-width: 768px) {
-    .colorBackground  {
+    .colorBackground {
         margin: 0;
-        padding: 0;
+        padding: 20px;
     }
   }
 
