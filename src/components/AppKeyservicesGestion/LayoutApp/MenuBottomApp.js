@@ -18,10 +18,17 @@ const useStyles = makeStyles({
   },
 });
 
+const styleBottomNavigation = makeStyles ({
+  MuiSvgIcon : {
+    fontSize: '40',
+  }
+})
+
 export default function MenuBottomApp() {
   const pathname = window.location.pathname;
   const [value, setValue] = React.useState(pathname);
   const classes = useStyles();
+  const classesNavigation = useStyles();
   
   return (
     <>
@@ -32,10 +39,22 @@ export default function MenuBottomApp() {
             }}
             showLabels
             className={classes.root}
+            className={classesNavigation.styleBottomNavigation}
           >
-            <BottomNavigationAction  label="Carte" value="/mapApp"  icon={<MapIcon className="map" />} to="/mapApp"  />
-            <BottomNavigationAction fontSize="large" label="Accueil"  value="/homepageApp" icon={<HomeIcon />} component={Link} to="/homepageApp"  className={classes.root} />
-            <BottomNavigationAction className="Settings"label="Paramètres" valut="/settingApp" icon={<SettingsIcon  style={{ fontSize: 40 }} />}  to="/settingsApp" />
+            <BottomNavigationAction  
+              className="Settings" 
+              fontSize="large" 
+              label="Carte"      
+              value="/mapApp"      
+              icon={<MapIcon />} 
+              to="/mapApp"  
+              value={value}  
+              onChange={(event, newValue) => {
+                setValue(newValue);
+              }}
+            />
+            <BottomNavigationAction  className="Settings" fontSize="large" label="Accueil"    value="/homepageApp" icon={<HomeIcon />} component={Link} to="/homepageApp" />
+            <BottomNavigationAction  className="Settings" fontSize="large" label="Paramètres" valut="/settingApp"  icon={<SettingsIcon />}  to="/settingsApp" />
           </BottomNavigation>
         </Row>
 

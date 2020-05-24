@@ -47,11 +47,11 @@ export class AnnouncePayment extends Component {
                             <h2 className="title-form-Announce title-form-Announce-active">8 - Paiement</h2>
                         </Col>
                     </Row>
-                    <h2>Paiement</h2>
   
                     <Container fluid>
                 
-                        Paiement
+                        <h2>Paiement</h2>
+                        
                     </Container>
 
                     <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 

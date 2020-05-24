@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../../css/HeaderApp.scss';
 import '../../../css/LogoutApp.scss';
 import { makeStyles } from '@material-ui/core/styles';
 import { Col, Container, Row } from 'react-bootstrap';
@@ -40,19 +41,19 @@ export default function HomepageApp() {
                 </Col>
 
                 <Col  className="d-flex align-items-center" >
-                    <NavLink className="userProfilInfo" to="/profilUserConcierge">
-                        <AccountCircleIcon  style={{ fontSize: 40 }} name='InfoUser' />
-                        <br/>
+                    <div className="userProfilInfo">
+                    <AccountCircleIcon  style={{ fontSize: 40 }} name='InfoUser' />
+                        <br />
                         <Row className="d-flex justify-content-center" >
                              Nom
                         </Row>
                         <Row className="d-flex justify-content-center" >
                              Prénom
                         </Row>
-                    </NavLink>
+                    </div>
                 </Col>
 
-                <NavLink  className="d-flex justify-content-center align-items-center" to="/loginConcierge">
+                <NavLink  className="d-flex justify-content-center align-items-center" to="/logoutApp">
                     <div className="btn_déconnexion">
                         <ExitToAppIcon  fontSize="large" className="iconDeconnexion" />
                         <br />
