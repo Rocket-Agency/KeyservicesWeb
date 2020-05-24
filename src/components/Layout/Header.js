@@ -18,7 +18,8 @@ export class Header extends Component {
                 {this.props.location.pathname !== '/loginConcierge' 
                 && this.props.location.pathname !== '/homepageApp' 
                 &&  this.props.location.pathname !== '/mapApp' 
-                && this.props.location.pathname !== '/settingsApp'?
+                && this.props.location.pathname !== '/settingsApp'
+                && this.props.location.pathname !== '/profilUserConcierge'?
                 <Sticky>
                 <div className="top"></div>
                 <Navbar bg="white" collapseOnSelect expand="md" variant="light" sticky="top">

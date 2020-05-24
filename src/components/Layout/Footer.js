@@ -18,7 +18,8 @@ export class Footer extends Component {
                 && this.props.location.pathname !== '/homepageApp'
                 && this.props.location.pathname !== '/homepageApp' 
                 &&  this.props.location.pathname !== '/mapApp' 
-                && this.props.location.pathname !== '/settingsApp'?
+                && this.props.location.pathname !== '/settingsApp'
+                && this.props.location.pathname !== '/profilUserConcierge'?
                 <footer className="footer">
                 <div className="bottom"></div>
                     <div className="container-fluid">

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../../css/MenuBottomApp.scss';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
@@ -31,9 +32,9 @@ export default function MenuBottomApp() {
           showLabels
           className={classes.root}
         >
-          <BottomNavigationAction label="Carte" value="/mapApp"  icon={<MapIcon />} component={Link} to="/mapApp"  />
+          <BottomNavigationAction  label="Carte" value="/mapApp"  icon={<MapIcon />} component={Link} to="/mapApp"  />
           <BottomNavigationAction label="Accueil"  value="/homepageApp" icon={<HomeIcon />} component={Link} to="/homepageApp" />
-          <BottomNavigationAction label="Paramètres" valut="/settingApp" icon={<SettingsIcon />} component={Link} to="/settingsApp" />
+          <BottomNavigationAction label="Paramètres" valut="/settingApp" icon={<SettingsIcon style={{ fontSize: 40 }}/>} component={Link} to="/settingsApp" />
         </BottomNavigation>
       </Container>
     </>

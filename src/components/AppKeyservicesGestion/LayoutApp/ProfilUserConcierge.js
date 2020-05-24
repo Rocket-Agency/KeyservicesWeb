@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Col, Container, Row, Form} from 'react-bootstrap';
 
-export class SettingsApp extends Component {
+export class ProfilUserConcierge extends Component {
 
 
     render(){
@@ -9,7 +9,7 @@ export class SettingsApp extends Component {
             <div>
                 <Container fluid>
                     <Row className="d-flex justify-content-center">
-                        Settings   
+                        Profil   
                     </Row>
                 </Container>
             </div>
@@ -18,4 +18,4 @@ export class SettingsApp extends Component {
     }
 }
 
-export default SettingsApp;
+export default ProfilUserConcierge;
