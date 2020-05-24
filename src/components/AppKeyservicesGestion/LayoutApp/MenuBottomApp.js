@@ -18,23 +18,22 @@ const useStyles = makeStyles({
 });
 
 export default function MenuBottomApp() {
+  const pathname = window.location.pathname;
+  const [value, setValue] = React.useState(pathname);
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
+  
   return (
     <>
       <Container fluid>
-        <BottomNavigation
-          value={value}
-          onChange={(event, newValue) => {
+        <BottomNavigation value={value}  onChange={(event, newValue) => {
             setValue(newValue);
           }}
           showLabels
           className={classes.root}
         >
-          <BottomNavigationAction label="Carte"  icon={<MapIcon />} component={Link} to="/mapApp"  />
-          <BottomNavigationAction label="Accueil"  icon={<HomeIcon />} component={Link} to="/homepageApp" />
-          <BottomNavigationAction label="Paramètres"  icon={<SettingsIcon />} component={Link} to="/settingsApp" />
+          <BottomNavigationAction label="Carte" value="/mapApp"  icon={<MapIcon />} component={Link} to="/mapApp"  />
+          <BottomNavigationAction label="Accueil"  value="/homepageApp" icon={<HomeIcon />} component={Link} to="/homepageApp" />
+          <BottomNavigationAction label="Paramètres" valut="/settingApp" icon={<SettingsIcon />} component={Link} to="/settingsApp" />
         </BottomNavigation>
       </Container>
     </>

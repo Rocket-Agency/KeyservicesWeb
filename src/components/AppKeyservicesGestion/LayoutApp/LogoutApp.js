@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Redirect } from 'react-router';
 
-export class DeconnexionApp extends Component {
+export class LogoutApp extends Component {
     constructor(props){
         super(props);
         this.remove = '';
@@ -13,8 +13,8 @@ export class DeconnexionApp extends Component {
     
     render(){
         this.clear();
-        return <Redirect to='/'/>;
+        return <Redirect to='/loginConcierge'/>;
     }
 }
 
-export default DeconnexionApp;
+export default LogoutApp;
