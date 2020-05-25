@@ -18,7 +18,7 @@ export class AnnounceConfirm extends Component {
         const body = new FormData();
         // console.log(this.props.values.files.length);
         for(var x = 0; x<this.props.values.files.length; x++){
-            console.log(this.props.values.files[x]);
+            // console.log(this.props.values.files[x]);
             body.append('file', this.props.values.files[x])
         }
         //ajout de photo utilise le append pour faire le format formDATA
@@ -30,13 +30,13 @@ export class AnnounceConfirm extends Component {
 
         body.append('userId',aValue);
 
-        body.append('address_road_number',this.props.address_road_number);
-        body.append('address_road_type',this.props.address_road_type);
-        body.append('address_road_name',this.props.address_road_name);
-        body.append('address_additional_info',this.props.address_additional_info);
-        body.append('address_state',this.props.address_state);
-        body.append('address_city',this.props.address_city);
-        body.append('address_zip_code',this.props.address_zip_code);
+        body.append('address_road_number',this.props.values.address_road_number);
+        body.append('address_road_type',this.props.values.address_road_type);
+        body.append('address_road_name',this.props.values.address_road_name);
+        body.append('address_additional_info',this.props.values.address_additional_info);
+        body.append('address_state',this.props.values.address_state);
+        body.append('address_city',this.props.values.address_city);
+        body.append('address_zip_code',this.props.values.address_zip_code);
 
         body.append('equipment_kitchen',!!(this.props.values.equipment_kitchen)?1:0);
         body.append('equipment_heater',!!(this.props.values.equipment_heater)?1:0);
@@ -96,10 +96,16 @@ export class AnnounceConfirm extends Component {
         body.append('ad_max_night', this.props.values.ad_max_night);
         body.append('ad_starting_date', this.props.values.ad_starting_date);
         body.append('ad_ending_date', this.props.values.ad_ending_date);
+
+        axios.post("http://localhost:3001/api/adcreate/",body).then(res=>{
+            if(res.data.message == 'Ad was registered successfully!'){
+                this.props.saveAd();
+            }
+        }).then(done=>{e.preventDefault();
+            this.props.nextStep();});
+
+       
         
-        axios.post("http://localhost:3001/api/adcreate/",body);
-        e.preventDefault();
-        this.props.nextStep();
       };
 
       back = e => {
@@ -115,7 +121,7 @@ export class AnnounceConfirm extends Component {
                     info_stairs, info_pets, info_no_parking, info_shared_space, info_equipment_restriction, info_monitoring_device, info_weapons, info_dangerous_animals, info_noise,
                     rule_age_2, rule_age_2_12, rule_pets, rule_smoking, rule_event, rule_add,
                     info_area, info_around, info_infos, info_availability, observation,
-                    price_starting, price_min, price_max, files,
+                    price_starting, price_min, price_max, files, ad_id,
                     ad_title, ad_description, ad_capacity, ad_notice, ad_arrival_time, ad_departure_time, ad_min_night, ad_max_night, ad_starting_date, ad_ending_date
             }
           } = this.props;
