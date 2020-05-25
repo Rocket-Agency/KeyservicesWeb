@@ -33,7 +33,6 @@ constructor(props) {
   this.userid = '';
   this.token = '';
   this.group = '';
-
 }
 
   componentDidMount() {
@@ -80,11 +79,20 @@ constructor(props) {
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste de contacts' /> : null }
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste des annonces' /> : null }
-              {this.group == 'GROUP_PROPRIETAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Mes annonces' /> : null}
+              {this.group == 'GROUP_ADMIN' ? <MyTab label='Gestuon comptabilité' /> : null }
+              {this.group == 'GROUP_PROPRIETAIRE'? <MyTab label='Mes annonces' /> : null}
             </VerticalTabs>
           </Col>
 
           <Col xs={12} md={10} >
+          { activeIndex === 0 && <TabContainer>
+              <Container fluid>
+                <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+                <BreadcrumbItem >Mon compte</BreadcrumbItem>
+                <h2 className="mt-2r">Mon Compte</h2>
+                <MyProfil token={this.token} userid={this.userid}/>
+            </Container>
+          </TabContainer> }
             { activeIndex === 0 && <TabContainer>
               <Container fluid>
                 <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
