@@ -15,8 +15,8 @@ export class Footer extends Component {
             <div>
                 {this.props.location.pathname !== '/loginConcierge' 
                 && this.props.location.pathname !== '/homepageApp'
-                && this.props.location.pathname !== '/homepageApp' 
                 &&  this.props.location.pathname !== '/mapApp' 
+                && this.props.location.pathname !== '/tasksApp'
                 && this.props.location.pathname !== '/settingsApp'
                 && this.props.location.pathname !== '/profilUserConcierge'?
                 <footer className="footer">

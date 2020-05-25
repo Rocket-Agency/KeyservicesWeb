@@ -33,6 +33,7 @@ import ConnexionConcierge from './components/AppKeyservicesGestion/ConnexionConc
 import HomepageApp from './components/AppKeyservicesGestion/LayoutApp/HomepageApp';
 import MapApp from './components/AppKeyservicesGestion/LayoutApp/MapApp';
 import SettingsApp from './components/AppKeyservicesGestion/LayoutApp/SettingsApp';
+import TasksApp from './components/AppKeyservicesGestion/LayoutApp/TasksApp';
 import ProfilUserConcierge from './components/AppKeyservicesGestion/LayoutApp/ProfilUserConcierge';
 import LogoutApp from './components/AppKeyservicesGestion/LayoutApp/LogoutApp';
 
@@ -56,6 +57,7 @@ function Routing (){
             <Route path='/loginConcierge' component={ConnexionConcierge} />
             <Route path='/homepageApp' component={HomepageApp} />
             <Route path='/mapApp' component={MapApp} />
+            <Route path='/tasksApp' component={TasksApp} />
             <Route path='/settingsApp' component={SettingsApp} />
             <Route path='/profilUserConcierge' component={ProfilUserConcierge} />
             <Route path='/logoutApp' component={LogoutApp} />
