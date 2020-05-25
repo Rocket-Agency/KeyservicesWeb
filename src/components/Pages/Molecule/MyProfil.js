@@ -29,6 +29,9 @@ class MyProfil extends Component {
             showingAlertProfil: false,
             showingAlertPassword: false
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmitPassword = this.handleSubmitPassword.bind(this);
+        this.handleSubmitPhoto = this.handleSubmitPhoto.bind(this);
     }
 
     componentDidMount(){
@@ -58,6 +61,7 @@ class MyProfil extends Component {
     }
     
     handleSubmit(e) {
+
         const config = {
           headers: {
             'x-access-token': this.props.token
@@ -173,65 +177,65 @@ class MyProfil extends Component {
                         <h3 className="mb-4">Information personnel</h3>
 
                         <form onSubmit={this.handleSubmit} noValidate autoComplete="off" >
-                        <Grid container mt-3>
-                          <Grid container item xs={12} md={12} spacing={3}>
-                              <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
-                                <TextField 
-                                value={this.state.user_last_name} 
-                                onChange={e => this.setState({user_last_name: e.target.value})} 
-                                label="Nom" 
-                                fullWidth
-                                />
-                              </Grid>
-                              <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
-                                <TextField 
-                                  value={this.state.user_first_name} 
-                                  onChange={e => this.setState({user_first_name: e.target.value})} 
-                                  label="Prénom" 
+                          <Grid container mt-3>
+                            <Grid container item xs={12} md={12} spacing={3}>
+                                <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
+                                  <TextField 
+                                  value={this.state.user_last_name} 
+                                  onChange={e => this.setState({user_last_name: e.target.value})} 
+                                  label="Nom" 
                                   fullWidth
-                                />
-                              </Grid>
-                              <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
-                                <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                  <KeyboardDatePicker
-                                    margin="normal"
-                                    id="date-picker-dialog"
-                                    format="MM/dd/yyyy"
-                                    value={this.state.user_date_of_birth}
-                                    onChange={e => this.setState({user_date_of_birth: e.target.value})}
-                                    KeyboardButtonProps={{
-                                    'aria-label': 'change date',
-                                    }}
+                                  />
+                                </Grid>
+                                <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
+                                  <TextField 
+                                    value={this.state.user_first_name} 
+                                    onChange={e => this.setState({user_first_name: e.target.value})} 
+                                    label="Prénom" 
                                     fullWidth
                                   />
-                                </MuiPickersUtilsProvider>
-                              </Grid>
-                              <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
-                                <TextField 
-                                  value={this.state.user_sexe} 
-                                  onChange={e => this.setState({user_sexe: e.target.value})} 
-                                  label="Sexe" 
-                                  fullWidth
-                                />
-                              </Grid>
-                              <Grid item xs={12} md={6} className="d-flex justify-content-center">
+                                </Grid>
+                                <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
+                                  <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                    <KeyboardDatePicker
+                                      margin="normal"
+                                      id="date-picker-dialog"
+                                      format="MM/dd/yyyy"
+                                      value={this.state.user_date_of_birth}
+                                      onChange={e => this.setState({user_date_of_birth: e.target.value})}
+                                      KeyboardButtonProps={{
+                                      'aria-label': 'change date',
+                                      }}
+                                      fullWidth
+                                    />
+                                  </MuiPickersUtilsProvider>
+                                </Grid>
+                                <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
                                   <TextField 
-                                    value={this.state.user_email} 
-                                    onChange={e => this.setState({user_email: e.target.value})} 
-                                    label="Email"
+                                    value={this.state.user_sexe} 
+                                    onChange={e => this.setState({user_sexe: e.target.value})} 
+                                    label="Sexe" 
+                                    fullWidth
+                                  />
+                                </Grid>
+                                <Grid item xs={12} md={6} className="d-flex justify-content-center">
+                                    <TextField 
+                                      value={this.state.user_email} 
+                                      onChange={e => this.setState({user_email: e.target.value})} 
+                                      label="Email"
+                                      fullWidth 
+                                    />
+                                </Grid>
+                                <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
+                                  <TextField 
+                                    value={this.state.user_adresse_txt} 
+                                    onChange={e => this.setState({user_adresse_txt: e.target.value})} 
+                                    label="Adresse" 
                                     fullWidth 
                                   />
-                              </Grid>
-                              <Grid item xs={12} md={6} lg={6} className="d-flex justify-content-center">
-                                <TextField 
-                                  value={this.state.user_adresse_txt} 
-                                  onChange={e => this.setState({user_adresse_txt: e.target.value})} 
-                                  label="Adresse" 
-                                  fullWidth 
-                                />
-                              </Grid>
+                                </Grid>
+                            </Grid>
                           </Grid>
-                        </Grid>
 
                         <Row>
                         <Col md={12} className="d-flex justify-content-center pt-5 pb-3">
