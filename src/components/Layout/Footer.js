@@ -54,7 +54,7 @@ export class Footer extends Component {
                         </div>
                     </div>
                 </footer>
-                :<MenuBottomApp />}
+                :<Footer />}
             </div>
         )
     }
