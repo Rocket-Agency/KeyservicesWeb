@@ -32,7 +32,7 @@ export class SettingsApp extends Component {
                     <Row>
                         <Col className="d-flex justify-content-center">
                             <div>Profil</div>
-                         <Redirect to='/loginConcierge'/>;
+                         {/* <Redirect to='/profilUserConcierge'/>; */}
                         </Col>
                     </Row>
                 </Container>
