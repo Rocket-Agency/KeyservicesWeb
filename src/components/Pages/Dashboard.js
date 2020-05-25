@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import '../../css/Dashboard.scss';
 
 import { BreadcrumbItem } from '../../index';
@@ -16,6 +16,8 @@ import BasicDateTimePicker from './Schedule';
 import ListUsers from './Molecule/ListUsers';
 import ListContacts from './Molecule/ListContacts';
 import MyProfil from './Molecule/MyProfil';
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
 
 
 class ProfileTabs extends Component {
@@ -28,6 +30,7 @@ constructor(props) {
     group: '',
     selectedDate:  new Date(),
     handleDateChange: new Date(),
+    setShow: true
   }
 
   this.userid = '';
@@ -57,8 +60,6 @@ constructor(props) {
 
   render() {
     const { activeIndex } = this.state;
-    const { group } = this.state;
-    const { saveImages } = this.state; 
     return (
       <div
         style={{
@@ -85,14 +86,30 @@ constructor(props) {
           </Col>
 
           <Col xs={12} md={10} >
-            { activeIndex === 0 && <TabContainer>
-              <Container fluid>
-                <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
-                <BreadcrumbItem >Mon compte</BreadcrumbItem>
-                <h2 className="mt-2r">Mon Compte</h2>
-                <MyProfil token={this.token} userid={this.userid}/>
-            </Container>
-          </TabContainer> }
+            { activeIndex === 0 && 
+            
+              <TabContainer>
+                <Container fluid>
+                    <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+                    <BreadcrumbItem >Mon compte</BreadcrumbItem>
+                    <Alert variant="success" onClose={() => this.setState({setShow: false})} dismissible>
+                    <Alert.Heading>Hey, nice to see you</Alert.Heading>
+                    <p>
+                      Aww yeah, you successfully read this important alert message. This example
+                      text is going to run a bit longer so that you can see how spacing within an
+                      alert works with this kind of content.
+                    </p>
+                    <hr />
+                    <p className="mb-0">
+                      Whenever you need to, be sure to use margin utilities to keep things nice
+                      and tidy.
+                    </p>
+                  </Alert>
+                  <h2 className="mt-2r">Mon Compte</h2>
+                  {this.state.setShow == false ? <MyProfil token={this.token} userid={this.userid}/> : null }
+                </Container>
+              </TabContainer>
+          }
 
             { activeIndex === 1 && this.group === 'GROUP_ADMIN' && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>

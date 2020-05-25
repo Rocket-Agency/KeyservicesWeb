@@ -43,6 +43,7 @@ class ConnexionProfileProprietaire extends Component {
           )
           .then(response => {
             this.props.history.push('/dashboard', {user: response.data});
+            this.props.history.go();
           })
           .catch(error => {
           });

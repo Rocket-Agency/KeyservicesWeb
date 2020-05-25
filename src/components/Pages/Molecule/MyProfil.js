@@ -54,6 +54,7 @@ class MyProfil extends Component {
               this.setState( { user_adresse_txt : res.data.user_adresse_txt});
               this.setState( { users : res.data });
             })
+            this.forceUpdate();
     }
     
     handleSubmit(e) {
@@ -139,6 +140,9 @@ class MyProfil extends Component {
       }
 
     render(){
+      if (!this.state.user_last_name){
+        return <div>Loading ...</div>
+      }
         return(
             <div className="row">
                     <div className="col-md-3">
