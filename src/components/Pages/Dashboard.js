@@ -36,7 +36,6 @@ constructor(props) {
   this.userid = '';
   this.token = '';
   this.group = '';
-
 }
 
   componentDidMount() {
@@ -81,7 +80,8 @@ constructor(props) {
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste de contacts' /> : null }
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste des annonces' /> : null }
-              {this.group == 'GROUP_PROPRIETAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Mes annonces' /> : null}
+              {this.group == 'GROUP_ADMIN' ? <MyTab label='Gestuon comptabilité' /> : null }
+              {this.group == 'GROUP_PROPRIETAIRE'? <MyTab label='Mes annonces' /> : null}
             </VerticalTabs>
           </Col>
 

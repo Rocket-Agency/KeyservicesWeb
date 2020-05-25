@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import '../../../css/HomepageApp.scss';
-import { Container, Row,  Col } from 'react-bootstrap';
+// import '../../../css/LogoutApp.scss';
+import { Container, Row } from 'react-bootstrap';
 import HeaderApp from './HeaderApp';
 
 export class HomepageApp extends Component {
@@ -13,15 +13,9 @@ export class HomepageApp extends Component {
                     <Row className="d-flex justify-content-center">
                         <HeaderApp />
                     </Row> 
+                    <Row>Liste des tâches</Row>
                 </Container>
-                
-                <Container>
-                     <Row>
-                        <Col md={12} className="welcome-message">
-                            <h1> Bienvenue Nom et Prénom sur l'application Keyservices Gestion</h1>
-                        </Col>
-                    </Row>
-                </Container>
+                   
             </div>
 
         )

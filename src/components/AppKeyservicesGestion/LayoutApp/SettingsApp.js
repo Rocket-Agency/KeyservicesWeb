@@ -7,9 +7,15 @@ export class SettingsApp extends Component {
     render(){
         return (
             <div>
-                <Container fluid>
+                <Container>
                     <Row className="d-flex justify-content-center">
-                        Settings   
+                        <Col className="d-flex justify-content-center"><h4>PARAMÉTRAGE</h4></Col>
+                    </Row>
+                </Container>
+
+                <Container>
+                    <Row>
+                       
                     </Row>
                 </Container>
             </div>

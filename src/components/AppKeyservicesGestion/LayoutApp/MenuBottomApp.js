@@ -1,5 +1,4 @@
 import React from 'react';
-// import '../../../css/MenuBottomApp.scss';
 import '../../../css/MenuApp.scss';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,6 +7,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import MapIcon from '@material-ui/icons/Map';
 import HomeIcon from '@material-ui/icons/Home';
 import SettingsIcon from '@material-ui/icons/Settings';
+import ListIcon from '@material-ui/icons/List';
 import { Container, Row } from 'react-bootstrap';
 
 const useStyles = makeStyles({
@@ -32,7 +32,15 @@ const useStyles = makeStyles({
       background: '#49173B',
       color: '#fff',
     },
+    '&:selected' : {
+      background: '#49173B',
+      color: '#fff',
+    },
   },
+  // BottomNavigation : {
+  //   background: '#49173B',
+  //   color: '#fff',
+  // }
 });
 
 
@@ -51,8 +59,9 @@ export default function MenuBottomApp() {
             showLabels
             className={classes.root}
           >
+            <BottomNavigationAction className={classes.bottomNavigationAction} fontSize="large" label="Accueil"  value="/homepageApp"  icon={<HomeIcon className="Homepage_App" />} component={Link} to="/homepageApp"  />
             <BottomNavigationAction className={classes.bottomNavigationAction} fontSize="large" label="Carte"  value="/mapApp"  icon={<MapIcon className="Map_App" />} component={Link} to="/mapApp"  />
-            <BottomNavigationAction className={classes.bottomNavigationAction} fontSize="large" label="Accueil"  value="/homepageApp" icon={<HomeIcon className="Homepage_App"/>} component={Link} to="/homepageApp" />
+            <BottomNavigationAction className={classes.bottomNavigationAction} fontSize="large" label="Tâches"  value="/taskApp" icon={<ListIcon className="Tasks_App"/>} component={Link} to="/tasksApp" />
             <BottomNavigationAction className={classes.bottomNavigationAction} fontSize="large" label="Paramètres" valut="/settingApp"  icon={<SettingsIcon className="Settings_App"/>} component={Link} to="/settingsApp" />
           </BottomNavigation>
         </Row>
