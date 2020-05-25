@@ -140,9 +140,6 @@ class MyProfil extends Component {
       }
 
     render(){
-      if (!this.state.user_last_name){
-        return <div>Loading ...</div>
-      }
         return(
             <div className="row">
                     <div className="col-md-3">
