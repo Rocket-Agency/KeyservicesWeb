@@ -28,10 +28,18 @@ class ListUsers extends Component {
         return(
             <MaterialTable
             columns={[
-              {
-                title: "Photo", field: "user_photo",
-              },
               { title: "Id", field: "user_id", editable: 'never'},
+              {
+                title: 'Photo',
+                field: 'user_photo',
+                render: rowData => (
+                  <img
+                    style={{ height: 36, borderRadius: '50%' }}
+                    src={'http://localhost:3001/userPicture/' + rowData.user_photo}
+                  />
+                ),
+                editable: 'never'
+              },
               { title: "Prénom", field: "user_first_name" },
               { title: "Nom", field: "user_last_name" },
               { title: "Email", field: "user_email"},
