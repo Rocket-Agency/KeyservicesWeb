@@ -53,7 +53,7 @@ export class Footer extends Component {
                         </div>
                     </div>
                 </footer>
-                :  <MenuBottomApp/>  }
+                : this.props.location.pathname == '/loginConcierge' ? null : <MenuBottomApp/>   }
             </div>
         )
     }
