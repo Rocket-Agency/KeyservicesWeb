@@ -56,8 +56,7 @@ export class Header extends Component {
                         </NavLink> : null }
                     </Navbar.Collapse>
                 </Navbar>
-                </Sticky>
-               :null}
+                </Sticky> : null }
             </div>
             )
         }

@@ -22,3 +22,10 @@
 .MuiSvgIcon-root.iconDeconnexion.MuiSvgIcon-fontSizeLarge {
     margin: 0 25px;
 }
+
+
+.btn-primary:focus {
+    color: #fff;
+    border-color: #49173B;
+    box-shadow: 0 0 0 .2rem rgb(73, 23, 59);
+}

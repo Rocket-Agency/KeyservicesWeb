@@ -37,10 +37,6 @@ const useStyles = makeStyles({
       color: '#fff',
     },
   },
-  // BottomNavigation : {
-  //   background: '#49173B',
-  //   color: '#fff',
-  // }
 });
 
 

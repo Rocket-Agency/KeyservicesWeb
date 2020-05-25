@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, { Component } from 'react';
 import '../../css/Dashboard.scss';
 
 import { BreadcrumbItem } from '../../index';
@@ -17,7 +17,6 @@ import ListUsers from './Molecule/ListUsers';
 import ListContacts from './Molecule/ListContacts';
 import MyProfil from './Molecule/MyProfil';
 import Alert from 'react-bootstrap/Alert';
-import Button from 'react-bootstrap/Button';
 
 
 class ProfileTabs extends Component {

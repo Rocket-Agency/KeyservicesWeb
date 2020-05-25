@@ -5,7 +5,7 @@ import ProgressiveImage from "react-progressive-graceful-image";
 import FacebookTiny from '../../ImagesPlaceholder/FacebookTiny.png';
 import InstagramTiny from '../../ImagesPlaceholder/InstagramTiny.png';
 import { Link, withRouter } from 'react-router-dom';
-import MenuBottomApp from '../AppKeyservicesGestion/LayoutApp/MenuBottomApp';
+import MenuBottomApp from '../AppKeyservicesGestion/LayoutApp/MenuBottomApp'
 
 
 export class Footer extends Component {
@@ -13,9 +13,7 @@ export class Footer extends Component {
         return (
         
             <div>
-                {this.props.location.pathname !== '/loginConcierge' 
-                && this.props.location.pathname !== '/homepageApp'
-                &&  this.props.location.pathname !== '/mapApp' 
+                { this.props.location.pathname !== '/mapApp' 
                 && this.props.location.pathname !== '/tasksApp'
                 && this.props.location.pathname !== '/settingsApp'
                 && this.props.location.pathname !== '/profilUserConcierge'?
@@ -31,7 +29,6 @@ export class Footer extends Component {
                                      - Mention légales - KeyServices | Tous droits réservés © - {new Date().getFullYear()} 
                                 </p>       
                             </Col>
-    
     
                             <Col sm={4} className="d-flex justify-content-end">
                                 <Col sm={6} className="d-flex justify-content-end">
@@ -54,7 +51,7 @@ export class Footer extends Component {
                         </div>
                     </div>
                 </footer>
-                :<Footer />}
+                :  <MenuBottomApp/>  }
             </div>
         )
     }

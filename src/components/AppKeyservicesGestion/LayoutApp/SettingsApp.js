@@ -1,108 +1,56 @@
-import React, {Component} from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import { Redirect } from 'react-router';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import Switch from '@material-ui/core/Switch';
+import BluetoothIcon from '@material-ui/icons/Bluetooth';
+import { Col, Container, Row, Form} from 'react-bootstrap';
+import Button from 'react-bootstrap/Button'
 
-export class SettingsApp extends Component {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+//   MuiListItem : {
+//     size: 'lg',
+//   },
+}));
 
 
-    render(){
-        return (
-            <div>
-                <Container>
-                    <Row className="d-flex justify-content-center">
-                        <Col className="d-flex justify-content-center"><h4>PARAMÉTRAGE</h4></Col>
-                    </Row>
+export default function SwitchListSecondary() {
+  const classes = useStyles();
 
+  return (
+    <Container>
+        <Row>
+            <Col >
+                <List subheader={<ListSubheader>Settings</ListSubheader>} className={classes.root}>
+                    <ListItemIcon>
+                        <BluetoothIcon />
+                    </ListItemIcon>
+                    <ListItem>
+                        <div className="d-flex justify-content-center">
+                            <Button class="Français" type="button" value="Français" href="#">Français</Button> 
+                        </div>
+                    </ListItem>
+                    <ListItem>
+                        <ListItemText id="switch-list-label-contraste" primary="Contraste" />
+                            <div className="d-flex justify-content-center contraste_blanc"> </div>
+                            <div className="d-flex justify-content-center contraste_blanc"> </div>
+                    </ListItem>
+                    <ListItem>
+                        <Button as="input" type="button" value="Profil" />{' '}
+                    </ListItem>
+                </List>
+            </Col>
+        </Row>
+    </Container>
 
-
-
-                </Container>
-                <Container>
-
-                </Container>
-                <Grid 
-                            container
-                            direction="column"
-                            justify="space-evenly"
-                            alignItems="center" spacing={3}>
-                            <Grid item xs={6} sm={3}>
-                                <Row>
-                                    <Col className="d-flex justify-content-center">
-                                        <div>Langue</div>
-                                    </Col>
-                                </Row>
-                            </Grid>
-                            <Grid item xs={6} sm={3}>
-                                <Row>
-                                    <Col className="d-flex justify-content-center">
-                                        <div>Contraste</div>
-                                    </Col>
-                                </Row>
-                            </Grid>
-                            <Grid item xs={6} sm={3}>
-                                <Row>
-                                    <Col className="d-flex justify-content-center">
-                                        <div>Profil</div>
-                                    {/* <Redirect to='/profilUserConcierge'/>; */}
-                                    </Col>
-                                </Row>                      
-                            </Grid>
-                        </Grid>
-            </div>
-
-        )
-    }
+  );
 }
-
-export default SettingsApp;
-
-
-// import React from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
-// import Paper from '@material-ui/core/Paper';
-// import Grid from '@material-ui/core/Grid';
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   paper: {
-//     padding: theme.spacing(2),
-//     textAlign: 'center',
-//     color: theme.palette.text.secondary,
-//   },
-// }));
-
-// export default function FullWidthGrid() {
-//   const classes = useStyles();
-
-//   return (
-//     <div className={classes.root}>
-//       <Grid container spacing={3}>
-//         <Grid item xs={12}>
-//           <Paper className={classes.paper}>xs=12</Paper>
-//         </Grid>
-//         <Grid item xs={12} sm={6}>
-//           <Paper className={classes.paper}>xs=12 sm=6</Paper>
-//         </Grid>
-//         <Grid item xs={12} sm={6}>
-//           <Paper className={classes.paper}>xs=12 sm=6</Paper>
-//         </Grid>
-//         <Grid item xs={6} sm={3}>
-//           <Paper className={classes.paper}>xs=6 sm=3</Paper>
-//         </Grid>
-//         <Grid item xs={6} sm={3}>
-//           <Paper className={classes.paper}>xs=6 sm=3</Paper>
-//         </Grid>
-//         <Grid item xs={6} sm={3}>
-//           <Paper className={classes.paper}>xs=6 sm=3</Paper>
-//         </Grid>
-//         <Grid item xs={6} sm={3}>
-//           <Paper className={classes.paper}>xs=6 sm=3</Paper>
-//         </Grid>
-//       </Grid>
-//     </div>
-//   );
-// }
