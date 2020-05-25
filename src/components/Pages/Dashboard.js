@@ -30,7 +30,8 @@ constructor(props) {
     group: '',
     selectedDate:  new Date(),
     handleDateChange: new Date(),
-    setShow: true
+    setShow: true,
+    show: true
   }
 
   this.userid = '';
@@ -92,17 +93,15 @@ constructor(props) {
                 <Container fluid>
                     <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
                     <BreadcrumbItem >Mon compte</BreadcrumbItem>
-                    <Alert variant="success" onClose={() => this.setState({setShow: false})} dismissible>
-                    <Alert.Heading>Hey, nice to see you</Alert.Heading>
+                    <Alert variant="success" show={this.state.show} onClose={() => this.setState({setShow: false, show: false})} dismissible>
+                    <Alert.Heading>Bienvenue !</Alert.Heading>
                     <p>
-                      Aww yeah, you successfully read this important alert message. This example
-                      text is going to run a bit longer so that you can see how spacing within an
-                      alert works with this kind of content.
+                     Ce site web est un projet étudiant !<br></br>
+                     Aucun achat n'est requis pour accéder à nos services !
                     </p>
                     <hr />
-                    <p className="mb-0">
-                      Whenever you need to, be sure to use margin utilities to keep things nice
-                      and tidy.
+                    <p>
+                      Veuillez fermer cette fenêtre pour accéder à votre profil ! 
                     </p>
                   </Alert>
                   <h2 className="mt-2r">Mon Compte</h2>
