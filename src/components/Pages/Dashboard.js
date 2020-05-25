@@ -74,7 +74,7 @@ constructor(props) {
               onChange={this.handleChange}
             >    
               <MyTab label='Mon compte' />      
-              {this.group == 'GROUP_LOCATAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Information location' />   : null}      
+              {this.group == 'GROUP_LOCATAIRE' ? <MyTab label='Information location' />   : null}      
               {this.group == 'GROUP_PROPRIETAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Créer une annonce ' /> : null}
               {this.group == 'GROUP_LOCATAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Prise de rendez-vous' /> : null} 
               {this.group == 'GROUP_LOCATAIRE' ? <MyTab label='Paiement des courses' /> : null} 
