@@ -110,20 +110,14 @@ constructor(props) {
               </TabContainer>
           }
 
-            { activeIndex === 1 && this.group === 'GROUP_ADMIN' && <TabContainer>
-              <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
-              <BreadcrumbItem >Information location</BreadcrumbItem>
-              <h1>Information location</h1>
-            </TabContainer> }
-
-            { activeIndex === 2 && this.group == 'GROUP_ADMIN' && <TabContainer>
+            { activeIndex === 1 && this.group == 'GROUP_ADMIN' && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Création d'une annonce</BreadcrumbItem>
                 <h1>Création d'une annonce</h1>
                   <AnnounceStepperForm />
             </TabContainer> }
 
-            { activeIndex === 3 && this.group === 'GROUP_ADMIN' &&<TabContainer>
+            { activeIndex === 2 && this.group === 'GROUP_ADMIN' &&<TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Prise de rendez-vous</BreadcrumbItem>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -131,21 +125,21 @@ constructor(props) {
                 </MuiPickersUtilsProvider>
             </TabContainer> }
 
-            { activeIndex === 4 && this.group === 'GROUP_ADMIN' && <TabContainer style={{ minWidth: "100%" }}>
+            { activeIndex === 3 && this.group === 'GROUP_ADMIN' && <TabContainer style={{ minWidth: "100%" }}>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Liste d'utilisateurs</BreadcrumbItem>
               <h1>Liste d'utilisateurs</h1>
                 <ListUsers token={this.token}/>
             </TabContainer> }
             
-            {activeIndex === 5 && <TabContainer>
+            {activeIndex === 4 && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Liste de contacts</BreadcrumbItem>
                 <h1>Liste de contacts</h1>
                 <ListContacts token={this.token}/>
             </TabContainer> }
 
-            { activeIndex === 6 && this.group == 'GROUP_ADMIN' && <TabContainer>
+            { activeIndex === 5 && this.group == 'GROUP_ADMIN' && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Liste des annonces</BreadcrumbItem>
                 <h1>Liste des annonces</h1>
@@ -165,7 +159,7 @@ constructor(props) {
                 />
             </TabContainer> }
 
-            { activeIndex === 7 && this.group == 'GROUP_ADMIN' && <TabContainer>
+            { activeIndex === 6 && this.group == 'GROUP_ADMIN' && <TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem ></BreadcrumbItem>
                 <h1>Gestion comptabilité</h1>
