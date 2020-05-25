@@ -57,6 +57,7 @@ class MyProfil extends Component {
               this.setState( { user_adresse_txt : res.data.user_adresse_txt});
               this.setState( { users : res.data });
             })
+            
             this.forceUpdate();
     }
     
@@ -92,14 +93,18 @@ class MyProfil extends Component {
         this.setState({
           selectedFile: event.target.files[0]
         })
+
+        console.log(this.state.selectedFile);
       }
     
       handleSubmitPhoto(e){
         const body = new FormData() 
         body.append('file', this.state.selectedFile)
-    
+        for (var value of body.values()) {
+          console.log('value:',value); 
+       }
         axios.put("http://localhost:3001/photo/updateUserPhoto/"+ this.props.userid,body);
-        window.location.reload();
+        this.forceUpdate();
         e.preventDefault();
       }
     
@@ -149,7 +154,13 @@ class MyProfil extends Component {
                     <div className="col-md-3">
                         <div className="text-center">
                           <Img
-                              src={this.state.photo_url}
+                              src={
+                                    this.state.selectedFile!=''?
+                                      'http://localhost:3001/userPicture/'+this.props.userid+'/'+this.state.selectedFile.name
+                                    
+                                    :this.state.photo_url
+                                  }
+
                               className="avatar img-circle mt-3 mb-3"
                               alt="avatar" 
                             />
