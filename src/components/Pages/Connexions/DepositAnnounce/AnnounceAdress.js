@@ -4,14 +4,21 @@ import '../../../../css/Announce.scss';
 import { Col, Container, Row, Form } from 'react-bootstrap';
 import TextField from '@material-ui/core/TextField';
 import { Button } from 'reactstrap';
-import { Formik, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-
+import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+ 
 export class AnnounceAddresss extends Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  };
+    constructor(props){
+        super(props)
+    }
+    values = {
+        address_road_number: '',
+        address_road_type:'',
+        address_road_name:'',
+        address_additional_info:'',
+        address_state:'',
+        address_city:'',
+        address_zip_code:''
+    }
 
 render() {
     const { values, handleChange } = this.props;
@@ -45,43 +52,6 @@ render() {
                         <h2 className="title-form-Announce ">8 - Paiement</h2>
                     </Col>
                 </Row>
-                <Formik
-                    initialValues={{
-                        address_road_number: '',
-                        address_road_type: '',
-                        address_road_name: '',
-                        address_state: '',
-                        address_city: '',
-                        address_zip_code: ''
-                    }}
-                        
-                    validationSchema={Yup.object().shape({
-                        address_road_number: Yup.number()
-                            .required('Veuillez indiquer votre numéro de rue')
-                            .moreThan(0, 'Numéro de rue invalide')
-                            .typeError('Vous devez renseigner un numéro de rue'),
-                        address_road_type: Yup.string()
-                            .notOneOf(['Rue', null], 'ntm')
-                            .required('Veuillez indiquer votre type de rue'),
-                        address_road_name: Yup.string()
-                            .required('Veuillez indiquer votre adresse'),
-                        address_state: Yup.string()
-                            .required('Veuillez indiquer votre région'),
-                        address_zip_code: Yup.number()
-                            .required('Veuillez entrer votre code postal')
-                            .integer('Code postal invalide')
-                            .moreThan(9999)
-                            .lessThan(100000),
-                         address_city: Yup.string()
-                            .required('Veuillez entrer votre ville')
-                    })}
-
-                    onSubmit={fields => {
-                        alert('SUCCES!! :-)\n\n' + JSON.stringify(fields, null, 4))
-                    }}
-            
-                    render={({ errors, status, touched, setFieldValue }) => (
-                        <Form>
                 <Container fluid className="pt-4 blocForm" >  
                     <h2> Adresse de votre logement</h2>
 
@@ -91,26 +61,23 @@ render() {
                                 
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={2}>Numéro de rue</Form.Label>
-                                    <Col sm={1}>
-                                        <Field name="address_road_number" type="text" className={'form-control' + (errors.address_road_number && touched.address_road_number ? ' is-invalid' : '')} />
-                                        <ErrorMessage name="address_road_number" component="div" className="invalid-feedback" />
+                                    <Col sm={3}>
+                                         <TextValidator
+                                            variant="outlined"
+                                            fullWidth
+                                            size="small"
+                                            name="address_road_number"
+                                            validators={['required', 'minNumber:1', 'matchRegexp:^[0-9]{1,4}$']}
+                                            errorMessages={['required field', 'invalid number','invalid number']}
+                                            value={values.address_road_number}
+                                            onChange={handleChange('address_road_number')}
+                                            validatorListener={this.props.validatorListener}
+                                        /> 
                                     </Col>
                                 </Form.Row>     
                             </Col>
 
-                            <Col xs={12} md={6} className="mt-3">
-                                <Form.Row>
-                                <Form.Label className="label-info-annonce" column sm={4}>Type de rue</Form.Label>
-                                    <Form.Group controlId="exampleForm.ControlSelect1">
-                                    <Form.Control as="select" name="address_road_type" className={'form-control' + (errors.address_road_type && touched.address_road_type ? ' is-invalid' : '')} onChange={handleChange('address_road_type')}defaultValue={values.address_road_type}  >
-                                        <option>Rue</option>
-                                        <option>Allée</option>
-                                        <option>Boulevard</option>
-                                    </Form.Control>
-                                    <ErrorMessage name="address_road_type" component="div" className="invalid-feedback" />
-                                    </Form.Group>
-                                </Form.Row>  
-                            </Col>
+                            
                             </Row>
                             
                             <Row>
@@ -118,20 +85,18 @@ render() {
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Nom de rue</Form.Label>
                                     <Col sm={12}>
-                                        <TextField
-                                            name="address_road_name"
-                                            className={'form-control'}
-                                            type="text"
-                                            pattern="[A-Za-z]{3}"
-                                            required id="standard-required"
+                                        <TextValidator
+                                            key={1}
                                             variant="outlined"
                                             fullWidth
                                             size="small"
+                                            name="address_road_name"
+                                            validators={['required']}
+                                            errorMessages={['required field']}
+                                            value={values.address_road_name}
                                             onChange={handleChange('address_road_name')}
-                                            defaultValue={values.address_road_name}
-                                            helperText={(errors.address_road_name && touched.address_road_name) && errors.address_road_name}
-                                        />
-                                        <ErrorMessage name="address_road_name" component="div" className="invalid-feedback" />
+                                            validatorListener={this.props.validatorListener}
+                                        /> 
                                     </Col>
                                 </Form.Row>     
                             </Col>
@@ -140,15 +105,16 @@ render() {
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Information complémentaire (Bâtiment, escalier, interphone etc...)</Form.Label>
                                     <Col sm={12}>
-                                        <TextField
-                                            type="text" 
-                                            pattern="[A-Za-z]{3}"
+                                        <TextValidator
+                                            key={1}
                                             variant="outlined"
                                             fullWidth
                                             size="small"
+                                            name="address_additional_info"
+                                            value={values.address_additional_info}
                                             onChange={handleChange('address_additional_info')}
-                                            defaultValue={values.address_additional_info} 
-                                        />
+                                            validatorListener={this.props.validatorListener}
+                                        /> 
                                     </Col>
                                 </Form.Row>     
                             </Col>
@@ -158,17 +124,19 @@ render() {
                             <Col xs={12} md={4}>
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Région</Form.Label>
-                                    <Col sm={8}>
-                                        <TextField
-                                            type="text" 
-                                            pattern="[A-Za-z]{3}"
-                                            required id="standard-required"
+                                    <Col sm={8}>     
+                                        <TextValidator
+                                            key={1}
                                             variant="outlined"
                                             fullWidth
                                             size="small"
+                                            name="address_state"
+                                            validators={['required']}
+                                            errorMessages={['required field']}
+                                            value={values.address_state}
                                             onChange={handleChange('address_state')}
-                                            defaultValue={values.address_state} 
-                                        />
+                                            validatorListener={this.props.validatorListener}
+                                        /> 
                                     </Col>
                                 </Form.Row>     
                             </Col>
@@ -177,16 +145,18 @@ render() {
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Ville</Form.Label>
                                     <Col sm={8}>
-                                        <TextField
-                                            type="text" 
-                                            pattern="[A-Za-z]{3}"
-                                            required id="standard-required"
+                                        <TextValidator
+                                            key={1}
                                             variant="outlined"
                                             fullWidth
                                             size="small"
+                                            name="address_city"
+                                            validators={['required']}
+                                            errorMessages={['required field']}
+                                            value={values.address_city}
                                             onChange={handleChange('address_city')}
-                                            defaultValue={values.address_city} 
-                                        />
+                                            validatorListener={this.props.validatorListener}
+                                        /> 
                                     </Col>
                                 </Form.Row>     
                             </Col>
@@ -195,34 +165,26 @@ render() {
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Code postal</Form.Label>
                                     <Col sm={8}>
-                                    <TextField
-                                        required id="standard-required"
-                                        onChange={handleChange('address_zip_code')}
-                                        defaultValue={values.address_zip_code} 
+                                    <TextValidator
+                                        key={1}
                                         variant="outlined"
-                                        pattern="[A-Za-z]{3}"
                                         fullWidth
-                                        type="text" 
-                                        size="small"              
+                                        size="small"
+                                        validators={['required', 'matchRegexp:^[0-9]{5}$']}
+                                        errorMessages={['Code postal requis!', 'Code postal invalide']}
+                                        name="address_zip_code"
+                                        onChange={handleChange('address_zip_code')}
+                                        value={values.address_zip_code}
+                                        validatorListener={this.props.validatorListener} 
                                         />   
                                     </Col>   
                                 </Form.Row>     
                             </Col>
                          </Row>
                          <Row xs={12} md={12} className="d-flex justify-content-center pt-3 pb-3">
-                            <Button
-                                color="primary"
-                                variant="contained"
-                                onClick={this.continue}
-                                aria-label="Continuer"
-                                >Continuer
-                            </Button>
                         </Row>
                     </Container>
                 </Container>
-                                            </Form>
-                                        )}
-                                    />
             </Container>
         </div>
     )
