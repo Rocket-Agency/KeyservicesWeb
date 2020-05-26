@@ -153,6 +153,7 @@ class MyProfil extends Component {
             <div className="row">
                     <div className="col-md-3">
                         <div className="text-center">
+                        <h2 className="mt-2r">Mon Compte</h2>
                           <Img
                               src={
                                     this.state.selectedFile!=''?

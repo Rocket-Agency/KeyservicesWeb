@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
   bottomNavigationAction : {
     border: '1px solid black',
-    color: '#49173B',
+    color: '#49173B', 
     "&:hover": {
       background: '#49173B',
       color: '#fff',

@@ -12,11 +12,12 @@ import HomeIcon from '@material-ui/icons/Home';
 import AnnounceStepperForm from './Connexions/DepositAnnounce/AnnounceStepperForm';
 import DateFnsUtils from '@date-io/date-fns'; 
 import { KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
-import BasicDateTimePicker from './Schedule';
+import BasicDateTimePicker from './BasicDateTimePicker';
 import ListUsers from './Molecule/ListUsers';
 import ListContacts from './Molecule/ListContacts';
 import MyProfil from './Molecule/MyProfil';
 import Alert from 'react-bootstrap/Alert';
+import ScheduleAppointment from './Connexions/ScheduleMeeting/ScheduleAppointment'
 
 
 class ProfileTabs extends Component {
@@ -103,7 +104,6 @@ constructor(props) {
                       Veuillez fermer cette fenêtre pour accéder à votre profil ! 
                     </p>
                   </Alert>
-                  <h2 className="mt-2r">Mon Compte</h2>
                   {this.state.setShow == false ? <MyProfil token={this.token} userid={this.userid}/> : null }
                 </Container>
               </TabContainer>
@@ -201,6 +201,7 @@ constructor(props) {
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
                   <h1>Prise de rendez-vous</h1>
                   <BasicDateTimePicker />
+                  <ScheduleAppointment />
                 </MuiPickersUtilsProvider>
               </TabContainer> }
 
