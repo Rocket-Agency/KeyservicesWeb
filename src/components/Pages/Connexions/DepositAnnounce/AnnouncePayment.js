@@ -18,6 +18,7 @@ export class AnnouncePayment extends Component {
 
     render() {
         // const { values, handleChange } = this.props;
+        // console.log(this.props);
         return(
             <div>
                 <Container fluid className="pt-4 blocForm" >  
@@ -47,21 +48,14 @@ export class AnnouncePayment extends Component {
                             <h2 className="title-form-Announce title-form-Announce-active">8 - Paiement</h2>
                         </Col>
                     </Row>
-                    <h2>Paiement</h2>
   
                     <Container fluid>
                 
-                        Paiement
+                        <h2>Paiement</h2>
+                        
                     </Container>
 
                     <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
-                                    <Button
-                                        color="secondary"
-                                        variant="contained"
-                                        onClick={this.back}
-                                        aria-label="Retour"
-                                    >Retour</Button>
-
                                     <Button
                                     color="primary"
                                     variant="contained"

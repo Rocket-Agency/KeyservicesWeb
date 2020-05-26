@@ -1,0 +1,31 @@
+.MuiPaper-root.MuiAppBar-root
+.MuiAppBar-positionStatic
+.MuiAppBar-colorPrimary
+.MuiPaper-elevation4 {
+    background-color: transparent;
+}
+
+.MuiAppBar-colorPrimary {
+    color: #fff;
+    background-color: transparent;
+}
+
+.userProfilApp {
+    position: absolute;
+}
+
+.userProfilInfo {
+    margin: 0 30px;
+    color: #49173B;
+}
+
+.MuiSvgIcon-root.iconDeconnexion.MuiSvgIcon-fontSizeLarge {
+    margin: 0 25px;
+}
+
+
+.btn-primary:focus {
+    color: #fff;
+    border-color: #49173B;
+    box-shadow: 0 0 0 .2rem rgb(73, 23, 59);
+}

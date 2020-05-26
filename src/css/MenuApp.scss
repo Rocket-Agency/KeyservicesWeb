@@ -1,0 +1,51 @@
+.MuiSvgIcon-root.Homepage_App {
+    font-size: 40px;
+}
+
+.MuiSvgIcon-root.Map_App {
+    font-size: 40px;
+}
+
+.MuiSvgIcon-root.Tasks_App {
+    font-size: 40px;
+}
+
+.MuiSvgIcon-root.Settings_App {
+    font-size: 40px;
+}
+
+.MuiButtonBase-root.MuiBottomNavigationAction-root.makeStyles-bottomNavigationAction-50.Mui-selected {
+    background: #49173B;
+    .MuiSvgIcon-root.Map_App:hover {
+        color: white;
+    }
+}
+
+.MuiSvgIcon-root.Map_App:active {
+    color: white;
+}
+
+
+
+.Homepage_App:focus {
+    background: #49173B;
+}
+
+.MuiButtonBase-root.MuiBottomNavigationAction-root.makeStyles-bottomNavigationAction-2.Mui-selected {
+    background:#49173B;
+}
+
+.MuiBottomNavigationAction-root.Mui-selected {
+    background: #49173B;
+    color: white;
+    padding-top: 6px;
+}
+
+.MuiBottomNavigationAction-label.Mui-selected {
+    color: white;
+}
+
+.MuiButtonBase-root.MuiBottomNavigationAction-root.Mui-selected {
+    color: #ffffff;
+}
+

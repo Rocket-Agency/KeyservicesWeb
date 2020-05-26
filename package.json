@@ -79,6 +79,7 @@
     "react-responsive-carousel": "^3.2.5",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
+    "react-router-sitemap": "^1.2.0",
     "react-scripts": "3.4.0",
     "react-select": "^3.1.0",
     "react-slideshow-image": "^1.4.2",
@@ -100,7 +101,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "ssr": "node server/index.js"
+    "ssr": "node server/index.js",
+    "sitemap": "node src/sitemap-generator.js",
+    "launch": "npm run sitemap && npm run build && npm run ssr"
   },
   "eslintConfig": {
     "extends": "react-app"

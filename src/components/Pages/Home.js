@@ -53,13 +53,23 @@ export class Home extends Component {
                             </ProgressiveImage>    
                             
                             <Carousel.Caption>
-                            <h3>Poster une annonce</h3>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                    <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
-                                        Poster une annonce
-                                    </button>
+                            <Container>
+                                <Row className="d-flex text-center justify-content-center align-items-center">
+                                    <Col lg={6} md={8} sm={12} className="mt-4" >
+                                    <div className="bloc-carousel">
+                                        <h3 className="title-carousel">Poster une annonce</h3>
+                                        <p className="para-carousel">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                            <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
+                                                Poster une annonce
+                                            </button>
+                                    </div>
+
+                                    </Col>
+                                </Row>
+                            </Container>
                             </Carousel.Caption>
                         </Carousel.Item>
+
                         <Carousel.Item>
                             <ProgressiveImage  className="card-img style-card" 
                                 src="./images/GererMesLocations.png"
@@ -67,12 +77,22 @@ export class Home extends Component {
                             >
                                 {src => <img src={src}  alt="Gérer mes locations"  />}
                             </ProgressiveImage>  
+                            
                             <Carousel.Caption>
-                            <h3>Gérer mes locations</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
-                                        Gérer mes location
-                                    </button>
+                            <Container>
+                                <Row className="d-flex text-center justify-content-center align-items-center">
+                                    <Col lg={6} md={8} sm={12} className="mt-4" >
+                                    <div className="bloc-carousel">
+                                        <h3 className="title-carousel">Gérer mes locations</h3>
+                                            <p className="para-carousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
+                                                    Gérer mes location
+                                                </button>
+                                    </div>
+
+                                    </Col>
+                                </Row>
+                            </Container>
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
