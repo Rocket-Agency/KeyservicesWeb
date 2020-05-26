@@ -8,19 +8,39 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import { Button } from 'reactstrap';
 import Checkbox from '@material-ui/core/Checkbox';
 
+import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+
 import 'react-phone-input-2/lib/bootstrap.css'
 
 export class AnnounceHousing extends Component {
 
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
-      };
+    constructor(props){
+        super(props)
+    }
+    values = {
+        housing_type_property: '',
+        housing_type:'',
+        housing_nb_room:'',
+        housing_nb_bathroom:'',
+        housing_observation:'',
+        equipment_kitchen:'',
+        equipment_heater:'',
+        equipment_wifi:'',
+        equipment_iron:'',
+        equipment_working_space:'',
+        equipment_private_bathroom:'',
+        equipment_shampoo: '',
+        equipment_air_conditioner: '',
+        equipment_hangers: '',
+        equipment_hair_dryer: '',
+        equipment_television: '',
+        
+        installation_parking: '',
+        installation_gym: '',
+        installation_pool: '',
+        installation_jaccuzi: '',
+    }
 
-      back = e => {
-        e.preventDefault();
-        this.props.prevStep();
-      };
     render() {
         const { values, handleChange } = this.props;
         return(
@@ -28,7 +48,7 @@ export class AnnounceHousing extends Component {
                 <Container fluid className="pt-4 blocForm" >  
                     <Row>
                         <Col sm>
-                            <h2 className="title-form-Announce">1 - Votre addresse</h2>
+                            <h2 className="title-form-Announce">1 - Votre adresse</h2>
                         </Col>
                         <Col sm>
                             <h2 className="title-form-Announce title-form-Announce-active">2 - Votre logement </h2>
@@ -64,6 +84,7 @@ export class AnnounceHousing extends Component {
                                 <FormControlLabel
                                     value="Maison"
                                     control={<Radio color="primary" />}
+                                    control={<Radio required={true} />}
                                     label="Maison"
                                     labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
@@ -73,6 +94,7 @@ export class AnnounceHousing extends Component {
                                  <FormControlLabel
                                     value="Appartement"
                                     control={<Radio color="primary" />}
+                                    control={<Radio required={true} />}
                                     label="Appartement"
                                     labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
@@ -82,6 +104,7 @@ export class AnnounceHousing extends Component {
                                 <FormControlLabel
                                     value="Chambre(s)"
                                     control={<Radio color="primary" />}
+                                    control={<Radio required={true} />}
                                     label="Chambre(s)"
                                     labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
@@ -91,6 +114,7 @@ export class AnnounceHousing extends Component {
                                 <FormControlLabel
                                     value="Auberge de jeunesse"
                                     control={<Radio color="primary" />}
+                                    control={<Radio required={true} />}
                                     label="Auberge de jeunesse"
                                     labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
@@ -103,7 +127,7 @@ export class AnnounceHousing extends Component {
                             <Form.Label className="d-flex align-items-center label-info-annonce">
                                 Type de logement :
                             </Form.Label>
-                            <RadioGroup row aria-label="position" name="position" defaultValue="top">
+                            <RadioGroup row aria-label="position" name="position" defaultValue="Logement entier">
                                 <FormControlLabel
                                     value="Logement entier"
                                     control={<Radio color="primary" />}
@@ -138,13 +162,21 @@ export class AnnounceHousing extends Component {
                                 <Form.Row>
                                     <Form.Group as={Row} controlId="formHorizontalEmail">
                                         <Form.Label column sm={7} className="d-flex align-items-center label-info-annonce"> 
-                                            Nombre de chambre :
+                                            Nombre de chambres :
                                         </Form.Label>
                                         <Col sm={4}>
-                                            <Form.Control 
-                                                type="number"  
-                                                defaultValue={values.housing_nb_room} 
-                                                onChange={handleChange('housing_nb_room')} 
+                                            <TextValidator
+                                                key={1}
+                                                type="number" 
+                                                variant="outlined"
+                                                fullWidth
+                                                size="small"
+                                                validators={['required', 'minNumber:0' , 'matchRegexp:^[0-9]{1,2}$']}
+                                                errorMessages={['Ce champ est obligatoire', 'Nombre invalide', 'Nombre invalide']}
+                                                name="housing_nb_room"
+                                                onChange={handleChange('housing_nb_room')}
+                                                value={values.housing_nb_room}
+                                                validatorListener={this.props.validatorListener}
                                             />
                                         </Col>
                                 </Form.Group>
@@ -155,13 +187,21 @@ export class AnnounceHousing extends Component {
                                 <Form.Row>
                                     <Form.Group as={Row} controlId="formHorizontalEmail">
                                         <Form.Label column sm={7} className="d-flex align-items-center label-info-annonce"> 
-                                            Nombre de salle de bain :
+                                            Nombre de salles de bain :
                                         </Form.Label>
                                         <Col sm={4}>
-                                            <Form.Control 
+                                            <TextValidator
+                                                key={1}
                                                 type="number" 
-                                                defaultValue={values.housing_nb_bathroom} 
+                                                variant="outlined"
+                                                fullWidth
+                                                size="small"
+                                                validators={['required', 'minNumber:0' , 'matchRegexp:^[0-9]{1,2}$']}
+                                                errorMessages={['Ce champ est obligatoire', 'Nombre invalide', 'Nombre invalide']}
+                                                name="housing_nb_bathroom"
                                                 onChange={handleChange('housing_nb_bathroom')}
+                                                value={values.housing_nb_bathroom}
+                                                validatorListener={this.props.validatorListener}
                                             />
                                         </Col>
                                 </Form.Group>
@@ -392,22 +432,6 @@ export class AnnounceHousing extends Component {
                                     </Form.Group>
                                 </Col>
                             </Form.Group>
-                            
-                            <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
-                                <Button
-                                    color="secondary"
-                                    variant="contained"
-                                    onClick={this.back}
-                                    aria-label="Retour"
-                                >Retour</Button>
-
-                                <Button
-                                    color="primary"
-                                    variant="contained"
-                                    onClick={this.continue}
-                                    aria-label="Continuer"
-                                >Continuer</Button>
-                            </Col>
                         </fieldset>
                     </Container>
                 </Container>
