@@ -83,3 +83,12 @@ button {
 .form-check-label {
     color: white;
 }
+
+.MuiTouchRipple-root:hover {
+    color: #ffffff;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary {
+    background-color: #49173B;
+    color: #ffffff;
+}

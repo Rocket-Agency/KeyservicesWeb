@@ -68,10 +68,10 @@ buttonProfil : {
     width: '100%',
     backgroundColor: '#ffffff',
     border: '1px solid #49173B',
-    "&:hover": {
-        background: '#49173B',
-        color: '#fff',
-      },
+    label: {
+        width: "100%",
+        color: '#ffffff'
+    },
 },
 
 rectangleWhite: {
@@ -151,7 +151,7 @@ export default function SwitchListSecondary() {
                                     <LanguageIcon />
                             </ListItemIcon>
                             <div className="d-flex justify-content-center">
-                                <Button className={classes.buttonLangues} type="button"  href="#">Français</Button> 
+                                Français
                             </div>
                         </ListItem>
 
@@ -163,7 +163,7 @@ export default function SwitchListSecondary() {
                             </List>
                         </ListItem>
                         <ListItem className={classes.MuiListItem}>
-                            <Button  className={classes.buttonLangues} variant="contained" className="profilButton" color="primary" href="/profilUserConcierge" >
+                            <Button  className={classes.buttonProfil} variant="contained"  color="primary" href="/profilUserConcierge" >
                                 Profil
                             </Button>
                         </ListItem>
