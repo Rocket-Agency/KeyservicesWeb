@@ -1,33 +1,98 @@
-// .langues{
-//     background-color: #49173B;
-//     border: transparent;
-//     width: 100%;
-// }
-
-.rectangleGris {
-    width: 100px;
-    height: 30px;
-    background: #808080;
-    display: inline-block;
-}
-
-.rectangleNoir {
-    width: 100px;
-    height: 30px;
-    background: #000000;
-    display: inline-block;
-}
-
-.UserProfilApp .btn.btn-primary {
+.profilButton {
     width: 100%;
-} 
+}
+
+.signalButton {
+    width: 100%;
+}
+
+.MuiListSubheader-root.MuiListSubheader-sticky.MuiListSubheader-gutters {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+$bg: #f3f8fa;
+$color-text-btn:#000000;
+$colo-primaire: #49173B;
+$btn-connexion: #87E990;;
+
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  &.applicationConnexionEnvoyer {
+    width: 7rem;
+    height: auto;
+    .circle {
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 100%;
+      height: 3rem;
+      background: $btn-connexion;
+      border-radius: 1.625rem;
+
+      .icon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: $colo-primaire;
+      }
+    }
+
+    .button-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0;
+      color: $color-text-btn;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+    }
+  }
+}
+
+@supports (display: grid) {
+  body {
+    display: grid;
+    grid-gap: 0.625rem;
+  }
+  
+  #container {
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+.form-check-label {
+    color: white;
+}
+
+.MuiTouchRipple-root:hover {
+    color: #ffffff;
+}
 
 .MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary {
-    width: 100%;
+    background-color: #49173B;
+    color: #ffffff;
 }
 
-.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary:hover {
-   .MuiButton-label {
-    color: white;
-   }
+.MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.MuiPaper-elevation24.MuiPaper-rounded {
+  margin: 0;
 }
