@@ -11,8 +11,7 @@ import { Col, Row, Container } from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
 import AnnounceStepperForm from './Connexions/DepositAnnounce/AnnounceStepperForm';
 import DateFnsUtils from '@date-io/date-fns'; 
-import { KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
-import BasicDateTimePicker from './BasicDateTimePicker';
+import { MuiPickersUtilsProvider} from '@material-ui/pickers';
 import ListUsers from './Molecule/ListUsers';
 import ListContacts from './Molecule/ListContacts';
 import MyProfil from './Molecule/MyProfil';
@@ -118,9 +117,9 @@ constructor(props) {
 
             { activeIndex === 2 && this.group === 'GROUP_ADMIN' &&<TabContainer>
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
-              <BreadcrumbItem >Prise de rendez-vous</BreadcrumbItem>
+              <BreadcrumbItem >Liste des rendez-vous</BreadcrumbItem>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                  <BasicDateTimePicker />
+                  Liste des rendez-vous
                 </MuiPickersUtilsProvider>
             </TabContainer> }
 
@@ -200,7 +199,6 @@ constructor(props) {
               <BreadcrumbItem >Prise de rendez-vous</BreadcrumbItem>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
                   <h1>Prise de rendez-vous</h1>
-                  <BasicDateTimePicker />
                   <ScheduleAppointment />
                 </MuiPickersUtilsProvider>
               </TabContainer> }
