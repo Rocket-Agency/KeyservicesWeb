@@ -1,5 +1,33 @@
-.langues{
-    background-color: #49173B;
-    border: transparent;
+// .langues{
+//     background-color: #49173B;
+//     border: transparent;
+//     width: 100%;
+// }
+
+.rectangleGris {
+    width: 100px;
+    height: 30px;
+    background: #808080;
+    display: inline-block;
+}
+
+.rectangleNoir {
+    width: 100px;
+    height: 30px;
+    background: #000000;
+    display: inline-block;
+}
+
+.UserProfilApp .btn.btn-primary {
     width: 100%;
+} 
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary {
+    width: 100%;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary:hover {
+   .MuiButton-label {
+    color: white;
+   }
 }
