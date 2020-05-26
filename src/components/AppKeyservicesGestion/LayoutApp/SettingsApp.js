@@ -21,109 +21,109 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 
 const useStyles = makeStyles((theme) => ({
-root: {
-    width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-    textAlign: 'center',
-  },
-
-MainTitle: {
-    fontSize: '24px',
-    fontWeight: 'boLd',
-    width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-    textAlign: 'center',
-},
-
-MuiListItem: {
-    paddingTop: '40px',
-    paddingBottom: '40px',
-    textAlign: 'center',
-    maxWidth: '360px',
-    justifyContent: 'center',
-  },
-
-Marges: {
-    marginTop: '50px',
-    marginBottom: '50px',
-    paddingTop: '40px',
-    paddingBottom: '40px',
-    textAlign: 'center',
-    maxWidth: '360px',
-    justifyContent: 'center',
-},
-
-buttonLangues : {
-    width: '100%',
-    backgroundColor: '#ffffff',
-    border: '1px solid #49173B',
-    label: {
-        width: "100%",
+    root: {
+        width: '100%',
+        maxWidth: 360,
+        backgroundColor: theme.palette.background.paper,
+        textAlign: 'center',
     },
-},
 
-buttonProfil : {
-    width: '100%',
-    backgroundColor: '#ffffff',
-    border: '1px solid #49173B',
-    label: {
-        width: "100%",
-        color: '#ffffff'
+    MainTitle: {
+        fontSize: '24px',
+        fontWeight: 'boLd',
+        width: '100%',
+        maxWidth: 360,
+        backgroundColor: theme.palette.background.paper,
+        textAlign: 'center',
     },
-},
 
-rectangleWhite: {
-    width: '108px',
-    height: '30px',
-    border: '1px solid black',
-    display: 'inline-block',
-},
+    MuiListItem: {
+        paddingTop: '40px',
+        paddingBottom: '40px',
+        textAlign: 'center',
+        maxWidth: '360px',
+        justifyContent: 'center',
+    },
 
-rectangleGrey: {
-    width: '108px',
-    height: '30px',
-    background: '#808080',
-    display: 'inline-block'
-},
+    Marges: {
+        marginTop: '50px',
+        marginBottom: '50px',
+        paddingTop: '40px',
+        paddingBottom: '40px',
+        textAlign: 'center',
+        maxWidth: '360px',
+        justifyContent: 'center',
+    },
 
-rectangleBlack: {
-    width: '108px',
-    height: '30px',
-    background: '#000000',
-    display: 'inline-block'
-},
+    buttonLangues : {
+        width: '100%',
+        backgroundColor: '#ffffff',
+        border: '1px solid #49173B',
+        label: {
+            width: "100%",
+        },
+    },
 
-linkIssues: {
-    color: 'red',
-    backgroundColor: 'white',
-    width: '100%',
-    "&:hover": {
+    buttonProfil : {
+        width: '100%',
+        backgroundColor: '#ffffff',
+        border: '1px solid #49173B',
+        label: {
+            width: "100%",
+            color: '#ffffff'
+        },
+    },
+
+    rectangleWhite: {
+        width: '108px',
+        height: '30px',
+        border: '1px solid black',
+        display: 'inline-block',
+    },
+
+    rectangleGrey: {
+        width: '108px',
+        height: '30px',
+        background: '#808080',
+        display: 'inline-block'
+    },
+
+    rectangleBlack: {
+        width: '108px',
+        height: '30px',
+        background: '#000000',
+        display: 'inline-block'
+    },
+
+    linkIssues: {
         color: 'red',
         backgroundColor: 'white',
+        width: '100%',
+        "&:hover": {
+            color: 'red',
+            backgroundColor: 'white',
+        },
     },
-},
 
-MuiDialogContent: {
-    width: '400px',
-},   
+    MuiDialogContent: {
+        width: '400px',
+    },   
 
-MuiDialogActions: {
-    justifyContent: 'space-around;',
-},
+    MuiDialogActions: {
+        justifyContent: 'space-around;',
+    },
 
-buttonRetour : {
-    backgroundColor: '#ffffff',
-    border: '1px solid #49173B',
-    display: 'flex',
-},
+    buttonRetour : {
+        backgroundColor: '#ffffff',
+        border: '1px solid #49173B',
+        display: 'flex',
+    },
 
-buttonEnvoyer: {
-    backgroundColor: '#87E990',
-    display: 'flex',
-    color: '#ffffff',
-},
+    buttonEnvoyer: {
+        backgroundColor: '#87E990',
+        display: 'flex',
+        color: '#ffffff',
+    },
 
 }));
 
@@ -172,35 +172,37 @@ export default function SwitchListSecondary() {
                         <Button  className={classes.linkIssues}  variant="contained" onClick={handleClickOpen} >
                             Signaler
                         </Button>
+
                         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
                             <DialogTitle id="form-dialog-title">Signaler un problème</DialogTitle>
                             <DialogContent className={classes.MuiDialogContent}>
                             <DialogContentText>
                             Adresse email
                             </DialogContentText>
-                            <TextField
-                                autoFocus
-                                margin="dense"
-                                id="name"
-                                // label="Email Address"
-                                type="email"
-                                fullWidth
-                            />
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="name"
+                                    // label="Email Address"
+                                    type="email"
+                                    fullWidth
+                                />
                             </DialogContent>
-                            <DialogContent>
-                            <DialogContentText>
-                            Votre message
-                            </DialogContentText>
-                            <TextField
-                                id="outlined-multiline-static"
-                                // label="Multiline"
-                                multiline
-                                rows={4}
-                                variant="outlined"
-                                fullWidth
-                            />
 
+                            <DialogContent>
+                                <DialogContentText>
+                                Votre message
+                                </DialogContentText>
+                                <TextField
+                                    id="outlined-multiline-static"
+                                    // label="Multiline"
+                                    multiline
+                                    rows={4}
+                                    variant="outlined"
+                                    fullWidth
+                                />
                             </DialogContent>
+
                             <DialogActions className={classes.MuiDialogActions} >
                             <Button className={classes.buttonRetour} onClick={handleClose} color="primary">
                                 Retour
