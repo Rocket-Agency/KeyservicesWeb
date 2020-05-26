@@ -20,6 +20,15 @@ root: {
     textAlign: 'center',
   },
 
+MainTitle: {
+    fontSize: '24px',
+    fontWeight: 'boLd',
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+    textAlign: 'center',
+},
+
 MuiListItem: {
     paddingTop: '40px',
     paddingBottom: '40px',
@@ -99,7 +108,7 @@ export default function SwitchListSecondary() {
         <Container>
             <Row>
                 <Col className="d-flex justify-content-center" >
-                    <List subheader={<ListSubheader>Settings</ListSubheader>} className={classes.root}>
+                    <List subheader={<ListSubheader>PARAMÈTRES</ListSubheader>} className={classes.MuiListSubheader}>
                         <ListItem className={classes.Marges}>
                             <ListItemIcon>
                                     <LanguageIcon />
