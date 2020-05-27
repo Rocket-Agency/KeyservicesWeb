@@ -2,20 +2,17 @@ import React, {Component} from 'react';
 import '../../../../css/Announce.scss';
 
 import { Row, Col, Container, Form } from 'react-bootstrap';
-import TextField from '@material-ui/core/TextField';
-import { Button } from 'reactstrap';
+import {TextValidator} from 'react-material-ui-form-validator';
 
 export class AnnounceTarif extends Component {
-
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
-      };
-
-    back = e => {
-        e.preventDefault();
-        this.props.prevStep();
-    };
+    constructor(props){
+        super(props)
+    }
+    values = {
+        price_starting:'',
+        price_min:'',
+        price_max:''
+    }    
 
     render() {
         const { values, handleChange } = this.props;
@@ -56,17 +53,18 @@ export class AnnounceTarif extends Component {
                                 <Form.Row>
                                     <Form.Label column sm={12} className="label-info-annonce-prix" >Tarif de base</Form.Label>
                                     <Col sm={12}>
-                                        <TextField
-                                            type="text" 
-                                            pattern="[A-Za-z]{3}"
-                                            required id="standard-required"
+                                        <TextValidator
                                             variant="outlined"
                                             fullWidth
                                             size="small"
                                             label="€"
-                                            defaultValue={values.price_starting} 
+                                            name="price_starting"
+                                            validators={['required', 'matchRegexp:^[0-9]{1,7}(|(.|,)[0-9]{1,2})$']}
+                                            errorMessages={['Le tarif de base est requis', 'Veuillez indiquer un prix valide (sans le signe €)']}
+                                            value={values.price_starting}
                                             onChange={handleChange('price_starting')}
-                                        />
+                                            validatorListener={this.props.validatorListener}
+                                        /> 
                                     </Col>
                                 </Form.Row>     
                             </Col>
@@ -83,17 +81,19 @@ export class AnnounceTarif extends Component {
                                         Quel est le prix le plus bas que vous consentez à accorder ?
                                     </Row>
                                     <Col sm={12}>
-                                        <TextField
-                                        type="text" 
-                                        pattern="[A-Za-z]{3}"
-                                        required id="standard-required"
-                                        variant="outlined"
-                                        fullWidth
-                                        size="small"
-                                        label="€"
-                                        defaultValue={values.price_min} 
-                                        onChange={handleChange('price_min')}
-                                        />
+                                        
+                                        <TextValidator
+                                            variant="outlined"
+                                            fullWidth
+                                            size="small"
+                                            name="price_min"
+                                            label="€"
+                                            validators={['required', 'matchRegexp:^[0-9]{1,7}(|(.|,)[0-9]{1,2})$']}
+                                            errorMessages={['Le prix minimum est requis', 'Veuillez indiquer un prix valide (sans le signe €)']}
+                                            value={values.price_min}
+                                            onChange={handleChange('price_min')}
+                                            validatorListener={this.props.validatorListener}
+                                        /> 
                                     </Col>
                                 </Form.Row>     
                             </Col>
@@ -110,36 +110,22 @@ export class AnnounceTarif extends Component {
                                         Quel est le prix à la nuit le plus élevé que vous souhaitez facturer aux voyageurs ?
                                     </Row>  
                                     <Col sm={12}>
-                                    <TextField
-                                        required id="standard-required"
-                                        variant="outlined"
-                                        pattern="[A-Za-z]{3}"
-                                        fullWidth
-                                        type="text" 
-                                        size="small"  
-                                        label="€"   
-                                        defaultValue={values.price_max} 
-                                        onChange={handleChange('price_max')}               
-                                        />   
+                                        <TextValidator
+                                            variant="outlined"
+                                            fullWidth
+                                            size="small"
+                                            name="price_max"
+                                            label="€"
+                                            validators={['required', 'matchRegexp:^[0-9]{1,7}(|(.|,)[0-9]{1,2})$','minNumber:'+values.price_min]}
+                                            errorMessages={['Le prix maximum est requis', 'Veuillez indiquer un prix valide (sans le signe €)', 'Le prix maximum ne peut pas être inférieur au prix minimum']}
+                                            value={values.price_max}
+                                            onChange={handleChange('price_max')}
+                                            validatorListener={this.props.validatorListener}
+                                        /> 
                                     </Col>   
                                 </Form.Row>     
                             </Col>
                         </Row>
-                        <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
-                                    <Button
-                                        color="secondary"
-                                        variant="contained"
-                                        onClick={this.back}
-                                        aria-label="Retour"
-                                    >Retour</Button>
-
-                                    <Button
-                                    color="primary"
-                                    variant="contained"
-                                    onClick={this.continue}
-                                    aria-label="Continuer"
-                                    >Continuer</Button>
-                            </Col>
 
                     </Container>
                 </Container>
