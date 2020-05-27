@@ -12,6 +12,7 @@ import AnnounceConfirm from './AnnounceConfirm';
 import AnnounceSuccess from './AnnounceSuccess';
 import { ValidatorForm} from 'react-material-ui-form-validator';
 import { Button } from 'reactstrap';
+import { Col } from 'react-bootstrap';
 
 export class AnnounceStepperForm extends Component {
   state = {
@@ -252,24 +253,30 @@ export class AnnounceStepperForm extends Component {
         instantValidate
       >
         {this.renderStep()}
-        <Button
-          onClick={this.prevStep}
-          style={{ marginRight: '16px' }}
-          disabled={step === 1}
-        >
-          Retour
-        </Button>
-        <Button
-          color="primary"
-          variant="contained"
-          onClick={step < 8 ? this.nextStep : this.submit}
-          disabled={disabled || submitted}
-        >
-          {
-            (submitted && 'Votre annonce a été enregistrée !')
-            || (step < 8 ? 'Continue' : 'Enregistrer')
-          }
-        </Button>
+        <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
+          <Button
+            color="secondary"
+            variant="contained"
+            aria-label="Retour"
+            onClick={this.prevStep}
+            style={{ marginRight: '16px' }}
+            disabled={step === 1}
+          >
+            Retour
+          </Button>
+          <Button
+            color="primary"
+            aria-label="Continuer"
+            variant="contained"
+            onClick={step < 8 ? this.nextStep : this.submit}
+            disabled={disabled || submitted}
+          >
+            {
+              (submitted && 'Votre annonce a été enregistrée !')
+              || (step < 8 ? 'Continuer' : 'Enregistrer')
+            }
+          </Button>
+        </Col>
       </ValidatorForm>
 
       );

@@ -158,7 +158,7 @@ export class AnnounceConfirm extends Component {
 
                         <h2>Adresse de votre logement</h2> 
                         <ListItem>
-                            <ListItemText primary="N° de rue" secondary={address_road_number}/> 
+                            <ListItemText primary="N° de rue :" secondary={address_road_number}/> 
                         </ListItem>
             
                         <ListItem>
@@ -189,7 +189,7 @@ export class AnnounceConfirm extends Component {
 
                         <h2>Information de votre logement</h2>
                         <ListItem>
-                            <ListItemText primary="Type de propriété" secondary={housing_type_property} /> 
+                            <ListItemText primary="Type de propriété :" secondary={housing_type_property} /> 
                         </ListItem>
             
                         <ListItem>
@@ -258,27 +258,27 @@ export class AnnounceConfirm extends Component {
                         </ListItem>
 
                         <ListItem>
-                            <ListItemText primary="Transport à proximité" secondary={info_area}/> 
+                            <ListItemText primary="Transport à proximité :" secondary={info_area}/> 
                         </ListItem>
 
                         <ListItem>
-                            <ListItemText primary="Magasin à proximité:" secondary={info_around}/> 
+                            <ListItemText primary="Magasin à proximité :" secondary={info_around}/> 
                          </ListItem>
 
                          <ListItem>
-                            <ListItemText primary="Ajouter une règle:" secondary={rule_add}/> 
+                            <ListItemText primary="Ajouter une règle :" secondary={rule_add}/> 
                         </ListItem>
 
                         <ListItem>
-                            <ListItemText primary="Informations utiles:" secondary={info_infos}/> 
+                            <ListItemText primary="Informations utiles :" secondary={info_infos}/> 
                         </ListItem>
 
                         <ListItem>
-                            <ListItemText primary="Disponibilité:" secondary={info_availability}/> 
+                            <ListItemText primary="Disponibilité :" secondary={info_availability}/> 
                         </ListItem>
 
                         <ListItem>
-                            <ListItemText primary="Au alentour:" secondary={observation}/> 
+                            <ListItemText primary="Aux alentours :" secondary={observation}/> 
                         </ListItem>
 
                         <br/>
@@ -329,7 +329,7 @@ export class AnnounceConfirm extends Component {
                         </ListItem>
 
                          <ListItem>
-                            <ListItemText primary="Date d'arrivée le" secondary={ad_starting_date}/>
+                            <ListItemText primary="Date d'arrivée le :" secondary={ad_starting_date}/>
 
                             <ListItemText primary="Heure d'arrivée à :" secondary={ad_arrival_time}/>  
                             

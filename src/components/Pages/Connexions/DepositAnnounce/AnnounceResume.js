@@ -3,18 +3,24 @@ import '../../../../css/Announce.scss';
 
 import { Col, Container, Row, Form } from 'react-bootstrap';
 import Grid from '@material-ui/core/Grid';
-
 import "react-datepicker/dist/react-datepicker.css";
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../../../ImagesPlaceholder/100.png';
-import {TextValidator} from 'react-material-ui-form-validator';
+import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 
 export class AnnounceResume extends Component {
     constructor (props) {
         super(props)
+        var today = new Date(),
+        date = today.getFullYear() + '-' + ((today.getMonth() + 1)<10 ? '0'+(today.getMonth() + 1) : (today.getMonth() + 1)) + '-' + today.getDate();
+
+        var today2 = new Date(),
+        date2 = (today2.getFullYear() + 1) + '-' + (today2.getMonth() + 1) + '-' + today2.getDate();
         this.state = {
-          files: null
+          files: null,
+          current_date: date,
+          nextyear_date: date2,
         };
       }
     values = {
@@ -27,16 +33,36 @@ export class AnnounceResume extends Component {
         ad_min_night:'',
         ad_max_night:'',
         ad_starting_date:'',
-        ad_ending_date:'',
-        ad_arrival_time:'',
-        ad_departure_time:''
+        ad_ending_date:''
     }
-      onChangeHandler=event=>{
+    onChangeHandler=event=>{
         this.setState({
             files: event.target.files, //declareer chaque ellemeeent .size . name ...
                 loaded: 0,
-          })
+        })
         // console.log(event.target.files[0].size)
+    }
+    componentDidMount() {
+        ValidatorForm.addValidationRule('isValidDate', (value) => {
+            if (value < this.state.current_date) {
+                return false;
+            } else {
+                return true;
+            }
+        });
+        ValidatorForm.addValidationRule('isBiggerThanStart', (value) => {
+            if (value < this.props.ad_starting_date) {
+                console.log(value + ' not bigger than ' + this.props.ad_starting_date)
+                return false;
+            } else {
+                console.log(value + ' bigger than ' + this.props.ad_starting_date)
+                return true;
+            }
+        });
+    }
+    componentWillUnmount() {
+        // remove rule when it is not needed
+        ValidatorForm.removeValidationRule('isValidMail');
     }
 
     render() {
@@ -268,34 +294,39 @@ export class AnnounceResume extends Component {
                         <Grid container spacing={3}>
                             <Grid item xs={3}>
                                 <TextValidator
-                                variant="outlined"
-                                fullWidth
-                                size="small"
-                                label="Date d'arrivée"
-                                type="date"
-                                defaultValue="2020-05-29"
-                                validators={['required']}
-                                errorMessages={['La date d\arrivée est requise']}
-                                value={values.ad_starting_date}
-                                onChange={handleChange('ad_starting_date')}
-                                validatorListener={this.props.validatorListener}
+                                    variant="outlined"
+                                    fullWidth
+                                    size="small"
+                                    label="Date de début de publication"
+                                    type="date"
+                                    InputLabelProps={{
+                                        shrink: true,
+                                    }}
+                                    validators={['required','matchRegexp:^([0-9]{4})-((0[1-9])|(1[0-2]))-(0[1-9]|[12][0-9]|3[01])$', 'isValidDate']}
+                                    errorMessages={['La date de début de publication est requise','Date Invalide','Vous ne pouvez pas choisir une date du passé']}
+                                    value={values.ad_starting_date}
+                                    onChange={handleChange('ad_starting_date')}
+                                    validatorListener={this.props.validatorListener}
                                 />
                             </Grid>
                             
                             <Grid item xs={3}>
 
                                 <TextValidator
-                                variant="outlined"
-                                fullWidth
-                                size="small"
-                                label="Heure d'arrivée"
-                                type="time"
-                                defaultValue="2020-05-29"
-                                validators={['required']}
-                                errorMessages={['L\'heure d\'arrivée est requise']}
-                                value={values.ad_arrival_time}
-                                onChange={handleChange('ad_arrival_time')}
-                                validatorListener={this.props.validatorListener}
+                                    variant="outlined"
+                                    fullWidth
+                                    size="small"
+                                    label="Heure d'arrivée pour les voyageurs"
+                                    type="time"
+                                    InputLabelProps={{
+                                        shrink: true,
+                                    }}
+                                    defaultValue="00:00"
+                                    validators={['required']}
+                                    errorMessages={['L\'heure d\'arrivée est requise', 'Nous sommes ouverts de 8h à 19h']}
+                                    value={values.ad_arrival_time}
+                                    onChange={handleChange('ad_arrival_time')}
+                                    validatorListener={this.props.validatorListener}
                                 /> 
                             </Grid>
                                                 
@@ -305,10 +336,12 @@ export class AnnounceResume extends Component {
                                 fullWidth
                                 size="small"
                                 type="date"
-                                label="Date de départ"
-                                defaultValue="2020-05-29"
-                                validators={['required']}
-                                errorMessages={['La date de départ est requise']}
+                                InputLabelProps={{
+                                    shrink: true,
+                                }}
+                                label="Date de fin de publication"
+                                validators={['required','matchRegexp:^([0-9]{4})-((0[1-9])|(1[0-2]))-(0[1-9]|[12][0-9]|3[01])$','isValidDate' ,'isBiggerThanStart']}
+                                errorMessages={['La date de départ est requise', 'Date invalide','Vous ne pouvez pas choisir une date du passé', 'La date de fin de publication ne peut pas être avant celle de début de publication']}
                                 value={values.ad_ending_date}
                                 onChange={handleChange('ad_ending_date')}
                                 validatorListener={this.props.validatorListener}
@@ -320,9 +353,11 @@ export class AnnounceResume extends Component {
                                     variant="outlined"
                                     fullWidth
                                     size="small"
-                                    label="Heure de départ"
+                                    label="Heure de départ pour les voyageurs"
+                                    InputLabelProps={{
+                                        shrink: true,
+                                    }}
                                     type="time"
-                                    defaultValue="2020-05-29"
                                     validators={['required']}
                                     errorMessages={['La heure de départ est requise']}
                                     value={values.ad_departure_time}

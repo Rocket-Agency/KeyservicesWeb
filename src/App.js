@@ -24,9 +24,6 @@ import {ValidationContactForm} from './components/Pages/Molecule/ValidationConta
 import {MonEspace} from './components/Pages/MonEspace';
 
 
-import {AnnounceOguz} from './components/Pages/AnnounceOguz';
-
-
 //Connexion pages
 import {LoginProprietaire} from './components/Pages/Connexions/Login/LoginProprietaire';
 import {LoginLocataire} from './components/Pages/Connexions/Login/LoginLocataire';
@@ -88,7 +85,6 @@ function App() {
                   <Route path='/dashboard' component={ProfileTabs} />
                   <Route path='/deconnexion' component={Deconnexion} />
                   <Route path='/cgu' component={CGU} />
-                  <Route path='/AnnounceOguz' component={AnnounceOguz} />
                   {/* <Route path='/loginConcierge' component={Connexion} /> */}
                   <Route component={NotFound} />
                 </Switch>
