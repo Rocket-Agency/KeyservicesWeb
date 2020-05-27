@@ -54,7 +54,7 @@ class ConnexionConcierge extends Component {
 
   render() {
     return (
-      <div className="formConnexionApplication" style={{ height: '100%', position: 'absolute', left: '0px', width: '100%', overflow: 'hidden', backgroundColor: '#49173B'}} >
+      <div className="formConnexionApplication">
         <Form onSubmit={this.handleSubmit}>
             <Col sm={12} className="d-flex justify-content-left mb-5">
                  <ProgressiveImage  className="card-img-logo style-card" 
