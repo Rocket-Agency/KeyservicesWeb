@@ -198,7 +198,7 @@ constructor(props) {
               <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
               <BreadcrumbItem >Prise de rendez-vous</BreadcrumbItem>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                  <h1>Prise de rendez-vous</h1>
+                  <h1 style={{textAlign: 'center'}}>Prise de rendez-vous</h1>
                   <ScheduleAppointment />
                 </MuiPickersUtilsProvider>
               </TabContainer> }

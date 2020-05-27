@@ -119,6 +119,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#ffffff',
         border: '1px solid #49173B',
         display: 'flex',
+        color: '#49173B'
     },
 
     buttonEnvoyer: {
@@ -171,53 +172,53 @@ export default function SwitchListSecondary() {
                         </ListItem>
 
                         <ListItem className={classes.Marges}>
-                        <Button  className={classes.linkIssues}  variant="contained" onClick={handleClickOpen} >
-                            Signaler
-                        </Button>
-
-                        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
-                            <DialogTitle id="form-dialog-title">Signaler un problème</DialogTitle>
-                            <DialogContent className={classes.MuiDialogContent}>
-                            <DialogContentText>
-                            Adresse email
-                            </DialogContentText>
-                                <TextField
-                                    autoFocus
-                                    margin="dense"
-                                    id="name"
-                                    // label="Email Address"
-                                    type="email"
-                                    fullWidth
-                                />
-                            </DialogContent>
-
-                            <DialogContent>
-                                <DialogContentText>
-                                Votre message
-                                </DialogContentText>
-                                <TextField
-                                    id="outlined-multiline-static"
-                                    // label="Multiline"
-                                    multiline
-                                    rows={4}
-                                    variant="outlined"
-                                    fullWidth
-                                />
-                            </DialogContent>
-
-                            <DialogActions className={classes.MuiDialogActions} >
-                            <Button className={classes.buttonRetour} onClick={handleClose} color="primary">
-                                Retour
+                            <Button  className={classes.linkIssues}  variant="contained" onClick={handleClickOpen} >
+                                Signaler
                             </Button>
 
-                            <button className="applicationConnexionEnvoyer" aria-label="Se connecter" onClick={handleClose}> 
-                                <span className="circle" aria-hidden="true">
-                                    <span className="icon arrow"></span>
-                                </span>
-                                <span className="button-text">Envoyer</span>
-                            </button>                           
-                            </DialogActions>
-                        </Dialog>
+                            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
+                                <DialogTitle id="form-dialog-title">Signaler un problème</DialogTitle>
+                                <DialogContent className={classes.MuiDialogContent}>
+                                <DialogContentText>
+                                    Adresse email
+                                    </DialogContentText>
+                                        <TextField
+                                            autoFocus
+                                            margin="dense"
+                                            id="name"
+                                            // label="Email Address"
+                                            type="email"
+                                            fullWidth
+                                        />
+                                </DialogContent>
+
+                                <DialogContent>
+                                    <DialogContentText>
+                                    Votre message
+                                    </DialogContentText>
+                                    <TextField
+                                        id="outlined-multiline-static"
+                                        // label="Multiline"
+                                        multiline
+                                        rows={4}
+                                        variant="outlined"
+                                        fullWidth
+                                    />
+                                </DialogContent>
+
+                                <DialogActions className={classes.MuiDialogActions} >
+                                <Button className={classes.buttonNon} onClick={handleClose} color="primary">
+                                    Non
+                                </Button>
+
+                                <button className="applicationConnexionEnvoyer" aria-label="Se connecter" onClick={handleClose}> 
+                                    <span className="circle" aria-hidden="true">
+                                        <span className="icon arrow"></span>
+                                    </span>
+                                    <span className="button-text">Envoyer</span>
+                                </button>                           
+                                </DialogActions>
+                            </Dialog>
                         </ListItem>
                     </List>
                 </Col>

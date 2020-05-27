@@ -120,21 +120,6 @@ class MyProfil extends Component {
           }, 3000);
         }
       }
-    
-      handleClickShowAlertTest(){
-        const [show, setShow] = useState(true);
-      
-        if (show) {
-          return (
-            <Alert variant="success" onClose={() => setShow(false)} dismissible>
-                <strong>Succès!</strong> Les modifications de votre profil ont bien été enregistrer
-            </Alert>
-          );
-        }
-        return <div className="style{{display : none}}"></div>;
-      }
-    
-    
       handleClickShowAlertPassword(onChange, showingAlertPassword) {
         if (onChange){
           this.setState({
