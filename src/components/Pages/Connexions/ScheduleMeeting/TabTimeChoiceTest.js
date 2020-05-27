@@ -21,7 +21,7 @@ export class TabTimeChoiceTest extends Component {
           'x-access-token': this.props.token
         }
       }
-      axios.get('http://localhost:3001/api/appointment', config)
+      axios.post('http://localhost:3001/api/appointment/create', config)
       .then (res => {
         const appointmentCollection = res.data;
         this.setState( {appointmentCollection});
@@ -45,6 +45,10 @@ render(){
   
     const handleClose = () => {
       setOpen(false);
+    };
+
+    const validateDate = () => {
+        console.log('test');
     };
 
   const useStyles = makeStyles((theme) => ({
@@ -144,7 +148,7 @@ render(){
                             <span className="circle" aria-hidden="true">
                                 <span className="icon arrow"></span>
                             </span>
-                            <span className="button-text">Oui</span>
+                            <span className="button-text" onClick={validateDate}>Oui</span>
                         </button>     
                     </DialogActions>
                 </Dialog>
