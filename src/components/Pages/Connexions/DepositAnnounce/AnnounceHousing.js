@@ -77,16 +77,15 @@ export class AnnounceHousing extends Component {
                     <Container fluid>
                         <Form.Row>
                             <Form.Label className="d-flex align-items-center label-info-annonce">
-                                Type de propriété :
+                                Type de propriété : 
                             </Form.Label>
 
                             <RadioGroup row aria-label="position" name="position" defaultValue="top">
                                 <FormControlLabel
                                     value="Maison"
+                                    label="Maison"
                                     control={<Radio color="primary" />}
                                     control={<Radio required={true} />}
-                                    label="Maison"
-                                    labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
                                     onChange={handleChange('housing_type_property')}
                                 />       
@@ -96,7 +95,6 @@ export class AnnounceHousing extends Component {
                                     control={<Radio color="primary" />}
                                     control={<Radio required={true} />}
                                     label="Appartement"
-                                    labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
                                     onChange={handleChange('housing_type_property')}
                                 />
@@ -106,7 +104,6 @@ export class AnnounceHousing extends Component {
                                     control={<Radio color="primary" />}
                                     control={<Radio required={true} />}
                                     label="Chambre(s)"
-                                    labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
                                     onChange={handleChange('housing_type_property')}
                                  />
@@ -116,7 +113,6 @@ export class AnnounceHousing extends Component {
                                     control={<Radio color="primary" />}
                                     control={<Radio required={true} />}
                                     label="Auberge de jeunesse"
-                                    labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
                                     onChange={handleChange('housing_type_property')}
                                 />
@@ -125,14 +121,13 @@ export class AnnounceHousing extends Component {
 
                         <Form.Row>
                             <Form.Label className="d-flex align-items-center label-info-annonce">
-                                Type de logement :
+                                Type de logement : 
                             </Form.Label>
                             <RadioGroup row aria-label="position" name="position" defaultValue="Logement entier">
                                 <FormControlLabel
                                     value="Logement entier"
                                     control={<Radio color="primary" />}
                                     label="Logement entier"
-                                    labelPlacement="start"
                                     defaultValue={values.housing_type} 
                                     onChange={handleChange('housing_type')}
                                 />                               
@@ -141,7 +136,6 @@ export class AnnounceHousing extends Component {
                                     value="Chambre privé"
                                     control={<Radio color="primary" />}
                                     label="Chambre privé"
-                                    labelPlacement="start"
                                     defaultValue={values.housing_type} 
                                     onChange={handleChange('housing_type')}
                                 />
@@ -150,7 +144,6 @@ export class AnnounceHousing extends Component {
                                     value="Chambre partagée"
                                     control={<Radio color="primary" />}
                                     label="Chambre partagée"
-                                    labelPlacement="start"
                                     defaultValue={values.housing_type} 
                                     onChange={handleChange('housing_type')}
                                  />
@@ -162,7 +155,7 @@ export class AnnounceHousing extends Component {
                                 <Form.Row>
                                     <Form.Group as={Row} controlId="formHorizontalEmail">
                                         <Form.Label column sm={7} className="d-flex align-items-center label-info-annonce"> 
-                                            Nombre de chambres :
+                                            Nombre de chambres : 
                                         </Form.Label>
                                         <Col sm={4}>
                                             <TextValidator
@@ -187,7 +180,7 @@ export class AnnounceHousing extends Component {
                                 <Form.Row>
                                     <Form.Group as={Row} controlId="formHorizontalEmail">
                                         <Form.Label column sm={7} className="d-flex align-items-center label-info-annonce"> 
-                                            Nombre de salles de bain :
+                                            Nombre de salles de bain : 
                                         </Form.Label>
                                         <Col sm={4}>
                                             <TextValidator
@@ -211,7 +204,7 @@ export class AnnounceHousing extends Component {
 
                         <Form.Row>
                             <Form.Group as={Col} controlId="TextareaObservation">
-                                <Form.Label className="label-info-annonce">Observation</Form.Label>
+                                <Form.Label className="label-info-annonce">Observations : </Form.Label>
                                 <Form.Control 
                                     as="textarea" 
                                     rows="3"

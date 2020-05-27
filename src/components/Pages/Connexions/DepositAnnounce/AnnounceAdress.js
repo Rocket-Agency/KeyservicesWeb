@@ -4,7 +4,7 @@ import '../../../../css/Announce.scss';
 import { Col, Container, Row, Form } from 'react-bootstrap';
 import TextField from '@material-ui/core/TextField';
 import { Button } from 'reactstrap';
-import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+import {TextValidator} from 'react-material-ui-form-validator';
  
 export class AnnounceAddresss extends Component {
     constructor(props){

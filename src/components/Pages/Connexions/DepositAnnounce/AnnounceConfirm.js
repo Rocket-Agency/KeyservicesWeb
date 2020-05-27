@@ -10,7 +10,9 @@ import { Col, Row } from 'react-bootstrap';
 
 export class AnnounceConfirm extends Component {
 
-    
+    constructor (props) {
+        super(props)
+      }
 
     continue = e => {
         var aValue = localStorage.getItem('id');

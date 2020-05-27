@@ -2,32 +2,35 @@ import React, {Component} from 'react';
 import '../../../../css/Announce.scss';
 
 import { Col, Container, Row, Form } from 'react-bootstrap';
-import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
 
 import "react-datepicker/dist/react-datepicker.css";
-import DatePickerChoice from './DateChoice/DatePickerChoice';
-import { Button } from 'reactstrap';
 import Img from 'react-cool-img';
 import ImgDefaultAvatar from '../../../../ImagesPlaceholder/100.png';
+import {TextValidator} from 'react-material-ui-form-validator';
 
 
 export class AnnounceResume extends Component {
     constructor (props) {
         super(props)
         this.state = {
-          startDate: new Date(),
           files: null
         };
-        this.handleDateChange = this.handleDateChange.bind(this);
-        this.onFormSubmit = this.onFormSubmit.bind(this);
       }
-    
-    handleDateChange(date) {
-        this.setState({
-          startDate: date
-        })
-      }
-
+    values = {
+        ad_title:'',
+        ad_description:'',
+        ad_capacity:'',
+        ad_notice:'',
+        ad_arrival_time:'',
+        ad_departure_time:'',
+        ad_min_night:'',
+        ad_max_night:'',
+        ad_starting_date:'',
+        ad_ending_date:'',
+        ad_arrival_time:'',
+        ad_departure_time:''
+    }
       onChangeHandler=event=>{
         this.setState({
             files: event.target.files, //declareer chaque ellemeeent .size . name ...
@@ -35,31 +38,6 @@ export class AnnounceResume extends Component {
           })
         // console.log(event.target.files[0].size)
     }
-
-      onFormSubmit(e) {
-        e.preventDefault();
-        console.log(this.state.startDate)
-      }
-
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
-      };
-
-      back = e => {
-        e.preventDefault();
-        this.props.prevStep();
-      };
-
-      state = {
-        startDate: new Date()
-      };
-     
-      handleChange = date => {
-        this.setState({
-          startDate: date
-        });
-      };
 
     render() {
         const { values, handleChange ,saveImages } = this.props;
@@ -100,17 +78,17 @@ export class AnnounceResume extends Component {
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Titre de l'annonce</Form.Label>
                                     <Col sm={12}>
-                                        <TextField
-                                            type="text" 
-                                            name="ad_title"
-                                            pattern="[A-Za-z]{3}"
-                                            required id="standard-required"
+                                        <TextValidator
                                             variant="outlined"
                                             fullWidth
                                             size="small"
-                                            defaultValue={values.ad_title} 
+                                            name="ad_title"
+                                            validators={['required']}
+                                            errorMessages={['Le titre de l\'annonce est requis']}
+                                            value={values.ad_title}
                                             onChange={handleChange('ad_title')}
-                                        />
+                                            validatorListener={this.props.validatorListener}
+                                        /> 
                                     </Col>
                                 </Form.Row>     
                             </Col>
@@ -122,13 +100,19 @@ export class AnnounceResume extends Component {
                             <Col xs={12} md={12} className="label-info-annonce">
                                 <Form.Group controlId="Announce_ad_description">
                                     <Form.Label>Description</Form.Label>
-                                    <Form.Control 
-                                        as="textarea" 
-                                        rows="2" 
-                                        name="ad_description" 
-                                        defaultValue={values.ad_description} 
-                                        onChange={handleChange('ad_description')}
-                                    />
+                                     <TextValidator
+                                            variant="outlined"
+                                            fullWidth
+                                            size="small"
+                                            name="ad_description"
+                                            multiline
+                                            rows={4}
+                                            validators={['required']}
+                                            errorMessages={['La description de l\'annonce est requise']}
+                                            value={values.ad_description}
+                                            onChange={handleChange('ad_description')}
+                                            validatorListener={this.props.validatorListener}
+                                        /> 
                                 </Form.Group> 
                             </Col>
                         </Row>
@@ -272,7 +256,7 @@ export class AnnounceResume extends Component {
                     <Container fluid className="pt-3 pb-3"> 
                         <Row className="pt-3 pb-3">
                             <Col xs={6} md={6} className="d-flex justify-content-center info-annonce-date">
-                                Arrivée
+                               Arrivée
                             </Col>
                             
                             <Col xs={6} md={6} className="d-flex justify-content-center info-annonce-date">
@@ -280,26 +264,75 @@ export class AnnounceResume extends Component {
                             </Col>
                         </Row>
 
-                        <DatePickerChoice />
+                        
+                        <Grid container spacing={3}>
+                            <Grid item xs={3}>
+                                <TextValidator
+                                variant="outlined"
+                                fullWidth
+                                size="small"
+                                label="Date d'arrivée"
+                                type="date"
+                                defaultValue="2020-05-29"
+                                validators={['required']}
+                                errorMessages={['La date d\arrivée est requise']}
+                                value={values.ad_starting_date}
+                                onChange={handleChange('ad_starting_date')}
+                                validatorListener={this.props.validatorListener}
+                                />
+                            </Grid>
+                            
+                            <Grid item xs={3}>
+
+                                <TextValidator
+                                variant="outlined"
+                                fullWidth
+                                size="small"
+                                label="Heure d'arrivée"
+                                type="time"
+                                defaultValue="2020-05-29"
+                                validators={['required']}
+                                errorMessages={['L\'heure d\'arrivée est requise']}
+                                value={values.ad_arrival_time}
+                                onChange={handleChange('ad_arrival_time')}
+                                validatorListener={this.props.validatorListener}
+                                /> 
+                            </Grid>
+                                                
+                            <Grid item xs={3}>  
+                                <TextValidator
+                                variant="outlined"
+                                fullWidth
+                                size="small"
+                                type="date"
+                                label="Date de départ"
+                                defaultValue="2020-05-29"
+                                validators={['required']}
+                                errorMessages={['La date de départ est requise']}
+                                value={values.ad_ending_date}
+                                onChange={handleChange('ad_ending_date')}
+                                validatorListener={this.props.validatorListener}
+                                /> 
+                            </Grid>
+                                                
+                            <Grid item xs={3}>
+                                <TextValidator
+                                    variant="outlined"
+                                    fullWidth
+                                    size="small"
+                                    label="Heure de départ"
+                                    type="time"
+                                    defaultValue="2020-05-29"
+                                    validators={['required']}
+                                    errorMessages={['La heure de départ est requise']}
+                                    value={values.ad_departure_time}
+                                    onChange={handleChange('ad_departure_time')}
+                                    validatorListener={this.props.validatorListener}
+                                /> 
+                            </Grid>
+                        </Grid>
 
                     </Container>
-
-                    <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
-                        <Button
-                            color="secondary"
-                            variant="contained"
-                            onClick={this.back}
-                            aria-label="Retour"
-                        >Retour</Button>
-
-                        <Button
-                            color="primary"
-                            variant="contained"
-                            onClick={this.continue}
-                            aria-label="Continuer"                                
-                        >Continuer</Button>
-                    </Col>
-
                 </Container>
             </div>
         )
