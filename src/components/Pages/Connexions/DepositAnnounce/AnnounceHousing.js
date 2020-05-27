@@ -80,11 +80,10 @@ export class AnnounceHousing extends Component {
                                 Type de propriété :
                             </Form.Label>
 
-                            <RadioGroup row aria-label="position" name="position" defaultValue="top">
+                            <RadioGroup row aria-label="position" name="position" defaultValue="Maison">
                                 <FormControlLabel
                                     value="Maison"
-                                    control={<Radio color="primary" />}
-                                    control={<Radio required={true} />}
+                                    control={<Radio color="primary" required={true}/>}
                                     label="Maison"
                                     labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
@@ -93,8 +92,7 @@ export class AnnounceHousing extends Component {
 
                                  <FormControlLabel
                                     value="Appartement"
-                                    control={<Radio color="primary" />}
-                                    control={<Radio required={true} />}
+                                    control={<Radio color="primary"  required={true} />}
                                     label="Appartement"
                                     labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
@@ -103,8 +101,8 @@ export class AnnounceHousing extends Component {
 
                                 <FormControlLabel
                                     value="Chambre(s)"
-                                    control={<Radio color="primary" />}
-                                    control={<Radio required={true} />}
+                                    control={<Radio color="primary" required={true} />}
+
                                     label="Chambre(s)"
                                     labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
@@ -113,8 +111,7 @@ export class AnnounceHousing extends Component {
 
                                 <FormControlLabel
                                     value="Auberge de jeunesse"
-                                    control={<Radio color="primary" />}
-                                    control={<Radio required={true} />}
+                                    control={<Radio color="primary" required={true}/>}
                                     label="Auberge de jeunesse"
                                     labelPlacement="start"
                                     defaultValue={values.housing_type_property} 
@@ -164,7 +161,7 @@ export class AnnounceHousing extends Component {
                                         <Form.Label column sm={7} className="d-flex align-items-center label-info-annonce"> 
                                             Nombre de chambres :
                                         </Form.Label>
-                                        <Col sm={4}>
+                                        <Col sm={5}>
                                             <TextValidator
                                                 key={1}
                                                 type="number" 
@@ -189,7 +186,7 @@ export class AnnounceHousing extends Component {
                                         <Form.Label column sm={7} className="d-flex align-items-center label-info-annonce"> 
                                             Nombre de salles de bain :
                                         </Form.Label>
-                                        <Col sm={4}>
+                                        <Col sm={5}>
                                             <TextValidator
                                                 key={1}
                                                 type="number" 
@@ -204,7 +201,7 @@ export class AnnounceHousing extends Component {
                                                 validatorListener={this.props.validatorListener}
                                             />
                                         </Col>
-                                </Form.Group>
+                                    </Form.Group>
                                 </Form.Row>
                             </Col>  
                         </Row> 
@@ -216,11 +213,19 @@ export class AnnounceHousing extends Component {
                                         <Form.Label column sm={7} className="d-flex align-items-center label-info-annonce"> 
                                             Superficie en m2 :
                                         </Form.Label>
-                                        <Col sm={4}>
-                                            <Form.Control 
+                                        <Col sm={5}>
+                                            <TextValidator
+                                                key={1}
                                                 type="number" 
-                                                defaultValue={values.housing_nb_bathroom} 
-                                                onChange={handleChange('housing_nb_bathroom')}
+                                                variant="outlined"
+                                                fullWidth
+                                                size="small"
+                                                validators={['required', 'minNumber:0' , 'matchRegexp:^[0-9]{1,2}$']}
+                                                errorMessages={['Ce champ est obligatoire', 'Nombre invalide', 'Nombre invalide']}
+                                                name="housing_nb_surface"
+                                                onChange={handleChange('housing_nb_surface')}
+                                                value={values.housing_nb_surface}
+                                                validatorListener={this.props.validatorListener}
                                             />
                                         </Col>
                                 </Form.Group>
