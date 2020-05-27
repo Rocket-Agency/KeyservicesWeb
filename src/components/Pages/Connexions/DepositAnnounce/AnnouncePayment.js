@@ -3,18 +3,13 @@ import '../../../../css/Announce.scss';
 
 import { Row, Col, Container, Form } from 'react-bootstrap';
 import { Button } from 'reactstrap';
+import Payment from './Payment';
 
-import {loadStripe} from '@stripe/stripe-js';
-import {CardElement, useStripe, useElements, Elements} from '@stripe/react-stripe-js';
 
 export class AnnouncePayment extends Component {
 
     constructor(props){
         super(props);
-
-        this.state = {
-            stripe : 'pk_test_9xweeLk3zovQYpEWOEk0Tc0J004QTgAupc'
-        }
     }
 
     continue = e => {
@@ -28,9 +23,6 @@ export class AnnouncePayment extends Component {
     };
 
     render() {
-        // const { values, handleChange } = this.props;
-        // console.log(this.props);
-        const stripePromise = loadStripe(this.state.stripe);
         return(
             <div>
                 <Container fluid className="pt-4 blocForm" >  
@@ -64,30 +56,7 @@ export class AnnouncePayment extends Component {
                     <Container fluid>
                 
                         <h2>Paiement</h2>
-                            
-                        <form onSubmit={this.handleSubmit}>
-                        <Elements stripe={stripePromise}>
-                        <CardElement
-                            options={{
-                                style: {
-                                base: {
-                                    fontSize: '16px',
-                                    color: '#424770',
-                                    '::placeholder': {
-                                    color: '#aab7c4',
-                                    },
-                                },
-                                invalid: {
-                                    color: '#9e2146',
-                                },
-                                },
-                            }}
-                            />
-                        </Elements>
-                        <button type="submit" disabled={!stripePromise}>
-                                Pay
-                        </button>
-                        </form>
+                        <Payment prix={}/>
                         
                     </Container>
 
