@@ -176,7 +176,7 @@ export default function NavTabs() {
       <TabPanel value={value} index={1}>
         <Col xs={12} md={12} className="label-schoix-horaire d-flex justify-content-center">
             <Form.Group controlId="select_time_afternoon">
-            <Form.Label>Veuillez choisir un créneaux horaire de rendez-vous :</Form.Label>
+                 <Form.Label>Veuillez choisir un créneaux horaire de rendez-vous :</Form.Label>
                     <Form.Control 
                         as="select" 
                         name="select_time_afternoon"
