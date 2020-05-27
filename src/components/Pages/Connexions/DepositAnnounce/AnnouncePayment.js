@@ -56,7 +56,7 @@ export class AnnouncePayment extends Component {
                     <Container fluid>
                 
                         <h2>Paiement</h2>
-                        <Payment prix={}/>
+                        <Payment/>
                         
                     </Container>
 
