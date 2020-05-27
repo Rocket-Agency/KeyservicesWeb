@@ -23,6 +23,7 @@ export class AnnounceHousing extends Component {
         housing_nb_room:'',
         housing_nb_bathroom:'',
         housing_observation:'',
+        housing_nb_surface: '',
         equipment_kitchen:'',
         equipment_heater:'',
         equipment_wifi:'',
@@ -215,12 +216,10 @@ export class AnnounceHousing extends Component {
                                         </Form.Label>
                                         <Col sm={5}>
                                             <TextValidator
-                                                key={1}
-                                                type="number" 
                                                 variant="outlined"
                                                 fullWidth
                                                 size="small"
-                                                validators={['required', 'minNumber:0' , 'matchRegexp:^[0-9]{1,2}$']}
+                                                validators={['required', 'minNumber:0' , 'matchRegexp:^[0-9]{1,4}$']}
                                                 errorMessages={['Ce champ est obligatoire', 'Nombre invalide', 'Nombre invalide']}
                                                 name="housing_nb_surface"
                                                 onChange={handleChange('housing_nb_surface')}
