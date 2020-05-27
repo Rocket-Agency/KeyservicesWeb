@@ -8,6 +8,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import SelectedTime from './SelectedTime';
+import { Col, Container, Row, Form} from 'react-bootstrap';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -83,11 +84,53 @@ export default function NavTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}  >
-        <SelectedTime />
+        <Col xs={12} md={12} className="label-choix-horaire d-flex justify-content-center">
+            <Form.Group controlId="Announce_ad_description">
+                <Form.Label>Veuillez choisir un horaire de rendez-vous :</Form.Label>
+                    <Form.Control 
+                        as="select" 
+                        name="ad_capacity"
+                        // defaultValue={values.ad_capacity} 
+                        // onChange={handleChange('ad_capacity')}
+                    >
+                        <option>8:00</option>
+                        <option>8:30</option>
+                        <option>9:00</option>
+                        <option>9:30</option>
+                        <option>10:00</option>
+                        <option>10:30</option>
+                        <option>11:00</option>
+                        <option>11:30</option>
+                        <option>12:00</option>
+                    </Form.Control>
+                </Form.Group>
+            </Col>
       </TabPanel>
       <TabPanel value={value} index={1}>
-       Après-Midi : <br/>
-       <SelectedTime />
+        <Col xs={12} md={12} className="label-schoix-horaire d-flex justify-content-center">
+            <Form.Group controlId="Announce_ad_description">
+                 <Form.Label>Veuillez choisir un horaire de rendez-vous :</Form.Label>
+                    <Form.Control 
+                        as="select" 
+                        name="ad_capacity"
+                        // defaultValue={values.ad_capacity} 
+                        // onChange={handleChange('ad_capacity')}
+                    >
+                        <option>13:30</option>
+                        <option>13:00</option>
+                        <option>14:30</option>
+                        <option>14:00</option>
+                        <option>14:30</option>
+                        <option>15:00</option>
+                        <option>15:30</option>
+                        <option>16:00</option>
+                        <option>16:30</option>
+                        <option>17:00</option>
+                        <option>17:30</option>
+                        <option>18:00</option>
+                    </Form.Control>
+                </Form.Group>
+            </Col>
       </TabPanel>
 
     </div>
