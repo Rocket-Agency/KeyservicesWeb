@@ -16,7 +16,7 @@ class ListContacts extends Component {
           'x-access-token': this.props.token
         }
       }
-      axios.get('http://localhost:3001/api/contacts')
+      axios.get('http://localhost:3001/api/contacts', config)
       .then (res => {
         const contactsCollection = res.data;
         this.setState( {contactsCollection});

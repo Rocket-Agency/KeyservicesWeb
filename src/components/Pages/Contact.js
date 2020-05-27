@@ -1,5 +1,6 @@
 //Contact.js
 import React, {Component} from 'react'
+import axios from 'axios';
 import '../../css/Contact.scss';
 
 import { Hidden } from 'react-grid-system';
@@ -11,6 +12,52 @@ import ContactInfos from './ContactInfos';
 import Recaptcha from "react-recaptcha";
 
 export class Contact extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          first_name: "",
+          last_name: "",
+          email: "",
+          object: "",
+          message: ""
+        };
+    
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+    handleChange(event) {
+        this.setState({
+          [event.target.name]: event.target.value
+        });
+    }
+
+    handleSubmit(event) {
+        const { first_name, last_name, email, object, message} = this.state;
+        const config = {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        }
+        axios.post("http://localhost:3001/api/contact/create",
+            {
+                first_name: first_name,
+                last_name: last_name,
+                email: email,
+                object: object,
+                message: message,
+            },
+            config
+          )
+          .then(response => {
+            this.props.history.push('/');
+          })
+          .catch(error => {
+          });
+        event.preventDefault();
+      }
+
     componentDidMount() {
         const script = document.createElement("script");
         script.src =
@@ -44,10 +91,10 @@ export class Contact extends Component {
 
                                 <Formik
                                     initialValues={{
-                                        prenom: '',
-                                        nom: '',
+                                        first_name: '',
+                                        last_name: '',
                                         email: '',
-                                        sujet: '',
+                                        object: '',
                                         message: '',
                                         recaptcha: ''
                                     }}
@@ -75,16 +122,15 @@ export class Contact extends Component {
                                     render={({ errors, status, touched, setFieldValue }) => (
                                         <Form>
                                             <Form.Row>
-                                                <div className="form-group col-sm-6">
-                                                    <label htmlFor="prenom">Prénom</label>
-                                                    <Field name="prenom" type="text" className={'form-control' + (errors.prenom && touched.prenom ? ' is-invalid' : '')} />
-                                                    <ErrorMessage name="prenom" component="div" className="invalid-feedback" />
-                                                </div>
-                                                    
                                                 <div className="form-group" className="form-group col-sm-6">
                                                     <label htmlFor="nom">Nom</label>
                                                     <Field name="nom" type="text" className={'form-control' + (errors.nom && touched.nom ? ' is-invalid' : '')} />
                                                     <ErrorMessage name="nom" component="div" className="invalid-feedback" />
+                                                </div>
+                                                <div className="form-group col-sm-6">
+                                                    <label htmlFor="prenom">Prénom</label>
+                                                    <Field name="prenom" type="text" className={'form-control' + (errors.prenom && touched.prenom ? ' is-invalid' : '')} />
+                                                    <ErrorMessage name="prenom" component="div" className="invalid-feedback" />
                                                 </div>
                                             </Form.Row>
                                                 
