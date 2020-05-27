@@ -23,7 +23,7 @@ export class ProfilUserConcierge extends Component {
                 passwordnew: "",
                 selectedFile:[],
                 showingAlertProfil: false,
-                showingAlertPassword: false
+                showingAlertPassword: false,
             }
             this.handleSubmit = this.handleSubmit.bind(this);
             this.handleSubmitPassword = this.handleSubmitPassword.bind(this);

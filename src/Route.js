@@ -10,7 +10,6 @@ import KeyservicesPresentation from './components/Pages/KeyservicesPresentation'
 
 import {Contact} from './components/Pages/Contact';
 
-import {ValidationContactForm} from './components/Pages/Molecule/ValidationContactForm';
 import {MonEspace} from './components/Pages/MonEspace';
 
 //Connexion pages
@@ -45,7 +44,6 @@ function Routing (){
             <Route path='/' component={Home} exact />
             <Route path='/presentation' component={KeyservicesPresentation} exact/>
             <Route path='/contact' component={Contact} exact/>
-            <Route path='/validationContactForm' component={ValidationContactForm} exact/>
             <Route path='/monEspace' component={MonEspace} exact/>
             <Route path='/loginProprietaire' component={LoginProprietaire} exact/>
             <Route path='/loginLocataire' component={LoginLocataire} exact/>
