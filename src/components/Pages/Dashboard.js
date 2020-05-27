@@ -17,6 +17,7 @@ import ListContacts from './Molecule/ListContacts';
 import MyProfil from './Molecule/MyProfil';
 import Alert from 'react-bootstrap/Alert';
 import ScheduleAppointment from './Connexions/ScheduleMeeting/ScheduleAppointment'
+import TabTimeChoiceTest from './Connexions/ScheduleMeeting/ScheduleAppointment'
 
 
 class ProfileTabs extends Component {
@@ -199,7 +200,7 @@ constructor(props) {
               <BreadcrumbItem >Prise de rendez-vous</BreadcrumbItem>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
                   <h1 style={{textAlign: 'center'}}>Prise de rendez-vous</h1>
-                  <ScheduleAppointment />
+                  <TabTimeChoiceTest />
                 </MuiPickersUtilsProvider>
               </TabContainer> }
 
