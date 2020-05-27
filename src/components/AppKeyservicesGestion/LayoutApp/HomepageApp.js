@@ -32,7 +32,7 @@ export class HomepageApp extends Component {
                   this.setState( { users : res.data });
                 })
                 this.forceUpdate();
-        }
+            }
 
     render(){
         return (
