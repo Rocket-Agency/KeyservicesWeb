@@ -31,23 +31,8 @@ export default function SimplePaper() {
   return (
     <>
       <Grid container spacing={5} className={classes.root}>
-
-            <TabTimeChoice />
-
-            {/* <Grid item sm={6} className={classes.root}>
-                <Button variant="contained" color="primary" disableElevation > 
-                        Matin
-                </Button>
-            </Grid>
-            <Grid item  sm={6}  className={classes.root}>
-                <Button variant="contained" color="primary" disableElevation>
-                    Après-Midi
-                </Button>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-                <BasicDateTimePicker />
-            </Grid> */}
-        </Grid>
+          <TabTimeChoice />
+      </Grid>
     </>
   );
 }
