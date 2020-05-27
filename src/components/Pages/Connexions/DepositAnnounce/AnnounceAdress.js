@@ -76,11 +76,9 @@ render() {
                                     </Col>
                                 </Form.Row>     
                             </Col>
-
+                        </Row>
                             
-                            </Row>
-                            
-                            <Row>
+                         <Row>
                             <Col xs={12} md={12}>
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Nom de rue</Form.Label>
@@ -118,9 +116,9 @@ render() {
                                     </Col>
                                 </Form.Row>     
                             </Col>
-                            </Row>
+                        </Row>
 
-                            <Row className="pt-3 pb-4">
+                        <Row className="pt-3 pb-4">
                             <Col xs={12} md={4}>
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Région</Form.Label>

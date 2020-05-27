@@ -1,12 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import { Container, Row,  Col } from 'react-bootstrap';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import BasicDateTimePicker from './../../BasicDateTimePicker';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 
 import TabTimeChoice from './TabTimeChoice';
 
