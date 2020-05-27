@@ -283,7 +283,8 @@ export class AnnounceStepperForm extends Component {
                 values={values}
               />
             );
-            case 7:
+            break;
+          case 7:
             return (
               <AnnounceServices
               nextStep={this.nextStep}
@@ -292,14 +293,21 @@ export class AnnounceStepperForm extends Component {
               handleChange={this.handleChange}
               values={values}
             />
-          );
-          break;
-        case 9:
-          content = (
-            <AnnounceSuccess 
-            />
-          );
-          break;
+            );
+            break;
+          case 8:
+            return (
+              <AnnouncePayment
+                values={values}
+              />
+            )
+            break;
+          case 9:
+            content = (
+              <AnnounceSuccess 
+              />
+            );
+            break;
       }
     return content;
   }
