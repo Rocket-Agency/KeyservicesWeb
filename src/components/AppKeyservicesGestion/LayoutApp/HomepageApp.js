@@ -79,7 +79,7 @@ export class HomepageApp extends Component {
                 <Container>
                      <Row>
                         <Col md={12} className="welcome-message">
-                            <h1> Bienvenue {this.state.user_first_name}  et Prénom sur l'application Keyservices Gestion</h1>
+                            <h1> Bienvenue {this.state.user_first_name} sur l'application Keyservices Gestion</h1>
                         </Col>
                     </Row>
                 </Container>
