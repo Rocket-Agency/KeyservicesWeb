@@ -7,16 +7,11 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import LogoKeyservicesGestionTiny from '../../../ImagesPlaceholder/LogoKeyservicesGestion.png';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ProgressiveImage from "react-progressive-graceful-image";
 
 export class HeaderApp extends Component {
-
-  // console.log(this.user_last_name);
-
   constructor(props){
     super(props);
-
         this.state = {
             user_first_name: "",
             user_last_name: "",
@@ -55,6 +50,7 @@ export class HeaderApp extends Component {
     }
 
 render(){
+
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
