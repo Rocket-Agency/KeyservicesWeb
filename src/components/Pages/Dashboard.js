@@ -31,15 +31,23 @@ constructor(props) {
     selectedDate:  new Date(),
     handleDateChange: new Date(),
     setShow: true,
-    show: true
+    show: true,
+    ConciergeListe :{},
+    conciergeLists :{},
   }
 
   this.userid = '';
   this.token = '';
   this.group = '';
+
 }
 
   componentDidMount() {
+    this.dinamicObject = [
+      { id: 4, name: "name" },
+      { id: 2, name: "Mehmet" },
+      { id: 3, name: "middle" }
+      ];
     if(localStorage.getItem('token') && localStorage.getItem('id') && localStorage.getItem('group')){
       this.userid = localStorage.getItem('id');
       this.token = localStorage.getItem('token');
@@ -61,17 +69,57 @@ constructor(props) {
       }
     }
 
-    axios.get(`http://localhost:3001/ad/getAdByUserId/`+this.userid, config)
+   axios.get(`http://localhost:3001/ad/getAdByUserId/`+this.userid, config)
       .then(res => {
         const AdCollection = res.data;
         this.setState( { AdCollection } );
       })
+
+    axios.get(`http://localhost:3001/ad/`, config)
+      .then(res => {
+        const AdCollectionAll = res.data;
+        this.setState( { AdCollectionAll } );
+      })
+
+    axios.get(`http://localhost:3001/file/`, config)
+      .then(res => {
+        const FileCollectionAll = res.data;
+        this.setState( { FileCollectionAll } );
+      })
+
+     
+      axios.get(`http://localhost:3001/file/getConciergeList/`, config)
+      .then(res => {
+        const Concierge = {};
+        res.data.forEach(element => {
+          
+            Concierge[element.user_id] = element.user_last_name;
+          
+        },
+        this.setState( { Concierge } ));
+      })
+    
   }
   
   handleChange = (_, activeIndex) => this.setState({ activeIndex })
 
   render() {
-    console.log(this.state.AdCollection);
+    // const Dataconcierge = this.state.ConciergeCollectionAll;
+    // const ConciergeList = Dataconcierge.map(item=>{
+    //   const container = {};
+
+    //   container[item.user_id] = item.user_last_name;
+
+    //   return container;
+    // });
+    // console.log(this.state.ConciergeListe);
+    const lookup = { "0":"Istanbul", "2":"Ankara", "3":"Izmir" }
+    console.log('lookup => ', lookup);
+   
+    const conciergeLists = this.state.Concierge;
+
+    console.log('conciergeLists => ', conciergeLists);
+
     const { activeIndex } = this.state;
     return (
       <div
@@ -95,8 +143,9 @@ constructor(props) {
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste de contacts' /> : null }
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste des annonces' /> : null }
-              {this.group == 'GROUP_ADMIN' ? <MyTab label='Gestuon comptabilité' /> : null }
+              {this.group == 'GROUP_ADMIN' ? <MyTab label='Gestion comptabilité' /> : null }
               {this.group == 'GROUP_PROPRIETAIRE'? <MyTab label='Mes annonces' /> : null}
+              {this.group == 'GROUP_ADMIN'? <MyTab label='Liste des dossier' /> : null}
             </VerticalTabs>
           </Col>
 
@@ -159,15 +208,15 @@ constructor(props) {
                 <MaterialTable
                   columns={[
                     { title: 'Update' },
-                    { title: 'Id de l\'annonce' },
-                    { title: 'Nom', field: 'contact_first_name' },
-                    { title: 'Prénom', field: 'contact_last_name' },
-                    { title: 'Titre de l\'annonce', field: 'contact_email' },
-                    { title: 'Addresse de l\'annonce', field: 'contact_email' },
-                    { title: 'Date de début publication', field: 'contact_object'},
-                    { title: 'Fin de publication', field: 'contact_message'}
+                    { title: 'Id de l\'annonce', field: 'ad_id' },
+                    { title: 'Nom', field: 'user_first_name' },
+                    { title: 'Prénom', field: 'user_last_name' },
+                    { title: 'Titre de l\'annonce', field: 'ad_title' },
+                    { title: 'Addresse de l\'annonce', field: 'address_txt' },
+                    { title: 'Date de début publication', field: 'ad_starting_date'},
+                    { title: 'Fin de publication', field: 'ad_ending_date'}
                   ]}
-                  data={this.state.contactsCollection}
+                  data={this.state.AdCollectionAll}
                   title="Liste des annonces"
                 />
             </TabContainer> }
@@ -225,6 +274,96 @@ constructor(props) {
                 <h1>Paiement de vos courses</h1>
                 </MuiPickersUtilsProvider>
               </TabContainer> }
+
+              { activeIndex === 7 && this.group == 'GROUP_ADMIN' && <TabContainer>
+              <BreadcrumbItem to="/" ><HomeIcon/>Home</BreadcrumbItem>
+              <BreadcrumbItem ></BreadcrumbItem>
+                <h1>Liste des dossiers</h1>
+                <MaterialTable
+                  columns={[
+                    { title: "Id" , field: 'file_id',  editable: 'never'},
+                    { title: 'Id Annonce', field: 'file_ad_id', editable: 'never'},
+                    { title: 'id User', field: 'file_user_id' , editable: 'never'},
+                    { title: 'Type de service', field: 'file_type_service'},
+                    { title: 'Concierge', field: 'file_concierge_id',  lookup:conciergeLists},
+                    { title: 'Numéro de facture', field: 'file_bill_id' , editable: 'never'},
+
+                  ]}
+                  data={this.state.FileCollectionAll}
+                  title="Liste des dossiers"
+                  editable={{
+                    onRowAdd: newData =>
+                        new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                {
+                                    const data = this.state.FileCollectionAll;
+                                    const config = {
+                                      headers: {
+                                        'Content-Type': 'application/json',
+                                        'Accept': 'application/json',
+                                        'x-access-token': this.token
+                                      }
+                                    }
+                                    data.push(newData);
+                                    axios.post("http://localhost:3001/file/create/",
+                                    {
+                                      fileTypeService: newData.fileTypeService,
+                                      fileStatus: newData.fileStatus,
+                                      userId: 2,
+                                      adId: 1,
+
+                                    },
+                                    config
+                                    )
+                                    this.setState({ data }, () => resolve());
+                                }
+                                resolve();
+                            }, 1000);
+                        }),
+                    onRowUpdate: (newData, oldData) =>
+                        new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                {
+                                    const data = this.state.FileCollectionAll;
+                                    const index = data.indexOf(oldData);
+                                    data[index] = newData;
+                                    console.log(newData);
+                                    const config = {
+                                      headers: {
+                                        'x-access-token': this.token
+                                      }
+                                    }
+                                    axios.put("http://localhost:3001/file/update/" + newData.file_id ,
+                                    {
+                                      file_concierge_id: newData.file_concierge_id,
+                                      file_type_service: newData.file_type_service,
+                                    }, config)                
+                                    this.setState({ data }, () => resolve());
+                                }
+                                resolve();
+                            }, 1000);
+                        }),
+                    onRowDelete: oldData =>
+                        new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                {
+                                    let data = this.state.FileCollectionAll;
+                                    const index = data.indexOf(oldData);
+                                    console.log(oldData);
+                                    const config = {
+                                      headers: {
+                                        'x-access-token': this.token
+                                      }
+                                    }
+                                    axios.get("http://localhost:3001/file/delete/" + oldData.file_id , config) 
+                                    this.setState({ data }, () => resolve());
+                                }
+                                resolve();
+                            }, 1000);
+                        })
+                     }}
+                />
+            </TabContainer> }
           
           </Col>
         </Row>
