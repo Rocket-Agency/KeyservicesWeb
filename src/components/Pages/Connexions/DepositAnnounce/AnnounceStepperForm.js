@@ -88,6 +88,8 @@ export class AnnounceStepperForm extends Component {
     ad_max_night:'',
     ad_starting_date:'',
     ad_ending_date:'',
+    ad_arrival_time:'',
+    ad_departure_time:'',
     
     selectedFile:[],
     files:[],

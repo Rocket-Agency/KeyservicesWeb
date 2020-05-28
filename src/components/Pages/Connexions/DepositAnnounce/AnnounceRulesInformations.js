@@ -7,16 +7,33 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 export class AnnounceRulesInformations extends Component {
-
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
-      };
-
-    back = e => {
-        e.preventDefault();
-        this.props.prevStep();
-    };
+    constructor(props){
+        super(props)
+    }
+    values = {
+        info_stairs: '',
+        info_pets: '',
+        info_no_parking: '',
+        info_shared_space: '',
+        info_equipment_restriction: '',
+        info_monitoring_device: '',
+        info_weapons: '',
+        info_dangerous_animals: '',
+        info_noise: '',
+    
+        rule_age_2: '',
+        rule_age_2_12: '',
+        rule_pets: '',
+        rule_smoking: '',
+        rule_event: '',
+    
+        info_area: '',
+        info_around: '',
+        rule_add: '',
+        info_infos: '',
+        info_availability: '',
+        observation: ''
+    }
 
     render() {
         const { values, handleChange } = this.props;
@@ -55,7 +72,7 @@ export class AnnounceRulesInformations extends Component {
                         <fieldset>
                             <Form.Group as={Row} className="mt-4">
                                 <Form.Label column sm={2} className="label-info-annonce">
-                                    Informations :
+                                    Informations
                                 </Form.Label>
                                 <Col sm={3}>
                                     <Form.Group id="formGridCheckbox">
@@ -167,7 +184,7 @@ export class AnnounceRulesInformations extends Component {
                         <fieldset>
                             <Form.Group as={Row} className="mt-4">
                                 <Form.Label column sm={2} className="label-info-annonce">
-                                    Règles :
+                                    Règles
                                 </Form.Label>
                                 <Col sm={4}>
                                      <Form.Group id="formGridCheckbox">
@@ -233,7 +250,7 @@ export class AnnounceRulesInformations extends Component {
                         <fieldset>
                             <Form.Group as={Row}>
                                 <Form.Label column sm={2}>
-                                   Transports à proximité :
+                                   Transports à proximité
                                 </Form.Label>
                                 <Col sm={12}>
                                     <Form.Row>
@@ -252,7 +269,7 @@ export class AnnounceRulesInformations extends Component {
                         <fieldset>
                             <Form.Group as={Row} >
                                 <Form.Label column sm={2}>
-                                    Magasins à proximité :
+                                    Magasins à proximité
                                 </Form.Label>
                                 <Col sm={12}>
                                     <Form.Row>
@@ -314,21 +331,6 @@ export class AnnounceRulesInformations extends Component {
                                 </Form.Group>
                             </Form.Row>
                         </fieldset>
-                             <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
-                                    <Button
-                                        color="secondary"
-                                        variant="contained"
-                                        onClick={this.back}
-                                        aria-label="Retour"
-                                    >Retour</Button>
-
-                                    <Button
-                                    color="primary"
-                                    variant="contained"
-                                    onClick={this.continue}
-                                    aria-label="Continuer"
-                                    >Continuer</Button>
-                            </Col>
                     </Container>
                 </Container>
             </div>
