@@ -48,7 +48,7 @@ export class InformationConnexion extends Component {
                                                 fullWidth
                                                 size="small"        
                                                 validators={['required', 'isEmail']}
-                                                errorMessages={['Ce champs est obligatoire', 'Email invalide']}
+                                                errorMessages={['Ce champs est obligatoire', 'Email invalide veuillez vérifier votre email']}
                                                 value={values.email}         
                                             />   
                                         </Col>
@@ -59,7 +59,6 @@ export class InformationConnexion extends Component {
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Mot de passe</Form.Label>
                                         <Col>
-
                                             <TextValidator
                                                 key={1}
                                                 id="standard-required"
