@@ -37,17 +37,16 @@ export class HomepageApp extends Component {
 const useStyles = makeStyles({
     table: {
       minWidth: 650,
-      overflow: 'hidden',
     },
   });
   
-  function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
+  function createData(name, calories, fat, carbs) {
+    return { name, calories, fat, carbs };
   }
   
   const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+    createData('Frozen yoghurt', 159, 6.0),
+    createData('Ice cream sandwich', 237, 9.0),
   ];
   
 function TaksList() {
@@ -55,10 +54,9 @@ function TaksList() {
   
     return (
       <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="simple table">
+        <Table className={classes.table} aria-label="list">
           <TableHead>
             <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
               <TableCell align="right">Id Annonce</TableCell>
               <TableCell align="right">Nom  du  propriétaire</TableCell>
               <TableCell align="right">Adresse</TableCell>
