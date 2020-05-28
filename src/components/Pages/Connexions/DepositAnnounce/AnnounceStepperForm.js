@@ -7,17 +7,20 @@ import AnnounceRulesInformations from './AnnounceRulesInformations';
 import AnnounceTarif from './AnnounceTarif';
 import AnnounceResume from './AnnounceResume';
 import AnnounceServices from './AnnounceServices';
-import AnnouncePayment from './AnnouncePayment';
+import Test from './AnnouncePayment';
 import AnnounceConfirm from './AnnounceConfirm';
 import AnnounceSuccess from './AnnounceSuccess';
-import { ValidatorForm} from 'react-material-ui-form-validator';
+import Payment from './CheckoutForm';
+import axios from 'axios';
 import { Button } from 'reactstrap';
 import { Col } from 'react-bootstrap';
+import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 export class AnnounceStepperForm extends Component {
   state = {
     step: 1,
-    address_road_number:'',
+    compteur_service : 1,
+    address_road_number:"",
     address_road_type: '',
     address_road_name: '',
     address_additional_info: '',
@@ -30,6 +33,7 @@ export class AnnounceStepperForm extends Component {
     housing_nb_room: '',
     housing_nb_bathroom: '',
     housing_observation: '',
+    housing_nb_surface: '',
 
     equipment_kitchen: '',
     equipment_heater: '',
@@ -90,9 +94,15 @@ export class AnnounceStepperForm extends Component {
     
     selectedFile:[],
     files:[],
+    ad_id:'',
 
-    disabled: false,
-    submitted: false
+    service_category:'',
+    service_prix_total:'',
+    service_menage:'',
+    service_frigo:'',
+    service_checkin_checkout:'',
+    service_remise_cle:'',
+    service_mise_en_ligne:'mise_en_ligne',
   };
 
     // Proceed to next step
@@ -122,9 +132,49 @@ export class AnnounceStepperForm extends Component {
      saveImages  = e => {
     this.setState({ files: e.target.files });
     };
-  
+
+    //Save Images
+    saveAd  = () => {
+      var aValue = localStorage.getItem('id');
+
+      axios.get(`http://localhost:3001/ad/getLastAdByUserId/`+ aValue)
+          .then(res => {
+            var ad_id = parseInt(JSON.stringify(res.data.ad_id),10)+1;
+            localStorage.setItem('ad_id', ad_id);
+          })
+      };
+
+  handleChangeService = input => e => {
+    if(this.props.service_category){
+      this.setState({'service_category': ''});
+      this.setState({'service_remise_cle': ''});
+      this.setState({'service_frigo': ''});
+      this.setState({'service_checkin_checkout': ''});
+      this.setState({'service_menage': ''});
+      this.setState({'service_prix_total': ''});
+    }
+
+    if(e.target.value == 'pack'){
+      this.setState({'service_category': 'pack'});
+      this.setState({'service_remise_cle': 'remise_cle'});
+      this.setState({'service_frigo': ''});
+      this.setState({'service_checkin_checkout': 'checkin_checkout'});
+      this.setState({'service_menage': 'menage'});
+      this.setState({'service_prix_total': ''});
+    }
+    else{
+      this.setState({'service_category': 'carte'});
+      this.setState({'service_remise_cle': ''});
+      this.setState({'service_frigo': ''});
+      this.setState({'service_checkin_checkout': ''});
+      this.setState({'service_menage': ''});
+      this.setState({'service_prix_total': ''});
+    }
+  }
+
   // Handle fields change
   handleChange = input => e => {
+    // console.log('input : '+input+ 'value : '+e.target.value);
     this.setState({ [input]: e.target.value });
   };
 
@@ -145,23 +195,25 @@ export class AnnounceStepperForm extends Component {
   renderStep(){
     const { step } = this.state;
     const { address_road_number, address_road_type, address_road_name, address_additional_info, address_state, address_city, address_zip_code,
-            housing_type_property, housing_type, housing_nb_room, housing_nb_bathroom, housing_observation,
+            housing_type_property, housing_type, housing_nb_room, housing_nb_bathroom, housing_observation, housing_nb_surface,
             equipment_kitchen, equipment_heater, equipment_wifi, equipment_iron, equipment_working_space, equipment_private_bathroom, equipment_shampoo, equipment_air_conditioner, equipment_hangers, equipment_hair_dryer, equipment_television,
             installation_parking, installation_gym, installation_pool, installation_jaccuzi,
             info_stairs, info_pets, info_no_parking, info_shared_space, info_equipment_restriction, info_monitoring_device, info_weapons, info_dangerous_animals, info_noise,
-            rule_age_2, rule_age_2_12, rule_pets, rule_smoking, rule_event, rule_add,
+            rule_age_2, rule_age_2_12, rule_pets, rule_smoking, rule_event, rule_add,compteur_service,
             info_area, info_around, info_infos, info_availability, observation,
-            price_starting, price_min, price_max,files,
+            price_starting, price_min, price_max,files,ad_id,
+            service_category,service_mise_en_ligne,service_remise_cle,service_frigo,service_checkin_checkout,service_menage,service_prix_total,
             ad_title, ad_description, ad_capacity, ad_notice, ad_arrival_time, ad_departure_time, ad_min_night, ad_max_night, ad_starting_date, ad_ending_date
           } = this.state;
     const values = { address_road_number, address_road_type, address_road_name, address_additional_info, address_state, address_city, address_zip_code,
-                    housing_type_property, housing_type, housing_nb_room, housing_nb_bathroom, housing_observation,
+                    housing_type_property, housing_type, housing_nb_room, housing_nb_bathroom, housing_observation, housing_nb_surface,
                     equipment_kitchen, equipment_heater, equipment_wifi, equipment_iron, equipment_working_space, equipment_private_bathroom, equipment_shampoo, equipment_air_conditioner, equipment_hangers, equipment_hair_dryer, equipment_television,
-                    installation_parking, installation_gym, installation_pool, installation_jaccuzi,
+                    installation_parking, installation_gym, installation_pool, installation_jaccuzi,compteur_service,
                     info_stairs, info_pets, info_no_parking, info_shared_space, info_equipment_restriction, info_monitoring_device, info_weapons, info_dangerous_animals, info_noise,
                     rule_age_2, rule_age_2_12, rule_pets, rule_smoking, rule_event, rule_add,
                     info_area, info_around, info_infos, info_availability, observation,
-                    price_starting, price_min, price_max,files,
+                    price_starting, price_min, price_max,files,ad_id,
+                    service_category,service_mise_en_ligne,service_remise_cle,service_frigo,service_checkin_checkout,service_menage,service_prix_total,
                     ad_title, ad_description, ad_capacity, ad_notice, ad_arrival_time, ad_departure_time, ad_min_night, ad_max_night, ad_starting_date, ad_ending_date
                   };
     let content = null;
@@ -233,19 +285,19 @@ export class AnnounceStepperForm extends Component {
           break;
         case 8: 
           content = (
-            <AnnouncePayment
+            <Payment
               handleChange={this.handleChange}
               values={values}
               validatorListerner={this.validatorListener}
             />
-          );
-          break;
+            );
+            break;
         case 9:
           content = (
-            <AnnounceSuccess 
-            />
-          );
-          break;
+              <AnnounceSuccess 
+              />
+            );
+            break;
       }
     return content;
   }

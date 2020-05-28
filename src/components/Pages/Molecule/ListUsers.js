@@ -6,20 +6,40 @@ class ListUsers extends Component {
     constructor(props){
         super(props);
 
+        this.state = {
+          usersCollection: [],
+        }
     }
     
     componentDidMount(){
-        
+      const config = {
+        headers: {
+          'x-access-token': this.props.token
+        }
+      }
+      axios.get(`http://localhost:3001/api/users/`, config)
+      .then(res => {
+        const usersCollection = res.data;
+        this.setState( { usersCollection } );
+      })
     }
 
     render(){
         return(
             <MaterialTable
             columns={[
-              {
-                title: "Photo", field: "user_photo",
-              },
               { title: "Id", field: "user_id", editable: 'never'},
+              {
+                title: 'Photo',
+                field: 'user_photo',
+                render: rowData => (
+                  <img
+                    style={{ height: 36, borderRadius: '50%' }}
+                    src={'http://localhost:3001/userPicture/' + rowData.user_photo}
+                  />
+                ),
+                editable: 'never'
+              },
               { title: "Prénom", field: "user_first_name" },
               { title: "Nom", field: "user_last_name" },
               { title: "Email", field: "user_email"},
@@ -70,7 +90,7 @@ class ListUsers extends Component {
                               console.log(newData);
                               const config = {
                                 headers: {
-                                  'x-access-token': this.state.accessToken
+                                  'x-access-token': this.props.token
                                 }
                               }
                               axios.put("http://localhost:3001/api/user/update/" + newData.user_id ,
@@ -98,7 +118,7 @@ class ListUsers extends Component {
                               data.splice(index, 1);
                               const config = {
                                 headers: {
-                                  'x-access-token': this.state.accessToken
+                                  'x-access-token': this.props.token
                                 }
                               }
                               axios.delete("http://localhost:3001/api/user/delete/" + oldData.user_id , config) 

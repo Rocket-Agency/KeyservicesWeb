@@ -23,6 +23,7 @@ export class AnnounceHousing extends Component {
         housing_nb_room:'',
         housing_nb_bathroom:'',
         housing_observation:'',
+        housing_nb_surface: '',
         equipment_kitchen:'',
         equipment_heater:'',
         equipment_wifi:'',
@@ -149,7 +150,7 @@ export class AnnounceHousing extends Component {
                                         <Form.Label column sm={7} className="d-flex align-items-center label-info-annonce"> 
                                             Nombre de chambres : 
                                         </Form.Label>
-                                        <Col sm={4}>
+                                        <Col sm={5}>
                                             <TextValidator
                                                 key={1}
                                                 type="number" 
@@ -174,7 +175,7 @@ export class AnnounceHousing extends Component {
                                         <Form.Label column sm={7} className="d-flex align-items-center label-info-annonce"> 
                                             Nombre de salles de bain : 
                                         </Form.Label>
-                                        <Col sm={4}>
+                                        <Col sm={5}>
                                             <TextValidator
                                                 key={1}
                                                 type="number" 
@@ -186,6 +187,31 @@ export class AnnounceHousing extends Component {
                                                 name="housing_nb_bathroom"
                                                 onChange={handleChange('housing_nb_bathroom')}
                                                 value={values.housing_nb_bathroom}
+                                                validatorListener={this.props.validatorListener}
+                                            />
+                                        </Col>
+                                    </Form.Group>
+                                </Form.Row>
+                            </Col>  
+                        </Row> 
+
+                        <Row>
+                            <Col xs={12} md={6}>
+                                <Form.Row>
+                                    <Form.Group as={Row} controlId="formHorizontalEmail">
+                                        <Form.Label column sm={7} className="d-flex align-items-center label-info-annonce"> 
+                                            Superficie en m2 :
+                                        </Form.Label>
+                                        <Col sm={5}>
+                                            <TextValidator
+                                                variant="outlined"
+                                                fullWidth
+                                                size="small"
+                                                validators={['required', 'minNumber:0' , 'matchRegexp:^[0-9]{1,4}$']}
+                                                errorMessages={['Ce champ est obligatoire', 'Nombre invalide', 'Nombre invalide']}
+                                                name="housing_nb_surface"
+                                                onChange={handleChange('housing_nb_surface')}
+                                                value={values.housing_nb_surface}
                                                 validatorListener={this.props.validatorListener}
                                             />
                                         </Col>

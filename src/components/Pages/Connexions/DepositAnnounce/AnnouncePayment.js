@@ -3,21 +3,42 @@ import '../../../../css/Announce.scss';
 
 import { Row, Col, Container, Form } from 'react-bootstrap';
 import { Button } from 'reactstrap';
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements, CardElement, ElementsConsumer } from "@stripe/react-stripe-js";
+import axios from "axios";
+
 
 export class AnnouncePayment extends Component {
 
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
-      };
+    constructor(props){
+        super(props);
+    }
 
-    back = e => {
-        e.preventDefault();
-        this.props.prevStep();
-    };
+    async handleSubmit(event){
+        event.preventDefault();
+        const {stripe, elements} = this.props;
+    
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
+          type: "card",
+          card: elements.getElement(CardElement)
+        });
+    
+        if (!error) {
+          const { id } = paymentMethod;
+          const { name } = this.props.values.address_road_number;
+          console.log(name);
+    
+          try {
+            const { data } = await axios.post("http://localhost:3001/api/payment", { id, amount: 1099 });
+            console.log(data);
+          } catch (error) {
+            console.log(error);
+          }
+        }
+      }
 
     render() {
-        // const { values, handleChange } = this.props;
+        const {stripe} = this.props;
         return(
             <div>
                 <Container fluid className="pt-4 blocForm" >  
@@ -47,32 +68,46 @@ export class AnnouncePayment extends Component {
                             <h2 className="title-form-Announce title-form-Announce-active">8 - Paiement</h2>
                         </Col>
                     </Row>
-                    <h2>Paiement</h2>
   
                     <Container fluid>
                 
-                        Paiement
+                        <h2>Paiement</h2>
+                        <form
+                        onSubmit={this.handleSubmit}
+                        style={{ maxWidth: "400px", margin: "0 auto" }}
+                        >
+                        <h2>Prix: 9.90 € EUR</h2>
+                        <CardElement />
+                        <button type="submit" disabled={!stripe}>
+                            Pay
+                        </button>
+                        </form>
+                        
                     </Container>
-
-                    <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
-                                    <Button
-                                        color="secondary"
-                                        variant="contained"
-                                        onClick={this.back}
-                                        aria-label="Retour"
-                                    >Retour</Button>
-
-                                    <Button
-                                    color="primary"
-                                    variant="contained"
-                                    onClick={this.continue}
-                                    aria-label="Continuer"
-                                    >Continuer</Button>
-                                </Col>
                 </Container>
             </div>
         )
     }
 }
 
-export default AnnouncePayment;
+const InjectedCheckoutForm = () => {
+    return (
+        <ElementsConsumer>
+        {({stripe, elements}) => (
+            <AnnouncePayment stripe={stripe} elements={elements} />
+        )}
+        </ElementsConsumer>
+    );
+};
+
+const stripePromise = loadStripe('pk_test_9xweeLk3zovQYpEWOEk0Tc0J004QTgAupc');
+
+const Test = () => {
+  return(
+  <Elements stripe={stripePromise}>
+    <InjectedCheckoutForm />
+  </Elements>
+  );
+};
+
+export default Test;
