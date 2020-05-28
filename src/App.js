@@ -8,15 +8,14 @@ import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 
 import FilAriane from './components/Layout/FilAriane';
-
-import Routing from './Route'
+import Routing from './Route';
 
 function App() {
   return (
     <>
         <BreadProvider >
           <>    
-            <div className="page-container">
+          <div className="page-container">
               <div className="content-wrap">
               <Header />
               <FilAriane />

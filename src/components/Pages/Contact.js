@@ -1,15 +1,16 @@
 //Contact.js
 import React, {Component} from 'react'
-import axios from 'axios';
 import '../../css/Contact.scss';
 
 import { Hidden } from 'react-grid-system';
 import Iframe from 'react-iframe';
 import { Formik, Field, ErrorMessage } from 'formik';
-import { Form } from 'react-bootstrap';
+import { Form, Row } from 'react-bootstrap';
 import * as Yup from 'yup';
 import ContactInfos from './ContactInfos';
 import Recaptcha from "react-recaptcha";
+import { render } from 'react-dom';
+import axios from 'axios';
 
 export class Contact extends Component {
     constructor(props) {
@@ -31,32 +32,6 @@ export class Contact extends Component {
           [event.target.name]: event.target.value
         });
     }
-
-    handleSubmit(event) {
-        const { first_name, last_name, email, object, message} = this.state;
-        const config = {
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          }
-        }
-        axios.post("http://localhost:3001/api/contact/create",
-            {
-                first_name: first_name,
-                last_name: last_name,
-                email: email,
-                object: object,
-                message: message,
-            },
-            config
-          )
-          .then(response => {
-            this.props.history.push('/');
-          })
-          .catch(error => {
-          });
-        event.preventDefault();
-      }
 
     componentDidMount() {
         const script = document.createElement("script");
@@ -100,14 +75,14 @@ export class Contact extends Component {
                                     }}
                                         
                                     validationSchema={Yup.object().shape({
-                                        prenom: Yup.string()
+                                        first_name: Yup.string()
                                             .required('Veuillez indiquer votre prénom'),
-                                        nom: Yup.string()
+                                        last_name: Yup.string()
                                             .required('Veuillez indiquer votre nom'),
                                         email: Yup.string()
                                             .email('Veuillez entrez une adresse mail valide')
                                             .required('Veuillez indiquer votre mail'),
-                                        sujet: Yup.string()
+                                        object: Yup.string()
                                             .required('Veuillez choisir un sujet'),
                                         message: Yup.string()
                                             .required('Veuillez entrer votre message'),
@@ -115,22 +90,45 @@ export class Contact extends Component {
                                             .required('Veuillez confirmer que vous êtes humain')
                                     })}
 
-                                    onSubmit={fields => {
-                                        alert('SUCCES!! :-)\n\n' + JSON.stringify(fields, null, 4))
+                                    onSubmit={event => {
+                                        const { first_name, last_name, email, object, message} = this.state;
+                                        const config = {
+                                            headers: {
+                                                'Content-Type': 'application/json',
+                                                'Accept': 'application/json'
+                                            }
+                                        }
+                                        axios.post("http://localhost:3001/api/contact/create",
+                                            {
+                                                first_name: first_name,
+                                                last_name: last_name,
+                                                email: email,
+                                                object: object,
+                                                message: message,
+                                            },
+                                            config
+                                        )
+                                        .then(response => {
+                                            this.props.history.push('/');
+                                        })
+                                        .catch(error => {
+                                        });
+                                        event.preventDefault();
                                     }}
                             
-                                    render={({ errors, status, touched, setFieldValue }) => (
+                                    render={({ errors, touched, setFieldValue }) => (
                                         <Form>
                                             <Form.Row>
-                                                <div className="form-group" className="form-group col-sm-6">
-                                                    <label htmlFor="nom">Nom</label>
-                                                    <Field name="nom" type="text" className={'form-control' + (errors.nom && touched.nom ? ' is-invalid' : '')} />
-                                                    <ErrorMessage name="nom" component="div" className="invalid-feedback" />
-                                                </div>
                                                 <div className="form-group col-sm-6">
-                                                    <label htmlFor="prenom">Prénom</label>
-                                                    <Field name="prenom" type="text" className={'form-control' + (errors.prenom && touched.prenom ? ' is-invalid' : '')} />
-                                                    <ErrorMessage name="prenom" component="div" className="invalid-feedback" />
+                                                    <label htmlFor="first_name">Prénom</label>
+                                                    <Field name="first_name" type="text" className={'form-control' + (errors.first_name && touched.first_name ? ' is-invalid' : '')} />
+                                                    <ErrorMessage name="first_name" component="div" className="invalid-feedback" />
+                                                </div>
+                                                    
+                                                <div className="form-group" className="form-group col-sm-6">
+                                                    <label htmlFor="last_name">Nom</label>
+                                                    <Field name="last_name" type="text" className={'form-control' + (errors.last_name && touched.last_name ? ' is-invalid' : '')} />
+                                                    <ErrorMessage name="last_name" component="div" className="invalid-feedback" />
                                                 </div>
                                             </Form.Row>
                                                 
@@ -142,9 +140,9 @@ export class Contact extends Component {
                                                 </div>
                                                 
                                                 <div className="form-group col-sm-6">
-                                                    <label htmlFor="sujet">Sujet</label>
-                                                    <Field name="sujet" type="text" className={'form-control' + (errors.sujet && touched.sujet ? ' is-invalid' : '')} />
-                                                    <ErrorMessage name="sujet" component="div" className="invalid-feedback" />
+                                                    <label htmlFor="object">Sujet</label>
+                                                    <Field name="object" type="text" className={'form-control' + (errors.object && touched.object ? ' is-invalid' : '')} />
+                                                    <ErrorMessage name="object" component="div" className="invalid-feedback" />
                                                 </div>
                                             </Form.Row>
 
