@@ -15,22 +15,6 @@ import axios from 'axios';
 export class Contact extends Component {
     constructor(props) {
         super(props);
-    
-        this.state = {
-          first_name: "",
-          last_name: "",
-          email: "",
-          object: "",
-          message: ""
-        };
-    
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-    }
-    handleChange(event) {
-        this.setState({
-          [event.target.name]: event.target.value
-        });
     }
 
     componentDidMount() {
@@ -91,7 +75,6 @@ export class Contact extends Component {
                                     })}
 
                                     onSubmit={event => {
-                                        const { first_name, last_name, email, object, message} = this.state;
                                         const config = {
                                             headers: {
                                                 'Content-Type': 'application/json',
@@ -100,11 +83,11 @@ export class Contact extends Component {
                                         }
                                         axios.post("http://localhost:3001/api/contact/create",
                                             {
-                                                first_name: first_name,
-                                                last_name: last_name,
-                                                email: email,
-                                                object: object,
-                                                message: message,
+                                                first_name: event.first_name,
+                                                last_name: event.last_name,
+                                                email: event.email,
+                                                object: event.object,
+                                                message: event.message,
                                             },
                                             config
                                         )
@@ -116,7 +99,7 @@ export class Contact extends Component {
                                         event.preventDefault();
                                     }}
                             
-                                    render={({ errors, touched, setFieldValue }) => (
+                                    render={({ errors, touched, setFieldValue, handleSubmit }) => (
                                         <Form>
                                             <Form.Row>
                                                 <div className="form-group col-sm-6">
@@ -167,7 +150,7 @@ export class Contact extends Component {
                                                 </div>
 
                                                 <div id="container">                    
-                                                    <button type="submit" className="learn-more" aria-label="Envoyer">
+                                                    <button type="submit" className="learn-more" aria-label="Envoyer" onClick={handleSubmit}>
                                                         <span className="circle" aria-hidden="true">
                                                             <span className="icon arrow"></span>
                                                         </span>
