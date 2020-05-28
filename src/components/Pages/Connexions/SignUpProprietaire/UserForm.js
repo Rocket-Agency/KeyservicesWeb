@@ -39,12 +39,11 @@ export class UserForm extends Component {
         console.log(isValid);
         if (isValid) {
             let { step } = this.state;
-            if (step < 3) {
+            if (step < 4) {
                 step++;
             }
           this.setState({ step });
         }
-
       });
     };
   
