@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {loadStripe} from '@stripe/stripe-js';
 import {CardElement, Elements, ElementsConsumer} from '@stripe/react-stripe-js';
 import axios from "axios";
+import {Redirect} from 'react-router-dom';
 
-class CheckoutForm extends React.Component {
+class CheckoutForm extends Component {
+  constructor(props){
+    super(props);
+  }
   handleSubmit = async (event) => {
     // Block native form submission.
     event.preventDefault();
@@ -32,6 +36,7 @@ class CheckoutForm extends React.Component {
         try {
           const { data } = await axios.post("http://localhost:3001/api/payment", { id, amount: 990 });
           console.log(data);
+          return <Redirect to='/announceSuccess'/>
         } catch (error) {
           console.log(error);
         }

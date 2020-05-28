@@ -22,7 +22,7 @@ export class AnnounceSucces extends Component {
                                         <span className="circle" aria-hidden="true">
                                             <span className="icon arrow"></span>
                                         </span>
-                                        <Link className="button-text" to="/" aria-label="Retour dashboard">
+                                        <Link className="button-text" to="/dashboard" aria-label="Retour dashboard">
                                             Retourner à votre espace
                                         </Link>
                                     </button>

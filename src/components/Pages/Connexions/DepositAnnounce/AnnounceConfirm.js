@@ -103,8 +103,8 @@ export class AnnounceConfirm extends Component {
             if(res.data.message == 'Ad was registered successfully!'){
                 this.props.saveAd();
             }
-        }).then(done=>{e.preventDefault();
-            this.props.nextStep();});
+        }).then(done=>{e.preventDefault();});
+        this.props.nextStep();
 
        
         

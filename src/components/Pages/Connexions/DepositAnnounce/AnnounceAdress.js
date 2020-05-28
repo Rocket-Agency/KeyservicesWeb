@@ -6,11 +6,6 @@ import TextField from '@material-ui/core/TextField';
 import { Button } from 'reactstrap';
 
 export class AnnounceAddresss extends Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  };
-
 render() {
     const { values, handleChange } = this.props;
     return(
@@ -174,15 +169,6 @@ render() {
                                 </Form.Row>     
                             </Col>
                          </Row>
-                         <Row xs={12} md={12} className="d-flex justify-content-center pt-3 pb-3">
-                            <Button
-                                color="primary"
-                                variant="contained"
-                                onClick={this.continue}
-                                aria-label="Continuer"
-                                >Continuer
-                            </Button>
-                        </Row>
                     </Container>
                 </Container>
             </Container>

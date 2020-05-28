@@ -282,6 +282,7 @@ export class AnnounceStepperForm extends Component {
             values={values}
             validatorListerner={this.validatorListener}
             handleChangeService={this.handleChangeService}
+            nextStep={this.nextStep}
           />
           );
           break;
@@ -292,12 +293,6 @@ export class AnnounceStepperForm extends Component {
               values={values}
               validatorListerner={this.validatorListener}
             />
-            );
-            break;
-        case 9:
-          content = (
-              <AnnounceSuccess 
-              />
             );
             break;
       }
@@ -314,18 +309,18 @@ export class AnnounceStepperForm extends Component {
         instantValidate
       >
         {this.renderStep()}
-        <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
-          <Button
+        <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4">
+        {step === 1  || step === 6 || step === 7 || step === 8 ? null :           <Button
             color="secondary"
             variant="contained"
             aria-label="Retour"
             onClick={this.prevStep}
             style={{ marginRight: '16px' }}
-            disabled={step === 1}
+            disabled={step === 1 }
           >
             Retour
-          </Button>
-          <Button
+          </Button>}
+        {step === 6 || step === 8 || step === 7 ? null :           <Button
             color="primary"
             aria-label="Continuer"
             variant="contained"
@@ -334,9 +329,9 @@ export class AnnounceStepperForm extends Component {
           >
             {
               (submitted && 'Votre annonce a été enregistrée !')
-              || (step < 8 ? 'Continuer' : 'Enregistrer')
+              || (step < 9 ? 'Continuer' : 'Enregistrer')
             }
-          </Button>
+          </Button>}
         </Col>
       </ValidatorForm>
 

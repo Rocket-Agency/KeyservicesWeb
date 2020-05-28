@@ -38,6 +38,8 @@ import LogoutApp from './components/AppKeyservicesGestion/LayoutApp/LogoutApp';
 
 import NotFound from './components/Pages/NotFound';
 
+import AnnounceSucces from './components/Pages/Connexions/DepositAnnounce/AnnounceSuccess';
+
 function Routing (){
     return(
         <Switch>
@@ -59,6 +61,7 @@ function Routing (){
             <Route path='/settingsApp' component={SettingsApp} />
             <Route path='/profilUserConcierge' component={ProfilUserConcierge} />
             <Route path='/logoutApp' component={LogoutApp} />
+            <Route path='/announceSuccess' component={AnnounceSucces} />
             <Route component={NotFound} />
           </Switch>
       )
