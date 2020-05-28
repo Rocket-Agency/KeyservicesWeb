@@ -16,11 +16,11 @@ export class AnnounceResume extends Component {
         date = today.getFullYear() + '-' + ((today.getMonth() + 1)<10 ? '0'+(today.getMonth() + 1) : (today.getMonth() + 1)) + '-' + today.getDate();
 
         var today2 = new Date(),
-        date2 = (today2.getFullYear() + 1) + '-' + ((today2.getMonth() + 1)<10 ? '0'+(today2.getMonth() + 1) : (today2.getMonth() + 1)) + '-' + today2.getDate();
+        date2 = (today2.getFullYear() + 5) + '-' + ((today2.getMonth() + 1)<10 ? '0'+(today2.getMonth() + 1) : (today2.getMonth() + 1)) + '-' + today2.getDate();
         this.state = {
           files: null,
           current_date: date,
-          nextyear_date: date2,
+          fiveYear_date: date2,
         };
       }
     values = {
@@ -50,12 +50,18 @@ export class AnnounceResume extends Component {
                 return true;
             }
         });
-        ValidatorForm.addValidationRule('isBiggerThanStart', (value) => {
-            if (value <= this.props.values.ad_starting_date) {
-                console.log(value + ' not bigger than ' + this.props.values.ad_starting_date)
+        
+        ValidatorForm.addValidationRule('isBiggerThan5years', (value) => {
+            if (value > this.state.fiveYear_date) {
                 return false;
             } else {
-                console.log(value + ' bigger than ' + this.props.values.ad_starting_date)
+                return true;
+            }
+        });
+        ValidatorForm.addValidationRule('isBiggerThanStart', (value) => {
+            if (value <= this.props.values.ad_starting_date) {
+                return false;
+            } else {
                 return true;
             }
         });
@@ -63,6 +69,8 @@ export class AnnounceResume extends Component {
     componentWillUnmount() {
         // remove rule when it is not needed
         ValidatorForm.removeValidationRule('isValidMail');
+        ValidatorForm.removeValidationRule('isBiggerThan5years');
+        ValidatorForm.removeValidationRule('isBiggerThanStart');
     }
 
     render() {
@@ -302,8 +310,8 @@ export class AnnounceResume extends Component {
                                     InputLabelProps={{
                                         shrink: true,
                                     }}
-                                    validators={['required','matchRegexp:^([0-9]{4})-((0[1-9])|(1[0-2]))-(0[1-9]|[12][0-9]|3[01])$', 'isValidDate']}
-                                    errorMessages={['La date de début de publication est requise','Date Invalide','Vous ne pouvez pas choisir une date du passé']}
+                                    validators={['required','matchRegexp:^([0-9]{4})-((0[1-9])|(1[0-2]))-(0[1-9]|[12][0-9]|3[01])$', 'isValidDate', 'isBiggerThan5years']}
+                                    errorMessages={['La date de début de publication est requise','Date Invalide','Vous ne pouvez pas choisir une date du passé','Votre date dépasse les 5 ans dans le futur']}
                                     value={values.ad_starting_date}
                                     onChange={handleChange('ad_starting_date')}
                                     validatorListener={this.props.validatorListener}
@@ -323,7 +331,7 @@ export class AnnounceResume extends Component {
                                     }}
                                     defaultValue="00:00"
                                     validators={['required']}
-                                    errorMessages={['L\'heure d\'arrivée est requise', 'Nous sommes ouverts de 8h à 19h']}
+                                    errorMessages={['L\'heure d\'arrivée est requise']}
                                     value={values.ad_arrival_time}
                                     onChange={handleChange('ad_arrival_time')}
                                     validatorListener={this.props.validatorListener}
@@ -340,8 +348,8 @@ export class AnnounceResume extends Component {
                                     shrink: true,
                                 }}
                                 label="Date de fin de publication"
-                                validators={['required','matchRegexp:^([0-9]{4})-((0[1-9])|(1[0-2]))-(0[1-9]|[12][0-9]|3[01])$','isValidDate' ,'isBiggerThanStart']}
-                                errorMessages={['La date de départ est requise', 'Date invalide','Vous ne pouvez pas choisir une date du passé', 'La date de fin de publication ne peut pas être avant celle de début de publication']}
+                                validators={['required','matchRegexp:^([0-9]{4})-((0[1-9])|(1[0-2]))-(0[1-9]|[12][0-9]|3[01])$','isValidDate' ,'isBiggerThanStart','isBiggerThan5years']}
+                                errorMessages={['La date de départ est requise', 'Date invalide','Vous ne pouvez pas choisir une date du passé', 'La date de fin de publication ne peut pas être avant celle de début de publication','Votre date dépasse les 5 ans dans le futur']}
                                 value={values.ad_ending_date}
                                 onChange={handleChange('ad_ending_date')}
                                 validatorListener={this.props.validatorListener}

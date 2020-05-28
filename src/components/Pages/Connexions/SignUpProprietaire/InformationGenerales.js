@@ -34,13 +34,15 @@ function AlertCityValid() {
 export class InformationGenerales extends Component {
     constructor(props){
         super(props)
-
+        var today2 = new Date(),
+        tooOld = (today2.getFullYear() - 150) + '-' + ((today2.getMonth() + 1)<10 ? '0'+(today2.getMonth() + 1) : (today2.getMonth() + 1)) + '-' + today2.getDate();
         var today = new Date(),
         birthDate = (today.getFullYear() - 18) + '-' + ((today.getMonth() + 1)<10 ? '0'+(today.getMonth() + 1) : (today.getMonth() + 1)) + '-' + today.getDate();
         this.state = {
           files: null,
           minAge: birthDate,
-          todayDate : today,
+          maxAge: tooOld,
+          todayDate: today,
         };
     }
 
@@ -54,7 +56,7 @@ export class InformationGenerales extends Component {
 
     componentDidMount() {
         ValidatorForm.addValidationRule('isValidAge', (value) => {
-            if (value > this.state.minAge) {
+            if ((value > this.state.minAge) || (value < this.state.maxAge)) {
                 return false;
             } else {
                 return true;
@@ -127,8 +129,8 @@ export class InformationGenerales extends Component {
                                             fullWidth
                                             size="small"
                                             name="last_name"
-                                            validators={['required']}
-                                            errorMessages={['Ce champs est obligatoire']}
+                                            validators={['required', 'matchRegexp:^[a-zA-Z]( |-|[a-zA-Z]){1,}$']}
+                                            errorMessages={['Ce champs est obligatoire','Nom invalide']}
                                             value={values.last_name} 
                                             onChange={handleChange('last_name')}
                                             validatorListener={this.props.validatorListener}
@@ -149,8 +151,8 @@ export class InformationGenerales extends Component {
                                             fullWidth
                                             size="small"
                                             name="first_name"
-                                            validators={['required']}
-                                            errorMessages={['Ce champs est obligatoire']}
+                                            validators={['required', 'matchRegexp:^[a-zA-Z]( |-|[a-zA-Z]){1,}$']}
+                                            errorMessages={['Ce champs est obligatoire','Prénom invalide']}
                                             value={values.first_name} 
                                             onChange={handleChange('first_name')}
                                             validatorListener={this.props.validatorListener}
@@ -198,7 +200,7 @@ export class InformationGenerales extends Component {
                                                 variant="outlined"
                                                 size="small"
                                                 validators={['required', 'isValidAge' ]}
-                                                errorMessages={['Ce champs est obligatoire', 'Vous devez avoir plus de 18 ans']}
+                                                errorMessages={['Ce champs est obligatoire', 'Vous devez avoir plus de 18 ans (et impossible d\'avoir plus de 150 ans)']}
                                                 value={values.dateOfBirth} 
                                                 validatorListener={this.props.validatorListener}
                                                 defaultValue={this.state.todayDate}

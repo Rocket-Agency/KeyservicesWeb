@@ -10,7 +10,7 @@ export class AnnounceAddress extends Component {
     }
     values = {
         address_road_number: '',
-        address_road_type:'',
+        address_road_type:'Rue',
         address_road_name:'',
         address_additional_info:'',
         address_state:'',
@@ -168,8 +168,8 @@ render() {
                                             fullWidth
                                             size="small"
                                             name="address_city"
-                                            validators={['required']}
-                                            errorMessages={['required field']}
+                                            validators={['required', 'matchRegexp:^( |-|[a-zA-Z]){1,}$']}
+                                            errorMessages={['Champs obligatoire']}
                                             value={values.address_city}
                                             onChange={handleChange('address_city')}
                                             validatorListener={this.props.validatorListener}
