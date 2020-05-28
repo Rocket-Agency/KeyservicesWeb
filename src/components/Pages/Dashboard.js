@@ -76,7 +76,8 @@ constructor(props) {
               <MyTab label='Mon compte' />      
               {this.group == 'GROUP_LOCATAIRE' ? <MyTab label='Information location' />   : null}      
               {this.group == 'GROUP_PROPRIETAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Créer une annonce ' /> : null}
-              {this.group == 'GROUP_LOCATAIRE' || this.group == 'GROUP_ADMIN' ? <MyTab label='Prise de rendez-vous' /> : null} 
+              {this.group == 'GROUP_LOCATAIRE' ? <MyTab label='Prise de rendez-vous' /> : null} 
+              {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste des rendez-vous' /> : null} 
               {this.group == 'GROUP_LOCATAIRE' ? <MyTab label='Paiement des courses' /> : null} 
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste utilisateurs' /> : null }
               {this.group == 'GROUP_ADMIN' ? <MyTab label='Liste de contacts' /> : null }
