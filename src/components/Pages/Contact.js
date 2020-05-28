@@ -4,14 +4,52 @@ import '../../css/Contact.scss';
 
 import { Hidden } from 'react-grid-system';
 import Iframe from 'react-iframe';
-import { Formik, Field, ErrorMessage } from 'formik';
-import { Form, Row } from 'react-bootstrap';
-import * as Yup from 'yup';
+import {TextValidator, ValidatorForm} from 'react-material-ui-form-validator';
+import { Row, Col, Container, Form } from 'react-bootstrap';
 import ContactInfos from './ContactInfos';
 import Recaptcha from "react-recaptcha";
 import { render } from 'react-dom';
+import axios from 'axios';
 
 export class Contact extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+    values = {
+        first_name: "",
+        last_name: "",
+        email: "",
+        object: "",
+        message: "",
+        recaptcha: ""
+    }
+    // Handle fields change
+    handleChange = input => e => {
+        this.setState({ [input]: e.target.value });
+    };
+
+    submit(){
+        this.form.submit();
+    }
+
+    handleSubmit(){
+        this.setState({ submitted: true }, () => {
+        setTimeout(() => this.setState({ submitted: false }), 5000);
+        });
+    }
+
+    validatorListener = (result) => {
+        this.setState({ disabled: !result });
+    }
+
+    handleChange(event) {
+        this.setState({
+        [event.target.name]: event.target.value
+        });
+    }
     componentDidMount() {
         const script = document.createElement("script");
         script.src =
@@ -22,6 +60,7 @@ export class Contact extends Component {
     }
 
     render() {
+        const { first_name, last_name, email, object, message, recaptcha } = this.state;
         return(
             <div>
                 <div className="mt-5 d-flex text-center justify-content-center">
@@ -41,53 +80,53 @@ export class Contact extends Component {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 </p>
-
-
-                                <Formik
-                                    initialValues={{
-                                        prenom: '',
-                                        nom: '',
-                                        email: '',
-                                        sujet: '',
-                                        message: '',
-                                        recaptcha: ''
-                                    }}
-                                        
-                                    validationSchema={Yup.object().shape({
-                                        prenom: Yup.string()
-                                            .required('Veuillez indiquer votre prénom'),
-                                        nom: Yup.string()
-                                            .required('Veuillez indiquer votre nom'),
-                                        email: Yup.string()
-                                            .email('Veuillez entrez une adresse mail valide')
-                                            .required('Veuillez indiquer votre mail'),
-                                        sujet: Yup.string()
-                                            .required('Veuillez choisir un sujet'),
-                                        message: Yup.string()
-                                            .required('Veuillez entrer votre message'),
-                                        recaptcha: Yup.string()
-                                            .required('Veuillez confirmer que vous êtes humain')
-                                    })}
-
-                                    onSubmit={fields => {
-                                        alert('SUCCES!! :-)\n\n' + JSON.stringify(fields, null, 4))
-                                    }}
-                            
-                                    render={({ errors, status, touched, setFieldValue }) => (
+                                <ValidatorForm
+                                    ref="form"
+                                    onSubmit={this.handleSubmit}
+                                    onError={errors => console.log(errors)}
+                                >
                                         <Form>
                                             <Form.Row>
-                                                <div className="form-group col-sm-6">
-                                                    <label htmlFor="prenom">Prénom</label>
-                                                    <Field name="prenom" type="text" className={'form-control' + (errors.prenom && touched.prenom ? ' is-invalid' : '')} />
-                                                    <ErrorMessage name="prenom" component="div" className="invalid-feedback" />
-                                                </div>
-                                                    
+                                                {/* <div className="form-group col-sm-6">
+                                                    <label htmlFor="first_name">Prénom</label>
+                                                    <Field name="first_name" type="text" className={'form-control' + (errors.first_name && touched.first_name ? ' is-invalid' : '')} />
+                                                    <ErrorMessage name="first_name" component="div" className="invalid-feedback" />
+                                                </div> */}
+                                                <Col sm={12}>
+                                                    <TextValidator
+                                                        variant="outlined"
+                                                        fullWidth
+                                                        size="small"
+                                                        label="Prénom"
+                                                        name="first_name"
+                                                        validators={['required', 'matchRegexp:^[a-zA-Z]{1,}$']}
+                                                        errorMessages={['Le prénom est requis', 'Prénom Invalide']}
+                                                        value={this.state.first_name}
+                                                        onChange={this.handleChange}
+                                                        validatorListener={this.state.validatorListener}
+                                                    /> 
+                                                </Col>
+                                                
+                                                {/* <Col sm={12}>
+                                                    <TextValidator
+                                                        variant="outlined"
+                                                        fullWidth
+                                                        size="small"
+                                                        label="Nom"
+                                                        name="last_name"
+                                                        validators={['required', 'matchRegexp:^[a-zA-Z]{1,}$']}
+                                                        errorMessages={['Le nom est requis', 'Nom Invalide']}
+                                                        value={values.last_name}
+                                                        onChange={handleChange('last_name')}
+                                                        validatorListener={this.props.validatorListener}
+                                                    /> 
+                                                </Col>
                                                 <div className="form-group" className="form-group col-sm-6">
-                                                    <label htmlFor="nom">Nom</label>
-                                                    <Field name="nom" type="text" className={'form-control' + (errors.nom && touched.nom ? ' is-invalid' : '')} />
-                                                    <ErrorMessage name="nom" component="div" className="invalid-feedback" />
+                                                    <label htmlFor="last_name">Nom</label>
+                                                    <Field name="last_name" type="text" className={'form-control' + (errors.last_name && touched.last_name ? ' is-invalid' : '')} />
+                                                    <ErrorMessage name="last_name" component="div" className="invalid-feedback" />
                                                 </div>
-                                            </Form.Row>
+                                            */}</Form.Row>{/*
                                                 
                                             <Form.Row>
                                                 <div className="form-group col-sm-6">
@@ -97,9 +136,9 @@ export class Contact extends Component {
                                                 </div>
                                                 
                                                 <div className="form-group col-sm-6">
-                                                    <label htmlFor="sujet">Sujet</label>
-                                                    <Field name="sujet" type="text" className={'form-control' + (errors.sujet && touched.sujet ? ' is-invalid' : '')} />
-                                                    <ErrorMessage name="sujet" component="div" className="invalid-feedback" />
+                                                    <label htmlFor="object">Sujet</label>
+                                                    <Field name="object" type="text" className={'form-control' + (errors.object && touched.object ? ' is-invalid' : '')} />
+                                                    <ErrorMessage name="object" component="div" className="invalid-feedback" />
                                                 </div>
                                             </Form.Row>
 
@@ -107,20 +146,14 @@ export class Contact extends Component {
                                                     <label htmlFor="message">Message</label>
                                                     <Field name="message" component="textarea" row="3" className={'form-control' + (errors.message && touched.message ? ' is-invalid' : '')} />
                                                     <ErrorMessage name="message" component="div" className="invalid-feedback" />
-                                                </div>
+                                                </div> */}
 
                                             <Form.Row className="mt-4 validZone">
                                                 <div className="form-group">
                                                     <Recaptcha
                                                         sitekey="6Lfx9O8UAAAAAPe1JLS49cFlkjs9Zgrp6-db8fHp"
                                                         render="explicit"
-                                                        verifyCallback={(response) => { setFieldValue("recaptcha", response); }}
-                                                        onloadCallback={() => { console.log("done loading!"); }}
                                                     />
-                                                    {errors.recaptcha 
-                                                    && touched.recaptcha && (
-                                                    <p>{errors.recaptcha}</p>
-                                                    )}
                                                 </div>
 
                                                 <div id="container">                    
@@ -134,7 +167,7 @@ export class Contact extends Component {
                                                 </Form.Row>
                                             </Form>
                                         )}
-                                    />
+                                    </ValidatorForm>
                                 </div>
                             </div>
 

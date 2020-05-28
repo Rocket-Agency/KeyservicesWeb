@@ -174,7 +174,7 @@ export class AnnounceStepperForm extends Component {
             validatorListener={this.validatorListener}
           />
         );
-        break;
+      break;
       case 2:
         content = (
           <AnnounceHousing
@@ -189,6 +189,7 @@ export class AnnounceStepperForm extends Component {
             <AnnounceRulesInformations
               handleChange={this.handleChange}
               values={values}
+              validatorListerner={this.validatorListener}
             />
           );
           break;
@@ -197,6 +198,7 @@ export class AnnounceStepperForm extends Component {
             <AnnounceTarif
               handleChange={this.handleChange}
               values={values}
+              validatorListerner={this.validatorListener}
             />
           );
           break;
@@ -206,6 +208,7 @@ export class AnnounceStepperForm extends Component {
               handleChange={this.handleChange}
               saveImages={this.saveImages}
               values={values}
+              validatorListerner={this.validatorListener}
             />
           );
           break;
@@ -214,6 +217,8 @@ export class AnnounceStepperForm extends Component {
             <AnnounceConfirm
               handleChange={this.handleChange}
               values={values}
+              validatorListerner={this.validatorListener}
+              nextStep={this.nextStep}
             />
           );
           break;
@@ -222,6 +227,7 @@ export class AnnounceStepperForm extends Component {
             <AnnounceServices
             handleChange={this.handleChange}
             values={values}
+            validatorListerner={this.validatorListener}
           />
           );
           break;
@@ -230,6 +236,7 @@ export class AnnounceStepperForm extends Component {
             <AnnouncePayment
               handleChange={this.handleChange}
               values={values}
+              validatorListerner={this.validatorListener}
             />
           );
           break;

@@ -16,7 +16,7 @@ export class AnnounceResume extends Component {
         date = today.getFullYear() + '-' + ((today.getMonth() + 1)<10 ? '0'+(today.getMonth() + 1) : (today.getMonth() + 1)) + '-' + today.getDate();
 
         var today2 = new Date(),
-        date2 = (today2.getFullYear() + 1) + '-' + (today2.getMonth() + 1) + '-' + today2.getDate();
+        date2 = (today2.getFullYear() + 1) + '-' + ((today2.getMonth() + 1)<10 ? '0'+(today2.getMonth() + 1) : (today2.getMonth() + 1)) + '-' + today2.getDate();
         this.state = {
           files: null,
           current_date: date,
@@ -51,11 +51,11 @@ export class AnnounceResume extends Component {
             }
         });
         ValidatorForm.addValidationRule('isBiggerThanStart', (value) => {
-            if (value < this.props.ad_starting_date) {
-                console.log(value + ' not bigger than ' + this.props.ad_starting_date)
+            if (value <= this.props.values.ad_starting_date) {
+                console.log(value + ' not bigger than ' + this.props.values.ad_starting_date)
                 return false;
             } else {
-                console.log(value + ' bigger than ' + this.props.ad_starting_date)
+                console.log(value + ' bigger than ' + this.props.values.ad_starting_date)
                 return true;
             }
         });
