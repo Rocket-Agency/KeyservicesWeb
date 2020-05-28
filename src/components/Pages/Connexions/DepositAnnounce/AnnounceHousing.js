@@ -85,34 +85,28 @@ export class AnnounceHousing extends Component {
                                 <FormControlLabel
                                     value="Maison"
                                     label="Maison"
-                                    control={<Radio color="primary" />}
-                                    control={<Radio required={true} />}
-                                    defaultValue={values.housing_type_property} 
+                                    control={<Radio color="primary" required={true} />}
                                     onChange={handleChange('housing_type_property')}
                                 />       
 
-                                 <FormControlLabel
+                                <FormControlLabel
                                     value="Appartement"
-                                    control={<Radio color="primary"  required={true} />}
+                                    control={<Radio color="primary" required={true} />}
                                     label="Appartement"
-                                    defaultValue={values.housing_type_property} 
                                     onChange={handleChange('housing_type_property')}
                                 />
 
                                 <FormControlLabel
                                     value="Chambre(s)"
                                     control={<Radio color="primary" required={true} />}
-
                                     label="Chambre(s)"
-                                    defaultValue={values.housing_type_property} 
                                     onChange={handleChange('housing_type_property')}
                                  />
 
                                 <FormControlLabel
                                     value="Auberge de jeunesse"
-                                    control={<Radio color="primary" required={true}/>}
+                                    control={<Radio color="primary" required={true} />}
                                     label="Auberge de jeunesse"
-                                    defaultValue={values.housing_type_property} 
                                     onChange={handleChange('housing_type_property')}
                                 />
                             </RadioGroup>

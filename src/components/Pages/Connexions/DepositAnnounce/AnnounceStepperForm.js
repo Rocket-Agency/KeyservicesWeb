@@ -13,6 +13,7 @@ import AnnounceSuccess from './AnnounceSuccess';
 import Payment from './CheckoutForm';
 import axios from 'axios';
 import { Button } from 'reactstrap';
+import { Col } from 'react-bootstrap';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 export class AnnounceStepperForm extends Component {
@@ -225,7 +226,7 @@ export class AnnounceStepperForm extends Component {
             validatorListener={this.validatorListener}
           />
         );
-        break;
+      break;
       case 2:
         content = (
           <AnnounceHousing
@@ -240,6 +241,7 @@ export class AnnounceStepperForm extends Component {
             <AnnounceRulesInformations
               handleChange={this.handleChange}
               values={values}
+              validatorListerner={this.validatorListener}
             />
           );
           break;
@@ -248,6 +250,7 @@ export class AnnounceStepperForm extends Component {
             <AnnounceTarif
               handleChange={this.handleChange}
               values={values}
+              validatorListerner={this.validatorListener}
             />
           );
           break;
@@ -257,6 +260,7 @@ export class AnnounceStepperForm extends Component {
               handleChange={this.handleChange}
               saveImages={this.saveImages}
               values={values}
+              validatorListerner={this.validatorListener}
             />
           );
           break;
@@ -265,48 +269,31 @@ export class AnnounceStepperForm extends Component {
             <AnnounceConfirm
               handleChange={this.handleChange}
               values={values}
+              validatorListerner={this.validatorListener}
+              nextStep={this.nextStep}
             />
           );
-          case 5:
-            return (
-              <AnnounceResume 
-                nextStep={this.nextStep}
-                prevStep={this.prevStep}
-                handleChange={this.handleChange}
-                saveImages={this.saveImages}
-                values={values}
-              />
-            );
-          case 6: 
-            return (
-              <AnnounceConfirm
-                nextStep={this.nextStep}
-                handleChange={this.handleChange}
-                saveAd={this.saveAd}
-                values={values}
-              />
-            );
-            break;
-          case 7:
-            return (
-              <AnnounceServices
-              nextStep={this.nextStep}
-              prevStep={this.prevStep}
-              handleChangeService={this.handleChangeService}
+          break;
+        case 7:
+          content = (
+            <AnnounceServices
+            handleChange={this.handleChange}
+            values={values}
+            validatorListerner={this.validatorListener}
+          />
+          );
+          break;
+        case 8: 
+          content = (
+            <Payment
               handleChange={this.handleChange}
               values={values}
+              validatorListerner={this.validatorListener}
             />
             );
             break;
-          case 8:
-            return (
-              <Payment
-                values={values}
-              />
-            )
-            break;
-          case 9:
-            content = (
+        case 9:
+          content = (
               <AnnounceSuccess 
               />
             );
@@ -325,24 +312,30 @@ export class AnnounceStepperForm extends Component {
         instantValidate
       >
         {this.renderStep()}
-        <Button
-          onClick={this.prevStep}
-          style={{ marginRight: '16px' }}
-          disabled={step === 1}
-        >
-          Retour
-        </Button>
-        <Button
-          color="primary"
-          variant="contained"
-          onClick={step < 8 ? this.nextStep : this.submit}
-          disabled={disabled || submitted}
-        >
-          {
-            (submitted && 'Votre annonce a été enregistrée !')
-            || (step < 8 ? 'Continue' : 'Enregistrer')
-          }
-        </Button>
+        <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
+          <Button
+            color="secondary"
+            variant="contained"
+            aria-label="Retour"
+            onClick={this.prevStep}
+            style={{ marginRight: '16px' }}
+            disabled={step === 1}
+          >
+            Retour
+          </Button>
+          <Button
+            color="primary"
+            aria-label="Continuer"
+            variant="contained"
+            onClick={step < 8 ? this.nextStep : this.submit}
+            disabled={disabled || submitted}
+          >
+            {
+              (submitted && 'Votre annonce a été enregistrée !')
+              || (step < 8 ? 'Continuer' : 'Enregistrer')
+            }
+          </Button>
+        </Col>
       </ValidatorForm>
 
       );
