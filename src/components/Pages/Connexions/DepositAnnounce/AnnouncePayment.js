@@ -72,20 +72,18 @@ export class AnnouncePayment extends Component {
                     <Container fluid>
                 
                         <h2>Paiement</h2>
-                        <form
-                        onSubmit={this.handleSubmit}
-                        style={{ maxWidth: "400px", margin: "0 auto" }}
-                        >
-                        <h2>Prix: 9.90 € EUR</h2>
-                        <CardElement />
-                        <button type="submit" 
-                                color="primary"
-                                variant="contained"
-                                aria-label="Paiement"
-                                disabled={!stripe}>
-                            Pay
-                        </button>
-                        </form>
+                            <form
+                                onSubmit={this.handleSubmit}
+                                style={{ maxWidth: "400px", margin: "0 auto" }}
+                                >
+                                <h2>Prix: 9.90 € EUR</h2>
+                                <CardElement />
+                                <button 
+                                    className="buttonPaiement"
+                                    disabled={!stripe}>
+                                    Paiement
+                                </button>
+                            </form>
                         
                     </Container>
                 </Container>

@@ -310,7 +310,7 @@ export class AnnounceStepperForm extends Component {
       >
         {this.renderStep()}
         <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4">
-        {step === 1  || step === 6 || step === 7 || step === 8 ? null :           <Button
+        {step === 1  || step === 6 || step === 7 || step === 8 ? null : <Button
             color="secondary"
             variant="contained"
             aria-label="Retour"
@@ -320,7 +320,7 @@ export class AnnounceStepperForm extends Component {
           >
             Retour
           </Button>}
-        {step === 6 || step === 8 || step === 7 ? null :           <Button
+        {step === 6 || step === 8 || step === 7 ? null : <Button
             color="primary"
             aria-label="Continuer"
             variant="contained"
