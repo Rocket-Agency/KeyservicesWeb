@@ -7,9 +7,10 @@ import AnnounceRulesInformations from './AnnounceRulesInformations';
 import AnnounceTarif from './AnnounceTarif';
 import AnnounceResume from './AnnounceResume';
 import AnnounceServices from './AnnounceServices';
-import AnnouncePayment from './AnnouncePayment';
+import Test from './AnnouncePayment';
 import AnnounceConfirm from './AnnounceConfirm';
 import AnnounceSuccess from './AnnounceSuccess';
+import Payment from './CheckoutForm';
 import axios from 'axios';
 import { Button } from 'reactstrap';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
@@ -299,7 +300,7 @@ export class AnnounceStepperForm extends Component {
             break;
           case 8:
             return (
-              <AnnouncePayment
+              <Payment
                 values={values}
               />
             )

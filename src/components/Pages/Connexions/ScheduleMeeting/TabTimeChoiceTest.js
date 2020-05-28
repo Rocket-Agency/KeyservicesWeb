@@ -163,9 +163,7 @@ render(){
                             // defaultValue={values.ad_capacity} 
                             // onChange={handleChange('ad_capacity')}
                         >
-                            <option>13:30</option>
-                            <option>13:00</option>
-                            <option>14:30</option>
+
                             <option>14:00</option>
                             <option>14:30</option>
                             <option>15:00</option>
