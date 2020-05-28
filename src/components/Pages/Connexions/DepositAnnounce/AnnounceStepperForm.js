@@ -247,23 +247,7 @@ export class AnnounceStepperForm extends Component {
               values={values}
             />
           );
-          break;
-        case 5:
-          content = (
-            <AnnounceResume 
-              handleChange={this.handleChange}
-              saveImages={this.saveImages}
-              values={values}
-            />
-          );
-          break;
-        case 6: 
-          content = (
-            <AnnounceConfirm
-              handleChange={this.handleChange}
-              values={values}
-            />
-          );
+            break;
           case 5:
             return (
               <AnnounceResume 
@@ -274,6 +258,7 @@ export class AnnounceStepperForm extends Component {
                 values={values}
               />
             );
+            break;
           case 6: 
             return (
               <AnnounceConfirm

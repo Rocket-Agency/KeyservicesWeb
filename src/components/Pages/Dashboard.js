@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../css/Dashboard.scss';
-
+import axios from 'axios';
 import { BreadcrumbItem } from '../../index';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -53,11 +53,24 @@ constructor(props) {
       this.group = this.props.location.state.user.groups;
     }
     this.forceUpdate();
-  }
 
+    const config = {
+      headers: {
+        'x-access-token': this.token
+      }
+    }
+
+    axios.get(`http://localhost:3001/ad/getAdByUserId/`+this.userid, config)
+      .then(res => {
+        const AdCollection = res.data;
+        this.setState( { AdCollection } );
+      })
+  }
+  
   handleChange = (_, activeIndex) => this.setState({ activeIndex })
 
   render() {
+    console.log(this.state.AdCollection);
     const { activeIndex } = this.state;
     return (
       <div
@@ -177,14 +190,14 @@ constructor(props) {
                 <MaterialTable
                   columns={[
                     { title: 'Update' },
-                    { title: 'Titre de l\'annonce', field: 'contact_email' },
-                    { title: 'Addresse de l\'annonce', field: 'contact_email' },
-                    { title: 'Date de début publication', field: 'contact_object'},
-                    { title: 'Fin de publication', field: 'contact_message'},
-                    { title: 'Supprimer', field: 'contact_email' },
+                    { title: 'Titre de l\'annonce', field: 'ad_title' },
+                    { title: 'Addresse de l\'annonce', field: 'address_txt' },
+                    { title: 'Date de début publication', field: 'ad_arrival_time'},
+                    { title: 'Fin de publication', field: 'ad_departure_time'},
+                    { title: 'Supprimer', field: '' },
                   ]}
-                  data={this.state.contactsCollection}
-                  title="Liste des messages"
+                  data={this.state.AdCollection}
+                  title="Liste des Annonces"
                 />
             </TabContainer> }
 
