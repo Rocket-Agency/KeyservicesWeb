@@ -27,8 +27,11 @@ export class Footer extends Component {
                                 <p className="m-3 text-white">
                                     <Link className="cgu" to="/cgu" aria-label="CGU">
                                         CGU 
+                                    </Link>-
+                                    <Link className="mentionLegales" to="/mentionLegales" aria-label="MentionLegale">
+                                         Mention légales 
                                     </Link>
-                                     - Mention légales - KeyServices | Tous droits réservés © - {new Date().getFullYear()} 
+                                      - KeyServices | Tous droits réservés © - {new Date().getFullYear()} 
                                 </p>       
                             </Col>
     

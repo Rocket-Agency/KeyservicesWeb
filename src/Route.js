@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import { Switch, Route } from 'react-router';
 
-//Import component for Header & Footer
+//Import component for CGU & MentionLegales
 import CGU from './components/Pages/CGU';
+import MentionLegales from './components/Pages/MentionLegales';
 
 //Import pages
 import {Home} from './components/Pages/Home';
@@ -55,6 +56,7 @@ function Routing (){
             <Route path='/dashboard' component={ProfileTabs} />
             <Route path='/deconnexion' component={Deconnexion} />
             <Route path='/cgu' component={CGU} />
+            <Route path='/mentionLegales' component={MentionLegales} />
             <Route path='/loginConcierge' component={ConnexionConcierge} />
             <Route path='/homepageApp' component={HomepageApp} />
             <Route path='/mapApp' component={MapApp} />

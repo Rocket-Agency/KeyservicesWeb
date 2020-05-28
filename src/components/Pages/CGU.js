@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Helmet} from "react-helmet";
 import { Col, Container } from 'react-bootstrap';
-import '../../css/CGU.scss';
+import '../../css/FooterElements.scss';
 
 import { BreadcrumbItem } from '../../index';
 import HomeIcon from '@material-ui/icons/Home';
