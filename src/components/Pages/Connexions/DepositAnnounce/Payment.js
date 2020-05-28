@@ -1,11 +1,6 @@
 import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import {
-  Elements,
-  CardElement,
-  useStripe,
-  useElements
-} from "@stripe/react-stripe-js";
+import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
 
 const CheckoutForm = ({ success }) => {
@@ -38,11 +33,7 @@ const CheckoutForm = ({ success }) => {
       onSubmit={handleSubmit}
       style={{ maxWidth: "400px", margin: "0 auto" }}
     >
-      <h2>Price: $10.99 USD</h2>
-      <img
-        src="https://images.ricardocuisine.com/services/recipes/500x675_7700.jpg"
-        style={{ maxWidth: "50px" }}
-      />
+      <h2>Prix: 9.90 € EUR</h2>
       <CardElement />
       <button type="submit" disabled={!stripe}>
         Pay
@@ -59,7 +50,7 @@ const Payment = () => {
   const [status, setStatus] = React.useState("ready");
 
   if (status === "success") {
-    return <div>Congrats on your empanadas!</div>;
+    return <div>Votre annonce va être poster</div>;
   }
 
   return (
