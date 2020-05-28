@@ -19,7 +19,7 @@ export class MonEspace extends Component {
                 <BreadcrumbItem >Connexion</BreadcrumbItem>
 
                 <div className="d-flex justify-content-center mt-3">
-                    <h3>Connexion</h3>
+                    <h1>Connexion</h1>
                 </div>
 
                 <Container fluid>

@@ -30,7 +30,7 @@ export class Contact extends Component {
         return(
             <div>
                 <div className="mt-5 d-flex text-center justify-content-center">
-                    <h1>On s’occupe de tous et vous de rien</h1>
+                    <h2>On s’occupe de tout et vous de rien</h2>
                 </div>
 
                 <div className="container-fluid">
@@ -39,7 +39,7 @@ export class Contact extends Component {
                             <div className="contact-bloc" >
 
                                 <div className="d-flex text-center justify-content-center">
-                                    <h2>Contactez nous !</h2>
+                                    <h1>Contactez nous !</h1>
                                 </div>
 
                                 <p>

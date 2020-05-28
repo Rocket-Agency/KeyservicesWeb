@@ -68,7 +68,7 @@ export class LoginProprietaire extends Component {
                     <Container fluid>
                         <Col md={6}>
                             <Row className="mt-2 mb-3 BlocExplicationPropriétaireMobile d-flex justify-content-center align-items-center">
-                                <h2>Pas encore inscrit ?</h2>
+                                <h1>Pas encore inscrit ?</h1>
                                     
                                 <p className="text-center"> 
                                     Ea qui magna laboris labore. Sint sit commodo esse duis deserunt in commodo aliq

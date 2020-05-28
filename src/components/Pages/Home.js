@@ -59,9 +59,6 @@ export class Home extends Component {
                                     <div className="bloc-carousel">
                                         <h3 className="title-carousel">Poster une annonce</h3>
                                         <p className="para-carousel">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                            <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
-                                                Poster une annonce
-                                            </button>
                                     </div>
 
                                     </Col>
@@ -85,9 +82,6 @@ export class Home extends Component {
                                     <div className="bloc-carousel">
                                         <h3 className="title-carousel">Gérer mes locations</h3>
                                             <p className="para-carousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <button className="btn btn-md btn-home" aria-label="Poster une annonce"> 
-                                                    Gérer mes location
-                                                </button>
                                     </div>
 
                                     </Col>
@@ -101,7 +95,7 @@ export class Home extends Component {
                 <div className="container-fluid p-0  mb-4">
                     <div className="colorBackground">
                         <div className="mt-5 d-flex text-center justify-content-center">
-                            <h1>On s’occupe de tous et vous de rien</h1>
+                            <h1>On s’occupe de tout et vous de rien</h1>
                         </div>
                         <div className="row">
                         <p className="text-home text-center d-flex justify-content-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 

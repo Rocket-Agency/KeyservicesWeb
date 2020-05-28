@@ -47,7 +47,7 @@ export class ForgetPassword extends Component {
 
                                 <Col md={6}>
                                     <div className="mt-4 mb-4 d-flex justify-content-center">
-                                        <h3>Mot de passe oublié ?</h3>
+                                        <h1>Mot de passe oublié ?</h1>
                                     </div>
                                     <div className="mt-4 mb-4 d-flex justify-content-center">
                                         <p  className="text-mdpOublié">Pas de panique ! Remplissez cle formulaire ci-dessous et nous vous enverrons par email 

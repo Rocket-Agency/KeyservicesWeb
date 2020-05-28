@@ -20,7 +20,7 @@ export class LoginLocataire extends Component {
                         <Row className="BlocConnexion">
                             <Col md={6}>
                                 <div className="mt-4 mb-4 d-flex justify-content-center">
-                                    <h3>Connexion Locataire</h3>
+                                    <h1>Connexion Locataire</h1>
                                 </div>
 
                                 <ConnexionProfileLocataire />
