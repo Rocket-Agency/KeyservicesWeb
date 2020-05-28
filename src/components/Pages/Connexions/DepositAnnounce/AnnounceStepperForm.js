@@ -139,7 +139,7 @@ export class AnnounceStepperForm extends Component {
 
       axios.get(`http://localhost:3001/ad/getLastAdByUserId/`+ aValue)
           .then(res => {
-            var ad_id = parseInt(JSON.stringify(res.data.ad_id),10)+1;
+            var ad_id = parseInt(JSON.stringify(res.data.ad_id),10);
             localStorage.setItem('ad_id', ad_id);
           })
       };
