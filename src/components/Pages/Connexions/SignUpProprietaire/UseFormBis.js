@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import '../../../../css/InscriptionProprietaire.scss';
 
-import { Col, Container, Row, Form } from 'react-bootstrap';
 import InformationGenerales from './InformationGenerales';
 import InformationAdresse from './InformationAdresse';
 import InformationConnexion from './InformationConnexion';
 import Confirm from './Confirm';
 import Success from './Success';
 import ConnexionProfilePropretaire from '../ConnexionProfilePropretaire';
-import { Button } from 'reactstrap';
-import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 export class UserForm extends Component {
   state = {
@@ -77,7 +74,7 @@ export class UserForm extends Component {
   }
 
 
-  renderStep() {
+  render() {
     const { step } = this.state;
     const { sexe, first_name, last_name, tel, dateOfBirth, factureAdress, zipCode, email, password } = this.state;
     const values = { sexe, first_name, last_name, tel, dateOfBirth, factureAdress, zipCode, email, password };
@@ -85,15 +82,15 @@ export class UserForm extends Component {
     switch (step) {
         case 1:
         content = (
-            <InformationGenerales
+            <InformationGeneralesBis
             handleChange={this.handleChange}
             values={values}
             validatorListener={this.validatorListener}
           />
           );
           break;
-          case 2:
-          content = (
+        case 2:
+        content = (
             <InformationAdresse
               handleChange={this.handleChange}
               values={values}
@@ -119,15 +116,15 @@ export class UserForm extends Component {
             />
           );
           break;
-          case 5:
-          content = (
+        case 5:
+        content = (
             <Success 
               nextStep={this.nextStep}
           />
           );
-          break;
-          case 6: 
-          content = (
+        break;
+        case 6: 
+        content = (
             <ConnexionProfilePropretaire
               nextStep={this.nextStep}
           />
@@ -145,26 +142,24 @@ export class UserForm extends Component {
           instantValidate
         >
           {this.renderStep()}
-          <Row xs={12} md={12} className="d-flex justify-content-around pt-3 pb-3">
-            <Button
+          <Button
             onClick={this.prevStep}
             style={{ marginRight: '16px' }}
             disabled={step === 1}
           >
             Retour
           </Button>
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={step < 5 ? this.nextStep : this.submit}
-              disabled={disabled || submitted}
-            >
-              {
-                (submitted && 'Votre inscription a bien été enregistrée !')
-                || (step < 6 ? 'Continue' : 'Enregistrer')
-              }
-            </Button>
-            </Row>
+          <Button
+            color="primary"
+            variant="contained"
+            onClick={step < 8 ? this.nextStep : this.submit}
+            disabled={disabled || submitted}
+          >
+            {
+              (submitted && 'Votre inscription a été enregistrée !')
+              || (step < 6 ? 'Continue' : 'Enregistrer')
+            }
+          </Button>
         </ValidatorForm>
   
         );

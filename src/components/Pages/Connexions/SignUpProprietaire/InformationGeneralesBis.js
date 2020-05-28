@@ -8,7 +8,6 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import { Button } from 'reactstrap';
 import TextField from '@material-ui/core/TextField';
 import Alert from 'react-bootstrap/Alert';
-import {TextValidator} from 'react-material-ui-form-validator';
 
 import 'react-phone-input-2/lib/bootstrap.css'
 
@@ -28,14 +27,11 @@ function AlertCityValid() {
     return <div className="style{{display : none}}"></div>;
   }
 
-//   date = (today.getFullYear() + 1) + '-' + ((today.getMonth() + 1)<10 ? '0'+(today.getMonth() + 1) : (today.getMonth() + 1)) + '-' + today.getDate();
-
 
 export class InformationGenerales extends Component {
     constructor(props){
         super(props)
     }
-
     values = {
         sexe: '',
         last_name:'',
@@ -44,9 +40,10 @@ export class InformationGenerales extends Component {
         dateOfBirth:'',
     }
 
-    // componentDidMount {
-    //     <Validator if />
-    // }
+    continue = e => {
+        e.preventDefault();
+        this.props.nextStep();
+      };
 
     render() {
         const { values, handleChange } = this.props;
@@ -102,16 +99,26 @@ export class InformationGenerales extends Component {
                                     <Form.Label className="label-info-generales" column sm={4}>Nom</Form.Label>
 
                                     <Col>
-                                        <TextValidator
-                                            key={1}
-                                            variant="outlined"
+                                         <TextField
+                                            required id="standard-required"
                                             label="Entre votre Nom"
+                                            onChange={handleChange('last_name')}
+                                            defaultValue={values.last_name} 
+                                            variant="outlined"
+                                            pattern="[A-Za-z]{3}"
+                                            fullWidth
+                                            type="text"
+                                            size="small"
+                                        />   
+
+                                        <TextValidator
+                                            variant="outlined"
                                             fullWidth
                                             size="small"
                                             name="last_name"
-                                            validators={['required']}
-                                            errorMessages={['Ce champs est obligatoire']}
-                                            value={values.last_name} 
+                                            validators={['required', 'minNumber:1', 'matchRegexp:^[0-9]{1,4}$']}
+                                            errorMessages={['required field', 'invalid number','invalid number']}
+                                            value={value.last_name} 
                                             onChange={handleChange('last_name')}
                                             validatorListener={this.props.validatorListener}
                                         /> 
@@ -124,16 +131,23 @@ export class InformationGenerales extends Component {
                                     <Form.Label className="label-info-generales" column sm={4}>Prénom</Form.Label>
 
                                     <Col>
-                                        <TextValidator
-                                            key={1}
-                                            variant="outlined"
+                                        <TextField
+                                            required id="standard-required"
                                             label="Entrez votre prénom"
+                                            onChange={handleChange('first_name')}
+                                            defaultValue={values.first_name}
+                                            variant="outlined"
+                                            fullWidth
+                                            size="small"
+                                        />
+                                        <TextValidator
+                                            variant="outlined"
                                             fullWidth
                                             size="small"
                                             name="first_name"
-                                            validators={['required']}
-                                            errorMessages={['Ce champs est obligatoire']}
-                                            value={values.first_name} 
+                                            validators={['required', 'minNumber:1', 'matchRegexp:^[0-9]{1,4}$']}
+                                            errorMessages={['required field', 'invalid number','invalid number']}
+                                            value={value.first_name} 
                                             onChange={handleChange('first_name')}
                                             validatorListener={this.props.validatorListener}
                                         /> 
@@ -182,6 +196,15 @@ export class InformationGenerales extends Component {
                                 </Form.Row>     
                             </Col>
                             <br />
+                        </Row>
+                        <Row xs={12} md={12} className="d-flex justify-content-center pt-3 pb-3">
+                            <Button
+                                color="primary"
+                                variant="contained"
+                                onClick={this.continue}
+                                aria-label="Continuer"
+                                >Continuer
+                            </Button>
                         </Row>
                     </Container>
                 </Container>

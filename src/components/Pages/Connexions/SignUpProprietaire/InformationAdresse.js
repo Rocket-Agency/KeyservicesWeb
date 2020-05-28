@@ -2,13 +2,18 @@ import React, {Component} from 'react';
 import '../../../../css/InscriptionProprietaire.scss';
 
 import { Col, Container, Row, Form} from 'react-bootstrap';
-import { Button, Input } from 'reactstrap';
-import AttachFileIcon from '@material-ui/icons/AttachFile';
 
-import TextField from '@material-ui/core/TextField';
-
+import {TextValidator} from 'react-material-ui-form-validator';
 
 export class InformationAdresse extends Component {
+   
+    constructor(props){
+        super(props)
+    }
+    values = {
+        factureAdress: '',
+        zipCode: '',
+    }
 
     continue = e => {
         e.preventDefault();
@@ -20,7 +25,6 @@ export class InformationAdresse extends Component {
         this.props.prevStep();
       };
     
-
     render() {
         const { values, handleChange } = this.props;
         return(
@@ -40,71 +44,45 @@ export class InformationAdresse extends Component {
 
                          <Container fluid>
                             <Row className="mt-4">
-                                <Col xs={12} md={6} className="pb-3">
+                                <Col xs={12} md={8} className="pb-3">
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Votre adresse de facturation</Form.Label>
-                                        
-                                        <Col>
-                                            <TextField
-                                                placeholder="Entre  votre adresse de facturation" 
-                                                required id="standard-required"
-                                                onChange={handleChange('factureAdress')}
-                                                defaultValue={values.factureAdress} 
+
+                                        <Col sm={6}>
+                                            <TextValidator
+                                                key={1}
                                                 variant="outlined"
-                                                pattern="[A-Za-z]{3}"
                                                 fullWidth
-                                                type="text"
-                                                size="small"                     
-                                            />   
+                                                size="small"
+                                                name="factureAdress"
+                                                validators={['required', 'matchRegexp:^[0-9]{1,4}( |[a-zA-Z])*$']}
+                                                errorMessages={['Ce champs est obligatoire', 'adresse invalide']}
+                                                value={values.factureAdress}
+                                                onChange={handleChange('factureAdress')}
+                                                validatorListener={this.props.validatorListener}
+                                            /> 
                                         </Col>
                                     </Form.Row>     
                                 </Col>
 
-                                <Col xs={12} md={6} className="pb-3">
+                                <Col xs={12} md={4} className="pb-3">
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Code postal</Form.Label>
                                          <Col>
-                                            <TextField
-                                                placeholder="Entre votre Code Postal" 
-                                                required id="standard-required"
-                                                onChange={handleChange('zipCode')}
-                                                defaultValue={values.factureAdress} 
+                                            <TextValidator
+                                                key={1}
                                                 variant="outlined"
-                                                pattern="[A-Za-z]{3}"
                                                 fullWidth
-                                                type="text" 
-                                                size="small"                    
+                                                size="small"
+                                                validators={['Ce champs est obligatoire', 'code postal invalide']}
+                                                errorMessages={['Code postal requis!', 'Code postal invalide', 'matchRegexp:^[0-9]{5}$']}
+                                                name="zipCode"
+                                                onChange={handleChange('zipCode')}
+                                                value={values.zipCode}
+                                                validatorListener={this.props.validatorListener} 
                                             />   
                                         </Col>                                        
                                     </Form.Row>     
-                                </Col>
-
-                                <Col xs={12} md={6} className="pb-2 pt-3">
-                                    <Form.Row>
-                                        <Form.Label column sm={12}>Veuillez fournir un justificatif de domicile</Form.Label>
-                                    </Form.Row>
-
-                                    <Form.Row className="pb-3">
-                                    <diiv className="attachmenBtn m-2"> 
-                                        <AttachFileIcon className="iconAttachFile"/>  
-                                                Envoyer un justificatif   
-                                    </diiv>
-                                        <Input type="file" name="file" id="exampleFile" />
-                                    </Form.Row>     
-                                </Col>
-
-                                <Col xs={12} md={12} className="d-flex justify-content-around pb-3"> 
-                                    <Button
-                                        color="secondary"
-                                        variant="contained"
-                                        onClick={this.back}
-                                    >Retour</Button>
-
-                                    <Button
-                                    color="primary"
-                                    variant="contained"
-                                    onClick={this.continue}
-                                    >Continuer</Button>
                                 </Col>
                              </Row>
                         </Container>
