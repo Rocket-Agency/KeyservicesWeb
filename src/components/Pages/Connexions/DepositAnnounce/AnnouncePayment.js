@@ -78,11 +78,7 @@ export class AnnouncePayment extends Component {
                         >
                         <h2>Prix: 9.90 € EUR</h2>
                         <CardElement />
-                        <button type="submit" 
-                                color="primary"
-                                variant="contained"
-                                aria-label="Paiement"
-                                disabled={!stripe}>
+                        <button type="submit" disabled={!stripe}>
                             Pay
                         </button>
                         </form>

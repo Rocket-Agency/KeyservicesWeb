@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../../../../css/InscriptionProprietaire.scss';
+import {withRouter} from 'react-router-dom';
 
 import { Col } from 'react-bootstrap';
 import AppBar from '@material-ui/core/AppBar';
@@ -29,6 +30,12 @@ export class Confirm extends Component {
             groups: ["proprietaire"]
         }
       )
+      .then(response => {
+        this.props.history.push('/success');
+      })
+      .catch(error => {
+      });
+      e.preventDefault();
   };
   
 
@@ -89,13 +96,6 @@ export class Confirm extends Component {
         
           <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-3"> 
             <Button
-              color="secondary"
-              variant="contained"
-              onClick={this.back}
-              aria-label="Retour"
-              >Retour</Button>
-
-            <Button
               color="primary"
               variant="contained"
               onClick={this.continue}
@@ -108,4 +108,4 @@ export class Confirm extends Component {
   }
 }
 
-export default Confirm;
+export default withRouter(Confirm);

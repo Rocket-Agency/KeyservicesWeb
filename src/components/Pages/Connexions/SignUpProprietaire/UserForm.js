@@ -115,7 +115,7 @@ export class UserForm extends Component {
               handleChange={this.handleChange}
               values={values}
               validatorListener={this.validatorListener}
-              nextStep={this.submit}
+              nextStep={this.nextStep}
             />
           );
           break;
@@ -148,14 +148,15 @@ export class UserForm extends Component {
         >
           {this.renderStep()}
           <Row xs={12} md={12} className="d-flex justify-content-around pt-3 pb-3">
-            <Button
+          <Button
               onClick={this.prevStep}
               style={{ marginRight: '16px' }}
               disabled={step === 1}
             >
             Retour
           </Button>
-            <Button
+          {step === 4 ? null : 
+          <Button
               color="primary"
               variant="contained"
               onClick={step < 4 ? this.nextStep : this.submit}
@@ -166,7 +167,7 @@ export class UserForm extends Component {
                 (submitted && 'Votre inscription a bien été enregistrée !')
                 || (step < 4 ? 'Continue' : 'Enregistrer')
               }
-            </Button>
+            </Button> }
             </Row>
         </ValidatorForm>
         );
