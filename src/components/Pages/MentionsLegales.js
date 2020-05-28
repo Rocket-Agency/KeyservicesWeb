@@ -6,7 +6,7 @@ import '../../css/FooterElements.scss';
 import { BreadcrumbItem } from '../../index';
 import HomeIcon from '@material-ui/icons/Home';
 
-export class CGU extends Component {
+export class MentionsLegales extends Component {
     
     render() {
         return (
@@ -85,40 +85,6 @@ export class CGU extends Component {
                                         </div>
                                     </div>
                                 </div>
-
-
-
-{/*                       
-                            <div className="bloc-CGU">
-                                <div>
-                                    <div className="title">L'Éditeur :
-                                    Société par Actions Simplifiée au capital de 214 410,50 Euros
-
-                                    <li>SIREN: 433 115 904 RCS Paris</li>
-                                    <li>Siège social : 8 rue de la Ville l’Evêque, 75008 Paris, France</li>
-                                    <li>Directeur de publication : Arnaud Brindejonc de Bermingham</li>
-                                    <li>Hébergeur : KEYSERVICES SAS BP 438 75366 PARIS CEDEX 08 FRANCE</li>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div className="title">Propriété intellectuelle
-                                     Le présent site internet ainsi que l’ensemble de ses contenus 
-                                     (notamment les données, informations, photos, logos et marques) 
-                                     sont la propriété exclusive d’ONLINE SAS ou de ses partenaires. 
-                                     Toute reproduction, représentation, traduction, adaptation ou citation, 
-                                     intégrale ou partielle, quel qu’en soit le procédé ou le support, 
-                                     est strictement interdite en dehors des cas prévus par la loi ou expressément 
-                                     autorisés par leur propriétaire. Photos non contractuelles.
-                                </div>
-                            </div>
-
-                            <div>
-                                <div className="title">Données personnelles
-                                    Vous pouvez visiter notre site sur Internet sans avoir à décliner votre identité ou à fournir des informations personnelles vous concernant. Cependant, nous pouvons parfois vous demander des informations pour traiter une commande, identifier une demande de support technique, établir une correspondance, fournir un abonnement ou soumettre une candidature à un poste.
-                                </div>
-                            </div> */}
                         </Col>
                     </Container>
                 </div>
@@ -127,4 +93,4 @@ export class CGU extends Component {
     }
 }
 
-export default CGU;
+export default MentionsLegales;
