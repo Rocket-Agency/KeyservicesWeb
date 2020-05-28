@@ -76,8 +76,8 @@ export class InformationConnexion extends Component {
                                             />
                                         </Col>
                                     </Form.Row>     
-                                </Col>
-                            </Row>
+                                    </Col>
+                                </Row>
                         </Container>
                     </Container>
                 </div>

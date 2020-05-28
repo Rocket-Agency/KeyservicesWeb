@@ -11,6 +11,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 export class Confirm extends Component {
+  constructor(props){
+    super(props)
+}
 
   continue = e => {
     axios.post("http://localhost:3001/api/auth/signup",
@@ -26,14 +29,8 @@ export class Confirm extends Component {
             groups: ["proprietaire"]
         }
       )
-    e.preventDefault();
-    this.props.nextStep();
   };
-
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  };
+  
 
   render() {
     const {

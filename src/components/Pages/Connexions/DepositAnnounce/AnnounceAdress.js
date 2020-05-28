@@ -4,6 +4,7 @@ import '../../../../css/Announce.scss';
 import { Col, Container, Row, Form } from 'react-bootstrap';
 import TextField from '@material-ui/core/TextField';
 import { Button } from 'reactstrap';
+import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 export class AnnounceAddresss extends Component {
 render() {
@@ -155,15 +156,17 @@ render() {
                                 <Form.Row>
                                 <Form.Label className="label-info-annonce" column sm={12}>Code postal</Form.Label>
                                     <Col sm={8}>
-                                    <TextField
-                                        required id="standard-required"
-                                        onChange={handleChange('address_zip_code')}
-                                        defaultValue={values.address_zip_code} 
-                                        variant="outlined"
-                                        pattern="[A-Za-z]{3}"
-                                        fullWidth
-                                        type="text" 
-                                        size="small"              
+                                        <TextValidator
+                                            key={1}
+                                            variant="outlined"
+                                            fullWidth
+                                            size="small"
+                                            validators={['required', 'matchRegexp:^[0-9]{5}$']}
+                                            errorMessages={['Code postal requis!', 'Code postal invalide']}
+                                            name="zipCode"
+                                            onChange={handleChange('zipCode')}
+                                            value={values.zipCode}
+                                            validatorListener={this.props.validatorListener} 
                                         />   
                                     </Col>   
                                 </Form.Row>     
