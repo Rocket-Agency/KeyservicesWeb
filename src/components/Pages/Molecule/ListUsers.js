@@ -35,7 +35,7 @@ class ListUsers extends Component {
                 render: rowData => (
                   <img
                     style={{ height: 36, borderRadius: '50%' }}
-                    src={'http://localhost:3001/userPicture/' + rowData.user_photo}
+                    src={rowData.user_photo == 'test.png' || 'admin.png' || 'concierge.png' ? 'http://localhost:3001/userPicture/' + rowData.user_photo : 'http://localhost:3001/userPicture/'+ rowData.user_id +'/'+ rowData.user_photo}
                   />
                 ),
                 editable: 'never'
