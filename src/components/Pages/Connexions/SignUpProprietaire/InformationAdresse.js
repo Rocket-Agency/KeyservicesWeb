@@ -69,18 +69,18 @@ export class InformationAdresse extends Component {
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Code postal</Form.Label>
                                          <Col>
-                                            <TextValidator
-                                                key={1}
-                                                variant="outlined"
-                                                fullWidth
-                                                size="small"
-                                                validators={['Ce champs est obligatoire', 'code postal invalide']}
-                                                errorMessages={['Code postal requis!', 'Code postal invalide', 'matchRegexp:^[0-9]{5}$']}
-                                                name="zipCode"
-                                                onChange={handleChange('zipCode')}
-                                                value={values.zipCode}
-                                                validatorListener={this.props.validatorListener} 
-                                            />   
+                                         <TextValidator
+                                            key={1}
+                                            variant="outlined"
+                                            fullWidth
+                                            size="small"
+                                            validators={['required', 'matchRegexp:^[0-9]{5}$']}
+                                            errorMessages={['Code postal requis!', 'Code postal invalide']}
+                                            name="zipCode"
+                                            onChange={handleChange('zipCode')}
+                                            value={values.zipCode}
+                                            validatorListener={this.props.validatorListener} 
+                                        />  
                                         </Col>                                        
                                     </Form.Row>     
                                 </Col>

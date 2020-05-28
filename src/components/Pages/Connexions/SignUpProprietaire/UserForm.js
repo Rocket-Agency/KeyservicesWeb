@@ -123,6 +123,7 @@ export class UserForm extends Component {
           content = (
             <Success 
               nextStep={this.nextStep}
+              validatorListener={this.validatorListener}
           />
           );
           break;
@@ -130,6 +131,7 @@ export class UserForm extends Component {
           content = (
             <ConnexionProfilePropretaire
               nextStep={this.nextStep}
+              validatorListener={this.validatorListener}
           />
         );
         break;
