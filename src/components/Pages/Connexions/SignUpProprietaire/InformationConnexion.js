@@ -4,19 +4,17 @@ import '../../../../css/InscriptionProprietaire.scss';
 import { Col, Container, Row, Form} from 'react-bootstrap';
 import { Button } from 'reactstrap';
 import TextField from '@material-ui/core/TextField';
-
+import {TextValidator} from 'react-material-ui-form-validator';
 
 export class InformationConnexion extends Component {
+    constructor(props){
+        super(props)
+    }
 
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
-      };
-
-      back = e => {
-        e.preventDefault();
-        this.props.prevStep();
-      };
+    values = {
+        email: '',
+        password:'',
+    }
 
     render() {
         const { values, handleChange } = this.props;
@@ -41,16 +39,17 @@ export class InformationConnexion extends Component {
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Email</Form.Label>
                                         <Col>
-                                            <TextField
+                                            <TextValidator
+                                                key={1}
                                                 label="Entre votre adresse email"
                                                 required id="standard-required"
                                                 onChange={handleChange('email')}
-                                                defaultValue={values.email} 
                                                 variant="outlined"
-                                                pattern="[A-Za-z]{3}"
                                                 fullWidth
-                                                type="text" 
-                                                size="small"                    
+                                                size="small"        
+                                                validators={['required', 'isEmail']}
+                                                errorMessages={['Ce champs est obligatoire', 'Email invalide']}
+                                                value={values.email}         
                                             />   
                                         </Col>
                                     </Form.Row>     
@@ -60,22 +59,27 @@ export class InformationConnexion extends Component {
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Mot de passe</Form.Label>
                                         <Col>
-                                            <TextField
+
+                                            <TextValidator
+                                                key={1}
+                                                id="standard-required"
                                                 label="Entre votre mot de passe"
-                                                id="outlined-adornment-password"
-                                                onChange={handleChange('password')}
-                                                defaultValue={values.password} 
                                                 variant="outlined"
-                                                pattern="[A-Za-z]{3}"
+                                                label="Password"
+                                                onChange={handleChange('password')}
+                                                name="password"
+                                                type="password"
                                                 fullWidth
-                                                type="password" 
                                                 size="small"
+                                                validators={['required']}
+                                                errorMessages={['Ce champs est obligatoire', 'mot de passe invalide']}
+                                                value={values.password} 
                                             />
                                         </Col>
                                     </Form.Row>     
                                 </Col>
 
-                                <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
+                                {/* <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
                                     <Button
                                         color="secondary"
                                         variant="contained"
@@ -89,7 +93,7 @@ export class InformationConnexion extends Component {
                                     onClick={this.continue}
                                     aria-label="Continuer"
                                     >Continuer</Button>
-                                </Col>
+                                </Col> */}
                             </Row>
                         </Container>
                     </Container>

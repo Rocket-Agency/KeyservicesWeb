@@ -6,6 +6,7 @@ import { Col, Container, Row, Form} from 'react-bootstrap';
 import {TextValidator} from 'react-material-ui-form-validator';
 
 export class InformationAdresse extends Component {
+   
     constructor(props){
         super(props)
     }
@@ -14,17 +15,16 @@ export class InformationAdresse extends Component {
         zipCode: '',
     }
 
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
-      };
+    // continue = e => {
+    //     e.preventDefault();
+    //     this.props.nextStep();
+    //   };
 
-      back = e => {
-        e.preventDefault();
-        this.props.prevStep();
-      };
+    //   back = e => {
+    //     e.preventDefault();
+    //     this.props.prevStep();
+    //   };
     
-
     render() {
         const { values, handleChange } = this.props;
         return(
@@ -47,19 +47,18 @@ export class InformationAdresse extends Component {
                                 <Col xs={12} md={8} className="pb-3">
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Votre adresse de facturation</Form.Label>
-                                        
-                                        <Col>
+
+                                        <Col sm={6}>
                                             <TextValidator
                                                 key={1}
                                                 variant="outlined"
                                                 fullWidth
                                                 size="small"
-                                                name="address_city"
-                                                // validators={['required']}
-                                                validators={['required', 'minNumber:1', 'matchRegexp:^[0-9]{1,4}$']}
-                                                errorMessages={['required field']}
-                                                value={values.address_city}
-                                                onChange={handleChange('address_city')}
+                                                name="factureAdress"
+                                                validators={['required', 'matchRegexp:^[0-9]{1,4}( |[a-zA-Z])*$']}
+                                                errorMessages={['Ce champs est obligatoire', 'adresse invalide']}
+                                                value={values.factureAdress}
+                                                onChange={handleChange('factureAdress')}
                                                 validatorListener={this.props.validatorListener}
                                             /> 
                                         </Col>
@@ -70,17 +69,18 @@ export class InformationAdresse extends Component {
                                     <Form.Row>
                                         <Form.Label className="label-info-generales" column sm={4}>Code postal</Form.Label>
                                          <Col>
-                                         <TextValidator
-                                            variant="outlined"
-                                            fullWidth
-                                            size="small"
-                                            name="address_road_number"
-                                            validators={['required', 'minNumber:1', 'matchRegexp:^[0-9]{1,4}$']}
-                                            errorMessages={['required field', 'invalid number','invalid number']}
-                                            value={values.address_road_number}
-                                            onChange={handleChange('address_road_number')}
-                                            validatorListener={this.props.validatorListener}
-                                        />  
+                                            <TextValidator
+                                                key={1}
+                                                variant="outlined"
+                                                fullWidth
+                                                size="small"
+                                                validators={['Ce champs est obligatoire', 'code postal invalide']}
+                                                errorMessages={['Code postal requis!', 'Code postal invalide', 'matchRegexp:^[0-9]{5}$']}
+                                                name="zipCode"
+                                                onChange={handleChange('zipCode')}
+                                                value={values.zipCode}
+                                                validatorListener={this.props.validatorListener} 
+                                            />   
                                         </Col>                                        
                                     </Form.Row>     
                                 </Col>

@@ -28,11 +28,14 @@ function AlertCityValid() {
     return <div className="style{{display : none}}"></div>;
   }
 
+//   date = (today.getFullYear() + 1) + '-' + ((today.getMonth() + 1)<10 ? '0'+(today.getMonth() + 1) : (today.getMonth() + 1)) + '-' + today.getDate();
+
 
 export class InformationGenerales extends Component {
     constructor(props){
         super(props)
     }
+
     values = {
         sexe: '',
         last_name:'',
@@ -40,6 +43,10 @@ export class InformationGenerales extends Component {
         tel:'',
         dateOfBirth:'',
     }
+
+    // componentDidMount {
+    //     <Validator if />
+    // }
 
     render() {
         const { values, handleChange } = this.props;
@@ -125,7 +132,7 @@ export class InformationGenerales extends Component {
                                             size="small"
                                             name="first_name"
                                             validators={['required']}
-                                            errorMessages={['required field']}
+                                            errorMessages={['Ce champs est obligatoire']}
                                             value={values.first_name} 
                                             onChange={handleChange('first_name')}
                                             validatorListener={this.props.validatorListener}
