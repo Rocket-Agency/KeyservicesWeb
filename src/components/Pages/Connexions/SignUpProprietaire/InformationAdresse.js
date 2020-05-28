@@ -15,15 +15,15 @@ export class InformationAdresse extends Component {
         zipCode: '',
     }
 
-    // continue = e => {
-    //     e.preventDefault();
-    //     this.props.nextStep();
-    //   };
+    continue = e => {
+        e.preventDefault();
+        this.props.nextStep();
+      };
 
-    //   back = e => {
-    //     e.preventDefault();
-    //     this.props.prevStep();
-    //   };
+      back = e => {
+        e.preventDefault();
+        this.props.prevStep();
+      };
     
     render() {
         const { values, handleChange } = this.props;
