@@ -270,6 +270,7 @@ export class AnnounceStepperForm extends Component {
               handleChange={this.handleChange}
               values={values}
               validatorListerner={this.validatorListener}
+              saveAd={this.saveAd}
               nextStep={this.nextStep}
             />
           );
@@ -280,6 +281,7 @@ export class AnnounceStepperForm extends Component {
             handleChange={this.handleChange}
             values={values}
             validatorListerner={this.validatorListener}
+            handleChangeService={this.handleChangeService}
           />
           );
           break;
