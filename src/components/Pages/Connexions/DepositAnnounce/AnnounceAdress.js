@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import '../../../../css/Announce.scss';
 
 import { Col, Container, Row, Form } from 'react-bootstrap';
+<<<<<<< HEAD
+=======
+
+>>>>>>> fc98b541df3d892cdc3b5e731b7ce2d81e7db18b
 import TextField from '@material-ui/core/TextField';
 import { Button } from 'reactstrap';
 
