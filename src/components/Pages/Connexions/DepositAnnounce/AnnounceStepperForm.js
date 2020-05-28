@@ -115,7 +115,7 @@ export class AnnounceStepperForm extends Component {
             this.setState({ step });
         }
 
-    });
+      });
     };
   
     // Go back to prev step
