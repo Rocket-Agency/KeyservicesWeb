@@ -78,22 +78,6 @@ export class InformationConnexion extends Component {
                                         </Col>
                                     </Form.Row>     
                                 </Col>
-
-                                {/* <Col xs={12} md={12} className="d-flex justify-content-around pt-4 pb-4"> 
-                                    <Button
-                                        color="secondary"
-                                        variant="contained"
-                                        onClick={this.back}
-                                        aria-label="Retour"
-                                    >Retour</Button>
-
-                                    <Button
-                                    color="primary"
-                                    variant="contained"
-                                    onClick={this.continue}
-                                    aria-label="Continuer"
-                                    >Continuer</Button>
-                                </Col> */}
                             </Row>
                         </Container>
                     </Container>

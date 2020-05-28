@@ -110,7 +110,7 @@ export class InformationGenerales extends Component {
                                             size="small"
                                             name="last_name"
                                             validators={['required']}
-                                            errorMessages={['required field']}
+                                            errorMessages={['Ce champs est obligatoire']}
                                             value={values.last_name} 
                                             onChange={handleChange('last_name')}
                                             validatorListener={this.props.validatorListener}
