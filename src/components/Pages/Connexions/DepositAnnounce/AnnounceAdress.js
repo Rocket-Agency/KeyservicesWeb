@@ -60,7 +60,7 @@ render() {
                             <Col xs={12} md={12} className="mt-3">
                                 
                                 <Form.Row>
-                                <Form.Label className="label-info-annonce" column sm={2}>Numéro de rue</Form.Label>
+                                    <Form.Label className="label-info-annonce" column sm={2}>Numéro de rue</Form.Label>
                                     <Col sm={3}>
                                          <TextValidator
                                             variant="outlined"
@@ -74,14 +74,37 @@ render() {
                                             validatorListener={this.props.validatorListener}
                                         /> 
                                     </Col>
-                                </Form.Row>     
+                                </Form.Row>    
                             </Col>
                         </Row>
-                            
+                        <Row>
+                            <Col xs={12} md={12} className="mt-3">
+                                <Form.Row>
+                                    <Form.Label className="label-info-annonce" column sm={2}>Type de rue</Form.Label>
+                                        <Form.Group controlId="exampleForm.ControlSelect1">
+                                            <Form.Control
+                                                as="select"
+                                                name="address_road_type"
+                                                onChange={handleChange('address_road_type')}
+                                                value={values.address_road_type}
+                                            >
+                                                <option value='Rue'>Rue</option>
+                                                <option value='Allée'>Allée</option>
+                                                <option value='Boulevard'>Boulevard</option>
+                                                <option value='Square'>Square</option>
+                                                <option value='Impasse'>Impasse</option>
+                                                <option value='Résidence'>Résidence</option>
+                                            </Form.Control>
+                                        </Form.Group>
+                                </Form.Row> 
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col xs={12} md={12} className="mt-3">                        
                          <Row>
                             <Col xs={12} md={12}>
                                 <Form.Row>
-                                <Form.Label className="label-info-annonce" column sm={12}>Nom de rue</Form.Label>
+                                    <Form.Label className="label-info-annonce" column sm={12}>Nom de rue</Form.Label>
                                     <Col sm={12}>
                                         <TextValidator
                                             key={1}
