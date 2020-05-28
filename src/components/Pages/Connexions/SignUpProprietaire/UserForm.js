@@ -42,7 +42,7 @@ export class UserForm extends Component {
             if (step < 3) {
                 step++;
             }
-            this.setState({ step });
+          this.setState({ step });
         }
 
       });
@@ -76,7 +76,6 @@ export class UserForm extends Component {
     this.setState({ disabled: !result });
   }
 
-
   renderStep() {
     const { step } = this.state;
     const { sexe, first_name, last_name, tel, dateOfBirth, factureAdress, zipCode, email, password } = this.state;
@@ -107,6 +106,7 @@ export class UserForm extends Component {
               handleChange={this.handleChange}
               values={values}
               validatorListener={this.validatorListener}
+              nextStep={this.nextStep}
             />
           );
           break;
@@ -116,6 +116,7 @@ export class UserForm extends Component {
               handleChange={this.handleChange}
               values={values}
               validatorListener={this.validatorListener}
+              nextStep={this.submit}
             />
           );
           break;
@@ -149,26 +150,26 @@ export class UserForm extends Component {
           {this.renderStep()}
           <Row xs={12} md={12} className="d-flex justify-content-around pt-3 pb-3">
             <Button
-            onClick={this.prevStep}
-            style={{ marginRight: '16px' }}
-            disabled={step === 1}
-          >
+              onClick={this.prevStep}
+              style={{ marginRight: '16px' }}
+              disabled={step === 1}
+            >
             Retour
           </Button>
             <Button
               color="primary"
               variant="contained"
-              onClick={step < 5 ? this.nextStep : this.submit}
+              onClick={step < 4 ? this.nextStep : this.submit}
               disabled={disabled || submitted}
             >
+
               {
                 (submitted && 'Votre inscription a bien été enregistrée !')
-                || (step < 6 ? 'Continue' : 'Enregistrer')
+                || (step < 4 ? 'Continue' : 'Enregistrer')
               }
             </Button>
             </Row>
         </ValidatorForm>
-  
         );
     }
 }

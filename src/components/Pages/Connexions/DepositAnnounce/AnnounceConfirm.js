@@ -105,9 +105,6 @@ export class AnnounceConfirm extends Component {
             }
         }).then(done=>{e.preventDefault();
             this.props.nextStep();});
-
-       
-        
       };
 
       back = e => {

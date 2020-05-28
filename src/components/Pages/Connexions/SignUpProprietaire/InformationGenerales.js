@@ -8,7 +8,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import { Button } from 'reactstrap';
 import TextField from '@material-ui/core/TextField';
 import Alert from 'react-bootstrap/Alert';
-import {TextValidator} from 'react-material-ui-form-validator';
+import {TextValidator,ValidatorForm} from 'react-material-ui-form-validator';
 
 import 'react-phone-input-2/lib/bootstrap.css'
 
@@ -34,6 +34,14 @@ function AlertCityValid() {
 export class InformationGenerales extends Component {
     constructor(props){
         super(props)
+
+        var today = new Date(),
+        birthDate = (today.getFullYear() - 18) + '-' + ((today.getMonth() + 1)<10 ? '0'+(today.getMonth() + 1) : (today.getMonth() + 1)) + '-' + today.getDate();
+        this.state = {
+          files: null,
+          minAge: birthDate,
+          todayDate : today,
+        };
     }
 
     values = {
@@ -44,9 +52,19 @@ export class InformationGenerales extends Component {
         dateOfBirth:'',
     }
 
-    // componentDidMount {
-    //     <Validator if />
-    // }
+    componentDidMount() {
+        ValidatorForm.addValidationRule('isValidAge', (value) => {
+            if (value > this.state.minAge) {
+                return false;
+            } else {
+                return true;
+            }
+        });
+    }
+    componentWillUnmount() {
+        // remove rule when it is not needed
+        ValidatorForm.removeValidationRule('isValidAge');
+    }
 
     render() {
         const { values, handleChange } = this.props;
@@ -147,16 +165,19 @@ export class InformationGenerales extends Component {
                                 <Form.Row>
                                     <Form.Label className="label-info-generales" column sm={4}>Numéro de téléphone</Form.Label>
                                     <Col>
-                                        <TextField
+                                        <TextValidator
                                             type="text" 
-                                            onChange={handleChange('tel')} 
-                                            defaultValue={values.tel} 
-                                            pattern="^\d{4}-\d{3}-\d{4}$" 
-                                            required id="standard-required"
+                                            required 
+                                            id="standard-required"
                                             variant="outlined"
                                             fullWidth
                                             size="small"
                                             label="Entrez votre numéro de téléphone"
+                                            errorMessages={['Ce champs est obligatoire', 'Numéro invalide']}
+                                            value={values.tel} 
+                                            onChange={handleChange('tel')}
+                                            validatorListener={this.props.validatorListener}
+                                            validators={['required','matchRegexp:^(0|\\+33|0033)[1-9][0-9]{8}$']}
                                         />
                                     </Col>
                                 </Form.Row>     
@@ -166,17 +187,21 @@ export class InformationGenerales extends Component {
                                 <Form.Row>
                                     <Form.Label className="label-info-generales" column sm={4}>Date de naissance</Form.Label>
                                         <Col>
-                                            <TextField
+                                            <TextValidator
                                                 id="date"
                                                 type="date"
                                                 InputLabelProps={{
                                                 shrink: true,
                                                 }}
                                                 onChange={handleChange('dateOfBirth')} 
-                                                defaultValue={values.dateOfBirth} 
                                                 fullWidth
                                                 variant="outlined"
                                                 size="small"
+                                                validators={['required', 'isValidAge' ]}
+                                                errorMessages={['Ce champs est obligatoire', 'Vous devez avoir plus de 18 ans']}
+                                                value={values.dateOfBirth} 
+                                                validatorListener={this.props.validatorListener}
+                                                defaultValue={this.state.todayDate}
                                             />
                                         </Col>
                                 </Form.Row>     
