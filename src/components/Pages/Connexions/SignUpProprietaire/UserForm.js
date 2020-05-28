@@ -92,8 +92,8 @@ export class UserForm extends Component {
           />
           );
           break;
-        case 2:
-        content = (
+          case 2:
+          content = (
             <InformationAdresse
               handleChange={this.handleChange}
               values={values}
@@ -119,15 +119,15 @@ export class UserForm extends Component {
             />
           );
           break;
-        case 5:
-        content = (
+          case 5:
+          content = (
             <Success 
               nextStep={this.nextStep}
           />
           );
-        break;
-        case 6: 
-        content = (
+          break;
+          case 6: 
+          content = (
             <ConnexionProfilePropretaire
               nextStep={this.nextStep}
           />
