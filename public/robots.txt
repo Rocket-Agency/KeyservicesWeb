@@ -1,3 +1,17 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /dashboard
+Disallow: /deconnexion
+Disallow: /cgu
+Disallow: /mentionsLegales
+Disallow: /loginConcierge
+Disallow: /homepageApp
+Disallow: /mapApp
+Disallow: /tasksApp
+Disallow: /settingsApp
+Disallow: /profilUserConcierge
+Disallow: /logoutApp
+Disallow: /announceSuccess
+Disallow: /success
+
+Sitemap : https://f2i-cw22-sc-ns-od-db.fr/sitemap.xml
