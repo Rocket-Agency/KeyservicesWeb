@@ -58,7 +58,7 @@ export class Home extends Component {
                                     <Col lg={6} md={8} sm={12} className="mt-4" >
                                     <div className="bloc-carousel">
                                         <h3 className="title-carousel">Poster une annonce</h3>
-                                        <p className="para-carousel">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                        <p className="para-carousel">Keyservices s'occupe de vos bien pour vous , du netoyage à la remise des clés pour le prochaine locataire nous faisons de votre bien notre priorité.</p>
                                     </div>
 
                                     </Col>
@@ -81,7 +81,7 @@ export class Home extends Component {
                                     <Col lg={6} md={8} sm={12} className="mt-4" >
                                     <div className="bloc-carousel">
                                         <h3 className="title-carousel">Gérer mes locations</h3>
-                                            <p className="para-carousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                            <p className="para-carousel">Choisisez parmis les services ou le pack de services qui vous correspond, afin de s'occuper au mieu de votre bien.</p>
                                     </div>
 
                                     </Col>

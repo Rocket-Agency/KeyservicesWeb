@@ -14,9 +14,21 @@ export class AnnounceServices extends Component {
 
     continue = e => {
 
-        var userId = localStorage.getItem('id');
-        var adId = localStorage.getItem('ad_id');
         var token = localStorage.getItem('token');
+        var userId = localStorage.getItem('id');
+        if(localStorage.getItem('ad_id') == ''){
+            var adId = 1;
+        }
+        else{
+            var adId = localStorage.getItem('ad_id')
+        }
+        
+        const config = {
+            headers: {
+              'x-access-token': token
+            }
+          }
+     
 
         axios.post(`http://localhost:3001/services/UserservicesAdd/`,{
             serviceCategory: this.props.values.service_category,
@@ -26,6 +38,13 @@ export class AnnounceServices extends Component {
             serviceFrigo: !!(this.props.values.service_frigo)?1:0,
             serviceMenage: !!(this.props.values.service_menage)?1:0,
             adId: adId
+        },config).then(res => {
+            axios.post(`http://localhost:3001/file/create/`,{
+            file_type_service : res.data.service_category,
+            fileStatus : 'en cours de paiments',
+            adId: adId,
+            userId : userId,
+        },config)
         });
 
         e.preventDefault();

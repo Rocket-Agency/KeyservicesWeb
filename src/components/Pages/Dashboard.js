@@ -207,7 +207,6 @@ constructor(props) {
                 <h1>Liste des annonces</h1>
                 <MaterialTable
                   columns={[
-                    { title: 'Update' },
                     { title: 'Id de l\'annonce', field: 'ad_id' },
                     { title: 'Nom', field: 'user_first_name' },
                     { title: 'Prénom', field: 'user_last_name' },
@@ -240,12 +239,10 @@ constructor(props) {
                 <h1>Mes annonces</h1>
                 <MaterialTable
                   columns={[
-                    { title: 'Update' },
                     { title: 'Titre de l\'annonce', field: 'ad_title' },
                     { title: 'Addresse de l\'annonce', field: 'address_txt' },
                     { title: 'Date de début publication', field: 'ad_arrival_time'},
                     { title: 'Fin de publication', field: 'ad_departure_time'},
-                    { title: 'Supprimer', field: '' },
                   ]}
                   data={this.state.AdCollection}
                   title="Liste des Annonces"

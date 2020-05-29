@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../../../../css/Announce.scss';
-
+import ReactTooltip from "react-tooltip";
 import { Row, Col, Container, Form } from 'react-bootstrap';
 import { Button } from 'reactstrap';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -78,12 +78,14 @@ export class AnnounceRulesInformations extends Component {
                                     <Form.Group id="formGridCheckbox">
                                         <FormControlLabel
                                             control={<Checkbox 
-                                            value="Escalier"  
+                                            value="Escalier"
+                                            data-tip="Escalier présent dans la propriété ?" 
                                             color="primary" />}
                                             defaultValue={values.info_stairs} 
                                             onChange={handleChange('info_stairs')}
                                             label="Escalier" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
@@ -91,21 +93,25 @@ export class AnnounceRulesInformations extends Component {
                                             control={<Checkbox 
                                             value="Animaux"  
                                             color="primary" />}
+                                            data-tip="Animaux présent dans la propriété ?"
                                             defaultValue={values.info_pets} 
                                             onChange={handleChange('info_pets')}
                                             label="Animaux" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
                                         <FormControlLabel
                                             control={<Checkbox 
-                                            value="Pas de parking"  
+                                            value="Pas de parking"
+                                            data-tip="Pas de parking présent dans la propriété ?"  
                                             color="primary" />}
                                             defaultValue={values.info_no_parking} 
                                             onChange={handleChange('info_no_parking')}
                                             label="Pas de parking" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
                                 </Col>
 
@@ -114,33 +120,39 @@ export class AnnounceRulesInformations extends Component {
                                         <FormControlLabel
                                             control={<Checkbox 
                                             value="Espace partagé"  
+                                            data-tip="La propriété contient des espaces partagés ?"  
                                             color="primary" />}
                                             defaultValue={values.info_shared_space} 
                                             onChange={handleChange('info_shared_space')}
                                             label="Espace partagé" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
                                         <FormControlLabel
                                             control={<Checkbox 
-                                            value="Restriction équipements"  
+                                            value="Restriction équipements"
+                                            data-tip="Restriction de certain equipement au sein de la propriété ?"   
                                             color="primary" />}
                                             defaultValue={values.info_equipment_restriction} 
                                             onChange={handleChange('info_equipment_restriction')}
                                             label="Restriction équipements" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
                                         <FormControlLabel
                                             control={<Checkbox 
-                                            value="Vidéo surveillance"  
+                                            value="Vidéo surveillance"
+                                            data-tip="Existe t'il un système de vidéo surveillance au sein de la propriété ?"  
                                             color="primary" />}
                                             defaultValue={values.info_monitoring_device} 
                                             onChange={handleChange('info_monitoring_device')}
                                             label="Vidéo surveillance" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
                                 </Col>
 
@@ -149,33 +161,39 @@ export class AnnounceRulesInformations extends Component {
                                         <FormControlLabel
                                             control={<Checkbox 
                                             value="Armes"  
+                                            data-tip="Equipement dangereux ou armes présent au sein de la propriété ?"
                                             color="primary" />}
                                             defaultValue={values.info_weapons} 
                                             onChange={handleChange('info_weapons')}
                                             label="Armes" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
                                         <FormControlLabel
                                             control={<Checkbox 
-                                            value="Animaux dangereux"  
+                                            value="Animaux dangereux"
+                                            data-tip="Animaux dangereux présent au sein de la propriété ou au alentours ?"  
                                             color="primary" />}
                                             defaultValue={values.info_dangerous_animals} 
                                             onChange={handleChange('info_dangerous_animals')}
                                             label="Animaux dangereux" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
                                         <FormControlLabel
                                             control={<Checkbox 
-                                            value="Nuissance sonore"  
+                                            value="Nuissance sonore" 
+                                            data-tip="Nuissance sonore au alentours de la propriété ?" 
                                             color="primary" />}
                                             defaultValue={values.info_noise} 
                                             onChange={handleChange('info_noise')}
                                             label="Nuissance sonore" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
                                 </Col>
                             </Form.Group>
@@ -191,22 +209,26 @@ export class AnnounceRulesInformations extends Component {
                                         <FormControlLabel
                                             control={<Checkbox 
                                             value="Ne convient pas aux enfants de moins de 2 ans"  
+                                            data-tip="Le logement ne convient pas aux enfants de moin de 2 ans !" 
                                             color="primary" />}
                                             defaultValue={values.rule_age_2} 
                                             onChange={handleChange('rule_age_2')}
                                             label="Ne convient pas aux enfants de moins de 2 ans" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
                                         <FormControlLabel
                                             control={<Checkbox 
-                                            value="Ne convient pas à un enfant entre 2 et 12 ans"  
+                                            value="Ne convient pas à un enfant entre 2 et 12 ans"
+                                            data-tip="Le logement ne convient pas aux enfants de moin agés de 2 à 12 ans !"  
                                             color="primary" />}
                                             defaultValue={values.rule_age_2_12} 
                                             onChange={handleChange('rule_age_2_12')}
                                             label="Ne convient pas à un enfant entre 2 et 12 ans" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
                                 </Col>
 
@@ -214,34 +236,40 @@ export class AnnounceRulesInformations extends Component {
                                     <Form.Group id="formGridCheckbox">
                                         <FormControlLabel
                                             control={<Checkbox 
-                                            value="Animaux autorisés"  
+                                            value="Animaux autorisés"
+                                            data-tip="Les animaux de compagnies sont les bienvenus"   
                                             color="primary" />}
                                             defaultValue={values.rule_pets} 
                                             onChange={handleChange('rule_pets')}
                                             label="Animaux autorisés" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
                                         <FormControlLabel
                                             control={<Checkbox 
-                                            value="Fumeurs autorisés"  
+                                            value="Fumeurs autorisés" 
+                                            data-tip="Propriéte fumeur !"    
                                             color="primary" />}
                                             defaultValue={values.rule_smoking} 
                                             onChange={handleChange('rule_smoking')}
                                             label="Fumeurs autorisés" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
 
                                     <Form.Group id="formGridCheckbox">
                                         <FormControlLabel
                                             control={<Checkbox 
-                                            value="Évènements autorisés"  
+                                            value="Évènements autorisés" 
+                                            data-tip="Les fêtes et les évènements sont autorisées !"  
                                             color="primary" />}
                                             defaultValue={values.rule_event} 
                                             onChange={handleChange('rule_event')}
                                             label="Évènements autorisés" 
                                         />
+                                        <ReactTooltip />
                                     </Form.Group>
                                 </Col>
                             </Form.Group>
@@ -290,11 +318,13 @@ export class AnnounceRulesInformations extends Component {
                                 <Form.Group as={Col} controlId="TextareaObservation">
                                     <Form.Label>Ajouter une règle</Form.Label>
                                     <Form.Control 
-                                        as="textarea" 
+                                        as="textarea"
+                                        data-tip="souhaitez-vous ajouter en plus des régle propre à votre propriété ?"  
                                         rows="2"
                                         defaultValue={values.rule_add} 
                                         onChange={handleChange('rule_add')}
                                     />
+                                    <ReactTooltip />
                                 </Form.Group>
                             </Form.Row>
                         </fieldset>
@@ -314,10 +344,12 @@ export class AnnounceRulesInformations extends Component {
                                     <Form.Label>Disponibilité</Form.Label>
                                     <Form.Control 
                                         type="text" 
+                                        data-tip="Merci de saisir si besoins vos disponibilité en temps que hôte."
                                         label="checkbox jour de la semaine"
                                         defaultValue={values.info_availability} 
                                         onChange={handleChange('info_availability')}
                                     />
+                                    <ReactTooltip />
                                 </Form.Group>
                             </Form.Row>
                             <Form.Row>
@@ -325,9 +357,11 @@ export class AnnounceRulesInformations extends Component {
                                     <Form.Label>Aux alentours</Form.Label>
                                     <Form.Control 
                                         type="text" 
+                                        data-tip="Centre d'interêt aux alentours."
                                         defaultValue={values.observation} 
                                         onChange={handleChange('observation')}
                                     />
+                                    <ReactTooltip />
                                 </Form.Group>
                             </Form.Row>
                         </fieldset>
