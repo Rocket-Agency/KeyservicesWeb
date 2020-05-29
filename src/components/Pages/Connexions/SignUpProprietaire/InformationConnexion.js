@@ -48,7 +48,7 @@ export class InformationConnexion extends Component {
                                                 fullWidth
                                                 size="small"        
                                                 validators={['required', 'isEmail']}
-                                                errorMessages={['Ce champs est obligatoire', 'Email invalide veuillez vérifier votre email']}
+                                                errorMessages={['Ce champs est obligatoire', 'Email invalide ! Veuillez vérifier votre email']}
                                                 value={values.email}         
                                             />   
                                         </Col>
@@ -62,7 +62,7 @@ export class InformationConnexion extends Component {
                                             <TextValidator
                                                 key={1}
                                                 id="standard-required"
-                                                label="Entre votre mot de passe"
+                                                label="Entrez votre mot de passe"
                                                 variant="outlined"
                                                 label="Password"
                                                 onChange={handleChange('password')}
@@ -70,8 +70,8 @@ export class InformationConnexion extends Component {
                                                 type="password"
                                                 fullWidth
                                                 size="small"
-                                                validators={['required']}
-                                                errorMessages={['Ce champs est obligatoire', 'mot de passe invalide']}
+                                                validators={['required', 'matchRegexp:^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*#?&]{8,}$']}
+                                                errorMessages={['Ce champs est obligatoire', 'Votre mot de passe doit contenir au moins 8 caractères avec au moins une lettre, un chiffre et un caractère spécial']}
                                                 value={values.password} 
                                             />
                                         </Col>

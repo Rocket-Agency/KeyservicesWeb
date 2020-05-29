@@ -85,27 +85,27 @@ export class AnnounceHousing extends Component {
                                 <FormControlLabel
                                     value="Maison"
                                     label="Maison"
-                                    control={<Radio color="primary" required={true} />}
+                                    control={<Radio color="primary" />}
                                     onChange={handleChange('housing_type_property')}
                                 />       
 
                                 <FormControlLabel
                                     value="Appartement"
-                                    control={<Radio color="primary" required={true} />}
+                                    control={<Radio color="primary" />}
                                     label="Appartement"
                                     onChange={handleChange('housing_type_property')}
                                 />
 
                                 <FormControlLabel
                                     value="Chambre(s)"
-                                    control={<Radio color="primary" required={true} />}
+                                    control={<Radio color="primary" />}
                                     label="Chambre(s)"
                                     onChange={handleChange('housing_type_property')}
                                  />
 
                                 <FormControlLabel
                                     value="Auberge de jeunesse"
-                                    control={<Radio color="primary" required={true} />}
+                                    control={<Radio color="primary" />}
                                     label="Auberge de jeunesse"
                                     onChange={handleChange('housing_type_property')}
                                 />
