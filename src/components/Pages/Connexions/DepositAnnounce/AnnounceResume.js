@@ -157,13 +157,11 @@ export class AnnounceResume extends Component {
                         <Col md={12}>
                             <div className="text-center">
                             <Img
-                                placeholder={ImgDefaultAvatar} 
-                                className="location img-circle mt-3 mb-3"
                                 alt="photo de la location" 
                                 />
-                                <h6>Mettre une photo de votre logement...</h6>
+                                <h6>Ajoutter une ou plusieurs photo de votre propriété...</h6>
                             
-                                <input type="file" class="form-control" multiple onChange={saveImages}/>
+                                <input type="file" accept="image/jpeg,image/jpg,image/png," class="form-control" multiple onChange={saveImages}/>
                             </div>
                         </Col>
                         </Row>
